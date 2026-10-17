@@ -1,0 +1,31 @@
+{
+  "m2-edo2": [
+    {"id": "m2e2-01", "q": "Que représente y″ ?", "a": "La dérivée de la dérivée : une accélération.", "tag": "definition", "niveau": 1},
+    {"id": "m2e2-02", "q": "Combien de constantes dans la solution générale du second ordre ?", "a": "Deux, par exemple A et B.", "tag": "propriete", "niveau": 1},
+    {"id": "m2e2-03", "q": "Combien de conditions initiales faut-il au second ordre ?", "a": "Deux : par exemple y(0) et y′(0).", "tag": "propriete", "niveau": 1},
+    {"id": "m2e2-04", "q": "Quelles sont les solutions de y″ + ω²y = 0 ?", "a": "y = A cos ωx + B sin ωx.", "tag": "formule", "niveau": 1},
+    {"id": "m2e2-05", "q": "Pour y = A cos ωx + B sin ωx, que vaut y(0) ?", "a": "A, car cos 0 = 1 et sin 0 = 0.", "tag": "propriete", "niveau": 1},
+    {"id": "m2e2-06", "q": "Pour y = A cos ωx + B sin ωx, comment trouve-t-on B ?", "a": "B = y′(0)/ω.", "tag": "methode", "niveau": 1},
+    {"id": "m2e2-07", "q": "Équation caractéristique de y″ + ay′ + by = 0 ?", "a": "r² + ar + b = 0.", "tag": "formule", "niveau": 1},
+    {"id": "m2e2-08", "q": "D’où vient l’équation caractéristique ?", "a": "On cherche y = e^(rx) et on divise par e^(rx).", "tag": "methode", "niveau": 2},
+    {"id": "m2e2-09", "q": "Δ > 0, racines r₁ et r₂ : forme des solutions ?", "a": "y = A e^(r₁x) + B e^(r₂x).", "tag": "formule", "niveau": 2},
+    {"id": "m2e2-10", "q": "Δ = 0, racine double r : forme des solutions ?", "a": "y = (A + Bx) e^(rx).", "tag": "formule", "niveau": 2},
+    {"id": "m2e2-11", "q": "Δ < 0, racines α ± iβ : forme des solutions ?", "a": "y = e^(αx)(A cos βx + B sin βx).", "tag": "formule", "niveau": 2},
+    {"id": "m2e2-12", "q": "Vrai ou faux : y″ + 4y = 0 donne A e^(2x) + B e^(−2x) ?", "a": "Faux : racines ±2i, donc A cos 2x + B sin 2x.", "tag": "piege", "niveau": 2},
+    {"id": "m2e2-13", "q": "Solution constante de y″ + ay′ + by = c (b ≠ 0) ?", "a": "y_p = c/b.", "tag": "formule", "niveau": 1},
+    {"id": "m2e2-14", "q": "Quand utiliser les conditions initiales ?", "a": "À la fin, sur la solution complète (homogène + particulière).", "tag": "methode", "niveau": 2},
+    {"id": "m2e2-15", "q": "Racines de r² − r − 6 = 0 ?", "a": "−2 et 3.", "tag": "valeur", "niveau": 2},
+    {"id": "m2e2-16", "q": "Racines de r² + 2r + 5 = 0 ?", "a": "−1 ± 2i.", "tag": "valeur", "niveau": 2},
+    {"id": "m2e2-17", "q": "Que règle α dans e^(αx)(A cos βx + B sin βx) ?", "a": "L’amortissement (α < 0) ou l’amplification (α > 0).", "tag": "propriete", "niveau": 2},
+    {"id": "m2e2-18", "q": "Période de A cos ωx + B sin ωx ?", "a": "T = 2π/ω.", "tag": "formule", "niveau": 2},
+    {"id": "m2e2-19", "q": "Amplitude de A cos ωx + B sin ωx ?", "a": "√(A² + B²).", "tag": "formule", "niveau": 3},
+    {"id": "m2e2-20", "q": "Quels sont les trois régimes de l’oscillateur amorti ?", "a": "Pseudo-périodique, critique, apériodique.", "tag": "definition", "niveau": 2},
+    {"id": "m2e2-21", "q": "Vrai ou faux : racine double, y = A e^(rx) + B e^(rx) ?", "a": "Faux : une seule constante utile ; c’est (A + Bx) e^(rx).", "tag": "piege", "niveau": 3},
+    {"id": "m2e2-22", "q": "Dimension de l’espace des solutions de l’homogène ?", "a": "2 : deux solutions indépendantes engendrent toutes les autres.", "tag": "propriete", "niveau": 3},
+    {"id": "m2e2-23", "q": "Comment passe-t-on de e^(±iβx) à cos et sin ?", "a": "Avec les formules d’Euler.", "tag": "methode", "niveau": 3},
+    {"id": "m2e2-24", "q": "Second membre K e^(mx), m non racine : quelle forme chercher ?", "a": "A e^(mx), avec A = K/(m² + am + b).", "tag": "methode", "niveau": 3},
+    {"id": "m2e2-25", "q": "Si m est racine simple de l’équation caractéristique ?", "a": "On cherche A x e^(mx) (x² e^(mx) si racine double).", "tag": "methode", "niveau": 3},
+    {"id": "m2e2-26", "q": "Qu’est-ce que la résonance ?", "a": "Forçage au rythme propre : l’amplitude grandit sans limite sans frottement.", "tag": "definition", "niveau": 3},
+    {"id": "m2e2-27", "q": "Qui a énoncé en 1678 la loi du ressort ?", "a": "Robert Hooke.", "tag": "histoire", "niveau": 2}
+  ]
+}

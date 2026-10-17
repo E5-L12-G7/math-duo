@@ -1,0 +1,173 @@
+{
+  "id": "s1-va-discretes",
+  "titre": "Variables aléatoires discrètes : loi, espérance, variance",
+  "resume": "Une variable aléatoire associe un nombre à chaque issue d’une expérience (un gain, un nombre de succès…). Sa loi donne la probabilité de chaque valeur ; l’espérance est sa valeur moyenne à long terme et l’écart-type mesure sa dispersion.",
+  "objectifs": [
+    "définir une variable aléatoire et établir sa loi de probabilité",
+    "construire et lire la fonction de répartition en escalier",
+    "calculer l’espérance, la variance (König-Huygens) et l’écart-type",
+    "utiliser E(aX + b) = aE(X) + b et V(aX + b) = a²V(X)",
+    "reconnaître une loi de Bernoulli et décider si un jeu est équitable"
+  ],
+  "prerequis": [
+    "s1-probas",
+    "s1-resumes"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Ce chapitre fait le pont entre les deux précédents : on va parler de moyenne et d’écart-type, comme en statistique descriptive, mais pour une expérience aléatoire qui n’a pas encore eu lieu. Le plan : ce qu’est une variable aléatoire, sa loi, puis sa moyenne « théorique », l’espérance.",
+      "## Mettre un nombre sur le hasard",
+      "Tu joues à un jeu : tu paies 2 € et tu lances un dé. Si tu fais 6, tu reçois 10 €. Ce qui t’intéresse, ce n’est pas la face du dé, c’est ce que tu gagnes : 8 € (si 6) ou −2 € (sinon). Ce nombre qui dépend du hasard, c’est une **variable aléatoire**, notée X.",
+      "analogie: Une variable aléatoire, c’est une étiquette de prix collée sur chaque issue de l’expérience.",
+      "## La loi : un tableau de chances",
+      "La **loi de probabilité** de X donne chaque valeur possible et sa probabilité. Pour le jeu : P(X = 8) = 1/6 et P(X = −2) = 5/6. Comme pour les fréquences, ces probabilités sont positives et leur somme vaut 1.",
+      "? Dans ce jeu, que vaut P(X = 8) + P(X = −2) ? || 1/6 + 5/6 = 1 : c’est toujours le cas, la loi répartit une probabilité totale de 1.",
+      "## L’espérance : la moyenne à long terme",
+      "Si tu joues 600 fois, tu gagneras environ 100 fois (8 €) et perdras environ 500 fois (−2 €). Total : 800 − 1 000 = −200 €, soit −200/600 ≈ −0,33 € par partie. C’est l’**espérance** E(X) : le gain moyen par partie, à long terme.",
+      "prof: Attention à ne pas confondre : l’espérance n’est pas forcément une valeur que X peut prendre ! Ici, on ne gagne jamais −0,33 € en une partie ; c’est une moyenne sur un très grand nombre de parties.",
+      "> E(X) = 8 × 1/6 + (−2) × 5/6 = −1/3 ≈ −0,33 €",
+      "!! Espérance négative : le jeu est défavorable au joueur. Espérance nulle : le jeu est équitable.",
+      "@loi-discrete {\"loi\":\"binomiale\",\"n\":1,\"p\":0.3} | Voici la plus simple des variables : elle vaut 1 (succès) avec probabilité p, et 0 sinon. Fais glisser p : le pointillé vert (l’espérance) suit exactement p. Laisse n = 1 pour l’instant.",
+      "? Une variable vaut 1 avec probabilité 0,7 et 0 sinon. Que vaut son espérance ? || 1 × 0,7 + 0 × 0,3 = 0,7.",
+      "## Le risque : l’écart-type",
+      "Deux jeux peuvent avoir la même espérance mais des risques très différents : gagner 1 € presque à coup sûr, ou gagner un gros lot très rarement. L’**écart-type** mesure à quel point X s’éloigne de son espérance.",
+      "prof: Tu reconnais tout ? C’est voulu : espérance ↔ moyenne, écart-type ↔ écart-type. La seule différence : en statistique, on décrit des données passées ; ici, on décrit ce qui peut arriver, avec des probabilités à la place des fréquences.",
+      "? Pourquoi un casino propose-t-il des jeux d’espérance négative pour le joueur ? || Parce qu’à long terme, sur des milliers de parties, le joueur perd en moyenne et le casino gagne la différence.",
+      "histoire: La notion d’espérance apparaît dans le traité de Christiaan Huygens de 1657, « Du raisonnement dans les jeux de hasard », premier livre publié sur les probabilités, à la suite de la correspondance entre Pascal et Fermat."
+    ],
+    "pratique": [
+      "prof: Passons aux méthodes. On va établir une loi, tracer sa fonction de répartition, puis calculer espérance et variance. Je te conseille de toujours présenter la loi dans un tableau : tout le reste se calcule à partir de lui.",
+      "## Établir la loi",
+      "1. Liste toutes les valeurs possibles x₁, x₂, … de X.\n2. Pour chaque valeur, calcule P(X = xᵢ) (dénombrement, arbre…).\n3. Contrôle : la somme des probabilités vaut 1.\n4. Présente le résultat dans un tableau ou un diagramme en bâtons.",
+      "attention: Pour un gain net, n’oublie pas de retrancher la mise dans **tous** les cas, y compris quand on ne gagne rien : la valeur est alors négative.",
+      "## La fonction de répartition",
+      "prof: L’erreur que je vois le plus souvent ? Oublier de retrancher la mise quand on perd. Pose-toi toujours la question : « dans ce cas, combien ai-je en plus ou en moins dans ma poche par rapport au début ? ».",
+      "> F(x) = P(X ≤ x)",
+      "F part de 0, monte par marches et finit à 1. La hauteur de la marche en xᵢ est P(X = xᵢ). On en déduit P(X > x) = 1 − F(x) et P(a < X ≤ b) = F(b) − F(a).",
+      "@courbe {\"f\":\"0.1*(1+x/abs(x))/2+0.3*(1+(x-1)/abs(x-1))/2+0.4*(1+(x-2)/abs(x-2))/2+0.2*(1+(x-3)/abs(x-3))/2\",\"x\":[-1,5],\"y\":[-0.2,1.2],\"pas\":1,\"pasy\":0.2,\"lecture\":1.5} | Loi : P(X = 0) = 0,1 ; P(X = 1) = 0,3 ; P(X = 2) = 0,4 ; P(X = 3) = 0,2. Déplace le point : F reste constante entre deux valeurs, puis saute. Lis F(1,5) = 0,4 et vérifie que la marche en 2 mesure 0,4.",
+      "? Avec cette loi, que vaut P(X > 1) ? || 1 − F(1) = 1 − 0,4 = 0,6.",
+      "## Espérance, variance, écart-type",
+      "> E(X) = Σ xᵢ P(X = xᵢ)        V(X) = E(X²) − E(X)²        σ(X) = √V(X)",
+      "@etapes {\"etapes\":[[\"xᵢ : 0 ; 1 ; 2 ; 3 et pᵢ : 0,1 ; 0,3 ; 0,4 ; 0,2\",\"La loi de X.\"],[\"E(X) = 0 + 0,3 + 0,8 + 0,6 = 1,7\",\"Somme des xᵢ pᵢ.\"],[\"E(X²) = 0 + 0,3 + 1,6 + 1,8 = 3,7\",\"Somme des xᵢ² pᵢ.\"],[\"V(X) = 3,7 − 1,7² = 0,81\",\"König-Huygens.\"],[\"σ(X) = √0,81 = 0,9\",\"Écart-type.\"]]} | Suis le calcul complet. Remarque que E(X²) se calcule comme E(X), avec les carrés des valeurs.",
+      "? X vaut −1, 0 ou 2 avec probabilités 0,5 ; 0,3 ; 0,2. E(X) ? || −0,5 + 0 + 0,4 = −0,1.",
+      "## Transformation affine",
+      "> E(aX + b) = aE(X) + b        V(aX + b) = a² V(X)        σ(aX + b) = |a| σ(X)",
+      "ex: X = nombre d’objets vendus, E(X) = 12, V(X) = 4\nbénéfice Y = 20X − 50\nE(Y) = 20 × 12 − 50 = 190 €\nσ(Y) = 20 × 2 = 40 €",
+      "## Loi de Bernoulli et jeu équitable",
+      "Une variable qui vaut 1 (succès) avec probabilité p et 0 sinon suit la **loi de Bernoulli** B(p) : E(X) = p et V(X) = p(1 − p). Un jeu est **équitable** quand l’espérance du gain net est nulle.",
+      "@loi-discrete {\"loi\":\"binomiale\",\"n\":1,\"p\":0.5} | Avec n = 1, c’est une loi de Bernoulli. Cherche la valeur de p qui rend la variance p(1 − p) la plus grande : c’est p = 0,5, l’incertitude maximale.",
+      "? Pour une loi de Bernoulli de paramètre 0,2, que valent E et V ? || E = 0,2 et V = 0,2 × 0,8 = 0,16.",
+      "prof: Bilan : un tableau de loi bien rempli, deux sommes (Σ xᵢpᵢ et Σ xᵢ²pᵢ), et tu as tout. Au chapitre suivant, on étudiera des lois toutes faites, la binomiale et la loi de Poisson, construites à partir de la loi de Bernoulli."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on définit les objets proprement et on démontre les propriétés de l’espérance et de la variance. Ce sont les outils que tu utiliseras pour toutes les lois du semestre.",
+      "## Définitions",
+      "Une variable aléatoire discrète est une application X : Ω → ℝ dont l’ensemble des valeurs X(Ω) = {x₁, x₂, …} est fini ou dénombrable. Sa loi est la donnée des pᵢ = P(X = xᵢ), avec pᵢ ≥ 0 et Σ pᵢ = 1. Sa fonction de répartition F(x) = P(X ≤ x) est croissante, continue à droite, de limite 0 en −∞ et 1 en +∞.",
+      "@courbe {\"f\":\"(1-p)*(1+x/abs(x))/2+p*(1+(x-1)/abs(x-1))/2\",\"curseurs\":{\"p\":[0,1,0.05,0.3]},\"x\":[-1,2.5],\"y\":[-0.2,1.2],\"pas\":1,\"pasy\":0.2} | Fonction de répartition d’une loi de Bernoulli B(p). Fais varier p : la première marche mesure 1 − p, la seconde p. F est continue à droite : en 0, elle vaut déjà 1 − p.",
+      "## Propriétés de l’espérance",
+      "Linéarité : E(aX + b) = aE(X) + b, car Σ (axᵢ + b)pᵢ = aΣ xᵢpᵢ + bΣ pᵢ et Σ pᵢ = 1. Plus généralement, pour toute fonction g, E(g(X)) = Σ g(xᵢ)pᵢ (théorème de transfert) : c’est ce qui permet de calculer E(X²).",
+      "prof: Pourquoi la fonction de répartition plutôt que la loi elle-même ? Parce qu’elle existe pour toutes les variables, discrètes comme continues. Pour les lois continues, P(X = x) vaudra 0 et seule F restera utile.",
+      "@etapes {\"etapes\":[[\"V(X) = E((X − E(X))²)\",\"Définition : espérance du carré de l’écart.\"],[\"= E(X² − 2E(X)X + E(X)²)\",\"On développe.\"],[\"= E(X²) − 2E(X)E(X) + E(X)²\",\"Linéarité de l’espérance ; E(X) est une constante.\"],[\"V(X) = E(X²) − E(X)²\",\"Formule de König-Huygens.\"],[\"V(aX + b) = E((aX − aE(X))²) = a² V(X)\",\"La constante b disparaît dans l’écart.\"]]} | Suis les démonstrations : König-Huygens, puis l’effet d’une transformation affine sur la variance.",
+      "## Variable centrée réduite",
+      "Si σ(X) > 0, la variable Z = (X − E(X)) / σ(X) vérifie E(Z) = 0 et V(Z) = 1 : on dit qu’elle est centrée réduite. Cette opération sera essentielle pour la loi normale.",
+      "@loi-discrete {\"loi\":\"binomiale\",\"n\":10,\"p\":0.3,\"k\":3,\"cumul\":true} | Aperçu du chapitre suivant : une somme de 10 variables de Bernoulli indépendantes. En mode P(X ≤ k), tu lis directement la fonction de répartition F(k). Vérifie que l’espérance affichée vaut 10 × p.",
+      "## Où ça casse",
+      "- Une variable qui prend une infinité de valeurs peut ne pas avoir d’espérance (série divergente) : c’est le paradoxe de Saint-Pétersbourg.\n- E(X²) ≠ E(X)² en général : leur différence est précisément la variance.\n- E(XY) = E(X)E(Y) et V(X + Y) = V(X) + V(Y) ne sont pas toujours vrais (l’indépendance de X et Y suffit pour les deux) ; en revanche E(X + Y) = E(X) + E(Y) est toujours vrai.\n- L’écart-type est toujours positif : σ(aX + b) = |a| σ(X), pas a σ(X).",
+      "? Si E(X) = 3 et V(X) = 2, que vaut E(X²) ? || E(X²) = V(X) + E(X)² = 2 + 9 = 11.",
+      "? X suit une loi de Bernoulli de paramètre p. Que vaut X² ? Déduis-en V(X). || X² = X (car 0² = 0 et 1² = 1), donc E(X²) = p et V(X) = p − p² = p(1 − p).",
+      "? Que valent E et V de Z = (X − 5)/2 si E(X) = 5 et V(X) = 4 ? || E(Z) = 0 et V(Z) = 4/4 = 1 : Z est centrée réduite.",
+      "prof: Bravo, tu as les fondations de toutes les lois du programme. Garde en tête les trois formules : E(aX + b), V(aX + b) et König-Huygens ; elles reviendront à chaque chapitre.",
+      "histoire: Le paradoxe de Saint-Pétersbourg a été proposé par Nicolas Bernoulli en 1713 ; son cousin Daniel Bernoulli l’a analysé en 1738, en introduisant l’idée d’utilité : la valeur d’un gain ne croît pas proportionnellement à son montant."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "On paie 2 € pour lancer un dé ; on reçoit 10 € si on obtient 6. X = gain net. Loi et espérance ?",
+      "etapes": [
+        [
+          "X prend les valeurs 8 et −2",
+          "10 − 2 si 6, sinon on a perdu la mise"
+        ],
+        [
+          "P(X = 8) = 1/6, P(X = −2) = 5/6",
+          "dé équilibré"
+        ],
+        [
+          "E(X) = 8/6 − 10/6 = −1/3 ≈ −0,33 €",
+          "somme des xᵢpᵢ"
+        ],
+        [
+          "jeu défavorable au joueur",
+          "espérance négative"
+        ]
+      ]
+    },
+    {
+      "enonce": "Loi : P(X = 0) = 0,1 ; P(X = 1) = 0,3 ; P(X = 2) = 0,4 ; P(X = 3) = 0,2. Variance et écart-type ?",
+      "etapes": [
+        [
+          "E(X) = 0,3 + 0,8 + 0,6 = 1,7",
+          "somme des xᵢpᵢ"
+        ],
+        [
+          "E(X²) = 0,3 + 1,6 + 1,8 = 3,7",
+          "somme des xᵢ²pᵢ"
+        ],
+        [
+          "V(X) = 3,7 − 2,89 = 0,81",
+          "König-Huygens"
+        ],
+        [
+          "σ(X) = 0,9",
+          "racine carrée"
+        ]
+      ]
+    },
+    {
+      "enonce": "E(X) = 12 et V(X) = 4. Bénéfice Y = 20X − 50. E(Y) et σ(Y) ?",
+      "etapes": [
+        [
+          "E(Y) = 20 × 12 − 50 = 190",
+          "linéarité de l’espérance"
+        ],
+        [
+          "V(Y) = 20² × 4 = 1 600",
+          "la constante ne compte pas"
+        ],
+        [
+          "σ(Y) = √1 600 = 40",
+          "ou |20| × σ(X) = 20 × 2"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "Gain net si on perd : 0 €.",
+      "juste": "Gain net si on perd : − la mise.",
+      "pourquoi": "La mise est payée dans tous les cas."
+    },
+    {
+      "faux": "E(X) = moyenne des valeurs possibles.",
+      "juste": "E(X) = Σ xᵢ P(X = xᵢ).",
+      "pourquoi": "Chaque valeur est pondérée par sa probabilité."
+    },
+    {
+      "faux": "V(aX + b) = aV(X) + b.",
+      "juste": "V(aX + b) = a²V(X).",
+      "pourquoi": "La variance est une moyenne de carrés d’écarts ; la constante ne change pas les écarts."
+    },
+    {
+      "faux": "P(X < k) = F(k).",
+      "juste": "F(k) = P(X ≤ k) ; P(X < k) = F(k) − P(X = k).",
+      "pourquoi": "Pour une variable discrète, la différence entre < et ≤ compte."
+    }
+  ],
+  "retenir": [
+    "Une loi : valeurs xᵢ et probabilités pᵢ ≥ 0 de somme 1.",
+    "F(x) = P(X ≤ x), en escalier ; la marche en xᵢ mesure P(X = xᵢ).",
+    "E(X) = Σ xᵢpᵢ ; V(X) = E(X²) − E(X)² ; σ(X) = √V(X).",
+    "E(aX + b) = aE(X) + b ; V(aX + b) = a²V(X) ; σ(aX + b) = |a|σ(X).",
+    "Bernoulli B(p) : E = p, V = p(1 − p). Jeu équitable : E(gain net) = 0."
+  ]
+}

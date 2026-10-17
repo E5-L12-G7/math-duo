@@ -1,0 +1,193 @@
+{
+  "id": "m2-ln-exp",
+  "titre": "Logarithme et exponentielle",
+  "resume": "L’exponentielle décrit ce qui grandit en se multipliant ; le logarithme répond à la question inverse « combien de temps, quel exposant ? ». L’un défait l’autre, et ensemble ils changent les produits en sommes.",
+  "objectifs": [
+    "connaître les courbes, les valeurs remarquables et le domaine de exp et ln",
+    "utiliser les règles de calcul : produits, quotients, puissances",
+    "résoudre des équations et inéquations avec exp et ln, en vérifiant le domaine",
+    "dériver des fonctions composées avec exp et ln",
+    "utiliser les croissances comparées pour lever une limite"
+  ],
+  "prerequis": [
+    "m1-exp-log",
+    "m2-derivation"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bienvenue dans un chapitre qui sert partout : intérêts d’un placement, croissance d’une population de bactéries, refroidissement d’un café, décibels, pH… Deux fonctions vont nous suivre : l’exponentielle et le logarithme. Je te promets une chose : on ne va pas apprendre des formules par cœur, on va comprendre une seule idée, et les formules tomberont toutes seules.",
+      "## Grandir en multipliant",
+      "Imagine un placement qui rapporte 5 % par an. Chaque année, ton argent est **multiplié** par 1,05. Ce n’est pas la même chose que d’ajouter 50 € par an : plus tu as d’argent, plus il en gagne. C’est une croissance qui s’accélère d’elle-même.",
+      "analogie: Une rumeur : chaque personne qui la connaît la raconte à deux nouvelles personnes par jour. Au début, rien ne se voit ; puis, d’un coup, tout le monde est au courant. C’est la marque d’une croissance exponentielle.",
+      "@croissance | Fais varier la base b. Pour b plus grand que 1, la courbe monte de plus en plus vite ; pour b entre 0 et 1, elle descend vers 0 sans jamais l’atteindre. Observe que toutes les courbes passent par le point (0 ; 1) : b⁰ = 1.",
+      "## Le nombre e, la base « naturelle »",
+      "Parmi toutes les bases possibles, les mathématiciens en préfèrent une : le nombre e ≈ 2,718. C’est la base pour laquelle la vitesse de croissance de la courbe est exactement égale à sa hauteur. On note eˣ, ou exp(x).",
+      "@courbe {\"f\":\"exp(k*x)\",\"curseurs\":{\"k\":[-2,2,0.25,1]},\"x\":[-3,3],\"y\":[-1,8],\"points\":[[0,1,\"(0 ; 1)\"]]} | Fais glisser k. Quand k est positif, la courbe de e^(kx) grimpe ; quand k est négatif, elle décroît vers 0 (c’est le cas d’un médicament qui s’élimine). Remarque qu’elle reste toujours au-dessus de l’axe : une exponentielle n’est jamais négative ni nulle.",
+      "!! L’exponentielle est toujours strictement positive, et e⁰ = 1.",
+      "prof: Maintenant, la question inverse. Si mon placement double un jour, je ne demande pas « combien j’aurai », je demande « au bout de combien de temps ? ». C’est une question sur l’exposant. Et pour répondre à une question sur un exposant, on a inventé le logarithme.",
+      "## Le logarithme : la question inverse",
+      "Le logarithme népérien, noté ln, répond à : « à quelle puissance faut-il élever e pour obtenir ce nombre ? ». Comme e² ≈ 7,39, on a ln(7,39) ≈ 2. Et comme e⁰ = 1, ln(1) = 0.",
+      "analogie: L’exponentielle est la machine qui transforme un temps en quantité ; le logarithme est la machine qui fait le chemin retour, de la quantité vers le temps. Mets les deux machines bout à bout : tu retrouves ce que tu avais au départ.",
+      "@logarithme | Choisis une base et un exposant : la ligne du haut dit « b puissance k = x », la ligne du dessous dit la même chose à l’envers, « le logarithme de x vaut k ». Ce sont deux façons de lire la même égalité.",
+      "? Pourquoi ln(0) et ln(−3) n’existent-ils pas ? || Parce qu’aucune puissance de e ne vaut 0 ni un nombre négatif : eˣ est toujours strictement positif. On ne peut donc prendre le logarithme que d’un nombre strictement positif.",
+      "## Le super-pouvoir : les produits deviennent des sommes",
+      "Multiplier deux puissances, c’est additionner les exposants : e² × e³ = e⁵. Le logarithme, qui lit les exposants, transforme donc les multiplications en additions : ln(a × b) = ln a + ln b.",
+      "? Sachant que ln 2 ≈ 0,69 et ln 5 ≈ 1,61, combien vaut ln 10 ? || 10 = 2 × 5, donc ln 10 = ln 2 + ln 5 ≈ 0,69 + 1,61 = 2,30.",
+      "? Un placement est multiplié par 2 au bout de 14 ans. Par combien est-il multiplié au bout de 28 ans ? || Par 2 × 2 = 4 : à durées égales, la croissance exponentielle multiplie par le même facteur.",
+      "histoire: En 1614, l’Écossais John Napier (Néper en français) publie les premières tables de logarithmes. Elles changent la vie des astronomes et des navigateurs : au lieu de multiplier de grands nombres, on additionne leurs logarithmes lus dans une table. Le nom de la lettre e vient de Leonhard Euler, au XVIIIᵉ siècle.",
+      "prof: Bilan : l’exponentielle multiplie, le logarithme lit l’exposant, et l’un défait l’autre. Tu sais déjà l’essentiel. Dans la partie Pratique, on transforme ça en méthodes de calcul solides."
+    ],
+    "pratique": [
+      "prof: On passe à l’atelier. Au programme : les règles de calcul, les équations, les inéquations, les dérivées. Pour chaque méthode je te donne les étapes, on les déroule ensemble sur un exemple, puis tu t’entraînes. Prends un brouillon.",
+      "## Les deux courbes, en miroir",
+      "@courbe {\"f\":[{\"f\":\"exp(x)\",\"nom\":\"exp\"},{\"f\":\"ln(x)\",\"nom\":\"ln\"},{\"f\":\"x\",\"nom\":\"y = x\"}],\"x\":[-4,6],\"y\":[-4,6],\"points\":[[0,1,\"(0 ; 1)\"],[1,0,\"(1 ; 0)\"],[1,2.718,\"(1 ; e)\"],[2.718,1,\"(e ; 1)\"]]} | Observe que les deux courbes sont symétriques par rapport à la droite y = x : le point (0 ; 1) de l’une répond au point (1 ; 0) de l’autre, (1 ; e) répond à (e ; 1). C’est l’image de « l’une défait l’autre ».",
+      "> e⁰ = 1     e¹ = e ≈ 2,718     ln 1 = 0     ln e = 1",
+      "> ln(eˣ) = x pour tout réel x     e^(ln x) = x pour tout x > 0",
+      "## Les règles de calcul",
+      "> eᵃ × eᵇ = eᵃ⁺ᵇ     eᵃ / eᵇ = eᵃ⁻ᵇ     (eᵃ)ⁿ = eⁿᵃ     e⁻ᵃ = 1/eᵃ",
+      "> ln(ab) = ln a + ln b     ln(a/b) = ln a − ln b     ln(aⁿ) = n ln a     ln(1/a) = −ln a     (a, b > 0)",
+      "### Méthode : simplifier une expression avec des ln",
+      "1. Repère les produits, quotients et puissances cachés dans chaque nombre (8 = 2³, 1/4 = 2⁻²…).\n2. Transforme chaque ln avec les règles : produit → somme, quotient → différence, puissance → facteur devant.\n3. Regroupe les termes semblables.",
+      "@etapes {\"etapes\":[[\"A = ln 12 − ln 3 + ln 2\",\"On veut une écriture la plus simple possible.\"],[\"ln 12 − ln 3 = ln(12/3) = ln 4\",\"Une différence de ln est le ln d’un quotient.\"],[\"ln 4 + ln 2 = ln(4 × 2) = ln 8\",\"Une somme de ln est le ln d’un produit.\"],[\"ln 8 = ln(2³) = 3 ln 2\",\"La puissance descend devant le ln.\"],[\"A = 3 ln 2 ≈ 2,08\",\"C’est la forme simplifiée.\"]]} | Avance étape par étape. Avant chaque clic, dis-toi quelle règle va servir.",
+      "attention: ln(a + b) ne se simplifie pas ! La règle concerne le produit : ln(a × b) = ln a + ln b. Écrire ln(2 + 3) = ln 2 + ln 3 est l’erreur la plus fréquente du chapitre.",
+      "? Écris ln 18 − 2 ln 3 sous la forme ln k. || 2 ln 3 = ln 9, donc ln 18 − ln 9 = ln(18/9) = ln 2. Donc k = 2.",
+      "## Résoudre une équation avec une exponentielle",
+      "1. Isole l’exponentielle : écris l’équation sous la forme e^(quelque chose) = c.\n2. Si c ≤ 0, il n’y a pas de solution (une exponentielle est toujours positive).\n3. Si c > 0, applique ln aux deux membres : quelque chose = ln c.\n4. Résous l’équation obtenue.",
+      "@etapes {\"etapes\":[[\"3e^(2x) − 5 = 16\",\"On isole d’abord l’exponentielle.\"],[\"3e^(2x) = 21\",\"On ajoute 5.\"],[\"e^(2x) = 7\",\"On divise par 3 : 7 est positif, il y aura une solution.\"],[\"2x = ln 7\",\"On applique ln : ln(e^(2x)) = 2x.\"],[\"x = (ln 7)/2 ≈ 0,973\",\"On divise par 2.\"]]} | Suis la résolution. Remarque l’étape où l’on vérifie que le second membre est positif.",
+      "@courbe {\"f\":[{\"f\":\"exp(2x)\",\"nom\":\"e^(2x)\"},{\"f\":\"c\",\"nom\":\"y = c\"}],\"curseurs\":{\"c\":[-2,9,0.5,7]},\"x\":[-2,2],\"y\":[-3,10]} | Déplace la droite horizontale y = c. Tant que c est positif, elle coupe la courbe en un seul point : l’abscisse de ce point est la solution ln(c)/2. Quand c devient négatif ou nul, plus aucun point d’intersection : pas de solution.",
+      "## Résoudre une équation avec un logarithme",
+      "1. Cherche le domaine : tout ce qui est dans un ln doit être strictement positif.\n2. Isole le ln : ln(quelque chose) = k.\n3. Applique l’exponentielle : quelque chose = eᵏ.\n4. Résous, puis garde seulement les solutions qui sont dans le domaine.",
+      "@etapes {\"etapes\":[[\"ln(2x − 1) = 3\",\"On cherche d’abord le domaine.\"],[\"2x − 1 > 0, soit x > 1/2\",\"Ce qui est dans le ln doit être strictement positif.\"],[\"2x − 1 = e³\",\"On applique exp : e^(ln u) = u.\"],[\"x = (e³ + 1)/2 ≈ 10,54\",\"On résout l’équation du premier degré.\"],[\"10,54 > 1/2 : solution acceptée\",\"On vérifie qu’elle est dans le domaine.\"]]} | Déroule la méthode, puis refais-la de tête avec ln(x + 4) = 1.",
+      "? Résous e^(x + 1) = −2. || Aucune solution : une exponentielle est toujours strictement positive, elle ne peut pas valoir −2.",
+      "## Inéquations",
+      "exp et ln sont **strictement croissantes** : elles conservent l’ordre. On peut donc les appliquer aux deux membres d’une inégalité sans changer son sens.",
+      "ex: eˣ > 5 ⟺ x > ln 5\nln x ≤ 2 ⟺ 0 < x ≤ e²   (sans oublier x > 0)",
+      "prof: Le piège ici, c’est d’oublier le domaine dans les inéquations avec ln. « ln x ≤ 2 » ne donne pas x ≤ e², mais 0 < x ≤ e² : les nombres négatifs n’ont pas de logarithme. Je te conseille de toujours écrire le domaine en première ligne.",
+      "## Dériver",
+      "> (eˣ)′ = eˣ     (e^(u))′ = u′ e^(u)     (ln x)′ = 1/x     (ln u)′ = u′/u",
+      "ex: f(x) = e^(3x − 1) : f ′(x) = 3e^(3x − 1)\ng(x) = ln(x² + 1) : g′(x) = 2x/(x² + 1)\nh(x) = x ln x : h′(x) = ln x + x × 1/x = ln x + 1",
+      "? Dérive f(x) = x e^x. || Produit u v avec u = x et v = eˣ : f ′(x) = 1 × eˣ + x eˣ = (1 + x)eˣ.",
+      "## Exemple concret : temps de doublement",
+      "Un capital placé à 3 % par an vaut C(n) = C₀ × 1,03ⁿ. On veut 1,03ⁿ = 2. On applique ln : n ln 1,03 = ln 2, donc n = ln 2 / ln 1,03 ≈ 23,4. Il faut 24 années pleines.",
+      "prof: Fais le point : pour toute équation, on isole, on applique la fonction inverse, et on vérifie le domaine. Avec ces trois réflexes, tu résous tous les exercices de l’UE."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on se demande d’où viennent ces fonctions et pourquoi les règles sont vraies. Tu verras qu’une seule propriété, f ′ = f, porte tout le reste.",
+      "## Définitions",
+      "La fonction exponentielle est l’unique fonction f dérivable sur ℝ telle que f ′ = f et f(0) = 1. Elle est strictement positive et strictement croissante, de limite 0 en −∞ et +∞ en +∞.",
+      "@courbe {\"f\":\"exp(x)\",\"x\":[-3,2.5],\"y\":[-1,8],\"tangente\":1} | Déplace le point de contact x₀ : la pente de la tangente affichée est égale, à chaque fois, à la hauteur eˣ⁰ du point. C’est la propriété qui définit l’exponentielle : sa vitesse de croissance est égale à sa valeur.",
+      "Comme exp est continue et strictement croissante de ℝ sur ]0 ; +∞[, elle admet une fonction réciproque : c’est ln, définie sur ]0 ; +∞[. En dérivant e^(ln x) = x, on obtient (ln x)′ × x = 1, donc (ln x)′ = 1/x.",
+      "## Pourquoi ln(ab) = ln a + ln b",
+      "Fixons b > 0 et posons g(x) = ln(bx) − ln x sur ]0 ; +∞[. Alors g′(x) = b/(bx) − 1/x = 0 : g est constante, égale à g(1) = ln b. Donc ln(bx) = ln x + ln b pour tout x > 0. Toutes les autres règles en découlent.",
+      "Pour a > 0, on définit aˣ = e^(x ln a). C’est ce qui donne un sens à 2^√2 ou 1,03ⁿ pour n non entier, et ce qui permet de résoudre aⁿ = b par n = ln b / ln a.",
+      "## Croissances comparées",
+      "> lim eˣ/xⁿ = +∞ en +∞     lim xⁿ e⁻ˣ = 0 en +∞     lim (ln x)/x = 0 en +∞     lim x ln x = 0 en 0⁺",
+      "!! En +∞, l’exponentielle l’emporte sur toute puissance de x, et toute puissance de x l’emporte sur le logarithme.",
+      "@courbe {\"f\":\"exp(x)/x^n\",\"curseurs\":{\"n\":[1,6,1,3]},\"x\":[0,20],\"y\":[-5,200],\"pas\":2,\"pasy\":20} | Augmente l’exposant n : la courbe de eˣ/xⁿ commence par descendre, mais finit toujours par repartir vers +∞. Plus n est grand, plus il faut attendre, mais l’exponentielle gagne toujours.",
+      "? Que vaut la limite de x² e⁻ˣ en +∞ ? || 0 : x² e⁻ˣ = x²/eˣ, et l’exponentielle l’emporte sur la puissance.",
+      "prof: Tu te demandes peut-être à quoi servent ces limites. Dès que tu étudieras une fonction comme x e^(−x) ou (ln x)/x, ce sont elles qui te diront où va la courbe. Retiens l’ordre : exponentielle, puissances, logarithme.",
+      "## Où ça casse",
+      "- ln(a + b) ≠ ln a + ln b, et ln(a) × ln(b) ≠ ln(ab).\n- ln(x²) = 2 ln|x| pour x ≠ 0, et non 2 ln x : x² existe aussi pour x négatif.\n- ln(u(x)) n’existe que là où u(x) > 0 : une équation peut avoir des solutions « parasites » hors du domaine.\n- eᵃ⁺ᵇ = eᵃ eᵇ, mais e^(ab) n’est pas eᵃ eᵇ.",
+      "? Pourquoi l’équation ln(x) + ln(x − 3) = ln 4 n’a-t-elle qu’une solution, alors que x(x − 3) = 4 en a deux ? || x² − 3x − 4 = 0 donne x = 4 ou x = −1, mais le domaine impose x > 3. Seul 4 convient.",
+      "? Pourquoi (ln u)′ = u′/u ? || C’est la dérivée d’une composée : la dérivée de ln en u(x), soit 1/u(x), multipliée par u′(x).",
+      "histoire: Le nombre e apparaît en 1683 chez Jacques Bernoulli, qui étudie les intérêts composés de plus en plus souvent : (1 + 1/n)ⁿ s’approche d’un nombre proche de 2,718. Euler le note e et l’étudie en détail dans son Introductio in analysin infinitorum (1748).",
+      "prof: Retiens le fil : f ′ = f définit exp, la réciproque donne ln, la dérivée 1/x donne la règle du produit. Dans les équations différentielles, juste après, tu retrouveras e^(kx) partout."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Simplifier A = ln 12 − ln 3 + ln 2.",
+      "etapes": [
+        [
+          "ln 12 − ln 3 = ln 4",
+          "ln a − ln b = ln(a/b)"
+        ],
+        [
+          "ln 4 + ln 2 = ln 8",
+          "ln a + ln b = ln(ab)"
+        ],
+        [
+          "ln 8 = 3 ln 2",
+          "8 = 2³ et ln(aⁿ) = n ln a"
+        ]
+      ]
+    },
+    {
+      "enonce": "Résoudre 3e^(2x) − 5 = 16.",
+      "etapes": [
+        [
+          "e^(2x) = 7",
+          "on isole l’exponentielle"
+        ],
+        [
+          "2x = ln 7",
+          "on applique ln, 7 > 0"
+        ],
+        [
+          "x = (ln 7)/2 ≈ 0,973",
+          "on divise par 2"
+        ]
+      ]
+    },
+    {
+      "enonce": "Résoudre ln x + ln(x − 3) = ln 4.",
+      "etapes": [
+        [
+          "domaine : x > 3",
+          "x > 0 et x − 3 > 0"
+        ],
+        [
+          "ln(x(x − 3)) = ln 4",
+          "somme de ln = ln du produit"
+        ],
+        [
+          "x² − 3x − 4 = 0",
+          "ln est injective"
+        ],
+        [
+          "x = 4 ou x = −1",
+          "Δ = 25"
+        ],
+        [
+          "S = {4}",
+          "−1 n’est pas dans le domaine"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "ln(a + b) = ln a + ln b",
+      "juste": "ln(ab) = ln a + ln b",
+      "pourquoi": "Le logarithme transforme les produits en sommes, pas les sommes."
+    },
+    {
+      "faux": "e^(2x) = 7 donc 2x = 7",
+      "juste": "2x = ln 7",
+      "pourquoi": "Pour défaire l’exponentielle, on applique ln."
+    },
+    {
+      "faux": "ln(−2) = −ln 2",
+      "juste": "ln(−2) n’existe pas",
+      "pourquoi": "ln n’est défini que pour des nombres strictement positifs."
+    },
+    {
+      "faux": "ln x ≤ 2 ⟺ x ≤ e²",
+      "juste": "ln x ≤ 2 ⟺ 0 < x ≤ e²",
+      "pourquoi": "Le domaine x > 0 fait partie de la réponse."
+    },
+    {
+      "faux": "(e^(3x))′ = e^(3x)",
+      "juste": "(e^(3x))′ = 3e^(3x)",
+      "pourquoi": "Pour e^(u), on multiplie par la dérivée u′."
+    }
+  ],
+  "retenir": [
+    "eˣ > 0 pour tout x ; ln x n’existe que pour x > 0.",
+    "ln et exp se défont : ln(eˣ) = x et e^(ln x) = x.",
+    "ln(ab) = ln a + ln b, ln(a/b) = ln a − ln b, ln(aⁿ) = n ln a.",
+    "Équation : isoler, appliquer la fonction inverse, vérifier le domaine.",
+    "(e^u)′ = u′e^u et (ln u)′ = u′/u.",
+    "En +∞ : exponentielle ≫ puissances ≫ logarithme."
+  ]
+}

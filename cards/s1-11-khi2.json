@@ -1,0 +1,28 @@
+{
+  "s1-khi2": [
+    {"id": "s1kh-01", "q": "Que compare le test du χ² d’ajustement ?", "a": "Les effectifs observés aux effectifs théoriques d’une loi supposée.", "tag": "definition", "niveau": 1},
+    {"id": "s1kh-02", "q": "Comment calcule-t-on un effectif théorique ?", "a": "Tᵢ = n × pᵢ.", "tag": "formule", "niveau": 1},
+    {"id": "s1kh-03", "q": "Formule de la statistique du χ² ?", "a": "χ² = Σ (Oᵢ − Tᵢ)²/Tᵢ.", "tag": "formule", "niveau": 1},
+    {"id": "s1kh-04", "q": "Pourquoi élève-t-on les écarts au carré ?", "a": "Sinon les écarts positifs et négatifs s’annulent.", "tag": "propriete", "niveau": 1},
+    {"id": "s1kh-05", "q": "Que vaut χ² si O = T partout ?", "a": "0.", "tag": "valeur", "niveau": 1},
+    {"id": "s1kh-06", "q": "Condition d’application du test du χ² ?", "a": "Chaque effectif théorique Tᵢ ≥ 5.", "tag": "propriete", "niveau": 1},
+    {"id": "s1kh-07", "q": "Que faire si un Tᵢ est inférieur à 5 ?", "a": "Regrouper la classe avec une voisine.", "tag": "methode", "niveau": 1},
+    {"id": "s1kh-08", "q": "Formule des degrés de liberté d’un ajustement ?", "a": "ν = k − 1 − r.", "pourquoi": "k classes après regroupement, r paramètres estimés.", "tag": "formule", "niveau": 2},
+    {"id": "s1kh-09", "q": "Degrés de liberté pour tester un dé à 6 faces ?", "a": "5.", "tag": "valeur", "niveau": 1},
+    {"id": "s1kh-10", "q": "ν pour un ajustement de Poisson (λ estimé) à k classes ?", "a": "k − 2.", "tag": "formule", "niveau": 2},
+    {"id": "s1kh-11", "q": "ν pour un ajustement normal (μ et σ estimés) à k classes ?", "a": "k − 3.", "tag": "formule", "niveau": 2},
+    {"id": "s1kh-12", "q": "Quand rejette-t-on l’ajustement ?", "a": "Si χ²obs > χ²₁₋α(ν), la valeur critique de la table.", "tag": "methode", "niveau": 1},
+    {"id": "s1kh-13", "q": "Le test du χ² d’ajustement est-il bilatéral ?", "a": "Non : unilatéral à droite.", "tag": "propriete", "niveau": 2},
+    {"id": "s1kh-14", "q": "Valeur critique χ²₀,₉₅ pour 1 ddl ?", "a": "3,841.", "tag": "valeur", "niveau": 2},
+    {"id": "s1kh-15", "q": "Valeur critique χ²₀,₉₅ pour 5 ddl ?", "a": "11,07.", "tag": "valeur", "niveau": 2},
+    {"id": "s1kh-16", "q": "Effectif théorique de k = 0 pour Poisson(λ), N observations ?", "a": "N × e^(−λ).", "tag": "formule", "niveau": 2},
+    {"id": "s1kh-17", "q": "Comment estime-t-on λ pour un ajustement de Poisson ?", "a": "Par la moyenne observée x̄.", "tag": "methode", "niveau": 2},
+    {"id": "s1kh-18", "q": "Vrai ou faux : χ² = Σ (O − T)²/O ?", "a": "Faux : on divise par T.", "tag": "piege", "niveau": 1},
+    {"id": "s1kh-19", "q": "La condition ≥ 5 porte sur quels effectifs ?", "a": "Les effectifs théoriques, pas les observés.", "tag": "piege", "niveau": 2},
+    {"id": "s1kh-20", "q": "Qu’indique une droite de Henry ?", "a": "Points alignés : la loi normale est plausible.", "tag": "definition", "niveau": 3},
+    {"id": "s1kh-21", "q": "Comment lire μ et σ sur la droite de Henry ?", "a": "μ en z = 0 ; σ = inverse de la pente.", "tag": "methode", "niveau": 3},
+    {"id": "s1kh-22", "q": "Espérance et variance d’une loi du χ² à ν ddl ?", "a": "Espérance ν, variance 2ν.", "tag": "propriete", "niveau": 3},
+    {"id": "s1kh-23", "q": "Qu’est-ce qu’une loi du χ² à ν ddl ?", "a": "La loi d’une somme de ν carrés de N(0 ; 1) indépendantes.", "tag": "definition", "niveau": 3},
+    {"id": "s1kh-24", "q": "Qui a inventé le test du khi-deux, et quand ?", "a": "Karl Pearson, en 1900.", "tag": "histoire", "niveau": 2}
+  ]
+}

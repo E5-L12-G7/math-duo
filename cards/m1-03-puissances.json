@@ -1,0 +1,30 @@
+{
+  "m1-puissances": [
+    {"id": "m1pw-01", "q": "Que signifie 2³ ?", "a": "2 × 2 × 2, soit 8 : trois facteurs égaux à 2.", "tag": "definition", "niveau": 1},
+    {"id": "m1pw-02", "q": "Dans aⁿ, comment s’appellent a et n ?", "a": "a est la base, n est l’exposant.", "tag": "definition", "niveau": 1},
+    {"id": "m1pw-03", "q": "Que vaut aᵐ × aⁿ ?", "a": "aᵐ⁺ⁿ : on additionne les exposants.", "tag": "formule", "niveau": 1},
+    {"id": "m1pw-04", "q": "Que vaut aᵐ ÷ aⁿ ?", "a": "aᵐ⁻ⁿ : on soustrait les exposants.", "tag": "formule", "niveau": 1},
+    {"id": "m1pw-05", "q": "Que vaut (aᵐ)ⁿ ?", "a": "aᵐⁿ : on multiplie les exposants.", "tag": "formule", "niveau": 1},
+    {"id": "m1pw-06", "q": "Que vaut a⁰ (a ≠ 0) ?", "a": "1", "tag": "valeur", "niveau": 1},
+    {"id": "m1pw-07", "q": "Que signifie a⁻ⁿ ?", "a": "1/aⁿ : l’inverse, pas un nombre négatif.", "tag": "definition", "niveau": 1},
+    {"id": "m1pw-08", "q": "Que vaut 2⁻³ ?", "a": "1/8", "tag": "valeur", "niveau": 1},
+    {"id": "m1pw-09", "q": "Vrai ou faux : 2³ × 2⁴ = 4⁷ ?", "a": "Faux : 2³ × 2⁴ = 2⁷, la base ne change pas.", "tag": "piege", "niveau": 1},
+    {"id": "m1pw-10", "q": "Que valent −3² et (−3)² ?", "a": "−3² = −9 et (−3)² = 9.", "tag": "piege", "niveau": 1},
+    {"id": "m1pw-11", "q": "Que vaut (ab)ⁿ ?", "a": "aⁿ × bⁿ", "tag": "formule", "niveau": 2},
+    {"id": "m1pw-12", "q": "Qu’est-ce que l’écriture scientifique d’un nombre ?", "a": "a × 10ⁿ avec 1 ≤ a < 10 et n entier.", "tag": "definition", "niveau": 2},
+    {"id": "m1pw-13", "q": "Écriture scientifique de 0,000 34 ?", "a": "3,4 × 10⁻⁴", "tag": "valeur", "niveau": 2},
+    {"id": "m1pw-14", "q": "Que vaut √a, pour a ≥ 0 ?", "a": "Le nombre positif dont le carré vaut a.", "tag": "definition", "niveau": 1},
+    {"id": "m1pw-15", "q": "Comment simplifier une racine carrée ?", "a": "Sortir le plus grand carré parfait qui divise le nombre.", "tag": "methode", "niveau": 2},
+    {"id": "m1pw-16", "q": "Que vaut √72 simplifiée ?", "a": "6√2", "pourquoi": "72 = 36 × 2.", "tag": "valeur", "niveau": 2},
+    {"id": "m1pw-17", "q": "Que vaut √50 + √18 ?", "a": "8√2", "pourquoi": "5√2 + 3√2.", "tag": "valeur", "niveau": 2},
+    {"id": "m1pw-18", "q": "Vrai ou faux : √(a + b) = √a + √b ?", "a": "Faux : √(9 + 16) = 5 mais √9 + √16 = 7.", "tag": "piege", "niveau": 2},
+    {"id": "m1pw-19", "q": "Que vaut √(ab) pour a, b ≥ 0 ?", "a": "√a × √b", "tag": "propriete", "niveau": 2},
+    {"id": "m1pw-20", "q": "Que vaut √(x²) ?", "a": "|x|, la valeur absolue de x.", "tag": "propriete", "niveau": 3},
+    {"id": "m1pw-21", "q": "Que signifie a^(1/2) pour a ≥ 0 ?", "a": "√a", "tag": "definition", "niveau": 3},
+    {"id": "m1pw-22", "q": "Que vaut 8^(2/3) ?", "a": "4", "pourquoi": "∛8 = 2, puis 2² = 4.", "tag": "valeur", "niveau": 3},
+    {"id": "m1pw-23", "q": "Pourquoi pose-t-on a⁰ = 1 ?", "a": "Pour que aⁿ × a⁰ = aⁿ⁺⁰ reste vrai.", "tag": "propriete", "niveau": 3},
+    {"id": "m1pw-24", "q": "Pour 0 < a < 1, comment se rangent a, a², a³ ?", "a": "a³ < a² < a.", "tag": "propriete", "niveau": 2},
+    {"id": "m1pw-25", "q": "Signe de (−2)⁵ ?", "a": "Négatif : puissance impaire d’un nombre négatif.", "tag": "propriete", "niveau": 2},
+    {"id": "m1pw-26", "q": "Qui a fixé l’écriture moderne des exposants comme a³ ?", "a": "Descartes, en 1637.", "tag": "histoire", "niveau": 2}
+  ]
+}

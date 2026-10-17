@@ -1,0 +1,30 @@
+{
+  "m1-exp-log": [
+    {"id": "m1el-01", "q": "Qu’est-ce qu’une croissance linéaire ?", "a": "On ajoute toujours le même nombre à chaque étape.", "tag": "definition", "niveau": 1},
+    {"id": "m1el-02", "q": "Qu’est-ce qu’une croissance exponentielle ?", "a": "On multiplie toujours par le même nombre à chaque étape.", "tag": "definition", "niveau": 1},
+    {"id": "m1el-03", "q": "Que vaut une quantité V après n hausses de t % ?", "a": "V × (1 + t/100)ⁿ", "tag": "formule", "niveau": 1},
+    {"id": "m1el-04", "q": "Vrai ou faux : 5 % par an pendant 10 ans font +50 % ?", "a": "Faux : 1,05¹⁰ ≈ 1,63, soit +63 %.", "tag": "piege", "niveau": 1},
+    {"id": "m1el-05", "q": "À quelle question répond log x ?", "a": "Quelle puissance de 10 donne x ?", "tag": "definition", "niveau": 1},
+    {"id": "m1el-06", "q": "Que vaut log(10ⁿ) ?", "a": "n", "tag": "formule", "niveau": 1},
+    {"id": "m1el-07", "q": "Que vaut log(1 000) ?", "a": "3", "tag": "valeur", "niveau": 1},
+    {"id": "m1el-08", "q": "Que vaut log(1) ?", "a": "0, car 10⁰ = 1.", "tag": "valeur", "niveau": 1},
+    {"id": "m1el-09", "q": "Que vaut log(0,01) ?", "a": "−2", "tag": "valeur", "niveau": 1},
+    {"id": "m1el-10", "q": "Vrai ou faux : log(0) = 0 ?", "a": "Faux : log(0) n’existe pas.", "tag": "piege", "niveau": 1},
+    {"id": "m1el-11", "q": "Pour quels x log x est-il défini ?", "a": "Pour x > 0 seulement.", "tag": "propriete", "niveau": 2},
+    {"id": "m1el-12", "q": "Que vaut log(ab) pour a, b > 0 ?", "a": "log a + log b", "tag": "formule", "niveau": 2},
+    {"id": "m1el-13", "q": "Que vaut log(a/b) ?", "a": "log a − log b", "tag": "formule", "niveau": 2},
+    {"id": "m1el-14", "q": "Que vaut log(aⁿ) ?", "a": "n log a", "tag": "formule", "niveau": 2},
+    {"id": "m1el-15", "q": "Vrai ou faux : log(a + b) = log a + log b ?", "a": "Faux : c’est log(ab) qui vaut log a + log b.", "tag": "piege", "niveau": 2},
+    {"id": "m1el-16", "q": "Que vaut log 4 + log 25 ?", "a": "2", "pourquoi": "log(100) = 2.", "tag": "valeur", "niveau": 2},
+    {"id": "m1el-17", "q": "Comment résoudre 10ˣ = a (a > 0) ?", "a": "x = log a", "tag": "methode", "niveau": 2},
+    {"id": "m1el-18", "q": "Comment résoudre qⁿ ≥ c avec q > 1 ?", "a": "n ≥ log c / log q, puis entier supérieur.", "tag": "methode", "niveau": 2},
+    {"id": "m1el-19", "q": "En combien d’années un placement à 5 % double-t-il ?", "a": "15 ans", "pourquoi": "log 2 / log 1,05 ≈ 14,2.", "tag": "valeur", "niveau": 2},
+    {"id": "m1el-20", "q": "Que change log q < 0 dans n log q ≥ log c ?", "a": "Diviser par log q inverse le sens de l’inégalité.", "tag": "piege", "niveau": 3},
+    {"id": "m1el-21", "q": "De quelle fonction log est-il la réciproque ?", "a": "De x ↦ 10ˣ.", "tag": "definition", "niveau": 3},
+    {"id": "m1el-22", "q": "Comment calculer log_b(x) avec la touche log ?", "a": "log x / log b", "tag": "formule", "niveau": 3},
+    {"id": "m1el-23", "q": "Que signifie un pH plus petit d’une unité ?", "a": "10 fois plus d’ions H₃O⁺.", "tag": "propriete", "niveau": 3},
+    {"id": "m1el-24", "q": "Par combien +20 dB multiplient-ils l’intensité sonore ?", "a": "Par 100.", "tag": "valeur", "niveau": 3},
+    {"id": "m1el-25", "q": "D’où vient la règle log(ab) = log a + log b ?", "a": "De 10ᵘ × 10ᵛ = 10ᵘ⁺ᵛ.", "tag": "propriete", "niveau": 3},
+    {"id": "m1el-26", "q": "Qui a publié les premières tables de logarithmes, en 1614 ?", "a": "John Napier.", "tag": "histoire", "niveau": 2}
+  ]
+}

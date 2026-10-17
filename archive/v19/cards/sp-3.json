@@ -1,0 +1,685 @@
+{
+ "sp-loisd": [
+  {
+   "id": "sp-loisd-01",
+   "q": "Que vaut P(X = k) pour la loi uniforme sur {1, …, n} ?",
+   "a": "`1/n`",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-02",
+   "q": "Quelle est l’espérance de la loi uniforme sur {1, …, n} ?",
+   "a": "`(n + 1)/2`",
+   "pourquoi": "Pour un dé à 6 faces : 3,5.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-03",
+   "q": "Qu’est-ce qu’une épreuve de Bernoulli ?",
+   "a": "Une expérience à deux issues : succès ou échec.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-04",
+   "q": "Quel est le paramètre d’une loi de Bernoulli ?",
+   "a": "La probabilité p du succès.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-05",
+   "q": "Quelle est l’espérance d’une loi de Bernoulli de paramètre p ?",
+   "a": "`E(X) = p`",
+   "pourquoi": "E = 1 × p + 0 × (1 − p).",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-06",
+   "q": "Quelle est la variance d’une loi de Bernoulli de paramètre p ?",
+   "a": "`V(X) = p(1 − p)`",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-07",
+   "q": "Qu’est-ce qu’un schéma de Bernoulli ?",
+   "a": "La répétition de n épreuves de Bernoulli identiques et indépendantes.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-08",
+   "q": "Que compte une variable de loi binomiale `B(n ; p)` ?",
+   "a": "Le nombre de succès d’un schéma de Bernoulli.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-09",
+   "q": "Que vaut `C(n ; 0)` ?",
+   "a": "1",
+   "pourquoi": "Un seul chemin sans succès : échec partout.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-10",
+   "q": "Que vaut `C(n ; 1)` ?",
+   "a": "n",
+   "pourquoi": "Le succès peut être à n places différentes.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-11",
+   "q": "Que représente `C(n ; k)` dans un arbre ?",
+   "a": "Le nombre de chemins menant à k succès parmi n épreuves.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-12",
+   "q": "Quelle est la formule de `P(X = k)` pour `X ~ B(n ; p)` ?",
+   "a": "`C(n ; k) p^k (1 − p)^{n−k}`",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisd-13",
+   "q": "Quelle propriété de symétrie vérifient les coefficients binomiaux ?",
+   "a": "`C(n ; k) = C(n ; n − k)`",
+   "pourquoi": "Choisir les succès revient à choisir les échecs.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisd-14",
+   "q": "Quelle relation du triangle de Pascal relie les coefficients binomiaux ?",
+   "a": "`C(n ; k) + C(n ; k + 1) = C(n + 1 ; k + 1)`",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisd-15",
+   "q": "Que vaut `C(4 ; 2)` ?",
+   "a": "6",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-16",
+   "q": "Quelle est l’espérance de `B(n ; p)` ?",
+   "a": "`np`",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-17",
+   "q": "Quelle est la variance de `B(n ; p)` ?",
+   "a": "`np(1 − p)`",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisd-18",
+   "q": "Comment calculer `P(X ≥ 1)` pour `X ~ B(n ; p)` ?",
+   "a": "`1 − (1 − p)^n`",
+   "pourquoi": "Le contraire de « au moins un succès » est « aucun succès ».",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisd-19",
+   "q": "Comment calculer `P(X ≥ k)` sans tout additionner ?",
+   "a": "`1 − P(X ≤ k − 1)`",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisd-20",
+   "q": "Des tirages sans remise donnent-ils une loi binomiale ?",
+   "a": "Non : les tirages ne sont pas indépendants.",
+   "pourquoi": "La composition de l’urne change à chaque tirage.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisd-21",
+   "q": "Quelle erreur fait-on en écrivant `P(X = k) = p^k (1 − p)^{n−k}` ?",
+   "a": "On oublie le coefficient `C(n ; k)`.",
+   "pourquoi": "Ce produit est la probabilité d’un seul chemin.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisd-22",
+   "q": "Que modélise la loi géométrique ?",
+   "a": "Le rang du premier succès dans des épreuves de Bernoulli répétées.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisd-23",
+   "q": "Que vaut `P(X = k)` pour la loi géométrique de paramètre p ?",
+   "a": "`(1 − p)^{k−1} p`",
+   "pourquoi": "k − 1 échecs, puis un succès.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisd-24",
+   "q": "Que vaut `P(X > k)` pour la loi géométrique de paramètre p ?",
+   "a": "`(1 − p)^k`",
+   "pourquoi": "Les k premiers essais sont des échecs.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisd-25",
+   "q": "Quelle est l’espérance de la loi géométrique de paramètre p ?",
+   "a": "`1/p`",
+   "pourquoi": "Dé, succès « obtenir 4 » : 6 lancers en moyenne.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisd-26",
+   "q": "Que dit l’absence de mémoire de la loi géométrique ?",
+   "a": "`P_{X>m}(X > m + n) = P(X > n)`",
+   "tag": "propriete",
+   "niveau": 3
+  },
+  {
+   "id": "sp-loisd-27",
+   "q": "Après 10 échecs, le succès devient-il plus probable ?",
+   "a": "Non, la loi géométrique est sans mémoire.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisd-28",
+   "q": "Pourquoi l’inégalité change-t-elle de sens en divisant par `ln(1 − p)` ?",
+   "a": "Car `ln(1 − p) < 0` pour 0 < p < 1.",
+   "tag": "piege",
+   "niveau": 3
+  },
+  {
+   "id": "sp-loisd-29",
+   "q": "Comment choisir a pour avoir `P(a ≤ X ≤ b) ≥ 0,95` ?",
+   "a": "Plus petit entier tel que `P(X ≤ a) > 0,025`.",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "sp-loisd-30",
+   "q": "Comment choisir b pour avoir `P(a ≤ X ≤ b) ≥ 0,95` ?",
+   "a": "Plus petit entier tel que `P(X ≤ b) ≥ 0,975`.",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "sp-loisd-31",
+   "q": "Quel ouvrage de Jacques Bernoulli fonde l’étude des épreuves répétées ?",
+   "a": "L’Ars Conjectandi, publié en 1713.",
+   "tag": "histoire",
+   "niveau": 3
+  },
+  {
+   "id": "sp-loisd-32",
+   "q": "Quel problème lance les probabilités en 1654 ?",
+   "a": "Le problème des partis, entre Pascal et Fermat.",
+   "tag": "histoire",
+   "niveau": 2
+  }
+ ],
+ "sp-loisc": [
+  {
+   "id": "sp-loisc-01",
+   "q": "Qu’est-ce qu’une variable aléatoire continue ?",
+   "a": "Une variable qui peut prendre toutes les valeurs d’un intervalle.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-02",
+   "q": "Que vaut `P(X = a)` pour une variable à densité ?",
+   "a": "0",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-03",
+   "q": "Quelles sont les trois conditions pour que f soit une densité sur I ?",
+   "a": "Continue, positive, et `∫_I f(x) dx = 1`.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-04",
+   "q": "Comment calcule-t-on `P(a ≤ X ≤ b)` avec une densité f ?",
+   "a": "`∫_a^b f(x) dx`",
+   "pourquoi": "C’est l’aire sous la courbe entre a et b.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-05",
+   "q": "Pour une loi à densité, `P(X ≤ a)` et `P(X < a)` diffèrent-elles ?",
+   "a": "Non, elles sont égales.",
+   "pourquoi": "Car `P(X = a) = 0`.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-06",
+   "q": "Quelle est la fonction de répartition d’une variable X ?",
+   "a": "`F(x) = P(X ≤ x)`",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisc-07",
+   "q": "Comment s’écrit l’espérance d’une variable de densité f sur [a ; b] ?",
+   "a": "`E(X) = ∫_a^b x f(x) dx`",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisc-08",
+   "q": "Quelle est la densité de la loi uniforme sur [a ; b] ?",
+   "a": "`f(x) = 1/(b − a)`",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-09",
+   "q": "Que vaut `P(c ≤ X ≤ d)` pour la loi uniforme sur [a ; b] ?",
+   "a": "`(d − c)/(b − a)`",
+   "pourquoi": "Longueur favorable sur longueur totale.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-10",
+   "q": "Quelle est l’espérance de la loi uniforme sur [a ; b] ?",
+   "a": "`(a + b)/2`",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-11",
+   "q": "Quelle est la variance de la loi uniforme sur [a ; b] ?",
+   "a": "`(b − a)^2/12`",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisc-12",
+   "q": "Quelle est la densité de la loi exponentielle de paramètre λ ?",
+   "a": "`f(x) = λe^{−λx}` sur [0 ; +∞[",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisc-13",
+   "q": "Que vaut `P(X ≤ t)` pour la loi exponentielle de paramètre λ ?",
+   "a": "`1 − e^{−λt}`",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-14",
+   "q": "Que vaut `P(X > t)` pour la loi exponentielle de paramètre λ ?",
+   "a": "`e^{−λt}`",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-15",
+   "q": "Que vaut `P(a ≤ X ≤ b)` pour la loi exponentielle de paramètre λ ?",
+   "a": "`e^{−λa} − e^{−λb}`",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisc-16",
+   "q": "Quelle est l’espérance de la loi exponentielle de paramètre λ ?",
+   "a": "`1/λ`",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-17",
+   "q": "Une durée de vie exponentielle moyenne vaut 500 h : quel est λ ?",
+   "a": "`λ = 1/500 = 0,002`",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisc-18",
+   "q": "Que dit l’absence de mémoire de la loi exponentielle ?",
+   "a": "`P_{X≥t}(X ≥ t + h) = P(X ≥ h)`",
+   "pourquoi": "Le composant ne vieillit pas.",
+   "tag": "propriete",
+   "niveau": 3
+  },
+  {
+   "id": "sp-loisc-19",
+   "q": "Que modélise typiquement la loi exponentielle ?",
+   "a": "Une durée de vie sans vieillissement, comme la désintégration d’un noyau.",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisc-20",
+   "q": "Quels sont l’espérance et l’écart-type de la loi N(0 ; 1) ?",
+   "a": "Espérance 0, écart-type 1.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-21",
+   "q": "Que vaut `Φ(−z)` en fonction de `Φ(z)` ?",
+   "a": "`1 − Φ(z)`",
+   "pourquoi": "Symétrie de la cloche autour de 0.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisc-22",
+   "q": "Que vaut `P(−z ≤ Z ≤ z)` en fonction de Φ ?",
+   "a": "`2Φ(z) − 1`",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisc-23",
+   "q": "Quel réel u vérifie `P(−u ≤ Z ≤ u) = 0,95` ?",
+   "a": "Environ 1,96.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-24",
+   "q": "Quel réel u vérifie `P(−u ≤ Z ≤ u) = 0,99` ?",
+   "a": "Environ 2,58.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisc-25",
+   "q": "Comment centrer et réduire X de loi `N(μ ; σ^2)` ?",
+   "a": "`Z = (X − μ)/σ`",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-26",
+   "q": "Dans `N(μ ; σ^2)`, que représente le second paramètre ?",
+   "a": "La variance ; on divise par sa racine σ.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisc-27",
+   "q": "Que vaut `P(μ − σ ≤ X ≤ μ + σ)` pour une loi normale ?",
+   "a": "Environ 0,683.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-28",
+   "q": "Que vaut `P(μ − 2σ ≤ X ≤ μ + 2σ)` pour une loi normale ?",
+   "a": "Environ 0,954.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "sp-loisc-29",
+   "q": "Que vaut `P(μ − 3σ ≤ X ≤ μ + 3σ)` pour une loi normale ?",
+   "a": "Environ 0,997.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "sp-loisc-30",
+   "q": "Comment retrouver σ si `P(X < a) = p` et μ est connu ?",
+   "a": "Résoudre `(a − μ)/σ = z_0`, où `Φ(z_0) = p`.",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "sp-loisc-31",
+   "q": "Que dit le théorème de Moivre-Laplace ?",
+   "a": "`(X − np)/√(np(1 − p))` tend vers la loi N(0 ; 1).",
+   "pourquoi": "Pour `X ~ B(n ; p)`, p fixé dans ]0 ; 1[, n → +∞.",
+   "tag": "propriete",
+   "niveau": 3
+  },
+  {
+   "id": "sp-loisc-32",
+   "q": "Quel écart-type utiliser pour approcher `B(n ; p)` par une loi normale ?",
+   "a": "`σ = √(np(1 − p))`",
+   "tag": "piege",
+   "niveau": 3
+  },
+  {
+   "id": "sp-loisc-33",
+   "q": "Qui découvre en 1733 l’approximation de la binomiale par la cloche ?",
+   "a": "Abraham de Moivre.",
+   "tag": "histoire",
+   "niveau": 3
+  }
+ ],
+ "sp-echa": [
+  {
+   "id": "sp-echa-01",
+   "q": "Qu’est-ce qu’un échantillon de taille n ?",
+   "a": "Les résultats de n répétitions indépendantes de la même expérience.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-02",
+   "q": "Comment calcule-t-on la fréquence observée dans un échantillon ?",
+   "a": "`f = k/n`",
+   "pourquoi": "k individus ont le caractère, sur n.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-03",
+   "q": "Que dit la loi des grands nombres ?",
+   "a": "Pour n grand, la fréquence est le plus souvent proche de la probabilité.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-04",
+   "q": "La loi des grands nombres « compense »-t-elle une série de pertes ?",
+   "a": "Non, les épreuves restent indépendantes.",
+   "tag": "piege",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-05",
+   "q": "Pour n grand, dans quelle proportion des cas a-t-on `|f − p| ≤ 1/√n` ?",
+   "a": "Environ 95 %.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "sp-echa-06",
+   "q": "Quelles conditions doivent vérifier n et p dans ce chapitre ?",
+   "a": "`n ≥ 30`, `np ≥ 5`, `n(1 − p) ≥ 5`.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-07",
+   "q": "Quand p est inconnue, avec quoi vérifie-t-on les conditions ?",
+   "a": "Avec la fréquence observée f.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "sp-echa-08",
+   "q": "Quel est l’intervalle de fluctuation asymptotique au seuil 0,95 ?",
+   "a": "`[p − 1,96 √(p(1 − p)/n) ; p + 1,96 √(p(1 − p)/n)]`",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-echa-09",
+   "q": "Sur quoi est centré l’intervalle de fluctuation ?",
+   "a": "Sur la proportion p, connue ou supposée.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-10",
+   "q": "Pourquoi dit-on « asymptotique » pour l’intervalle de fluctuation ?",
+   "a": "La probabilité tend vers 0,95 quand n grandit, sans l’égaler forcément.",
+   "tag": "definition",
+   "niveau": 3
+  },
+  {
+   "id": "sp-echa-11",
+   "q": "D’où vient le 1,96 de l’intervalle de fluctuation ?",
+   "a": "De `P(−1,96 ≤ Z ≤ 1,96) ≈ 0,95` et de Moivre-Laplace.",
+   "tag": "propriete",
+   "niveau": 3
+  },
+  {
+   "id": "sp-echa-12",
+   "q": "Quelle est la règle de décision avec un intervalle de fluctuation I ?",
+   "a": "`f ∈ I` : on accepte ; `f ∉ I` : on rejette.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-13",
+   "q": "Quel est le risque de rejeter à tort une hypothèse vraie ?",
+   "a": "Environ 5 %.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "sp-echa-14",
+   "q": "Si f est dans l’intervalle de fluctuation, l’hypothèse est-elle prouvée ?",
+   "a": "Non, elle est seulement compatible avec l’échantillon.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "sp-echa-15",
+   "q": "Quel est l’intervalle de confiance au niveau 0,95 de ce chapitre ?",
+   "a": "`[f − 1/√n ; f + 1/√n]`",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-16",
+   "q": "Sur quoi est centré l’intervalle de confiance ?",
+   "a": "Sur la fréquence observée f.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-17",
+   "q": "Que signifie un niveau de confiance de 0,95 ?",
+   "a": "La méthode donne un intervalle contenant p pour 95 % des échantillons.",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "sp-echa-18",
+   "q": "La proportion p est-elle au centre de l’intervalle de confiance ?",
+   "a": "On n’en sait rien : sa position dans l’intervalle est inconnue.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "sp-echa-19",
+   "q": "Quelle est l’amplitude de l’intervalle `[f − 1/√n ; f + 1/√n]` ?",
+   "a": "`2/√n`",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-20",
+   "q": "Quelle taille minimale pour une amplitude d’au plus a ?",
+   "a": "`n ≥ 4/a^2`, arrondi à l’entier supérieur.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "sp-echa-21",
+   "q": "Combien de personnes interroger pour une amplitude de 0,05 ?",
+   "a": "1600",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "sp-echa-22",
+   "q": "Par combien multiplier n pour diviser l’amplitude par 2 ?",
+   "a": "Par 4.",
+   "pourquoi": "L’amplitude varie comme `1/√n`.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "sp-echa-23",
+   "q": "p connue : quel outil statistique utilise-t-on ?",
+   "a": "L’intervalle de fluctuation.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-24",
+   "q": "p supposée, à confirmer : quelle démarche suit-on ?",
+   "a": "Une prise de décision avec l’intervalle de fluctuation.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-25",
+   "q": "p inconnue : quel outil utilise-t-on ?",
+   "a": "L’intervalle de confiance.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "sp-echa-26",
+   "q": "Quand peut-on conclure qu’un candidat aura la majorité ?",
+   "a": "Si tout l’intervalle de confiance est au-dessus de 0,5.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "sp-echa-27",
+   "q": "Pourquoi f ± 1/√n est-il prudent par rapport à f ± 1,96√(f(1 − f)/n) ?",
+   "a": "Car `1,96 √(f(1 − f)) ≤ 0,98 < 1`.",
+   "tag": "propriete",
+   "niveau": 3
+  },
+  {
+   "id": "sp-echa-28",
+   "q": "Comment arrondir les bornes d’un intervalle de fluctuation ?",
+   "a": "Borne inférieure par défaut, supérieure par excès.",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "sp-echa-29",
+   "q": "Qui fonde avec Egon Pearson la théorie des tests et de l’estimation ?",
+   "a": "Jerzy Neyman, dans les années 1930.",
+   "tag": "histoire",
+   "niveau": 3
+  }
+ ]
+}

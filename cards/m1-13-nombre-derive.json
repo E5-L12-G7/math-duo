@@ -1,0 +1,28 @@
+{
+  "m1-nombre-derive": [
+    {"id": "m1nd-01", "q": "Que représente le nombre dérivé f′(a) ?", "a": "La pente de la tangente à la courbe au point d’abscisse a.", "tag": "definition", "niveau": 1},
+    {"id": "m1nd-02", "q": "Qu’est-ce que la tangente en un point d’une courbe ?", "a": "La droite qui frôle la courbe en ce point, de pente f′(a).", "tag": "definition", "niveau": 1},
+    {"id": "m1nd-03", "q": "Si f′(a) > 0, que fait la courbe en a ?", "a": "Elle monte.", "tag": "propriete", "niveau": 1},
+    {"id": "m1nd-04", "q": "Si f′(a) < 0, que fait la courbe en a ?", "a": "Elle descend.", "tag": "propriete", "niveau": 1},
+    {"id": "m1nd-05", "q": "Que vaut la pente au sommet d’une bosse ?", "a": "0 : la tangente est horizontale.", "tag": "propriete", "niveau": 1},
+    {"id": "m1nd-06", "q": "Comment lire f′(a) sur une tangente tracée ?", "a": "On avance de 1 depuis le point : la montée est f′(a).", "tag": "methode", "niveau": 1},
+    {"id": "m1nd-07", "q": "Quelle est la formule du taux d’accroissement entre a et b ?", "a": "(f(b) − f(a))/(b − a)", "tag": "formule", "niveau": 1},
+    {"id": "m1nd-08", "q": "Que représente le taux d’accroissement sur la courbe ?", "a": "La pente de la sécante passant par les deux points.", "tag": "definition", "niveau": 1},
+    {"id": "m1nd-09", "q": "Si f(t) est une distance au temps t, que représente f′(t) ?", "a": "La vitesse instantanée à l’instant t.", "tag": "definition", "niveau": 1},
+    {"id": "m1nd-10", "q": "Quelle est la définition de f′(a) ?", "a": "lim (f(a + h) − f(a))/h quand h → 0.", "tag": "formule", "niveau": 2},
+    {"id": "m1nd-11", "q": "Quelle est l’équation de la tangente en a ?", "a": "y = f(a) + f′(a)(x − a)", "tag": "formule", "niveau": 2},
+    {"id": "m1nd-12", "q": "Taux d’accroissement de x² entre 1 et 3 ?", "a": "4", "pourquoi": "(9 − 1)/(3 − 1).", "tag": "valeur", "niveau": 2},
+    {"id": "m1nd-13", "q": "Que vaut f′(3) pour f(x) = x² ?", "a": "6", "pourquoi": "(6h + h²)/h = 6 + h → 6.", "tag": "valeur", "niveau": 2},
+    {"id": "m1nd-14", "q": "Tangente à x² au point d’abscisse 1 ?", "a": "y = 2x − 1", "tag": "valeur", "niveau": 2},
+    {"id": "m1nd-15", "q": "Vrai ou faux : la tangente en a est y = f′(a)x + f(a) ?", "a": "Faux : y = f(a) + f′(a)(x − a).", "tag": "piege", "niveau": 2},
+    {"id": "m1nd-16", "q": "Que vaut (6h + h²)/h ?", "a": "6 + h (et non 6 + h²).", "tag": "piege", "niveau": 2},
+    {"id": "m1nd-17", "q": "Quelle approximation donne la tangente près de a ?", "a": "f(a + h) ≈ f(a) + f′(a) × h", "tag": "formule", "niveau": 2},
+    {"id": "m1nd-18", "q": "Valeur approchée de √4,1 avec la tangente en 4 ?", "a": "2,025", "pourquoi": "2 + 0,1 × 1/4.", "tag": "valeur", "niveau": 3},
+    {"id": "m1nd-19", "q": "Quand dit-on que f est dérivable en a ?", "a": "Quand le taux d’accroissement a une limite finie en a.", "tag": "definition", "niveau": 3},
+    {"id": "m1nd-20", "q": "Dérivable en a implique-t-il continue en a ?", "a": "Oui.", "tag": "propriete", "niveau": 3},
+    {"id": "m1nd-21", "q": "|x| est-elle dérivable en 0 ?", "a": "Non : pente −1 à gauche, +1 à droite (un coin).", "tag": "piege", "niveau": 3},
+    {"id": "m1nd-22", "q": "Pourquoi √x n’est-elle pas dérivable en 0 ?", "a": "Le taux 1/√h tend vers +∞ : tangente verticale.", "tag": "propriete", "niveau": 3},
+    {"id": "m1nd-23", "q": "f′(a) = 0 garantit-il un maximum ou un minimum en a ?", "a": "Non : x³ a une tangente horizontale en 0 sans extremum.", "tag": "piege", "niveau": 3},
+    {"id": "m1nd-24", "q": "Qui a inventé la notation dy/dx ?", "a": "Leibniz, vers 1675.", "tag": "histoire", "niveau": 2}
+  ]
+}

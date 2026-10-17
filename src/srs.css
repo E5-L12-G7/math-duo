@@ -1,0 +1,22 @@
+
+/* Flashcards SRS */
+.grades{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.gbtn{display:grid;gap:2px;justify-items:center;padding:8px 2px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;box-shadow:0 3px 0 var(--line)}
+.gbtn b{font-size:.86rem}.gbtn small{font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.gbtn.again{border-color:var(--bad)}.gbtn.again b{color:var(--bad)}
+.gbtn.hard{border-color:var(--t-c)}
+.gbtn.good{border-color:var(--t-sq)}.gbtn.good b{color:var(--t-sq)}
+.gbtn.easy{border-color:var(--good)}.gbtn.easy b{color:var(--good)}
+.gbtn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--line)}
+.fcwhy{font-size:.92rem;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+.ctag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-right:8px;background:var(--soft);color:var(--ink);border:1.5px solid transparent}
+button.ctag{font:inherit;font-size:.78rem;font-weight:700;padding:6px 10px;text-transform:none;letter-spacing:0;border-color:var(--line)}
+.ctag.t-piege{background:var(--bad-bg)}.ctag.t-formule,.ctag.t-valeur{background:var(--soft)}.ctag.t-definition{background:var(--good-bg)}
+.ctag.t-methode,.ctag.t-propriete{background:color-mix(in oklab,var(--t-c) 22%,var(--surface))}.ctag.t-histoire{background:var(--paper)}
+.tagrow{display:flex;flex-wrap:wrap;gap:6px}
+.cdist{display:flex;height:10px;border-radius:6px;background:var(--line);overflow:hidden;gap:0}
+.cdist i{display:block;height:100%}
+.clegend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.78rem;color:var(--muted)}
+.clegend span{display:inline-flex;align-items:center;gap:5px}.clegend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.stat.g0 b{color:var(--bad)}.stat.g3 b{color:var(--good)}
+.fcq{font-size:.9rem;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:10px}

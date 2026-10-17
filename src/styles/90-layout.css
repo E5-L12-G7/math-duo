@@ -1,0 +1,78 @@
+/* ===== Mise en page adaptative : téléphone, tablette, ordinateur =====
+   Le contenu reste dans une colonne de lecture confortable (--col) centrée ; les barres et panneaux
+   s'étendent sur toute la largeur. En exercice, la réponse et le clavier sont ancrés en bas (téléphone)
+   ou dans une colonne à droite (grand écran) : l'énoncé garde toute la place restante. */
+:root{--col:680px;--side:clamp(360px,34vw,440px)}
+#app{max-width:none;height:100%;height:100dvh}
+.scroll,.res{padding-inline:max(16px,calc((100% - var(--col))/2))}
+.ltop{padding-inline:max(12px,calc((100% - var(--col))/2 - 4px))}
+.foot{padding-inline:max(16px,calc((100% - var(--col))/2))}
+.cobody{padding-inline:max(16px,calc((100% - var(--col))/2))}
+.cohead{padding-inline:max(12px,calc((100% - var(--col))/2 - 4px))}
+.sheet,.calc,.gsheet{margin-inline:auto;max-width:calc(var(--col) + 32px)}
+.cgrid,.ccol{display:contents}
+
+/* --- Exercice : énoncé compact, réponse et clavier ancrés --- */
+.lesson .lbody{gap:12px;padding-block:6px 16px}
+.lesson .meta{min-height:0}
+.instr{font-size:clamp(1.08rem,1rem + .9vw,1.3rem)}
+.prompt{font-size:clamp(1.3rem,1.05rem + 1.6vw,1.75rem);padding:10px 8px}
+.lesson .hint{font-size:.95rem;line-height:1.5}
+.iconbtn.on{background:var(--soft);color:var(--t-sq)}
+.dock{gap:8px;padding-top:10px}
+.dock .fields{gap:8px}
+.dock .box{min-height:48px;line-height:38px}
+.dock .field label{font-size:1.05rem}
+.dock .pv{font-size:.9rem}
+.dock #keys .key{height:clamp(34px,5.4dvh,46px)}
+.dock .kbar{margin:0}
+.dock.kfold #keys{display:none}
+.dock .btn{height:clamp(44px,6dvh,54px)}
+.kmin span{font-size:1.2rem;line-height:1}
+
+/* Petits écrans en hauteur (téléphones compacts, paysage) */
+@media (max-height:720px){
+  .ltop{padding-block:6px 2px}
+  .lesson .lbody{gap:8px}
+  .lesson .meta .eyebrow{font-size:.68rem}
+  .instr{font-size:1.02rem}
+  .prompt{font-size:1.2rem;padding:6px 8px;line-height:1.45}
+  .dock{padding-top:8px;gap:6px}
+  .dock .box{min-height:42px;line-height:32px}
+}
+
+/* --- Tablette et plus --- */
+@media (min-width:600px){
+  .dock #keys .key{height:clamp(40px,5.6dvh,52px)}
+}
+
+/* --- Accueil à partir de la tablette : activités à gauche, parcours à droite --- */
+@media (min-width:720px){
+  .home .scroll{padding-inline:max(20px,calc((100% - 1120px)/2))}
+  .home .hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,2.5vw,28px);align-items:start}
+  .home .hcol>:first-child,.home .hcol .tracks{margin-top:0}
+  .home .hcol .tracks+.sect{margin-top:14px}
+}
+
+/* --- Grand écran : deux colonnes --- */
+@media (min-width:900px){
+  :root{--col:760px}
+  /* Chapitre : cours et cartes à gauche, exercices à droite */
+  .chap .scroll{padding-inline:max(24px,calc((100% - 1120px)/2))}
+  .chap .cgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;align-items:start}
+  .chap .ccol{display:flex;flex-direction:column;gap:14px;min-width:0}
+  /* Exercice à saisie : énoncé à gauche, réponse + clavier dans une colonne à droite */
+  .lesson.lsplit{display:grid;grid-template-columns:minmax(0,1fr) var(--side);grid-template-rows:auto minmax(0,1fr)}
+  .lesson.lsplit .ltop{grid-column:1/-1;padding-inline:20px}
+  .lesson.lsplit .lbody{grid-column:1;grid-row:2;padding-inline:max(24px,calc((100% - 720px)/2));padding-block:20px 32px}
+  .lesson.lsplit .foot{grid-column:2;grid-row:2;border-top:0;border-left:1.5px solid var(--line);padding:20px;align-content:end;overflow-y:auto}
+  .lesson.lsplit .dock.kfold #keys{display:grid}
+  .lesson.lsplit .kmin{display:none}
+  .lesson.lsplit .dock #keys .key{height:52px;font-size:1.35rem}
+  .lesson.lsplit .sheet{box-sizing:border-box;left:auto;right:0;width:var(--side);max-width:none;margin:0;max-height:100%;overflow-y:auto}
+  .lesson.lsplit .calc{left:0;right:var(--side);max-width:560px}
+  .lesson .prompt{font-size:1.8rem}
+  /* Fiches de cours en surimpression : colonne de lecture */
+  .course .cobody{padding-block:24px}
+}
+@media (min-width:1300px){:root{--side:460px}}

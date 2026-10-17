@@ -1,0 +1,179 @@
+{
+  "id": "m1-exp-log",
+  "titre": "Exponentielles et logarithmes : premiers pas",
+  "resume": "Une croissance exponentielle multiplie par le même facteur à chaque étape. Le logarithme répond à la question inverse : « combien d’étapes ? ».",
+  "objectifs": [
+    "distinguer une croissance linéaire (on ajoute) d’une croissance exponentielle (on multiplie)",
+    "calculer une valeur après n périodes de croissance de t %",
+    "calculer le logarithme décimal d’une puissance de 10",
+    "utiliser les règles log(ab) = log a + log b et log(aⁿ) = n log a",
+    "résoudre 10ˣ = a et trouver le nombre de périodes pour atteindre un seuil",
+    "lire une échelle logarithmique (pH, décibels, magnitude)"
+  ],
+  "prerequis": [
+    "m1-puissances",
+    "m1-proportions"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Tu as sûrement entendu « ça augmente de façon exponentielle » à propos d’une épidémie ou d’un placement. On va voir ce que ça veut dire vraiment, puis découvrir son outil inverse, le logarithme, qui compte les étapes. Plan : ajouter ou multiplier, la croissance exponentielle, puis le logarithme.",
+      "## Ajouter ou multiplier : deux façons de grandir",
+      "Si tu mets 10 € de côté chaque mois, ton épargne grandit en **ajoutant** toujours la même chose : 10, 20, 30, 40… C’est une croissance linéaire. Si une quantité **double** chaque mois, elle fait 10, 20, 40, 80, 160… : on multiplie toujours par le même nombre. C’est une croissance exponentielle.",
+      "analogie: Une feuille de papier pliée en deux double d’épaisseur à chaque pli. Après 10 plis, elle est 2¹⁰ = 1 024 fois plus épaisse ; après 42 plis (en théorie), son épaisseur dépasserait la distance de la Terre à la Lune.",
+      "@croissance | Mets la base b sur 2 et avance l’exposant x de 0 à 3 : chaque pas de 1 vers la droite multiplie par 2. Passe la base à 3 : la courbe grimpe encore plus vite. Avec une base plus petite que 1, elle décroît vers 0 sans jamais l’atteindre.",
+      "!! Croissance exponentielle : à chaque étape, on multiplie par le même nombre. Au début, ça paraît lent ; ensuite, ça explose.",
+      "? Une quantité vaut 5 et triple à chaque étape. Que vaut-elle après 3 étapes ? || 5 × 3 × 3 × 3 = 5 × 27 = 135.",
+      "## Une hausse de t % par an, c’est exponentiel",
+      "prof: Fais le lien avec le chapitre des pourcentages : augmenter de 5 % par an, c’est multiplier par 1,05 chaque année. Donc après 10 ans, on a multiplié par 1,05 dix fois, soit 1,05¹⁰ ≈ 1,63. On gagne 63 %, pas 50 % ! Les intérêts produisent eux-mêmes des intérêts.",
+      "@courbe {\"f\":[{\"f\":\"1000*(1+t/100)^x\",\"nom\":\"placement à t % (intérêts composés)\"},{\"f\":\"1000+10*t*x\",\"nom\":\"t % du départ ajouté chaque année\"}],\"curseurs\":{\"t\":[1,15,1,5]},\"x\":[0,30],\"y\":[0,5000],\"pas\":5,\"pasy\":500,\"etiq\":5,\"etiqy\":1000} | Pour t = 5, compare les deux courbes au bout de 30 ans. Augmente t : l’écart entre « on multiplie » et « on ajoute » se creuse de plus en plus vite.",
+      "## Le logarithme : compter les étapes",
+      "Le logarithme décimal, noté log, répond à la question : « combien de fois faut-il multiplier 10 par lui-même pour obtenir ce nombre ? ». 1 000 = 10 × 10 × 10, donc log(1 000) = 3. C’est en gros le nombre de zéros.",
+      "@logarithme | Choisis la base 10 et fais varier l’exposant : lis les deux écritures, 10³ = 1 000 et log(1 000) = 3. Essaie les bases 2 et 3 : le logarithme compte toujours le nombre de multiplications.",
+      "!! L’exponentielle part du nombre d’étapes et donne le résultat ; le logarithme part du résultat et retrouve le nombre d’étapes.",
+      "? Que vaut log(100 000) ? || 5, car 100 000 = 10⁵.",
+      "? Que vaut log(1) ? || 0, car 10⁰ = 1 : aucune multiplication.",
+      "histoire: John Napier publie en 1614 les premières tables de logarithmes. Elles transformaient les multiplications en additions et ont fait gagner des années de calcul aux astronomes ; Henry Briggs les adapte ensuite à la base 10, celle de notre log.",
+      "prof: Bilan : exponentiel = on multiplie à chaque étape ; le logarithme compte les étapes. Au niveau Pratique, on calcule des placements, on utilise les règles du log et on résout des équations."
+    ],
+    "pratique": [
+      "prof: Au programme : croissance de t % sur n périodes, logarithmes des puissances de 10, les quatre règles du log, et la résolution de 10ˣ = a ou du « en combien de temps ? ». Chaque méthode a son calcul animé et son exercice.",
+      "## Méthode 1 : croissance de t % par période",
+      "1. Le coefficient par période est q = 1 + t/100 (q = 1 − t/100 pour une baisse).\n2. Après n périodes : valeur initiale × qⁿ.\n3. Calcule qⁿ à la calculatrice (touche ^ ou xʸ) et arrondis à la fin.",
+      "@etapes {\"etapes\":[[\"2 000 € à 5 % par an pendant 3 ans\",\"Même hausse chaque année : croissance exponentielle.\"],[\"q = 1 + 5/100 = 1,05\",\"Coefficient multiplicateur annuel.\"],[\"2 000 × 1,05^3\",\"Trois années : on multiplie trois fois par 1,05.\"],[\"1,05^3 = 1,157 625\",\"1,05 × 1,05 × 1,05.\"],[\"2 000 × 1,157 625 ≈ 2 315,25 €\",\"Arrondi au centime à la fin seulement.\"]]} | Lance la lecture, puis refais le calcul pour 10 ans (tu dois trouver environ 3 257,79 €).",
+      "? Une population de 5 000 bactéries augmente de 20 % par heure. Combien après 4 heures ? || 5 000 × 1,2⁴ = 5 000 × 2,0736 = 10 368 bactéries.",
+      "## Méthode 2 : logarithme d’une puissance de 10",
+      "prof: Tu te demandes peut-être à quoi sert un outil qui « compte les zéros ». Attends la méthode 4 : c’est lui qui permet de répondre à « en combien de temps ? », une question que la calculatrice ne sait pas résoudre directement sans log.",
+      "> log(10^n) = n      log(1) = 0      log(10) = 1",
+      "Pour les nombres plus petits que 1 : 0,01 = 10⁻², donc log(0,01) = −2. Un log négatif signifie seulement que le nombre est entre 0 et 1.",
+      "ex: log(1 000 000) = 6\nlog(0,001) = −3\nlog(√10) = log(10^{1/2}) = 0,5",
+      "## Méthode 3 : les règles du logarithme (a, b > 0)",
+      "> log(ab) = log a + log b      log(a/b) = log a − log b      log(a^n) = n log a",
+      "@etapes {\"etapes\":[[\"log 4 + log 25\",\"Une somme de logarithmes.\"],[\"= log(4 × 25)\",\"log a + log b = log(ab).\"],[\"= log 100\",\"4 × 25 = 100.\"],[\"= 2\",\"100 = 10².\"]]} | Suis le calcul, puis calcule de la même façon log 2 + log 500 (réponse : 3).",
+      "? Calcule log 5 000 − log 5. || log(5 000/5) = log 1 000 = 3.",
+      "attention: log(a + b) ≠ log a + log b. Le logarithme transforme les **produits** en sommes, pas les sommes en sommes.",
+      "## Méthode 4 : résoudre 10ˣ = a, puis qⁿ ≥ seuil",
+      "1. 10ˣ = a (a > 0) équivaut à x = log a.\n2. Pour qⁿ = c, on prend le log des deux côtés : n log q = log c, donc n = log c / log q.\n3. Si on cherche un nombre entier de périodes pour **dépasser** un seuil, on arrondit à l’entier supérieur.",
+      "@etapes {\"etapes\":[[\"1,05^n ≥ 2\",\"En combien d’années un placement à 5 % double-t-il ?\"],[\"n log 1,05 ≥ log 2\",\"On prend le log des deux côtés ; log(qⁿ) = n log q.\"],[\"n ≥ log 2 / log 1,05\",\"log 1,05 > 0 : on divise sans changer le sens.\"],[\"n ≥ 14,2…\",\"Calcul à la calculatrice.\"],[\"n = 15 ans\",\"Il faut un nombre entier d’années : on arrondit au-dessus.\"]]} | Suis la résolution, puis essaie avec 7 % par an (réponse : 11 ans).",
+      "@courbe {\"f\":[{\"f\":\"(1+t/100)^x\",\"nom\":\"coefficient après x années\"},{\"f\":\"2\",\"nom\":\"seuil : doublement\"}],\"curseurs\":{\"t\":[1,15,1,5]},\"x\":[0,40],\"y\":[0,4],\"pas\":5,\"pasy\":0.5,\"etiq\":10,\"etiqy\":1} | Lis l’abscisse où la courbe coupe la droite y = 2 : c’est le temps de doublement. Fais varier t et vérifie la règle des « 70 » : temps de doublement ≈ 70 / t.",
+      "? Résous 10ˣ = 300. || x = log 300 = log 3 + log 100 ≈ 0,477 + 2 = 2,477.",
+      "prof: Bilan pratique : pour une croissance, coefficient puis puissance ; pour une durée, logarithme puis arrondi à l’entier supérieur. Et vérifie toujours l’ordre de grandeur : 10ˣ = 300 doit donner un x entre 2 et 3."
+    ],
+    "expert": [
+      "prof: Niveau Expert : définition précise du logarithme comme fonction réciproque, preuve de la règle du produit, lien avec ln et e, et les échelles logarithmiques de la physique. Ce sont les fondations des chapitres exp et ln de MVA912.",
+      "## Définition",
+      "La fonction x ↦ 10ˣ est strictement croissante de ℝ sur ]0 ; +∞[. Sa réciproque est le logarithme décimal : pour x > 0 et y réel, y = log x ⟺ x = 10ʸ. Les deux courbes sont symétriques par rapport à la droite y = x.",
+      "@courbe {\"f\":[{\"f\":\"10^x\",\"nom\":\"10^x\"},{\"f\":\"log(x)\",\"nom\":\"log x\"},{\"f\":\"x\",\"nom\":\"y = x\"}],\"x\":[-2,4],\"y\":[-2,4],\"pas\":0.5,\"pasy\":0.5,\"etiq\":1,\"etiqy\":1,\"points\":[[0,1,\"(0 ; 1)\"],[1,0,\"(1 ; 0)\"]]} | Repère les points (0 ; 1) et (1 ; 0) : l’un est l’image de l’autre par la symétrie d’axe y = x. Observe que log x n’existe pas pour x ≤ 0, et qu’il grandit très lentement.",
+      "## Preuve de la règle du produit",
+      "Soient a, b > 0. Posons u = log a et v = log b, donc a = 10ᵘ et b = 10ᵛ. Alors ab = 10ᵘ × 10ᵛ = 10ᵘ⁺ᵛ (règle des puissances), donc log(ab) = u + v = log a + log b. Les autres règles s’en déduisent : log(aⁿ) = n log a pour n entier, puis pour n réel.",
+      "? Démontre que log(1/a) = −log a. || log a + log(1/a) = log(a × 1/a) = log 1 = 0.",
+      "## Autres bases, ln et e",
+      "Pour toute base b > 0, b ≠ 1, log_b(x) est le nombre y tel que bʸ = x. Le logarithme népérien ln est celui de base e ≈ 2,718 (unité MVA912). Tous les logarithmes sont proportionnels :",
+      "> log_b(x) = log x / log b = ln x / ln b      a^x = 10^{x log a} (a > 0)",
+      "? Que vaut log₂(32) ? || 5, car 2⁵ = 32. Avec la formule : log 32 / log 2 = 1,505 / 0,301 = 5.",
+      "## Échelles logarithmiques",
+      "prof: Pourquoi les scientifiques aiment-ils tant les logarithmes ? Parce que la nature produit des grandeurs immenses et minuscules à la fois : le son le plus faible que l’oreille perçoit et un avion au décollage diffèrent d’un facteur dix mille milliards. Le log ramène tout ça à une échelle de 0 à 130.",
+      "Le pH, les décibels et la magnitude des séismes mesurent des grandeurs qui varient sur de nombreux ordres de grandeur. Le pH vaut −log[H₃O⁺] : une unité de pH en moins, c’est 10 fois plus d’ions H₃O⁺. Un son de +10 dB transporte 10 fois plus d’énergie ; +20 dB, 100 fois plus.",
+      "@etapes {\"etapes\":[[\"séisme de magnitude 7 contre magnitude 5\",\"La magnitude est un logarithme de l’amplitude des ondes.\"],[\"écart : 7 − 5 = 2\",\"On soustrait les magnitudes.\"],[\"rapport des amplitudes : 10^2 = 100\",\"Un point de magnitude = amplitude × 10.\"],[\"énergie : environ 31,6^2 ≈ 1 000 fois plus\",\"Chaque point multiplie l’énergie libérée par environ 31,6.\"]]} | Suis le raisonnement : un écart de 2 sur l’échelle cache un facteur 100.",
+      "## Où ça casse",
+      "- log n’est défini que pour des nombres strictement positifs : log(0) et log(−5) n’existent pas.\n- log(a + b) ≠ log a + log b, et log(a) × log(b) ≠ log(ab).\n- Pour résoudre qⁿ ≥ c avec 0 < q < 1, log q < 0 : diviser par log q **inverse** le sens de l’inégalité.\n- Une croissance de t % par an n’est pas linéaire : 10 ans à 5 % font +63 %, pas +50 %.",
+      "? Combien d’années faut-il pour qu’une valeur qui baisse de 10 % par an soit divisée par 2 ? || 0,9ⁿ ≤ 0,5 ⟺ n log 0,9 ≤ log 0,5 ⟺ n ≥ log 0,5 / log 0,9 ≈ 6,58 (on divise par un négatif, le sens change) : 7 ans.",
+      "prof: Retiens la structure : exponentielle et logarithme se défont l’un l’autre, et la règle log(ab) = log a + log b n’est que la règle 10ᵘ × 10ᵛ = 10ᵘ⁺ᵛ lue à l’envers. Attention au signe de log q quand tu divises."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Une population de 5 000 bactéries augmente de 20 % par heure. Combien après 4 heures ?",
+      "etapes": [
+        [
+          "q = 1 + 20/100 = 1,2",
+          "coefficient par heure"
+        ],
+        [
+          "5 000 × 1,2^4",
+          "quatre heures : quatre multiplications par 1,2"
+        ],
+        [
+          "1,2^4 = 2,0736",
+          "1,2 × 1,2 = 1,44 ; 1,44 × 1,44 = 2,0736"
+        ],
+        [
+          "5 000 × 2,0736 = 10 368",
+          "la population a plus que doublé"
+        ]
+      ]
+    },
+    {
+      "enonce": "Résoudre 10ˣ = 300.",
+      "etapes": [
+        [
+          "x = log 300",
+          "log est la réciproque de 10ˣ"
+        ],
+        [
+          "log 300 = log 3 + log 100",
+          "log(ab) = log a + log b"
+        ],
+        [
+          "≈ 0,477 + 2 = 2,477",
+          "log 100 = 2 ; cohérent car 10² < 300 < 10³"
+        ]
+      ]
+    },
+    {
+      "enonce": "En combien d’années un placement à 4 % par an dépasse-t-il le double de sa valeur ?",
+      "etapes": [
+        [
+          "1,04^n ≥ 2",
+          "coefficient global après n années"
+        ],
+        [
+          "n log 1,04 ≥ log 2",
+          "on prend le log, qui conserve l’ordre"
+        ],
+        [
+          "n ≥ log 2 / log 1,04 ≈ 17,7",
+          "log 1,04 > 0 : le sens ne change pas"
+        ],
+        [
+          "n = 18 années",
+          "entier supérieur"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "log(a + b) = log a + log b",
+      "juste": "log(ab) = log a + log b",
+      "pourquoi": "Le logarithme transforme les produits en sommes, pas les sommes en sommes."
+    },
+    {
+      "faux": "5 % par an pendant 10 ans : +50 %",
+      "juste": "1,05¹⁰ ≈ 1,63 : +63 %",
+      "pourquoi": "Chaque hausse s’applique à une quantité déjà augmentée."
+    },
+    {
+      "faux": "log(0) = 0",
+      "juste": "log(1) = 0 et log(0) n’existe pas",
+      "pourquoi": "Aucune puissance de 10 ne vaut 0 ; c’est 10⁰ qui vaut 1."
+    },
+    {
+      "faux": "n ≥ 14,2 donc n = 14",
+      "juste": "n ≥ 14,2 donc n = 15",
+      "pourquoi": "Pour dépasser un seuil, on prend l’entier immédiatement supérieur."
+    },
+    {
+      "faux": "log(1 000) = 1 000/10 = 100",
+      "juste": "log(1 000) = 3",
+      "pourquoi": "Le logarithme compte le nombre de facteurs 10, il ne divise pas par 10."
+    }
+  ],
+  "retenir": [
+    "Croissance de t % par période : multiplier par (1 + t/100)ⁿ.",
+    "log(10ⁿ) = n ; log(1) = 0 ; log n’existe que pour x > 0.",
+    "log(ab) = log a + log b ; log(a/b) = log a − log b ; log(aⁿ) = n log a.",
+    "10ˣ = a ⟺ x = log a (a > 0).",
+    "qⁿ ≥ c : n ≥ log c / log q si q > 1, puis entier supérieur.",
+    "Échelle logarithmique : +1 unité = × 10."
+  ]
+}

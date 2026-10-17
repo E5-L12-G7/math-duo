@@ -1,0 +1,175 @@
+{
+  "id": "m1-puissances",
+  "titre": "Puissances et racines",
+  "resume": "Une puissance est une multiplication répétée ; un exposant négatif fait des divisions. La racine carrée défait un carré.",
+  "objectifs": [
+    "écrire une multiplication répétée sous forme de puissance",
+    "appliquer les règles de calcul sur les puissances de même base",
+    "interpréter un exposant nul ou négatif",
+    "utiliser l’écriture scientifique",
+    "simplifier une racine carrée sous la forme k√m",
+    "éviter les pièges du signe et des racines de sommes"
+  ],
+  "prerequis": [
+    "m1-fractions"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Aujourd’hui, des petits nombres perchés en haut à droite : les exposants. Ils font peur, mais ils ne font qu’une chose : **compter**. Je te montre d’abord ce qu’ils comptent, puis ce qui se passe quand l’exposant devient zéro ou négatif, et enfin le chemin inverse, la racine carrée.",
+      "## Une puissance compte des multiplications",
+      "2³ est une écriture courte pour « 2 multiplié par lui-même, avec 3 facteurs » : 2 × 2 × 2 = 8. Le petit nombre en haut, l’**exposant**, compte combien de fois le nombre (la **base**) apparaît dans le produit.",
+      "analogie: Une bactérie se divise en deux toutes les heures. Après 1 heure : 2 bactéries ; après 2 heures : 2 × 2 = 4 ; après 3 heures : 2 × 2 × 2 = 2³ = 8. Après 10 heures : 2¹⁰ = 1 024. L’exposant, c’est le nombre d’heures.",
+      "? Combien de bactéries après 5 heures ? || 2⁵ = 2 × 2 × 2 × 2 × 2 = 32.",
+      "## Multiplier des puissances : on compte les facteurs",
+      "Si je multiplie x³ (trois x) par x² (deux x), j’obtiens en tout cinq x à la suite : x³ × x² = x⁵. Pas besoin de formule : il suffit de compter.",
+      "@puissances | Choisis « Produit », puis fais varier a et b : compte les tuiles x et vérifie que l’exposant final est a + b. Passe ensuite sur « Puissance » et « Quotient » : dans un quotient, des x du haut et du bas se simplifient deux par deux.",
+      "!! L’exposant compte des facteurs : dans un produit de même base, on additionne les exposants.",
+      "## Exposant zéro, exposant négatif",
+      "prof: Une question qu’on me pose souvent : « 2⁰, ça fait 0 ? ». Non ! Regarde l’escalier : 2³ = 8, 2² = 4, 2¹ = 2. À chaque marche vers le bas, on **divise par 2**. La marche suivante donne 2⁰ = 1, puis 2⁻¹ = 1/2, puis 2⁻² = 1/4.",
+      "@croissance | Mets la base sur 2 et fais descendre l’exposant de 3 à −3. Observe que la courbe passe toujours par le point (0 ; 1), et qu’un exposant négatif donne un nombre petit mais **positif** : l’inverse.",
+      "!! Un exposant négatif ne rend pas le nombre négatif : il le retourne. 2⁻³ = 1/2³ = 1/8.",
+      "? Que vaut 10⁻² ? || 1/10² = 1/100 = 0,01.",
+      "## La racine carrée : le chemin inverse du carré",
+      "La racine carrée répond à la question : « quel nombre positif, multiplié par lui-même, donne ce résultat ? ». Comme 5 × 5 = 25, on écrit √25 = 5. Géométriquement, c’est le côté d’un carré dont on connaît l’aire.",
+      "analogie: Un carrelage carré de 49 m² a un côté de √49 = 7 m. Pour 50 m², le côté est √50 ≈ 7,07 m : un peu plus de 7.",
+      "? Quel est le côté d’un carré d’aire 81 cm² ? || √81 = 9 cm, car 9 × 9 = 81.",
+      "histoire: L’écriture moderne a³ se fixe avec Descartes en 1637 (le mot « exposant », lui, remonte à Stifel, en 1544). Avant lui, on écrivait « aaa » ou on utilisait des mots comme « cube ». Le symbole √ vient sans doute d’un r stylisé, pour « radix », la racine en latin.",
+      "prof: Bilan : l’exposant compte des multiplications, un exposant négatif compte des divisions, et la racine carrée retrouve le côté d’un carré. Au niveau Pratique, on transforme tout ça en règles de calcul rapides."
+    ],
+    "pratique": [
+      "prof: Au programme : les six règles des puissances, les puissances de 10 et l’écriture scientifique, puis la simplification des racines. À chaque fois une méthode, un calcul animé et un exercice. Garde en tête que toutes les règles se retrouvent en comptant les facteurs.",
+      "## Les règles (même base a ≠ 0, exposants entiers)",
+      "> a^m × a^n = a^{m+n}      a^m ÷ a^n = a^{m−n}      (a^m)^n = a^{m×n}",
+      "> a^0 = 1      a^{−n} = 1/a^n      (ab)^n = a^n × b^n",
+      "attention: Ces règles ne valent que pour une **même base** : 2³ × 3² ne se simplifie pas en une seule puissance. Et 2³ × 2⁴ = 2⁷, pas 4⁷ : la base ne change pas.",
+      "## Méthode 1 : réduire une expression",
+      "1. Regroupe les puissances de même base.\n2. Calcule l’exposant final : + pour un produit, − pour un quotient, × pour une puissance de puissance.\n3. Calcule la valeur si on la demande.",
+      "@etapes {\"etapes\":[[\"(2^3 × 2^5) ÷ 2^4\",\"Toutes les puissances ont la même base 2.\"],[\"2^3 × 2^5 = 2^8\",\"Produit : on additionne les exposants, 3 + 5 = 8.\"],[\"2^8 ÷ 2^4 = 2^4\",\"Quotient : on soustrait, 8 − 4 = 4.\"],[\"2^4 = 16\",\"2 × 2 × 2 × 2 = 16.\"]]} | Avance étape par étape et annonce l’opération sur les exposants avant de cliquer.",
+      "? Simplifie (x²)³ × x⁻⁴. || (x²)³ = x⁶, puis x⁶ × x⁻⁴ = x².",
+      "## Méthode 2 : puissances de 10 et écriture scientifique",
+      "10ⁿ s’écrit 1 suivi de n zéros ; 10⁻ⁿ = 0,0…01 avec le 1 au n-ième rang après la virgule. L’écriture scientifique d’un nombre est a × 10ⁿ avec 1 ≤ a < 10.",
+      "1. Place la virgule juste après le premier chiffre non nul : c’est a.\n2. Compte de combien de rangs la virgule s’est déplacée : c’est |n|.\n3. Si le nombre de départ est grand (≥ 10), n est positif ; s’il est plus petit que 1, n est négatif.",
+      "@etapes {\"etapes\":[[\"0,000 34\",\"Un nombre plus petit que 1 : l’exposant sera négatif.\"],[\"a = 3,4\",\"La virgule se place après le premier chiffre non nul, 3.\"],[\"la virgule a avancé de 4 rangs\",\"0,000 34 → 3,4 : on a multiplié par 10⁴.\"],[\"0,000 34 = 3,4 × 10^{−4}\",\"Pour compenser, on multiplie par 10⁻⁴.\"]]} | Suis la méthode, puis écris 52 000 en écriture scientifique (réponse : 5,2 × 10⁴).",
+      "? Écris 0,07 et 4 500 000 en écriture scientifique. || 0,07 = 7 × 10⁻² ; 4 500 000 = 4,5 × 10⁶.",
+      "## Le piège du signe",
+      "prof: Ici, la calculatrice elle-même peut te piéger : tape −3² et elle affiche −9, car elle suit la même règle que nous. Si tu veux le carré de −3, mets des parenthèses. Je te conseille de toujours les écrire dès qu’un nombre négatif est élevé à une puissance.",
+      "−3² = −9, car le carré s’applique au 3 seul, le moins vient après. (−3)² = 9, car les parenthèses mettent le signe sous le carré. Un nombre négatif élevé à une puissance paire est positif ; à une puissance impaire, il reste négatif.",
+      "## Méthode 3 : simplifier une racine carrée",
+      "1. Cherche le plus grand carré parfait (4, 9, 16, 25, 36, 49…) qui divise le nombre.\n2. Écris le nombre comme ce carré multiplié par le reste.\n3. Sors la racine du carré : √(k² × m) = k√m.",
+      "@racine-carree | Fais glisser le nombre. Les carrés parfaits qui le divisent s’allument ; le plus grand est mis en valeur, et c’est lui qu’on sort de la racine. Essaie 72, 50, 98, 45.",
+      "@etapes {\"etapes\":[[\"√50 + √18\",\"On veut une seule racine : on simplifie chacune.\"],[\"√50 = √(25 × 2) = 5√2\",\"25 est le plus grand carré qui divise 50.\"],[\"√18 = √(9 × 2) = 3√2\",\"9 est le plus grand carré qui divise 18.\"],[\"5√2 + 3√2 = 8√2\",\"On additionne des « √2 » comme des unités.\"]]} | Regarde comment deux racines différentes deviennent comparables une fois simplifiées.",
+      "? Simplifie √72. || 72 = 36 × 2, donc √72 = 6√2.",
+      "prof: Bilan pratique : regroupe par base, opère sur les exposants, et pour les racines cherche le plus grand carré caché. Si un doute te prend sur une règle, écris deux ou trois facteurs à la main : la règle réapparaît toute seule."
+    ],
+    "expert": [
+      "prof: Niveau Expert : pourquoi a⁰ = 1 n’est pas une convention arbitraire, comment on donne un sens à 2^{1/2} ou 2^{0,3}, et où les règles cessent d’être vraies. Ce sont ces conditions qui feront la différence dans les chapitres exp et ln.",
+      "## Définitions et prolongement",
+      "Pour n entier ≥ 1, aⁿ est le produit de n facteurs égaux à a. La règle aᵐ × aⁿ = aᵐ⁺ⁿ est alors une évidence de comptage. On **choisit** a⁰ = 1 et a⁻ⁿ = 1/aⁿ (a ≠ 0) parce que c’est la seule façon de garder cette règle vraie pour tous les entiers : aⁿ × a⁰ = aⁿ impose a⁰ = 1, et aⁿ × a⁻ⁿ = a⁰ = 1 impose a⁻ⁿ = 1/aⁿ.",
+      "## Racines et exposants fractionnaires",
+      "Pour a ≥ 0, √a est l’unique nombre positif dont le carré vaut a. Pour garder (a^{1/2})² = a, on pose a^{1/2} = √a ; plus généralement, pour a > 0, a^{p/q} est la racine q-ième de a élevée à la puissance p.",
+      "> a^{1/2} = √a      a^{1/3} = ∛a      a^{p/q} = (a^{1/q})^p",
+      "ex: 8^{2/3} = (∛8)^2 = 2^2 = 4\n27^{1/3} = 3\n16^{−1/2} = 1/√16 = 1/4",
+      "Pour un exposant réel quelconque, on définit aˣ = exp(x ln a) (a > 0) : c’est l’objet du chapitre suivant et de MVA912.",
+      "@courbe {\"f\":[{\"f\":\"x^n\",\"nom\":\"x^n\"},{\"f\":\"x\",\"nom\":\"y = x\"}],\"curseurs\":{\"n\":[-2,4,0.5,2]},\"x\":[-0.5,3],\"y\":[-0.5,4],\"pas\":0.5,\"pasy\":0.5,\"etiq\":1,\"etiqy\":1} | Fais varier n. Toutes les courbes passent par (1 ; 1). Pour n = 0,5 tu obtiens √x, le symétrique de x² par rapport à la droite y = x. Remarque que pour x entre 0 et 1, x² est plus petit que x.",
+      "? Que vaut 25^{−1/2} ? || 1/√25 = 1/5 = 0,2.",
+      "## Propriétés des racines et leurs conditions",
+      "prof: Tu te demandes peut-être pourquoi on se fatigue avec ces conditions « a ≥ 0 ». Parce que dès qu’on les oublie, on peut « démontrer » que 1 = −1 ! Regarde la preuve qui suit, puis la liste des cas où tout casse.",
+      "> √(ab) = √a × √b  (a, b ≥ 0)      √(a/b) = √a/√b  (a ≥ 0, b > 0)      √(x^2) = |x|",
+      "Preuve de √(ab) = √a √b : le nombre √a √b est positif, et son carré vaut (√a)² (√b)² = ab. C’est donc la racine de ab, par unicité.",
+      "## Où ça casse",
+      "? Calcule √(3²) et √((−3)²). || Les deux valent 3 : √(x²) = |x|, qui vaut 3 dans les deux cas.",
+      "- √(a + b) ≠ √a + √b : √(9 + 16) = √25 = 5, alors que √9 + √16 = 7.\n- √(x²) vaut |x| et non x : √((−3)²) = √9 = 3.\n- √(ab) = √a √b est faux si a et b sont négatifs : √((−4)(−9)) = 6, mais √(−4) n’existe pas dans ℝ.\n- 0⁰ n’a pas de valeur naturelle en analyse (forme indéterminée), même si l’on convient souvent 0⁰ = 1 en algèbre.\n- (−8)^{1/3} n’est pas défini par exp(x ln a), alors que la racine cubique réelle de −8 vaut −2.",
+      "? Pour quelles valeurs de x a-t-on √(x²) = x ? || Pour x ≥ 0 seulement ; pour x < 0, √(x²) = −x.",
+      "prof: Retiens la logique : les règles des puissances viennent toutes du comptage des facteurs, et chaque prolongement (zéro, négatif, fraction, réel) est choisi pour que ces règles restent vraies. Quand une règle « casse », c’est presque toujours une condition de signe qui manque.",
+      "histoire: Nicolas Oresme, au XIVᵉ siècle, manipule déjà des exposants fractionnaires dans ses calculs de proportions. Newton, en 1676, généralise l’usage des exposants négatifs et fractionnaires écrits comme aujourd’hui."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Simplifier (2³ × 2⁵) ÷ 2⁴.",
+      "etapes": [
+        [
+          "2^3 × 2^5 = 2^8",
+          "même base : on additionne les exposants"
+        ],
+        [
+          "2^8 ÷ 2^4 = 2^4",
+          "même base : on soustrait les exposants"
+        ],
+        [
+          "2^4 = 16",
+          "2 × 2 × 2 × 2"
+        ]
+      ]
+    },
+    {
+      "enonce": "Écrire √50 + √18 sous la forme k√2.",
+      "etapes": [
+        [
+          "√50 = √(25 × 2) = 5√2",
+          "25 est le plus grand carré qui divise 50"
+        ],
+        [
+          "√18 = √(9 × 2) = 3√2",
+          "9 est le plus grand carré qui divise 18"
+        ],
+        [
+          "5√2 + 3√2 = 8√2",
+          "on additionne des √2 comme des unités"
+        ]
+      ]
+    },
+    {
+      "enonce": "Écrire 0,000 34 × 5 000 en écriture scientifique.",
+      "etapes": [
+        [
+          "0,000 34 = 3,4 × 10^{−4} et 5 000 = 5 × 10^3",
+          "écriture scientifique de chaque facteur"
+        ],
+        [
+          "3,4 × 5 = 17 et 10^{−4} × 10^3 = 10^{−1}",
+          "on multiplie les nombres entre eux et les puissances de 10 entre elles"
+        ],
+        [
+          "17 × 10^{−1} = 1,7 × 10^0 = 1,7",
+          "on remet a entre 1 et 10"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "2³ × 2⁴ = 4⁷",
+      "juste": "2³ × 2⁴ = 2⁷",
+      "pourquoi": "On garde la base et on additionne les exposants."
+    },
+    {
+      "faux": "2⁻³ = −8",
+      "juste": "2⁻³ = 1/8",
+      "pourquoi": "Un exposant négatif donne l’inverse, pas un nombre négatif."
+    },
+    {
+      "faux": "(x²)³ = x⁵",
+      "juste": "(x²)³ = x⁶",
+      "pourquoi": "Une puissance de puissance multiplie les exposants : trois groupes de deux x."
+    },
+    {
+      "faux": "−3² = 9",
+      "juste": "−3² = −9 et (−3)² = 9",
+      "pourquoi": "Sans parenthèses, le carré ne porte que sur le 3."
+    },
+    {
+      "faux": "√(9 + 16) = 3 + 4 = 7",
+      "juste": "√(9 + 16) = √25 = 5",
+      "pourquoi": "La racine d’une somme n’est pas la somme des racines."
+    }
+  ],
+  "retenir": [
+    "Même base : on additionne les exposants pour un produit, on les soustrait pour un quotient, on les multiplie pour une puissance de puissance.",
+    "a⁰ = 1 et a⁻ⁿ = 1/aⁿ (a ≠ 0).",
+    "Écriture scientifique : a × 10ⁿ avec 1 ≤ a < 10.",
+    "√(k² × m) = k√m : on sort le plus grand carré.",
+    "√(ab) = √a × √b, mais √(a + b) ≠ √a + √b ; √(x²) = |x|.",
+    "−3² = −9 mais (−3)² = 9."
+  ]
+}

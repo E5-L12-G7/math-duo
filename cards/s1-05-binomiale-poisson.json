@@ -1,0 +1,30 @@
+{
+  "s1-binomiale-poisson": [
+    {"id": "s1bp-01", "q": "Qu’est-ce qu’une épreuve de Bernoulli ?", "a": "Une expérience à deux issues : succès (probabilité p) ou échec.", "tag": "definition", "niveau": 1},
+    {"id": "s1bp-02", "q": "Qu’est-ce qu’un schéma de Bernoulli ?", "a": "La répétition de n épreuves de Bernoulli identiques et indépendantes.", "tag": "definition", "niveau": 1},
+    {"id": "s1bp-03", "q": "Que compte une variable de loi B(n ; p) ?", "a": "Le nombre de succès sur les n essais.", "tag": "definition", "niveau": 1},
+    {"id": "s1bp-04", "q": "Quelles conditions pour une loi binomiale ?", "a": "n fixé, essais identiques, indépendants, deux issues, X compte les succès.", "tag": "propriete", "niveau": 1},
+    {"id": "s1bp-05", "q": "Formule de P(X = k) pour X ~ B(n ; p) ?", "a": "C(n ; k) × p^k × (1 − p)^(n − k)", "tag": "formule", "niveau": 1},
+    {"id": "s1bp-06", "q": "Espérance de X ~ B(n ; p) ?", "a": "E(X) = np", "tag": "formule", "niveau": 1},
+    {"id": "s1bp-07", "q": "Variance de X ~ B(n ; p) ?", "a": "V(X) = np(1 − p)", "tag": "formule", "niveau": 1},
+    {"id": "s1bp-08", "q": "Que représente C(n ; k) dans la loi binomiale ?", "a": "Le nombre de chemins comportant exactement k succès.", "tag": "definition", "niveau": 1},
+    {"id": "s1bp-09", "q": "Comment calculer P(X ≥ 1) pour X ~ B(n ; p) ?", "a": "1 − (1 − p)^n", "pourquoi": "Le contraire de « au moins un » est « aucun ».", "tag": "methode", "niveau": 1},
+    {"id": "s1bp-10", "q": "Que vaut 1 − P(X ≤ 2) ?", "a": "P(X ≥ 3)", "tag": "piege", "niveau": 2},
+    {"id": "s1bp-11", "q": "Quel est le contraire de « X ≥ 3 » ?", "a": "X ≤ 2", "tag": "piege", "niveau": 1},
+    {"id": "s1bp-12", "q": "Quand utilise-t-on une loi de Poisson ?", "a": "Pour compter des événements rares sur une période ou une zone.", "tag": "definition", "niveau": 1},
+    {"id": "s1bp-13", "q": "Formule de P(X = k) pour X ~ P(λ) ?", "a": "e^(−λ) × λ^k / k!", "tag": "formule", "niveau": 1},
+    {"id": "s1bp-14", "q": "Espérance et variance de X ~ P(λ) ?", "a": "Toutes deux égales à λ.", "tag": "formule", "niveau": 1},
+    {"id": "s1bp-15", "q": "Que vaut P(X = 0) pour X ~ P(λ) ?", "a": "e^(−λ)", "tag": "valeur", "niveau": 1},
+    {"id": "s1bp-16", "q": "3 appels par minute en moyenne : quel λ pour 5 minutes ?", "a": "λ = 15", "pourquoi": "λ est proportionnel à la durée observée.", "tag": "methode", "niveau": 2},
+    {"id": "s1bp-17", "q": "Quelles conditions pour approcher B(n ; p) par une loi de Poisson ?", "a": "n ≥ 30, p ≤ 0,1 et np ≤ 15 (seuils usuels).", "tag": "propriete", "niveau": 2},
+    {"id": "s1bp-18", "q": "Quel paramètre pour approcher B(n ; p) par Poisson ?", "a": "λ = np", "tag": "methode", "niveau": 2},
+    {"id": "s1bp-19", "q": "Un tirage sans remise dans une petite urne est-il binomial ?", "a": "Non : les tirages ne sont pas indépendants (loi hypergéométrique).", "tag": "piege", "niveau": 2},
+    {"id": "s1bp-20", "q": "Vrai ou faux : pour une binomiale, V(X) = np ?", "a": "Faux : V(X) = np(1 − p) ; V = E est propre à Poisson.", "tag": "piege", "niveau": 2},
+    {"id": "s1bp-21", "q": "Où se trouve le sommet du diagramme de B(n ; p) ?", "a": "Près de l’espérance np.", "tag": "propriete", "niveau": 2},
+    {"id": "s1bp-22", "q": "Loi de X + Y si X ~ P(λ), Y ~ P(μ) indépendantes ?", "a": "P(λ + μ)", "tag": "propriete", "niveau": 3},
+    {"id": "s1bp-23", "q": "Pourquoi E(X) = np pour une binomiale ?", "a": "X est la somme de n Bernoulli d’espérance p.", "tag": "propriete", "niveau": 3},
+    {"id": "s1bp-24", "q": "Vers quelle loi tend B(n ; λ/n) quand n → +∞ ?", "a": "Vers la loi de Poisson P(λ).", "tag": "propriete", "niveau": 3},
+    {"id": "s1bp-25", "q": "Données de comptage avec variance bien supérieure à la moyenne : Poisson ?", "a": "Non : Poisson impose E = V (surdispersion).", "tag": "piege", "niveau": 3},
+    {"id": "s1bp-26", "q": "Quel exemple célèbre a popularisé la loi de Poisson en 1898 ?", "a": "Les cavaliers prussiens tués par une ruade (Bortkiewicz).", "tag": "histoire", "niveau": 2}
+  ]
+}

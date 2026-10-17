@@ -1,0 +1,31 @@
+{
+  "m1-proportions": [
+    {"id": "m1pc-01", "q": "Quand deux grandeurs sont-elles proportionnelles ?", "a": "Quand on passe de l’une à l’autre en multipliant toujours par le même nombre.", "tag": "definition", "niveau": 1},
+    {"id": "m1pc-02", "q": "À quoi ressemble le graphique d’une situation proportionnelle ?", "a": "Une droite qui passe par l’origine.", "tag": "propriete", "niveau": 1},
+    {"id": "m1pc-03", "q": "Quelles sont les deux étapes de la règle de trois ?", "a": "Se ramener à l’unité (diviser), puis multiplier par la quantité demandée.", "tag": "methode", "niveau": 1},
+    {"id": "m1pc-04", "q": "Que signifie 20 % ?", "a": "20 sur 100, soit 0,2.", "tag": "definition", "niveau": 1},
+    {"id": "m1pc-05", "q": "Comment calcule-t-on t % d’une quantité Q ?", "a": "Q × t/100.", "tag": "formule", "niveau": 1},
+    {"id": "m1pc-06", "q": "Par quoi multiplie-t-on pour une hausse de t % ?", "a": "Par 1 + t/100.", "pourquoi": "Par exemple 1,15 pour +15 %.", "tag": "formule", "niveau": 1},
+    {"id": "m1pc-07", "q": "Par quoi multiplie-t-on pour une baisse de t % ?", "a": "Par 1 − t/100.", "pourquoi": "Par exemple 0,92 pour −8 %.", "tag": "formule", "niveau": 1},
+    {"id": "m1pc-08", "q": "Quel coefficient correspond à une baisse de 30 % ?", "a": "0,7", "tag": "valeur", "niveau": 1},
+    {"id": "m1pc-09", "q": "Comment s’appelle le nombre par lequel on multiplie lors d’une évolution ?", "a": "Le coefficient multiplicateur.", "tag": "definition", "niveau": 1},
+    {"id": "m1pc-10", "q": "Vrai ou faux : +20 % puis −20 % ramènent au prix de départ ?", "a": "Faux : 1,2 × 0,8 = 0,96, soit −4 %.", "tag": "piege", "niveau": 1},
+    {"id": "m1pc-11", "q": "Comment combine-t-on des évolutions successives ?", "a": "On multiplie leurs coefficients multiplicateurs.", "tag": "methode", "niveau": 2},
+    {"id": "m1pc-12", "q": "Que donnent +10 % puis +10 % ?", "a": "+21 %", "pourquoi": "1,1 × 1,1 = 1,21.", "tag": "valeur", "niveau": 2},
+    {"id": "m1pc-13", "q": "Comment traduire un coefficient global en pourcentage ?", "a": "(coefficient − 1) × 100.", "tag": "formule", "niveau": 2},
+    {"id": "m1pc-14", "q": "Comment retrouver une valeur avant une évolution ?", "a": "On divise la valeur finale par le coefficient multiplicateur.", "tag": "methode", "niveau": 2},
+    {"id": "m1pc-15", "q": "Après +25 %, un loyer vaut 750 €. Loyer initial ?", "a": "600 €", "pourquoi": "750 ÷ 1,25 = 600.", "tag": "valeur", "niveau": 2},
+    {"id": "m1pc-16", "q": "Peut-on retrouver le prix avant +25 % en retirant 25 % au prix final ?", "a": "Non : le pourcentage portait sur le prix initial ; on divise par 1,25.", "tag": "piege", "niveau": 2},
+    {"id": "m1pc-17", "q": "Comment arrondit-on au centième ?", "a": "On garde deux décimales ; si la troisième vaut 5 ou plus, on augmente la deuxième.", "tag": "methode", "niveau": 1},
+    {"id": "m1pc-18", "q": "Quand arrondir dans un long calcul ?", "a": "À la fin seulement, pour ne pas cumuler les erreurs.", "tag": "methode", "niveau": 2},
+    {"id": "m1pc-19", "q": "Comment estimer un ordre de grandeur ?", "a": "Remplacer chaque nombre par une valeur ronde, puis calculer.", "tag": "methode", "niveau": 1},
+    {"id": "m1pc-20", "q": "Quel est le taux réciproque d’une hausse de 25 % ?", "a": "Une baisse de 20 %.", "pourquoi": "1/1,25 = 0,8.", "tag": "valeur", "niveau": 3},
+    {"id": "m1pc-21", "q": "Quelle est la formule du taux réciproque de t ?", "a": "t′ = 1/(1 + t) − 1 = −t/(1 + t).", "tag": "formule", "niveau": 3},
+    {"id": "m1pc-22", "q": "Comment définit-on le taux moyen τ de n évolutions ?", "a": "(1 + τ)ⁿ = produit des n coefficients.", "tag": "definition", "niveau": 3},
+    {"id": "m1pc-23", "q": "Une hausse de 21 % en deux ans correspond à quel taux annuel moyen ?", "a": "10 % par an.", "pourquoi": "1,1² = 1,21.", "tag": "valeur", "niveau": 3},
+    {"id": "m1pc-24", "q": "Un taux passe de 8 % à 10 % : de combien a-t-il augmenté ?", "a": "De 2 points, soit une hausse de 25 %.", "tag": "piege", "niveau": 3},
+    {"id": "m1pc-25", "q": "Que vaut une quantité V₀ après n hausses de t % ?", "a": "V₀ × (1 + t/100)ⁿ.", "tag": "formule", "niveau": 2},
+    {"id": "m1pc-26", "q": "Dans un tableau de proportionnalité, quelle égalité vérifient les produits en croix ?", "a": "Ils sont égaux : x₁y₂ = x₂y₁.", "tag": "propriete", "niveau": 3},
+    {"id": "m1pc-27", "q": "D’où vient le signe % ?", "a": "De l’abréviation italienne « per cento » des marchands.", "tag": "histoire", "niveau": 2}
+  ]
+}

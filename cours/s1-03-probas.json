@@ -1,0 +1,172 @@
+{
+  "id": "s1-probas",
+  "titre": "Calcul des probabilités : événements, dénombrement, conditionnement",
+  "resume": "Une probabilité mesure la chance qu’un événement se produise, de 0 (impossible) à 1 (certain). On la calcule en comptant les issues, en décomposant avec un arbre, et on la met à jour quand on reçoit une information (conditionnement, Bayes).",
+  "objectifs": [
+    "décrire une expérience aléatoire : univers, issues, événements, opérations",
+    "calculer une probabilité en situation d’équiprobabilité en dénombrant (arrangements, combinaisons)",
+    "utiliser les propriétés : contraire, réunion, axiomes",
+    "calculer des probabilités conditionnelles avec un arbre et la formule des probabilités totales",
+    "inverser un conditionnement avec la formule de Bayes et reconnaître l’indépendance"
+  ],
+  "prerequis": [
+    "s1-descriptive"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! On quitte les données observées pour entrer dans le monde du hasard. Bonne nouvelle : tu as déjà une intuition des probabilités, quand tu dis « il y a une chance sur deux ». On va la rendre précise. Au programme : le vocabulaire, compter les cas, puis le cœur du chapitre, les probabilités « sachant que ».",
+      "## Une expérience aléatoire",
+      "Lancer un dé, tirer une carte, choisir une personne au hasard : ce sont des **expériences aléatoires**, dont on connaît tous les résultats possibles sans savoir lequel va sortir. Chaque résultat est une **issue** ; l’ensemble des issues s’appelle l’**univers**, noté Ω. Un **événement** est un ensemble d’issues, par exemple « obtenir un nombre pair » = {2 ; 4 ; 6}.",
+      "analogie: L’univers, c’est le menu complet du restaurant ; un événement, c’est une partie du menu, comme « les plats végétariens ».",
+      "## Mesurer la chance",
+      "Une probabilité est un nombre entre 0 et 1. Quand toutes les issues ont la même chance (dé équilibré, tirage « au hasard »), on parle d’**équiprobabilité** et on compte :",
+      "> P(A) = nombre de cas favorables / nombre de cas possibles",
+      "? Quelle est la probabilité de tirer un cœur dans un jeu de 32 cartes ? || Il y a 8 cœurs sur 32 cartes : 8/32 = 1/4.",
+      "## Et, ou, non",
+      "prof: Petite question avant d’aller plus loin : avec deux dés, la somme 7 est-elle aussi probable que la somme 2 ? Non ! Il y a 6 façons d’obtenir 7 et une seule d’obtenir 2. L’équiprobabilité porte sur les couples de faces, pas sur les sommes.",
+      "« A et B » (les deux à la fois) se note A ∩ B ; « A ou B » (au moins l’un des deux) se note A ∪ B ; « non A », le contraire, se note Ā. Comme P(A) + P(Ā) = 1, il est parfois plus simple de calculer le contraire.",
+      "? On lance trois pièces. Pourquoi calculer « aucun pile » pour trouver « au moins un pile » ? || « Au moins un pile » a beaucoup de cas ; son contraire n’en a qu’un (face, face, face), de probabilité 1/8. Donc P = 1 − 1/8 = 7/8.",
+      "## Compter sans tout écrire",
+      "@pascal | Observe le triangle de Pascal : chaque nombre est la somme des deux du dessus. Le nombre en ligne n, position k, compte les façons de choisir k objets parmi n. Règle n = 5 et k = 2 : tu lis 10, il y a 10 façons de choisir 2 personnes parmi 5.",
+      "## Quand on apprend quelque chose : « sachant que »",
+      "Une information change les probabilités. La probabilité qu’il pleuve n’est pas la même si tu sais que le ciel est couvert. On note P_B(A) (ou P(A | B)) la probabilité de A **sachant** B.",
+      "@arbre | Règle les probabilités sur les branches de l’arbre. Suis un chemin : on multiplie les probabilités le long du chemin. Observe que les branches qui partent d’un même nœud ont toujours une somme égale à 1.",
+      "prof: Attention au piège le plus célèbre des probabilités : « la probabilité d’avoir un test positif quand on est malade » n’est pas « la probabilité d’être malade quand on a un test positif ». On le verra de près, et le résultat va probablement te surprendre.",
+      "@bayes | Une population de 1 000 personnes passe un test de dépistage. Règle la fréquence de la maladie : quand elle est rare, observe que la plupart des tests positifs concernent… des personnes saines !",
+      "? Un test est fiable à 99 % chez les malades. Si tu es positif, es-tu malade à 99 % ? || Non ! Cela dépend de la rareté de la maladie et des faux positifs. Pour une maladie rare, la probabilité peut être bien plus faible.",
+      "histoire: Le calcul des probabilités est né en 1654 d’une correspondance entre Blaise Pascal et Pierre de Fermat, à propos d’un problème de jeu posé par le chevalier de Méré : comment partager les mises d’une partie interrompue ? Les axiomes modernes ont été posés par Andreï Kolmogorov en 1933."
+    ],
+    "pratique": [
+      "prof: On passe aux outils de calcul. Il y en a trois grandes familles : les règles de calcul sur les événements, le dénombrement, et les probabilités conditionnelles avec les arbres. Je te donne une méthode pour chacune.",
+      "## Règles de calcul",
+      "> P(Ā) = 1 − P(A)        P(A ∪ B) = P(A) + P(B) − P(A ∩ B)",
+      "Si A et B sont **incompatibles** (A ∩ B = ∅), alors P(A ∪ B) = P(A) + P(B).",
+      "? P(A) = 0,5, P(B) = 0,4 et P(A ∩ B) = 0,2. P(A ∪ B) ? || 0,5 + 0,4 − 0,2 = 0,7.",
+      "## Dénombrer",
+      "1. L’ordre compte-t-il ? Y a-t-il répétition ?\n2. Avec ordre et répétition : nᵏ (listes).\n3. Avec ordre, sans répétition : A(n ; k) = n × (n − 1) × … × (n − k + 1) (arrangements ; n! si k = n).\n4. Sans ordre, sans répétition : C(n ; k) = A(n ; k) ÷ k! (combinaisons).",
+      "@etapes {\"etapes\":[[\"Urne : 4 rouges, 6 vertes ; on tire 3 boules à la fois\",\"Tirage simultané : pas d’ordre, pas de répétition.\"],[\"|Ω| = C(10 ; 3) = 120\",\"Combinaisons de 3 boules parmi 10.\"],[\"Exactement 1 rouge : C(4 ; 1) × C(6 ; 2) = 4 × 15 = 60\",\"On choisit la rouge ET les deux vertes : on multiplie.\"],[\"P = 60/120 = 0,5\",\"Favorables ÷ possibles.\"]]} | Suis le calcul d’une probabilité par dénombrement. Remarque l’usage du principe multiplicatif à l’étape 3.",
+      "? Combien de podiums (1er, 2e, 3e) avec 8 coureurs ? || L’ordre compte : A(8 ; 3) = 8 × 7 × 6 = 336.",
+      "## Probabilité conditionnelle et arbre",
+      "prof: Le plus dur en dénombrement, ce n’est pas le calcul, c’est de choisir le modèle. Pose-toi deux questions, dans l’ordre : « l’ordre compte-t-il ? », puis « peut-on répéter ? ». La réponse te donne directement la formule.",
+      "> P_B(A) = P(A ∩ B) / P(B)    donc    P(A ∩ B) = P(B) × P_B(A)",
+      "1. Dessine l’arbre : premier niveau A et Ā, deuxième niveau B et B̄.\n2. Écris les probabilités sur les branches (somme 1 à chaque nœud).\n3. Probabilité d’un chemin : produit des probabilités des branches.\n4. **Probabilités totales** : P(B) = P(A) P_A(B) + P(Ā) P_Ā(B), somme des chemins qui mènent à B.",
+      "@etapes {\"etapes\":[[\"P(A) = 0,3 ; P_A(B) = 0,8 ; P_Ā(B) = 0,1\",\"Données de l’arbre.\"],[\"P(A ∩ B) = 0,3 × 0,8 = 0,24\",\"Premier chemin vers B.\"],[\"P(Ā ∩ B) = 0,7 × 0,1 = 0,07\",\"Second chemin vers B.\"],[\"P(B) = 0,24 + 0,07 = 0,31\",\"Formule des probabilités totales.\"],[\"P_B(A) = 0,24 ÷ 0,31 ≈ 0,774\",\"Formule de Bayes : on inverse le conditionnement.\"]]} | Lance l’animation et retrouve chaque calcul sur l’arbre de la manipulation précédente.",
+      "## Formule de Bayes",
+      "> P_B(A) = P(A) × P_A(B) / P(B)",
+      "## Indépendance",
+      "A et B sont **indépendants** quand savoir que B est réalisé ne change pas la probabilité de A : P_B(A) = P(A), ce qui revient à P(A ∩ B) = P(A) × P(B).",
+      "attention: Indépendants et incompatibles, ce n’est pas la même chose ! Deux événements incompatibles de probabilités non nulles ne sont jamais indépendants : si l’un se produit, l’autre devient impossible.",
+      "? P(A) = 0,4, P(B) = 0,5 et P(A ∩ B) = 0,2. Indépendants ? || 0,4 × 0,5 = 0,2 = P(A ∩ B) : oui.",
+      "prof: Bilan pratique : un arbre bien construit résout presque tous les exercices de conditionnement. Prends l’habitude de le dessiner, même quand l’énoncé ne le demande pas."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on pose le cadre rigoureux de Kolmogorov et on démontre les formules à partir de lui. Tu verras que tout découle de trois axiomes.",
+      "## Les axiomes",
+      "Une probabilité sur un univers Ω (fini ici) est une application P qui associe à chaque événement un réel et vérifie : P(A) ≥ 0 ; P(Ω) = 1 ; si A et B sont incompatibles, P(A ∪ B) = P(A) + P(B) (et plus généralement pour une suite d’événements deux à deux incompatibles).",
+      "@etapes {\"etapes\":[[\"A ∪ B = A ∪ (B ∩ Ā)\",\"On découpe A ∪ B en deux morceaux disjoints.\"],[\"P(A ∪ B) = P(A) + P(B ∩ Ā)\",\"Axiome d’additivité.\"],[\"B = (B ∩ A) ∪ (B ∩ Ā)\",\"Autre découpage disjoint.\"],[\"P(B ∩ Ā) = P(B) − P(A ∩ B)\",\"Additivité, puis on isole.\"],[\"P(A ∪ B) = P(A) + P(B) − P(A ∩ B)\",\"On remplace.\"]]} | Suis la démonstration de la formule de la réunion à partir des axiomes.",
+      "## Système complet et probabilités totales",
+      "Des événements A₁, …, Aₙ forment un **système complet** s’ils sont deux à deux incompatibles et que leur réunion est Ω. Alors, pour tout événement B :",
+      "> P(B) = P(A₁) P_{A₁}(B) + … + P(Aₙ) P_{Aₙ}(B)        P_B(Aᵢ) = P(Aᵢ) P_{Aᵢ}(B) / P(B)",
+      "La seconde égalité est la formule de Bayes générale : elle « inverse » le conditionnement. Elle exige P(B) > 0 et P(Aᵢ) > 0.",
+      "@bayes | Fais varier la prévalence, la sensibilité et la spécificité. Vérifie que la valeur prédictive positive P_T(M) n’est élevée que si la maladie n’est pas trop rare ou si les faux positifs sont très rares.",
+      "## Dénombrement : formules",
+      "> A(n ; k) = n! / (n − k)!        C(n ; k) = n! / (k! (n − k)!)        C(n ; k) = C(n − 1 ; k − 1) + C(n − 1 ; k)",
+      "La relation de Pascal se prouve en distinguant un objet particulier : les parties à k éléments le contiennent (C(n − 1 ; k − 1) façons de compléter) ou non (C(n − 1 ; k) façons).",
+      "## Où ça casse",
+      "prof: Remarque la structure : la formule de Bayes n’est rien d’autre que la définition de la probabilité conditionnelle écrite dans les deux sens. Il n’y a rien de nouveau à apprendre, seulement à oser « retourner » le conditionnement.",
+      "- La formule « favorables / possibles » n’est valable qu’en cas d’équiprobabilité : la somme de deux dés ne prend pas les 11 valeurs 2 à 12 avec la même probabilité.\n- P_B(A) n’a de sens que si P(B) > 0.\n- Indépendance deux à deux ne suffit pas pour trois événements : il faut aussi P(A ∩ B ∩ C) = P(A) P(B) P(C) (indépendance mutuelle).\n- P_B(A) ≠ P_A(B) en général : confondre les deux est l’« erreur du procureur ».",
+      "? Pourquoi la probabilité d’obtenir une somme de 7 avec deux dés n’est-elle pas 1/11 ? || Les 11 sommes ne sont pas équiprobables : l’univers équiprobable est celui des 36 couples, dont 6 donnent 7, soit 1/6.",
+      "? Démontre que si A et B sont indépendants, A et B̄ le sont aussi. || P(A ∩ B̄) = P(A) − P(A ∩ B) = P(A) − P(A)P(B) = P(A)(1 − P(B)) = P(A)P(B̄).",
+      "? Combien de parties à 3 éléments dans un ensemble à 6 éléments ? || C(6 ; 3) = 20.",
+      "prof: Ces outils vont servir tout de suite : au chapitre suivant, une variable aléatoire associe un nombre à chaque issue, et sa loi se calcule exactement avec ce que tu viens d’apprendre.",
+      "histoire: Le révérend Thomas Bayes a établi un cas particulier de sa formule ; son texte n’a été publié qu’en 1763, après sa mort, par son ami Richard Price. Pierre-Simon Laplace l’a ensuite formulée dans toute sa généralité."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "On lance deux dés équilibrés. Probabilité que la somme vaille 8 ?",
+      "etapes": [
+        [
+          "|Ω| = 6 × 6 = 36",
+          "couples (dé 1 ; dé 2) équiprobables"
+        ],
+        [
+          "favorables : (2 ; 6), (3 ; 5), (4 ; 4), (5 ; 3), (6 ; 2)",
+          "5 couples"
+        ],
+        [
+          "P = 5/36 ≈ 0,139",
+          "favorables ÷ possibles"
+        ]
+      ]
+    },
+    {
+      "enonce": "Une urne contient 4 rouges et 6 vertes ; on tire 3 boules simultanément. P(exactement 1 rouge) ?",
+      "etapes": [
+        [
+          "|Ω| = C(10 ; 3) = 120",
+          "tirage simultané : combinaisons"
+        ],
+        [
+          "C(4 ; 1) × C(6 ; 2) = 4 × 15 = 60",
+          "une rouge et deux vertes"
+        ],
+        [
+          "P = 60/120 = 1/2",
+          "équiprobabilité"
+        ]
+      ]
+    },
+    {
+      "enonce": "Maladie : 1 % de la population ; test positif chez 99 % des malades et 5 % des sains. P(malade | positif) ?",
+      "etapes": [
+        [
+          "P(T) = 0,01 × 0,99 + 0,99 × 0,05 = 0,0594",
+          "probabilités totales"
+        ],
+        [
+          "P(M ∩ T) = 0,01 × 0,99 = 0,0099",
+          "chemin malade puis positif"
+        ],
+        [
+          "P_T(M) = 0,0099 / 0,0594 ≈ 0,167",
+          "formule de Bayes"
+        ],
+        [
+          "seulement 1 positif sur 6 environ est malade",
+          "les faux positifs dominent"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "P(A ∪ B) = P(A) + P(B) toujours.",
+      "juste": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B).",
+      "pourquoi": "L’intersection est comptée deux fois ; on ne l’ignore que si A et B sont incompatibles."
+    },
+    {
+      "faux": "P_B(A) = P_A(B).",
+      "juste": "P_B(A) = P(A) × P_A(B) / P(B).",
+      "pourquoi": "Inverser le conditionnement demande la formule de Bayes."
+    },
+    {
+      "faux": "Incompatibles donc indépendants.",
+      "juste": "Deux événements incompatibles (de probabilités non nulles) sont dépendants.",
+      "pourquoi": "Si l’un se produit, l’autre devient impossible : l’information change tout."
+    },
+    {
+      "faux": "Tirage simultané : compter avec des arrangements et des combinaisons mélangés.",
+      "juste": "Même modèle au numérateur et au dénominateur, de préférence les combinaisons.",
+      "pourquoi": "Favorables et possibles doivent être comptés dans le même univers."
+    }
+  ],
+  "retenir": [
+    "Équiprobabilité : P(A) = cas favorables ÷ cas possibles.",
+    "P(Ā) = 1 − P(A) ; P(A ∪ B) = P(A) + P(B) − P(A ∩ B).",
+    "Ordre et répétition : nᵏ ; ordre sans répétition : A(n ; k) ; sans ordre : C(n ; k).",
+    "P_B(A) = P(A ∩ B) / P(B) ; arbre : on multiplie le long d’un chemin, on additionne les chemins.",
+    "Bayes : P_B(A) = P(A) P_A(B) / P(B), avec P(B) par les probabilités totales.",
+    "Indépendance : P(A ∩ B) = P(A) × P(B)."
+  ]
+}

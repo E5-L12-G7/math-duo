@@ -1,0 +1,32 @@
+{
+  "m1-trigo": [
+    {"id": "m1tg-01", "q": "Sur le cercle trigonométrique, que représente cos x ?", "a": "L’abscisse (position horizontale) du point associé à x.", "tag": "definition", "niveau": 1},
+    {"id": "m1tg-02", "q": "Sur le cercle trigonométrique, que représente sin x ?", "a": "L’ordonnée (hauteur) du point associé à x.", "tag": "definition", "niveau": 1},
+    {"id": "m1tg-03", "q": "Quel est le rayon du cercle trigonométrique ?", "a": "1", "tag": "definition", "niveau": 1},
+    {"id": "m1tg-04", "q": "Dans quel sens tourne-t-on sur le cercle trigonométrique ?", "a": "Le sens inverse des aiguilles d’une montre (sens direct).", "tag": "definition", "niveau": 1},
+    {"id": "m1tg-05", "q": "Combien de radians vaut 180° ?", "a": "π rad", "tag": "formule", "niveau": 1},
+    {"id": "m1tg-06", "q": "Comment convertir des degrés en radians ?", "a": "On multiplie par π/180.", "tag": "methode", "niveau": 1},
+    {"id": "m1tg-07", "q": "Que vaut 60° en radians ?", "a": "π/3", "tag": "valeur", "niveau": 1},
+    {"id": "m1tg-08", "q": "Que vaut 3π/4 en degrés ?", "a": "135°", "pourquoi": "3 × 180/4 = 135.", "tag": "valeur", "niveau": 1},
+    {"id": "m1tg-09", "q": "Que valent cos(π/3) et sin(π/3) ?", "a": "cos(π/3) = 1/2 et sin(π/3) = √3/2.", "tag": "valeur", "niveau": 1},
+    {"id": "m1tg-10", "q": "Que valent cos(π/6) et sin(π/6) ?", "a": "cos(π/6) = √3/2 et sin(π/6) = 1/2.", "tag": "valeur", "niveau": 1},
+    {"id": "m1tg-11", "q": "Que vaut cos(π/4) ?", "a": "√2/2, comme sin(π/4).", "tag": "valeur", "niveau": 1},
+    {"id": "m1tg-12", "q": "Que valent cos(π) et sin(π) ?", "a": "cos(π) = −1 et sin(π) = 0.", "tag": "valeur", "niveau": 1},
+    {"id": "m1tg-13", "q": "Où le cosinus est-il négatif sur le cercle ?", "a": "À gauche de l’axe vertical.", "tag": "propriete", "niveau": 1},
+    {"id": "m1tg-14", "q": "Quelle est la relation fondamentale de la trigonométrie ?", "a": "cos²x + sin²x = 1.", "tag": "formule", "niveau": 2},
+    {"id": "m1tg-15", "q": "Que vaut cos(π − x) ?", "a": "−cos x", "tag": "formule", "niveau": 2},
+    {"id": "m1tg-16", "q": "Que vaut sin(π − x) ?", "a": "sin x", "tag": "formule", "niveau": 2},
+    {"id": "m1tg-17", "q": "Comment calculer cos d’un angle hors du premier quart de tour ?", "a": "Angle de référence pour la valeur, position du point pour le signe.", "tag": "methode", "niveau": 2},
+    {"id": "m1tg-18", "q": "Que vaut cos(2π/3) ?", "a": "−1/2", "pourquoi": "2π/3 = π − π/3.", "tag": "valeur", "niveau": 2},
+    {"id": "m1tg-19", "q": "Combien de solutions a sin x = 1/2 sur [0 ; π] ?", "a": "Deux : π/6 et 5π/6.", "tag": "methode", "niveau": 2},
+    {"id": "m1tg-20", "q": "Combien de solutions a cos x = a (−1 ≤ a ≤ 1) sur [0 ; π] ?", "a": "Une seule.", "tag": "propriete", "niveau": 2},
+    {"id": "m1tg-21", "q": "Vrai ou faux : 60° = 60π.", "a": "Faux : 60° = 60π/180 = π/3.", "tag": "piege", "niveau": 1},
+    {"id": "m1tg-22", "q": "Piège : la calculatrice donne sin(30) ≈ −0,99. Pourquoi ?", "a": "Elle est en mode radians au lieu de degrés.", "tag": "piege", "niveau": 2},
+    {"id": "m1tg-23", "q": "Quelle est la période de cos et de sin ?", "a": "2π", "tag": "propriete", "niveau": 3},
+    {"id": "m1tg-24", "q": "Quelles fonctions sont paire et impaire parmi cos et sin ?", "a": "cos est paire, sin est impaire.", "tag": "propriete", "niveau": 3},
+    {"id": "m1tg-25", "q": "Solutions dans ℝ de cos x = cos α ?", "a": "x = α + 2kπ ou x = −α + 2kπ, k ∈ ℤ.", "tag": "formule", "niveau": 3},
+    {"id": "m1tg-26", "q": "Solutions dans ℝ de sin x = sin α ?", "a": "x = α + 2kπ ou x = π − α + 2kπ, k ∈ ℤ.", "tag": "formule", "niveau": 3},
+    {"id": "m1tg-27", "q": "L’équation cos x = 1,2 a-t-elle des solutions ?", "a": "Non : un cosinus reste entre −1 et 1.", "tag": "piege", "niveau": 3},
+    {"id": "m1tg-28", "q": "D’où vient le mot « sinus » ?", "a": "De la demi-corde indienne, passée par l’arabe puis le latin.", "tag": "histoire", "niveau": 2}
+  ]
+}

@@ -1,0 +1,134 @@
+[
+ {
+  "id": "fa-sp-combi",
+  "accroche": "Combien de codes possibles sur un digicode ? Combien de mains au poker ? Avec trois idées simples, tu vas compter des milliards de possibilités sans jamais en écrire la liste.",
+  "pourquoi": "<p>Compter « à la main » marche pour cinq objets, pas pour cinq millions. Or on a sans cesse besoin de savoir <b>combien</b> : combien de mots de passe un pirate doit essayer, combien de grilles au loto, combien de façons de placer des invités. Sans méthode, on oublie des cas ou on compte deux fois les mêmes.</p><p>Le dénombrement donne des règles sûres : additionner des cas qui ne se chevauchent pas, multiplier des choix successifs, et reconnaître quatre modèles (listes avec répétition, arrangements, permutations, combinaisons). C’est aussi la base des probabilités : en situation d’équiprobabilité, une probabilité n’est rien d’autre qu’un rapport de deux dénombrements.</p>",
+  "histoire": "<p>Le tableau des coefficients que l’on appelle « triangle de Pascal » est bien plus ancien que Pascal. Des mathématiciens indiens l’utilisaient pour compter les combinaisons de syllabes en poésie ; en Perse, vers l’an 1000, al-Karaji s’en servait pour développer les puissances d’une somme ; en Chine, il figure chez Yang Hui (XIIIᵉ siècle) puis dans un ouvrage de Zhu Shijie publié en 1303.</p><p>Blaise Pascal lui consacre en 1654 un traité, le <i>Traité du triangle arithmétique</i> (publié après sa mort, en 1665), au moment même où il échange avec Pierre de Fermat sur les jeux de hasard. Il y démontre les propriétés du triangle et s’en sert pour partager équitablement les mises d’une partie interrompue : le dénombrement et les probabilités naissent ensemble.</p><p>Les notations sont venues plus tard : le point d’exclamation de la factorielle a été proposé par Christian Kramp en 1808, et l’écriture des coefficients binomiaux en colonne entre parenthèses s’est imposée au XIXᵉ siècle. En France, on a longtemps écrit C<sub>n</sub><sup>k</sup> ; aujourd’hui on lit « k parmi n ».</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · Compter sans oublier ni doubler",
+    "html": "<p>Dénombrer, c’est trouver le <b>cardinal</b> d’un ensemble fini. Si on range les objets dans des tiroirs disjoints, on additionne (principe additif). Si les tiroirs se chevauchent, on corrige.</p><p>Exemple : 16 élèves font du latin, 14 du théâtre, 5 les deux, 8 aucun. Le diagramme donne 11 + 5 + 9 + 8 = 33 élèves, et non 16 + 14 + 8 = 38.</p><p>Point d’étape : additionner n’est permis que pour des parties qui ne se chevauchent pas.</p>"
+   },
+   {
+    "titre": "Marche 2 · Multiplier des choix successifs",
+    "html": "<p>Quand un résultat se construit par étapes (une entrée, puis un plat, puis un dessert), on multiplie les nombres de choix : 3 × 4 × 2 = 24 menus. C’est le principe multiplicatif, qui compte les éléments d’un produit cartésien.</p><p>Cas particulier : une liste de k éléments pris dans un ensemble à n éléments, avec répétitions permises, compte <span class=\"m\">n<sup>k</sup></span> possibilités. Un code de 4 chiffres : 10<sup>4</sup> = 10 000.</p><p>Point d’étape : choix successifs → produit.</p>"
+   },
+   {
+    "titre": "Marche 3 · L’ordre compte, sans répétition",
+    "html": "<p>Si les éléments doivent être tous différents, le nombre de choix diminue d’une unité à chaque étape : 12 × 11 × 10 = 1 320 façons de brancher 3 câbles sur 12 prises. C’est un <b>arrangement</b> : <span class=\"m\">A(<i>n</i> ; <i>k</i>) = <i>n</i>! ÷ (<i>n</i> − <i>k</i>)!</span>.</p><p>Si l’on range <b>tous</b> les éléments (k = n), on obtient une <b>permutation</b> : n! façons. 3 personnes sur un banc de 3 places : 3! = 6. Par convention 0! = 1.</p><p>Point d’étape : ordre + pas de répétition → n(n − 1)(n − 2)…</p>"
+   },
+   {
+    "titre": "Marche 4 · Quand l’ordre ne compte pas",
+    "html": "<p>Une équipe, une main de cartes, un tirage simultané : seul le groupe compte. Chaque groupe de k éléments correspond à k! arrangements, d’où <span class=\"m\">C(<i>n</i> ; <i>k</i>) = <i>n</i>! ÷ (<i>k</i>!(<i>n</i> − <i>k</i>)!)</span>.</p><p>Exemple : 4 délégués parmi 34 élèves, C(34 ; 4) = 46 376. Le tableau de décision tient en deux questions : l’ordre compte-t-il ? les répétitions sont-elles possibles ?</p><p>Point d’étape : sans ordre ni répétition → combinaison.</p>"
+   },
+   {
+    "titre": "Marche 5 · Les propriétés des coefficients binomiaux",
+    "html": "<p>Symétrie : C(n ; n − k) = C(n ; k), car choisir ceux qu’on garde revient à choisir ceux qu’on laisse ; ainsi C(25 ; 24) = 25. Relation de Pascal : C(n ; k) + C(n ; k + 1) = C(n + 1 ; k + 1), qui construit le triangle ligne par ligne.</p><p>Enfin, un ensemble à n éléments a 2<sup>n</sup> parties : chaque élément est pris ou non. Donc la somme d’une ligne du triangle vaut 2<sup>n</sup> (1 + 3 + 3 + 1 = 8).</p>"
+   },
+   {
+    "titre": "Marche 6 · Les stratégies d’expert",
+    "html": "<p>Les vrais problèmes mélangent les modèles. Deux réflexes : <b>décomposer</b> en choix successifs (12 scientifiques dont 3 physiciens côte à côte : 10 positions du bloc × 3! × 9! = 21 772 800) et <b>passer par le complémentaire</b> (Emma refuse d’être élue avec Bastien : 46 376 − C(32 ; 2) = 45 880).</p><p>L’expert vérifie toujours sur un petit cas qu’il ne compte rien deux fois, par exemple en traitant le bloc soit par ses positions, soit comme une personne de plus, mais jamais les deux.</p>"
+   }
+  ],
+  "prof": "<p>Avant tout calcul, écris en une phrase à quoi ressemble <b>un</b> résultat (« une liste de 3 coureurs dans l’ordre », « un groupe de 4 élèves »). Puis pose les deux questions : ordre ? répétition ? La formule en découle.</p><ul><li>Fais toujours un essai avec de petits nombres (n = 3) en écrivant la liste complète.</li><li>Choix successifs : multiplie ; cas disjoints : additionne.</li><li>Contrainte négative : calcule le total, puis retire les cas interdits.</li><li>Vérifie l’ordre de grandeur : C(n ; k) est toujours plus petit que A(n ; k), qui est plus petit que n<sup>k</sup>.</li></ul>"
+ },
+ {
+  "id": "fa-sp-proba",
+  "accroche": "Le hasard a ses lois. Avec quelques règles et un arbre bien construit, tu sauras pourquoi un test médical positif ne veut pas toujours dire « malade ».",
+  "pourquoi": "<p>On prend sans cesse des décisions sous incertitude : s’assurer ou non, faire un test, parier, investir. Les probabilités donnent un langage précis pour mesurer cette incertitude, avec un nombre entre 0 et 1.</p><p>Le cœur du chapitre est le <b>conditionnement</b> : une information nouvelle change les probabilités. C’est ce qui permet d’interpréter un dépistage, un diagnostic, un filtre anti-spam, et d’éviter des erreurs de raisonnement très répandues, comme confondre « la probabilité d’être positif quand on est malade » avec « la probabilité d’être malade quand on est positif ».</p>",
+  "histoire": "<p>Les jeux de dés sont très anciens, mais leur étude mathématique commence vraiment à la Renaissance : Jérôme Cardan écrit au XVIᵉ siècle un livre sur les jeux de hasard, publié seulement en 1663. En 1654, le chevalier de Méré soumet à Blaise Pascal des questions de joueur, dont le partage équitable des mises d’une partie interrompue ; la correspondance entre Pascal et Pierre de Fermat sur ce problème est considérée comme l’acte de naissance du calcul des probabilités.</p><p>Au XVIIIᵉ siècle, l’essai du pasteur Thomas Bayes, publié en 1763 après sa mort, montre comment « inverser » une probabilité conditionnelle. Pierre-Simon de Laplace systématise le tout en 1812 dans sa <i>Théorie analytique des probabilités</i>, où l’on trouve la définition « cas favorables sur cas possibles » pour des cas également possibles.</p><p>En 1933, Andreï Kolmogorov donne aux probabilités les axiomes qu’on utilise encore : une probabilité est un nombre entre 0 et 1, l’événement certain vaut 1, et les probabilités d’événements incompatibles s’additionnent.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · Expérience, issues, événements",
+    "html": "<p>Une expérience aléatoire a des résultats possibles, les <b>issues</b>, mais on ne sait pas lequel sortira. Un <b>événement</b> est un ensemble d’issues : « obtenir 5 ou plus » = {5 ; 6}.</p><p>Quand les issues sont équiprobables : P(A) = favorables ÷ total. Une urne de 3 vertes et 4 jaunes : P(verte) = 3/7. Si les issues ne sont pas équiprobables (dé pipé), on utilise que la somme des probabilités vaut 1.</p>"
+   },
+   {
+    "titre": "Marche 2 · Contraire, réunion, intersection",
+    "html": "<p><span class=\"m\">P(Ā) = 1 − P(A)</span> : pratique pour « au moins un ». <span class=\"m\">P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</span> : on retire l’intersection comptée deux fois.</p><p>Dé : A « impair », B « multiple de 3 », A ∩ B = {3}, donc P(A ∪ B) = 1/2 + 1/3 − 1/6 = 2/3. Si A ∩ B = ∅ (incompatibles), on additionne directement.</p>"
+   },
+   {
+    "titre": "Marche 3 · Sachant que…",
+    "html": "<p>Quand on sait que A est réalisé, on se restreint à A : <span class=\"m\">P<sub>A</sub>(B) = P(A ∩ B) ÷ P(A)</span>, avec P(A) ≠ 0.</p><p>Exemple : parmi les 8 piques d’un jeu de 32, un seul roi, donc P<sub>pique</sub>(roi) = 1/8. Dans un tableau, on lit une seule ligne ou une seule colonne : celle de ce que l’on sait.</p>"
+   },
+   {
+    "titre": "Marche 4 · L’arbre pondéré",
+    "html": "<p>Premier niveau : P(A) et P(Ā). Second niveau : des probabilités conditionnelles. On <b>multiplie</b> le long d’un chemin, <span class=\"m\">P(A ∩ B) = P(A) × P<sub>A</sub>(B)</span>, et on <b>additionne</b> les chemins qui mènent à B : <span class=\"m\">P(B) = P(A ∩ B) + P(Ā ∩ B)</span> (probabilités totales).</p><p>Avec P(A) = 0,4, P<sub>A</sub>(B) = 0,3 et P<sub>Ā</sub>(B) = 0,2 : P(B) = 0,12 + 0,12 = 0,24.</p>"
+   },
+   {
+    "titre": "Marche 5 · Inverser le conditionnement",
+    "html": "<p>Un test détecte 85 % des malades et donne 5 % de faux positifs ; 2 % de la population est malade. P(T) = 0,02 × 0,85 + 0,98 × 0,05 = 0,066, puis P<sub>T</sub>(M) = 0,017 ÷ 0,066 ≈ 0,26.</p><p>Seul un positif sur quatre environ est malade : quand une maladie est rare, les faux positifs sont plus nombreux que les vrais. C’est le raisonnement de Bayes.</p>"
+   },
+   {
+    "titre": "Marche 6 · L’indépendance",
+    "html": "<p>A et B sont <b>indépendants</b> si <span class=\"m\">P(A ∩ B) = P(A) × P(B)</span> ; si P(A) ≠ 0, cela revient à P<sub>A</sub>(B) = P(B) : savoir A ne change rien pour B. Alors Ā et B sont aussi indépendants.</p><p>Roi et trèfle dans un jeu de 32 sont indépendants (1/32 = 1/8 × 1/4) ; avec deux jokers en plus, ils ne le sont plus. L’expert ne confond jamais indépendants (produit) et incompatibles (intersection vide).</p>"
+   }
+  ],
+  "prof": "<p>Commence toujours par <b>nommer les événements</b> avec des lettres et par traduire chaque donnée de l’énoncé : « 85 % des malades ont un test positif » s’écrit P<sub>M</sub>(T) = 0,85. Ce qui suit « parmi » ou « sachant » va en indice.</p><ul><li>Dessine l’arbre dès qu’il y a deux étapes ; vérifie que les branches issues d’un même nœud ont une somme égale à 1.</li><li>Pour « au moins un », pense au contraire.</li><li>Contrôle tes résultats : une probabilité est entre 0 et 1, et P(A ∩ B) ne dépasse jamais P(A).</li><li>Avant de multiplier deux probabilités, demande-toi : ai-je le droit (indépendance ou probabilité conditionnelle) ?</li></ul>"
+ },
+ {
+  "id": "fa-sp-va",
+  "accroche": "Un jeu est-il rentable ? Combien de succès attendre en répétant une expérience ? Les variables aléatoires transforment le hasard en nombres que l’on peut calculer.",
+  "pourquoi": "<p>Dans la plupart des situations, ce qui nous intéresse n’est pas l’issue elle-même mais un nombre qui en dépend : un gain, un temps d’attente, un nombre de pièces défectueuses. La variable aléatoire est ce nombre, et sa loi dit avec quelles probabilités il prend chaque valeur.</p><p>L’espérance répond à la question « en moyenne, sur un grand nombre de répétitions, que se passe-t-il ? » ; c’est elle qui fixe le prix d’un billet de loterie ou d’un contrat d’assurance. La loi binomiale, elle, décrit le nombre de succès quand on répète une même épreuve, situation omniprésente : contrôle qualité, sondages, génétique.</p>",
+  "histoire": "<p>L’idée d’espérance apparaît dans le problème des partis discuté par Pascal et Fermat en 1654 : partager les mises d’une partie interrompue selon ce que chaque joueur pouvait « espérer » gagner. En 1657, Christiaan Huygens publie le premier traité imprimé sur le calcul des chances, où la valeur d’une espérance est définie et utilisée systématiquement.</p><p>Jacques Bernoulli étudie la répétition d’une même épreuve à deux issues dans l’<i>Ars Conjectandi</i>, publié en 1713 après sa mort ; c’est pourquoi on parle d’épreuve, de schéma et de loi de Bernoulli. Abraham de Moivre approfondit ensuite les calculs sur cette loi au XVIIIᵉ siècle.</p><p>La variance et l’écart-type, comme mesures de dispersion, se sont imposés plus tard, avec la statistique moderne de la fin du XIXᵉ et du début du XXᵉ siècle.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · Une variable aléatoire, c’est un nombre",
+    "html": "<p>Une variable aléatoire X associe un nombre réel à chaque issue. On lance un dé : 5 ou 6 rapporte 2 €, sinon on perd 1 € ; X prend les valeurs 2 et −1.</p><p>(X = 2) est un événement, de probabilité 2/6. La <b>loi</b> de X est le tableau de toutes les P(X = x<sub>i</sub>) ; leur somme vaut 1.</p>"
+   },
+   {
+    "titre": "Marche 2 · Établir une loi sans rien oublier",
+    "html": "<p>Méthode : lister les valeurs, compter les issues de chacune, vérifier que la somme vaut 1. Piège classique : une issue qui vérifie deux conditions. Si un cœur rapporte 2 € et un roi 5 €, le roi de cœur rapporte 7 €.</p><p>Loi obtenue : −1 (21/32), 2 (7/32), 5 (3/32), 7 (1/32).</p>"
+   },
+   {
+    "titre": "Marche 3 · Espérance, variance, écart-type",
+    "html": "<p><span class=\"m\">E(X) = Σ <i>x<sub>i</sub>p<sub>i</sub></i></span> : sur l’exemple, E(X) = 15/32 ≈ 0,47 €, gain moyen sur un grand nombre de parties. La variance <span class=\"m\">V(X) = Σ <i>p<sub>i</sub></i>(<i>x<sub>i</sub></i> − E(X))²</span> mesure la dispersion ; σ(X) = √V(X) est dans l’unité de X.</p><p>Formule rapide : V(X) = E(X²) − E(X)².</p>"
+   },
+   {
+    "titre": "Marche 4 · Transformer une variable",
+    "html": "<p><span class=\"m\">E(<i>a</i>X + <i>b</i>) = <i>a</i>E(X) + <i>b</i></span> et <span class=\"m\">V(<i>a</i>X + <i>b</i>) = <i>a</i>²V(X)</span> : ajouter une constante décale sans disperser, multiplier par a étire.</p><p>Application : pour des diamètres de 1,298 à 1,302 cm, on pose Y = 1000X − 1300, qui prend les valeurs −2 à 2 ; on calcule sur Y puis on revient à X.</p>"
+   },
+   {
+    "titre": "Marche 5 · Bernoulli et loi binomiale",
+    "html": "<p>Une épreuve à deux issues (succès de probabilité p) donne une variable de Bernoulli : E = p, V = p(1 − p). Répétée n fois de façon identique et indépendante, le nombre de succès suit B(n ; p).</p><p><span class=\"m\">P(X = <i>k</i>) = C(<i>n</i> ; <i>k</i>) <i>p<sup>k</sup></i>(1 − <i>p</i>)<sup><i>n</i> − <i>k</i></sup></span> : C(n ; k) chemins de l’arbre, chacun de probabilité p<sup>k</sup>(1 − p)<sup>n − k</sup>. Urne 5 gagnantes / 7 perdantes, 4 tirages avec remise : P(X = 3) ≈ 0,17.</p>"
+   },
+   {
+    "titre": "Marche 6 · Ce que sait l’expert",
+    "html": "<p>Pour B(n ; p) : E = np, V = np(1 − p). On le démontre en écrivant X comme une somme de n variables de Bernoulli indépendantes, ce qui annonce le chapitre suivant.</p><p>L’expert vérifie toujours les hypothèses : un tirage <b>sans</b> remise n’est pas binomial. Et pour « au moins un succès », il passe par le contraire : 1 − (1 − p)<sup>n</sup>, qui permet aussi de trouver combien d’essais il faut pour atteindre une probabilité donnée.</p>"
+   }
+  ],
+  "prof": "<p>Rédige toujours en trois temps : <b>valeurs</b> de X, <b>probabilités</b> (tableau), <b>vérification</b> que la somme vaut 1. Ensuite seulement, calcule E(X) et V(X).</p><ul><li>Pour justifier une loi binomiale, cite les quatre ingrédients : épreuve à deux issues, succès et p, n répétitions identiques, indépendance.</li><li>Garde les fractions exactes le plus longtemps possible, arrondis à la fin.</li><li>Interprète l’espérance avec la phrase « sur un grand nombre de parties, en moyenne… ».</li><li>Contrôle : V(X) est toujours positive, et E(X) est comprise entre la plus petite et la plus grande valeur.</li></ul>"
+ },
+ {
+  "id": "fa-sp-va2",
+  "accroche": "Pourquoi la moyenne de mille lancers est-elle si prévisible alors qu’un seul lancer ne l’est pas ? Ce chapitre explique comment le hasard se calme quand on additionne et qu’on fait des moyennes.",
+  "pourquoi": "<p>Beaucoup de grandeurs sont des sommes de petits effets aléatoires : le gain total d’un casino, le nombre de clients d’une journée, l’erreur d’une mesure répétée. Savoir calculer l’espérance et la variance d’une somme permet de prévoir ces totaux.</p><p>La moyenne d’un échantillon se concentre autour de l’espérance : sa variance est divisée par la taille de l’échantillon. Les inégalités de Bienaymé-Tchebychev et de concentration quantifient cette concentration sans connaître la loi exacte, et la loi des grands nombres en est la conséquence : elle justifie qu’on estime une probabilité par une fréquence, base des sondages et des simulations.</p>",
+  "histoire": "<p>Jacques Bernoulli démontre la première loi des grands nombres dans l’<i>Ars Conjectandi</i>, publié en 1713 : la fréquence d’un succès se rapproche de sa probabilité quand le nombre d’épreuves augmente. Il aurait travaillé une vingtaine d’années sur ce résultat.</p><p>Au XIXᵉ siècle, le Français Irénée-Jules Bienaymé énonce en 1853 l’inégalité qui porte aujourd’hui son nom, dans un travail sur la méthode des moindres carrés ; le Russe Pafnouti Tchebychev la retrouve, la publie en 1867 et s’en sert pour démontrer la loi des grands nombres sous une forme générale. Les deux hommes se connaissaient, et Bienaymé contribua à faire connaître en France les travaux de son ami.</p><p>Ces résultats ont ouvert la voie à la statistique moderne : sondages, contrôle de qualité, méthodes de simulation dites de Monte-Carlo.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · La loi d’une somme",
+    "html": "<p>X : gain d’un premier jeu, Y : gain d’un second. Pour trouver P(X + Y = k), on cherche tous les couples (x ; y) avec x + y = k, on multiplie dans chaque couple (si X et Y sont indépendantes) et on additionne les couples.</p><p>Pièce (1 € ou 2 €) puis dé (1 €, 2 € ou −5 €) : P(S = 3) = 1/2 × 1/3 + 1/2 × 1/2 = 5/12.</p>"
+   },
+   {
+    "titre": "Marche 2 · Espérance et variance d’une somme",
+    "html": "<p><span class=\"m\">E(X + Y) = E(X) + E(Y)</span> toujours. <span class=\"m\">V(X + Y) = V(X) + V(Y)</span> si X et Y sont indépendantes. Les variances s’ajoutent même pour une différence : V(X − Y) = V(X) + V(Y).</p><p>Ne confonds pas 2X (un même résultat doublé, variance 4V(X)) et X<sub>1</sub> + X<sub>2</sub> (deux résultats indépendants, variance 2V(X)).</p>"
+   },
+   {
+    "titre": "Marche 3 · Échantillon et somme",
+    "html": "<p>Un échantillon de taille n est une liste de n variables indépendantes de même loi. Leur somme S vérifie E(S) = nE(X) et V(S) = nV(X).</p><p>La fourmi qui avance avec probabilité 2/3 : E(X<sub>k</sub>) = 1/3, V(X<sub>k</sub>) = 8/9, donc E(S<sub>n</sub>) = n/3 et V(S<sub>n</sub>) = 8n/9. Et une somme de n Bernoulli de paramètre p suit B(n ; p).</p>"
+   },
+   {
+    "titre": "Marche 4 · La moyenne se concentre",
+    "html": "<p><span class=\"m\">M<sub><i>n</i></sub> = (X<sub>1</sub> + … + X<sub><i>n</i></sub>) ÷ <i>n</i></span> : E(M<sub>n</sub>) = E(X), V(M<sub>n</sub>) = V(X) ÷ n, σ(M<sub>n</sub>) = σ(X) ÷ √n.</p><p>Pour diviser l’incertitude par 2, il faut 4 fois plus de données. Exemple : V(X) = 10,96 et n = 50 donnent V(M<sub>50</sub>) = 0,2192.</p>"
+   },
+   {
+    "titre": "Marche 5 · Bienaymé-Tchebychev et concentration",
+    "html": "<p>Pour tout δ &gt; 0 : <span class=\"m\">P(|X − E(X)| ≥ δ) ≤ V(X) ÷ δ²</span>. Avec δ = 2σ, la probabilité d’un écart est au plus 1/4, quelle que soit la loi. Pour la moyenne : <span class=\"m\">P(|M<sub><i>n</i></sub> − E(X)| ≥ δ) ≤ V(X) ÷ (<i>n</i>δ²)</span>.</p><p>On en tire une taille d’échantillon : Bernoulli de paramètre 0,2, δ = 0,17, risque 0,05 : n ≥ 0,16 ÷ (0,05 × 0,17²) ≈ 110,7, donc n = 111 suffit.</p>"
+   },
+   {
+    "titre": "Marche 6 · La loi des grands nombres",
+    "html": "<p>Pour tout δ &gt; 0, P(|M<sub>n</sub> − E(X)| ≥ δ) tend vers 0 quand n tend vers +∞. Ce n’est pas « M<sub>n</sub> devient égale à E(X) » : un écart reste possible, mais il devient de plus en plus improbable.</p><p>L’expert sait aussi que les inégalités ne donnent que des bornes, souvent larges (0,25 annoncé, environ 0,04 observé en simulation) : elles sont précieuses parce qu’elles marchent pour toutes les lois.</p>"
+   }
+  ],
+  "prof": "<p>Face à une somme, demande-toi d’abord : <b>les variables sont-elles indépendantes ?</b> L’espérance s’additionne toujours, la variance seulement avec l’indépendance.</p><ul><li>Écris la grandeur comme une somme de variables simples et étudie d’abord une seule d’entre elles.</li><li>Pour la moyenne : espérance inchangée, variance ÷ n, écart-type ÷ √n.</li><li>Pour une inégalité, mets l’événement sous la forme |… − E| ≥ δ ; si l’énoncé parle d’un intervalle, passe au contraire.</li><li>Arrondis toujours une taille d’échantillon à l’entier supérieur.</li></ul>"
+ }
+]

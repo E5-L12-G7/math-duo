@@ -1,0 +1,30 @@
+{
+  "m2-variations": [
+    {"id": "m2va-01", "q": "Si f ′ > 0 sur un intervalle, que fait f ?", "a": "Elle est croissante sur cet intervalle.", "tag": "propriete", "niveau": 1},
+    {"id": "m2va-02", "q": "Si f ′ < 0 sur un intervalle, que fait f ?", "a": "Elle est décroissante sur cet intervalle.", "tag": "propriete", "niveau": 1},
+    {"id": "m2va-03", "q": "Que représente f ′(x₀) sur la courbe ?", "a": "La pente de la tangente au point d’abscisse x₀.", "tag": "definition", "niveau": 1},
+    {"id": "m2va-04", "q": "Qu’est-ce qu’un maximum local ?", "a": "Une valeur f(x₀) plus grande que toutes les valeurs voisines : un sommet.", "tag": "definition", "niveau": 1},
+    {"id": "m2va-05", "q": "Que désigne le mot « extremum » ?", "a": "Un maximum ou un minimum.", "tag": "definition", "niveau": 1},
+    {"id": "m2va-06", "q": "f ′ passe de + à − en x₀ : que se passe-t-il ?", "a": "f admet un maximum local en x₀.", "tag": "propriete", "niveau": 1},
+    {"id": "m2va-07", "q": "f ′ passe de − à + en x₀ : que se passe-t-il ?", "a": "f admet un minimum local en x₀.", "tag": "propriete", "niveau": 1},
+    {"id": "m2va-08", "q": "Quelles sont les trois lignes d’un tableau de variations ?", "a": "Les valeurs de x, le signe de f ′, les flèches de f.", "tag": "methode", "niveau": 1},
+    {"id": "m2va-09", "q": "Quelles sont les étapes d’une étude de variations ?", "a": "Dériver, résoudre f ′ = 0, signe de f ′, variations, valeurs des extremums.", "tag": "methode", "niveau": 2},
+    {"id": "m2va-10", "q": "Où un trinôme ax² + bx + c atteint-il son extremum ?", "a": "En x = −b/(2a).", "tag": "formule", "niveau": 2},
+    {"id": "m2va-11", "q": "Variations de x² − 4x + 1 ?", "a": "Décroît sur ]−∞ ; 2], croît ensuite ; minimum f(2) = −3.", "tag": "valeur", "niveau": 2},
+    {"id": "m2va-12", "q": "Signe d’un trinôme à deux racines ?", "a": "Signe de a à l’extérieur des racines, signe contraire entre elles.", "tag": "propriete", "niveau": 2},
+    {"id": "m2va-13", "q": "Extremums de x³ − 3x ?", "a": "Maximum local f(−1) = 2, minimum local f(1) = −2.", "tag": "valeur", "niveau": 2},
+    {"id": "m2va-14", "q": "Vrai ou faux : f ′(x₀) = 0 suffit pour un extremum en x₀.", "a": "Faux : x³ en 0. Il faut que f ′ change de signe.", "tag": "piege", "niveau": 2},
+    {"id": "m2va-15", "q": "On demande le maximum de f : faut-il répondre x = 3 ?", "a": "Non : le maximum est la valeur f(3), atteinte en x = 3.", "tag": "piege", "niveau": 2},
+    {"id": "m2va-16", "q": "Comment résoudre un problème d’optimisation ?", "a": "Exprimer la grandeur avec une variable, dériver, lire le sommet du tableau.", "tag": "methode", "niveau": 2},
+    {"id": "m2va-17", "q": "Enclos rectangulaire de périmètre fixé : quelle forme d’aire maximale ?", "a": "Un carré.", "tag": "valeur", "niveau": 2},
+    {"id": "m2va-18", "q": "Sur la courbe de f ′, où lire un extremum de f ?", "a": "Là où la courbe de f ′ traverse l’axe des abscisses.", "tag": "methode", "niveau": 2},
+    {"id": "m2va-19", "q": "Quelle hypothèse exige le théorème « f ′ ≥ 0 ⇒ f croissante » ?", "a": "Que f soit dérivable sur un intervalle.", "tag": "propriete", "niveau": 3},
+    {"id": "m2va-20", "q": "Pourquoi −1/x n’est-elle pas croissante sur ℝ* malgré f ′ > 0 ?", "a": "ℝ* n’est pas un intervalle : f(−1) = 1 > f(1) = −1.", "tag": "piege", "niveau": 3},
+    {"id": "m2va-21", "q": "Quel théorème prouve que f ′ ≥ 0 entraîne f croissante ?", "a": "Le théorème des accroissements finis.", "tag": "propriete", "niveau": 3},
+    {"id": "m2va-22", "q": "Sur [a ; b], où chercher le maximum global de f ?", "a": "Aux points critiques et aux bornes a et b.", "tag": "methode", "niveau": 3},
+    {"id": "m2va-23", "q": "Une fonction peut-elle avoir un extremum là où elle n’est pas dérivable ?", "a": "Oui : |x| a un minimum en 0.", "tag": "piege", "niveau": 3},
+    {"id": "m2va-24", "q": "f ′(x₀) = 0 et f ″(x₀) > 0 : que conclure ?", "a": "Minimum local en x₀ (courbe en bol).", "tag": "propriete", "niveau": 3},
+    {"id": "m2va-25", "q": "Qui a inventé vers 1636 une méthode des maximums et minimums ?", "a": "Pierre de Fermat.", "tag": "histoire", "niveau": 2},
+    {"id": "m2va-26", "q": "Quel est le sujet du premier article de Leibniz sur le calcul différentiel (1684) ?", "a": "Une méthode pour trouver les maxima et les minima.", "tag": "histoire", "niveau": 3}
+  ]
+}

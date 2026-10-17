@@ -1,0 +1,198 @@
+{
+  "id": "m1-limites",
+  "titre": "Limites et continuité des fonctions usuelles",
+  "resume": "Une limite dit vers quoi s’approche f(x) quand x s’approche d’une valeur ou part à l’infini. Une fonction continue se trace sans lever le crayon.",
+  "objectifs": [
+    "lire une limite sur une courbe et reconnaître une asymptote",
+    "connaître les limites des fonctions de référence en 0 et en ±∞",
+    "calculer la limite d’un polynôme et d’une fraction rationnelle en ±∞",
+    "reconnaître une forme indéterminée et la lever en factorisant",
+    "dire où une fonction usuelle est continue et utiliser le théorème des valeurs intermédiaires"
+  ],
+  "prerequis": [
+    "m1-fractions",
+    "m1-puissances"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Aujourd’hui on apprend à regarder une fonction « au bout du chemin ». Pas besoin de calculs compliqués pour commencer : on va surtout observer des courbes et se poser une seule question, toujours la même : vers où va la fonction ?",
+      "## La question de la limite",
+      "Une fonction transforme un nombre x en un nombre f(x). Une **limite** répond à la question : quand x s’approche de quelque chose (un nombre, ou l’infini), de quoi f(x) s’approche-t-il ?",
+      "analogie: Tu partages un gâteau entre de plus en plus de personnes. Avec x invités, chacun reçoit 1/x du gâteau. Avec 10 invités, 0,1 ; avec 1 000, 0,001. La part devient minuscule : elle « tend vers 0 », sans jamais être exactement nulle.",
+      "@courbe {\"f\":\"1/x\",\"x\":[-0.5,10],\"y\":[-0.5,2.5],\"lecture\":1,\"pas\":1,\"pasy\":0.5} | Fais glisser x vers la droite et lis la valeur f(x) affichée : 1, puis 0,5, 0,2, 0,1… Elle se rapproche de 0 sans jamais l’atteindre.",
+      "On écrit : lim f(x) = 0 quand x → +∞. Le symbole +∞ (« plus l’infini ») n’est pas un nombre : il veut dire « x devient aussi grand qu’on veut ».",
+      "!! Une limite décrit une tendance : on regarde ce que fait f(x) quand x s’approche, pas forcément ce qui se passe au point lui-même.",
+      "## Une droite que la courbe frôle : l’asymptote",
+      "Quand la courbe se colle de plus en plus à une droite sans jamais la toucher, cette droite s’appelle une **asymptote**. Pour 1/x, la courbe se colle à l’axe horizontal (loin à droite et à gauche) et à l’axe vertical (près de 0).",
+      "@courbe {\"f\":\"1/x\",\"x\":[-5,5],\"y\":[-5,5],\"asymptotes\":{\"v\":[0],\"h\":[0]}} | Observe les deux droites rouges en pointillés : ce sont les asymptotes. Près de 0, la courbe s’envole vers le haut à droite et plonge vers le bas à gauche.",
+      "? Vers quoi tend 1/x quand x devient très grand ? || Vers 0 : on divise 1 par un nombre énorme, le résultat est minuscule.",
+      "## S’approcher d’un point interdit",
+      "prof: Voici une question piège que j’adore poser : que vaut (x² − 1)/(x − 1) en x = 1 ? On ne peut pas le calculer, on diviserait par 0 ! Et pourtant, la fonction a un comportement très sage tout autour. Regarde.",
+      "@limite | Choisis la fonction (x² − 1)/(x − 1) et diminue l’écart h : les deux points verts s’approchent de x = 1 par la gauche et par la droite, et leurs valeurs se rapprochent toutes les deux de 2. Essaie ensuite 1/x : à gauche et à droite, les valeurs partent dans des directions opposées.",
+      "? La fonction (x² − 1)/(x − 1) est-elle définie en 1 ? A-t-elle une limite en 1 ? || Elle n’est pas définie en 1 (division par 0), mais elle a une limite : 2. Les valeurs proches de 1 donnent des résultats proches de 2.",
+      "## La continuité : tracer sans lever le crayon",
+      "Une fonction est **continue** si l’on peut tracer sa courbe d’un seul trait, sans lever le crayon : pas de saut, pas de trou. Ta taille au fil des années est continue ; le prix d’un timbre selon le poids de la lettre ne l’est pas, il saute d’un palier à l’autre.",
+      "@courbe {\"f\":\"x/2+a*abs(x)/x\",\"curseurs\":{\"a\":[0,2,0.5,1]},\"x\":[-4,4],\"y\":[-4,4]} | Avec a = 1, la courbe fait un saut en 0 : impossible de la tracer sans lever le crayon. Ramène a à 0 : le saut disparaît, la fonction devient continue.",
+      "!! Les fonctions usuelles (polynômes, racine carrée, exponentielle, sinus, cosinus, inverse…) sont continues partout où elles sont définies.",
+      "? Pourquoi 1/x n’est-elle pas continue « en 0 » ? || Elle n’est même pas définie en 0 : sa courbe est en deux morceaux séparés par l’axe vertical.",
+      "histoire: L’idée de limite a mis plus de deux mille ans à mûrir. Zénon d’Élée, vers 450 avant notre ère, se demandait comment Achille pouvait rattraper une tortue s’il devait d’abord atteindre l’endroit où elle se trouvait, puis celui où elle était arrivée entre-temps, et ainsi de suite, une infinité de fois. La définition précise de la limite n’a été fixée qu’au XIXᵉ siècle, par Cauchy puis Weierstrass.",
+      "prof: Bilan : une limite, c’est « vers où va f(x) » ; une asymptote, c’est la droite que la courbe frôle ; une fonction continue se trace sans lever le crayon. Au niveau Pratique, on apprend à calculer ces limites sans tracer la courbe."
+    ],
+    "pratique": [
+      "prof: On passe aux calculs. Bonne nouvelle : avec cinq ou six limites de référence et quelques règles, tu sauras traiter tous les cas de l’UE. Garde un brouillon et, à chaque fois, imagine la courbe : c’est ton meilleur garde-fou.",
+      "## Les limites de référence",
+      "- En +∞ : x, x², x³, √x tendent vers +∞ ; 1/x, 1/x², 1/√x tendent vers 0.\n- En −∞ : x² (et toute puissance paire) tend vers +∞ ; x³ (et toute puissance impaire) tend vers −∞ ; 1/x tend vers 0.\n- En 0 : 1/x tend vers +∞ à droite (0⁺) et vers −∞ à gauche (0⁻) ; 1/x² tend vers +∞ des deux côtés.",
+      "@courbe {\"f\":[{\"f\":\"x^2\",\"nom\":\"x²\"},{\"f\":\"x^3\",\"nom\":\"x³\"},{\"f\":\"1/x^2\",\"nom\":\"1/x²\"}],\"x\":[-3,3],\"y\":[-6,6]} | Compare les trois courbes à gauche (x → −∞) : x² remonte, x³ descend. Puis regarde 1/x² près de 0 : elle monte des deux côtés.",
+      "## Limite en un point où la fonction est continue",
+      "Si f est une fonction usuelle définie en a, sa limite en a est simplement f(a) : on remplace x par a.",
+      "ex: lim (x² − 3x + 1) quand x → 2\n= 2² − 3 × 2 + 1\n= −1",
+      "## Les règles d’opérations",
+      "- nombre + ∞ = ∞ ; ∞ + ∞ = ∞ ; nombre non nul × ∞ = ∞ (avec la règle des signes).\n- nombre ÷ ∞ = 0 ; nombre non nul ÷ 0⁺ ou 0⁻ = ±∞ (avec la règle des signes).",
+      "attention: Quatre situations ne permettent pas de conclure : ∞ − ∞, 0 × ∞, ∞/∞ et 0/0. Ce sont les **formes indéterminées**. Elles ne valent ni 0 ni 1 : il faut transformer l’expression.",
+      "prof: Je sais que les règles d’opérations font un peu « liste à apprendre ». Astuce : remplace ∞ par « un nombre énorme » et 0⁺ par « un tout petit nombre positif ». −5 divisé par un tout petit nombre négatif ? Un nombre énorme et positif : +∞. Le bon sens retrouve presque toutes les règles.",
+      "? Limite de 3/x² quand x → 0 ? || x² est un tout petit nombre positif (0⁺) des deux côtés : 3 ÷ 0⁺ = +∞.",
+      "## Polynôme en ±∞ : le terme dominant gagne",
+      "1. Repère le terme de plus haut degré.\n2. Factorise par ce terme : la parenthèse restante tend vers 1.\n3. La limite du polynôme est celle de son terme de plus haut degré.",
+      "@etapes {\"etapes\":[[\"lim (3x² − 5x + 1) en +∞\",\"Forme ∞ − ∞ : 3x² → +∞ et −5x → −∞. On ne peut pas conclure directement.\"],[\"3x² − 5x + 1 = 3x²(1 − 5/(3x) + 1/(3x²))\",\"On factorise par le terme de plus haut degré, 3x².\"],[\"1 − 5/(3x) + 1/(3x²) → 1\",\"Les fractions en 1/x et 1/x² tendent vers 0.\"],[\"3x² → +∞\",\"Limite de référence, multipliée par 3 > 0.\"],[\"lim = +∞\",\"Le polynôme se comporte comme 3x².\"]]} | Lance la lecture et observe comment la factorisation fait disparaître l’indétermination.",
+      "? Limite de −2x³ + 100x² en +∞ ? || Le terme dominant −2x³ tend vers −∞ (x³ → +∞, multiplié par −2) : la limite vaut −∞, malgré le 100x².",
+      "## Fraction rationnelle en ±∞",
+      "1. Garde seulement le terme de plus haut degré en haut et en bas.\n2. Simplifie ce quotient.\n3. Conclus : même degré → quotient des coefficients ; degré du bas plus grand → 0 ; degré du haut plus grand → ±∞.",
+      "@etapes {\"etapes\":[[\"lim (2x² − 5x + 1)/(6x² − 5) en +∞\",\"Forme ∞/∞.\"],[\"= x²(2 − 5/x + 1/x²) / x²(6 − 5/x²)\",\"On factorise en haut et en bas par x².\"],[\"= (2 − 5/x + 1/x²)/(6 − 5/x²)\",\"On simplifie par x².\"],[\"→ 2/6\",\"Les termes en 1/x et 1/x² tendent vers 0.\"],[\"lim = 1/3\",\"On simplifie la fraction.\"]]} | Avance étape par étape ; avant chaque clic, devine la suite.",
+      "## Lire et trouver les asymptotes",
+      "- Si lim f(x) = L en +∞ (ou −∞), la droite y = L est une **asymptote horizontale**.\n- Si f(x) → ±∞ quand x → a, la droite x = a est une **asymptote verticale** (souvent une valeur interdite).",
+      "@courbe {\"f\":\"(2x+1)/(x-1)\",\"x\":[-6,8],\"y\":[-6,8],\"asymptotes\":{\"v\":[1],\"h\":[2]}} | f(x) = (2x + 1)/(x − 1). Repère l’asymptote verticale x = 1 (valeur interdite) et l’asymptote horizontale y = 2 (quotient des coefficients de x). Suis la courbe vers la droite : elle se colle à y = 2.",
+      "## Limite en un point où le dénominateur s’annule",
+      "1. Calcule la limite du numérateur.\n2. Le dénominateur tend vers 0 : précise 0⁺ ou 0⁻ selon le côté.\n3. Applique la règle des signes : « nombre non nul ÷ 0⁺ » donne ±∞.",
+      "ex: lim (1 − 2x)/(x − 3) quand x → 3⁻\nnumérateur → 1 − 6 = −5\nx < 3 donc x − 3 → 0⁻\n−5 ÷ 0⁻ = +∞",
+      "? Limite de (4x² + 1)/(2x² − x) en +∞ ? || Termes dominants 4x² et 2x² : la limite vaut 4/2 = 2.",
+      "## Où une fonction usuelle est-elle continue ?",
+      "Polynômes, sin, cos, exp : continus sur ℝ. √x : sur [0 ; +∞[. Un quotient : partout sauf là où le dénominateur s’annule.",
+      "prof: Pour te tester : quand tu as fini un calcul de limite, demande-toi si le résultat colle avec la courbe que tu imagines. Une limite +∞ pour une fonction qui « se stabilise », c’est un signal d’alarme !"
+    ],
+    "expert": [
+      "prof: Au niveau expert, on rend tout cela rigoureux. Tu vas voir la vraie définition d’une limite, celle qu’on n’ose pas montrer d’habitude, et un théorème très puissant qui prouve qu’une équation a une solution sans la calculer.",
+      "## Définition rigoureuse",
+      "f a pour limite L en a si, pour tout ε > 0, il existe δ > 0 tel que, pour tout x du domaine avec 0 < |x − a| < δ, on a |f(x) − L| < ε.",
+      "Autrement dit : quelle que soit la précision ε exigée autour de L, on peut trouver une zone autour de a où toutes les valeurs f(x) respectent cette précision.",
+      "> lim f(x) = +∞ en +∞  ⟺  pour tout A, il existe B tel que x > B ⟹ f(x) > A",
+      "prof: Ne te laisse pas impressionner par les ε et les δ : c’est la traduction exacte de « aussi près qu’on veut ». Relis-la en pensant au gâteau partagé : pour avoir une part plus petite que ε, il suffit d’inviter plus de 1/ε personnes.",
+      "## Continuité",
+      "f est continue en a si f est définie en a et lim f(x) = f(a) quand x → a. Sommes, produits, quotients (dénominateur non nul) et composées de fonctions continues sont continus.",
+      "? La fonction x ↦ x/2 + abs(x)/x est-elle continue sur ]0 ; +∞[ ? || Oui : sur ]0 ; +∞[, abs(x)/x = 1, donc f(x) = x/2 + 1, une fonction affine, continue.",
+      "## Lever une indéterminée 0/0",
+      "@etapes {\"etapes\":[[\"lim (x² − 4)/(x − 2) en 2\",\"Forme 0/0 : le haut et le bas s’annulent en 2.\"],[\"x² − 4 = (x − 2)(x + 2)\",\"Identité remarquable : le numérateur contient le facteur (x − 2).\"],[\"(x² − 4)/(x − 2) = x + 2 pour x ≠ 2\",\"On simplifie par x − 2, non nul quand x ≠ 2.\"],[\"x + 2 → 4\",\"Fonction continue : on remplace x par 2.\"],[\"lim = 4\",\"La courbe a un « trou » en (2 ; 4).\"]]} | Suis la levée d’indétermination : retiens le réflexe « 0/0 en a ⟹ factoriser par (x − a) ».",
+      "## Le théorème des valeurs intermédiaires (TVI)",
+      "Si f est continue sur [a ; b] et si k est compris entre f(a) et f(b), alors l’équation f(x) = k a au moins une solution dans [a ; b]. Si, de plus, f est strictement monotone sur [a ; b], la solution est unique.",
+      "@courbe {\"f\":\"x^3-x-k\",\"curseurs\":{\"k\":[-3,3,0.5,1]},\"x\":[-2.5,2.5],\"y\":[-5,5]} | Pour k = 1, f(1) = −1 < 0 et f(2) = 5 > 0 : la courbe, continue, traverse forcément l’axe entre 1 et 2. Fais varier k : tant que f change de signe, la courbe coupe l’axe.",
+      "? f(x) = x³ + x − 3. Pourquoi f(x) = 0 a-t-elle une solution entre 1 et 2 ? || f est continue (polynôme), f(1) = −1 < 0 et f(2) = 7 > 0 : d’après le TVI, f s’annule entre 1 et 2.",
+      "## Comparaison et gendarmes",
+      "Si g(x) ≤ f(x) ≤ h(x) et si g et h ont la même limite L, alors f tend aussi vers L. Exemple : −1/x ≤ sin(x)/x ≤ 1/x pour x > 0, donc sin(x)/x → 0 en +∞.",
+      "@courbe {\"f\":[{\"f\":\"sin(x)/x\",\"nom\":\"sin(x)/x\"},{\"f\":\"1/x\",\"nom\":\"1/x\"},{\"f\":\"-1/x\",\"nom\":\"−1/x\"}],\"x\":[0.5,20],\"y\":[-1,1.2],\"pas\":2,\"pasy\":0.5} | Observe : la courbe bleue oscille, mais reste coincée entre les deux « gendarmes » 1/x et −1/x, qui tendent vers 0. Elle n’a pas le choix : elle tend vers 0.",
+      "## Où ça casse",
+      "- « ∞/∞ = 1 » est faux : 2x/x → 2 et x²/x → +∞.\n- « ∞ − ∞ = 0 » est faux : (x + 5) − x → 5 et x² − x → +∞.\n- Le TVI exige la continuité : abs(x)/x vaut −1 en −1 et 1 en 1, mais ne s’annule jamais (elle saute).\n- sin x n’a pas de limite en +∞ : elle oscille sans se stabiliser.",
+      "? Pourquoi peut-on dire que x + sin x tend vers +∞ ? || sin x ≥ −1, donc x + sin x ≥ x − 1, qui tend vers +∞ : par comparaison, x + sin x → +∞.",
+      "histoire: La définition avec ε et δ est due à Karl Weierstrass, vers 1860. Avant lui, Cauchy (1821) parlait de quantités « qui deviennent infiniment petites ». Le théorème des valeurs intermédiaires a été démontré rigoureusement par Bernard Bolzano en 1817.",
+      "prof: Bilan expert : une limite se définit avec des écarts aussi petits qu’on veut ; la continuité, c’est « limite = valeur » ; et le TVI transforme un simple changement de signe en preuve d’existence d’une solution. Ce sont les fondations de la dérivation, qui arrive juste après."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Calculer la limite de (3x² + x)/(x² − 4) quand x → +∞.",
+      "etapes": [
+        [
+          "Forme ∞/∞",
+          "le haut et le bas tendent vers +∞"
+        ],
+        [
+          "(3x² + x)/(x² − 4) = (3 + 1/x)/(1 − 4/x²)",
+          "on divise le haut et le bas par x²"
+        ],
+        [
+          "1/x → 0 et 4/x² → 0",
+          "limites de référence"
+        ],
+        [
+          "limite = 3/1 = 3",
+          "asymptote horizontale y = 3"
+        ]
+      ]
+    },
+    {
+      "enonce": "Calculer lim (1 − 2x)/(x − 3) quand x → 3⁻.",
+      "etapes": [
+        [
+          "1 − 2x → −5",
+          "on remplace x par 3 au numérateur"
+        ],
+        [
+          "x − 3 → 0⁻",
+          "x < 3, donc x − 3 est négatif"
+        ],
+        [
+          "−5 ÷ 0⁻ = +∞",
+          "règle des signes : négatif ÷ négatif"
+        ],
+        [
+          "x = 3 est asymptote verticale",
+          "limite infinie en un réel"
+        ]
+      ]
+    },
+    {
+      "enonce": "Montrer que x³ + x − 3 = 0 a une solution entre 1 et 2.",
+      "etapes": [
+        [
+          "f(x) = x³ + x − 3 est continue sur [1 ; 2]",
+          "c’est un polynôme"
+        ],
+        [
+          "f(1) = −1 et f(2) = 7",
+          "on calcule les valeurs aux bornes"
+        ],
+        [
+          "0 est compris entre −1 et 7",
+          "f change de signe"
+        ],
+        [
+          "f(x) = 0 a au moins une solution dans [1 ; 2]",
+          "théorème des valeurs intermédiaires"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "∞/∞ = 1",
+      "juste": "(2x)/x → 2 ; x²/x → +∞",
+      "pourquoi": "∞/∞ est une forme indéterminée : la limite dépend des expressions."
+    },
+    {
+      "faux": "lim (x² − x) = ∞ − ∞ = 0",
+      "juste": "x² − x = x²(1 − 1/x) → +∞",
+      "pourquoi": "∞ − ∞ est indéterminé : factorise par le terme dominant."
+    },
+    {
+      "faux": "lim 5/(x − 2) en 2 = +∞",
+      "juste": "+∞ à droite (0⁺), −∞ à gauche (0⁻)",
+      "pourquoi": "Le signe du 0 au dénominateur décide du signe de l’infini."
+    },
+    {
+      "faux": "Limite en +∞ de 2 + 1/x : asymptote verticale x = 2",
+      "juste": "asymptote horizontale y = 2",
+      "pourquoi": "Une limite finie en ±∞ donne une droite horizontale y = L."
+    },
+    {
+      "faux": "1/x est continue en 0",
+      "juste": "1/x n’est pas définie en 0",
+      "pourquoi": "On ne parle de continuité qu’aux points où la fonction existe."
+    }
+  ],
+  "retenir": [
+    "Une limite décrit vers quoi tend f(x) quand x s’approche d’un nombre ou de ±∞.",
+    "En ±∞, un polynôme se comporte comme son terme de plus haut degré ; une fraction rationnelle comme le quotient de ses termes dominants.",
+    "Formes indéterminées : ∞ − ∞, 0 × ∞, ∞/∞, 0/0 ; il faut transformer l’expression.",
+    "Limite L en ±∞ : asymptote horizontale y = L ; limite infinie en a : asymptote verticale x = a.",
+    "Si f est continue en a, lim f(x) = f(a) quand x → a.",
+    "TVI : f continue sur [a ; b] et changement de signe ⟹ f s’annule entre a et b."
+  ]
+}

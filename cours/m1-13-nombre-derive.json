@@ -1,0 +1,191 @@
+{
+  "id": "m1-nombre-derive",
+  "titre": "Nombre dérivé",
+  "resume": "Le nombre dérivé f′(a) est la pente de la courbe au point d’abscisse a : c’est la pente de la tangente, limite des pentes des sécantes.",
+  "objectifs": [
+    "interpréter f′(a) comme la pente de la tangente et lire son signe sur une courbe",
+    "calculer un taux d’accroissement, pente d’une sécante",
+    "calculer un nombre dérivé par la limite du taux d’accroissement",
+    "écrire l’équation de la tangente en un point",
+    "utiliser l’approximation affine f(a + h) ≈ f(a) + f′(a)h"
+  ],
+  "prerequis": [
+    "m1-limites",
+    "m1-affine"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bienvenue dans l’un de mes chapitres préférés ! On va répondre à une question qui a l’air toute simple : quelle est la pente d’une courbe en un point ? Pour une droite, c’est facile, la pente est la même partout. Pour une courbe, la pente change sans arrêt… et c’est justement ça qu’on va mesurer.",
+      "## La pente en un point",
+      "analogie: À vélo, la route monte, puis s’aplatit, puis descend. À chaque instant, tu sens une pente précise sous tes roues. Le nombre dérivé, c’est cette pente exacte à l’endroit précis où tu te trouves.",
+      "Pour mesurer la pente d’une courbe en un point A, on pose une règle qui touche la courbe en A en la « frôlant », sans la couper à cet endroit : c’est la **tangente**. Sa pente s’appelle le **nombre dérivé** en a, noté f′(a) (on lit « f prime de a »).",
+      "@courbe {\"f\":\"x^2/2-x\",\"x\":[-3,5],\"y\":[-2,6],\"tangente\":3} | Fais glisser x₀ : la tangente (droite noire) suit le point et sa pente f′(x₀) s’affiche. Cherche l’endroit où la tangente devient horizontale : sa pente vaut alors 0.",
+      "!! f′(a) est la pente de la tangente à la courbe au point d’abscisse a : « quand on avance de 1, la tangente monte de f′(a) ».",
+      "## Lire le signe de la pente",
+      "- Pente positive : la courbe monte (de gauche à droite).\n- Pente négative : la courbe descend.\n- Pente nulle : la courbe est « à plat », au sommet d’une bosse ou au fond d’un creux.",
+      "? Au sommet d’une colline, que vaut la pente ? || 0 : la tangente est horizontale.",
+      "## D’où vient la tangente : la sécante qui pivote",
+      "prof: Tu vas peut-être me dire : « comment mesurer une pente avec un seul point ? Il en faut deux ! » Excellente remarque. On triche intelligemment : on prend un deuxième point très proche, on trace la droite qui passe par les deux (une sécante), puis on rapproche le deuxième point… jusqu’à ce que la sécante se confonde avec la tangente.",
+      "@tangente | Choisis x² et diminue l’écart h : la corde (pointillés) pivote et se colle à la tangente. Compare les deux pentes affichées : elles deviennent presque égales.",
+      "La pente de la sécante s’appelle le **taux d’accroissement** : c’est la différence des hauteurs divisée par la différence des abscisses. Le nombre dérivé, c’est ce que devient ce taux quand les deux points se rapprochent : une limite, comme au chapitre précédent.",
+      "? Si la pente d’une route est de 0,1, de combien monte-t-on en avançant de 100 m ? || De 10 m : 0,1 × 100. C’est le sens d’une pente : hauteur gagnée par unité parcourue.",
+      "## Pourquoi c’est si utile",
+      "Une vitesse est une pente : si f(t) est la distance parcourue au temps t, f′(t) est la vitesse à l’instant t, celle qu’affiche le compteur. Le nombre dérivé mesure partout une vitesse de variation : d’une température, d’un coût, d’une population.",
+      "? Une voiture a parcouru f(t) km après t heures. Que représente f′(2) ? || Sa vitesse (en km/h) exactement deux heures après le départ.",
+      "histoire: Au XVIIᵉ siècle, Fermat cherchait les tangentes et les maximums avec une méthode d’« adégalité » très proche de notre taux d’accroissement. Newton (avec ses « fluxions », pour la vitesse des planètes) et Leibniz (qui inventa la notation dy/dx) en ont fait un calcul systématique vers 1670-1680.",
+      "prof: Bilan : f′(a) est une pente, celle de la tangente ; positive, la courbe monte ; négative, elle descend ; nulle, la courbe est à plat. Au niveau Pratique, on apprend à la calculer exactement."
+    ],
+    "pratique": [
+      "prof: Maintenant, on calcule. Je te donne quatre outils : le taux d’accroissement, le nombre dérivé par la limite, la lecture graphique, et l’équation de la tangente. Pour chacun, une recette en étapes, puis on l’applique ensemble.",
+      "## Le taux d’accroissement",
+      "1. Calcule les images f(a) et f(b).\n2. Fais la différence f(b) − f(a).\n3. Divise par b − a (dans le même ordre).",
+      "> τ = (f(b) − f(a)) / (b − a)",
+      "ex: f(x) = x², entre 1 et 3\nf(3) − f(1) = 9 − 1 = 8\nτ = 8 / (3 − 1) = 4\nla sécante passant par (1 ; 1) et (3 ; 9) a pour pente 4",
+      "prof: Remarque bien la différence entre les deux premiers outils : le taux d’accroissement utilise deux points bien distincts (une sécante), le nombre dérivé est ce que devient ce taux quand le deuxième point vient se coller au premier.",
+      "? Taux d’accroissement de f(x) = x² entre 2 et 5 ? || (25 − 4)/(5 − 2) = 21/3 = 7.",
+      "## Calculer f′(a) par la définition",
+      "On écrit le deuxième point à l’abscisse a + h, avec h petit, puis on fait tendre h vers 0.",
+      "> f′(a) = lim (f(a + h) − f(a)) / h  quand h → 0",
+      "1. Calcule f(a + h) et développe.\n2. Soustrais f(a).\n3. Divise par h et simplifie (h ≠ 0).\n4. Fais tendre h vers 0.",
+      "@etapes {\"etapes\":[[\"f(x) = x², a = 3\",\"On cherche la pente de la courbe au point (3 ; 9).\"],[\"f(3 + h) = 9 + 6h + h²\",\"On développe (3 + h)² = 9 + 6h + h².\"],[\"f(3 + h) − f(3) = 6h + h²\",\"On retire f(3) = 9.\"],[\"(6h + h²)/h = 6 + h\",\"On divise chaque terme par h (h ≠ 0).\"],[\"6 + h → 6\",\"Quand h tend vers 0.\"],[\"f′(3) = 6\",\"La tangente en 3 a pour pente 6.\"]]} | Lance la lecture : à chaque étape, essaie de prévoir la ligne suivante avant qu’elle n’apparaisse.",
+      "? Calcule f′(1) pour f(x) = x² par la définition. || f(1 + h) − f(1) = 1 + 2h + h² − 1 = 2h + h² ; divisé par h : 2 + h → 2. Donc f′(1) = 2.",
+      "## Lire f′(a) sur un graphique",
+      "Sur la tangente tracée, pars du point de contact, avance de 1 vers la droite, et compte de combien il faut monter (ou descendre) pour retrouver la tangente : c’est f′(a). Plus généralement, prends deux points de la tangente et calcule Δy ÷ Δx.",
+      "@droite {\"A\":[1,1],\"B\":[3,5]} | Ici, la droite joue le rôle d’une tangente. Déplace B : la pente Δy ÷ Δx s’affiche. Avec A(1 ; 1) et B(3 ; 5), on monte de 4 pour 2 pas : pente 2.",
+      "## Équation de la tangente",
+      "La tangente en a passe par le point A(a ; f(a)) et a pour pente f′(a).",
+      "> y = f(a) + f′(a)(x − a)",
+      "1. Calcule f(a) : la hauteur du point de contact.\n2. Calcule f′(a) : la pente.\n3. Remplace dans la formule, puis développe pour obtenir y = mx + p.",
+      "@etapes {\"etapes\":[[\"f(x) = x², a = 3\",\"On veut la tangente au point d’abscisse 3.\"],[\"f(3) = 9\",\"Le point de contact est A(3 ; 9).\"],[\"f′(3) = 6\",\"La pente, calculée juste avant.\"],[\"y = 9 + 6(x − 3)\",\"Formule y = f(a) + f′(a)(x − a).\"],[\"y = 6x − 9\",\"On développe : 9 + 6x − 18.\"]]} | Suis la construction de l’équation, puis vérifie : en x = 3, on retrouve bien y = 9.",
+      "@courbe {\"f\":\"x^2\",\"x\":[-1,5],\"y\":[-10,16],\"tangente\":3,\"pasy\":2} | Place x₀ sur 3 : la pente affichée est 6 et la tangente coupe l’axe vertical en −9, comme dans y = 6x − 9. Essaie x₀ = 1 : pente 2.",
+      "? Tangente à f(x) = x² en a = 1 ? || f(1) = 1 et f′(1) = 2, donc y = 1 + 2(x − 1) = 2x − 1.",
+      "attention: L’erreur classique est d’écrire y = f′(a)x + f(a). La tangente passe par (a ; f(a)), pas par (0 ; f(a)) : il faut bien (x − a).",
+      "## Approcher une valeur grâce à la tangente",
+      "Près de a, la courbe et sa tangente se confondent presque. Donc f(a + h) ≈ f(a) + f′(a) × h quand h est petit.",
+      "ex: f(x) = x², a = 3, h = 0,01\nf(3,01) ≈ 9 + 6 × 0,01 = 9,06\nvaleur exacte : 3,01² = 9,0601",
+      "prof: Petit conseil : à la fin d’un calcul de tangente, vérifie toujours que ta droite passe par le point de contact. Une seconde de vérification t’évite la moitié des erreurs !"
+    ],
+    "expert": [
+      "prof: Au niveau expert, on précise les mots : quand dit-on qu’une fonction est dérivable ? Que signifie vraiment « la tangente colle à la courbe » ? Et surtout, où est-ce que ça ne marche pas ?",
+      "## Définition",
+      "Soit f définie sur un intervalle ouvert contenant a. f est **dérivable en a** si le taux d’accroissement (f(a + h) − f(a))/h a une limite **finie** quand h → 0. Cette limite est f′(a).",
+      "> f′(a) = lim (f(a + h) − f(a)) / h = lim (f(x) − f(a)) / (x − a)",
+      "La seconde écriture (avec x → a) est la même, en posant x = a + h.",
+      "## La meilleure approximation affine",
+      "> f(a + h) = f(a) + f′(a) h + h ε(h),  avec ε(h) → 0 quand h → 0",
+      "L’erreur commise en remplaçant la courbe par sa tangente est h ε(h) : elle devient négligeable devant h. Aucune autre droite passant par A ne fait mieux : c’est ce qui définit la tangente.",
+      "@courbe {\"f\":\"sqrt(x)\",\"x\":[-0.5,6],\"y\":[-0.5,3],\"tangente\":4} | Place x₀ = 4 : f(4) = 2 et f′(4) = 0,25. Près de 4, la tangente et la courbe sont presque confondues : √4,1 ≈ 2 + 0,25 × 0,1 = 2,025 (valeur exacte ≈ 2,0248). Approche ensuite x₀ de 0 : la pente explose.",
+      "? Avec f(4) = 2 et f′(4) = 1/4 pour f(x) = √x, donne une valeur approchée de √4,2. || √4,2 ≈ 2 + 0,25 × 0,2 = 2,05 (valeur exacte ≈ 2,0494).",
+      "prof: Retiens bien l’idée de l’approximation affine : c’est elle que ta calculatrice, les GPS ou les simulations physiques utilisent en permanence, en remplaçant une courbe compliquée par de petits bouts de tangentes.",
+      "## Dérivable implique continue",
+      "Si f est dérivable en a, alors f(a + h) − f(a) = h × [taux] → 0 × f′(a) = 0 : f est continue en a. La réciproque est fausse, comme le montre la valeur absolue.",
+      "## Où ça casse",
+      "@courbe {\"f\":\"abs(x)\",\"x\":[-3,3],\"y\":[-1,3],\"tangente\":1} | Fais passer x₀ de 1 à −1 : la pente saute de 1 à −1 sans transition. En 0, le taux vaut 1 à droite et −1 à gauche : pas de limite commune, donc |x| n’est pas dérivable en 0, bien qu’elle soit continue.",
+      "- |x| en 0 : un « coin », pente à gauche −1, à droite +1 : pas dérivable.\n- √x en 0 : le taux 1/√h tend vers +∞ : tangente verticale, pas de nombre dérivé.\n- Une fonction qui fait un saut en a n’y est pas continue, donc pas dérivable.",
+      "? Calcule le taux d’accroissement de √x entre 0 et h > 0. Que conclure ? || (√h − 0)/h = 1/√h, qui tend vers +∞ quand h → 0⁺ : √x n’est pas dérivable en 0 (tangente verticale).",
+      "? f′(a) = 0 : la fonction est-elle forcément maximale ou minimale en a ? || Non : x³ a une tangente horizontale en 0 mais elle continue de monter. f′(a) = 0 dit seulement que la tangente est horizontale.",
+      "histoire: Pendant longtemps, on a cru que toute fonction continue était dérivable sauf en quelques points isolés. En 1872, Weierstrass a présenté une fonction continue partout et dérivable nulle part : une courbe entièrement faite de « coins ».",
+      "prof: Bilan expert : dérivable signifie « le taux d’accroissement a une limite finie » ; alors la tangente est la meilleure approximation affine, et la fonction est continue. Les coins et les tangentes verticales sont les deux façons classiques d’échouer. Au chapitre suivant, on calcule f′(x) en tout x avec des règles."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Calculer f′(2) pour f(x) = x² + x par la définition.",
+      "etapes": [
+        [
+          "f(2 + h) = (2 + h)² + (2 + h) = 6 + 5h + h²",
+          "on développe (2 + h)² = 4 + 4h + h²"
+        ],
+        [
+          "f(2) = 6",
+          "4 + 2"
+        ],
+        [
+          "(f(2 + h) − f(2))/h = (5h + h²)/h = 5 + h",
+          "on divise chaque terme par h (h ≠ 0)"
+        ],
+        [
+          "f′(2) = 5",
+          "quand h → 0, 5 + h → 5"
+        ]
+      ]
+    },
+    {
+      "enonce": "Écrire la tangente à f(x) = x² en a = 1.",
+      "etapes": [
+        [
+          "f(1) = 1",
+          "ordonnée du point de contact"
+        ],
+        [
+          "f′(1) = 2",
+          "pente de la tangente (calculée par la définition)"
+        ],
+        [
+          "y = 1 + 2(x − 1)",
+          "formule y = f(a) + f′(a)(x − a)"
+        ],
+        [
+          "y = 2x − 1",
+          "on développe"
+        ]
+      ]
+    },
+    {
+      "enonce": "Donner une valeur approchée de √4,1 avec la tangente en 4.",
+      "etapes": [
+        [
+          "f(x) = √x, f(4) = 2, f′(4) = 1/4",
+          "on admet la pente f′(4) = 1/(2√4)"
+        ],
+        [
+          "f(4 + h) ≈ f(4) + f′(4) h",
+          "approximation affine"
+        ],
+        [
+          "√4,1 ≈ 2 + 0,25 × 0,1 = 2,025",
+          "h = 0,1"
+        ],
+        [
+          "valeur exacte ≈ 2,0248",
+          "l’erreur est très petite"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "Tangente en a : y = f′(a)x + f(a)",
+      "juste": "y = f(a) + f′(a)(x − a)",
+      "pourquoi": "La tangente passe par le point (a ; f(a)), pas par (0 ; f(a))."
+    },
+    {
+      "faux": "(6h + h²)/h = 6 + h²",
+      "juste": "(6h + h²)/h = 6 + h",
+      "pourquoi": "On divise chaque terme par h."
+    },
+    {
+      "faux": "Taux entre 1 et 3 de x² : 9 − 1 = 8",
+      "juste": "(9 − 1)/(3 − 1) = 4",
+      "pourquoi": "Un taux d’accroissement est une différence divisée par l’écart des abscisses."
+    },
+    {
+      "faux": "f′(a) = 0, donc f est constante",
+      "juste": "f′(a) = 0 : tangente horizontale en a",
+      "pourquoi": "Le nombre dérivé ne décrit la courbe qu’au point a."
+    },
+    {
+      "faux": "|x| est continue en 0, donc dérivable en 0",
+      "juste": "|x| est continue mais pas dérivable en 0",
+      "pourquoi": "Dérivable implique continue, mais la réciproque est fausse."
+    }
+  ],
+  "retenir": [
+    "f′(a) est la pente de la tangente à la courbe au point d’abscisse a.",
+    "Taux d’accroissement : (f(b) − f(a))/(b − a), pente de la sécante.",
+    "f′(a) = lim (f(a + h) − f(a))/h quand h → 0.",
+    "Tangente en a : y = f(a) + f′(a)(x − a).",
+    "Pente positive : la courbe monte ; négative : elle descend ; nulle : tangente horizontale.",
+    "Près de a : f(a + h) ≈ f(a) + f′(a)h."
+  ]
+}

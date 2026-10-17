@@ -1,0 +1,19 @@
+{
+  "name": "equilibre",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Équilibre : appli d'apprentissage des mathématiques, locale et sans compte.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node tools/artifact.mjs",
+    "check": "npm run build && node tools/check.cjs dist/index.html --n 60",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.3",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}

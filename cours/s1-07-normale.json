@@ -1,0 +1,192 @@
+{
+  "id": "s1-normale",
+  "titre": "La loi normale",
+  "resume": "La loi normale N(μ ; σ²), la fameuse courbe en cloche, décrit les grandeurs qui résultent de nombreux petits effets additionnés. On la ramène toujours à la loi N(0 ; 1) en centrant et en réduisant, puis on lit une table.",
+  "objectifs": [
+    "reconnaître la courbe en cloche et le rôle de μ (position) et σ (étalement)",
+    "centrer et réduire : passer de X ~ N(μ ; σ²) à Z = (X − μ)/σ ~ N(0 ; 1)",
+    "lire la table de Φ et calculer P(X ≤ a), P(X > a), P(a ≤ X ≤ b)",
+    "utiliser les règles 68-95-99,7 et les quantiles 1,645 ; 1,96 ; 2,576",
+    "trouver une valeur seuil (quantile) et retrouver μ ou σ",
+    "approcher une loi binomiale par une loi normale avec la correction de continuité"
+  ],
+  "prerequis": [
+    "s1-lois-continues",
+    "s1-binomiale-poisson"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Voici la loi la plus célèbre des statistiques : la loi normale, la « courbe en cloche ». Tu la retrouveras partout dans la suite de l’UE : intervalles de confiance, tests… Bonne nouvelle : une fois qu’on a compris deux réglages, μ et σ, tout se ramène à une seule table.",
+      "## D’où vient la cloche ?",
+      "Mesure la taille de 10 000 adultes, la masse de 10 000 baguettes, les erreurs de mesure d’un instrument : l’histogramme prend presque toujours la même forme, haute au milieu, symétrique, avec des bords qui s’effacent. Pourquoi ? Parce que chacune de ces grandeurs est la **somme de nombreux petits effets** indépendants (gènes, alimentation, hasard du four…).",
+      "@galton | Dans une planche de Galton, chaque bille subit n petits chocs, à gauche ou à droite : le diagramme donne la probabilité de chaque case d’arrivée. Mets p = 0,5 et monte n jusqu’à 30 : l’accumulation de ces petits effets dessine une cloche.",
+      "analogie: Une foule qui marche au hasard à partir d’un même point : après un moment, la plupart des gens sont restés près du départ, quelques-uns se sont bien éloignés, presque personne n’est allé très loin. La répartition ressemble à une cloche.",
+      "## Deux réglages : μ et σ",
+      "La loi normale N(μ ; σ²) a deux paramètres. **μ** (mu) est la moyenne : le sommet de la cloche, son centre de symétrie. **σ** (sigma) est l’écart-type : il règle la largeur de la cloche. Petit σ : cloche haute et étroite ; grand σ : cloche basse et large.",
+      "@loi-continue {\"loi\":\"normale\",\"mu\":0,\"sigma\":1,\"a\":-1,\"b\":1} | Bouge μ : la cloche glisse sans changer de forme. Bouge σ : elle s’élargit en s’aplatissant (l’aire totale reste 1). Place a en μ − σ et b en μ + σ : la probabilité vaut toujours environ 0,68.",
+      "attention: Dans N(μ ; σ²), le second nombre est la **variance** σ². N(100 ; 225) signifie σ = 15. Certains livres écrivent N(μ ; σ) : regarde toujours la convention de l’énoncé.",
+      "## La règle 68 – 95 – 99,7",
+      "Quelles que soient μ et σ, la cloche a toujours les mêmes proportions :\n- environ 68 % des valeurs sont à moins de 1 σ de la moyenne ;\n- environ 95 % sont à moins de 2 σ ;\n- environ 99,7 % sont à moins de 3 σ.",
+      "!! Une valeur à plus de 3 écarts-types de la moyenne est très rare (3 chances sur 1 000) : c’est souvent le signe d’une anomalie.",
+      "@normale-simple | Fais varier l’intervalle autour de la moyenne et retrouve les trois pourcentages 68 %, 95 %, 99,7 %.",
+      "? Le QI suit N(100 ; 15²). Quelle proportion de la population a un QI entre 70 et 130 ? || 70 et 130 sont à 2 σ de 100 : environ 95 %.",
+      "## Comparer grâce au score z",
+      "Ton score z, c’est ton nombre d’écarts-types au-dessus (ou au-dessous) de la moyenne : z = (x − μ)/σ. Il permet de comparer des choses qui n’ont pas la même échelle.",
+      "? Léa a 14 dans un examen où μ = 10, σ = 2 ; Tom a 15 dans un autre où μ = 12, σ = 3. Qui s’en sort le mieux relativement ? || Léa : z = (14 − 10)/2 = 2, Tom : z = (15 − 12)/3 = 1. Léa est 2 écarts-types au-dessus de la moyenne.",
+      "prof: Ce score z est l’idée-clé de tout le chapitre : on transforme n’importe quelle loi normale en la loi « standard » N(0 ; 1), et on n’a besoin que d’une seule table pour tout calculer.",
+      "? Dans une population, une valeur a un score z = −3,5. Est-ce courant ? || Non : elle est à plus de 3 écarts-types de la moyenne, ce qui arrive moins de 3 fois sur 1 000.",
+      "histoire: Abraham de Moivre découvre la courbe en cloche en 1733 en approchant les probabilités de pile ou face pour un grand nombre de lancers. Gauss l’utilise vers 1809 pour les erreurs de mesure en astronomie, d’où le nom de « loi de Gauss » ; Laplace démontre ensuite le théorème central limite qui explique son omniprésence.",
+      "prof: Bilan : la cloche est fixée par son centre μ et sa largeur σ ; 68-95-99,7 donne des ordres de grandeur immédiats ; et le score z ramène tout à une loi unique. On passe au calcul précis avec la table !"
+    ],
+    "pratique": [
+      "prof: Ici, on apprend à calculer précisément. L’outil central est la fonction Φ : Φ(z) = P(Z ≤ z) pour Z ~ N(0 ; 1), donnée par la table (ou la calculatrice). Toutes les questions se ramènent à Φ en deux temps : centrer-réduire, puis lire.",
+      "## Centrer et réduire",
+      "> Si X ~ N(μ ; σ²), alors Z = (X − μ)/σ ~ N(0 ; 1)",
+      "> P(X ≤ a) = P(Z ≤ (a − μ)/σ) = Φ((a − μ)/σ)",
+      "## Lire la table de Φ",
+      "1. La table donne Φ(z) = P(Z ≤ z) pour z ≥ 0 : ligne = unités et dixièmes, colonne = centièmes.\n2. P(Z > z) = 1 − Φ(z).\n3. Pour z négatif, symétrie : Φ(−z) = 1 − Φ(z).\n4. P(a ≤ Z ≤ b) = Φ(b) − Φ(a) ; et P(−z ≤ Z ≤ z) = 2Φ(z) − 1.",
+      "@loi-continue {\"loi\":\"normale\",\"mu\":0,\"sigma\":1,\"a\":-4,\"b\":1.25,\"curseurs\":false,\"x\":[-4,4]} | Ici a est tout à gauche (en −4) : l’aire bleue est Φ(b). Place b = 1,25 : tu lis Φ(1,25) ≈ 0,8944. Mets ensuite b = −1,25 et vérifie que l’aire vaut 1 − 0,8944.",
+      "? Calcule P(Z > 1,5) sachant Φ(1,5) ≈ 0,9332. || 1 − 0,9332 = 0,0668.",
+      "## Calculer une probabilité pour X ~ N(μ ; σ²)",
+      "@etapes {\"etapes\":[[\"X ~ N(80 ; 14²), on cherche P(70 ≤ X ≤ 100)\",\"μ = 80, σ = 14 (attention, pas 196).\"],[\"z₁ = (70 − 80)/14 ≈ −0,71 ; z₂ = (100 − 80)/14 ≈ 1,43\",\"On centre et on réduit chaque borne.\"],[\"P = Φ(1,43) − Φ(−0,71)\",\"Aire entre deux bornes.\"],[\"Φ(−0,71) = 1 − Φ(0,71) ≈ 1 − 0,7611 = 0,2389\",\"Symétrie pour la borne négative.\"],[\"P ≈ 0,9236 − 0,2389 = 0,6847\",\"Lecture de table (la calculatrice donne 0,6859 avec les z non arrondis).\"]]} | Avance étape par étape ; à chaque borne, demande-toi si z est positif ou négatif.",
+      "@loi-continue {\"loi\":\"normale\",\"mu\":80,\"sigma\":14,\"a\":70,\"b\":100,\"curseurs\":false,\"x\":[24,136]} | Vérifie l’exemple : l’aire entre 70 et 100 vaut environ 0,686. Déplace b vers 108 (μ + 2σ) et a vers 52 (μ − 2σ) : tu retrouves 95 %.",
+      "prof: L’erreur la plus fréquente : diviser par σ² au lieu de σ. Si l’énoncé dit N(80 ; 196), alors σ = √196 = 14. Je te conseille d’écrire « σ = … » noir sur blanc avant tout calcul.",
+      "? X ~ N(50 ; 25). Calcule P(X ≤ 55) sachant Φ(1) ≈ 0,8413. || σ = 5, z = (55 − 50)/5 = 1, donc P ≈ 0,8413.",
+      "## Les quantiles à connaître",
+      "> P(−1,96 ≤ Z ≤ 1,96) = 0,95    P(−2,576 ≤ Z ≤ 2,576) = 0,99    P(Z ≤ 1,645) = 0,95",
+      "- 1,645 : 90 % au centre (ou 5 % dans une seule queue).\n- 1,96 : 95 % au centre (2,5 % dans chaque queue).\n- 2,576 : 99 % au centre (0,5 % dans chaque queue).",
+      "@loi-continue {\"loi\":\"normale\",\"mu\":0,\"sigma\":1,\"a\":-1.96,\"b\":1.96,\"curseurs\":false,\"x\":[-4,4]} | Vérifie que l’aire entre −1,96 et 1,96 vaut 0,95. Rapproche les bornes de ±1,645 (0,90), puis écarte-les à ±2,576 (0,99).",
+      "## Trouver un seuil (quantile)",
+      "1. Écris P(X ≤ t) = q.\n2. Cherche dans la table (à l’envers) le z tel que Φ(z) = q.\n3. Reviens à X : t = μ + zσ.",
+      "@etapes {\"etapes\":[[\"X ~ N(80 ; 14²), on cherche t tel que P(X ≤ t) = 0,9\",\"Le seuil des 10 % les plus élevés.\"],[\"Φ(z) = 0,9 donne z ≈ 1,28\",\"Lecture inverse de la table.\"],[\"t = 80 + 1,28 × 14\",\"On « décentre-déréduit ».\"],[\"t ≈ 97,9\",\"90 % des valeurs sont en dessous de 97,9.\"]]} | Remarque le sens : on part d’une probabilité pour arriver à une valeur.",
+      "? X ~ N(100 ; 15²). Quelle valeur dépassée par seulement 2,5 % ? || z = 1,96, donc t = 100 + 1,96 × 15 = 129,4.",
+      "## Approcher une binomiale par une loi normale",
+      "1. Conditions usuelles : n ≥ 30, np ≥ 5 et n(1 − p) ≥ 5.\n2. Même espérance et même écart-type : μ = np, σ = √(np(1 − p)).\n3. **Correction de continuité** : une valeur entière k de la binomiale devient l’intervalle [k − 0,5 ; k + 0,5]. Ainsi P(X ≤ k) ≈ Φ((k + 0,5 − μ)/σ) et P(X ≥ k) ≈ 1 − Φ((k − 0,5 − μ)/σ).",
+      "@galton | Monte n et compare la forme du diagramme en bâtons à une cloche : chaque bâton d’abscisse k est remplacé par la bande de k − 0,5 à k + 0,5 sous la courbe. D’où la correction de continuité.",
+      "@etapes {\"etapes\":[[\"X ~ B(100 ; 0,5), on cherche P(X ≤ 55)\",\"100 lancers de pièce.\"],[\"n = 100, np = 50 ≥ 5, n(1 − p) = 50 ≥ 5\",\"Conditions vérifiées.\"],[\"μ = 50, σ = √25 = 5\",\"Paramètres de la loi normale.\"],[\"P(X ≤ 55) ≈ P(Y ≤ 55,5) = Φ((55,5 − 50)/5) = Φ(1,1)\",\"Correction de continuité.\"],[\"≈ 0,8643\",\"La valeur exacte binomiale est 0,8644 !\"]]} | Sans la correction, on trouverait Φ(1) ≈ 0,841, nettement moins bon.",
+      "prof: Tu as maintenant toute la boîte à outils de la loi normale. Méthode réflexe : 1) σ, pas σ² ; 2) un dessin de cloche avec la zone cherchée ; 3) centrer-réduire ; 4) Φ et ses symétries."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on regarde la loi normale de plus près : sa densité, pourquoi le centrage-réduction marche, ses propriétés de stabilité et les limites de l’approximation normale.",
+      "## Densité",
+      "> f(x) = (1/(σ√(2π))) × e^(−(x − μ)²/(2σ²))",
+      "La constante 1/(σ√(2π)) assure une aire totale 1 (intégrale de Gauss : ∫ e^(−x²/2) dx = √(2π)). La courbe est symétrique par rapport à μ et a ses points d’inflexion en μ − σ et μ + σ : σ se lit donc sur le dessin, c’est là que la cloche change de courbure.",
+      "@courbe {\"f\":\"exp(-((x-m)/k)^2/2)/(k*sqrt(2*pi))\",\"curseurs\":{\"m\":[-3,3,0.5,0],\"k\":[0.4,3,0.1,1]},\"x\":[-6,6],\"y\":[0,1],\"pas\":1,\"pasy\":0.1,\"etiq\":1,\"etiqy\":0.2,\"aire\":[-1,1]} | Ici m est μ et k est σ. Place les bornes de l’aire en m − k et m + k : l’aire reste 0,683 quels que soient m et k. C’est la preuve visuelle que le centrage-réduction ne change pas les probabilités.",
+      "## Pourquoi Z = (X − μ)/σ suit N(0 ; 1)",
+      "Toute transformation affine d’une variable normale est normale : si X ~ N(μ ; σ²), alors aX + b ~ N(aμ + b ; a²σ²). Avec a = 1/σ et b = −μ/σ, on obtient E(Z) = 0 et V(Z) = 1.",
+      "prof: Une question que je pose souvent à l’oral : si X et Y sont deux mesures indépendantes, la différence X − Y est-elle moins dispersée que X ? Non, elle l’est plus ! Les incertitudes s’ajoutent toujours. Garde cet exemple en tête pour la stabilité qui suit.",
+      "## Stabilité par addition",
+      "Si X ~ N(μ₁ ; σ₁²) et Y ~ N(μ₂ ; σ₂²) sont **indépendantes**, alors X + Y ~ N(μ₁ + μ₂ ; σ₁² + σ₂²) et X − Y ~ N(μ₁ − μ₂ ; σ₁² + σ₂²). Les variances s’additionnent toujours, même pour une différence.",
+      "? X ~ N(10 ; 9) et Y ~ N(4 ; 16) indépendantes. Loi de X − Y ? || N(6 ; 25) : les moyennes se soustraient, les variances s’additionnent, donc σ = 5.",
+      "## Retrouver μ ou σ",
+      "Si P(X ≤ a) = q, alors (a − μ)/σ = z_q où Φ(z_q) = q. Une équation, une inconnue : on isole μ = a − z_q σ, ou σ = (a − μ)/z_q. Avec deux conditions, on résout un système de deux équations en μ et σ.",
+      "? X ~ N(μ ; 4²) et P(X ≤ 30) = 0,975. Trouve μ. || (30 − μ)/4 = 1,96, donc μ = 30 − 7,84 = 22,16.",
+      "## Le théorème de Moivre-Laplace",
+      "Si Xₙ ~ B(n ; p), alors (Xₙ − np)/√(np(1 − p)) converge en loi vers N(0 ; 1) quand n → +∞. C’est un cas particulier du théorème central limite (chapitre suivant) : Xₙ est une somme de n variables de Bernoulli indépendantes.",
+      "@loi-discrete {\"loi\":\"binomiale\",\"n\":30,\"p\":0.5,\"k\":15} | Avec n = 30 et p = 0,5, le diagramme a déjà la forme d’une cloche. Mets p = 0,05 : la cloche est déformée, très asymétrique ; c’est pour cela qu’on exige np ≥ 5 et n(1 − p) ≥ 5.",
+      "## Où ça casse",
+      "- **p proche de 0 ou de 1** avec n moyen : la binomiale est trop asymétrique, on utilise Poisson (p petit) plutôt que la normale.\n- **Oublier la correction de continuité** pour n moyen : l’erreur peut atteindre quelques centièmes ; elle devient négligeable quand σ est grand.\n- **Données asymétriques** (revenus, durées) : une loi normale donnerait des valeurs négatives ou sous-estimerait les grandes valeurs ; on transforme souvent par le logarithme.\n- **Queues lointaines** : la règle des 99,7 % suppose une vraie loi normale ; les phénomènes financiers ont des queues bien plus épaisses.",
+      "? Pour B(40 ; 0,05), l’approximation normale est-elle raisonnable ? || Non : np = 2 < 5. La binomiale est très asymétrique ; on prend plutôt Poisson P(2).",
+      "prof: Tu sais maintenant pourquoi la loi normale est partout (somme de petits effets), comment calculer avec (centrer-réduire puis Φ) et quand s’en méfier. Prochaine étape : la moyenne d’un échantillon, qui va suivre… une loi normale."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Le QI suit N(100 ; 15²). Proportion de personnes ayant un QI supérieur à 130 ?",
+      "etapes": [
+        [
+          "σ = 15",
+          "le second paramètre est la variance"
+        ],
+        [
+          "z = (130 − 100)/15 = 2",
+          "centrer-réduire"
+        ],
+        [
+          "P(X > 130) = 1 − Φ(2)",
+          "aire à droite"
+        ],
+        [
+          "≈ 1 − 0,9772 = 0,0228",
+          "lecture de table : environ 2,3 %"
+        ]
+      ]
+    },
+    {
+      "enonce": "La masse d’un paquet suit N(500 ; 4²) en grammes. Quelle masse m n’est dépassée que par 5 % des paquets ?",
+      "etapes": [
+        [
+          "P(X ≤ m) = 0,95",
+          "traduction"
+        ],
+        [
+          "z = 1,645",
+          "Φ(1,645) = 0,95"
+        ],
+        [
+          "m = 500 + 1,645 × 4",
+          "on revient à X"
+        ],
+        [
+          "m ≈ 506,6 g",
+          "arrondi au dixième"
+        ]
+      ]
+    },
+    {
+      "enonce": "X ~ B(1 000 ; 0,3). Valeur approchée de P(X ≤ 320) ?",
+      "etapes": [
+        [
+          "np = 300 ≥ 5, n(1 − p) = 700 ≥ 5",
+          "conditions de l’approximation normale"
+        ],
+        [
+          "μ = 300, σ = √210 ≈ 14,49",
+          "mêmes espérance et écart-type"
+        ],
+        [
+          "P(X ≤ 320) ≈ Φ((320,5 − 300)/14,49) = Φ(1,41)",
+          "correction de continuité"
+        ],
+        [
+          "≈ 0,921",
+          "lecture de table"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "X ~ N(80 ; 196), z = (100 − 80)/196",
+      "juste": "σ = √196 = 14, z = (100 − 80)/14",
+      "pourquoi": "Le second paramètre est la variance σ² ; on divise par l’écart-type σ."
+    },
+    {
+      "faux": "P(Z > 1,2) = Φ(1,2)",
+      "juste": "P(Z > 1,2) = 1 − Φ(1,2)",
+      "pourquoi": "Φ(z) donne l’aire à gauche de z ; l’aire à droite est son complément."
+    },
+    {
+      "faux": "Φ(−0,8) = −Φ(0,8)",
+      "juste": "Φ(−0,8) = 1 − Φ(0,8)",
+      "pourquoi": "Une probabilité n’est jamais négative : la symétrie de la cloche donne Φ(−z) = 1 − Φ(z)."
+    },
+    {
+      "faux": "Pour 95 % au centre, z = 1,645",
+      "juste": "z = 1,96",
+      "pourquoi": "1,645 laisse 5 % dans UNE seule queue (90 % au centre) ; pour 95 % au centre, il faut 2,5 % de chaque côté."
+    },
+    {
+      "faux": "B(100 ; 0,5) : P(X ≤ 55) ≈ Φ((55 − 50)/5)",
+      "juste": "≈ Φ((55,5 − 50)/5)",
+      "pourquoi": "Correction de continuité : la valeur entière 55 occupe l’intervalle [54,5 ; 55,5]."
+    }
+  ],
+  "retenir": [
+    "N(μ ; σ²) : cloche centrée en μ, de largeur σ ; le second paramètre est la variance.",
+    "Z = (X − μ)/σ suit N(0 ; 1) ; P(X ≤ a) = Φ((a − μ)/σ).",
+    "Φ(−z) = 1 − Φ(z) ; P(Z > z) = 1 − Φ(z) ; P(−z ≤ Z ≤ z) = 2Φ(z) − 1.",
+    "68 % à 1 σ, 95 % à 2 σ, 99,7 % à 3 σ ; quantiles 1,645 (90 %), 1,96 (95 %), 2,576 (99 %).",
+    "B(n ; p) ≈ N(np ; np(1 − p)) si n ≥ 30, np ≥ 5, n(1 − p) ≥ 5, avec la correction de continuité ± 0,5."
+  ]
+}

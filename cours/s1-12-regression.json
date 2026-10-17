@@ -1,0 +1,185 @@
+{
+  "id": "s1-regression",
+  "titre": "Corrélation et régression linéaire",
+  "resume": "Quand deux grandeurs varient ensemble, on mesure la force de leur lien linéaire (corrélation) et on trace la droite qui résume le nuage au mieux (moindres carrés), pour prévoir.",
+  "objectifs": [
+    "représenter un nuage de points et placer le point moyen",
+    "calculer une covariance et un coefficient de corrélation r",
+    "déterminer la droite des moindres carrés et faire une prévision",
+    "interpréter r², les résidus, et distinguer corrélation et causalité",
+    "ajuster un nuage exponentiel par changement de variable z = ln y"
+  ],
+  "prerequis": [
+    "s1-resumes",
+    "s1-descriptive"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Dernier chapitre : on regarde deux grandeurs à la fois. Est-ce que plus on révise, meilleure est la note ? Est-ce que le prix d’une voiture baisse avec son âge ? Tu vas voir qu’un simple dessin, le nuage de points, en dit déjà beaucoup.",
+      "## Le nuage de points",
+      "Chaque individu donne un couple (x ; y) : par exemple x = heures de révision, y = note. On place un point par individu : c’est le **nuage de points**. Sa forme raconte le lien entre les deux grandeurs.",
+      "analogie: Le nuage, c’est comme une volée d’oiseaux : s’ils volent en file serrée, la direction est nette ; s’ils sont éparpillés, on devine à peine où ils vont.",
+      "@nuage {\"r\":0.8,\"n\":25} | Fais varier le « lien voulu » de −1 à 1. Observe : à 0,9 les points s’alignent en montant, à −0,9 en descendant, à 0 ils forment une boule sans direction.",
+      "## Un nombre pour la force du lien",
+      "Le **coefficient de corrélation** r est toujours entre −1 et 1. Proche de 1 : les points montent presque en ligne droite. Proche de −1 : ils descendent presque en ligne droite. Proche de 0 : pas de tendance linéaire.",
+      "!! Le signe de r donne le sens du lien ; sa valeur absolue, sa force.",
+      "? Âge d’une voiture et prix de revente : r positif ou négatif ? || Négatif : plus la voiture est vieille, moins elle vaut.",
+      "## La droite qui résume le nuage",
+      "prof: Pour prévoir, on veut une droite qui passe « au mieux » au milieu des points. Au mieux, ça veut dire : la somme des carrés des écarts verticaux entre les points et la droite est la plus petite possible. D’où son nom : droite des **moindres carrés**.",
+      "@regression {} | Change la pente et le bruit : la droite reste au cœur du nuage. Plus le bruit est fort, plus les points s’en écartent et plus r baisse.",
+      "Cette droite passe toujours par le **point moyen** G, de coordonnées (moyenne des x ; moyenne des y).",
+      "? Les x valent 2, 4, 6 et les y 1, 5, 6. Où est G ? || G(4 ; 4).",
+      "## Corrélé ne veut pas dire causé",
+      "Les ventes de glaces et les noyades montent ensemble en été. Les glaces ne causent pas les noyades : c’est la chaleur qui fait monter les deux. Une corrélation peut venir d’un **facteur caché**.",
+      "? Dans les villes, nombre de pharmacies et nombre de naissances sont corrélés. Pourquoi ? || Les grandes villes ont plus d’habitants, donc plus de pharmacies et plus de naissances.",
+      "histoire: Francis Galton étudie vers 1886 la taille des enfants en fonction de celle des parents et remarque que les enfants de parents très grands sont en moyenne moins grands qu’eux : il parle de « régression vers la moyenne », d’où le mot régression. Karl Pearson donne la formule de r en 1896.",
+      "prof: Bilan : un nuage, un point moyen, une droite, et un r pour la force du lien. Au niveau Pratique, on calcule tout."
+    ],
+    "pratique": [
+      "prof: On passe aux calculs. Tout repose sur quatre nombres : x̄, ȳ, V(x) et la covariance. Je te montre comment les obtenir, puis comment en tirer r et la droite.",
+      "## Point moyen et covariance",
+      "> x̄ = (1/n) Σ xᵢ    ȳ = (1/n) Σ yᵢ    cov(x ; y) = (1/n) Σ xᵢyᵢ − x̄ ȳ",
+      "1. Calcule x̄ et ȳ.\n2. Calcule la moyenne des produits xᵢyᵢ.\n3. Retranche x̄ × ȳ.",
+      "@etapes {\"etapes\":[[\"x : 1 ; 2 ; 3 ; 4 ; 5    y : 2 ; 4 ; 5 ; 4 ; 5\",\"n = 5 points.\"],[\"x̄ = 3 ; ȳ = 4\",\"Point moyen G(3 ; 4).\"],[\"Σ xᵢyᵢ = 2 + 8 + 15 + 16 + 25 = 66\",\"Somme des produits.\"],[\"66/5 = 13,2\",\"Moyenne des produits.\"],[\"cov = 13,2 − 3 × 4 = 1,2\",\"Covariance positive : le nuage monte.\"]]} | Refais chaque étape avec ta calculatrice avant de passer à la suivante.",
+      "? x : 0 ; 2 ; 4 et y : 3 ; 1 ; 2. Covariance ? || x̄ = 2, ȳ = 2 ; Σxy = 0 + 2 + 8 = 10 ; 10/3 − 4 ≈ −0,67.",
+      "## Coefficient de corrélation",
+      "> r = cov(x ; y)/(σₓ σᵧ)",
+      "Avec l’exemple : V(x) = 2 et V(y) = 1,2, donc r = 1,2/√(2 × 1,2) ≈ 0,77. r² ≈ 0,6 : environ 60 % de la variabilité de y est « expliquée » par la droite.",
+      "@nuage {\"r\":0.5,\"n\":15} | Ajoute un point aberrant : r et la droite bougent beaucoup. Regarde toujours le nuage avant de faire confiance à r.",
+      "## Droite des moindres carrés de y en x",
+      "1. a = cov(x ; y)/V(x).\n2. b = ȳ − a x̄ (la droite passe par G).\n3. Équation : ŷ = ax + b.",
+      "@etapes {\"etapes\":[[\"cov = 1,2 ; V(x) = 2\",\"Données de l’exemple.\"],[\"a = 1,2/2 = 0,6\",\"Pente.\"],[\"b = 4 − 0,6 × 3 = 2,2\",\"La droite passe par G(3 ; 4).\"],[\"ŷ = 0,6x + 2,2\",\"Droite des moindres carrés.\"],[\"x = 6 : ŷ = 5,8\",\"Prévision (extrapolation : prudence).\"]]} | Vérifie que G(3 ; 4) est bien sur la droite trouvée.",
+      "@droite {\"A\":[0,2.2],\"B\":[3,4]} | Place A en (0 ; 2,2) et B en G(3 ; 4) : la droite affichée est ŷ = 0,6x + 2,2. Lis sa pente avec le triangle.",
+      "attention: a se calcule avec V(x), la variance de la variable explicative, pas V(y). Et b = ȳ − a x̄, pas ȳ + a x̄.",
+      "## Résidus et prévision",
+      "Le résidu d’un point est eᵢ = yᵢ − ŷᵢ : positif si le point est au-dessus de la droite. La somme des résidus vaut 0. Prévoir dans le domaine des x observés (interpolation) est raisonnable ; en dehors (extrapolation), c’est risqué.",
+      "? Droite ŷ = 0,6x + 2,2, point (4 ; 4). Résidu ? || ŷ = 4,6 ; e = 4 − 4,6 = −0,6.",
+      "prof: Avant tout calcul, regarde le nuage : s’il est courbé, la droite n’est pas le bon modèle. C’est le réflexe qui distingue un bon statisticien d’une calculatrice.",
+      "## Ajustement exponentiel",
+      "Si le nuage a l’allure d’une exponentielle, on pose z = ln y, on fait la régression de z en x : z = αx + β, puis on revient : y = e^β e^(αx).",
+      "? z = 0,2x + 1. Prévision de y pour x = 10 ? || z = 3, donc y = e³ ≈ 20,09.",
+      "prof: Bilan : x̄, ȳ, cov, V(x), puis a = cov/V(x), b = ȳ − a x̄, et r = cov/(σₓσᵧ). C’est tout le chapitre en trois lignes."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on justifie les formules, on donne le sens exact de r² et on voit où la méthode trompe.",
+      "## Pourquoi a = cov/V(x) ?",
+      "On minimise S(a ; b) = Σ (yᵢ − axᵢ − b)². Les dérivées partielles nulles donnent b = ȳ − a x̄ (la droite passe par G), puis a = cov(x ; y)/V(x). La solution est unique dès que V(x) > 0.",
+      "> ∂S/∂b = 0 ⟹ ȳ = a x̄ + b    ∂S/∂a = 0 ⟹ a = cov(x ; y)/V(x)",
+      "## Décomposition de la variance",
+      "V(y) = V(ŷ) + V(e) : variance expliquée plus variance résiduelle. Et V(ŷ)/V(y) = r². D’où |r| ≤ 1, avec |r| = 1 si et seulement si tous les points sont alignés.",
+      "? r = 0,9. Quelle part de la variance de y reste inexpliquée ? || 1 − 0,81 = 0,19, soit 19 %.",
+      "prof: Retiens la décomposition V(y) = V(ŷ) + V(e) : c’est elle qui donne son vrai sens à r², bien au-delà d’un simple chiffre à recopier.",
+      "## Les deux droites de régression",
+      "La droite de x en y a pour pente a′ = cov/V(y), et a × a′ = r². Les deux droites passent par G et ne sont confondues que si |r| = 1. On choisit selon la variable qu’on veut prévoir.",
+      "@nuage {\"r\":0.3,\"n\":40} | Avec r = 0,3, la droite est presque plate et r² ≈ 0,09 : la droite n’explique presque rien. Monte r et observe r² grimper bien plus lentement que r au début.",
+      "## Linéariser un modèle",
+      "y = k e^(αx) devient ln y = αx + ln k ; y = k x^α devient ln y = α ln x + ln k. La régression sur les variables transformées minimise les écarts sur ln y, pas sur y : c’est une approximation commode, pas la meilleure courbe au sens des moindres carrés sur y.",
+      "@courbe {\"f\":\"k*exp(a*x)\",\"curseurs\":{\"k\":[0.5,3,0.1,1],\"a\":[-0.5,0.8,0.05,0.3]},\"x\":[0,8],\"y\":[-1,20],\"pas\":1,\"pasy\":2} | Change k et a : à chaque pas de 1 en x, y est multiplié par e^a. Avec a = 0,3, cela fait environ + 35 % par unité.",
+      "? ln y = 0,3x + 0,7. Écris y. || y = e^0,7 × e^(0,3x) ≈ 2,01 e^(0,3x).",
+      "## Où ça casse",
+      "- Lien non linéaire (en U) : r ≈ 0 alors que le lien est fort.\n- Point aberrant : il peut créer ou détruire une corrélation à lui seul.\n- Facteur caché ou effet de structure : corrélation sans causalité.\n- Extrapolation : la tendance observée peut cesser hors du domaine.\n- Le r d’un échantillon peut être non nul par hasard : il faut un test de significativité de r.",
+      "? Les points (−2 ; 4), (−1 ; 1), (0 ; 0), (1 ; 1), (2 ; 4) donnent r = 0. Y a-t-il un lien ? || Oui : y = x², un lien parfait mais non linéaire. r ne mesure que le lien linéaire.",
+      "histoire: Adrien-Marie Legendre publie la méthode des moindres carrés en 1805 pour calculer des orbites de comètes ; Carl Friedrich Gauss affirme l’utiliser depuis 1795 et la justifie en 1809 avec la loi normale des erreurs.",
+      "prof: Félicitations : tu as parcouru tout le programme de STA001, de la description des données à la régression. Reviens sur les exercices de raisonnement pour consolider."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "x : 1 ; 2 ; 3 ; 4 ; 5 et y : 2 ; 4 ; 5 ; 4 ; 5. Droite des moindres carrés.",
+      "etapes": [
+        [
+          "x̄ = 3 ; ȳ = 4",
+          "point moyen G"
+        ],
+        [
+          "cov = 66/5 − 12 = 1,2 ; V(x) = 55/5 − 9 = 2",
+          "formules de König"
+        ],
+        [
+          "a = 0,6 ; b = 4 − 1,8 = 2,2",
+          "a = cov/V(x), b = ȳ − a x̄"
+        ],
+        [
+          "ŷ = 0,6x + 2,2",
+          "droite de y en x"
+        ]
+      ]
+    },
+    {
+      "enonce": "cov = −3, V(x) = 4, V(y) = 2,56. Calculer r et r².",
+      "etapes": [
+        [
+          "σₓ = 2 ; σᵧ = 1,6",
+          "racines des variances"
+        ],
+        [
+          "r = −3/(2 × 1,6) = −0,9375",
+          "r = cov/(σₓσᵧ)"
+        ],
+        [
+          "r² ≈ 0,879",
+          "88 % de la variance expliquée"
+        ],
+        [
+          "Liaison linéaire forte et négative",
+          "interprétation"
+        ]
+      ]
+    },
+    {
+      "enonce": "ln y = 0,25x + 1,5. Prévoir y pour x = 8.",
+      "etapes": [
+        [
+          "z = 0,25 × 8 + 1,5 = 3,5",
+          "on calcule z = ln y"
+        ],
+        [
+          "y = e^3,5",
+          "retour par l’exponentielle"
+        ],
+        [
+          "y ≈ 33,1",
+          "valeur prédite"
+        ],
+        [
+          "y ≈ 4,48 e^(0,25x)",
+          "forme y = k e^(αx), k = e^1,5"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "a = cov(x ; y)/V(y)",
+      "juste": "a = cov(x ; y)/V(x)",
+      "pourquoi": "Pour prévoir y à partir de x, on divise par la variance de x."
+    },
+    {
+      "faux": "b = ȳ + a x̄",
+      "juste": "b = ȳ − a x̄",
+      "pourquoi": "G est sur la droite : ȳ = a x̄ + b."
+    },
+    {
+      "faux": "r = 0,9 donc x cause y",
+      "juste": "r = 0,9 : forte liaison linéaire",
+      "pourquoi": "Une corrélation peut venir d’un facteur caché."
+    },
+    {
+      "faux": "r = 0 donc aucun lien",
+      "juste": "r = 0 : aucun lien linéaire",
+      "pourquoi": "Un lien en U donne r ≈ 0."
+    },
+    {
+      "faux": "ln y = 0,2x + 1 donne y = 0,2x + 1",
+      "juste": "y = e^1 × e^(0,2x)",
+      "pourquoi": "On revient à y avec l’exponentielle."
+    }
+  ],
+  "retenir": [
+    "Point moyen G(x̄ ; ȳ) ; cov(x ; y) = (1/n) Σ xᵢyᵢ − x̄ȳ.",
+    "r = cov/(σₓσᵧ), entre −1 et 1 ; r² = part de variance expliquée.",
+    "Droite des moindres carrés : a = cov/V(x), b = ȳ − a x̄ ; elle passe par G.",
+    "Résidu = observé − prédit ; prudence en extrapolation.",
+    "Corrélation n’est pas causalité ; nuage exponentiel : régresser ln y sur x, puis y = e^β e^(αx)."
+  ]
+}

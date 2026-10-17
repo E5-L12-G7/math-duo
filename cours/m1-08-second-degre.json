@@ -1,0 +1,180 @@
+{
+  "id": "m1-second-degre",
+  "titre": "Équations et inéquations du second degré",
+  "resume": "La courbe de ax² + bx + c est une parabole, en forme de cuvette si a > 0 ou de dôme si a < 0. Le discriminant Δ = b² − 4ac dit combien de fois elle coupe l’axe horizontal, donc combien l’équation a de solutions ; le signe de a dit où le trinôme est positif.",
+  "objectifs": [
+    "reconnaître un trinôme du second degré et lire ses coefficients a, b, c",
+    "calculer le discriminant et en déduire le nombre de solutions",
+    "calculer les racines et factoriser le trinôme",
+    "trouver le sommet de la parabole",
+    "résoudre une inéquation du second degré grâce au signe du trinôme"
+  ],
+  "prerequis": [
+    "m1-equations",
+    "m1-affine"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! On arrive à un grand classique : le second degré. Tu as sûrement entendu parler du fameux « delta ». Je te promets qu’à la fin de cette page, tu sauras ce qu’il veut dire, et pas seulement comment le calculer. Et tout part d’une image : une courbe en U.",
+      "## Une nouvelle courbe : la parabole",
+      "Quand x apparaît au carré, comme dans x² − 2x − 3, la courbe n’est plus une droite : c’est une **parabole**, une courbe en forme de U. C’est la trajectoire d’un ballon lancé, la forme d’un jet d’eau ou d’une antenne satellite.",
+      "analogie: Lance une balle : elle monte, ralentit, s’arrête un instant tout en haut, puis redescend de façon symétrique. Sa trajectoire est un dôme, une parabole tournée vers le bas. Le point le plus haut s’appelle le **sommet**.",
+      "- Si a (le nombre devant x²) est **positif**, le U est à l’endroit, comme une cuvette.\n- Si a est **négatif**, il est à l’envers, comme un dôme.",
+      "@parabole | Bouge le curseur a de positif à négatif : la cuvette se retourne en dôme. Bouge ensuite c : la parabole monte ou descend sans se déformer. Observe le point du sommet.",
+      "## Résoudre, c’est chercher où la courbe touche le sol",
+      "Résoudre ax² + bx + c = 0, c’est chercher les x pour lesquels la courbe est à hauteur 0 : là où elle coupe l’axe horizontal, comme une balle qui touche le sol. Ces nombres s’appellent les **racines**.",
+      "## Trois situations possibles",
+      "- La cuvette traverse l’axe en deux points : **deux solutions**.\n- Elle le touche en un seul point, juste du bout : **une solution**.\n- Elle passe entièrement au-dessus (ou au-dessous) : **aucune solution**.",
+      "!! Un seul nombre, le discriminant Δ (« delta »), annonce laquelle des trois situations se produit, sans dessiner la courbe : Δ positif, deux solutions ; Δ nul, une ; Δ négatif, aucune.",
+      "@courbe {\"f\":\"x^2-2*x+c\",\"curseurs\":{\"c\":[-4,4,0.5,-3]},\"x\":[-4,6],\"y\":[-5,8]} | Fais monter la cuvette avec le curseur c. Compte les points de contact avec l’axe : 2, puis 1 (pour c = 1), puis 0. C’est exactement ce que Δ prédit.",
+      "? Une cuvette dont le sommet est sous l’axe horizontal coupe-t-elle l’axe ? || Oui, deux fois : elle part de sous l’axe et remonte des deux côtés, elle le traverse donc deux fois.",
+      "prof: Tu te demandes peut-être pourquoi on s’embête avec une formule si on peut dessiner la courbe ? Parce qu’un dessin donne une idée, pas une valeur exacte : la courbe coupe-t-elle l’axe en 1,41 ou en √2 ? Le calcul, lui, est exact.",
+      "## Où la courbe est-elle au-dessus de l’axe ?",
+      "analogie: Une cuvette posée à cheval sur l’axe : elle est sous l’axe entre ses deux points de contact, et au-dessus partout ailleurs. Pour un dôme, c’est l’inverse.",
+      "? Une cuvette (a > 0) coupe l’axe en −1 et 3. En x = 0, est-elle au-dessus ou en dessous de l’axe ? || En dessous : 0 est entre les deux racines, là où la cuvette plonge sous l’axe.",
+      "? Un dôme (a < 0) ne touche jamais l’axe. Est-il au-dessus ou en dessous ? || En dessous partout : un dôme qui ne touche pas l’axe a son sommet sous l’axe.",
+      "histoire: Il y a près de 4 000 ans, les scribes babyloniens résolvaient déjà des problèmes du second degré (trouver les côtés d’un rectangle connaissant son aire et son périmètre), avec des recettes écrites en mots. Au IXᵉ siècle, al-Khwârizmî les justifie par des constructions géométriques : il « complète le carré », littéralement, avec des morceaux de figure.",
+      "prof: Bilan : une parabole, un sommet, un sens (cuvette ou dôme), et zéro, un ou deux points de contact avec l’axe. Garde cette image en tête : au niveau Pratique, chaque calcul répondra à une question sur ce dessin."
+    ],
+    "pratique": [
+      "prof: On passe aux recettes. Elles sont très mécaniques, et c’est une bonne nouvelle : en suivant les étapes, on ne se trompe pas. Les erreurs viennent presque toujours des signes, alors je vais te montrer où être vigilant.",
+      "## Repérer a, b et c",
+      "Un trinôme s’écrit ax² + bx + c avec a ≠ 0. On lit les coefficients **avec leur signe**, après avoir rangé les termes : dans 3 − 2x² + x, on a a = −2, b = 1, c = 3.",
+      "## Méthode : résoudre ax² + bx + c = 0",
+      "1. Repère a, b, c avec leur signe.\n2. Calcule Δ = b² − 4ac (mets b entre parenthèses s’il est négatif).\n3. Si Δ > 0 : deux racines x₁ = (−b − √Δ)/(2a) et x₂ = (−b + √Δ)/(2a).\n4. Si Δ = 0 : une racine double x₀ = −b/(2a). Si Δ < 0 : aucune racine réelle.",
+      "> Δ = b² − 4ac        x = (−b ± √Δ) / (2a)",
+      "@etapes {\"etapes\":[[\"x² − 5x + 6 = 0\",\"On repère a = 1, b = −5, c = 6.\"],[\"Δ = (−5)² − 4 × 1 × 6\",\"b est négatif : on le met entre parenthèses.\"],[\"Δ = 25 − 24 = 1\",\"Δ > 0 : deux racines.\"],[\"x = (5 ± 1) / 2\",\"−b = 5 et √Δ = 1.\"],[\"x₁ = 2 et x₂ = 3\",\"Contrôle : 2 + 3 = 5 = −b/a et 2 × 3 = 6 = c/a.\"]]} | Lance l’animation. À l’étape 2, remarque les parenthèses : sans elles, la calculatrice ferait −5² = −25.",
+      "attention: (−5)² = 25, mais −5² = −25. Un carré n’est jamais négatif : si tu trouves b² négatif, c’est une erreur de parenthèses.",
+      "? Résous x² + 2x − 8 = 0. || Δ = 4 + 32 = 36, √Δ = 6, x = (−2 ± 6)/2 : x₁ = −4 et x₂ = 2.",
+      "? Combien de racines a x² + 2x + 5 ? || Δ = 4 − 20 = −16 < 0 : aucune racine réelle, la cuvette est entièrement au-dessus de l’axe.",
+      "## Les raccourcis quand b = 0 ou c = 0",
+      "- Si c = 0 : on factorise par x. x² − 4x = 0 ⟺ x(x − 4) = 0 ⟺ x = 0 ou x = 4.\n- Si b = 0 : on isole x². x² − 9 = 0 ⟺ x² = 9 ⟺ x = −3 ou x = 3.",
+      "prof: Tu trouves que ça fait beaucoup de calculs pour une équation ? Avant de foncer sur Δ, regarde toujours si b ou c est nul : les raccourcis vont deux fois plus vite et évitent les erreurs de signe. Et pense au contrôle somme-produit : il prend dix secondes.",
+      "## Le sommet de la parabole",
+      "Le sommet a pour abscisse −b/(2a) : c’est le milieu des deux racines, car la parabole est symétrique. Son ordonnée s’obtient en remplaçant x par cette valeur.",
+      "@racines | Déplace les deux racines p et q : le sommet (sur le pointillé) reste exactement au milieu. Change le signe de a pour retourner la parabole sans bouger les racines.",
+      "? Quel est le sommet de y = x² − 4x + 1 ? || x = −(−4)/(2 × 1) = 2, puis y = 4 − 8 + 1 = −3 : S(2 ; −3).",
+      "## Factoriser",
+      "Si Δ > 0, ax² + bx + c = a(x − x₁)(x − x₂). Si Δ = 0, ax² + bx + c = a(x − x₀)². Si Δ < 0, on ne peut pas factoriser avec des réels.",
+      "## Méthode : résoudre une inéquation",
+      "1. Calcule les racines (si elles existent).\n2. Applique la règle : **à l’extérieur des racines, le trinôme a le signe de a ; entre les racines, le signe contraire**. Sans racine, il a le signe de a partout.\n3. Lis l’ensemble demandé : crochets fermés aux racines si l’inégalité est large (≤, ≥), ouverts si elle est stricte.",
+      "@etapes {\"etapes\":[[\"−x² + x + 2 ≥ 0\",\"a = −1, b = 1, c = 2.\"],[\"Δ = 1 + 8 = 9\",\"Δ > 0 : deux racines.\"],[\"x = (−1 ± 3)/(−2)\",\"Attention au dénominateur négatif.\"],[\"x₁ = −1 et x₂ = 2\",\"Les deux points de contact du dôme avec l’axe.\"],[\"a < 0 : positif entre les racines\",\"Un dôme est au-dessus de l’axe entre ses deux pieds.\"],[\"S = [−1 ; 2]\",\"Crochets fermés : l’inégalité est large.\"]]} | Suis l’animation en imaginant le dôme. Puis vérifie avec x = 0, qui est dans S : −0 + 0 + 2 = 2 ≥ 0.",
+      "prof: Le réflexe qui évite 90 % des erreurs : avant d’écrire S, fais un petit croquis de la parabole, cuvette ou dôme, avec ses racines. La réponse se lit alors directement, sans apprendre la règle par cœur.",
+      "? Résous x² − 4 > 0. || Racines −2 et 2, a = 1 > 0 : positif à l’extérieur. S = ]−∞ ; −2[ ∪ ]2 ; +∞[.",
+      "## Contrôle rapide",
+      "Si les racines sont x₁ et x₂ : x₁ + x₂ = −b/a et x₁ × x₂ = c/a. Ça permet de vérifier un résultat en deux secondes, ou de trouver la seconde racine quand on en connaît une."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on démontre la formule au lieu de l’admettre. Tout repose sur une seule idée, la forme canonique, qui explique d’un coup le discriminant, le sommet, les racines et le signe. Accroche-toi, c’est très élégant.",
+      "## La forme canonique",
+      "On « complète le carré » : x² + (b/a)x est le début du carré (x + b/(2a))², à qui il manque b²/(4a²).",
+      "> ax² + bx + c = a[(x + b/(2a))² − Δ/(4a²)]   avec Δ = b² − 4ac",
+      "@etapes {\"etapes\":[[\"ax² + bx + c = a[x² + (b/a)x + c/a]\",\"On met a en facteur (a ≠ 0).\"],[\"x² + (b/a)x = (x + b/(2a))² − b²/(4a²)\",\"On complète le carré : on retire le terme ajouté en trop.\"],[\"= a[(x + b/(2a))² − b²/(4a²) + c/a]\",\"On remplace.\"],[\"= a[(x + b/(2a))² − (b² − 4ac)/(4a²)]\",\"Même dénominateur 4a².\"],[\"= a[(x + b/(2a))² − Δ/(4a²)]\",\"Le discriminant apparaît tout seul.\"]]} | Suis le calcul ligne à ligne. À l’étape 2, développe (x + b/(2a))² pour vérifier.",
+      "## Ce que dit la forme canonique",
+      "- Le trinôme s’annule exactement quand (x + b/(2a))² = Δ/(4a²). Un carré est positif ou nul : si Δ < 0, impossible ; si Δ = 0, une seule solution x = −b/(2a) ; si Δ > 0, deux solutions x + b/(2a) = ±√Δ/(2a), c’est la formule.\n- Le sommet est S(−b/(2a) ; −Δ/(4a)) : c’est là que le carré est nul.",
+      "? Pourquoi le sommet d’une cuvette dont Δ < 0 est-il au-dessus de l’axe ? || Son ordonnée vaut −Δ/(4a) : avec Δ < 0 et a > 0, c’est un nombre positif.",
+      "## Factorisation, signe et relations de Viète",
+      "> Δ > 0 :  ax² + bx + c = a(x − x₁)(x − x₂)",
+      "En développant : a[x² − (x₁ + x₂)x + x₁x₂]. En identifiant avec ax² + bx + c, on obtient x₁ + x₂ = −b/a et x₁x₂ = c/a. Le signe se lit sur la forme factorisée : (x − x₁)(x − x₂) est négatif entre les racines et positif à l’extérieur, puis on multiplie par a.",
+      "@courbe {\"f\":\"a*(x-p)*(x-q)\",\"curseurs\":{\"a\":[-2,2,0.5,1],\"p\":[-4,4,0.5,-1],\"q\":[-4,4,0.5,2]},\"x\":[-5,5],\"y\":[-6,6]} | Règle a, p et q : la courbe coupe l’axe exactement en p et q, quel que soit a. Mets p = q : la parabole touche l’axe sans le traverser (racine double), et le signe ne change plus.",
+      "? x² − 7x + 10 a une racine égale à 2. Quelle est l’autre, sans calculer Δ ? || Le produit des racines vaut c/a = 10, donc l’autre est 10 ÷ 2 = 5 (contrôle : 2 + 5 = 7 = −b/a).",
+      "prof: Tu remarques que tout s’emboîte ? Forme canonique, formule, sommet, factorisation : c’est la même idée vue sous quatre angles. Maintenant, je te montre les endroits où les élèves (même très bons) se font piéger.",
+      "## Où ça casse",
+      "- « Positif à l’extérieur des racines » n’est vrai que si a > 0 : c’est le signe de a qui décide, pas celui de Δ.\n- Δ < 0 ne veut pas dire « le trinôme est négatif » : il garde le signe de a sur tout ℝ.\n- Si a = 0, ce n’est plus un trinôme : l’équation est du premier degré, et la formule divise par 0.\n- Dans ℂ, quand Δ < 0, il y a deux racines complexes conjuguées (−b ± i√(−Δ))/(2a) : ce sera le chapitre des nombres complexes.",
+      "? Pour quelles valeurs de m l’équation x² + 2x + m = 0 a-t-elle deux solutions ? || Δ = 4 − 4m > 0, donc m < 1.",
+      "histoire: La formule avec ± et le discriminant tels qu’on les écrit aujourd’hui n’apparaissent qu’avec l’algèbre symbolique de Viète et Descartes, à la fin du XVIᵉ et au XVIIᵉ siècle. Les relations entre coefficients et racines portent le nom de Viète, qui les étudie pour les équations de degré quelconque.",
+      "prof: Pour conclure : retiens la forme canonique plutôt que la formule. Elle donne le sommet, le discriminant, les racines et le signe en même temps. Et si un jour tu oublies tout, complète le carré : tu retrouveras le reste."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Résoudre x² − 5x + 6 = 0.",
+      "etapes": [
+        [
+          "a = 1, b = −5, c = 6",
+          "on lit les coefficients avec leur signe"
+        ],
+        [
+          "Δ = (−5)² − 4 × 1 × 6 = 1",
+          "Δ > 0 : deux racines"
+        ],
+        [
+          "x = (5 ± 1)/2",
+          "formule (−b ± √Δ)/(2a)"
+        ],
+        [
+          "x₁ = 2 et x₂ = 3",
+          "contrôle : 2 + 3 = 5 = −b/a et 2 × 3 = 6 = c/a"
+        ]
+      ]
+    },
+    {
+      "enonce": "Résoudre −x² + x + 2 ≥ 0.",
+      "etapes": [
+        [
+          "Δ = 1 + 8 = 9, racines −1 et 2",
+          "(−1 ± 3)/(−2)"
+        ],
+        [
+          "a = −1 < 0",
+          "le trinôme est négatif à l’extérieur des racines, positif entre elles"
+        ],
+        [
+          "S = [−1 ; 2]",
+          "crochets fermés car l’inégalité est large (≥)"
+        ]
+      ]
+    },
+    {
+      "enonce": "Résoudre 2x² + 3 > 0.",
+      "etapes": [
+        [
+          "Δ = 0 − 24 = −24 < 0",
+          "aucune racine réelle"
+        ],
+        [
+          "le trinôme a le signe de a = 2 sur tout ℝ",
+          "il ne change jamais de signe"
+        ],
+        [
+          "S = ℝ",
+          "toutes les valeurs de x conviennent"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "b = −5 : Δ = −5² − 24 = −49",
+      "juste": "Δ = (−5)² − 24 = 25 − 24 = 1",
+      "pourquoi": "Un carré est toujours positif : mets b entre parenthèses quand il est négatif."
+    },
+    {
+      "faux": "Δ < 0 donc le trinôme est négatif",
+      "juste": "Δ < 0 donc le trinôme a le signe de a partout",
+      "pourquoi": "Le signe vient de a ; Δ dit seulement s’il y a des racines."
+    },
+    {
+      "faux": "x² − 4 > 0 donc S = ]−2 ; 2[",
+      "juste": "S = ]−∞ ; −2[ ∪ ]2 ; +∞[",
+      "pourquoi": "Avec a > 0, le trinôme est positif à l’extérieur des racines."
+    },
+    {
+      "faux": "x = (−b ± √Δ)/a",
+      "juste": "x = (−b ± √Δ)/(2a)",
+      "pourquoi": "Le dénominateur est 2a, tout entier sous la barre de fraction."
+    },
+    {
+      "faux": "x² = 9 donc x = 3",
+      "juste": "x = −3 ou x = 3",
+      "pourquoi": "Deux nombres opposés ont le même carré."
+    }
+  ],
+  "retenir": [
+    "Δ = b² − 4ac : deux racines si Δ > 0, une si Δ = 0, aucune si Δ < 0.",
+    "Racines : (−b ± √Δ)/(2a) ; racine double : −b/(2a).",
+    "Sommet de la parabole : abscisse −b/(2a), au milieu des racines.",
+    "Signe de a à l’extérieur des racines, signe contraire entre elles.",
+    "Si Δ > 0 : ax² + bx + c = a(x − x₁)(x − x₂), avec x₁ + x₂ = −b/a et x₁x₂ = c/a."
+  ]
+}

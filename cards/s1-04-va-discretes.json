@@ -1,0 +1,31 @@
+{
+  "s1-va-discretes": [
+    {"id": "s1vd-01", "q": "Qu’est-ce qu’une variable aléatoire ?", "a": "Une fonction qui associe un nombre à chaque issue d’une expérience aléatoire.", "tag": "definition", "niveau": 1},
+    {"id": "s1vd-02", "q": "Que donne la loi de probabilité de X ?", "a": "Chaque valeur xᵢ et sa probabilité P(X = xᵢ).", "tag": "definition", "niveau": 1},
+    {"id": "s1vd-03", "q": "Somme des probabilités d’une loi ?", "a": "1.", "tag": "propriete", "niveau": 1},
+    {"id": "s1vd-04", "q": "Formule de l’espérance E(X) ?", "a": "Σ xᵢ P(X = xᵢ).", "tag": "formule", "niveau": 1},
+    {"id": "s1vd-05", "q": "Que représente l’espérance ?", "a": "La valeur moyenne de X à long terme.", "tag": "definition", "niveau": 1},
+    {"id": "s1vd-06", "q": "Quand un jeu est-il équitable ?", "a": "Quand l’espérance du gain net est nulle.", "tag": "definition", "niveau": 1},
+    {"id": "s1vd-07", "q": "Gain net quand on perd, avec une mise m ?", "a": "−m.", "tag": "piege", "niveau": 1},
+    {"id": "s1vd-08", "q": "Définition de la fonction de répartition ?", "a": "F(x) = P(X ≤ x).", "tag": "formule", "niveau": 2},
+    {"id": "s1vd-09", "q": "Allure de F pour une variable discrète ?", "a": "Une fonction en escalier croissante, de 0 à 1.", "tag": "propriete", "niveau": 2},
+    {"id": "s1vd-10", "q": "Hauteur de la marche de F en xᵢ ?", "a": "P(X = xᵢ).", "tag": "propriete", "niveau": 2},
+    {"id": "s1vd-11", "q": "Comment calculer P(X > x) avec F ?", "a": "1 − F(x).", "tag": "formule", "niveau": 2},
+    {"id": "s1vd-12", "q": "Formule de König-Huygens pour une variable aléatoire ?", "a": "V(X) = E(X²) − E(X)².", "tag": "formule", "niveau": 2},
+    {"id": "s1vd-13", "q": "Comment calcule-t-on E(X²) ?", "a": "Σ xᵢ² P(X = xᵢ).", "tag": "methode", "niveau": 2},
+    {"id": "s1vd-14", "q": "Lien entre écart-type et variance ?", "a": "σ(X) = √V(X).", "tag": "formule", "niveau": 1},
+    {"id": "s1vd-15", "q": "Que vaut E(aX + b) ?", "a": "aE(X) + b.", "tag": "formule", "niveau": 2},
+    {"id": "s1vd-16", "q": "Que vaut V(aX + b) ?", "a": "a² V(X).", "tag": "formule", "niveau": 2},
+    {"id": "s1vd-17", "q": "Que vaut σ(aX + b) ?", "a": "|a| σ(X).", "tag": "formule", "niveau": 2},
+    {"id": "s1vd-18", "q": "Vrai ou faux : V(X + 5) = V(X) + 5 ?", "a": "Faux : V(X + 5) = V(X).", "tag": "piege", "niveau": 2},
+    {"id": "s1vd-19", "q": "Qu’est-ce qu’une loi de Bernoulli B(p) ?", "a": "X vaut 1 avec probabilité p, 0 sinon.", "tag": "definition", "niveau": 1},
+    {"id": "s1vd-20", "q": "Espérance et variance d’une loi de Bernoulli B(p) ?", "a": "E = p et V = p(1 − p).", "tag": "formule", "niveau": 1},
+    {"id": "s1vd-21", "q": "Pour quel p la variance de B(p) est-elle maximale ?", "a": "p = 0,5 (V = 0,25).", "tag": "valeur", "niveau": 3},
+    {"id": "s1vd-22", "q": "E(X) = 3 et V(X) = 2 : que vaut E(X²) ?", "a": "11.", "tag": "valeur", "niveau": 3},
+    {"id": "s1vd-23", "q": "Comment centrer et réduire X ?", "a": "Z = (X − E(X)) / σ(X), d’espérance 0 et de variance 1.", "tag": "methode", "niveau": 3},
+    {"id": "s1vd-24", "q": "Vrai ou faux : E(X²) = E(X)² ?", "a": "Faux : la différence est la variance.", "tag": "piege", "niveau": 3},
+    {"id": "s1vd-25", "q": "E(X + Y) = E(X) + E(Y) exige-t-il l’indépendance ?", "a": "Non, c’est toujours vrai.", "tag": "propriete", "niveau": 3},
+    {"id": "s1vd-26", "q": "Qui a introduit l’espérance dans un traité de 1657 ?", "a": "Christiaan Huygens.", "tag": "histoire", "niveau": 2},
+    {"id": "s1vd-27", "q": "Quel paradoxe montre une espérance infinie ?", "a": "Le paradoxe de Saint-Pétersbourg (Bernoulli).", "tag": "histoire", "niveau": 3}
+  ]
+}

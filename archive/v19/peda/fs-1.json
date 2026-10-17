@@ -1,0 +1,205 @@
+[
+ {
+  "id": "fa-fs-ref",
+  "accroche": "Cinq petites fonctions, et presque toutes les autres sont fabriquées avec elles. Les connaître par cœur, c’est comme connaître l’alphabet avant de lire.",
+  "pourquoi": "<p>Dès qu’une grandeur dépend d’une autre (un prix selon une quantité, une aire selon une longueur, un temps de trajet selon une vitesse), on a une fonction. Les fonctions de référence sont les briques de base : carré, racine carrée, inverse, cube et fonctions affines.</p><p>Connaître leurs <b>variations</b> permet de comparer des nombres sans calculer et de résoudre des inéquations : une fonction croissante conserve l’ordre, une fonction décroissante le renverse. Ce réflexe servira dans tout le reste du parcours.</p>",
+  "histoire": "<p>L’idée de relier deux grandeurs est très ancienne : les tables babyloniennes donnaient déjà des carrés et des inverses pour faciliter les calculs. Mais le mot « fonction » n’apparaît qu’à la fin du XVIIᵉ siècle, dans les échanges de Leibniz et de Jean Bernoulli.</p><p>Au XVIIIᵉ siècle, Euler popularise la notation <i>f</i>(<i>x</i>). Au XIXᵉ siècle, Dirichlet en donne la définition moderne : à chaque valeur de <i>x</i> on associe une seule valeur, quelle que soit la façon de la calculer.</p><p>Les noms des courbes sont grecs : parabole et hyperbole viennent de l’étude des coniques par Apollonius de Perga, au IIIᵉ siècle avant notre ère.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · Une machine à nombres",
+    "html": "<p>Une fonction associe à chaque nombre <i>x</i> de son ensemble de définition un seul nombre <i>f</i>(<i>x</i>), son <b>image</b>. Avec <i>g</i>(<i>x</i>) = 4<i>x</i> + 40 (4 € l’entrée plus une carte à 40 €), <span class=\"m\"><i>g</i>(18) = 112</span> : 18 entrées coûtent 112 €.</p><p>Chercher un <b>antécédent</b>, c’est faire le chemin inverse : <span class=\"m\">4<i>x</i> + 40 = 84</span> donne <i>x</i> = 11.</p><p><b>Le point :</b> image = on calcule ; antécédent = on résout une équation.</p>"
+   },
+   {
+    "titre": "Marche 2 · Les cinq fonctions de base",
+    "html": "<ul><li>Carré : définie sur ℝ, parabole, paire, décroissante puis croissante.</li><li>Racine carrée : définie sur [0 ; +∞[, croissante.</li><li>Inverse : définie sur ℝ ∖ {0}, hyperbole, impaire, décroissante sur chacun de ses deux intervalles.</li><li>Cube : définie sur ℝ, impaire, croissante.</li><li>Affine <i>ax</i> + <i>b</i> : une droite, croissante si <i>a</i> &gt; 0, décroissante si <i>a</i> &lt; 0.</li></ul><p><b>Le point :</b> pour chaque fonction, retiens domaine, allure, variations et symétrie.</p>"
+   },
+   {
+    "titre": "Marche 3 · Comparer sans calculer",
+    "html": "<p>Compare <span class=\"m\">(−1,5)<sup>2</sup></span> et <span class=\"m\">(−1)<sup>2</sup></span>. Les deux nombres sont dans ]−∞ ; 0], où la fonction carré est décroissante : elle renverse l’ordre. Comme −1,5 &lt; −1, on obtient <span class=\"m\">(−1,5)<sup>2</sup> &gt; (−1)<sup>2</sup></span>. Contrôle : 2,25 &gt; 1.</p><p>La fonction cube, croissante sur ℝ, conserve l’ordre : <span class=\"m\">(−5)<sup>3</sup> &lt; (−1/2)<sup>3</sup> &lt; (1/2)<sup>3</sup> &lt; (2/3)<sup>3</sup> &lt; 4<sup>3</sup></span>.</p><p><b>Le point :</b> d’abord l’intervalle, ensuite le sens de variation.</p>"
+   },
+   {
+    "titre": "Marche 4 · Résoudre des inéquations",
+    "html": "<p>Résolvons <span class=\"m\">4/<i>x</i> + 2 &lt; 5</span> pour <i>x</i> &gt; 0 : <span class=\"m\">4/<i>x</i> &lt; 3</span>, puis <span class=\"m\">1/<i>x</i> &lt; 3/4</span>. L’inverse est décroissante sur ]0 ; +∞[ : on renverse, <span class=\"m\"><i>x</i> &gt; 4/3</span>.</p><p>Avec un carré, attention : <span class=\"m\"><i>x</i><sup>2</sup> ≤ 9</span> n’équivaut pas à <i>x</i> ≤ 3 (pense à −10). On factorise : <span class=\"m\">(<i>x</i> − 3)(<i>x</i> + 3) ≤ 0</span>, donc S = [−3 ; 3].</p><p><b>Le point :</b> on n’applique une fonction aux deux membres que si elle est monotone sur l’intervalle concerné.</p>"
+   },
+   {
+    "titre": "Marche 5 · Fonctions affines et homographiques",
+    "html": "<p>Une fonction affine est déterminée par deux points : <span class=\"m\"><i>a</i> = (<i>f</i>(<i>m</i>) − <i>f</i>(<i>n</i>))/(<i>m</i> − <i>n</i>)</span>, puis <i>b</i> avec un point. Avec <i>f</i>(2) = 4 et <i>f</i>(5) = 1 : <i>a</i> = −1, <i>b</i> = 6.</p><p>Une fonction homographique <span class=\"m\">(<i>a</i><i>x</i> + <i>b</i>)/(<i>c</i><i>x</i> + <i>d</i>)</span> (avec <i>c</i> ≠ 0) n’est pas définie en <span class=\"m\">−<i>d</i>/<i>c</i></span> ; sa courbe est une hyperbole en deux morceaux.</p><p><b>Le point de l’expert :</b> la fonction inverse est la plus simple des homographiques (<i>a</i> = 0, <i>b</i> = 1, <i>c</i> = 1, <i>d</i> = 0).</p>"
+   }
+  ],
+  "prof": "<p>Dessine de mémoire, au brouillon, les cinq courbes de référence avant chaque séance : c’est le meilleur moyen de retrouver les variations sans réciter.</p><ul><li>Pour comparer, écris toujours l’intervalle et le sens de variation avant de conclure.</li><li>Pour une inéquation, vérifie ta réponse avec un nombre de l’ensemble trouvé et un nombre en dehors.</li><li>Pour une fonction affine, vérifie l’expression trouvée avec les deux points donnés.</li></ul>"
+ },
+ {
+  "id": "fa-fs-d23",
+  "accroche": "La trajectoire d’un ballon, la forme d’une antenne parabolique, le bénéfice d’une entreprise : derrière tout cela, une parabole. Et un seul nombre, Δ, raconte presque toute son histoire.",
+  "pourquoi": "<p>Les fonctions du second degré sont les plus simples des fonctions « qui changent de sens » : elles montent puis descendent, ou l’inverse. Elles modélisent les trajectoires, les aires, les bénéfices, les coûts.</p><p>Trouver leur <b>sommet</b> permet d’optimiser ; résoudre <span class=\"m\"><i>a</i><i>x</i><sup>2</sup> + <i>b</i><i>x</i> + <i>c</i> = 0</span> et étudier le <b>signe</b> permet de résoudre des inéquations et de comparer des courbes. Ces techniques serviront ensuite à étudier le signe des dérivées.</p>",
+  "histoire": "<p>Les scribes babyloniens, vers 1800 avant notre ère, résolvaient déjà des problèmes du type « un carré auquel j’ajoute son côté vaut tant » avec une méthode qui revient à compléter le carré, c’est-à-dire à la forme canonique.</p><p>Au IXᵉ siècle, le savant de Bagdad al-Khwârizmî classe et résout ces équations avec des justifications géométriques ; le mot « algèbre » vient du titre de son ouvrage. Les nombres négatifs n’étant pas encore acceptés, il distingue plusieurs cas.</p><p>La formule générale avec le discriminant, écrite avec des lettres, n’apparaît qu’après l’invention de la notation algébrique par Viète et Descartes, aux XVIᵉ et XVIIᵉ siècles.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · La parabole et son sommet",
+    "html": "<p>La courbe de <span class=\"m\"><i>f</i>(<i>x</i>) = <i>a</i><i>x</i><sup>2</sup> + <i>b</i><i>x</i> + <i>c</i></span> est une parabole. Si <i>a</i> &gt; 0, elle est tournée vers le haut et a un minimum ; si <i>a</i> &lt; 0, elle est tournée vers le bas et a un maximum.</p><p>Le sommet a pour abscisse <span class=\"m\">α = −<i>b</i>/(2<i>a</i>)</span> et pour ordonnée β = <i>f</i>(α). Pour <span class=\"m\">2<i>x</i><sup>2</sup> − 12<i>x</i> + 1</span> : α = 3, β = −17.</p><p><b>Le point :</b> le signe de <i>a</i> donne la forme, −<i>b</i>/(2<i>a</i>) donne le sommet.</p>"
+   },
+   {
+    "titre": "Marche 2 · La forme canonique",
+    "html": "<p>On complète le carré : <span class=\"m\">2<i>x</i><sup>2</sup> − 20<i>x</i> + 10 = 2[(<i>x</i> − 5)<sup>2</sup> − 25] + 10 = 2(<i>x</i> − 5)<sup>2</sup> − 40</span>.</p><p>Comme un carré est positif, <span class=\"m\"><i>f</i>(<i>x</i>) ≥ −40</span> avec égalité en 5 : le minimum est −40. Attention au signe : dans (<i>x</i> + 3)<sup>2</sup>, α = −3.</p><p><b>Le point :</b> la forme canonique se lit directement : sommet (α ; β).</p>"
+   },
+   {
+    "titre": "Marche 3 · Le discriminant",
+    "html": "<p><span class=\"m\">Δ = <i>b</i><sup>2</sup> − 4<i>ac</i></span>. Si Δ &lt; 0 : aucune solution ; Δ = 0 : une solution <span class=\"m\">−<i>b</i>/(2<i>a</i>)</span> ; Δ &gt; 0 : deux solutions <span class=\"m\">(−<i>b</i> ± √Δ)/(2<i>a</i>)</span>.</p><p>Exemple : <span class=\"m\">2<i>x</i><sup>2</sup> − <i>x</i> − 6 = 0</span>, Δ = 1 + 48 = 49, solutions −3/2 et 2.</p><p><b>Le point :</b> écris <i>a</i>, <i>b</i>, <i>c</i> avec leurs signes avant tout calcul.</p>"
+   },
+   {
+    "titre": "Marche 4 · Factoriser et étudier le signe",
+    "html": "<p>Si Δ &gt; 0, <span class=\"m\"><i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> − <i>x</i><sub>1</sub>)(<i>x</i> − <i>x</i><sub>2</sub>)</span>. Le trinôme est du signe de <i>a</i> à l’extérieur des racines, du signe contraire entre elles.</p><p>Exemple : <span class=\"m\"><i>x</i><sup>2</sup> − 2<i>x</i> − 15 &lt; 0</span> : racines −3 et 5, <i>a</i> = 1 &gt; 0, donc S = ]−3 ; 5[.</p><p><b>Le point :</b> si Δ &lt; 0, le trinôme garde le signe de <i>a</i> partout.</p>"
+   },
+   {
+    "titre": "Marche 5 · Ce que sait l’expert",
+    "html": "<p>Somme et produit des racines : <span class=\"m\"><i>S</i> = −<i>b</i>/<i>a</i></span>, <span class=\"m\"><i>P</i> = <i>c</i>/<i>a</i></span>. Si 1 est une racine évidente de <span class=\"m\">−2<i>x</i><sup>2</sup> + <i>x</i> + 1</span>, l’autre vaut <i>P</i>/1 = −1/2, sans calculer Δ.</p><p>Pour comparer deux courbes, on étudie le signe de <i>f</i>(<i>x</i>) − <i>g</i>(<i>x</i>), souvent un trinôme.</p><p><b>Le point de l’expert :</b> toutes ces méthodes viennent de la forme canonique, d’où sort la formule du discriminant.</p>"
+   }
+  ],
+  "prof": "<p>Commence chaque exercice en écrivant <i>a</i>, <i>b</i>, <i>c</i> sur une ligne, avec les signes : la moitié des erreurs disparaissent.</p><ul><li>Contrôle tes racines en les remplaçant dans l’équation.</li><li>Pour le signe, fais un petit croquis de la parabole (vers le haut ou vers le bas) avec ses racines.</li><li>Pour une inéquation, ramène toujours tout à « trinôme comparé à 0 ».</li></ul>"
+ },
+ {
+  "id": "fa-fs-der",
+  "accroche": "Ton compteur de vitesse donne une vitesse « à l’instant ». Comment diviser une distance par une durée nulle ? La dérivée résout ce paradoxe et devient l’outil le plus puissant pour étudier une fonction.",
+  "pourquoi": "<p>La dérivée mesure la vitesse de variation : vitesse d’un objet, coût marginal, taux de croissance. Géométriquement, c’est la <b>pente de la tangente</b>.</p><p>Surtout, le <b>signe de la dérivée donne les variations</b> de la fonction. On trouve ainsi un maximum (bénéfice, volume) ou un minimum (coût, distance) sans tracer la courbe.</p>",
+  "histoire": "<p>Au XVIIᵉ siècle, plusieurs savants cherchent à tracer des tangentes et à trouver des maximums ; Fermat propose une méthode dès les années 1630.</p><p>Dans le dernier tiers du siècle, Newton en Angleterre (ses « fluxions », pour la mécanique) et Leibniz en Allemagne (avec les notations <i>dx</i> et <i>dy</i>) inventent indépendamment le calcul différentiel ; une longue querelle de priorité s’ensuit.</p><p>Le mot « dérivée » et la notation <i>f</i> ′ sont dus à Lagrange, à la fin du XVIIIᵉ siècle. La définition rigoureuse par les limites arrive au XIXᵉ siècle, avec Cauchy puis Weierstrass.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · De la pente moyenne à la pente instantanée",
+    "html": "<p>Entre <i>a</i> et <i>a</i> + <i>h</i>, la pente de la sécante est le taux d’accroissement <span class=\"m\">(<i>f</i>(<i>a</i> + <i>h</i>) − <i>f</i>(<i>a</i>))/<i>h</i></span>. Pour <span class=\"m\"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> + 2<i>x</i> − 3</span> en 2, il vaut 6 + <i>h</i>.</p><p>Quand <i>h</i> tend vers 0, il tend vers 6 : c’est le nombre dérivé, <i>f</i> ′(2) = 6.</p><p><b>Le point :</b> <i>f</i> ′(<i>a</i>) est la limite du taux d’accroissement.</p>"
+   },
+   {
+    "titre": "Marche 2 · La tangente",
+    "html": "<p>La tangente en <i>a</i> passe par (<i>a</i> ; <i>f</i>(<i>a</i>)) avec la pente <i>f</i> ′(<i>a</i>) : <span class=\"m\"><i>y</i> = <i>f</i> ′(<i>a</i>)(<i>x</i> − <i>a</i>) + <i>f</i>(<i>a</i>)</span>.</p><p>Pour <span class=\"m\"><i>x</i><sup>2</sup> − 5<i>x</i> + 2</span> en 1 : <i>f</i>(1) = −2, <i>f</i> ′(1) = −3, donc <i>y</i> = −3<i>x</i> + 1.</p><p><b>Le point :</b> la pente est <i>f</i> ′(<i>a</i>), pas <i>f</i>(<i>a</i>).</p>"
+   },
+   {
+    "titre": "Marche 3 · Les règles de calcul",
+    "html": "<p>On retient <span class=\"m\">(<i>x</i><sup><i>n</i></sup>)′ = <i>n</i><i>x</i><sup><i>n</i>−1</sup></span>, <span class=\"m\">(1/<i>x</i>)′ = −1/<i>x</i><sup>2</sup></span>, <span class=\"m\">(√<i>x</i>)′ = 1/(2√<i>x</i>)</span>, puis <span class=\"m\">(<i>uv</i>)′ = <i>u</i>′<i>v</i> + <i>uv</i>′</span> et <span class=\"m\">(<i>u</i>/<i>v</i>)′ = (<i>u</i>′<i>v</i> − <i>uv</i>′)/<i>v</i><sup>2</sup></span>.</p><p>Pour une composée : <span class=\"m\">(<i>v</i>(<i>u</i>(<i>x</i>)))′ = <i>v</i>′(<i>u</i>(<i>x</i>)) × <i>u</i>′(<i>x</i>)</span>, par exemple <span class=\"m\">((2<i>x</i><sup>2</sup> + 3<i>x</i> − 3)<sup>4</sup>)′ = 4(4<i>x</i> + 3)(2<i>x</i><sup>2</sup> + 3<i>x</i> − 3)<sup>3</sup></span>.</p><p><b>Le point :</b> repère la structure (somme, produit, quotient, composée) avant de dériver.</p>"
+   },
+   {
+    "titre": "Marche 4 · Variations et extremums",
+    "html": "<p>Sur un intervalle : <i>f</i> ′ ≥ 0 donne <i>f</i> croissante, <i>f</i> ′ ≤ 0 donne <i>f</i> décroissante. Si <i>f</i> ′ s’annule en changeant de signe, <i>f</i> a un extremum.</p><p>Pour <span class=\"m\"><i>x</i><sup>3</sup> + 4,5<i>x</i><sup>2</sup> − 12<i>x</i> + 5</span> : <span class=\"m\"><i>f</i> ′(<i>x</i>) = 3<i>x</i><sup>2</sup> + 9<i>x</i> − 12</span>, racines −4 et 1 ; <i>f</i> monte, descend, remonte : maximum local 61, minimum local −1,5.</p><p><b>Le point :</b> factorise <i>f</i> ′ pour lire son signe.</p>"
+   },
+   {
+    "titre": "Marche 5 · Optimiser comme un expert",
+    "html": "<p>Une entreprise a un bénéfice <span class=\"m\"><i>B</i>(<i>x</i>) = −0,2<i>x</i><sup>2</sup> + 6<i>x</i> − 20</span>. <span class=\"m\"><i>B</i>′(<i>x</i>) = −0,4<i>x</i> + 6</span> s’annule en 15, positive avant, négative après : bénéfice maximal <i>B</i>(15) = 25.</p><p>L’expert sait aussi que <i>f</i> ′(<i>c</i>) = 0 ne suffit pas (<i>x</i><sup>3</sup> en 0) et qu’une fonction peut ne pas être dérivable (|<i>x</i>| en 0).</p><p><b>Le point de l’expert :</b> on vérifie toujours le changement de signe et le domaine.</p>"
+   }
+  ],
+  "prof": "<p>Apprends la table des dérivées comme une table de multiplication, en la récitant dans les deux sens.</p><ul><li>Avant de dériver, écris <i>u</i>, <i>v</i>, <i>u</i>′ et <i>v</i>′ sur une ligne.</li><li>Après avoir dérivé, factorise : c’est le signe qui t’intéresse, pas la forme développée.</li><li>Vérifie un nombre dérivé à la calculatrice (taux d’accroissement avec <i>h</i> = 0,001).</li></ul>"
+ },
+ {
+  "id": "fa-fs-lim",
+  "accroche": "Que fait une fonction « au bout du monde », quand x devient gigantesque, ou au bord d’un précipice, près d’une valeur interdite ? Les limites décrivent ces comportements extrêmes.",
+  "pourquoi": "<p>Les limites disent ce qui se passe à long terme (une population se stabilise-t-elle ?) ou près d’une valeur critique. Elles donnent les <b>asymptotes</b>, ces droites que la courbe longe sans fin.</p><p>Elles sont aussi le fondement de la dérivée, de la continuité et des intégrales : sans limite, pas d’analyse.</p>",
+  "histoire": "<p>Dans l’Antiquité, Zénon d’Élée inquiétait les philosophes avec ses paradoxes : Achille ne rattraperait jamais la tortue, car il lui faut une infinité d’étapes. Archimède, lui, calculait des aires par la méthode d’exhaustion, en encadrant de plus en plus finement.</p><p>Au XVIIᵉ siècle, Newton et Leibniz manipulent des quantités « infiniment petites » sans définition solide, ce que critique l’évêque Berkeley.</p><p>Au XIXᵉ siècle, Cauchy puis Weierstrass donnent la définition rigoureuse, avec des intervalles aussi petits qu’on veut, que l’on utilise encore aujourd’hui.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · Les comportements en l’infini",
+    "html": "<p><span class=\"m\"><i>x</i><sup>2</sup></span> devient aussi grand qu’on veut : sa limite en +∞ est +∞. <span class=\"m\">2 + 1/<i>x</i></span> se resserre autour de 2 : limite 2, et la droite <i>y</i> = 2 est une asymptote horizontale.</p><p>Certaines fonctions n’ont pas de limite, comme sin <i>x</i>, qui oscille.</p><p><b>Le point :</b> une limite finie <i>L</i> en ±∞ donne l’asymptote <i>y</i> = <i>L</i>.</p>"
+   },
+   {
+    "titre": "Marche 2 · Près d’une valeur interdite",
+    "html": "<p><span class=\"m\">1/<i>x</i></span> tend vers +∞ quand <i>x</i> tend vers 0 par la droite (0<sup>+</sup>) et vers −∞ par la gauche (0<sup>−</sup>).</p><p>Pour <span class=\"m\">(1 − 2<i>x</i>)/(<i>x</i> − 3)</span> quand <i>x</i> → 3<sup>−</sup> : numérateur → −5, dénominateur → 0<sup>−</sup>, donc la limite vaut +∞. La droite <i>x</i> = 3 est asymptote verticale.</p><p><b>Le point :</b> le signe du 0 décide du signe de l’infini.</p>"
+   },
+   {
+    "titre": "Marche 3 · Opérations et formes indéterminées",
+    "html": "<p>On combine les limites : nombre + ∞ = ∞, nombre non nul × ∞ = ∞ (avec les signes), nombre/∞ = 0. Mais ∞ − ∞, 0 × ∞, ∞/∞ et 0/0 sont <b>indéterminées</b>.</p><p>Pour <span class=\"m\">(2<i>x</i><sup>2</sup> − 5<i>x</i> + 1)/(6<i>x</i><sup>2</sup> − 5)</span> en +∞, on factorise par <i>x</i><sup>2</sup> : la limite vaut 2/6 = 1/3.</p><p><b>Le point :</b> devant une forme indéterminée, on transforme, on ne devine pas.</p>"
+   },
+   {
+    "titre": "Marche 4 · Conjuguée et composée",
+    "html": "<p><span class=\"m\">√(<i>x</i> + 1) − √<i>x</i> = 1/(√(<i>x</i> + 1) + √<i>x</i>)</span> : la forme ∞ − ∞ disparaît et la limite vaut 0.</p><p>Pour une composée, on avance par étapes : <span class=\"m\">2 − 1/<i>x</i> → 2</span>, donc <span class=\"m\">√(2 − 1/<i>x</i>) → √2</span>.</p><p><b>Le point :</b> (<i>A</i> − <i>B</i>)(<i>A</i> + <i>B</i>) = <i>A</i><sup>2</sup> − <i>B</i><sup>2</sup> fait disparaître les racines.</p>"
+   },
+   {
+    "titre": "Marche 5 · Encadrer comme un expert",
+    "html": "<p>Comme −1 ≤ sin <i>x</i>, on a <span class=\"m\"><i>x</i> + sin <i>x</i> ≥ <i>x</i> − 1</span>, qui tend vers +∞ : par comparaison, <i>x</i> + sin <i>x</i> → +∞.</p><p>Et <span class=\"m\">−<i>x</i>/(<i>x</i><sup>2</sup> + 1) ≤ <i>x</i> cos <i>x</i>/(<i>x</i><sup>2</sup> + 1) ≤ <i>x</i>/(<i>x</i><sup>2</sup> + 1)</span> pour <i>x</i> &gt; 0 : les deux bornes tendent vers 0, donc par le théorème des gendarmes la limite vaut 0.</p><p><b>Le point de l’expert :</b> quand une partie oscille, on l’encadre.</p>"
+   }
+  ],
+  "prof": "<p>Pour chaque limite, écris d’abord la limite de chaque morceau, puis seulement l’opération. Si tu tombes sur une forme indéterminée, nomme-la.</p><ul><li>Fraction rationnelle en ±∞ : factorise par les termes de plus haut degré.</li><li>Racines : pense à la conjuguée.</li><li>Sinus, cosinus : encadre.</li><li>Vérifie à la calculatrice avec une très grande valeur de <i>x</i>.</li></ul>"
+ },
+ {
+  "id": "fa-fs-cvx",
+  "accroche": "Une courbe tracée sans lever le crayon ne peut pas sauter par-dessus l’axe des abscisses. Cette évidence devient un théorème très utile, et la courbure d’une courbe se lit dans sa dérivée seconde.",
+  "pourquoi": "<p>La <b>continuité</b> garantit qu’une équation a une solution même quand on ne sait pas la calculer : c’est le théorème des valeurs intermédiaires, à la base des méthodes de résolution approchée (balayage, dichotomie).</p><p>La <b>convexité</b> décrit la façon dont une grandeur accélère ou ralentit. En économie, le point d’inflexion d’un coût marque le moment où il se met à augmenter de plus en plus vite. Elle permet aussi de démontrer des inégalités.</p>",
+  "histoire": "<p>L’idée intuitive de continuité est ancienne, mais Bolzano, en 1817, est l’un des premiers à démontrer rigoureusement le théorème des valeurs intermédiaires, jusque-là jugé évident.</p><p>Weierstrass, au XIXᵉ siècle, précise les définitions de limite et de continuité, et surprend ses contemporains avec une fonction continue partout mais dérivable nulle part.</p><p>Les fonctions convexes sont étudiées systématiquement au début du XXᵉ siècle, notamment par le Danois Jensen, dont l’inégalité est utilisée aujourd’hui en probabilités, en économie et en informatique.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · Continuité",
+    "html": "<p>Une fonction est continue en <i>a</i> si <span class=\"m\">lim<sub><i>x</i>→<i>a</i></sub> <i>f</i>(<i>x</i>) = <i>f</i>(<i>a</i>)</span>. Polynômes, |<i>x</i>|, sin, cos, et toute fonction dérivable sont continus.</p><p>Pour une fonction par morceaux, on compare limite à gauche, limite à droite et valeur au point de raccord. Avec −<i>x</i> + 2 puis <i>x</i> − 4 en 3 : tout vaut −1, la fonction est continue en 3.</p><p><b>Le point :</b> continuité = pas de saut.</p>"
+   },
+   {
+    "titre": "Marche 2 · Le théorème des valeurs intermédiaires",
+    "html": "<p>Si <i>f</i> est continue sur [<i>a</i> ; <i>b</i>] et <i>k</i> compris entre <i>f</i>(<i>a</i>) et <i>f</i>(<i>b</i>), l’équation <i>f</i>(<i>x</i>) = <i>k</i> a <b>au moins</b> une solution. Si de plus <i>f</i> est strictement monotone, elle est <b>unique</b>.</p><p>Pour <span class=\"m\"><i>x</i><sup>3</sup> − <i>x</i><sup>2</sup> − 1</span> sur [1 ; 2] : continue, <i>f</i>(1) = −1, <i>f</i>(2) = 3, et <i>f</i> ′ &gt; 0 : une unique solution α, avec 1,46 &lt; α &lt; 1,47 par balayage.</p><p><b>Le point :</b> continuité + changement de signe + stricte monotonie.</p>"
+   },
+   {
+    "titre": "Marche 3 · Application aux suites",
+    "html": "<p>Si <span class=\"m\"><i>u</i><sub><i>n</i>+1</sub> = <i>f</i>(<i>u</i><sub><i>n</i></sub>)</span> converge vers <i>L</i> et <i>f</i> est continue, alors <i>f</i>(<i>L</i>) = <i>L</i>.</p><p>Avec <span class=\"m\"><i>u</i><sub><i>n</i>+1</sub> = 0,85<i>u</i><sub><i>n</i></sub> + 1,8</span> : <span class=\"m\"><i>L</i> = 0,85<i>L</i> + 1,8</span>, donc <i>L</i> = 12. Le tracé en escalier converge vers l’intersection avec <i>y</i> = <i>x</i>.</p><p><b>Le point :</b> il faut d’abord savoir que la suite converge.</p>"
+   },
+   {
+    "titre": "Marche 4 · Convexité et dérivée seconde",
+    "html": "<p>Convexe : courbe au-dessus de ses tangentes (et sous ses cordes), « en bol ». Concave : l’inverse, « en dôme ». Pour <i>f</i> deux fois dérivable : convexe ⟺ <i>f</i> ′′ ≥ 0.</p><p>Pour <span class=\"m\"><i>x</i><sup>3</sup>/3 − 9<i>x</i><sup>2</sup> + 4</span> : <span class=\"m\"><i>f</i> ′′(<i>x</i>) = 2<i>x</i> − 18</span>, concave sur ]−∞ ; 9], convexe sur [9 ; +∞[, point d’inflexion d’abscisse 9.</p><p><b>Le point :</b> le signe de <i>f</i> ′′ donne la convexité.</p>"
+   },
+   {
+    "titre": "Marche 5 · Inégalités par convexité",
+    "html": "<p>Une fonction concave est sous ses tangentes. Pour <span class=\"m\"><i>f</i>(<i>x</i>) = <i>x</i><sup>3</sup> − 2<i>x</i><sup>2</sup></span>, concave sur ]−∞ ; 2/3], la tangente en −1 est <i>y</i> = 7<i>x</i> + 4, donc <span class=\"m\"><i>x</i><sup>3</sup> − 2<i>x</i><sup>2</sup> ≤ 7<i>x</i> + 4</span> pour tout <i>x</i> ≤ 0.</p><p>Le même argument donne <span class=\"m\">ln <i>x</i> ≤ <i>x</i> − 1</span> ou <span class=\"m\">e<sup><i>x</i></sup> ≥ 1 + <i>x</i></span>.</p><p><b>Le point de l’expert :</b> convexité + tangente = inégalité.</p>"
+   }
+  ],
+  "prof": "<p>Pour le théorème des valeurs intermédiaires, rédige toujours les trois arguments dans l’ordre : continuité, valeurs aux bornes, stricte monotonie. Puis conclus.</p><ul><li>Pour la convexité, dérive deux fois soigneusement et étudie le signe de <i>f</i> ′′.</li><li>Associe une image : convexe = bol, concave = dôme.</li><li>Un point où <i>f</i> ′′ = 0 n’est un point d’inflexion que si <i>f</i> ′′ change de signe.</li></ul>"
+ },
+ {
+  "id": "fa-fs-exp",
+  "accroche": "Une fonction égale à sa propre dérivée : plus elle est grande, plus elle grandit vite. C’est l’exponentielle, la fonction des croissances explosives et des décroissances régulières.",
+  "pourquoi": "<p>Dès qu’une grandeur varie proportionnellement à elle-même, l’exponentielle apparaît : population de bactéries, intérêts composés, désintégration radioactive, refroidissement d’une tasse de café.</p><p>Elle transforme les sommes en produits (<span class=\"m\">e<sup><i>a</i>+<i>b</i></sup> = e<sup><i>a</i></sup>e<sup><i>b</i></sup></span>) et l’emporte sur toutes les puissances à l’infini.</p>",
+  "histoire": "<p>Le nombre e apparaît à la fin du XVIIᵉ siècle chez Jacques Bernoulli, à propos des intérêts composés : en plaçant 1 € à 100 % par an avec des intérêts calculés de plus en plus souvent, on obtient au plus environ 2,718 € au bout d’un an.</p><p>Euler, au XVIIIᵉ siècle, lui donne la lettre e, l’étudie en détail dans son « Introductio in analysin infinitorum » (1748), où il écrit e = 1 + 1/1! + 1/2! + 1/3! + …, et démontre qu’il est irrationnel.</p><p>En 1873, Hermite démontre que e est même transcendant : il n’est solution d’aucune équation polynomiale à coefficients entiers.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · La fonction égale à sa dérivée",
+    "html": "<p>Il existe une unique fonction dérivable sur ℝ telle que <i>f</i> ′ = <i>f</i> et <i>f</i>(0) = 1 : l’exponentielle. Elle est strictement positive et strictement croissante.</p><p>Elle grandit très vite : <span class=\"m\">e<sup>21</sup></span> dépasse le milliard.</p><p><b>Le point :</b> <span class=\"m\">(e<sup><i>x</i></sup>)′ = e<sup><i>x</i></sup></span> et <span class=\"m\">e<sup>0</sup> = 1</span>.</p>"
+   },
+   {
+    "titre": "Marche 2 · Les règles de calcul",
+    "html": "<p><span class=\"m\">e<sup><i>x</i>+<i>y</i></sup> = e<sup><i>x</i></sup>e<sup><i>y</i></sup></span>, <span class=\"m\">e<sup><i>x</i>−<i>y</i></sup> = e<sup><i>x</i></sup>/e<sup><i>y</i></sup></span>, <span class=\"m\">e<sup>−<i>x</i></sup> = 1/e<sup><i>x</i></sup></span>, <span class=\"m\">(e<sup><i>x</i></sup>)<sup><i>n</i></sup> = e<sup><i>n</i><i>x</i></sup></span> : ce sont les règles des puissances.</p><p>Exemple : <span class=\"m\">e<sup>7</sup> × e<sup>−4</sup>/e<sup>−5</sup> = e<sup>8</sup></span>.</p><p><b>Le point :</b> on additionne les exposants d’un produit, on ne les multiplie pas.</p>"
+   },
+   {
+    "titre": "Marche 3 · Équations, inéquations, dérivées",
+    "html": "<p><span class=\"m\">e<sup><i>a</i></sup> = e<sup><i>b</i></sup> ⟺ <i>a</i> = <i>b</i></span> et <span class=\"m\">e<sup><i>a</i></sup> &lt; e<sup><i>b</i></sup> ⟺ <i>a</i> &lt; <i>b</i></span>. Ainsi <span class=\"m\">e<sup>4<i>x</i>−1</sup> ≥ 1</span> donne <i>x</i> ≥ 1/4.</p><p><span class=\"m\">(e<sup><i>k</i><i>x</i></sup>)′ = <i>k</i>e<sup><i>k</i><i>x</i></sup></span> et <span class=\"m\">(e<sup><i>u</i></sup>)′ = <i>u</i>′e<sup><i>u</i></sup></span>. Pour <span class=\"m\">(<i>x</i> + 1)e<sup><i>x</i></sup></span> : <span class=\"m\"><i>f</i> ′(<i>x</i>) = (<i>x</i> + 2)e<sup><i>x</i></sup></span>, du signe de <i>x</i> + 2.</p><p><b>Le point :</b> factorise par e<sup><i>x</i></sup>, toujours positif.</p>"
+   },
+   {
+    "titre": "Marche 4 · Limites et croissances comparées",
+    "html": "<p>e<sup><i>x</i></sup> tend vers +∞ en +∞ et vers 0 en −∞. En cas de conflit avec une puissance, l’exponentielle gagne : <span class=\"m\">e<sup><i>x</i></sup>/<i>x</i><sup><i>n</i></sup> → +∞</span> en +∞ et <span class=\"m\"><i>x</i><sup><i>n</i></sup>e<sup><i>x</i></sup> → 0</span> en −∞.</p><p>Pour <span class=\"m\">(e<sup><i>x</i></sup> + <i>x</i>)/(e<sup><i>x</i></sup> − <i>x</i><sup>2</sup>)</span>, on factorise par e<sup><i>x</i></sup> : la limite vaut 1.</p><p><b>Le point :</b> factorise par le terme le plus fort.</p>"
+   },
+   {
+    "titre": "Marche 5 · Modéliser comme un expert",
+    "html": "<p>Si <i>f</i> ′ = <i>kf</i>, alors <span class=\"m\"><i>f</i>(<i>t</i>) = <i>A</i>e<sup><i>kt</i></sup></span> avec <i>A</i> = <i>f</i>(0). Des bactéries avec <i>f</i> ′ = 0,14<i>f</i> et <i>f</i>(0) = 50 000 : <i>f</i>(3) ≈ 76 000, et la population double en 5 heures environ.</p><p>Le temps de doublement ne dépend pas de la quantité de départ : c’est la signature d’une croissance exponentielle.</p><p><b>Le point de l’expert :</b> <i>k</i> &gt; 0, croissance ; <i>k</i> &lt; 0, décroissance.</p>"
+   }
+  ],
+  "prof": "<p>Traite l’exponentielle comme une puissance : toutes les règles des puissances s’appliquent, et elles se vérifient sur de petits exemples.</p><ul><li>Pour dériver, repère <i>u</i> dans e<sup><i>u</i></sup> et n’oublie pas <i>u</i>′.</li><li>Pour étudier un signe, factorise par e<sup><i>x</i></sup> &gt; 0.</li><li>En cas de limite indéterminée, factorise par l’exponentielle et utilise les croissances comparées.</li></ul>"
+ },
+ {
+  "id": "fa-fs-ln",
+  "accroche": "À quelle puissance faut-il élever e pour obtenir 10 ? La réponse s’appelle ln 10. Le logarithme défait l’exponentielle et transforme les multiplications en additions.",
+  "pourquoi": "<p>Le logarithme sert à résoudre <span class=\"m\">e<sup><i>x</i></sup> = <i>a</i></span> : temps de doublement d’un placement, datation au carbone 14, durée d’élimination d’un médicament.</p><p>Il comprime les grandes échelles : décibels, magnitude des séismes et pH sont des logarithmes. Et il croît très lentement, ce que mesurent les croissances comparées.</p>",
+  "histoire": "<p>En 1614, l’Écossais John Napier (Neper) publie « Mirifici logarithmorum canonis descriptio », fruit d’une vingtaine d’années de travail. Son but : remplacer les multiplications par des additions, beaucoup plus rapides.</p><p>Henry Briggs crée ensuite les logarithmes décimaux et des tables très précises ; William Oughtred invente la règle à calcul, utilisée jusque dans les années 1970. Le mot vient du grec logos (rapport, raison) et arithmos (nombre).</p><p>Pour multiplier 36 × 62, on lisait log 36 ≈ 1,5563 et log 62 ≈ 1,7924 dans la table, on les additionnait (3,3487), puis la table lue à l’envers donnait 2232. Astronomes et navigateurs y ont gagné des années de calcul.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · L’opération inverse",
+    "html": "<p>Pour <i>a</i> &gt; 0, ln <i>a</i> est l’unique solution de <span class=\"m\">e<sup><i>x</i></sup> = <i>a</i></span>. Donc <span class=\"m\">ln(e<sup><i>x</i></sup>) = <i>x</i></span> et <span class=\"m\">e<sup>ln <i>x</i></sup> = <i>x</i></span> pour <i>x</i> &gt; 0.</p><p>Valeurs : ln 1 = 0, ln e = 1, ln(1/e) = −1. Les courbes de exp et ln sont symétriques par rapport à <i>y</i> = <i>x</i>.</p><p><b>Le point :</b> ln n’existe que pour les nombres strictement positifs.</p>"
+   },
+   {
+    "titre": "Marche 2 · Des produits aux sommes",
+    "html": "<p><span class=\"m\">ln(<i>ab</i>) = ln <i>a</i> + ln <i>b</i></span>, d’où <span class=\"m\">ln(<i>a</i>/<i>b</i>) = ln <i>a</i> − ln <i>b</i></span>, <span class=\"m\">ln(<i>a</i><sup><i>n</i></sup>) = <i>n</i> ln <i>a</i></span>, <span class=\"m\">ln √<i>a</i> = (1/2) ln <i>a</i></span>.</p><p>Exemple : <span class=\"m\">3 ln 2 + ln 5 − 2 ln 3 = ln(40/9)</span>.</p><p><b>Le point :</b> ln(<i>a</i> + <i>b</i>) ne se simplifie pas.</p>"
+   },
+   {
+    "titre": "Marche 3 · Équations et inéquations",
+    "html": "<p>On commence toujours par l’ensemble de résolution. Pour <span class=\"m\">ln(<i>x</i> − 3) + ln(9 − <i>x</i>) = 0</span> : <i>x</i> ∈ ]3 ; 9[, puis <span class=\"m\">(<i>x</i> − 3)(9 − <i>x</i>) = 1</span>, d’où <span class=\"m\"><i>x</i> = 6 ± 2√2</span>, toutes deux acceptables.</p><p><span class=\"m\">e<sup><i>x</i>+1</sup> = 5 ⟺ <i>x</i> = ln 5 − 1</span> ; <span class=\"m\">ln <i>x</i> = 2 ⟺ <i>x</i> = e<sup>2</sup></span>.</p><p><b>Le point :</b> ln est croissante, l’ordre est conservé.</p>"
+   },
+   {
+    "titre": "Marche 4 · Dérivée et étude",
+    "html": "<p><span class=\"m\">(ln <i>x</i>)′ = 1/<i>x</i></span> et <span class=\"m\">(ln <i>u</i>)′ = <i>u</i>′/<i>u</i></span>. ln est croissante et concave sur ]0 ; +∞[ ; elle tend vers −∞ en 0 et vers +∞ en +∞.</p><p>Pour <span class=\"m\">3 − <i>x</i> + 2 ln <i>x</i></span> : <span class=\"m\"><i>f</i> ′(<i>x</i>) = (2 − <i>x</i>)/<i>x</i></span>, maximum en 2 égal à 1 + 2 ln 2.</p><p><b>Le point :</b> sur ]0 ; +∞[, le dénominateur <i>x</i> est positif : seul le numérateur compte.</p>"
+   },
+   {
+    "titre": "Marche 5 · Croissances comparées",
+    "html": "<p>Toute puissance de <i>x</i> l’emporte sur ln : <span class=\"m\">ln(<i>x</i>)/<i>x</i> → 0</span> en +∞ et <span class=\"m\"><i>x</i> ln <i>x</i> → 0</span> en 0.</p><p>Ainsi <span class=\"m\"><i>x</i> − ln <i>x</i> = <i>x</i>(1 − ln(<i>x</i>)/<i>x</i>) → +∞</span>. La concavité donne aussi <span class=\"m\">ln <i>x</i> ≤ <i>x</i> − 1</span> : la courbe est sous sa tangente en 1.</p><p><b>Le point de l’expert :</b> ln tend vers l’infini, mais plus lentement que n’importe quelle puissance.</p>"
+   }
+  ],
+  "prof": "<p>Avant toute équation avec ln, écris l’ensemble de résolution en première ligne, et vérifie à la fin que tes solutions y sont.</p><ul><li>Récite les propriétés dans le bon sens : ln(<i>ab</i>) = ln <i>a</i> + ln <i>b</i>, mais rien pour ln(<i>a</i> + <i>b</i>).</li><li>Retiens que ln <i>X</i> = 0 ⟺ <i>X</i> = 1.</li><li>Vérifie à la calculatrice : e<sup>ln 7</sup> = 7.</li></ul>"
+ }
+]

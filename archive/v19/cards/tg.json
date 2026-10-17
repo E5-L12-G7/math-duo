@@ -1,0 +1,1440 @@
+{
+ "tg-tri": [
+  {
+   "id": "tg-tri-01",
+   "q": "Dans un triangle rectangle, qu’est-ce que l’hypoténuse ?",
+   "a": "Le côté en face de l’angle droit.",
+   "pourquoi": "C’est toujours le plus long côté.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-02",
+   "q": "Quel est le plus long côté d’un triangle rectangle ?",
+   "a": "L’hypoténuse.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-03",
+   "q": "Qu’est-ce que le côté opposé à un angle aigu ?",
+   "a": "Le côté qui fait face à cet angle.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-04",
+   "q": "Qu’est-ce que le côté adjacent à un angle aigu ?",
+   "a": "Le côté qui touche l’angle sans être l’hypoténuse.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-05",
+   "q": "Les côtés opposé et adjacent changent-ils si on change d’angle aigu ?",
+   "a": "Oui, ils s’échangent ; l’hypoténuse reste la même.",
+   "tag": "piege",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-06",
+   "q": "Quelle est la formule du cosinus d’un angle aigu ?",
+   "a": "`cos = adjacent / hypoténuse`",
+   "pourquoi": "CAH.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-07",
+   "q": "Quelle est la formule du sinus d’un angle aigu ?",
+   "a": "`sin = opposé / hypoténuse`",
+   "pourquoi": "SOH.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-08",
+   "q": "Quelle est la formule de la tangente d’un angle aigu ?",
+   "a": "`tan = opposé / adjacent`",
+   "pourquoi": "TOA.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-09",
+   "q": "Que signifie le moyen mnémotechnique CAH SOH TOA ?",
+   "a": "Cos = Adj/Hyp, Sin = Opp/Hyp, Tan = Opp/Adj.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-10",
+   "q": "Quel rapport utiliser si on connaît l’opposé et l’hypoténuse ?",
+   "a": "Le sinus.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-11",
+   "q": "Quel rapport utiliser si on connaît l’adjacent et l’hypoténuse ?",
+   "a": "Le cosinus.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-12",
+   "q": "Quel rapport utiliser si on connaît l’opposé et l’adjacent ?",
+   "a": "La tangente.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-13",
+   "q": "Un cosinus d’angle aigu a-t-il une unité ?",
+   "a": "Non : c’est un quotient de deux longueurs.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-14",
+   "q": "Entre quelles valeurs est le cosinus d’un angle aigu ?",
+   "a": "Strictement entre 0 et 1.",
+   "pourquoi": "L’adjacent est plus court que l’hypoténuse.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "tg-tri-15",
+   "q": "La tangente d’un angle aigu peut-elle dépasser 1 ?",
+   "a": "Oui : quand l’opposé est plus long que l’adjacent.",
+   "pourquoi": "Par exemple tan 60° ≈ 1,73.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "tg-tri-16",
+   "q": "Que conclure si on trouve cos Â = 1,3 ?",
+   "a": "C’est impossible : il y a une erreur.",
+   "pourquoi": "L’adjacent serait plus long que l’hypoténuse.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "tg-tri-17",
+   "q": "Peut-on calculer le cosinus de l’angle droit avec CAH ?",
+   "a": "Non, les rapports ne concernent que les angles aigus.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "tg-tri-18",
+   "q": "Quel mode de calculatrice utiliser dans le triangle rectangle ?",
+   "a": "Le mode degré (DEG).",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-19",
+   "q": "Comment vérifier que la calculatrice est en degrés ?",
+   "a": "`cos 60` doit afficher 0,5.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-tri-20",
+   "q": "Quelle touche donne l’angle connaissant son cosinus ?",
+   "a": "arccos (ou `cos^{−1}`).",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-21",
+   "q": "Si `cos Â = 3/7`, que vaut Â au dixième ?",
+   "a": "Environ 64,6°.",
+   "pourquoi": "Â = arccos(3/7).",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-tri-22",
+   "q": "Si `tan Â = 3/7`, que vaut Â au degré ?",
+   "a": "Environ 23°.",
+   "pourquoi": "Â = arctan(3/7).",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-tri-23",
+   "q": "Comment calculer l’adjacent connaissant l’hypoténuse et l’angle α ?",
+   "a": "`adj = hyp × cos α`",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-tri-24",
+   "q": "Comment calculer l’hypoténuse connaissant l’opposé et l’angle α ?",
+   "a": "`hyp = opp / sin α`",
+   "pourquoi": "L’inconnue est au dénominateur : on divise.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-tri-25",
+   "q": "Comment calculer l’adjacent connaissant l’opposé et l’angle α ?",
+   "a": "`adj = opp / tan α`",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-tri-26",
+   "q": "Inconnue au dénominateur du rapport : multiplier ou diviser ?",
+   "a": "Diviser.",
+   "pourquoi": "Exemple : sin 29° = 3,4 / AC donne AC = 3,4 / sin 29°.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "tg-tri-27",
+   "q": "Que valent ensemble les deux angles aigus d’un triangle rectangle ?",
+   "a": "90°.",
+   "pourquoi": "Utile pour contrôler un angle calculé.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-tri-28",
+   "q": "Que vaut JK si `JI = 6`, `Ĵ = 53°` et [JK] adjacent à Ĵ ?",
+   "a": "`JK = 6 cos 53° ≈ 3,61`",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-tri-29",
+   "q": "Dans un problème à deux triangles, quel triangle choisir en premier ?",
+   "a": "Celui où l’on connaît un angle et un côté.",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "tg-tri-30",
+   "q": "Pourquoi garder la valeur exacte d’une longueur intermédiaire ?",
+   "a": "Pour ne pas cumuler les erreurs d’arrondi.",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "tg-tri-31",
+   "q": "Pourquoi les rapports trigonométriques ne dépendent-ils que de l’angle ?",
+   "a": "Deux triangles rectangles de même angle aigu sont semblables.",
+   "pourquoi": "Leurs côtés sont proportionnels.",
+   "tag": "propriete",
+   "niveau": 3
+  },
+  {
+   "id": "tg-tri-32",
+   "q": "Quelle relation relie tan, sin et cos d’un angle aigu ?",
+   "a": "`tan = sin / cos`",
+   "pourquoi": "L’hypoténuse se simplifie.",
+   "tag": "formule",
+   "niveau": 3
+  },
+  {
+   "id": "tg-tri-33",
+   "q": "Que vaut `cos^2 α + sin^2 α` pour un angle aigu ?",
+   "a": "1.",
+   "pourquoi": "Pythagore divisé par l’hypoténuse au carré.",
+   "tag": "formule",
+   "niveau": 3
+  },
+  {
+   "id": "tg-tri-34",
+   "q": "À qui attribue-t-on traditionnellement les premières tables trigonométriques ?",
+   "a": "À Hipparque de Nicée, IIᵉ siècle avant notre ère.",
+   "pourquoi": "Tables de cordes pour l’astronomie.",
+   "tag": "histoire",
+   "niveau": 2
+  }
+ ],
+ "tg-cer": [
+  {
+   "id": "tg-cer-01",
+   "q": "Qu’est-ce que le sens direct ?",
+   "a": "Le sens inverse des aiguilles d’une montre.",
+   "pourquoi": "Aussi appelé sens positif ou trigonométrique.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-02",
+   "q": "Qu’est-ce que le cercle trigonométrique ?",
+   "a": "Le cercle de centre O et de rayon 1, orienté dans le sens direct.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-03",
+   "q": "Quel est le point de départ sur le cercle trigonométrique ?",
+   "a": "Le point de coordonnées (1 ; 0).",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-04",
+   "q": "Quelle est la longueur du cercle trigonométrique ?",
+   "a": "2π.",
+   "pourquoi": "Périmètre 2πR avec R = 1.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-05",
+   "q": "Combien vaut un tour complet en radians ?",
+   "a": "2π radians.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-06",
+   "q": "Combien vaut π radians en degrés ?",
+   "a": "180°.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-07",
+   "q": "Combien vaut 90° en radians ?",
+   "a": "π/2.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-08",
+   "q": "Combien vaut 60° en radians ?",
+   "a": "π/3.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-09",
+   "q": "Combien vaut 45° en radians ?",
+   "a": "π/4.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-10",
+   "q": "Combien vaut 30° en radians ?",
+   "a": "π/6.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-11",
+   "q": "Comment convertir des degrés en radians ?",
+   "a": "Multiplier par π/180.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-12",
+   "q": "Comment convertir des radians en degrés ?",
+   "a": "Multiplier par 180/π.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-13",
+   "q": "Que vaut 33° en radians ?",
+   "a": "11π/60.",
+   "pourquoi": "33 × π/180 simplifié par 3.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-14",
+   "q": "Que vaut 3π/8 en degrés ?",
+   "a": "67,5°.",
+   "pourquoi": "3 × 180 / 8.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-15",
+   "q": "Environ combien de degrés fait 1 radian ?",
+   "a": "Environ 57,3°.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-16",
+   "q": "Que fait l’enroulement de la droite sur le cercle ?",
+   "a": "Il associe à chaque réel un unique point du cercle.",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-17",
+   "q": "Quelle longueur d’arc correspond au réel x ?",
+   "a": "Un arc de longueur |x| depuis le point (1 ; 0).",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-18",
+   "q": "Dans quel sens s’enroule un réel négatif ?",
+   "a": "Dans le sens indirect (aiguilles d’une montre).",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-19",
+   "q": "Les réels x et x + 2π donnent-ils le même point ?",
+   "a": "Oui : on a fait un tour de plus.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-20",
+   "q": "Quand deux réels donnent-ils le même point du cercle ?",
+   "a": "Quand ils diffèrent d’un multiple de 2π.",
+   "pourquoi": "x et x + 2kπ, k ∈ ℤ.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-21",
+   "q": "x et x + π donnent-ils le même point ?",
+   "a": "Non : des points diamétralement opposés.",
+   "pourquoi": "Un demi-tour.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-22",
+   "q": "Quel point du cercle est associé à π/2 ?",
+   "a": "Le point du haut, (0 ; 1).",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-23",
+   "q": "Quelle mesure de [−π ; π] correspond à 5π/4 ?",
+   "a": "−3π/4.",
+   "pourquoi": "5π/4 − 2π.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-24",
+   "q": "À quel point simple correspond 9π/4 ?",
+   "a": "Au point de π/4.",
+   "pourquoi": "9π/4 = 2π + π/4.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-25",
+   "q": "À quel point simple correspond 8π/3 ?",
+   "a": "Au point de 2π/3.",
+   "pourquoi": "8π/3 = 2π + 2π/3.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-26",
+   "q": "À quel point correspond −9π/2 ?",
+   "a": "Au point de −π/2, en bas.",
+   "pourquoi": "−9π/2 = −4π − π/2.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-27",
+   "q": "Qu’est-ce que la mesure principale d’un angle orienté ?",
+   "a": "Sa seule mesure située dans ]−π ; π].",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-28",
+   "q": "Dans quel intervalle se trouve la mesure principale ?",
+   "a": "]−π ; π].",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-cer-29",
+   "q": "Quelle est la mesure principale de 7π/4 ?",
+   "a": "−π/4.",
+   "pourquoi": "7π/4 − 2π.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-30",
+   "q": "Quelle est la mesure principale de 27π/4 ?",
+   "a": "3π/4.",
+   "pourquoi": "27π/4 = 6π + 3π/4.",
+   "tag": "valeur",
+   "niveau": 3
+  },
+  {
+   "id": "tg-cer-31",
+   "q": "Quelle est la mesure principale associée au point (−1 ; 0) ?",
+   "a": "π (et non −π).",
+   "pourquoi": "−π est exclu de ]−π ; π].",
+   "tag": "piege",
+   "niveau": 3
+  },
+  {
+   "id": "tg-cer-32",
+   "q": "Pour une mesure kπ/q, comment retirer un tour ?",
+   "a": "Retirer 2q au numérateur.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-cer-33",
+   "q": "Pourquoi utilise-t-on les radians en analyse ?",
+   "a": "Ils rendent les formules simples, comme `sin′ = cos`.",
+   "pourquoi": "Un angle devient une longueur d’arc.",
+   "tag": "propriete",
+   "niveau": 3
+  },
+  {
+   "id": "tg-cer-34",
+   "q": "Qui fait de la trigonométrie une branche indépendante au XVᵉ siècle ?",
+   "a": "Regiomontanus (Johann Müller).",
+   "tag": "histoire",
+   "niveau": 3
+  }
+ ],
+ "tg-val": [
+  {
+   "id": "tg-val-01",
+   "q": "Que représente cos x sur le cercle trigonométrique ?",
+   "a": "L’abscisse du point associé à x.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-02",
+   "q": "Que représente sin x sur le cercle trigonométrique ?",
+   "a": "L’ordonnée du point associé à x.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-03",
+   "q": "Quelles sont les coordonnées du point M associé à x ?",
+   "a": "`M(cos x ; sin x)`",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-04",
+   "q": "Entre quelles valeurs est toujours cos x ?",
+   "a": "Entre −1 et 1.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-05",
+   "q": "Que vaut `cos^2 x + sin^2 x` ?",
+   "a": "1, pour tout réel x.",
+   "pourquoi": "Pythagore dans le cercle de rayon 1.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-06",
+   "q": "Que signifie `cos^2 x` ?",
+   "a": "`(cos x)^2`, le carré du cosinus.",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "tg-val-07",
+   "q": "Que vaut cos 0 ?",
+   "a": "1.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-08",
+   "q": "Que vaut sin 0 ?",
+   "a": "0.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-09",
+   "q": "Que vaut cos(π/6) ?",
+   "a": "√3/2.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-10",
+   "q": "Que vaut sin(π/6) ?",
+   "a": "1/2.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-11",
+   "q": "Que vaut cos(π/4) ?",
+   "a": "√2/2.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-12",
+   "q": "Que vaut sin(π/4) ?",
+   "a": "√2/2.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-13",
+   "q": "Que vaut cos(π/3) ?",
+   "a": "1/2.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-14",
+   "q": "Que vaut sin(π/3) ?",
+   "a": "√3/2.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-15",
+   "q": "Que vaut cos(π/2) ?",
+   "a": "0.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-16",
+   "q": "Que vaut sin(π/2) ?",
+   "a": "1.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-17",
+   "q": "Que vaut cos π ?",
+   "a": "−1.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-18",
+   "q": "Que vaut sin π ?",
+   "a": "0.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-19",
+   "q": "Quelle astuce donne sin de 0, π/6, π/4, π/3, π/2 ?",
+   "a": "√0/2, √1/2, √2/2, √3/2, √4/2.",
+   "pourquoi": "Le cosinus lit la liste à l’envers.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-val-20",
+   "q": "Où cos x est-il négatif sur le cercle ?",
+   "a": "À gauche de l’axe vertical.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-21",
+   "q": "Où sin x est-il négatif sur le cercle ?",
+   "a": "Sous l’axe horizontal.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-val-22",
+   "q": "Quel est le signe de cos x et sin x sur ]π/2 ; π[ ?",
+   "a": "cos négatif, sin positif.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "tg-val-23",
+   "q": "Qu’est-ce que l’angle de référence de 5π/6 ?",
+   "a": "π/6, car 5π/6 = π − π/6.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-val-24",
+   "q": "Que vaut cos(5π/4) ?",
+   "a": "−√2/2.",
+   "pourquoi": "5π/4 = π + π/4, 3e quart.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-val-25",
+   "q": "Que vaut sin(−5π/6) ?",
+   "a": "−1/2.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-val-26",
+   "q": "Que vaut cos(2π/3) ?",
+   "a": "−1/2.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-val-27",
+   "q": "Que vaut sin(11π/6) ?",
+   "a": "−1/2.",
+   "pourquoi": "11π/6 = 2π − π/6.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-val-28",
+   "q": "Que vaut cos(−x) ?",
+   "a": "cos x.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "tg-val-29",
+   "q": "Que vaut sin(−x) ?",
+   "a": "−sin x.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "tg-val-30",
+   "q": "Que vaut cos(π − x) ?",
+   "a": "−cos x.",
+   "pourquoi": "Symétrie par rapport à l’axe des ordonnées.",
+   "tag": "formule",
+   "niveau": 3
+  },
+  {
+   "id": "tg-val-31",
+   "q": "Que vaut sin(π − x) ?",
+   "a": "sin x.",
+   "tag": "formule",
+   "niveau": 3
+  },
+  {
+   "id": "tg-val-32",
+   "q": "Que vaut cos(π + x) ?",
+   "a": "−cos x.",
+   "pourquoi": "Symétrie par rapport à O.",
+   "tag": "formule",
+   "niveau": 3
+  },
+  {
+   "id": "tg-val-33",
+   "q": "Que vaut sin(π + x) ?",
+   "a": "−sin x.",
+   "tag": "formule",
+   "niveau": 3
+  },
+  {
+   "id": "tg-val-34",
+   "q": "Que vaut cos(π/2 − x) ?",
+   "a": "sin x.",
+   "pourquoi": "Symétrie par rapport à la droite y = x.",
+   "tag": "formule",
+   "niveau": 3
+  },
+  {
+   "id": "tg-val-35",
+   "q": "Quelle est la méthode pour calculer cos d’un grand angle ?",
+   "a": "Mesure principale, puis quart de cercle, puis angle de référence.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-val-36",
+   "q": "Si sin x = 3/5 et x ∈ ]π/2 ; π[, que vaut cos x ?",
+   "a": "−4/5.",
+   "pourquoi": "cos²x = 16/25 et cos x < 0.",
+   "tag": "valeur",
+   "niveau": 3
+  },
+  {
+   "id": "tg-val-37",
+   "q": "Après `cos^2 x = 16/25`, comment choisir le signe de cos x ?",
+   "a": "Grâce à l’intervalle où se trouve x.",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "tg-val-38",
+   "q": "cos x + sin x = 1 est-il vrai pour tout x ?",
+   "a": "Non : c’est `cos^2 x + sin^2 x = 1`.",
+   "pourquoi": "En π/4, cos + sin = √2.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "tg-val-39",
+   "q": "D’où vient le mot « sinus » ?",
+   "a": "D’une traduction latine (XIIᵉ siècle) d’un mot arabe.",
+   "pourquoi": "Lui-même venu du sanskrit « demi-corde ».",
+   "tag": "histoire",
+   "niveau": 3
+  }
+ ],
+ "tg-eq": [
+  {
+   "id": "tg-eq-01",
+   "q": "Combien de solutions a cos x = c sur un tour si −1 < c < 1 ?",
+   "a": "Deux.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-eq-02",
+   "q": "Combien de solutions a cos x = 1,3 ?",
+   "a": "Aucune : un cosinus reste entre −1 et 1.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-eq-03",
+   "q": "Combien de solutions a sin x = 1 sur un tour ?",
+   "a": "Une seule : π/2 (à 2π près).",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-eq-04",
+   "q": "Quelle droite représente l’équation sin x = c sur le cercle ?",
+   "a": "La droite horizontale y = c.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "tg-eq-05",
+   "q": "Quelle droite représente l’équation cos x = c sur le cercle ?",
+   "a": "La droite verticale x = c.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "tg-eq-06",
+   "q": "Quelles sont les solutions de cos x = cos a (k ∈ ℤ) ?",
+   "a": "x = a + 2kπ ou x = −a + 2kπ.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-07",
+   "q": "Quelles sont les solutions de sin x = sin a (k ∈ ℤ) ?",
+   "a": "x = a + 2kπ ou x = π − a + 2kπ.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-08",
+   "q": "Quelle symétrie relie les deux solutions de cos x = c ?",
+   "a": "La symétrie par rapport à l’axe horizontal.",
+   "pourquoi": "D’où a et −a.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-09",
+   "q": "Quelle symétrie relie les deux solutions de sin x = c ?",
+   "a": "La symétrie par rapport à l’axe vertical.",
+   "pourquoi": "D’où a et π − a.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-10",
+   "q": "Solutions de cos x = 1/2 dans ]−π ; π] ?",
+   "a": "−π/3 et π/3.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-eq-11",
+   "q": "Solutions de sin x = 1/2 dans ]−π ; π] ?",
+   "a": "π/6 et 5π/6.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-eq-12",
+   "q": "Solutions de cos x = −1/2 dans ]−π ; π] ?",
+   "a": "−2π/3 et 2π/3.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-13",
+   "q": "Solutions de sin x = −1/2 dans ]−π ; π] ?",
+   "a": "−5π/6 et −π/6.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-14",
+   "q": "Solutions de sin x = √2/2 dans ]−π ; π] ?",
+   "a": "π/4 et 3π/4.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-15",
+   "q": "Solutions de cos x = 0 dans ]−π ; π] ?",
+   "a": "−π/2 et π/2.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-eq-16",
+   "q": "Solutions de sin x = 0 dans ]−π ; π] ?",
+   "a": "0 et π.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-eq-17",
+   "q": "Sur [0 ; π], combien de fois cos prend-il une valeur de [−1 ; 1] ?",
+   "a": "Une seule fois.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-18",
+   "q": "Solution de cos x = 1/2 dans [0 ; π] ?",
+   "a": "π/3.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-eq-19",
+   "q": "Premier réflexe pour 2 cos x + 1 = 0 ?",
+   "a": "Isoler cos x : cos x = −1/2.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "tg-eq-20",
+   "q": "Que vaut √(1/2) ?",
+   "a": "√2/2.",
+   "pourquoi": "1/√2 = √2/2.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-21",
+   "q": "cos²x = 1/2 équivaut à quoi ?",
+   "a": "cos x = √2/2 ou cos x = −√2/2.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-22",
+   "q": "Solutions de cos²x = 1/2 dans ℝ ?",
+   "a": "π/4 + kπ/2, k ∈ ℤ.",
+   "pourquoi": "Quatre points espacés de π/2.",
+   "tag": "valeur",
+   "niveau": 3
+  },
+  {
+   "id": "tg-eq-23",
+   "q": "Si 2x = a + 2kπ, que vaut x ?",
+   "a": "x = a/2 + kπ.",
+   "pourquoi": "On divise aussi 2kπ par 2.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-24",
+   "q": "Solutions de cos(2x) = 1/2 dans [0 ; π] ?",
+   "a": "π/6 et 5π/6.",
+   "tag": "valeur",
+   "niveau": 3
+  },
+  {
+   "id": "tg-eq-25",
+   "q": "Comment résoudre une inéquation trigonométrique sur un tour ?",
+   "a": "Résoudre l’équation, puis lire l’arc de cercle qui convient.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-26",
+   "q": "Quelle partie du cercle pour sin x ≤ c ?",
+   "a": "La partie sous la droite y = c.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-27",
+   "q": "Quelle partie du cercle pour cos x ≥ c ?",
+   "a": "La partie à droite de la droite x = c.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-28",
+   "q": "Solutions de sin x ≤ √3/2 dans [−π ; π] ?",
+   "a": "[−π ; π/3] ∪ [2π/3 ; π].",
+   "tag": "valeur",
+   "niveau": 3
+  },
+  {
+   "id": "tg-eq-29",
+   "q": "Solutions de cos x ≥ 1/2 dans ]−π ; π] ?",
+   "a": "[−π/3 ; π/3].",
+   "tag": "valeur",
+   "niveau": 3
+  },
+  {
+   "id": "tg-eq-30",
+   "q": "Crochets d’une inéquation large (≤ ou ≥) ?",
+   "a": "Fermés : les bornes sont incluses.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-31",
+   "q": "Pour cos x = cos a, faut-il prendre π − a ?",
+   "a": "Non : c’est −a ; π − a est la règle du sinus.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "tg-eq-32",
+   "q": "Dans ℝ, que faut-il ajouter à chaque solution ?",
+   "a": "+ 2kπ, avec k ∈ ℤ.",
+   "tag": "methode",
+   "niveau": 1
+  }
+ ],
+ "tg-fct": [
+  {
+   "id": "tg-fct-01",
+   "q": "Sur quel ensemble est définie la fonction cosinus ?",
+   "a": "Sur ℝ.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-02",
+   "q": "Quel est l’ensemble des valeurs de la fonction sinus ?",
+   "a": "[−1 ; 1].",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-03",
+   "q": "Quelle est la période des fonctions cos et sin ?",
+   "a": "2π.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-04",
+   "q": "Que vaut cos(x + 2kπ) ?",
+   "a": "cos x, pour tout entier k.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-05",
+   "q": "Que signifie « périodique de période 2π » ?",
+   "a": "La courbe se répète sur chaque intervalle de longueur 2π.",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-06",
+   "q": "Quelle est la période de cos(ax + b) ?",
+   "a": "2π/|a|.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-07",
+   "q": "Quelle est la période de cos(2x) ?",
+   "a": "π.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-08",
+   "q": "Quelle est la période de sin(3x) ?",
+   "a": "2π/3.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-09",
+   "q": "Qu’est-ce qu’une fonction paire ?",
+   "a": "f(−x) = f(x) pour tout x.",
+   "pourquoi": "Domaine symétrique par rapport à 0.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-10",
+   "q": "Qu’est-ce qu’une fonction impaire ?",
+   "a": "f(−x) = −f(x) pour tout x.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-11",
+   "q": "Quelle symétrie a la courbe d’une fonction paire ?",
+   "a": "Symétrie par rapport à l’axe des ordonnées.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-12",
+   "q": "Quelle symétrie a la courbe d’une fonction impaire ?",
+   "a": "Symétrie par rapport à l’origine du repère.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-13",
+   "q": "La fonction cosinus est-elle paire ou impaire ?",
+   "a": "Paire.",
+   "pourquoi": "cos(−x) = cos x.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-14",
+   "q": "La fonction sinus est-elle paire ou impaire ?",
+   "a": "Impaire.",
+   "pourquoi": "sin(−x) = −sin x.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-15",
+   "q": "f(x) = sin x − sin(2x) est-elle paire ou impaire ?",
+   "a": "Impaire.",
+   "pourquoi": "f(−x) = −sin x + sin(2x) = −f(x).",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-16",
+   "q": "f(x) = cos(2x) − 1/2 est-elle paire ou impaire ?",
+   "a": "Paire.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-17",
+   "q": "Comment prouver qu’une fonction est paire ?",
+   "a": "Calculer f(−x) et montrer que f(−x) = f(x).",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-18",
+   "q": "Comment prouver que f est périodique de période T ?",
+   "a": "Montrer que f(x + T) = f(x) pour tout x.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-19",
+   "q": "Quelle est la dérivée de sin x ?",
+   "a": "cos x.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-20",
+   "q": "Quelle est la dérivée de cos x ?",
+   "a": "−sin x.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-21",
+   "q": "Quelle fonction a pour dérivée cos x ?",
+   "a": "sin x (à une constante près).",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-22",
+   "q": "Quelle est la dérivée de cos(ax + b) ?",
+   "a": "−a sin(ax + b).",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-23",
+   "q": "Quelle est la dérivée de sin(ax + b) ?",
+   "a": "a cos(ax + b).",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-24",
+   "q": "Quelle est la dérivée de cos(2x) − 1/2 ?",
+   "a": "−2 sin(2x).",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-25",
+   "q": "Les formules cos′ = −sin et sin′ = cos valent-elles en degrés ?",
+   "a": "Non, seulement en radians.",
+   "tag": "piege",
+   "niveau": 3
+  },
+  {
+   "id": "tg-fct-26",
+   "q": "Quelles sont les variations de cos sur [0 ; π] ?",
+   "a": "Décroissante, de 1 à −1.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-27",
+   "q": "Quelles sont les variations de sin sur [0 ; π] ?",
+   "a": "Croissante de 0 à 1 sur [0 ; π/2], puis décroissante.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-28",
+   "q": "Où sin atteint-il son maximum sur [0 ; π] ?",
+   "a": "En π/2, où il vaut 1.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "tg-fct-29",
+   "q": "Comment retrouver toute la courbe du cosinus à partir de [0 ; π] ?",
+   "a": "Symétrie par rapport à l’axe des ordonnées, puis translations de 2π.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-30",
+   "q": "Comment retrouver toute la courbe du sinus à partir de [0 ; π] ?",
+   "a": "Symétrie par rapport à l’origine, puis translations de 2π.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-fct-31",
+   "q": "Pour f paire et π-périodique, sur quel intervalle l’étudier ?",
+   "a": "Sur [0 ; π/2].",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "tg-fct-32",
+   "q": "Variations de cos(2x) − 1/2 sur [0 ; π/2] ?",
+   "a": "Décroissante, de 1/2 à −3/2.",
+   "tag": "valeur",
+   "niveau": 3
+  },
+  {
+   "id": "tg-fct-33",
+   "q": "Pour x ∈ [0 ; π/2], quel est le signe de sin(2x) ?",
+   "a": "Positif ou nul, car 2x ∈ [0 ; π].",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "tg-fct-34",
+   "q": "Qui a montré que beaucoup de fonctions périodiques sont des sommes de sinus ?",
+   "a": "Joseph Fourier, au début du XIXᵉ siècle.",
+   "tag": "histoire",
+   "niveau": 3
+  }
+ ],
+ "tg-plus": [
+  {
+   "id": "tg-plus-01",
+   "q": "Ce chapitre est-il dans les documents de cours ?",
+   "a": "Non : c’est un complément hors documents.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "tg-plus-02",
+   "q": "cos(a + b) est-il égal à cos a + cos b ?",
+   "a": "Non.",
+   "pourquoi": "Avec a = b = π/2 : cos π = −1 ≠ 0.",
+   "tag": "piege",
+   "niveau": 1
+  },
+  {
+   "id": "tg-plus-03",
+   "q": "Que vaut cos(a + b) ?",
+   "a": "cos a cos b − sin a sin b.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-plus-04",
+   "q": "Que vaut cos(a − b) ?",
+   "a": "cos a cos b + sin a sin b.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-plus-05",
+   "q": "Que vaut sin(a + b) ?",
+   "a": "sin a cos b + cos a sin b.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-plus-06",
+   "q": "Que vaut sin(a − b) ?",
+   "a": "sin a cos b − cos a sin b.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-plus-07",
+   "q": "Comment tester une formule d’addition ?",
+   "a": "Prendre b = 0 : on doit retrouver cos a ou sin a.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-plus-08",
+   "q": "Que vaut sin 2a ?",
+   "a": "2 sin a cos a.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-plus-09",
+   "q": "Que vaut cos 2a avec cos et sin ?",
+   "a": "`cos^2 a − sin^2 a`",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "tg-plus-10",
+   "q": "Que vaut cos 2a avec seulement cos a ?",
+   "a": "`2cos^2 a − 1`",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "tg-plus-11",
+   "q": "Que vaut cos 2a avec seulement sin a ?",
+   "a": "`1 − 2sin^2 a`",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "tg-plus-12",
+   "q": "Comment linéariser `cos^2 a` ?",
+   "a": "`(1 + cos 2a)/2`",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "tg-plus-13",
+   "q": "Comment linéariser `sin^2 a` ?",
+   "a": "`(1 − cos 2a)/2`",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "tg-plus-14",
+   "q": "sin 2a est-il égal à 2 sin a ?",
+   "a": "Non : en a = π/2, sin π = 0 et 2 sin(π/2) = 2.",
+   "tag": "piege",
+   "niveau": 1
+  },
+  {
+   "id": "tg-plus-15",
+   "q": "Comment décomposer 5π/12 en angles remarquables ?",
+   "a": "π/4 + π/6.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-plus-16",
+   "q": "Comment décomposer π/12 en angles remarquables ?",
+   "a": "π/3 − π/4.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "tg-plus-17",
+   "q": "Que vaut cos(π/12) ?",
+   "a": "(√6 + √2)/4.",
+   "pourquoi": "≈ 0,966, c’est cos 15°.",
+   "tag": "valeur",
+   "niveau": 3
+  },
+  {
+   "id": "tg-plus-18",
+   "q": "Que vaut sin(π/12) ?",
+   "a": "(√6 − √2)/4.",
+   "pourquoi": "≈ 0,259.",
+   "tag": "valeur",
+   "niveau": 3
+  },
+  {
+   "id": "tg-plus-19",
+   "q": "Que vaut cos(5π/12) ?",
+   "a": "(√6 − √2)/4.",
+   "tag": "valeur",
+   "niveau": 3
+  },
+  {
+   "id": "tg-plus-20",
+   "q": "Si sin x = 3/5 et x ∈ ]0 ; π/2[, que vaut sin 2x ?",
+   "a": "24/25.",
+   "pourquoi": "2 × 3/5 × 4/5.",
+   "tag": "valeur",
+   "niveau": 3
+  },
+  {
+   "id": "tg-plus-21",
+   "q": "Si sin x = 3/5 et x ∈ ]0 ; π/2[, que vaut cos 2x ?",
+   "a": "7/25.",
+   "pourquoi": "16/25 − 9/25.",
+   "tag": "valeur",
+   "niveau": 3
+  },
+  {
+   "id": "tg-plus-22",
+   "q": "Comment contrôler un calcul de sin 2x et cos 2x ?",
+   "a": "Vérifier que `sin^2 2x + cos^2 2x = 1`.",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "tg-plus-23",
+   "q": "Quel astronome utilisait l’équivalent des formules d’addition ?",
+   "a": "Ptolémée, dans l’Almageste (IIᵉ siècle).",
+   "tag": "histoire",
+   "niveau": 3
+  }
+ ]
+}

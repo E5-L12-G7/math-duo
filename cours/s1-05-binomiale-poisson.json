@@ -1,0 +1,210 @@
+{
+  "id": "s1-binomiale-poisson",
+  "titre": "Lois binomiale et de Poisson",
+  "resume": "Quand on répète la même épreuve à deux issues, le nombre de succès suit une loi binomiale. Quand les succès sont rares parmi un très grand nombre d’essais, la loi de Poisson la remplace avantageusement.",
+  "objectifs": [
+    "reconnaître un schéma de Bernoulli et justifier qu’une variable suit une loi binomiale B(n ; p)",
+    "calculer P(X = k), P(X ≤ k) et P(X ≥ 1) pour une loi binomiale",
+    "connaître et interpréter E(X) = np et V(X) = np(1 − p)",
+    "modéliser des événements rares par une loi de Poisson P(λ) et calculer ses probabilités",
+    "remplacer une binomiale par une loi de Poisson quand n est grand et p petit, en vérifiant les conditions"
+  ],
+  "prerequis": [
+    "s1-probas",
+    "s1-va-discretes"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Aujourd’hui on rencontre les deux lois de probabilité que tu croiseras le plus souvent en statistique : la loi binomiale et la loi de Poisson. Ne t’inquiète pas des noms : la première compte des succès quand on recommence plusieurs fois la même chose, la seconde compte des événements rares. On va les voir naître sous tes yeux avant d’écrire la moindre formule.",
+      "## Une épreuve, deux issues",
+      "Beaucoup de situations se résument à « oui ou non » : la pièce tombe sur pile ou non, le patient guérit ou non, l’objet sorti de l’usine est défectueux ou non. On appelle cela une **épreuve de Bernoulli** : une seule expérience, deux issues, qu’on baptise « succès » et « échec ». La probabilité du succès se note p.",
+      "analogie: Une épreuve de Bernoulli, c’est un interrupteur : il est soit allumé (succès, probabilité p), soit éteint (échec, probabilité 1 − p). Rien entre les deux.",
+      "attention: « Succès » ne veut pas dire « bonne nouvelle ». Si on compte les pièces défectueuses, le succès, c’est « la pièce est défectueuse ». C’est simplement l’issue qu’on décide de compter.",
+      "## Recommencer n fois : le schéma de Bernoulli",
+      "Maintenant, on répète cette épreuve n fois, **toujours dans les mêmes conditions** et **sans que les essais s’influencent** : on parle de schéma de Bernoulli. Le nombre X de succès obtenus peut valoir 0, 1, 2… jusqu’à n. Sa loi s’appelle la **loi binomiale** de paramètres n et p, qu’on écrit B(n ; p).",
+      "@galton | Pense à une planche de Galton : à chaque clou, la bille part à droite avec la probabilité p, c’est une épreuve de Bernoulli ; la case d’arrivée compte le nombre de « droite » sur n clous. Le diagramme montre la probabilité de chaque case. Mets p = 0,5 puis fais varier n : la forme qui se dessine, c’est une loi binomiale.",
+      "prof: Tu as vu ? Les cases du milieu se remplissent beaucoup plus que les bords. Pourquoi ? Pour finir tout à droite, la bille doit choisir « droite » à chaque clou : un seul chemin. Pour finir au milieu, il y a énormément de chemins possibles. Toute la loi binomiale repose sur cette idée : compter les chemins.",
+      "## Compter les chemins avec le triangle de Pascal",
+      "Le nombre de chemins qui donnent exactement k succès sur n essais se note C(n ; k) (on lit « k parmi n »). Le triangle de Pascal les fournit : chaque nombre est la somme des deux nombres situés juste au-dessus.",
+      "@pascal | Descends ligne par ligne : chaque case est la somme des deux cases du dessus. Sur la ligne 4, lis 1, 4, 6, 4, 1 : il y a 6 façons d’obtenir 2 succès en 4 essais.",
+      "? Avec 3 lancers de pièce, combien de chemins donnent exactement 1 pile ? || 3 : PFF, FPF et FFP. C’est C(3 ; 1) = 3, la ligne 3 du triangle de Pascal est 1, 3, 3, 1.",
+      "## La forme de la loi binomiale",
+      "@loi-discrete {\"loi\":\"binomiale\",\"n\":10,\"p\":0.3,\"k\":3} | Fais varier p : quand p est petit, la montagne se colle à gauche ; quand p vaut 0,5, elle est symétrique ; quand p est grand, elle part à droite. Le pointillé vert, l’espérance np, est toujours tout près du sommet.",
+      "!! Pour une loi binomiale B(n ; p), on s’attend en moyenne à np succès : 10 essais avec p = 0,3, c’est 3 succès « en moyenne ».",
+      "? On lance 60 fois un dé équilibré. Combien de 6 attend-on en moyenne ? || 60 × 1/6 = 10. Le nombre de 6 suit B(60 ; 1/6), d’espérance np = 10.",
+      "## Les événements rares : la loi de Poisson",
+      "Pense au nombre d’appels reçus par un standard en une minute, au nombre de fautes de frappe dans une page, au nombre de pannes d’une machine dans la journée. Chaque « occasion » d’événement est très peu probable, mais les occasions sont innombrables. Le nombre d’événements suit alors une **loi de Poisson** de paramètre λ (lambda), où λ est le nombre moyen d’événements.",
+      "analogie: Les gouttes de pluie qui tombent sur une dalle pendant une minute : chaque goutte a une chance minuscule de tomber pile sur cette dalle, mais il en tombe des millions. Le nombre de gouttes sur la dalle suit à peu près une loi de Poisson.",
+      "@loi-discrete {\"loi\":\"poisson\",\"lambda\":3,\"k\":2} | Règle λ, le nombre moyen d’événements. Avec λ petit, on obtient le plus souvent 0 ou 1 ; quand λ grandit, la loi s’étale et se décale vers la droite.",
+      "? Un standard reçoit en moyenne 4 appels par minute. Quel paramètre λ choisir pour le nombre d’appels en 2 minutes ? || λ = 8 : la moyenne double si la durée double.",
+      "histoire: Siméon Denis Poisson publie sa loi en 1837, dans un livre sur les jugements des tribunaux. Elle devient célèbre en 1898 quand Ladislaus Bortkiewicz montre qu’elle décrit très bien le nombre de soldats de cavalerie prussiens tués chaque année par une ruade de cheval : un événement rare parmi beaucoup de soldats.",
+      "prof: Bilan : binomiale quand on compte des succès sur un nombre fixé d’essais identiques et indépendants ; Poisson quand on compte des événements rares sans nombre d’essais bien défini. Et la bonne nouvelle : quand n est grand et p petit, les deux lois se ressemblent, on verra comment en profiter."
+    ],
+    "pratique": [
+      "prof: Passons aux méthodes. Pour chaque type de question, je te donne une recette en étapes, on l’applique ensemble, puis c’est à toi. Garde ta calculatrice à portée : la touche C(n ; k) (ou nCr) va beaucoup servir.",
+      "## Reconnaître une loi binomiale",
+      "1. Identifie l’épreuve répétée et ses deux issues ; choisis le « succès ».\n2. Vérifie que les essais sont **identiques** (même probabilité p à chaque fois).\n3. Vérifie qu’ils sont **indépendants** (tirage avec remise, lancers successifs…).\n4. Vérifie que X **compte** le nombre de succès sur un nombre n **fixé** d’essais.\n5. Conclus : X suit B(n ; p), en donnant n et p.",
+      "attention: Un tirage **sans remise** dans une petite urne n’est pas binomial : la composition change à chaque tirage. Si la population est très grande devant l’échantillon (au moins 10 fois plus), on l’accepte quand même en pratique.",
+      "## Calculer P(X = k)",
+      "> P(X = k) = C(n ; k) × p^k × (1 − p)^(n − k)",
+      "Chaque chemin avec k succès et n − k échecs a la probabilité p^k (1 − p)^(n − k), et il y a C(n ; k) chemins de ce type.",
+      "@etapes {\"etapes\":[[\"X ~ B(5 ; 0,2), on cherche P(X = 2)\",\"5 pièces contrôlées, chacune défectueuse avec la probabilité 0,2.\"],[\"C(5 ; 2) = 10\",\"Nombre de façons de placer les 2 pièces défectueuses parmi les 5.\"],[\"0,2² = 0,04\",\"Probabilité des 2 succès.\"],[\"0,8³ = 0,512\",\"Probabilité des 3 échecs : 1 − p = 0,8.\"],[\"P(X = 2) = 10 × 0,04 × 0,512 = 0,2048\",\"On multiplie les trois morceaux.\"]]} | Avance étape par étape et vérifie chaque calcul à la calculatrice.",
+      "? X suit B(4 ; 0,5). Calcule P(X = 1). || C(4 ; 1) × 0,5¹ × 0,5³ = 4 × 0,0625 = 0,25.",
+      "## P(X ≤ k), P(X ≥ k) et « au moins un »",
+      "1. P(X ≤ k) : additionne P(X = 0), P(X = 1), … jusqu’à P(X = k) (ou utilise la fonction « binomiale cumulée » de la calculatrice).\n2. P(X ≥ k) : passe par le contraire, P(X ≥ k) = 1 − P(X ≤ k − 1).\n3. « Au moins un succès » : P(X ≥ 1) = 1 − P(X = 0) = 1 − (1 − p)^n.",
+      "@etapes {\"etapes\":[[\"X ~ B(10 ; 0,1), on cherche P(X ≥ 1)\",\"Au moins une pièce défectueuse sur 10.\"],[\"Contraire : X = 0\",\"« Au moins un » a pour contraire « aucun ».\"],[\"P(X = 0) = 0,9^10 ≈ 0,3487\",\"Les 10 pièces sont bonnes : 10 échecs.\"],[\"P(X ≥ 1) = 1 − 0,3487 ≈ 0,6513\",\"On retranche à 1.\"]]} | Remarque la force de l’événement contraire : un seul terme au lieu de dix.",
+      "@loi-discrete {\"loi\":\"binomiale\",\"n\":10,\"p\":0.1,\"k\":0,\"cumul\":true} | Passe en mode P(X ≤ k) et règle k : les bâtons surlignés s’additionnent. Vérifie que P(X ≤ 0) ≈ 0,3487, puis calcule de tête 1 − 0,3487.",
+      "prof: L’erreur que je vois le plus : écrire P(X ≥ 3) = 1 − P(X ≤ 3). Non ! Le contraire de « au moins 3 », c’est « au plus 2 ». Écris toujours l’ensemble des valeurs pour ne pas te tromper de bord.",
+      "? X suit B(3 ; 0,4). Calcule P(X ≥ 1). || 1 − 0,6³ = 1 − 0,216 = 0,784.",
+      "## Espérance, variance, écart-type",
+      "> E(X) = np    V(X) = np(1 − p)    σ(X) = √(np(1 − p))",
+      "ex: X ~ B(200 ; 0,05)\nE(X) = 200 × 0,05 = 10\nV(X) = 10 × 0,95 = 9,5\nσ(X) = √9,5 ≈ 3,08",
+      "## La loi de Poisson P(λ)",
+      "> P(X = k) = e^(−λ) × λ^k / k!    pour k = 0, 1, 2, …",
+      "> E(X) = λ    V(X) = λ",
+      "@etapes {\"etapes\":[[\"X ~ P(2), on cherche P(X = 3)\",\"En moyenne 2 pannes par semaine.\"],[\"e^(−2) ≈ 0,1353\",\"Le facteur commun à toutes les probabilités.\"],[\"2³ / 3! = 8 / 6 ≈ 1,3333\",\"λ^k divisé par k factorielle.\"],[\"P(X = 3) ≈ 0,1353 × 1,3333 ≈ 0,1804\",\"On multiplie.\"]]} | Suis le calcul, puis refais-le seul pour P(X = 0) : tu dois trouver e^(−2) ≈ 0,1353.",
+      "attention: λ dépend de la durée (ou de la surface) observée : 3 appels par minute en moyenne donnent λ = 15 pour 5 minutes. Ajuste toujours λ à la période demandée.",
+      "? X ~ P(1,5). Calcule P(X = 0). || e^(−1,5) ≈ 0,2231.",
+      "## Approcher une binomiale par une loi de Poisson",
+      "1. Vérifie les conditions usuelles : n grand (n ≥ 30), p petit (p ≤ 0,1), np pas trop grand (np ≤ 15). Les manuels varient un peu sur ces seuils.\n2. Prends λ = np (même espérance).\n3. Calcule avec la formule de Poisson, plus simple que la binomiale.",
+      "@loi-discrete {\"loi\":\"comparer\",\"n\":50,\"p\":0.04,\"k\":2} | Compare les bâtons bleus (binomiale) et jaunes (Poisson de même moyenne). Diminue p en augmentant n : les deux lois se superposent. Avec p = 0,3, elles se séparent nettement.",
+      "@etapes {\"etapes\":[[\"X ~ B(100 ; 0,03), on cherche P(X = 2)\",\"Contrôle de 100 pièces, 3 % de défauts.\"],[\"n = 100 ≥ 30, p = 0,03 ≤ 0,1, np = 3 ≤ 15\",\"Les conditions sont remplies.\"],[\"λ = np = 3\",\"On garde la même moyenne.\"],[\"P(X = 2) ≈ e^(−3) × 3² / 2! ≈ 0,0498 × 4,5 ≈ 0,2240\",\"Calcul de Poisson.\"],[\"Valeur exacte binomiale ≈ 0,2252\",\"L’approximation est très bonne.\"]]} | Observe l’écart final : à peine un millième.",
+      "prof: Bravo, tu as maintenant toutes les méthodes. Un dernier conseil : commence toujours par écrire « X suit la loi … de paramètres … » avec une phrase de justification. Au Cnam, cette phrase rapporte des points à elle seule."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on justifie les formules et on regarde leurs limites. Tu verras que E(X) = np se démontre en une ligne, et que la loi de Poisson n’est rien d’autre qu’une binomiale « à la limite ».",
+      "## Définition par une somme",
+      "Si X₁, …, Xₙ sont indépendantes et suivent la même loi de Bernoulli de paramètre p (Xᵢ vaut 1 en cas de succès, 0 sinon), alors X = X₁ + … + Xₙ suit B(n ; p). Chaque Xᵢ a pour espérance p et pour variance p(1 − p).",
+      "> E(X) = E(X₁) + … + E(Xₙ) = np",
+      "> V(X) = V(X₁) + … + V(Xₙ) = np(1 − p)    (indépendance)",
+      "La linéarité de l’espérance ne demande aucune hypothèse ; l’additivité de la variance exige l’indépendance. C’est exactement la condition « essais indépendants » du schéma de Bernoulli.",
+      "## Les probabilités somment à 1",
+      "La formule du binôme de Newton donne directement la somme des probabilités :",
+      "> Σ C(n ; k) p^k (1 − p)^(n − k) = (p + 1 − p)^n = 1",
+      "De même pour Poisson : Σ e^(−λ) λ^k / k! = e^(−λ) × e^λ = 1, grâce au développement en série de l’exponentielle.",
+      "## Poisson comme limite de la binomiale",
+      "Fixe λ et prends p = λ/n. Pour k fixé, quand n tend vers l’infini :",
+      "> C(n ; k) (λ/n)^k (1 − λ/n)^(n − k)  →  e^(−λ) λ^k / k!",
+      "En effet C(n ; k)/n^k → 1/k! et (1 − λ/n)^n → e^(−λ). C’est la « loi des petits nombres » : beaucoup d’occasions, chacune improbable, avec un nombre moyen d’événements constant.",
+      "@loi-discrete {\"loi\":\"comparer\",\"n\":100,\"p\":0.03,\"k\":3} | Garde np proche de 3 : prends n = 30 et p = 0,1, puis n = 100 et p = 0,03. L’écart entre bleu et jaune fond à mesure que n grandit et que p diminue.",
+      "## Le mode et la récurrence",
+      "Pour la binomiale, P(X = k + 1) / P(X = k) = ((n − k)/(k + 1)) × (p/(1 − p)). Ce rapport dépasse 1 tant que k < (n + 1)p − 1 : la loi monte puis descend, et son sommet (le mode) est l’entier ⌊(n + 1)p⌋ (deux sommets égaux si (n + 1)p est entier). Pour Poisson, le rapport vaut λ/(k + 1) et le mode est ⌊λ⌋.",
+      "? X suit B(9 ; 0,4). Quel est son mode ? || (n + 1)p = 4, entier : deux modes, 3 et 4, avec P(X = 3) = P(X = 4).",
+      "## Stabilité par addition",
+      "- Si X ~ B(n₁ ; p) et Y ~ B(n₂ ; p) sont indépendantes, X + Y ~ B(n₁ + n₂ ; p) (même p obligatoire).\n- Si X ~ P(λ) et Y ~ P(μ) sont indépendantes, X + Y ~ P(λ + μ). C’est pour cela que λ est proportionnel à la durée observée.",
+      "? Un guichet A reçoit en moyenne 2 clients par heure, un guichet B en reçoit 3, indépendamment (lois de Poisson). Quelle loi suit le nombre total de clients en une heure ? || P(5), par stabilité de la loi de Poisson.",
+      "prof: Avant de regarder où ces modèles cassent, une question pour toi : dans un exercice, comment sais-tu que les essais sont indépendants ? Presque toujours grâce à une phrase de l’énoncé (« avec remise », « de façon indépendante », « on assimile à un tirage avec remise »). Cherche-la et cite-la dans ta justification.",
+      "## Où ça casse",
+      "- **Sans remise** dans une petite population : la loi exacte est hypergéométrique, pas binomiale. L’approximation binomiale n’est acceptable que si l’échantillon représente moins de 10 % de la population.\n- **p qui varie** d’un essai à l’autre (fatigue, apprentissage) : la somme n’est plus binomiale.\n- **Variance très différente de la moyenne** sur des données de comptage : la loi de Poisson est rejetée, puisqu’elle impose E = V. On parle de surdispersion quand V > E (événements groupés).\n- **np grand** (au-delà de 15 environ) : l’approximation de Poisson se dégrade ; on préfère l’approximation normale (chapitre suivant).",
+      "? Sur 200 jours, on compte des pannes : moyenne 2,1, variance 6,5. Une loi de Poisson est-elle crédible ? || Non : une loi de Poisson a une variance égale à sa moyenne. Ici V ≈ 3E : les pannes arrivent probablement en grappes.",
+      "prof: Retiens la logique d’ensemble : binomiale = somme de Bernoulli indépendantes ; Poisson = limite de la binomiale à np fixé ; et au-delà, quand n grandit avec p fixé, c’est la loi normale qui prend le relais. Tu as maintenant la carte complète des lois discrètes de l’UE."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Un QCM comporte 8 questions à 4 réponses dont une seule juste. Un candidat répond au hasard. Probabilité d’avoir exactement 3 bonnes réponses ?",
+      "etapes": [
+        [
+          "X = nombre de bonnes réponses",
+          "on compte les succès"
+        ],
+        [
+          "8 questions identiques et indépendantes, p = 1/4",
+          "schéma de Bernoulli"
+        ],
+        [
+          "X ~ B(8 ; 0,25)",
+          "conclusion"
+        ],
+        [
+          "P(X = 3) = C(8 ; 3) × 0,25³ × 0,75⁵ = 56 × 0,015625 × 0,2373",
+          "formule binomiale"
+        ],
+        [
+          "P(X = 3) ≈ 0,2076",
+          "arrondi au dix-millième"
+        ]
+      ]
+    },
+    {
+      "enonce": "Un site reçoit en moyenne 1,2 réclamation par jour. Probabilité de recevoir au moins 2 réclamations un jour donné ?",
+      "etapes": [
+        [
+          "X ~ P(1,2)",
+          "événements rares, nombre moyen 1,2 par jour"
+        ],
+        [
+          "P(X ≥ 2) = 1 − P(X = 0) − P(X = 1)",
+          "événement contraire"
+        ],
+        [
+          "P(X = 0) = e^(−1,2) ≈ 0,3012 ; P(X = 1) = 1,2 e^(−1,2) ≈ 0,3614",
+          "formule de Poisson"
+        ],
+        [
+          "P(X ≥ 2) ≈ 1 − 0,6626 = 0,3374",
+          "on retranche à 1"
+        ]
+      ]
+    },
+    {
+      "enonce": "Une machine produit 2 % de pièces défectueuses. On prélève 150 pièces. Probabilité d’avoir au plus 1 pièce défectueuse ?",
+      "etapes": [
+        [
+          "X ~ B(150 ; 0,02)",
+          "150 pièces indépendantes, p = 0,02"
+        ],
+        [
+          "n ≥ 30, p ≤ 0,1, np = 3 ≤ 15",
+          "conditions de l’approximation"
+        ],
+        [
+          "X ≈ P(3)",
+          "λ = np = 3"
+        ],
+        [
+          "P(X ≤ 1) ≈ e^(−3)(1 + 3) ≈ 0,1991",
+          "somme des deux premiers termes"
+        ],
+        [
+          "(valeur exacte binomiale ≈ 0,1961)",
+          "l’approximation est bonne"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "P(X ≥ 3) = 1 − P(X ≤ 3)",
+      "juste": "P(X ≥ 3) = 1 − P(X ≤ 2)",
+      "pourquoi": "Le contraire de « au moins 3 » est « au plus 2 » : la valeur 3 appartient à l’événement de départ."
+    },
+    {
+      "faux": "P(X = k) = p^k (1 − p)^(n − k)",
+      "juste": "P(X = k) = C(n ; k) p^k (1 − p)^(n − k)",
+      "pourquoi": "p^k (1 − p)^(n − k) est la probabilité d’un seul chemin ; il y en a C(n ; k)."
+    },
+    {
+      "faux": "V(X) = np pour une binomiale",
+      "juste": "V(X) = np(1 − p)",
+      "pourquoi": "C’est pour la loi de Poisson que la variance égale l’espérance. Pour la binomiale, la variance est plus petite que np."
+    },
+    {
+      "faux": "3 appels par minute, donc λ = 3 pour 10 minutes",
+      "juste": "λ = 3 × 10 = 30",
+      "pourquoi": "λ est le nombre moyen d’événements sur la période observée : il est proportionnel à sa durée."
+    },
+    {
+      "faux": "Approcher B(20 ; 0,4) par une loi de Poisson",
+      "juste": "Calculer avec la binomiale (ou l’approximation normale si n est grand)",
+      "pourquoi": "Poisson ne convient que si n est grand et p petit : ici p = 0,4 n’est pas petit."
+    }
+  ],
+  "retenir": [
+    "Schéma de Bernoulli : n épreuves identiques et indépendantes à deux issues ; X = nombre de succès suit B(n ; p).",
+    "P(X = k) = C(n ; k) p^k (1 − p)^(n − k) ; E(X) = np ; V(X) = np(1 − p).",
+    "Au moins un succès : P(X ≥ 1) = 1 − (1 − p)^n.",
+    "Loi de Poisson P(λ) : P(X = k) = e^(−λ) λ^k / k! ; E(X) = V(X) = λ ; λ proportionnel à la durée observée.",
+    "Si n ≥ 30, p ≤ 0,1 et np ≤ 15, on approche B(n ; p) par P(np)."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "s1-resumes": [
+    {"id": "s1re-01", "q": "Qu’est-ce que le mode d’une série ?", "a": "La valeur qui a le plus grand effectif.", "tag": "definition", "niveau": 1},
+    {"id": "s1re-02", "q": "Qu’est-ce que la médiane ?", "a": "La valeur qui partage la série rangée en deux moitiés de même effectif.", "tag": "definition", "niveau": 1},
+    {"id": "s1re-03", "q": "Formule de la moyenne pondérée ?", "a": "x̄ = Σ nᵢxᵢ ÷ N.", "tag": "formule", "niveau": 1},
+    {"id": "s1re-04", "q": "Médiane quand N est pair ?", "a": "Moyenne des valeurs de rangs N/2 et N/2 + 1.", "tag": "methode", "niveau": 1},
+    {"id": "s1re-05", "q": "Première étape pour trouver médiane et quartiles ?", "a": "Ranger la série dans l’ordre croissant.", "tag": "methode", "niveau": 1},
+    {"id": "s1re-06", "q": "Rang de Q1 dans une série de N valeurs rangées ?", "a": "N/4, arrondi à l’entier supérieur.", "tag": "methode", "niveau": 2},
+    {"id": "s1re-07", "q": "Rang de Q3 ?", "a": "3N/4, arrondi à l’entier supérieur.", "tag": "methode", "niveau": 2},
+    {"id": "s1re-08", "q": "Qu’est-ce que l’écart interquartile ?", "a": "Q3 − Q1, largeur de la moitié centrale des valeurs.", "tag": "definition", "niveau": 1},
+    {"id": "s1re-09", "q": "Qu’est-ce que l’étendue ?", "a": "Plus grande valeur − plus petite valeur.", "tag": "definition", "niveau": 1},
+    {"id": "s1re-10", "q": "Formule de König-Huygens ?", "a": "V = moyenne des carrés − carré de la moyenne.", "tag": "formule", "niveau": 2},
+    {"id": "s1re-11", "q": "Lien entre écart-type et variance ?", "a": "σ = √V.", "tag": "formule", "niveau": 1},
+    {"id": "s1re-12", "q": "Qu’est-ce que le coefficient de variation ?", "a": "CV = σ ÷ x̄, souvent en %.", "tag": "formule", "niveau": 2},
+    {"id": "s1re-13", "q": "Quel indicateur résiste aux valeurs extrêmes : moyenne ou médiane ?", "a": "La médiane.", "tag": "propriete", "niveau": 1},
+    {"id": "s1re-14", "q": "Comment estimer une moyenne à partir de classes ?", "a": "Moyenne pondérée des centres (a + b)/2 des classes.", "tag": "methode", "niveau": 2},
+    {"id": "s1re-15", "q": "Comment lire la médiane d’une série en classes ?", "a": "Abscisse où le polygone des fréquences cumulées atteint 50 %.", "tag": "methode", "niveau": 2},
+    {"id": "s1re-16", "q": "Bornes des valeurs aberrantes (règle de Tukey) ?", "a": "Q1 − 1,5 EIQ et Q3 + 1,5 EIQ.", "tag": "formule", "niveau": 2},
+    {"id": "s1re-17", "q": "Que contient la boîte d’une boîte à moustaches ?", "a": "La moitié centrale des valeurs, de Q1 à Q3.", "tag": "definition", "niveau": 1},
+    {"id": "s1re-18", "q": "Si y = ax + b, que vaut ȳ ?", "a": "a x̄ + b.", "tag": "formule", "niveau": 2},
+    {"id": "s1re-19", "q": "Si y = ax + b, que vaut σ_y ?", "a": "|a| σ_x.", "tag": "formule", "niveau": 2},
+    {"id": "s1re-20", "q": "Vrai ou faux : ajouter 5 à toutes les valeurs augmente l’écart-type ?", "a": "Faux : la dispersion ne change pas.", "tag": "piege", "niveau": 2},
+    {"id": "s1re-21", "q": "Vrai ou faux : V = moyenne des carrés − moyenne ?", "a": "Faux : on retranche le carré de la moyenne.", "tag": "piege", "niveau": 2},
+    {"id": "s1re-22", "q": "Classe modale à amplitudes inégales ?", "a": "La classe de plus grande densité.", "tag": "piege", "niveau": 2},
+    {"id": "s1re-23", "q": "Quel réel t minimise Σ (xᵢ − t)² ?", "a": "La moyenne x̄.", "tag": "propriete", "niveau": 3},
+    {"id": "s1re-24", "q": "Quel réel t minimise Σ |xᵢ − t| ?", "a": "La médiane.", "tag": "propriete", "niveau": 3},
+    {"id": "s1re-25", "q": "Variance si toutes les valeurs sont multipliées par −2 ?", "a": "Elle est multipliée par 4.", "tag": "propriete", "niveau": 3},
+    {"id": "s1re-26", "q": "Moyenne 10, moyenne des carrés 109 : écart-type ?", "a": "3, car V = 109 − 100 = 9.", "tag": "valeur", "niveau": 3},
+    {"id": "s1re-27", "q": "Qui a popularisé la boîte à moustaches ?", "a": "John Tukey, en 1977.", "tag": "histoire", "niveau": 2}
+  ]
+}

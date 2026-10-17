@@ -1,0 +1,30 @@
+{
+  "s1-descriptive": [
+    {"id": "s1de-01", "q": "Qu’est-ce que la population, en statistique ?", "a": "L’ensemble des individus sur lesquels porte l’étude.", "tag": "definition", "niveau": 1},
+    {"id": "s1de-02", "q": "Qu’appelle-t-on un individu (unité statistique) ?", "a": "Un élément de la population étudiée.", "tag": "definition", "niveau": 1},
+    {"id": "s1de-03", "q": "Qu’est-ce qu’une variable qualitative ?", "a": "Une variable dont les valeurs sont des catégories (modalités).", "tag": "definition", "niveau": 1},
+    {"id": "s1de-04", "q": "Différence entre variable discrète et continue ?", "a": "Discrète : valeurs isolées qu’on compte. Continue : toute valeur d’un intervalle.", "tag": "definition", "niveau": 1},
+    {"id": "s1de-05", "q": "Le code postal est-il une variable quantitative ?", "a": "Non : c’est une variable qualitative codée par des nombres.", "tag": "piege", "niveau": 1},
+    {"id": "s1de-06", "q": "Comment calcule-t-on une fréquence ?", "a": "Effectif de la valeur ÷ effectif total N.", "tag": "formule", "niveau": 1},
+    {"id": "s1de-07", "q": "Que vaut la somme de toutes les fréquences ?", "a": "1, soit 100 %.", "tag": "propriete", "niveau": 1},
+    {"id": "s1de-08", "q": "12 personnes sur 40 : quelle fréquence ?", "a": "0,3, soit 30 %.", "tag": "valeur", "niveau": 1},
+    {"id": "s1de-09", "q": "Quel graphique pour une variable qualitative ?", "a": "Un diagramme circulaire (secteurs) ou en barres.", "tag": "methode", "niveau": 1},
+    {"id": "s1de-10", "q": "Quel graphique pour une variable quantitative discrète ?", "a": "Un diagramme en bâtons.", "tag": "methode", "niveau": 1},
+    {"id": "s1de-11", "q": "Quel graphique pour une variable continue regroupée en classes ?", "a": "Un histogramme.", "tag": "methode", "niveau": 1},
+    {"id": "s1de-12", "q": "Comment calcule-t-on l’angle d’un secteur ?", "a": "360° × nᵢ ÷ N.", "tag": "formule", "niveau": 1},
+    {"id": "s1de-13", "q": "Qu’est-ce qu’une fréquence cumulée croissante en x ?", "a": "La part des individus de valeur inférieure ou égale à x.", "tag": "definition", "niveau": 2},
+    {"id": "s1de-14", "q": "Qu’est-ce que l’amplitude d’une classe [a ; b[ ?", "a": "Sa largeur : b − a.", "tag": "definition", "niveau": 1},
+    {"id": "s1de-15", "q": "Hauteur d’un rectangle d’histogramme à classes inégales ?", "a": "La densité : effectif ÷ amplitude.", "tag": "formule", "niveau": 2},
+    {"id": "s1de-16", "q": "Dans un histogramme, qu’est-ce qui représente l’effectif ?", "a": "L’aire du rectangle (hauteur × amplitude).", "tag": "propriete", "niveau": 2},
+    {"id": "s1de-17", "q": "Vrai ou faux : à classes inégales, hauteur = effectif ?", "a": "Faux : la hauteur est la densité.", "tag": "piege", "niveau": 2},
+    {"id": "s1de-18", "q": "Classe [30 ; 60[ d’effectif 24 : quelle densité ?", "a": "24 ÷ 30 = 0,8.", "tag": "valeur", "niveau": 2},
+    {"id": "s1de-19", "q": "Quels points relie le polygone des fréquences cumulées ?", "a": "Les points (borne supérieure de classe ; fréquence cumulée).", "tag": "methode", "niveau": 2},
+    {"id": "s1de-20", "q": "Quelle hypothèse justifie l’interpolation linéaire dans une classe ?", "a": "Les valeurs sont réparties uniformément dans la classe.", "tag": "propriete", "niveau": 3},
+    {"id": "s1de-21", "q": "Quelle forme a la fonction de répartition empirique ?", "a": "Une fonction croissante en escalier, de 0 à 1.", "tag": "propriete", "niveau": 3},
+    {"id": "s1de-22", "q": "Que vaut le saut de F en une valeur xᵢ ?", "a": "La fréquence fᵢ de cette valeur.", "tag": "propriete", "niveau": 3},
+    {"id": "s1de-23", "q": "Aire totale d’un histogramme en densité de fréquence ?", "a": "1.", "tag": "propriete", "niveau": 3},
+    {"id": "s1de-24", "q": "Comment estimer F(x) pour x dans [a ; b[ ?", "a": "F(a) + (x − a)/(b − a) × fréquence de la classe.", "tag": "formule", "niveau": 3},
+    {"id": "s1de-25", "q": "Qui a introduit le mot « histogramme » ?", "a": "Karl Pearson, vers 1891.", "tag": "histoire", "niveau": 2},
+    {"id": "s1de-26", "q": "Qui a utilisé des diagrammes circulaires pour réformer les hôpitaux militaires ?", "a": "Florence Nightingale, après la guerre de Crimée.", "tag": "histoire", "niveau": 2}
+  ]
+}

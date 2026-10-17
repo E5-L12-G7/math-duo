@@ -1,0 +1,188 @@
+{
+  "id": "m2-complexes",
+  "titre": "Nombres complexes : forme algébrique, module, conjugué",
+  "resume": "Un nombre complexe a + bi est un point du plan. On calcule avec i comme avec une lettre, en remplaçant i² par −1 ; le module est la distance à l’origine, le conjugué le reflet par rapport à l’axe horizontal.",
+  "objectifs": [
+    "placer un nombre complexe dans le plan et lire sa partie réelle et sa partie imaginaire",
+    "additionner, multiplier des nombres complexes sous forme algébrique",
+    "calculer le conjugué, le module, l’inverse et un quotient",
+    "résoudre une équation du second degré à discriminant négatif"
+  ],
+  "prerequis": [
+    "m1-puissances",
+    "m1-second-degre"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Aujourd’hui on rencontre des nombres qui ont mauvaise réputation : les nombres « imaginaires ». Je vais te montrer qu’ils n’ont rien de mystérieux : ce sont simplement des points d’un plan, et un nouveau nombre, i, qui fait tourner d’un quart de tour. Les ingénieurs s’en servent tous les jours en électricité et en traitement du signal.",
+      "## Une équation sans solution… pour l’instant",
+      "Essaie de résoudre x² = −1. Un carré est toujours positif ou nul : aucun nombre réel ne convient. Sur le graphique, la parabole y = x² + 1 ne touche jamais l’axe des abscisses.",
+      "@courbe {\"f\":\"x^2+c\",\"curseurs\":{\"c\":[-4,4,0.5,1]},\"x\":[-4,4],\"y\":[-5,8]} | Fais glisser c. Pour c négatif, la parabole coupe l’axe en deux points : deux solutions réelles. Dès que c dépasse 0, plus aucun point de contact. Les nombres complexes vont justement fournir des solutions dans ce cas.",
+      "prof: Tu te dis peut-être : « on n’a pas le droit, un carré ne peut pas être négatif ». C’est vrai pour les nombres que tu connais. Les mathématiciens ont fait comme avec les nombres négatifs autrefois : ils ont agrandi la famille des nombres. Suis-moi, tu vas voir que tout reste cohérent.",
+      "## Le nombre i : un quart de tour",
+      "Sur la droite des réels, multiplier par −1, c’est faire un demi-tour : 3 devient −3. On invente un nombre i qui fait **un quart de tour**. Deux quarts de tour font un demi-tour, donc i × i = −1.",
+      "analogie: Imagine une flèche posée sur l’axe horizontal. Multiplier par i, c’est la faire tourner d’un quart de tour vers le haut ; recommence, elle pointe vers la gauche : c’est −1.",
+      "@nombre-i | Appuie plusieurs fois sur « Multiplier par i » : la flèche passe de 1 à i, puis −1, puis −i, puis revient à 1. Observe que les puissances de i se répètent tous les 4.",
+      "!! i² = −1. On calcule avec i comme avec une lettre, et chaque fois qu’on voit i², on le remplace par −1.",
+      "## Des nombres qui vivent dans un plan",
+      "Un nombre complexe s’écrit z = a + bi. Le nombre a (la **partie réelle**) dit de combien aller à droite ; b (la **partie imaginaire**) dit de combien monter. Chaque complexe est donc un point du plan.",
+      "@complexe | Choisis le mode « Somme », puis déplace z et w : le point z + w est le quatrième sommet d’un parallélogramme. Passe au mode « Conjugué » : z̄ est le reflet de z dans le miroir de l’axe horizontal.",
+      "analogie: Le module est la distance « à vol d’oiseau » entre l’origine et le point ; le conjugué est le reflet du point dans un miroir posé sur l’axe horizontal.",
+      "? Où se trouve le point qui représente z = −2 + 3i ? || 2 unités à gauche de l’origine et 3 unités vers le haut : au point (−2 ; 3).",
+      "? Que vaut i³ ? || i³ = i² × i = −1 × i = −i : trois quarts de tour, la flèche pointe vers le bas.",
+      "? Quelle est la distance à l’origine du point 3 + 4i ? || Par Pythagore : √(3² + 4²) = √25 = 5. C’est son module.",
+      "histoire: Au XVIᵉ siècle, les Italiens Cardan puis Bombelli rencontrent des racines carrées de nombres négatifs en résolvant des équations du troisième degré ; Bombelli ose calculer avec. Descartes les appelle « imaginaires » en 1637. Il faudra attendre Wessel (1799) et Argand (1806) pour les voir comme des points du plan.",
+      "prof: Ce qu’il faut retenir de cette première partie : un complexe, c’est un point ; i, c’est un quart de tour ; i² = −1. Avec ça, tu peux déjà comprendre tous les calculs qui suivent."
+    ],
+    "pratique": [
+      "prof: Place aux méthodes. On va faire les quatre opérations, puis le conjugué, le module, l’inverse et les équations du second degré. Pour chacune, je te donne la recette, on l’applique ensemble, puis c’est ton tour.",
+      "## Vocabulaire",
+      "Pour z = a + bi avec a et b réels : a = Re(z) est la partie réelle, b = Im(z) est la partie imaginaire. Attention : la partie imaginaire est le **réel** b, sans le i. Si b = 0, z est réel ; si a = 0, z est imaginaire pur.",
+      "## Additionner et soustraire",
+      "On additionne les parties réelles entre elles et les parties imaginaires entre elles, comme des vecteurs.",
+      "ex: (2 + 3i) + (4 − 5i) = 6 − 2i\n(1 − i) − (3 + 2i) = −2 − 3i",
+      "@vecteurs {\"u\":[1,3],\"v\":[3,-2]} | Les deux flèches représentent 1 + 3i et 3 − 2i, dont la somme vaut 4 + i. Déplace-les : la somme est la diagonale du parallélogramme, exactement comme la somme de deux vecteurs.",
+      "## Multiplier",
+      "1. Développe le produit comme avec des lettres : quatre produits.\n2. Remplace i² par −1.\n3. Regroupe la partie réelle et la partie imaginaire.",
+      "@etapes {\"etapes\":[[\"(2 + 3i)(1 − 2i)\",\"Deux sommes : on développe les quatre produits.\"],[\"= 2 − 4i + 3i − 6i²\",\"2 × 1, 2 × (−2i), 3i × 1, 3i × (−2i).\"],[\"= 2 − 4i + 3i + 6\",\"i² = −1, donc −6i² = +6.\"],[\"= 8 − i\",\"Partie réelle 2 + 6 = 8, partie imaginaire −4 + 3 = −1.\"]]} | Avance pas à pas. À l’étape du i², arrête-toi : c’est là que tout se joue.",
+      "> (a + bi)(c + di) = (ac − bd) + (ad + bc)i",
+      "? Calcule (1 + i)². || 1 + 2i + i² = 1 + 2i − 1 = 2i.",
+      "prof: Tu remarques que le produit est l’opération la plus délicate : c’est là que i² = −1 change les signes. La somme, elle, ne pose jamais de problème. On passe maintenant aux deux outils qui vont nous permettre de diviser.",
+      "## Conjugué et module",
+      "> z̄ = a − bi     |z| = √(a² + b²)     z × z̄ = a² + b² = |z|²",
+      "Le conjugué change seulement le signe de la partie imaginaire. Le module est la distance de l’origine au point (a ; b), d’où Pythagore. Et le produit z z̄ est toujours un réel positif : c’est l’outil qui va servir à diviser.",
+      "attention: |3 − 4i| = √(9 + 16) = 5 et non √(9 − 16) : on élève b au carré, son signe disparaît.",
+      "## Inverse et quotient",
+      "1. Multiplie le numérateur et le dénominateur par le **conjugué du dénominateur**.\n2. Le dénominateur devient c² + d², un réel positif.\n3. Développe le numérateur.\n4. Sépare partie réelle et partie imaginaire.",
+      "@etapes {\"etapes\":[[\"(7 + i)/(1 + 2i)\",\"Le dénominateur contient i : on veut l’en débarrasser.\"],[\"= (7 + i)(1 − 2i) / ((1 + 2i)(1 − 2i))\",\"On multiplie en haut et en bas par le conjugué 1 − 2i.\"],[\"dénominateur : 1² + 2² = 5\",\"z z̄ = a² + b² : un réel.\"],[\"numérateur : 7 − 14i + i − 2i² = 9 − 13i\",\"On développe et i² = −1.\"],[\"= 9/5 − (13/5)i\",\"On sépare les deux parties.\"]]} | Suis la méthode du conjugué, puis vérifie en multipliant le résultat par 1 + 2i.",
+      "> 1/z = z̄/|z|²",
+      "? Calcule 1/(3 + 4i). || (3 − 4i)/(9 + 16) = 3/25 − (4/25)i.",
+      "## Équation du second degré à discriminant négatif",
+      "Pour az² + bz + c = 0 avec Δ = b² − 4ac < 0, on écrit Δ = (i√(−Δ))². Les deux solutions sont conjuguées : z = (−b ± i√(−Δ))/(2a).",
+      "@etapes {\"etapes\":[[\"z² − 4z + 13 = 0\",\"Équation du second degré.\"],[\"Δ = 16 − 52 = −36\",\"Négatif : pas de solution réelle, mais deux complexes.\"],[\"√Δ devient 6i\",\"Car (6i)² = 36i² = −36.\"],[\"z = (4 ± 6i)/2\",\"Formule habituelle.\"],[\"z₁ = 2 + 3i et z₂ = 2 − 3i\",\"Deux solutions conjuguées.\"]]} | Déroule la résolution. Remarque que les deux solutions sont symétriques par rapport à l’axe horizontal.",
+      "prof: Le piège principal ici : oublier un des quatre produits dans le développement, ou oublier que i² = −1. Prends l’habitude d’écrire la ligne « = … − 6i² » avant de simplifier. Et pour diviser, un seul réflexe : le conjugué du dénominateur.",
+      "? Résous z² + 9 = 0. || z² = −9 = (3i)², donc z = 3i ou z = −3i."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on regarde la structure : pourquoi ces règles sont cohérentes, quelles propriétés du conjugué et du module servent dans les démonstrations, et où sont les limites.",
+      "## Définition",
+      "ℂ est l’ensemble des couples de réels (a ; b), notés a + bi, munis de l’addition terme à terme et du produit (a + bi)(c + di) = (ac − bd) + (ad + bc)i. On vérifie que ce produit est commutatif, associatif, distributif, et que i² = −1. Les réels sont les complexes de partie imaginaire nulle.",
+      "Deux complexes sont égaux si et seulement s’ils ont la même partie réelle et la même partie imaginaire. C’est l’outil de base pour résoudre une équation : on identifie les deux parties.",
+      "## Propriétés du conjugué",
+      "> conj(z + w) = z̄ + w̄     conj(zw) = z̄ w̄     conj(z/w) = z̄/w̄",
+      "> Re(z) = (z + z̄)/2     Im(z) = (z − z̄)/(2i)     z réel ⟺ z̄ = z     z imaginaire pur ⟺ z̄ = −z",
+      "## Propriétés du module",
+      "> |zw| = |z| |w|     |z/w| = |z|/|w|     |z + w| ≤ |z| + |w|",
+      "Preuve de |zw| = |z||w| : |zw|² = zw × conj(zw) = z z̄ × w w̄ = |z|²|w|², et les modules sont positifs. L’inégalité triangulaire dit que, dans un triangle, un côté est plus court que la somme des deux autres.",
+      "@complexe | En mode « Produit », fais tourner w et change sa longueur : le module de z × w est toujours le produit des modules. En mode « Somme », vérifie que |z + w| ne dépasse jamais |z| + |w|.",
+      "## Équations avec z et z̄",
+      "Pour résoudre une équation contenant z et z̄, on pose z = x + iy, on développe, puis on identifie partie réelle et partie imaginaire : on obtient un système de deux équations réelles.",
+      "ex: z + 2z̄ = 6 − i\nx + iy + 2x − 2iy = 6 − i\n3x − iy = 6 − i\nx = 2 et y = 1, donc z = 2 + i",
+      "? Vérifie que (1 + i)/(1 − i) est un imaginaire pur. || (1 + i)²/((1 − i)(1 + i)) = 2i/2 = i : partie réelle nulle.",
+      "prof: Je te propose une petite vérification avant de passer aux pièges : essaie de prouver toi-même que conj(zw) = z̄ w̄ en posant z = a + bi et w = c + di. C’est un calcul de trois lignes, et il te fera manipuler toutes les règles.",
+      "## Où ça casse",
+      "- Il n’y a pas d’ordre sur ℂ compatible avec le calcul : écrire z < w n’a pas de sens si z et w ne sont pas réels.\n- √ n’est pas défini pour les complexes comme pour les réels : « √(−4) = 2i » est une convention, et √a × √b = √(ab) devient faux (√(−1) × √(−1) = −1, pas √1).\n- |z + w| = |z| + |w| est faux en général.\n- La partie imaginaire de 2 − 5i est −5, pas −5i.",
+      "!! Théorème de d’Alembert-Gauss : tout polynôme non constant à coefficients complexes a au moins une racine dans ℂ. C’est pour cela qu’on n’a plus besoin d’inventer d’autres nombres.",
+      "? Pourquoi les solutions complexes d’une équation du second degré à coefficients réels sont-elles conjuguées ? || Si P(z) = 0 avec des coefficients réels, en conjuguant on obtient P(z̄) = conj(P(z)) = 0 : z̄ est aussi solution.",
+      "? Que vaut |(3 + 4i)(1 − i)| sans développer ? || |3 + 4i| × |1 − i| = 5 × √2 = 5√2.",
+      "histoire: Euler introduit la notation i en 1777 ; Gauss popularise l’expression « nombres complexes » en 1831 et donne plusieurs démonstrations du théorème fondamental de l’algèbre, à partir de sa thèse de 1799.",
+      "prof: Bilan expert : identifier parties réelle et imaginaire, utiliser z z̄ = |z|², connaître les règles du conjugué et du module. Au prochain chapitre, la forme trigonométrique va rendre le produit géométrique."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Calculer (2 + 3i)(1 − 2i).",
+      "etapes": [
+        [
+          "2 − 4i + 3i − 6i²",
+          "on développe les quatre produits"
+        ],
+        [
+          "= 2 − i + 6",
+          "i² = −1"
+        ],
+        [
+          "= 8 − i",
+          "on regroupe"
+        ]
+      ]
+    },
+    {
+      "enonce": "Module et inverse de z = 5 − 12i.",
+      "etapes": [
+        [
+          "|z|² = 25 + 144 = 169",
+          "a² + b²"
+        ],
+        [
+          "|z| = 13",
+          "racine carrée"
+        ],
+        [
+          "z̄ = 5 + 12i",
+          "on change le signe de la partie imaginaire"
+        ],
+        [
+          "1/z = (5 + 12i)/169",
+          "1/z = z̄/|z|²"
+        ]
+      ]
+    },
+    {
+      "enonce": "Résoudre z² − 4z + 13 = 0.",
+      "etapes": [
+        [
+          "Δ = 16 − 52 = −36",
+          "discriminant négatif"
+        ],
+        [
+          "√Δ → 6i",
+          "(6i)² = −36"
+        ],
+        [
+          "z = (4 ± 6i)/2",
+          "formule du second degré"
+        ],
+        [
+          "z = 2 + 3i ou z = 2 − 3i",
+          "solutions conjuguées"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "(2 + 3i)(1 − 2i) = 2 − 6i² = 8",
+      "juste": "(2 + 3i)(1 − 2i) = 8 − i",
+      "pourquoi": "Le produit de deux sommes donne quatre termes."
+    },
+    {
+      "faux": "|3 − 4i| = √(9 − 16)",
+      "juste": "|3 − 4i| = √(9 + 16) = 5",
+      "pourquoi": "Le module utilise b², toujours positif."
+    },
+    {
+      "faux": "Im(2 − 5i) = −5i",
+      "juste": "Im(2 − 5i) = −5",
+      "pourquoi": "La partie imaginaire est un réel : le coefficient de i."
+    },
+    {
+      "faux": "Le conjugué de 3 + 2i est −3 + 2i",
+      "juste": "Le conjugué est 3 − 2i",
+      "pourquoi": "On ne change que le signe de la partie imaginaire."
+    },
+    {
+      "faux": "(7 + i)/(1 + 2i) = 7 + i/2",
+      "juste": "On multiplie haut et bas par 1 − 2i : 9/5 − (13/5)i",
+      "pourquoi": "On ne divise pas partie par partie : il faut le conjugué du dénominateur."
+    }
+  ],
+  "retenir": [
+    "z = a + bi, Re(z) = a, Im(z) = b (un réel) ; i² = −1.",
+    "Produit : développer, puis remplacer i² par −1.",
+    "z̄ = a − bi est le symétrique de z par rapport à l’axe réel.",
+    "|z| = √(a² + b²) et z z̄ = |z|².",
+    "Pour diviser : multiplier haut et bas par le conjugué du dénominateur.",
+    "Si Δ < 0 : z = (−b ± i√(−Δ))/(2a), deux solutions conjuguées."
+  ]
+}

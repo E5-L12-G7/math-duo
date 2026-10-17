@@ -1,0 +1,180 @@
+{
+  "id": "s1-khi2",
+  "titre": "Tests du khi-deux et d’adéquation à une loi",
+  "resume": "Le test du khi-deux compare, classe par classe, les effectifs observés aux effectifs qu’on attendrait si une loi donnée était la bonne, et résume tous les écarts en un seul nombre.",
+  "objectifs": [
+    "calculer des effectifs théoriques sous une loi supposée",
+    "calculer la statistique χ² = Σ (O − T)²/T",
+    "déterminer le nombre de degrés de liberté",
+    "vérifier la condition Tᵢ ≥ 5 et regrouper des classes",
+    "tester une équirépartition, un ajustement binomial ou de Poisson, et juger la normalité (droite de Henry)"
+  ],
+  "prerequis": [
+    "s1-tests",
+    "s1-binomiale-poisson",
+    "s1-normale"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Jusqu’ici, on testait un seul nombre : une moyenne, une proportion. Aujourd’hui on teste une forme entière : « ce dé est-il équilibré ? », « ces pannes suivent-elles une loi de Poisson ? ». L’outil s’appelle le khi-deux, noté χ².",
+      "## Ce qu’on attend contre ce qu’on voit",
+      "Lance un dé 60 fois. S’il est équilibré, tu attends environ 10 fois chaque face : ce sont les **effectifs théoriques**. Tu obtiens par exemple 8, 12, 9, 11, 14, 6 : ce sont les **effectifs observés**. La question : ces écarts sont-ils normaux, ou le dé est-il truqué ?",
+      "analogie: C’est comme comparer une recette (ce que la théorie prévoit) et le gâteau sorti du four (ce que tu observes). Un peu de différence, c’est normal ; trop de différence, la recette n’a pas été suivie.",
+      "@histogramme {\"classes\":[[1,2,8],[2,3,12],[3,4,9],[4,5,11],[5,6,14],[6,7,6]]} | Voici les 60 lancers, une barre par face. Imagine une ligne horizontale à 10 : chaque barre s’en écarte un peu. Le χ² mesure l’ensemble de ces écarts.",
+      "## Un seul nombre pour tous les écarts",
+      "Pour chaque classe, on calcule l’écart, on le met au carré (pour que les écarts positifs et négatifs ne s’annulent pas) et on le divise par l’effectif attendu (un écart de 5 compte beaucoup si on attendait 10, peu si on attendait 1 000). Puis on additionne.",
+      "!! Plus le χ² est grand, plus les observations s’éloignent de la loi supposée.",
+      "? Si les effectifs observés sont exactement égaux aux théoriques, combien vaut χ² ? || 0 : tous les écarts sont nuls.",
+      "## Où est la limite ?",
+      "prof: Tu te demandes sûrement : à partir de quelle valeur le χ² est-il « trop grand » ? Ça dépend du nombre de classes : plus il y en a, plus il y a d’écarts à additionner. C’est le rôle des **degrés de liberté**, et d’une table qui donne la valeur critique.",
+      "@courbe {\"f\":[{\"f\":\"exp(-x/2)/2\",\"nom\":\"2 ddl\"},{\"f\":\"x*exp(-x/2)/4\",\"nom\":\"4 ddl\"},{\"f\":\"x^2*exp(-x/2)/16\",\"nom\":\"6 ddl\"}],\"x\":[0,20],\"y\":[-0.05,0.55],\"pas\":2,\"pasy\":0.1} | Voici la loi du χ² pour 2, 4 et 6 degrés de liberté. Observe : plus il y a de degrés de liberté, plus la bosse part vers la droite. Le seuil de rejet aussi.",
+      "? Pourquoi met-on les écarts au carré ? || Sinon les écarts positifs et négatifs se compensent : leur somme vaut toujours 0.",
+      "## Une précaution",
+      "Le test ne marche bien que si chaque effectif théorique vaut au moins 5. Sinon, on fusionne des classes voisines.",
+      "? On attend 2 personnes dans une classe. Que faire ? || La regrouper avec une classe voisine pour que l’effectif théorique atteigne 5.",
+      "histoire: Karl Pearson invente le test du khi-deux en 1900. Ronald Fisher corrige en 1922 le calcul des degrés de liberté quand on estime des paramètres sur les données. Les célèbres résultats de Mendel sur les pois ont même été soupçonnés, grâce au χ², d’être « trop beaux pour être vrais ».",
+      "prof: Bilan : attendu contre observé, un nombre qui résume les écarts, et un seuil qui dépend du nombre de classes. Passons au calcul."
+    ],
+    "pratique": [
+      "prof: La méthode est très régulière. Je te donne la recette, puis on l’applique à un dé, à des bonbons et à une loi de Poisson.",
+      "## La démarche",
+      "1. H₀ : « les données suivent la loi L » ; H₁ : « elles ne la suivent pas ».\n2. Effectifs théoriques : Tᵢ = n × pᵢ, où pᵢ est la probabilité de la classe sous L.\n3. Vérifier Tᵢ ≥ 5 (sinon regrouper).\n4. χ²obs = Σ (Oᵢ − Tᵢ)²/Tᵢ.\n5. ν = k − 1 − r (k classes, r paramètres estimés).\n6. On rejette H₀ si χ²obs > χ²₁₋α(ν), lu dans la table.",
+      "> χ² = Σ (Oᵢ − Tᵢ)² / Tᵢ",
+      "## Exemple : le dé",
+      "@etapes {\"etapes\":[[\"O : 8 ; 12 ; 9 ; 11 ; 14 ; 6\",\"60 lancers.\"],[\"Tᵢ = 60 × 1/6 = 10\",\"Dé équilibré sous H₀.\"],[\"(8−10)²/10 = 0,4 ; 0,4 ; 0,1 ; 0,1 ; 1,6 ; 1,6\",\"Contribution de chaque face.\"],[\"χ²obs = 4,2\",\"Somme des contributions.\"],[\"ν = 6 − 1 = 5\",\"Aucun paramètre estimé.\"],[\"χ²₀,₉₅(5) = 11,07\",\"Valeur critique à 5 %.\"],[\"4,2 < 11,07 : on ne rejette pas H₀\",\"Le dé peut être équilibré.\"]]} | Suis chaque étape et vérifie les contributions de tête.",
+      "@courbe {\"f\":\"x^1.5*exp(-x/2)/7.5199\",\"x\":[0,20],\"y\":[-0.02,0.2],\"pas\":2,\"pasy\":0.05,\"aire\":[11.07,20]} | Densité du χ² à 5 ddl. L’aire bleue à droite de 11,07 vaut 0,05 : c’est la région critique. Déplace la borne a jusqu’à 4,2 : l’aire à droite est la p-valeur, bien plus grande que 5 %.",
+      "? Bonbons annoncés 30 %, 20 %, 20 %, 30 % ; on en compte 200. Effectifs théoriques ? || 60 ; 40 ; 40 ; 60.",
+      "## Degrés de liberté",
+      "- Loi entièrement donnée (dé, proportions annoncées) : ν = k − 1.\n- Poisson avec λ estimé par x̄ : ν = k − 2.\n- Binomiale B(n ; p) avec p estimé : ν = k − 2.\n- Normale avec μ et σ estimés : ν = k − 3.",
+      "attention: k est le nombre de classes **après** regroupement.",
+      "prof: Une erreur que je vois très souvent : oublier que λ a été estimé sur les données. Chaque paramètre estimé coûte un degré de liberté ; sans ce retrait, le test serait trop indulgent.",
+      "## Ajustement à une loi de Poisson",
+      "@etapes {\"etapes\":[[\"x̄ = 1 : λ = 1\",\"On estime λ par la moyenne observée.\"],[\"P(X = k) = e^(−1)/k!\",\"Loi de Poisson.\"],[\"T : 36,8 ; 36,8 ; 18,4 ; 6,1 ; 1,5 ; 0,4\",\"N = 100 : Tₖ = 100 × P(X = k).\"],[\"On regroupe 3, 4 et ≥ 5 : 8,0\",\"Tᵢ ≥ 5 dans chaque classe.\"],[\"k = 4 classes\",\"Après regroupement.\"],[\"ν = 4 − 1 − 1 = 2\",\"λ estimé : un degré en moins.\"]]} | Observe pourquoi on regroupe : 1,5 et 0,4 sont bien trop petits.",
+      "@loi-discrete {\"loi\":\"poisson\",\"lambda\":1.5,\"k\":4} | Change λ et regarde les probabilités des grandes valeurs : multipliées par N, ce sont elles qui donnent les effectifs théoriques trop petits.",
+      "? N = 200, λ = 2. Effectif théorique de k = 0 ? || 200 × e^(−2) ≈ 27,07.",
+      "## Normalité : regroupement en classes et droite de Henry",
+      "Pour tester la normalité, on découpe les données en classes, on calcule les Tᵢ avec N(x̄ ; s²) et on fait un χ² avec ν = k − 3. Plus visuel : la **droite de Henry**. Pour chaque borne xᵢ, on calcule la fréquence cumulée Fᵢ puis zᵢ = Φ⁻¹(Fᵢ) ; si les points (xᵢ ; zᵢ) sont alignés, la loi normale est plausible, et la droite z = (x − μ)/σ donne μ (là où z = 0) et σ (inverse de la pente).",
+      "? La droite de Henry passe par (40 ; 0) et (45 ; 1). μ et σ ? || μ = 40 et σ = 5.",
+      "@loi-continue {\"loi\":\"normale\",\"mu\":40,\"sigma\":5,\"a\":35,\"b\":45,\"curseurs\":false,\"x\":[20,60]} | Pour le test de normalité, chaque classe [a ; b] reçoit l’effectif théorique n × P(a ≤ X ≤ b). Déplace a et b sur une classe et lis sa probabilité ; multiplie-la par n.",
+      "prof: Bilan : Tᵢ = n pᵢ, condition Tᵢ ≥ 5, χ² = Σ(O − T)²/T, ν = k − 1 − r, et on rejette si on dépasse la table."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on regarde pourquoi la statistique suit une loi du χ², d’où viennent les degrés de liberté et ce qui peut fausser le test.",
+      "## La loi du khi-deux",
+      "Si U₁, …, U_ν sont indépendantes de loi N(0 ; 1), U₁² + … + U_ν² suit la loi du χ² à ν degrés de liberté : espérance ν, variance 2ν. Sa densité est proportionnelle à x^(ν/2 − 1) e^(−x/2) sur ]0 ; +∞[.",
+      "@courbe {\"f\":[{\"f\":\"exp(-x/2)/sqrt(2pi*x)\",\"nom\":\"1 ddl\"},{\"f\":\"sqrt(x)*exp(-x/2)/2.5066\",\"nom\":\"3 ddl\"},{\"f\":\"x^3*exp(-x/2)/96\",\"nom\":\"8 ddl\"}],\"x\":[0,24],\"y\":[-0.03,0.4],\"pas\":2,\"pasy\":0.1} | Vérifie que le sommet est en ν − 2 (pour ν ≥ 2) et que la loi s’étale quand ν grandit : moyenne ν, écart-type √(2ν).",
+      "## Pourquoi Σ (O − T)²/T ?",
+      "Chaque Oᵢ est approximativement normal d’espérance Tᵢ, et (Oᵢ − Tᵢ)/√Tᵢ est presque centré réduit. Pearson montre que la somme des carrés suit asymptotiquement un χ² ; mais les Oᵢ sont liés par Σ Oᵢ = n, ce qui retire un degré de liberté. Chaque paramètre estimé par maximum de vraisemblance en retire un de plus (théorème de Fisher).",
+      "? Pourquoi E(χ²) ≈ ν sous H₀ ? || C’est une somme de ν carrés de variables centrées réduites indépendantes, chacun d’espérance 1.",
+      "prof: Tu vois maintenant d’où viennent les degrés de liberté : ce ne sont pas une convention, mais le nombre de carrés réellement « libres » dans la somme.",
+      "## Un test toujours unilatéral à droite",
+      "Un χ² très petit n’est pas une preuve contre H₀ : il dit que les données collent à la loi, parfois trop. On rejette uniquement pour les grandes valeurs. Un χ² anormalement petit peut toutefois signaler des données arrangées (cas Mendel).",
+      "@test {\"z\":2.2,\"alpha\":0.05,\"cote\":\"droite\"} | Comme ce test unilatéral à droite, le χ² ne rejette que d’un seul côté. Vérifie qu’une valeur très négative n’entraîne jamais de rejet ici.",
+      "## Où ça casse",
+      "- Tᵢ < 5 : l’approximation asymptotique est mauvaise ; regrouper, ou utiliser un test exact.\n- Paramètres estimés sur les données brutes plutôt que groupées : le nombre de ddl n’est qu’approché.\n- Le test est peu puissant sur de petits échantillons et hypersensible sur de très grands : avec n énorme, le moindre écart est significatif.\n- Le résultat dépend du découpage en classes.",
+      "? 10 000 lancers, χ² légèrement au-dessus du seuil. Le dé est-il « très » truqué ? || Pas forcément : avec n énorme, un biais minuscule devient significatif. Regarde aussi la taille des écarts.",
+      "? Sous H₀, avec ν = 8, quelle valeur de χ²obs est « typique » ? || Autour de 8, l’espérance de la loi, avec un écart-type de 4.",
+      "histoire: Pearson publie son test en 1900 dans le Philosophical Magazine. En 1936, Fisher réanalyse les données de Mendel et trouve un χ² global si petit qu’il soupçonne un « arrangement » des résultats, débat qui dure encore.",
+      "prof: Tu as maintenant le mécanisme complet. Le dernier chapitre change d’objet : on étudie le lien entre deux variables, avec la corrélation et la régression."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Bonbons annoncés 30 %, 20 %, 20 %, 30 %. Sur 200 : 70, 35, 30, 65. Test à 5 %.",
+      "etapes": [
+        [
+          "T = 60 ; 40 ; 40 ; 60",
+          "Tᵢ = 200 × pᵢ"
+        ],
+        [
+          "χ² = 100/60 + 25/40 + 100/40 + 25/60 ≈ 5,21",
+          "Σ (O − T)²/T"
+        ],
+        [
+          "ν = 4 − 1 = 3 ; χ²₀,₉₅(3) = 7,815",
+          "aucun paramètre estimé"
+        ],
+        [
+          "5,21 < 7,815 : on ne rejette pas H₀",
+          "proportions compatibles avec l’annonce"
+        ]
+      ]
+    },
+    {
+      "enonce": "Absences : 30, 18, 20, 22, 40 du lundi au vendredi (130 au total). Équirépartition à 5 % ?",
+      "etapes": [
+        [
+          "Tᵢ = 130/5 = 26",
+          "équirépartition"
+        ],
+        [
+          "χ² = (16 + 64 + 36 + 16 + 196)/26 ≈ 12,62",
+          "somme des contributions"
+        ],
+        [
+          "ν = 4 ; χ²₀,₉₅(4) = 9,488",
+          "valeur critique"
+        ],
+        [
+          "12,62 > 9,488 : on rejette H₀",
+          "les absences ne sont pas équiréparties"
+        ]
+      ]
+    },
+    {
+      "enonce": "Familles de 3 enfants, B(3 ; 0,5), N = 80 familles. Effectifs théoriques ?",
+      "etapes": [
+        [
+          "P(X = k) = C(3 ; k)/8",
+          "1/8, 3/8, 3/8, 1/8"
+        ],
+        [
+          "T = 10 ; 30 ; 30 ; 10",
+          "Tₖ = 80 × P(X = k)"
+        ],
+        [
+          "Tous ≥ 5",
+          "pas de regroupement"
+        ],
+        [
+          "ν = 4 − 1 = 3",
+          "loi entièrement donnée"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "χ² = Σ (O − T)²/O",
+      "juste": "χ² = Σ (O − T)²/T",
+      "pourquoi": "On divise par l’effectif théorique, celui de la loi testée."
+    },
+    {
+      "faux": "Tᵢ = pᵢ",
+      "juste": "Tᵢ = n × pᵢ",
+      "pourquoi": "L’effectif théorique est un nombre d’individus, pas une probabilité."
+    },
+    {
+      "faux": "Poisson avec λ estimé, 5 classes : ν = 4",
+      "juste": "ν = 5 − 1 − 1 = 3",
+      "pourquoi": "Chaque paramètre estimé sur les données coûte un degré de liberté."
+    },
+    {
+      "faux": "Regrouper les classes où Oᵢ < 5",
+      "juste": "Regrouper les classes où Tᵢ < 5",
+      "pourquoi": "La condition porte sur les effectifs théoriques."
+    },
+    {
+      "faux": "χ²obs < seuil : la loi est démontrée",
+      "juste": "χ²obs < seuil : on ne rejette pas l’ajustement",
+      "pourquoi": "Ne pas rejeter H₀ n’est pas la prouver."
+    }
+  ],
+  "retenir": [
+    "Effectif théorique : Tᵢ = n × pᵢ, avec Tᵢ ≥ 5 (sinon regrouper).",
+    "χ²obs = Σ (Oᵢ − Tᵢ)²/Tᵢ, toujours positif.",
+    "ν = k − 1 − r : k classes après regroupement, r paramètres estimés.",
+    "On rejette l’ajustement si χ²obs > χ²₁₋α(ν) : test unilatéral à droite.",
+    "Normalité : χ² avec ν = k − 3, ou droite de Henry (points alignés, μ en z = 0, σ = 1/pente)."
+  ]
+}

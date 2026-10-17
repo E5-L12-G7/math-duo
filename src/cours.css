@@ -1,0 +1,68 @@
+/* Cours MVA911 / MVA912 : trois niveaux, voix du prof, manipulations */
+.cv2{display:grid;gap:14px;line-height:1.6}
+.cv2 .lead{font-size:1.08rem}
+.cgoal{border-radius:14px;padding:12px 14px;background:var(--soft);display:grid;gap:6px}
+.cgoal ul{margin:0;padding-left:20px;display:grid;gap:4px}
+.clvl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;position:sticky;top:-1px;z-index:2;background:var(--paper);padding-block:6px}
+.clvl button{display:grid;gap:1px;text-align:left;padding:8px 10px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;min-width:0}
+.clvl button b{font-size:.9rem}.clvl button small{font-size:.72rem;color:var(--muted);line-height:1.25}
+.clvl button.on{border-color:var(--t-sq);background:var(--t-sq);color:var(--on-sq)}.clvl button.on small{color:inherit;opacity:.85}
+.clevel{display:grid;gap:12px}
+.clevel p{margin:0}
+.ch3{font-size:1.2rem;margin-top:8px}.ch4{font-size:1.02rem;margin:0}
+.cform{text-align:center;font-size:1.25rem;padding:10px 12px;border-radius:12px;background:var(--surface);border:1.5px solid var(--line);overflow-x:auto}
+.ckey{padding:10px 14px;border-left:4px solid var(--t-sq);background:color-mix(in oklab,var(--t-sq) 10%,var(--surface));border-radius:0 12px 12px 0;font-weight:600}
+.cprof{display:flex;gap:10px;align-items:flex-start}
+.cpav{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--t-sq);color:var(--on-sq)}
+.cpav svg{width:20px;height:20px}
+.cprof p{flex:1;min-width:0;padding:10px 14px;border-radius:4px 14px 14px 14px;background:var(--surface);border:1.5px solid var(--line)}
+.cana{padding:10px 14px;border-radius:12px;background:var(--soft)}
+.catt{padding:10px 14px;border-radius:12px;background:var(--bad-bg);border:1.5px solid color-mix(in oklab,var(--bad) 35%,transparent)}
+.chist{padding:10px 14px;border-radius:12px;background:var(--paper);border:1.5px dashed var(--line);font-size:.95rem}
+.cex{padding:10px 14px;border-radius:12px;background:var(--surface);border:1.5px solid var(--line);display:grid;gap:2px}
+.cex .m{font-size:1.08rem}
+.cself{padding:12px 14px;border-radius:12px;border:1.5px solid var(--t-c);background:color-mix(in oklab,var(--t-c) 8%,var(--surface));display:grid;gap:8px;justify-items:start}
+.cans2{padding-top:6px;border-top:1px solid var(--line);width:100%}
+.clist{margin:0;padding-left:22px;display:grid;gap:6px}
+.cviz{margin:4px 0;display:grid;gap:6px}
+.cviz figcaption{font-size:.9rem;color:var(--muted)}
+.clvnext{display:grid}
+.cpit{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.cpit li{display:grid;gap:4px;padding:10px 12px;border-radius:12px;background:var(--surface);border:1.5px solid var(--line)}
+.cwr{color:var(--bad);text-decoration:line-through;text-decoration-thickness:1.5px}.cwr::before{content:"✗ ";text-decoration:none;display:inline-block}
+.cri{color:var(--good);font-weight:600}.cri::before{content:"✓ "}
+.cpit small{color:var(--muted)}
+/* Manipulations */
+.vz .vzout{display:grid;gap:4px;font-size:.92rem}
+.vzdrag svg{touch-action:none;cursor:pointer}
+.vsteps .vsbar{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--muted)}
+.vsdots{display:flex;gap:4px}.vsdots i{width:8px;height:8px;border-radius:50%;background:var(--line)}.vsdots i.on{background:var(--t-sq)}
+.vsstage{display:grid;gap:6px;max-height:220px;overflow-y:auto;padding:6px 0}
+.vsl{font-size:1.05rem;color:var(--muted);transition:color .3s}
+.vsl.cur{font-size:1.3rem;color:var(--ink);animation:vsin .45s ease}
+@keyframes vsin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.vfbar{width:100%;height:auto;display:block}
+/* Figures et exercice « placer un point » */
+.qfig{display:flex;justify-content:center;margin-top:8px}.qfig svg{width:100%;max-width:340px;height:auto}
+.qfig.qsq svg{max-width:240px}
+.prompt .qfig{font-size:1rem}
+.pwrap{display:grid;gap:8px;justify-items:center}
+.pfig{width:100%;max-width:420px;border-radius:14px;background:var(--surface);border:1.5px solid var(--line);padding:4px}
+.pfig svg{width:100%;height:auto;display:block;touch-action:none;cursor:crosshair}
+.pread{font-size:.95rem;color:var(--muted);font-variant-numeric:tabular-nums}
+/* Page chapitre : accès au cours par niveau */
+.cstart{display:grid;gap:10px}
+.cstart .clvl{position:static;background:none;padding:0}
+@media (prefers-reduced-motion: reduce){.vsl.cur{animation:none}}
+.vz .wnav{display:flex;flex-wrap:wrap;gap:8px}.vz .wnav .btn{flex:1 1 auto;width:auto;height:auto;min-height:44px;padding:8px 14px;white-space:normal;line-height:1.25}
+.clvl button b{font-size:.84rem;hyphens:auto;overflow-wrap:break-word}
+@media (max-width:400px){.clvl button small{display:none}.clvl button{padding:8px 4px;text-align:center}.clvl .cn{display:none}.clvl button b{font-size:.8rem}
+  .cstart .clvl{grid-template-columns:1fr}.cstart .clvl button{text-align:left;padding:8px 12px}.cstart .clvl .cn{display:inline}.cstart .clvl button small{display:block}}
+.vsteps .wnav .btn{min-height:40px;font-size:.9rem}
+/* Figures d'énoncé : réduites par fitFig (cours.js) si l'énoncé déborde ; un toucher les agrandit */
+.prompt .qfig svg{width:auto;max-width:100%}
+.prompt .qfig{cursor:zoom-in}
+.qzoom{position:fixed;inset:0;z-index:50;display:grid;place-items:center;align-content:center;gap:10px;padding:16px;background:color-mix(in oklab,var(--paper) 94%,transparent);cursor:zoom-out}
+.qzin{width:100%;max-width:640px;padding:12px;border-radius:16px;background:var(--surface);border:1.5px solid var(--line)}
+.qzin svg{width:100%;height:auto;max-height:80vh;max-width:none;display:block}
+.qzoom p{margin:0;color:var(--muted);font-size:.9rem}

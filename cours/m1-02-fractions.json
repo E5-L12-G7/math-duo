@@ -1,0 +1,96 @@
+{
+  "id": "m1-fractions",
+  "titre": "Fractions et calcul fractionnaire",
+  "resume": "Une fraction décrit un partage. Pour calculer avec, on met d’abord les parts à la même taille, puis on simplifie.",
+  "objectifs": [
+    "lire et représenter une fraction, la placer sur une droite graduée",
+    "simplifier une fraction jusqu’à sa forme irréductible",
+    "additionner, soustraire, multiplier et diviser des fractions",
+    "calculer une fraction d’une quantité"
+  ],
+  "prerequis": ["m1-proportions"],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! On commence par les fractions, parce qu’elles sont partout ensuite : dans les pourcentages, les probabilités, les dérivées… Rassure-toi : une fraction, c’est juste une histoire de partage. On va la voir, la toucher, et le calcul viendra tout seul.",
+      "## Une fraction raconte un partage",
+      "Prends une tablette de chocolat. Le nombre du **bas**, le dénominateur, dit en combien de carrés **égaux** on la coupe. Le nombre du **haut**, le numérateur, dit combien de carrés tu prends.",
+      "analogie: 3/8, c’est une tablette coupée en 8 carrés égaux dont tu prends 3.",
+      "@fractions {\"n\":3,\"d\":8} | Change le nombre de parts prises et le nombre de parts en tout. Observe la barre : plus le dénominateur est grand, plus chaque part est petite.",
+      "## Une même quantité, plusieurs écritures",
+      "Si je coupe la tablette en 2 et que j’en prends 1 morceau, ou si je la coupe en 4 et que j’en prends 2, j’ai mangé exactement la même quantité. Donc 1/2 = 2/4 = 4/8.",
+      "@fractions {\"n\":1,\"d\":2} | Mets « redécouper × » sur 2, puis 3, puis 4 : la quantité colorée ne bouge pas, seules les parts deviennent plus petites.",
+      "!! Simplifier une fraction, c’est trouver l’écriture avec les plus petits nombres, sans changer la quantité.",
+      "## Additionner : il faut des parts de même taille",
+      "prof: Voici l’erreur que je vois le plus souvent : écrire 1/2 + 1/3 = 2/5. Regarde pourquoi c’est impossible : une demi-tablette plus un tiers de tablette, ça fait plus qu’une demi-tablette, et 2/5 c’est moins qu’une moitié !",
+      "Pour additionner, on redécoupe les deux tablettes avec la même taille de carré. Une moitié, c’est 3 sixièmes ; un tiers, c’est 2 sixièmes. Ensemble : 5 sixièmes.",
+      "@fractions {\"mode\":\"somme\",\"a\":1,\"b\":2,\"c\":1,\"d\":3} | Appuie sur « Même dénominateur » et regarde les parts s’aligner. Essaie ensuite avec d’autres fractions.",
+      "? Pourquoi 1/2 + 1/2 ne fait-il pas 2/4 ? || Deux moitiés font une tablette entière, donc 1. Or 2/4 n’est qu’une moitié : on n’additionne jamais les dénominateurs.",
+      "## Prendre une fraction d’une quantité",
+      "« Les 3/4 de 20 € », c’est : je coupe 20 € en 4 parts égales (5 € chacune), et j’en prends 3 : 15 €. En calcul : 20 ÷ 4 × 3 = 15.",
+      "? Combien font les 2/5 de 30 personnes ? || 30 ÷ 5 = 6 personnes par part, et 2 parts : 12 personnes.",
+      "histoire: Les Égyptiens, il y a près de 4 000 ans, n’écrivaient, à part 2/3, que des fractions de numérateur 1 (comme 1/2, 1/3, 1/7) et décomposaient les autres en sommes de celles-ci. La barre de fraction que tu utilises vient des mathématiciens arabes du Moyen Âge, puis s’est répandue en Europe."
+    ],
+    "pratique": [
+      "prof: Maintenant, on passe aux méthodes. Je te donne pour chaque opération une recette en quelques étapes, puis on l’applique ensemble. Garde un brouillon sous la main.",
+      "## Simplifier une fraction",
+      "1. Cherche le plus grand nombre qui divise à la fois le numérateur et le dénominateur : c’est le PGCD.\n2. Divise le haut et le bas par ce PGCD.\n3. Vérifie qu’il ne reste plus de diviseur commun : la fraction est irréductible.",
+      "ex: 18/24 : 18 et 24 sont tous les deux divisibles par 6 (PGCD = 6)\n18 ÷ 6 = 3 et 24 ÷ 6 = 4\n18/24 = 3/4",
+      "attention: On simplifie par un **facteur** commun, jamais par un terme d’une somme : (2 + 3)/2 ne se simplifie pas en 3.",
+      "## Additionner ou soustraire",
+      "1. Trouve un dénominateur commun, de préférence le plus petit : le PPCM des dénominateurs.\n2. Réécris chaque fraction sur ce dénominateur (on multiplie le haut et le bas par le même nombre).\n3. Additionne (ou soustrais) les numérateurs, garde le dénominateur.\n4. Simplifie le résultat.",
+      "@etapes {\"etapes\":[[\"5/6 + 3/8\",\"Les dénominateurs 6 et 8 sont différents : on cherche un multiple commun.\"],[\"PPCM(6 ; 8) = 24\",\"24 est le plus petit nombre à la fois dans la table de 6 et dans celle de 8.\"],[\"5/6 = 20/24\",\"On multiplie le haut et le bas par 4.\"],[\"3/8 = 9/24\",\"On multiplie le haut et le bas par 3.\"],[\"20/24 + 9/24 = 29/24\",\"Même dénominateur : on additionne les numérateurs.\"],[\"29/24\",\"29 est premier et ne divise pas 24 : c’est irréductible.\"]]} | Lance la lecture, ou avance étape par étape. Essaie d’anticiper chaque étape avant de cliquer.",
+      "## Multiplier",
+      "On multiplie les numérateurs entre eux et les dénominateurs entre eux. Astuce de pro : simplifie **avant** de multiplier, les nombres restent petits.",
+      "> (a/b) × (c/d) = (a × c)/(b × d)",
+      "ex: (4/9) × (3/10) : je simplifie 4 avec 10 (par 2) et 3 avec 9 (par 3)\n= (2/3) × (1/5) = 2/15",
+      "## Diviser",
+      "Diviser par une fraction, c’est multiplier par son **inverse** (on la retourne).",
+      "> (a/b) ÷ (c/d) = (a/b) × (d/c)    avec c ≠ 0",
+      "prof: Pourquoi on retourne ? Se demander « combien de fois 1/4 de litre dans 3 litres ? », c’est 3 ÷ 1/4 : il y en a 12, soit 3 × 4. Diviser par un quart revient à multiplier par 4.",
+      "## Fraction d’une quantité et nombres mixtes",
+      "Prendre a/b d’une quantité Q : on calcule Q × a/b, souvent plus simple en faisant (Q ÷ b) × a.",
+      "? Calcule 5/6 − 1/4. || PPCM(6 ; 4) = 12 ; 5/6 = 10/12 et 1/4 = 3/12, donc 10/12 − 3/12 = 7/12.",
+      "? Calcule (2/3) ÷ (4/9). || (2/3) × (9/4) = 18/12 = 3/2.",
+      "## Placer une fraction sur une droite graduée",
+      "Pour placer 7/4 : je découpe chaque unité en 4, et je compte 7 petits pas depuis 0. On tombe entre 1 et 2, plus précisément à 1 + 3/4."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on se demande pourquoi les règles marchent, et où elles cessent de marcher. C’est ce qui te permettra de ne jamais te tromper, même sur des expressions avec des lettres.",
+      "## Définition rigoureuse",
+      "Une fraction p/q, avec q ≠ 0, désigne le nombre rationnel x tel que q × x = p. Deux écritures désignent le même nombre exactement quand leurs produits en croix sont égaux :",
+      "> p/q = p′/q′  ⟺  p × q′ = p′ × q",
+      "Chaque rationnel possède une unique écriture irréductible avec un dénominateur positif : c’est la forme attendue en résultat.",
+      "## Pourquoi les règles sont vraies",
+      "> a/b + c/d = (ad + bc)/(bd)    (a/b)(c/d) = ac/(bd)    (a/b) ÷ (c/d) = ad/(bc)",
+      "Ces formules donnent le même nombre quelle que soit l’écriture de départ (1/2 ou 2/4) : le calcul est bien défini. Le PPCM n’est pas obligatoire, le produit bd marche toujours ; il donne seulement une fraction à simplifier ensuite.",
+      "## Le PGCD sans tâtonner : l’algorithme d’Euclide",
+      "Pour trouver le PGCD de deux nombres, on remplace le plus grand par le reste de sa division par le plus petit, jusqu’à obtenir un reste nul. Le dernier reste non nul est le PGCD.",
+      "@etapes {\"etapes\":[[\"PGCD(84 ; 126)\",\"On veut simplifier 84/126.\"],[\"126 = 1 × 84 + 42\",\"Division de 126 par 84 : reste 42.\"],[\"84 = 2 × 42 + 0\",\"Division de 84 par 42 : reste nul.\"],[\"PGCD = 42\",\"Le dernier reste non nul est 42.\"],[\"84/126 = 2/3\",\"On divise le haut et le bas par 42.\"]]} | Suis l’algorithme d’Euclide pas à pas.",
+      "## Fractions avec des lettres",
+      "Les mêmes règles s’appliquent aux fractions rationnelles, à condition qu’aucun dénominateur ne s’annule.",
+      "ex: 1/x + 1/(x + 1) = (x + 1 + x)/(x(x + 1)) = (2x + 1)/(x(x + 1))    pour x ≠ 0 et x ≠ −1",
+      "## Où ça casse",
+      "- Diviser par une fraction nulle n’a pas de sens : (a/b) ÷ (0/d) n’est pas défini.\n- (a + c)/(b + d) n’est pas la somme a/b + c/d : c’est la « médiante », elle est toujours comprise entre les deux fractions (si b et d sont positifs) mais ne les additionne pas.\n- On ne simplifie que des facteurs : (x² + x)/x = x + 1 pour x ≠ 0, mais (x² + 1)/x ne se simplifie pas.",
+      "? Pour quelles valeurs de x l’expression 3/(x − 2) + 1/x est-elle définie ? || Pour tout réel x différent de 2 et de 0 : aucun dénominateur ne doit s’annuler.",
+      "histoire: Euclide décrit son algorithme du PGCD vers 300 avant notre ère, dans le livre VII des Éléments. C’est l’un des plus anciens algorithmes encore utilisés tous les jours, y compris en cryptographie."
+    ]
+  },
+  "exemples": [
+    {"enonce": "Simplifier 84/126.", "etapes": [["126 = 1 × 84 + 42", "on divise le plus grand par le plus petit (algorithme d’Euclide)"], ["84 = 2 × 42 + 0", "le reste est nul : le PGCD est le dernier reste non nul, 42"], ["84 ÷ 42 = 2 et 126 ÷ 42 = 3", "on divise le haut et le bas par le PGCD"], ["84/126 = 2/3", "2 et 3 n’ont plus de diviseur commun"]]},
+    {"enonce": "Calculer 5/6 + 3/8.", "etapes": [["PPCM(6 ; 8) = 24", "24 est dans la table de 6 et dans celle de 8"], ["5/6 = 20/24 et 3/8 = 9/24", "on multiplie le haut et le bas par 4, puis par 3"], ["20/24 + 9/24 = 29/24", "même dénominateur : on additionne les numérateurs"], ["29/24", "irréductible : 29 est premier"]]},
+    {"enonce": "Calculer (4/9) ÷ (10/3).", "etapes": [["(4/9) ÷ (10/3) = (4/9) × (3/10)", "diviser, c’est multiplier par l’inverse"], ["= (4 × 3)/(9 × 10) = 12/90", "produit des numérateurs et des dénominateurs"], ["12/90 = 2/15", "on simplifie par 6"]]}
+  ],
+  "pieges": [
+    {"faux": "1/2 + 1/3 = 2/5", "juste": "1/2 + 1/3 = 3/6 + 2/6 = 5/6", "pourquoi": "On additionne des parts de même taille : il faut d’abord un dénominateur commun."},
+    {"faux": "(2/3) ÷ (4/5) = 8/15", "juste": "(2/3) ÷ (4/5) = (2/3) × (5/4) = 5/6", "pourquoi": "Diviser par une fraction, c’est multiplier par son inverse."},
+    {"faux": "(2 + 6)/2 = 6", "juste": "(2 + 6)/2 = 8/2 = 4", "pourquoi": "On ne simplifie que des facteurs, jamais un terme d’une somme."},
+    {"faux": "Rendre 9/12 comme résultat final", "juste": "9/12 = 3/4", "pourquoi": "Le résultat attendu est irréductible : vérifie toujours s’il reste un diviseur commun."}
+  ],
+  "retenir": [
+    "Simplifier : diviser le numérateur et le dénominateur par leur PGCD.",
+    "Additionner : même dénominateur d’abord (le PPCM), puis on additionne les numérateurs.",
+    "Multiplier : haut × haut, bas × bas ; simplifier avant de multiplier.",
+    "Diviser par une fraction : multiplier par son inverse.",
+    "Prendre a/b de Q : (Q ÷ b) × a."
+  ]
+}

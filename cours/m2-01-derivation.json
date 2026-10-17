@@ -1,0 +1,192 @@
+{
+  "id": "m2-derivation",
+  "titre": "Dérivée et règles de dérivation",
+  "resume": "La fonction dérivée f′ donne la pente de la courbe en chaque point. Quelques règles, combinées comme des briques, suffisent à la calculer sans limite.",
+  "objectifs": [
+    "passer du nombre dérivé f′(a) à la fonction dérivée f′",
+    "dériver un polynôme terme à terme avec (xⁿ)′ = n xⁿ⁻¹",
+    "utiliser les dérivées des fonctions usuelles (1/x, √x, eˣ, ln x, sin, cos)",
+    "dériver un produit, un quotient et une composée sans oublier u′",
+    "calculer un nombre dérivé et une équation de tangente avec ces règles"
+  ],
+  "prerequis": [
+    "m1-nombre-derive"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour et bienvenue dans MVA912 ! On commence par l’outil qui va servir dans presque tous les chapitres : la dérivée. Bonne nouvelle, tu connais déjà l’idée : c’est le nombre dérivé, la pente de la courbe. Aujourd’hui, on passe d’une pente en un point à une pente partout, et on apprend des recettes pour la calculer en quelques secondes.",
+      "## De la pente en un point à la fonction dérivée",
+      "Le nombre dérivé f′(a) donne la pente de la courbe en **un** point. Si on le calcule en **chaque** point, on obtient une nouvelle fonction, x ↦ f′(x) : la **fonction dérivée**.",
+      "analogie: Si f(t) donne la position d’une voiture au temps t, f′(t) donne sa vitesse à chaque instant : c’est le compteur de vitesse, qui affiche une nouvelle valeur à chaque seconde.",
+      "@courbe {\"f\":\"x^3/3-x\",\"x\":[-3,3],\"y\":[-4,4],\"tangente\":1.5,\"derivee\":true} | La courbe pleine est f, les pointillés verts sont f′. Fais glisser x₀ : la pente affichée de la tangente est exactement la hauteur de la courbe verte en x₀. Là où f monte, f′ est au-dessus de l’axe ; là où f descend, f′ est en dessous.",
+      "!! f′(x) est la pente de la courbe de f au point d’abscisse x : la courbe de f′ « enregistre » toutes les pentes de f.",
+      "? Si f est une droite y = 3x + 1, que vaut f′(x) ? || 3 en tout point : la pente d’une droite ne change pas.",
+      "## Des recettes au lieu des limites",
+      "Calculer une limite à chaque fois serait épuisant. On l’a fait une fois pour toutes pour les fonctions de base ; il reste des règles qui s’emboîtent comme des briques de construction.",
+      "!! La recette la plus utilisée : xⁿ se dérive en n xⁿ⁻¹. L’exposant descend devant, et il diminue de 1.",
+      "ex: x² → 2x\nx³ → 3x²\nx → 1\nun nombre seul → 0",
+      "@courbe {\"f\":\"a*x^2\",\"curseurs\":{\"a\":[-2,2,0.5,1]},\"x\":[-3,3],\"y\":[-6,6],\"derivee\":true} | Fais varier a : la parabole a x² et sa dérivée 2a x (pointillés, une droite) bougent ensemble. Si a double, toutes les pentes doublent.",
+      "? Que donne la dérivée de x⁴ ? || 4x³ : le 4 descend devant, l’exposant devient 3.",
+      "## Pourquoi une constante disparaît",
+      "prof: Une question que tout le monde se pose : pourquoi la dérivée de 7 vaut 0 ? Regarde la courbe de y = 7 : une droite horizontale. Sa pente est nulle partout. Et si on ajoute 7 à une fonction, on décale la courbe vers le haut sans changer aucune pente !",
+      "@courbe {\"f\":\"x^2+k\",\"curseurs\":{\"k\":[-3,3,0.5,0]},\"x\":[-3,3],\"y\":[-4,8],\"tangente\":1} | Fais varier k : la courbe monte ou descend, mais la pente affichée en x₀ ne change pas. La constante k disparaît à la dérivation.",
+      "? Pourquoi (x² + 5)′ et (x²)′ sont-elles égales ? || Ajouter 5 décale la courbe vers le haut sans changer ses pentes : les deux dérivées valent 2x.",
+      "histoire: Le mot « dérivée » et la notation f′ viennent de Joseph-Louis Lagrange, en 1797. Leibniz écrivait dy/dx, Newton mettait un point sur la lettre : trois notations pour la même idée, toutes encore utilisées aujourd’hui (le point de Newton en physique).",
+      "prof: Bilan : f′ est la fonction « pente de f » ; xⁿ devient n xⁿ⁻¹ ; une constante disparaît. Au niveau Pratique, on assemble toutes les règles pour dériver n’importe quelle fonction de l’UE."
+    ],
+    "pratique": [
+      "prof: Place aux méthodes. Je te donne la table des dérivées et les quatre règles d’assemblage. Mon conseil : avant de dériver, demande-toi toujours « quelle est la forme de ma fonction ? » (somme, produit, quotient, composée). C’est elle qui dit quelle règle appliquer.",
+      "## La table des dérivées usuelles",
+      "- (k)′ = 0 ; (x)′ = 1 ; (xⁿ)′ = n xⁿ⁻¹\n- (1/x)′ = −1/x² ; (√x)′ = 1/(2√x) (pour x > 0)\n- (eˣ)′ = eˣ ; (ln x)′ = 1/x (pour x > 0)\n- (sin x)′ = cos x ; (cos x)′ = −sin x",
+      "@courbe {\"f\":\"sin(x)\",\"x\":[-4,4],\"y\":[-2,2],\"tangente\":0.5,\"derivee\":true} | Les pointillés verts tracent la dérivée de sin : reconnais-tu la courbe de cos ? Ramène x₀ en 0 : la pente vaut 1 = cos 0. Place x₀ vers 1,57 (π/2) : la tangente est horizontale, et cos(π/2) = 0.",
+      "## Somme et multiplication par un nombre",
+      "> (u + v)′ = u′ + v′      (k u)′ = k u′",
+      "## Dériver un polynôme",
+      "1. Traite chaque terme séparément.\n2. Pour un terme a xⁿ : multiplie le coefficient par l’exposant, puis baisse l’exposant de 1.\n3. Les constantes disparaissent.",
+      "@etapes {\"etapes\":[[\"f(x) = 4x³ − 5x² + 2x − 7\",\"Une somme de quatre termes : on dérive chacun.\"],[\"(4x³)′ = 4 × 3x² = 12x²\",\"L’exposant 3 descend et devient 2.\"],[\"(−5x²)′ = −5 × 2x = −10x\",\"On garde le signe du coefficient.\"],[\"(2x)′ = 2 et (−7)′ = 0\",\"(x)′ = 1 ; la constante disparaît.\"],[\"f′(x) = 12x² − 10x + 2\",\"On additionne les dérivées des termes.\"]]} | Lance la lecture et dérive chaque terme de tête avant qu’il ne s’affiche.",
+      "? Dérive f(x) = 2x⁵ − 3x + 8. || f′(x) = 10x⁴ − 3.",
+      "## Produit",
+      "> (u v)′ = u′ v + u v′",
+      "@etapes {\"etapes\":[[\"f(x) = x² eˣ\",\"Un produit : u = x² et v = eˣ.\"],[\"u′ = 2x et v′ = eˣ\",\"On dérive chaque facteur séparément.\"],[\"f′(x) = 2x · eˣ + x² · eˣ\",\"Formule u′v + uv′.\"],[\"f′(x) = (x² + 2x) eˣ\",\"On factorise par eˣ.\"]]} | Suis les étapes : u, v, u′, v′, puis la formule. Ne mélange jamais avec u′v′.",
+      "attention: (u v)′ n’est pas u′ v′ ! Contre-exemple : (x · x)′ = (x²)′ = 2x, alors que u′v′ = 1 × 1 = 1.",
+      "prof: Pour un produit, je te conseille d’écrire systématiquement quatre lignes : u =, v =, u′ =, v′ =. Ça prend dix secondes et ça évite presque toutes les erreurs de formule.",
+      "## Quotient",
+      "> (u / v)′ = (u′ v − u v′) / v²      et en particulier (1/v)′ = −v′/v²",
+      "@etapes {\"etapes\":[[\"f(x) = (2x + 1)/(x − 3)\",\"Un quotient : u = 2x + 1, v = x − 3.\"],[\"u′ = 2 et v′ = 1\",\"On dérive le haut et le bas.\"],[\"f′(x) = (2(x − 3) − (2x + 1) × 1)/(x − 3)²\",\"Formule (u′v − uv′)/v² : on commence par u′.\"],[\"= (2x − 6 − 2x − 1)/(x − 3)²\",\"On développe le numérateur, attention au signe −.\"],[\"f′(x) = −7/(x − 3)²\",\"Valable pour x ≠ 3.\"]]} | Avance pas à pas et surveille le signe moins devant uv′ : c’est là que se cachent les erreurs.",
+      "## Composée : ne jamais oublier u′",
+      "Quand une fonction est « dans » une autre, comme (3x + 1)⁴, on dérive l’extérieur puis on multiplie par la dérivée de l’intérieur u′.",
+      "> (uⁿ)′ = n u′ uⁿ⁻¹    (√u)′ = u′/(2√u)    (eᵘ)′ = u′ eᵘ    (ln u)′ = u′/u",
+      "@etapes {\"etapes\":[[\"f(x) = (3x + 1)⁴\",\"Forme uⁿ avec u = 3x + 1 et n = 4.\"],[\"u′ = 3\",\"Dérivée de l’intérieur.\"],[\"f′(x) = 4 × 3 × (3x + 1)³\",\"Formule n u′ uⁿ⁻¹.\"],[\"f′(x) = 12(3x + 1)³\",\"On regroupe les nombres.\"]]} | Observe le facteur 3 qui vient de l’intérieur : sans lui, le résultat serait faux.",
+      "? Dérive (2x − 5)³. || 3 × 2 × (2x − 5)² = 6(2x − 5)².",
+      "? Dérive e^(5x). || 5 e^(5x) : u = 5x, u′ = 5.",
+      "## Nombre dérivé et tangente avec les règles",
+      "Pour f′(a) : dérive d’abord, puis remplace x par a (entre parenthèses s’il est négatif). Tangente : y = f(a) + f′(a)(x − a).",
+      "ex: f(x) = 3x² + x ; f′(x) = 6x + 1\nf′(−1) = 6 × (−1) + 1 = −5\nla tangente en −1 descend",
+      "prof: Vérifie tes dérivées avec le graphique : là où ta courbe monte, ta dérivée doit être positive. C’est un contrôle gratuit, et il attrape beaucoup d’erreurs de signe."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on regarde d’où viennent les règles, et on fixe les conditions sous lesquelles elles sont vraies. Tu verras qu’il n’y a au fond que trois règles, et que toutes les autres en découlent.",
+      "## Définition",
+      "f est dérivable sur un intervalle ouvert I si elle est dérivable en tout point de I. Sa fonction dérivée est f′ : x ↦ lim (f(x + h) − f(x))/h quand h → 0.",
+      "## Démontrer (x²)′ = 2x",
+      "@etapes {\"etapes\":[[\"((x + h)² − x²)/h\",\"Taux d’accroissement de x² entre x et x + h.\"],[\"= (x² + 2xh + h² − x²)/h\",\"On développe.\"],[\"= (2xh + h²)/h = 2x + h\",\"On simplifie par h ≠ 0.\"],[\"→ 2x quand h → 0\",\"Donc (x²)′ = 2x en tout x.\"]]} | Suis la preuve : c’est exactement le calcul du chapitre « Nombre dérivé », mais avec x quelconque au lieu d’un nombre.",
+      "## Les trois règles structurantes",
+      "> linéarité : (a u + b v)′ = a u′ + b v′",
+      "> Leibniz : (u v)′ = u′ v + u v′",
+      "> chaîne : (g ∘ u)′ = (g′ ∘ u) × u′",
+      "Pourquoi Leibniz ? Imagine un rectangle de côtés u et v. Si u grandit de Δu et v de Δv, l’aire gagne v Δu + u Δv + Δu Δv. Divisé par h, le dernier morceau devient négligeable : il reste u′v + uv′.",
+      "La règle de la chaîne contient tous les cas de composée : (uⁿ)′ = n u′ uⁿ⁻¹, (eᵘ)′ = u′ eᵘ, (ln u)′ = u′/u, (√u)′ = u′/(2√u), (sin u)′ = u′ cos u.",
+      "? Retrouve la règle du quotient à partir des deux autres. || u/v = u × (1/v) ; (1/v)′ = −v′/v² par la chaîne ; Leibniz donne u′/v − u v′/v² = (u′v − uv′)/v².",
+      "prof: La règle de la chaîne est la plus importante des trois : dès qu’une fonction est « dans » une autre, elle s’applique. Entraîne-toi à repérer l’intérieur u avant de dériver quoi que ce soit.",
+      "? Dérive sin(3x² + 1) avec la règle de la chaîne. || u = 3x² + 1, u′ = 6x, donc la dérivée vaut 6x cos(3x² + 1).",
+      "## Domaine de dérivabilité",
+      "Une formule de dérivée n’est valable que là où la fonction est dérivable : √x seulement sur ]0 ; +∞[ (pas en 0), ln u et √u exigent u > 0, un quotient exige v ≠ 0.",
+      "@courbe {\"f\":\"sqrt(x)\",\"x\":[-0.5,4],\"y\":[-0.5,2.5],\"tangente\":1,\"derivee\":true} | Rapproche x₀ de 0 : la tangente se redresse et la dérivée 1/(2√x) (pointillés) s’envole. En 0, la tangente est verticale : √x n’y est pas dérivable.",
+      "## Où ça casse",
+      "- Oublier u′ dans une composée : ((3x + 1)²)′ = 6(3x + 1), pas 2(3x + 1).\n- Confondre (uv)′ avec u′v′.\n- Inverser l’ordre dans le quotient : u′v − uv′, en commençant par u′.\n- Dériver x^x ou 2ˣ avec (xⁿ)′ : la règle exige un exposant constant (2ˣ = e^(x ln 2) se dérive en ln 2 × 2ˣ).",
+      "? Dérive 2ˣ. || 2ˣ = e^(x ln 2), donc (2ˣ)′ = ln 2 × e^(x ln 2) = ln 2 × 2ˣ.",
+      "histoire: Leibniz publie la règle du produit en 1684, dans le premier article de calcul différentiel de l’histoire (« Nova Methodus »). La règle de la chaîne y figure déjà, mais elle n’a été démontrée rigoureusement qu’au XIXᵉ siècle.",
+      "prof: Bilan expert : trois règles (linéarité, Leibniz, chaîne) et une table de dérivées suffisent ; tout le reste se déduit. Toujours vérifier où la fonction est dérivable. Au chapitre suivant, la dérivée servira à étudier les variations."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Dériver f(x) = 4x³ − 5x² + 2x − 7.",
+      "etapes": [
+        [
+          "(4x³)′ = 12x²",
+          "l’exposant 3 descend et devient 2"
+        ],
+        [
+          "(−5x²)′ = −10x",
+          "−5 × 2 = −10"
+        ],
+        [
+          "(2x)′ = 2 et (−7)′ = 0",
+          "(x)′ = 1 ; une constante disparaît"
+        ],
+        [
+          "f′(x) = 12x² − 10x + 2",
+          "on additionne les dérivées des termes"
+        ]
+      ]
+    },
+    {
+      "enonce": "Dériver f(x) = (2x − 3)⁵.",
+      "etapes": [
+        [
+          "u = 2x − 3, n = 5",
+          "f est de la forme uⁿ"
+        ],
+        [
+          "u′ = 2",
+          "dérivée de l’intérieur"
+        ],
+        [
+          "f′(x) = 5 × 2 × (2x − 3)⁴",
+          "règle n u′ uⁿ⁻¹"
+        ],
+        [
+          "f′(x) = 10(2x − 3)⁴",
+          "on regroupe les nombres"
+        ]
+      ]
+    },
+    {
+      "enonce": "Dériver f(x) = x ln x sur ]0 ; +∞[.",
+      "etapes": [
+        [
+          "u = x, v = ln x",
+          "un produit"
+        ],
+        [
+          "u′ = 1, v′ = 1/x",
+          "dérivées usuelles"
+        ],
+        [
+          "f′(x) = 1 × ln x + x × 1/x",
+          "formule u′v + uv′"
+        ],
+        [
+          "f′(x) = ln x + 1",
+          "on simplifie x × 1/x = 1"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "((3x + 1)²)′ = 2(3x + 1)",
+      "juste": "((3x + 1)²)′ = 2 × 3 × (3x + 1) = 6(3x + 1)",
+      "pourquoi": "Dans une composée, on multiplie par la dérivée de l’intérieur."
+    },
+    {
+      "faux": "(x eˣ)′ = 1 × eˣ",
+      "juste": "(x eˣ)′ = eˣ + x eˣ",
+      "pourquoi": "La dérivée d’un produit est u′v + uv′, pas u′v′."
+    },
+    {
+      "faux": "(5)′ = 5",
+      "juste": "(5)′ = 0",
+      "pourquoi": "Une constante ne varie pas : sa pente est nulle."
+    },
+    {
+      "faux": "(5x³)′ = 15x³",
+      "juste": "(5x³)′ = 15x²",
+      "pourquoi": "L’exposant descend ET diminue de 1."
+    },
+    {
+      "faux": "(u/v)′ = (uv′ − u′v)/v²",
+      "juste": "(u/v)′ = (u′v − uv′)/v²",
+      "pourquoi": "L’ordre compte : l’inverser change le signe du résultat."
+    }
+  ],
+  "retenir": [
+    "f′(x) est la pente de la courbe de f au point d’abscisse x.",
+    "(xⁿ)′ = n xⁿ⁻¹ ; une constante se dérive en 0 ; on dérive un polynôme terme à terme.",
+    "(1/x)′ = −1/x², (√x)′ = 1/(2√x), (eˣ)′ = eˣ, (ln x)′ = 1/x, (sin x)′ = cos x, (cos x)′ = −sin x.",
+    "(uv)′ = u′v + uv′ ; (u/v)′ = (u′v − uv′)/v².",
+    "Composée : (uⁿ)′ = n u′ uⁿ⁻¹, (eᵘ)′ = u′eᵘ, (ln u)′ = u′/u : ne jamais oublier u′.",
+    "Une formule de dérivée ne vaut que là où la fonction est dérivable."
+  ]
+}

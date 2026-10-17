@@ -1,0 +1,176 @@
+{
+  "id": "m1-litteral",
+  "titre": "Calcul littéral : développer et factoriser",
+  "resume": "Développer transforme un produit en somme, factoriser fait le chemin inverse. Trois identités remarquables accélèrent les deux, et chaque calcul se voit comme une aire.",
+  "objectifs": [
+    "développer et réduire un produit, y compris avec des signes moins",
+    "utiliser les trois identités remarquables dans les deux sens",
+    "factoriser par un facteur commun",
+    "factoriser avec une identité remarquable",
+    "vérifier un calcul en remplaçant x par une valeur",
+    "utiliser une forme factorisée pour résoudre une équation produit nul"
+  ],
+  "prerequis": [
+    "m1-puissances"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Salut ! Le calcul avec des lettres fait souvent peur. Je vais te montrer qu’une lettre n’est qu’un nombre qu’on ne connaît pas encore, et que développer ou factoriser, c’est juste calculer l’aire d’un rectangle de deux façons. Plan : l’idée de la lettre, développer, les identités remarquables, puis factoriser.",
+      "## Une lettre, c’est un nombre en attente",
+      "Quand j’écris 3x, je veux dire « 3 fois un certain nombre x ». Si x vaut 5, 3x vaut 15 ; si x vaut 10, 3x vaut 30. Calculer avec des lettres, c’est appliquer **les mêmes règles** qu’avec des nombres, sans connaître encore la valeur.",
+      "analogie: Un jardin rectangulaire mesure 3 m de large et (x + 2) m de long. Je peux calculer son aire d’un coup : 3 × (x + 2). Ou le couper en deux morceaux, un de 3 sur x et un de 3 sur 2 : 3x + 6. Même jardin, même aire : 3(x + 2) = 3x + 6. On vient de **développer**.",
+      "!! Développer, c’est transformer un produit en somme. Factoriser, c’est le chemin inverse : transformer une somme en produit.",
+      "? Développe 5(x − 4). || 5 × x − 5 × 4 = 5x − 20.",
+      "## Deux parenthèses : un rectangle en quatre morceaux",
+      "Pour (x + 3)(x + 2), imagine un rectangle de côtés x + 3 et x + 2. En le découpant, on obtient quatre morceaux : un carré x², deux bandes 3x et 2x, et un petit rectangle 6. Total : x² + 5x + 6.",
+      "@developper | Fais varier p et q : la grille montre les quatre morceaux de (x + p)(x + q). Observe que les deux cases du milieu donnent les termes en x, et que leur somme fait le coefficient p + q. Essaie avec q négatif.",
+      "? Combien de produits faut-il calculer pour développer (x + 1)(x + 7) ? || Quatre : x × x, x × 7, 1 × x et 1 × 7, ce qui donne x² + 8x + 7.",
+      "## Le piège le plus célèbre : (a + b)²",
+      "prof: Voici l’erreur que je vois chez presque tout le monde au début : écrire (x + 3)² = x² + 9. Regarde la courbe ci-dessous : si c’était vrai, les deux courbes seraient confondues. Elles ne le sont pas !",
+      "@courbe {\"f\":[{\"f\":\"(x+a)^2\",\"nom\":\"(x + a)²\"},{\"f\":\"x^2+a^2\",\"nom\":\"x² + a²\"}],\"curseurs\":{\"a\":[-3,3,0.5,2]},\"x\":[-5,5],\"y\":[-1,20],\"pas\":1,\"pasy\":2,\"etiq\":2,\"etiqy\":4} | Fais glisser a. Les deux courbes ne coïncident que pour a = 0. Ce qui manque à x² + a², c’est le « double produit » 2ax : au carré d’une somme, il y a les deux carrés **et** deux rectangles.",
+      "!! (a + b)² = a² + 2ab + b² : un grand carré contient deux carrés et deux rectangles identiques.",
+      "## Factoriser : retrouver le rectangle",
+      "Factoriser, c’est partir des morceaux et retrouver les côtés. Dans 6x + 9, les deux morceaux ont une largeur commune de 3 : 6x = 3 × 2x et 9 = 3 × 3. Donc 6x + 9 = 3(2x + 3).",
+      "? Factorise 4x + 10. || 4x = 2 × 2x et 10 = 2 × 5, donc 4x + 10 = 2(2x + 5).",
+      "histoire: L’usage systématique de lettres pour les nombres inconnus vient de François Viète, vers 1591. Avant lui, tout s’écrivait en phrases : « le carré de la chose plus trois fois la chose ». Al-Khwarizmi, au IXᵉ siècle, justifiait déjà ces calculs par des découpages de carrés et de rectangles.",
+      "prof: Bilan : une lettre est un nombre en attente, développer c’est découper un rectangle, factoriser c’est le reconstituer. Et méfie-toi de (a + b)² : il y a toujours le double produit."
+    ],
+    "pratique": [
+      "prof: Au niveau Pratique, quatre méthodes : supprimer des parenthèses, développer un produit de deux parenthèses, utiliser les identités remarquables, factoriser. Pour chacune, un calcul animé et un exercice. Vérifie toujours tes résultats en remplaçant x par une petite valeur, par exemple x = 1.",
+      "## Méthode 1 : distribuer et supprimer des parenthèses",
+      "1. k(a + b) = ka + kb : le facteur multiplie **chaque** terme.\n2. Un signe moins devant une parenthèse change le signe de chaque terme : −(a − b) = −a + b.\n3. Regroupe les termes de même nature (les x ensemble, les nombres ensemble).",
+      "@etapes {\"etapes\":[[\"5x − (3x − 4) + 2(x + 1)\",\"Deux parenthèses à supprimer.\"],[\"5x − 3x + 4 + 2(x + 1)\",\"Le moins change le signe de chaque terme : −(3x − 4) = −3x + 4.\"],[\"5x − 3x + 4 + 2x + 2\",\"Le 2 multiplie x et 1.\"],[\"(5 − 3 + 2)x + (4 + 2)\",\"On regroupe les x et les nombres.\"],[\"4x + 6\",\"Contrôle avec x = 1 : 5 − (−1) + 4 = 10 et 4 + 6 = 10.\"]]} | Avance pas à pas : à l’étape 2, prédis le signe du 4 avant de cliquer.",
+      "? Réduis 7 − 2(x − 3). || 7 − 2x + 6 = 13 − 2x.",
+      "## Méthode 2 : développer (a + b)(c + d)",
+      "1. Multiplie chaque terme de la première parenthèse par chaque terme de la seconde : quatre produits.\n2. Attention aux signes : moins par moins donne plus.\n3. Regroupe les termes de même nature (x², x, nombres).",
+      "@etapes {\"etapes\":[[\"(2x + 3)(x − 5)\",\"Quatre produits à faire.\"],[\"2x × x = 2x^2\",\"Premier par premier.\"],[\"2x × (−5) = −10x\",\"Premier par second : attention au signe.\"],[\"3 × x = 3x\",\"Second par premier.\"],[\"3 × (−5) = −15\",\"Second par second.\"],[\"2x^2 − 10x + 3x − 15 = 2x^2 − 7x − 15\",\"On regroupe les termes en x.\"]]} | Suis les quatre produits ; à chaque étape, montre du doigt les deux termes qu’on multiplie.",
+      "? Développe (x − 4)(x + 1). || x² + x − 4x − 4 = x² − 3x − 4.",
+      "## Méthode 3 : les trois identités remarquables",
+      "prof: Pourquoi apprendre ces trois formules par cœur, alors que la méthode des quatre produits marche toujours ? Parce qu’elles servent surtout dans l’autre sens, pour factoriser : il faut savoir reconnaître a² − 2ab + b² d’un coup d’œil.",
+      "> (a + b)^2 = a^2 + 2ab + b^2",
+      "> (a − b)^2 = a^2 − 2ab + b^2",
+      "> (a + b)(a − b) = a^2 − b^2",
+      "1. Repère a et b (souvent un terme en x et un nombre).\n2. Calcule a², b² et, s’il le faut, le double produit 2ab.\n3. Assemble selon l’identité, sans oublier les signes.",
+      "ex: (3x − 2)^2 = (3x)^2 − 2 × 3x × 2 + 2^2 = 9x^2 − 12x + 4\n(x + 5)(x − 5) = x^2 − 25",
+      "attention: (3x)² = 9x², pas 3x² : le carré porte sur le 3 **et** sur le x.",
+      "## Méthode 4 : factoriser",
+      "1. Cherche d’abord un **facteur commun** à tous les termes (un nombre, x, ou une parenthèse entière) et mets-le devant.\n2. Sinon, reconnais une identité : deux carrés séparés par un moins (a² − b²), ou trois termes dont deux carrés (a² ± 2ab + b²).\n3. Vérifie en redéveloppant.",
+      "@etapes {\"etapes\":[[\"9x^2 − 12x + 4\",\"Pas de facteur commun aux trois termes : on cherche une identité.\"],[\"9x^2 = (3x)^2 et 4 = 2^2\",\"Deux carrés parfaits : a = 3x et b = 2.\"],[\"2 × 3x × 2 = 12x\",\"Le terme du milieu est bien le double produit, avec un signe moins.\"],[\"9x^2 − 12x + 4 = (3x − 2)^2\",\"C’est (a − b)².\"],[\"contrôle : (3x − 2)^2 = 9x^2 − 12x + 4\",\"On redéveloppe : on retrouve l’expression de départ.\"]]} | Suis la reconnaissance de l’identité, puis essaie seul avec x² + 10x + 25.",
+      "@factoriser | Cherche deux nombres dont le produit vaut le terme constant et la somme le coefficient de x. Touche les paires pour les tester ; « Nouvel exemple » en propose un autre.",
+      "? Factorise 4x² − 25. || (2x)² − 5² = (2x − 5)(2x + 5).",
+      "? Factorise 6x² + 9x. || Facteur commun 3x : 6x² + 9x = 3x(2x + 3).",
+      "prof: Bilan pratique : en développant, chaque terme multiplie chaque terme ; en factorisant, facteur commun d’abord, identité ensuite ; et dans les deux cas, contrôle avec x = 1. Ce réflexe te sauvera de la plupart des erreurs de signe."
+    ],
+    "expert": [
+      "prof: Niveau Expert : on justifie les règles par la distributivité, on comprend pourquoi la forme factorisée est si précieuse, et on voit où les factorisations s’arrêtent. C’est la base de tout le chapitre sur le second degré.",
+      "## Ce qui justifie les calculs",
+      "Tout repose sur la distributivité de la multiplication sur l’addition : a(b + c) = ab + ac. Appliquée deux fois, elle donne (a + b)(c + d) = ac + ad + bc + bd. Les identités remarquables en sont des cas particuliers : avec c = a et d = b, on obtient (a + b)² = a² + 2ab + b².",
+      "Démonstration de la troisième : (a + b)(a − b) = a² − ab + ba − b² = a² − b², car les deux produits croisés s’annulent.",
+      "## Égalité de deux expressions",
+      "Deux expressions littérales sont égales quand elles donnent le même résultat **pour toute valeur** de x. Un seul test numérique peut prouver qu’une égalité est fausse (un contre-exemple), mais ne prouve jamais qu’elle est vraie. En revanche, deux polynômes de degré au plus n qui coïncident en n + 1 valeurs sont égaux.",
+      "? Avec x = 0, (x + 1)² et x² + 1 donnent tous deux 1. Sont-elles égales ? || Non : avec x = 1, on obtient 4 et 2. Un test réussi ne prouve rien, un test raté suffit à réfuter.",
+      "## Pourquoi factoriser ?",
+      "prof: Arrêtons-nous sur ce point, c’est le vrai « pourquoi » du chapitre. Une équation comme x² − x − 6 = 0 est difficile sous forme développée ; écrite (x − 3)(x + 2) = 0, elle se résout de tête. Factoriser, c’est rendre une équation lisible.",
+      "Un produit est nul si et seulement si l’un de ses facteurs est nul. La forme factorisée résout donc les équations et donne directement les tableaux de signes.",
+      "> A × B = 0  ⟺  A = 0 ou B = 0",
+      "@courbe {\"f\":\"(x-a)*(x-b)\",\"curseurs\":{\"a\":[-4,4,0.5,-2],\"b\":[-4,4,0.5,1]},\"x\":[-5,5],\"y\":[-6,8],\"pas\":1,\"pasy\":1,\"etiq\":1,\"etiqy\":2} | Fais varier a et b : la courbe de (x − a)(x − b) coupe l’axe des abscisses exactement en x = a et x = b. Fais-les se rejoindre : on obtient (x − a)², la courbe touche l’axe sans le traverser.",
+      "## Trinôme et discriminant",
+      "Un trinôme ax² + bx + c (a ≠ 0) se factorise dans ℝ exactement quand son discriminant Δ = b² − 4ac est positif ou nul. On l’étudiera dans le chapitre du second degré.",
+      "> ax^2 + bx + c = a(x − x₁)(x − x₂)  lorsque Δ ≥ 0",
+      "? Pourquoi x² + 4 ne se factorise-t-il pas dans ℝ ? || Une forme (x − x₁)(x − x₂) s’annulerait en x₁, or x² + 4 ≥ 4 > 0 pour tout réel x (et Δ = −16 < 0).",
+      "## Où ça casse",
+      "prof: Je termine par les erreurs que je corrige le plus souvent, même chez des étudiants avancés. Lis-les lentement : chacune vient d’une règle appliquée hors de ses conditions.",
+      "- (a + b)² ≠ a² + b² : il manque le double produit 2ab.\n- a² + b² ne se factorise pas dans ℝ (somme de carrés).\n- Un signe moins devant une parenthèse change tous les signes : −(x − 3) = −x + 3.\n- On ne « simplifie » pas une somme par un facteur : (x² + 3)/x n’est pas x + 3.\n- Diviser les deux membres de x² = 3x par x fait perdre la solution x = 0 : on factorise plutôt, x(x − 3) = 0.",
+      "? Résous x² = 5x. || x² − 5x = 0, soit x(x − 5) = 0 : x = 0 ou x = 5. Diviser par x aurait fait perdre x = 0.",
+      "histoire: Les identités remarquables apparaissent sous forme géométrique dans le livre II des Éléments d’Euclide (vers 300 avant notre ère) : la proposition 4 énonce, avec des carrés et des rectangles, que le carré d’une somme vaut les deux carrés plus deux rectangles."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Développer et réduire (3x − 2)(x + 4).",
+      "etapes": [
+        [
+          "3x × x = 3x^2",
+          "premier terme par premier terme"
+        ],
+        [
+          "3x × 4 = 12x et −2 × x = −2x",
+          "les deux produits croisés donnent les termes en x"
+        ],
+        [
+          "−2 × 4 = −8",
+          "dernier par dernier"
+        ],
+        [
+          "3x^2 + 12x − 2x − 8 = 3x^2 + 10x − 8",
+          "on regroupe les termes en x"
+        ]
+      ]
+    },
+    {
+      "enonce": "Factoriser 9x² − 12x + 4.",
+      "etapes": [
+        [
+          "9x^2 = (3x)^2 et 4 = 2^2",
+          "deux carrés parfaits"
+        ],
+        [
+          "2 × 3x × 2 = 12x",
+          "le terme du milieu est le double produit"
+        ],
+        [
+          "9x^2 − 12x + 4 = (3x − 2)^2",
+          "identité (a − b)², contrôle en redéveloppant"
+        ]
+      ]
+    },
+    {
+      "enonce": "Résoudre (2x − 6)(x + 1) = 0.",
+      "etapes": [
+        [
+          "2x − 6 = 0 ou x + 1 = 0",
+          "un produit est nul si l’un des facteurs est nul"
+        ],
+        [
+          "x = 3 ou x = −1",
+          "on résout chaque équation du premier degré"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "(x + 3)² = x² + 9",
+      "juste": "(x + 3)² = x² + 6x + 9",
+      "pourquoi": "Le carré d’une somme contient le double produit 2ab."
+    },
+    {
+      "faux": "−(x − 3) = −x − 3",
+      "juste": "−(x − 3) = −x + 3",
+      "pourquoi": "Le moins devant la parenthèse change le signe de chaque terme."
+    },
+    {
+      "faux": "x² + 4 = (x + 2)(x − 2)",
+      "juste": "x² − 4 = (x + 2)(x − 2)",
+      "pourquoi": "a² − b² concerne une différence ; une somme de carrés ne se factorise pas dans ℝ."
+    },
+    {
+      "faux": "(3x)² = 3x²",
+      "juste": "(3x)² = 9x²",
+      "pourquoi": "Le carré porte sur le coefficient et sur x."
+    },
+    {
+      "faux": "x² = 3x donc x = 3",
+      "juste": "x(x − 3) = 0 donc x = 0 ou x = 3",
+      "pourquoi": "Diviser par x perd la solution x = 0 : on factorise."
+    }
+  ],
+  "retenir": [
+    "Développer : chaque terme multiplie chaque terme, puis on réduit.",
+    "(a + b)² = a² + 2ab + b² ; (a − b)² = a² − 2ab + b² ; (a + b)(a − b) = a² − b².",
+    "Un moins devant une parenthèse change le signe de chaque terme.",
+    "Factoriser : facteur commun d’abord, identité remarquable ensuite.",
+    "On vérifie un calcul en redéveloppant ou en remplaçant x par une valeur.",
+    "Produit nul : A × B = 0 ⟺ A = 0 ou B = 0."
+  ]
+}

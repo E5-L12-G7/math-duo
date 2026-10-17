@@ -1,0 +1,32 @@
+{
+  "m2-edo1": [
+    {"id": "m2e1-01", "q": "Qu’est-ce qu’une équation différentielle ?", "a": "Une équation dont l’inconnue est une fonction, reliée à sa dérivée.", "tag": "definition", "niveau": 1},
+    {"id": "m2e1-02", "q": "Que veut dire « premier ordre » ?", "a": "Seule la dérivée première y′ apparaît.", "tag": "definition", "niveau": 1},
+    {"id": "m2e1-03", "q": "Comment vérifie-t-on qu’une fonction est solution ?", "a": "On calcule y′, on remplace : l’égalité doit tenir pour tout x.", "tag": "methode", "niveau": 1},
+    {"id": "m2e1-04", "q": "Quelles sont les solutions de y′ + ay = 0 ?", "a": "y = C e^(−ax), C réel quelconque.", "tag": "formule", "niveau": 1},
+    {"id": "m2e1-05", "q": "Comment trouve-t-on la solution constante de y′ + ay = b ?", "a": "On pose y′ = 0 : a·y = b, donc y = b/a.", "tag": "methode", "niveau": 1},
+    {"id": "m2e1-06", "q": "Quelle est la solution générale de y′ + ay = b (a ≠ 0) ?", "a": "y = C e^(−ax) + b/a.", "tag": "formule", "niveau": 1},
+    {"id": "m2e1-07", "q": "À quoi sert une condition initiale ?", "a": "À fixer la constante C : il ne reste qu’une solution.", "tag": "definition", "niveau": 1},
+    {"id": "m2e1-08", "q": "Que vaut la solution constante de y′ + 4y = 12 ?", "a": "3", "pourquoi": "4y = 12.", "tag": "valeur", "niveau": 1},
+    {"id": "m2e1-09", "q": "Vrai ou faux : y′ + 2y = 0 a pour solutions C e^(2x) ?", "a": "Faux : c’est C e^(−2x).", "tag": "piege", "niveau": 1},
+    {"id": "m2e1-10", "q": "Avec y = C e^(−ax) + b/a, que vaut y(0) ?", "a": "C + b/a, car e⁰ = 1.", "tag": "propriete", "niveau": 1},
+    {"id": "m2e1-11", "q": "Vrai ou faux : y(0) = 5 donne toujours C = 5 ?", "a": "Faux : C = 5 − b/a.", "tag": "piege", "niveau": 2},
+    {"id": "m2e1-12", "q": "Que faire avant d’appliquer la formule à 3y′ + 6y = 12 ?", "a": "Diviser tout par 3 : y′ + 2y = 4.", "tag": "methode", "niveau": 2},
+    {"id": "m2e1-13", "q": "Solution de y′ + 2y = 6 avec y(0) = 1 ?", "a": "y = −2e^(−2x) + 3.", "tag": "valeur", "niveau": 2},
+    {"id": "m2e1-14", "q": "Quelle est la loi de refroidissement de Newton ?", "a": "θ′ = −k(θ − T) : vitesse proportionnelle à l’écart avec la pièce.", "tag": "formule", "niveau": 2},
+    {"id": "m2e1-15", "q": "Solution de θ′ = −k(θ − T) avec θ(0) = θ₀ ?", "a": "θ(t) = T + (θ₀ − T) e^(−kt).", "tag": "formule", "niveau": 2},
+    {"id": "m2e1-16", "q": "Comment trouve-t-on k à partir d’une mesure ?", "a": "On isole l’exponentielle, puis on prend le logarithme.", "tag": "methode", "niveau": 2},
+    {"id": "m2e1-17", "q": "Si a > 0, que font les solutions de y′ + ay = b en +∞ ?", "a": "Elles tendent toutes vers b/a : équilibre stable.", "tag": "propriete", "niveau": 2},
+    {"id": "m2e1-18", "q": "Si a < 0, que font les solutions de y′ + ay = b ?", "a": "Elles s’éloignent de b/a, sauf la solution constante.", "tag": "propriete", "niveau": 2},
+    {"id": "m2e1-19", "q": "Que représente une flèche du champ de directions ?", "a": "La pente imposée par l’équation à une courbe passant par ce point.", "tag": "definition", "niveau": 2},
+    {"id": "m2e1-20", "q": "Solutions de y′ = b (cas a = 0) ?", "a": "y = bx + C : des primitives, pas d’exponentielle.", "tag": "propriete", "niveau": 2},
+    {"id": "m2e1-21", "q": "Structure des solutions d’une équation linéaire ?", "a": "Une solution particulière plus les solutions de l’homogène.", "tag": "propriete", "niveau": 3},
+    {"id": "m2e1-22", "q": "Que dit le théorème de Cauchy-Lipschitz ici ?", "a": "Pour tout (x₀ ; y₀), une unique solution vérifie y(x₀) = y₀.", "tag": "propriete", "niveau": 3},
+    {"id": "m2e1-23", "q": "Pourquoi deux courbes solutions ne se croisent-elles pas ?", "a": "Elles auraient même condition initiale, donc seraient égales.", "tag": "propriete", "niveau": 3},
+    {"id": "m2e1-24", "q": "Solution particulière de y′ + ay = K e^(mx), m ≠ −a ?", "a": "A e^(mx) avec A = K/(m + a).", "tag": "formule", "niveau": 3},
+    {"id": "m2e1-25", "q": "Second membre polynôme de degré n : quelle forme chercher ?", "a": "Un polynôme de degré n.", "tag": "methode", "niveau": 3},
+    {"id": "m2e1-26", "q": "Principe de la variation de la constante ?", "a": "Chercher y = C(x) e^(−ax) ; il reste C′(x) = f(x) e^(ax).", "tag": "methode", "niveau": 3},
+    {"id": "m2e1-27", "q": "Comment résout-on y′ = g(x) h(y) ?", "a": "On sépare : dy/h(y) = g(x) dx, puis on intègre.", "tag": "methode", "niveau": 3},
+    {"id": "m2e1-28", "q": "Qui a énoncé la loi de refroidissement en 1701 ?", "a": "Isaac Newton.", "tag": "histoire", "niveau": 2}
+  ]
+}

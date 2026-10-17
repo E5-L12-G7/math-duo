@@ -1,0 +1,30 @@
+{
+  "s1-normale": [
+    {"id": "s1no-01", "q": "Que représentent μ et σ dans N(μ ; σ²) ?", "a": "μ : moyenne (centre) ; σ : écart-type (largeur).", "tag": "definition", "niveau": 1},
+    {"id": "s1no-02", "q": "X ~ N(80 ; 196) : que vaut σ ?", "a": "σ = √196 = 14", "pourquoi": "Le second paramètre est la variance.", "tag": "piege", "niveau": 1},
+    {"id": "s1no-03", "q": "Comment centrer et réduire X ~ N(μ ; σ²) ?", "a": "Z = (X − μ)/σ, qui suit N(0 ; 1).", "tag": "formule", "niveau": 1},
+    {"id": "s1no-04", "q": "Que donne Φ(z) ?", "a": "P(Z ≤ z), l’aire à gauche de z sous N(0 ; 1).", "tag": "definition", "niveau": 1},
+    {"id": "s1no-05", "q": "Comment calculer P(Z > z) ?", "a": "1 − Φ(z)", "tag": "formule", "niveau": 1},
+    {"id": "s1no-06", "q": "Que vaut Φ(−z) ?", "a": "1 − Φ(z)", "pourquoi": "Symétrie de la cloche.", "tag": "formule", "niveau": 1},
+    {"id": "s1no-07", "q": "Que vaut P(−z ≤ Z ≤ z) ?", "a": "2Φ(z) − 1", "tag": "formule", "niveau": 2},
+    {"id": "s1no-08", "q": "Proportion des valeurs à moins de 1 σ de la moyenne ?", "a": "Environ 68 %.", "tag": "valeur", "niveau": 1},
+    {"id": "s1no-09", "q": "Proportion des valeurs à moins de 2 σ de la moyenne ?", "a": "Environ 95 %.", "tag": "valeur", "niveau": 1},
+    {"id": "s1no-10", "q": "Proportion des valeurs à moins de 3 σ de la moyenne ?", "a": "Environ 99,7 %.", "tag": "valeur", "niveau": 1},
+    {"id": "s1no-11", "q": "Quel z laisse 95 % au centre de N(0 ; 1) ?", "a": "1,96", "tag": "valeur", "niveau": 1},
+    {"id": "s1no-12", "q": "Quel z laisse 99 % au centre de N(0 ; 1) ?", "a": "2,576", "tag": "valeur", "niveau": 2},
+    {"id": "s1no-13", "q": "Quel z vérifie Φ(z) = 0,95 ?", "a": "1,645", "pourquoi": "5 % dans une seule queue (90 % au centre).", "tag": "valeur", "niveau": 2},
+    {"id": "s1no-14", "q": "Comment trouver t tel que P(X ≤ t) = q ?", "a": "Lire z avec Φ(z) = q, puis t = μ + zσ.", "tag": "methode", "niveau": 2},
+    {"id": "s1no-15", "q": "Que mesure le score z d’une valeur x ?", "a": "Son nombre d’écarts-types au-dessus de la moyenne.", "tag": "definition", "niveau": 1},
+    {"id": "s1no-16", "q": "Où sont les points d’inflexion de la cloche N(μ ; σ²) ?", "a": "En μ − σ et μ + σ.", "tag": "propriete", "niveau": 3},
+    {"id": "s1no-17", "q": "Loi de X + Y, X ~ N(μ₁ ; σ₁²), Y ~ N(μ₂ ; σ₂²) indépendantes ?", "a": "N(μ₁ + μ₂ ; σ₁² + σ₂²)", "tag": "propriete", "niveau": 3},
+    {"id": "s1no-18", "q": "Variance de X − Y pour X, Y normales indépendantes ?", "a": "σ₁² + σ₂² : les variances s’additionnent.", "tag": "piege", "niveau": 3},
+    {"id": "s1no-19", "q": "Conditions pour approcher B(n ; p) par une loi normale ?", "a": "n ≥ 30, np ≥ 5 et n(1 − p) ≥ 5.", "tag": "propriete", "niveau": 2},
+    {"id": "s1no-20", "q": "Paramètres de la loi normale approchant B(n ; p) ?", "a": "μ = np et σ = √(np(1 − p)).", "tag": "formule", "niveau": 2},
+    {"id": "s1no-21", "q": "P(X ≤ k) avec correction de continuité ?", "a": "Φ((k + 0,5 − μ)/σ)", "tag": "formule", "niveau": 2},
+    {"id": "s1no-22", "q": "P(X ≥ k) avec correction de continuité ?", "a": "1 − Φ((k − 0,5 − μ)/σ)", "tag": "formule", "niveau": 3},
+    {"id": "s1no-23", "q": "Pourquoi la loi normale est-elle si fréquente ?", "a": "Elle décrit les sommes de nombreux petits effets indépendants.", "tag": "propriete", "niveau": 2},
+    {"id": "s1no-24", "q": "Vrai ou faux : Φ(−0,8) = −Φ(0,8) ?", "a": "Faux : Φ(−0,8) = 1 − Φ(0,8).", "tag": "piege", "niveau": 1},
+    {"id": "s1no-25", "q": "Comment retrouver μ si P(X ≤ a) = q et σ connu ?", "a": "μ = a − zσ, avec Φ(z) = q.", "tag": "methode", "niveau": 3},
+    {"id": "s1no-26", "q": "Qui découvre la courbe en cloche en 1733 ?", "a": "Abraham de Moivre, en approchant pile ou face.", "tag": "histoire", "niveau": 2}
+  ]
+}

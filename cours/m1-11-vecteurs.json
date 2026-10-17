@@ -1,0 +1,175 @@
+{
+  "id": "m1-vecteurs",
+  "titre": "Vecteurs et produit scalaire",
+  "resume": "Un vecteur est un déplacement : une direction, un sens et une longueur. Le produit scalaire est un nombre qui mesure à quel point deux vecteurs vont dans la même direction ; il est nul exactement quand ils sont perpendiculaires.",
+  "objectifs": [
+    "lire et calculer les coordonnées d’un vecteur, en particulier du vecteur AB",
+    "calculer la norme d’un vecteur",
+    "additionner des vecteurs et les multiplier par un nombre ; reconnaître des vecteurs colinéaires",
+    "calculer un produit scalaire et reconnaître des vecteurs orthogonaux",
+    "calculer l’angle entre deux vecteurs"
+  ],
+  "prerequis": [
+    "m1-triangle",
+    "m1-trigo"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Les vecteurs, c’est la géométrie du mouvement. Tu en utilises sans le savoir chaque fois que tu suis un GPS ou que tu décris un trajet. On va voir ce qu’est un vecteur, comment on les enchaîne, comment on mesure leur longueur, et enfin un outil magique pour détecter les angles droits : le produit scalaire.",
+      "## Un vecteur, c’est un déplacement",
+      "« Trois pas vers l’est, puis deux pas vers le nord » : voilà un vecteur. Il a une direction, un sens et une longueur, mais **pas de point de départ fixe** : que tu partes de chez toi ou de la gare, le déplacement est le même. On le note avec ses deux nombres, ses coordonnées : u(3 ; 2).",
+      "analogie: Une flèche dessinée sur un calque : tu peux faire glisser le calque n’importe où sur la feuille, c’est toujours la même flèche, donc le même vecteur.",
+      "!! Le vecteur AB est le déplacement qui mène du point A au point B. Ses coordonnées : arrivée moins départ.",
+      "? Pour aller de A(1 ; 1) à B(4 ; 3), quel déplacement fais-tu ? || 3 vers la droite (4 − 1) et 2 vers le haut (3 − 1) : le vecteur AB vaut (3 ; 2).",
+      "## Enchaîner deux déplacements : la somme",
+      "Faire le déplacement u puis le déplacement v, c’est faire le déplacement u + v. On met les flèches bout à bout. En coordonnées, on additionne les « est » entre eux et les « nord » entre eux.",
+      "@vecteurs {\"u\":[3,1],\"v\":[1,2]} | Fais glisser les pointes des deux flèches. Observe la flèche somme (la diagonale du parallélogramme) : ses coordonnées sont toujours la somme de celles de u et de v.",
+      "## La longueur d’un vecteur : la norme",
+      "analogie: Un GPS te fait faire 300 m vers l’est puis 400 m vers le nord. Tu as marché 700 m, mais à vol d’oiseau tu n’es qu’à 500 m de ton point de départ : c’est la longueur, la **norme**, du déplacement total.",
+      "Pourquoi 500 ? Les deux déplacements forment un angle droit : c’est Pythagore ! 300² + 400² = 250 000 = 500².",
+      "@triangle {\"mode\":\"pythagore\"} | Mets les deux côtés à 3 et 4 : l’hypoténuse, c’est la norme du vecteur (3 ; 4), soit 5. Change les valeurs : la norme vaut toujours √(x² + y²).",
+      "? Quelle est la norme du vecteur (6 ; 8) ? || √(36 + 64) = √100 = 10.",
+      "## Le produit scalaire : vont-ils dans la même direction ?",
+      "Le produit scalaire de deux vecteurs est un **nombre**. Il est grand et positif quand les vecteurs vont dans la même direction, négatif quand ils vont plutôt en sens contraires, et **nul quand ils sont perpendiculaires**.",
+      "@vecteurs {\"u\":[3,1],\"v\":[-1,3],\"mode\":\"scalaire\"} | Les deux flèches de départ sont perpendiculaires : le produit vaut 0. Fais tourner v vers u : le produit devient positif. Éloigne-la au-delà de l’angle droit : il devient négatif.",
+      "prof: Pourquoi c’est si utile ? Parce que vérifier un angle droit sur un dessin, c’est approximatif ; avec le produit scalaire, on le prouve par un simple calcul. Les ingénieurs, les graphistes de jeux vidéo et les physiciens s’en servent tous les jours.",
+      "? Si deux vecteurs pointent exactement dans des sens opposés, quel est le signe de leur produit scalaire ? || Négatif : ils vont en sens contraires.",
+      "prof: Récapitulons : un vecteur est un déplacement, la somme enchaîne les déplacements, la norme est la longueur (Pythagore), et le produit scalaire détecte les angles droits. Tu as tout le décor ; au niveau pratique, on calcule.",
+      "histoire: Au XIXe siècle, l’Irlandais William Rowan Hamilton invente les quaternions et parle le premier de « vecteur » et de « scalaire ». À la fin du siècle, l’Américain Josiah Willard Gibbs et l’Anglais Oliver Heaviside simplifient ces idées en calcul vectoriel, pour la physique de l’électricité."
+    ],
+    "pratique": [
+      "prof: Maintenant, les méthodes. Toutes reposent sur les coordonnées, dans un repère orthonormé (axes perpendiculaires, même unité). Fais toujours un petit dessin pour vérifier les signes.",
+      "## Coordonnées du vecteur AB",
+      "> AB = (x_B − x_A ; y_B − y_A)",
+      "1. Écris les coordonnées du point d’arrivée B.\n2. Retranche celles du point de départ A, coordonnée par coordonnée.\n3. Attention aux nombres négatifs : mets-les entre parenthèses.",
+      "@etapes {\"etapes\":[[\"A(−1 ; 2) et B(5 ; 10)\",\"On cherche le vecteur AB.\"],[\"AB = (5 − (−1) ; 10 − 2)\",\"Arrivée moins départ.\"],[\"AB = (6 ; 8)\",\"Moins par moins donne plus.\"],[\"‖AB‖ = √(6² + 8²) = √100\",\"La norme vient de Pythagore.\"],[\"‖AB‖ = 10\",\"C’est la distance AB.\"]]} | Suis le calcul des coordonnées puis de la norme. La norme du vecteur AB est la distance entre A et B.",
+      "? A(2 ; −3) et B(−1 ; 1). Coordonnées de AB ? || (−1 − 2 ; 1 − (−3)) = (−3 ; 4), et sa norme vaut √(9 + 16) = 5.",
+      "## Norme",
+      "> ‖(x ; y)‖ = √(x² + y²)",
+      "## Somme et produit par un nombre",
+      "- Somme : (x ; y) + (x′ ; y′) = (x + x′ ; y + y′).\n- Produit par un réel k : k(x ; y) = (kx ; ky). Même direction, longueur multipliée par |k|, sens inversé si k < 0.\n- Parallélogramme : ABCD est un parallélogramme quand AB = DC.",
+      "ex: u(2 ; −1) et v(1 ; 3)\n2u − v = (4 ; −2) − (1 ; 3) = (3 ; −5)",
+      "## Vecteurs colinéaires",
+      "Deux vecteurs sont colinéaires quand l’un est un multiple de l’autre (même direction). Test rapide : xy′ − x′y = 0. Cela sert à prouver que des points sont alignés ou que des droites sont parallèles.",
+      "@etapes {\"etapes\":[[\"u(2 ; 3) et v(6 ; m)\",\"Pour quelle valeur de m sont-ils colinéaires ?\"],[\"xy′ − x′y = 2m − 6 × 3\",\"On applique le critère.\"],[\"2m − 18 = 0\",\"Colinéaires : le déterminant est nul.\"],[\"m = 9\",\"Vérification : v = 3u = (6 ; 9).\"]]} | Observe que la réponse se vérifie : v est le triple de u.",
+      "## Produit scalaire",
+      "> u · v = xx′ + yy′    (repère orthonormé)",
+      "1. Multiplie les abscisses entre elles, puis les ordonnées entre elles.\n2. Additionne les deux produits : le résultat est un nombre.\n3. Si u · v = 0, les vecteurs sont orthogonaux (perpendiculaires).",
+      "@vecteurs {\"u\":[4,2],\"v\":[1,3],\"mode\":\"scalaire\"} | Déplace v jusqu’à ce que le produit affiché devienne 0 (par exemple v(−1 ; 2)) : la figure montre alors un angle droit, et la projection de v sur u disparaît.",
+      "? u(2 ; 5) et v(−5 ; 2) sont-ils orthogonaux ? || u · v = 2 × (−5) + 5 × 2 = −10 + 10 = 0 : oui.",
+      "## L’angle entre deux vecteurs",
+      "> u · v = ‖u‖ × ‖v‖ × cos θ",
+      "1. Calcule u · v.\n2. Calcule ‖u‖ et ‖v‖.\n3. cos θ = u · v / (‖u‖ × ‖v‖).\n4. θ = cos⁻¹(…), calculatrice en mode degrés.",
+      "@etapes {\"etapes\":[[\"u(3 ; 4) et v(5 ; 12)\",\"On cherche l’angle θ entre u et v.\"],[\"u · v = 15 + 48 = 63\",\"Produit scalaire en coordonnées.\"],[\"‖u‖ = 5 et ‖v‖ = 13\",\"√(9 + 16) et √(25 + 144).\"],[\"cos θ = 63/65 ≈ 0,969\",\"u · v = ‖u‖ ‖v‖ cos θ.\"],[\"θ ≈ 14,3°\",\"cos⁻¹, en degrés : les vecteurs vont presque dans la même direction.\"]]} | Remarque le contrôle final : cos θ proche de 1, angle petit, flèches presque alignées.",
+      "? Pour u(1 ; 0) et v(1 ; 1), quel est l’angle θ ? || u · v = 1, ‖u‖ = 1, ‖v‖ = √2, donc cos θ = 1/√2 = √2/2 et θ = 45°.",
+      "prof: Erreur fréquente : écrire u · v = (xx′ ; yy′). Non ! Le produit scalaire est un seul nombre. Autre piège : la formule xx′ + yy′ suppose un repère orthonormé, ce qui sera toujours le cas dans tes exercices.",
+      "prof: Bilan pratique : arrivée moins départ, Pythagore pour la norme, xx′ + yy′ pour le produit scalaire, et le cosinus pour l’angle. Avec ça, tu fais tous les exercices de l’UE."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on regarde pourquoi les deux définitions du produit scalaire, l’une avec les coordonnées, l’autre avec le cosinus, donnent le même nombre. Et on liste ses propriétés, qui en font un outil de calcul très puissant.",
+      "## Définitions",
+      "Un vecteur est une classe de bipoints (A ; B) ayant même direction, même sens et même longueur : AB = CD signifie que ABDC est un parallélogramme (éventuellement aplati). Muni de l’addition et de la multiplication par un réel, l’ensemble des vecteurs du plan est un espace vectoriel de dimension 2 : tout vecteur s’écrit de façon unique x·i + y·j.",
+      "Le produit scalaire peut se définir géométriquement, u · v = ‖u‖ ‖v‖ cos θ, ou analytiquement en repère orthonormé, u · v = xx′ + yy′.",
+      "## Pourquoi les deux définitions coïncident",
+      "> ‖u + v‖² = ‖u‖² + 2 u · v + ‖v‖²",
+      "@etapes {\"etapes\":[[\"‖u − v‖² = (x − x′)² + (y − y′)²\",\"Norme en coordonnées.\"],[\"= x² + y² + x′² + y′² − 2(xx′ + yy′)\",\"On développe.\"],[\"= ‖u‖² + ‖v‖² − 2(xx′ + yy′)\",\"On reconnaît les normes.\"],[\"Al-Kashi : ‖u − v‖² = ‖u‖² + ‖v‖² − 2‖u‖‖v‖cos θ\",\"Le même côté calculé par la géométrie du triangle.\"],[\"xx′ + yy′ = ‖u‖ ‖v‖ cos θ\",\"On identifie : les deux définitions donnent le même nombre.\"]]} | Suis la démonstration : elle relie le calcul en coordonnées à la trigonométrie du triangle.",
+      "## Propriétés",
+      "- Symétrie : u · v = v · u.\n- Bilinéarité : u · (v + w) = u · v + u · w et (ku) · v = k(u · v).\n- u · u = ‖u‖² ≥ 0, nul seulement pour le vecteur nul.\n- Avec u · v = 0, l’identité ‖u + v‖² = ‖u‖² + ‖v‖² redonne Pythagore.",
+      "@vecteurs {\"u\":[3,0],\"v\":[2,2],\"mode\":\"scalaire\"} | Ici u est horizontal : la projection de v sur u a pour longueur 2, et u · v = 3 × 2 = 6 = ‖u‖ × (longueur de la projection). Déplace v verticalement : le produit ne change pas, car la projection reste la même.",
+      "prof: Tu te demandes peut-être pourquoi on insiste sur le repère orthonormé ? Si les axes ne sont pas perpendiculaires, ou n’ont pas la même unité, Pythagore ne s’applique plus, et ni la norme ni le produit scalaire ne se calculent avec les formules simples.",
+      "## Où ça casse",
+      "- La formule xx′ + yy′ suppose un repère orthonormé ; dans un repère quelconque, elle est fausse.\n- Le produit scalaire est un nombre, pas un vecteur.\n- La norme d’une somme n’est pas la somme des normes : ‖u + v‖ ≤ ‖u‖ + ‖v‖ (inégalité triangulaire), avec égalité seulement si u et v ont même sens.\n- Le vecteur nul est orthogonal à tous les vecteurs, et colinéaire à tous.\n- L’angle entre deux vecteurs n’est défini que s’ils sont non nuls.",
+      "? Que vaut u · u pour u(3 ; −4) ? || 9 + 16 = 25 = ‖u‖², puisque ‖u‖ = 5.",
+      "? Si ‖u‖ = 2, ‖v‖ = 3 et u · v = 3, que vaut ‖u + v‖ ? || ‖u + v‖² = 4 + 2 × 3 + 9 = 19, donc ‖u + v‖ = √19.",
+      "? Pourquoi ‖u + v‖ ≤ ‖u‖ + ‖v‖ ? || Dans un triangle, un côté est plus court que la somme des deux autres : la ligne droite est le plus court chemin.",
+      "prof: Ces outils reviendront partout : en physique (le travail d’une force est un produit scalaire), en statistique (la corrélation est un cosinus entre deux vecteurs de données), et en MVA912 avec les nombres complexes, qui sont des vecteurs du plan qu’on sait multiplier.",
+      "histoire: La formule d’Al-Kashi, qui généralise Pythagore à tous les triangles, porte le nom du savant persan Ghiyath al-Kashi (XVe siècle), qui l’utilisa dans ses calculs astronomiques ; une forme géométrique figurait déjà dans les Éléments d’Euclide."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "A(−1 ; 2), B(5 ; 10). Coordonnées et norme du vecteur AB.",
+      "etapes": [
+        [
+          "AB = (5 − (−1) ; 10 − 2) = (6 ; 8)",
+          "arrivée moins départ, coordonnée par coordonnée"
+        ],
+        [
+          "‖AB‖ = √(6² + 8²) = √100",
+          "la norme vient de Pythagore"
+        ],
+        [
+          "‖AB‖ = 10",
+          "c’est la distance AB"
+        ]
+      ]
+    },
+    {
+      "enonce": "Angle entre u(3 ; 4) et v(5 ; 12).",
+      "etapes": [
+        [
+          "u · v = 3 × 5 + 4 × 12 = 63",
+          "produit scalaire en repère orthonormé"
+        ],
+        [
+          "‖u‖ = 5 et ‖v‖ = 13",
+          "√(9 + 16) et √(25 + 144)"
+        ],
+        [
+          "cos θ = 63/65 ≈ 0,969",
+          "u · v = ‖u‖ ‖v‖ cos θ"
+        ],
+        [
+          "θ ≈ 14,3°",
+          "cos⁻¹ en mode degrés"
+        ]
+      ]
+    },
+    {
+      "enonce": "A(1 ; 1), B(4 ; 2), C(0 ; 4). Le triangle ABC est-il rectangle en A ?",
+      "etapes": [
+        [
+          "AB = (3 ; 1) et AC = (−1 ; 3)",
+          "deux vecteurs partant de A"
+        ],
+        [
+          "AB · AC = 3 × (−1) + 1 × 3 = 0",
+          "produit scalaire en coordonnées"
+        ],
+        [
+          "ABC est rectangle en A",
+          "produit scalaire nul : AB et AC sont orthogonaux"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "AB = (x_A − x_B ; y_A − y_B)",
+      "juste": "AB = (x_B − x_A ; y_B − y_A)",
+      "pourquoi": "Un vecteur va du départ A vers l’arrivée B : arrivée moins départ."
+    },
+    {
+      "faux": "‖(3 ; 4)‖ = 3 + 4 = 7",
+      "juste": "‖(3 ; 4)‖ = √(9 + 16) = 5",
+      "pourquoi": "La norme est une longueur à vol d’oiseau : Pythagore, pas la somme des coordonnées."
+    },
+    {
+      "faux": "‖u + v‖ = ‖u‖ + ‖v‖",
+      "juste": "‖u + v‖ ≤ ‖u‖ + ‖v‖",
+      "pourquoi": "Deux déplacements enchaînés sont rarement alignés : la ligne droite est plus courte."
+    },
+    {
+      "faux": "u · v = (xx′ ; yy′)",
+      "juste": "u · v = xx′ + yy′",
+      "pourquoi": "Le produit scalaire est un nombre : on additionne les deux produits."
+    }
+  ],
+  "retenir": [
+    "AB = (x_B − x_A ; y_B − y_A) : arrivée moins départ.",
+    "‖(x ; y)‖ = √(x² + y²) : la norme, c’est Pythagore.",
+    "Somme : on additionne coordonnée par coordonnée ; colinéaires ⟺ xy′ − x′y = 0.",
+    "u · v = xx′ + yy′ = ‖u‖ ‖v‖ cos θ.",
+    "u · v = 0 ⟺ u et v orthogonaux."
+  ]
+}

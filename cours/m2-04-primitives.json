@@ -1,0 +1,180 @@
+{
+ "id": "m2-primitives",
+ "titre": "Primitives usuelles",
+ "resume": "Une primitive de f est une fonction F dont la dérivée est f : on remonte la dérivation. Il y en a toute une famille, décalées d’une constante.",
+ "objectifs": [
+  "comprendre une primitive comme une dérivation à l’envers, et la vérifier en dérivant",
+  "trouver une primitive d’un polynôme et des fonctions usuelles (eᵏˣ, cos(kx), sin(kx), 1/x)",
+  "choisir la constante pour imposer une condition comme F(0) = 2",
+  "reconnaître les formes composées u′eᵘ, u′/u, u′uⁿ"
+ ],
+ "prerequis": [
+  "m2-derivation"
+ ],
+ "niveaux": {
+  "vulgarisation": [
+   "prof: Bonjour ! Jusqu’ici, tu as appris à dériver : passer d’une fonction à sa pente. Aujourd’hui, on fait le chemin inverse. Le plan : l’image du film rembobiné, puis la famille de courbes, puis le petit tableau qu’il faut connaître. Tu vas voir que tu sais déjà presque tout, puisqu’il suffit de lire le tableau des dérivées à l’envers.",
+   "## Remonter le temps",
+   "analogie: Dériver, c’est passer de la position d’une voiture à sa vitesse. Chercher une primitive, c’est l’inverse : le compteur t’a donné la vitesse à chaque instant, et tu veux retrouver où se trouve la voiture.",
+   "Une **primitive** de f, c’est une fonction F dont la dérivée est f. Par exemple, la dérivée de x² est 2x : donc x² est une primitive de 2x.",
+   "!! Pour vérifier une primitive, on la dérive : on doit retrouver la fonction de départ.",
+   "? Une primitive de 2x ? || x², car (x²)′ = 2x. Mais aussi x² + 5, ou x² − 3…",
+   "## Une famille entière de primitives",
+   "prof: Tu as remarqué ? À la question précédente, il y avait plusieurs réponses. C’est normal, et c’est même le point le plus important du chapitre. Regarde la manipulation.",
+   "@courbe {\"f\":\"x^2/2+c\",\"curseurs\":{\"c\":[-3,3,0.5,0]},\"x\":[-4,4],\"y\":[-4,6],\"tangente\":1} | Fais varier c : la courbe monte ou descend tout entière, mais la pente affichée au point x₀ ne change pas. Toutes ces courbes ont la même dérivée, x : ce sont toutes des primitives de x.",
+   "Décaler toute la courbe vers le haut ou vers le bas ne change aucune pente. Les primitives d’une fonction diffèrent donc d’une constante : on dit qu’une primitive est définie « à une constante près », et on écrit F(x) + C.",
+   "analogie: Si tu connais la vitesse d’une voiture mais pas son point de départ, tu ne peux pas dire où elle est. Il manque une information : la position au départ. C’est exactement la constante C.",
+   "? Si F(x) = x² + C et que l’on veut F(0) = 4, combien vaut C ? || F(0) = 0 + C = C, donc C = 4 : F(x) = x² + 4.",
+   "## Le tableau à l’envers",
+   "Chaque dérivée que tu connais donne une primitive. Comme (x³)′ = 3x², une primitive de 3x² est x³ ; et donc une primitive de x² est x³/3 : on monte la puissance d’un cran, et on divise par la nouvelle puissance.",
+   "ex: primitive de x : x²/2\nprimitive de x² : x³/3\nprimitive de 1 : x\nprimitive de cos x : sin x",
+   "? Une primitive de x³ ? || x⁴/4, car (x⁴/4)′ = 4x³/4 = x³.",
+   "histoire: Newton, vers 1666, appelle « fluxion » la vitesse d’une grandeur et « fluente » la grandeur elle-même : retrouver la fluente à partir de la fluxion, c’est chercher une primitive. Le mot « primitive » vient de Lagrange, qui parle en 1797 de « fonction primitive » et de « fonction dérivée ».",
+   "prof: Bilan : une primitive, c’est une dérivée à l’envers ; il y en a une infinité, décalées d’une constante ; et on vérifie toujours en dérivant. Au niveau Pratique, on construit le tableau complet et la méthode."
+  ],
+  "pratique": [
+   "prof: Place à la méthode. Je te donne le tableau des primitives usuelles, les deux règles pour combiner, puis on s’entraîne à fixer la constante. Retiens ce réflexe : chaque réponse se vérifie en dix secondes en la dérivant.",
+   "## Le tableau des primitives usuelles",
+   "> xⁿ → xⁿ⁺¹/(n + 1)   (n ≠ −1)        1/x → ln|x|",
+   "> eˣ → eˣ        cos x → sin x        sin x → −cos x",
+   "attention: Le piège classique : une primitive de sin x est **−cos x**, avec un signe moins, car (cos x)′ = −sin x.",
+   "## Deux règles : la linéarité",
+   "- Une primitive d’une somme est la somme des primitives : on traite chaque terme séparément.\n- Un coefficient se garde : une primitive de 5f est 5F.",
+   "@etapes {\"etapes\":[[\"f(x) = 6x² − 4x + 5\",\"On cherche une primitive, terme à terme.\"],[\"6x² → 6 × x³/3 = 2x³\",\"Puissance montée de 1, divisée par 3, coefficient gardé.\"],[\"−4x → −4 × x²/2 = −2x²\",\"Même règle avec n = 1.\"],[\"5 → 5x\",\"Une constante a pour primitive « constante × x ».\"],[\"F(x) = 2x³ − 2x² + 5x + C\",\"On assemble, sans oublier la constante.\"],[\"F′(x) = 6x² − 4x + 5\",\"Vérification : on retrouve f.\"]]} | Avance pas à pas. Avant chaque étape, essaie d’écrire toi-même la primitive du terme suivant.",
+   "? Une primitive de 3x² + 4x − 1 ? || x³ + 2x² − x (plus une constante). Vérification : (x³ + 2x² − x)′ = 3x² + 4x − 1.",
+   "## Avec un coefficient à l’intérieur",
+   "> eᵏˣ → eᵏˣ/k        cos(kx) → sin(kx)/k        sin(kx) → −cos(kx)/k",
+   "prof: Pourquoi diviser par k ? Dérive e²ˣ : tu obtiens 2e²ˣ, la règle de la chaîne fait sortir un 2. Pour retomber sur e²ˣ tout seul, il faut compenser ce 2 en divisant : (e²ˣ/2)′ = e²ˣ.",
+   "@courbe {\"f\":[{\"f\":\"exp(k*x)/k\",\"nom\":\"F\"},{\"f\":\"exp(k*x)\",\"nom\":\"f\"}],\"curseurs\":{\"k\":[0.5,3,0.5,2]},\"x\":[-3,2],\"y\":[-1,6],\"tangente\":0.5} | La légende distingue F = eᵏˣ/k et f = eᵏˣ. Déplace x₀ : la pente de F, affichée, est exactement la hauteur de f au même x. Change k : ça reste vrai, grâce à la division par k.",
+   "? Une primitive de cos(3x) ? || sin(3x)/3, car (sin(3x)/3)′ = 3cos(3x)/3 = cos(3x).",
+   "## Fixer la constante",
+   "1. Trouve une primitive G de f.\n2. Écris F(x) = G(x) + C.\n3. Traduis la condition (par exemple F(0) = 2) en une équation d’inconnue C, et résous-la.\n4. Écris F en entier, puis vérifie la condition.",
+   "@etapes {\"etapes\":[[\"f(x) = 6e²ˣ, on veut F(0) = 1\",\"Primitive avec une condition.\"],[\"G(x) = 6 × e²ˣ/2 = 3e²ˣ\",\"Règle eᵏˣ → eᵏˣ/k, coefficient gardé.\"],[\"F(x) = 3e²ˣ + C\",\"Toutes les primitives.\"],[\"F(0) = 3e⁰ + C = 3 + C\",\"On remplace x par 0 ; attention, e⁰ = 1.\"],[\"3 + C = 1, donc C = −2\",\"On résout.\"],[\"F(x) = 3e²ˣ − 2\",\"Vérification : F(0) = 3 − 2 = 1.\"]]} | Suis le calcul, et repère l’étape où l’on se trompe le plus souvent : e⁰ vaut 1, pas 0.",
+   "? Trouve la primitive de 2x + 3 qui vaut 5 en 0. || F(x) = x² + 3x + C et F(0) = C = 5 : F(x) = x² + 3x + 5.",
+   "## Primitive et variations",
+   "Comme F′ = f, le signe de f donne les variations de F : là où f est positive, toutes ses primitives montent ; là où f s’annule en changeant de signe, elles ont un sommet ou un creux.",
+   "prof: Bilan pratique : le tableau, la linéarité, la division par k, et la constante fixée par une condition. Avec ça, tu trouves les primitives de toutes les fonctions de l’UE. Le niveau Expert ajoute les formes composées et les limites de la notion."
+  ],
+  "expert": [
+   "prof: Au niveau Expert, on se demande pourquoi les primitives diffèrent exactement d’une constante, si toute fonction en possède, et comment reconnaître des formes plus cachées.",
+   "## Définition et ensemble des primitives",
+   "F est une primitive de f sur un intervalle I si F est dérivable sur I et F′(x) = f(x) pour tout x de I.",
+   "Si F et G sont deux primitives de f sur un **intervalle** I, alors (G − F)′ = 0 sur I. Une fonction de dérivée nulle sur un intervalle est constante (accroissements finis) : G = F + C. Les primitives de f sur I sont donc exactement les F + C, C réel.",
+   "## Existence : la primitive comme aire",
+   "Toute fonction continue sur un intervalle admet des primitives. La primitive qui s’annule en a est l’aire algébrique sous la courbe de f, de a jusqu’à x :",
+   "> F(x) = ∫ₐˣ f(t) dt        F′ = f        F(a) = 0",
+   "@courbe {\"f\":\"cos(x)\",\"x\":[-1,6.5],\"y\":[-1.5,1.5],\"aire\":[0,1.5]} | Garde la borne a à 0 et fais glisser la borne b : l’aire algébrique affichée vaut sin(b), la primitive de cos qui s’annule en 0. Elle augmente tant que cos est positive, puis diminue quand cos devient négative.",
+   "? Pour b = π/2 ≈ 1,57, quelle aire attends-tu ? Et pour b = π ≈ 3,14 ? || sin(π/2) = 1 ; sin(π) = 0 : de π/2 à π, la partie sous l’axe compense exactement la partie au-dessus.",
+   "prof: Tu vois le lien qui se dessine ? Chercher une primitive et calculer une aire, c’est la même chose. On le verra en détail dans le chapitre sur l’intégrale : c’est le théorème fondamental de l’analyse.",
+   "## Formes composées",
+   "En lisant la règle de la chaîne à l’envers, on obtient des primitives de fonctions composées, où u est une fonction dérivable :",
+   "> u′eᵘ → eᵘ        u′/u → ln|u|        u′uⁿ → uⁿ⁺¹/(n + 1)        u′cos u → sin u",
+   "ex: f(x) = 2x e^(x²) : u = x², u′ = 2x, donc F(x) = e^(x²)\nf(x) = 2x/(x² + 1) : u = x² + 1 > 0, donc F(x) = ln(x² + 1)\nf(x) = 3x²(x³ + 1)⁴ : u = x³ + 1, donc F(x) = (x³ + 1)⁵/5",
+   "? Une primitive de x e^(x²) ? || C’est la moitié de 2x e^(x²) : F(x) = e^(x²)/2.",
+   "## Où ça casse",
+   "- Certaines primitives existent mais ne s’écrivent pas avec les fonctions usuelles : celle de e^(−x²) (la courbe en cloche des probabilités) en est l’exemple célèbre.\n- Pour 1/x, ℝ* n’est pas un intervalle : sur ]−∞ ; 0[ et sur ]0 ; +∞[, les constantes peuvent être différentes.\n- La formule xⁿ⁺¹/(n + 1) ne vaut pas pour n = −1 (division par 0) : c’est justement le cas du logarithme.\n- On ne peut pas « diviser par u′ » quand u′ n’est pas constant : e^(x²) n’a pas pour primitive e^(x²)/(2x).",
+   "? Pourquoi e^(x²)/(2x) n’est-elle pas une primitive de e^(x²) ? || Dérive-la : on obtient e^(x²) − e^(x²)/(2x²), pas e^(x²). Diviser par k ne marche que si k est une constante.",
+   "histoire: En 1835, Joseph Liouville démontre qu’aucune combinaison de fonctions usuelles n’a pour dérivée e^(−x²) : la primitive existe, mais il faut l’inventer. On l’appelle aujourd’hui fonction d’erreur, « erf ».",
+   "prof: Bilan expert : primitives à une constante près sur un intervalle, existence pour toute fonction continue grâce à l’aire, formes composées à reconnaître, et le réflexe de vérification par la dérivée, qui ne t’abandonne jamais."
+  ]
+ },
+ "exemples": [
+  {
+   "enonce": "Primitive de f(x) = 6x² − 4x + 5 qui s’annule en 0.",
+   "etapes": [
+    [
+     "6x² → 2x³",
+     "6 × x³/3"
+    ],
+    [
+     "−4x → −2x²",
+     "−4 × x²/2"
+    ],
+    [
+     "5 → 5x",
+     "une constante a pour primitive 5x"
+    ],
+    [
+     "F(x) = 2x³ − 2x² + 5x + C, et F(0) = C = 0",
+     "la condition fixe la constante"
+    ],
+    [
+     "F′(x) = 6x² − 4x + 5",
+     "vérification : on retrouve f"
+    ]
+   ]
+  },
+  {
+   "enonce": "Primitive de f(x) = 6e²ˣ qui vaut 1 en 0.",
+   "etapes": [
+    [
+     "une primitive de e²ˣ est e²ˣ/2",
+     "règle eᵏˣ → eᵏˣ/k avec k = 2"
+    ],
+    [
+     "F(x) = 3e²ˣ + C",
+     "on garde le coefficient 6 : 6/2 = 3"
+    ],
+    [
+     "F(0) = 3 + C = 1, donc C = −2",
+     "e⁰ = 1"
+    ],
+    [
+     "F(x) = 3e²ˣ − 2",
+     "vérification : (3e²ˣ)′ = 6e²ˣ"
+    ]
+   ]
+  },
+  {
+   "enonce": "Primitive de f(x) = 4 sin(2x).",
+   "etapes": [
+    [
+     "une primitive de sin(2x) est −cos(2x)/2",
+     "sin(kx) → −cos(kx)/k"
+    ],
+    [
+     "F(x) = 4 × (−cos(2x)/2) = −2cos(2x)",
+     "on garde le coefficient 4"
+    ],
+    [
+     "F′(x) = −2 × (−2 sin(2x)) = 4 sin(2x)",
+     "vérification par la dérivée"
+    ]
+   ]
+  }
+ ],
+ "pieges": [
+  {
+   "faux": "Primitive de e²ˣ : e²ˣ",
+   "juste": "e²ˣ/2",
+   "pourquoi": "En dérivant e²ˣ, on obtient 2e²ˣ : il faut diviser par 2 pour compenser."
+  },
+  {
+   "faux": "Primitive de sin x : cos x",
+   "juste": "−cos x",
+   "pourquoi": "(cos x)′ = −sin x, donc il faut le signe moins."
+  },
+  {
+   "faux": "Primitive de x³ : 3x²",
+   "juste": "x⁴/4",
+   "pourquoi": "3x² est la dérivée : pour une primitive, on monte la puissance et on divise."
+  },
+  {
+   "faux": "F(0) = 3e⁰ + C = C",
+   "juste": "F(0) = 3e⁰ + C = 3 + C",
+   "pourquoi": "e⁰ = 1, pas 0."
+  },
+  {
+   "faux": "Oublier la constante quand l’énoncé impose F(0)",
+   "juste": "Écrire G + C puis calculer C",
+   "pourquoi": "C’est la constante qui permet de satisfaire la condition."
+  }
+ ],
+ "retenir": [
+  "Une primitive F de f vérifie F′ = f ; elle se vérifie en dérivant.",
+  "Sur un intervalle, les primitives de f sont les F + C : une condition comme F(0) = 2 fixe C.",
+  "xⁿ → xⁿ⁺¹/(n + 1) (n ≠ −1) ; 1/x → ln|x| ; eᵏˣ → eᵏˣ/k.",
+  "cos(kx) → sin(kx)/k ; sin(kx) → −cos(kx)/k.",
+  "Formes composées : u′eᵘ → eᵘ, u′/u → ln|u|, u′uⁿ → uⁿ⁺¹/(n + 1)."
+ ]
+}

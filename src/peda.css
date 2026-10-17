@@ -1,0 +1,21 @@
+
+/* Pédagogie progressive */
+.lead{font-size:1.02rem;font-weight:500;color:var(--ink);border-left:4px solid var(--t-c);padding:2px 0 2px 12px}
+.why{background:var(--soft);border-radius:12px;padding:12px 14px}
+.cpart ol.stair,.stair{list-style:none;padding:0;margin:0;display:grid;gap:8px;counter-reset:none}
+.stair details{border:1.5px solid var(--line);border-radius:12px;background:var(--surface)}
+.stair summary{display:flex;gap:10px;align-items:center;padding:10px 12px;cursor:pointer;font-weight:700;list-style:none}
+.stair summary::-webkit-details-marker,.hist summary::-webkit-details-marker{display:none}
+.stair .sn{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--t-sq);color:var(--on-sq,#fff);font-size:.85rem}
+.stair details[open] summary{border-bottom:1px solid var(--line)}
+.sbody{padding:10px 12px;display:grid;gap:8px}
+.sbody ul,.sbody ol{margin:0;padding-left:20px;display:grid;gap:5px}
+.sbody table,.ftab table{border-collapse:collapse;width:100%;font-size:.9rem}
+.sbody td,.sbody th{border-bottom:1px solid var(--line);padding:5px 6px;text-align:left;vertical-align:top}
+.sbody th{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+.ftab{overflow-x:auto}
+.hist{border:1.5px dashed var(--line);border-radius:12px}
+.hist summary{padding:10px 12px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.hist summary::after{content:"＋";color:var(--muted)}.hist[open] summary::after{content:"−"}
+.prof{border-left:3px solid var(--t-x);padding-left:12px}
+.deep{border-top:2px solid var(--line);padding-top:12px}

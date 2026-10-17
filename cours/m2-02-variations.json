@@ -1,0 +1,178 @@
+{
+ "id": "m2-variations",
+ "titre": "Étude de variations",
+ "resume": "Le signe de la dérivée dit si la fonction monte ou descend ; là où la dérivée change de signe, la fonction atteint un sommet ou un creux.",
+ "objectifs": [
+  "lire sur une courbe où une fonction croît, décroît, atteint un extremum",
+  "étudier le signe de f ′ et en déduire les variations de f",
+  "dresser un tableau de variations complet, avec les valeurs des extremums",
+  "résoudre un problème d’optimisation (maximum, minimum)"
+ ],
+ "prerequis": [
+  "m2-derivation"
+ ],
+ "niveaux": {
+  "vulgarisation": [
+   "prof: Bonjour ! Aujourd’hui, on apprend à prévoir la forme d’une courbe sans la dessiner. Le plan : d’abord l’image du randonneur, puis le lien entre pente et dérivée, enfin le tableau qui résume tout. Tu verras, la dérivée que tu as appris à calculer va enfin servir à quelque chose de très concret.",
+   "## Le randonneur et la pente",
+   "Imagine que tu marches sur un sentier de montagne, de gauche à droite. À chaque pas, tu sens si ça monte ou si ça descend : c’est la **pente** du chemin sous tes pieds.",
+   "analogie: Pente positive : tu montes. Pente négative : tu descends. Au sommet, juste avant de redescendre, le sol est plat sous tes pieds : la pente est nulle.",
+   "Une fonction, c’est ce sentier : sa courbe monte, descend, passe par des sommets et des creux. Et la pente de la courbe en chaque point, tu la connais déjà : c’est le **nombre dérivé** f ′(x), la pente de la tangente.",
+   "@courbe {\"f\":\"x^2-4x+1\",\"x\":[-1,5],\"y\":[-4,6],\"tangente\":0.5} | Fais glisser x₀ de gauche à droite. Observe le signe de la pente affichée : négative tant que la courbe descend, nulle tout en bas (en x₀ = 2), positive ensuite.",
+   "!! f ′ positive : f monte (elle est croissante). f ′ négative : f descend (elle est décroissante).",
+   "? Si la pente f ′ est positive, puis négative, qu’y a-t-il entre les deux ? || Un sommet : la courbe monte, s’arrête, puis redescend. On l’appelle un maximum local.",
+   "## Sommets et creux",
+   "Un **maximum local**, c’est un sommet : autour de lui, la courbe est plus basse. Un **minimum local**, c’est un creux. Le mot « extremum » désigne l’un ou l’autre.",
+   "prof: Fais bien la différence entre **où** se trouve le sommet (son abscisse x, la position sur le chemin) et **combien** il vaut (son altitude f(x)). Quand on te demande le maximum, on veut l’altitude, et on précise où il est atteint.",
+   "@variations | Déplace le point x sur la courbe du haut : la tangente devient verte quand f ′ > 0 et rouge quand f ′ < 0. En bas, la courbe de f ′ est colorée en vert au-dessus de l’axe, en rouge en dessous. Change p : quand p devient nul ou négatif, les sommets disparaissent.",
+   "? Sur le graphique de la manipulation, avec p = 3, combien vois-tu de sommets et de creux ? || Un sommet (maximum local) à gauche et un creux (minimum local) à droite : la dérivée s’annule deux fois en changeant de signe.",
+   "## Le tableau de variations : la carte du sentier",
+   "Plutôt que de dessiner toute la courbe, on résume le trajet dans un petit tableau à trois lignes : les valeurs de x, le signe de f ′, et des flèches ↗ ou ↘ pour f, avec l’altitude des sommets et des creux.",
+   "ex: x :     −∞        2        +∞\nf ′(x) :      −      0      +\nf :          ↘     −3     ↗",
+   "? Dans ce tableau, f a-t-elle un maximum ou un minimum, et combien vaut-il ? || Un minimum : f descend puis remonte. Il vaut −3 et il est atteint en x = 2.",
+   "histoire: Vers 1636, Pierre de Fermat, magistrat à Toulouse, invente une méthode pour trouver maximums et minimums : près d’un sommet, la valeur de la fonction ne change presque pas. En 1684, Leibniz publie le premier article de calcul différentiel, dont le titre parle justement de « méthode pour les maxima et les minima ».",
+   "prof: Bilan : la dérivée est un détecteur de pente. Son signe donne le sens de variation, ses changements de signe donnent les sommets et les creux. Au niveau Pratique, on transforme ça en une méthode en quatre étapes."
+  ],
+  "pratique": [
+   "prof: On passe aux méthodes. Tu vas apprendre une recette en quatre étapes qui marche pour toutes les fonctions de l’UE. Garde un brouillon : on fait chaque calcul ensemble.",
+   "## La méthode en quatre étapes",
+   "1. Calcule f ′(x), et factorise-la autant que possible.\n2. Résous f ′(x) = 0 : ce sont les « points critiques ».\n3. Étudie le signe de f ′ sur chaque intervalle entre ces points (tableau de signes).\n4. Déduis les variations de f, puis calcule f aux points où f ′ change de signe.",
+   "> f ′ > 0 sur un intervalle ⇒ f croissante      f ′ < 0 ⇒ f décroissante",
+   "## Premier cas : f ′ est affine",
+   "Pour un trinôme f(x) = ax² + bx + c, la dérivée f ′(x) = 2ax + b est affine : elle s’annule une seule fois, en x = −b/(2a), et change de signe.",
+   "@etapes {\"etapes\":[[\"f(x) = x² − 4x + 1\",\"On veut les variations de f sur ℝ.\"],[\"f ′(x) = 2x − 4\",\"On dérive terme à terme.\"],[\"2x − 4 = 0 ⟺ x = 2\",\"Le point critique.\"],[\"x < 2 : f ′(x) < 0 ; x > 2 : f ′(x) > 0\",\"2x − 4 est affine de coefficient 2 > 0 : négative puis positive.\"],[\"f décroît sur ]−∞ ; 2], croît sur [2 ; +∞[\",\"On traduit le signe de f ′.\"],[\"f(2) = 4 − 8 + 1 = −3\",\"Minimum de f, atteint en x = 2.\"]]} | Lance la lecture, ou avance étape par étape. Avant chaque clic, essaie de deviner la ligne suivante.",
+   "? Étudie les variations de f(x) = −x² + 6x. || f ′(x) = −2x + 6, nul en 3 ; positive avant, négative après. f croît sur ]−∞ ; 3], décroît sur [3 ; +∞[ ; maximum f(3) = −9 + 18 = 9.",
+   "## Deuxième cas : f ′ est un trinôme",
+   "Pour une fonction de degré 3, f ′ est un trinôme. On cherche ses racines (factorisation ou discriminant), puis on applique la règle : **signe de a à l’extérieur des racines, signe contraire entre elles**.",
+   "@etapes {\"etapes\":[[\"f(x) = x³ − 3x\",\"Fonction de degré 3.\"],[\"f ′(x) = 3x² − 3 = 3(x − 1)(x + 1)\",\"On dérive, puis on factorise.\"],[\"racines : −1 et 1\",\"f ′(x) = 0 ⟺ x = −1 ou x = 1.\"],[\"signe de f ′ : + | − | +\",\"Coefficient 3 > 0 : positif à l’extérieur des racines, négatif entre.\"],[\"f ↗ puis ↘ puis ↗\",\"On traduit le signe en flèches.\"],[\"f(−1) = 2 (max local) ; f(1) = −2 (min local)\",\"On calcule f aux points critiques.\"]]} | Suis l’étude complète d’une fonction de degré 3 et compare avec la courbe ci-dessous.",
+   "@courbe {\"f\":\"x^3-3x\",\"x\":[-3,3],\"y\":[-4,4],\"derivee\":true,\"tangente\":-2} | La courbe pointillée est f ′. Fais glisser x₀ : quand la courbe de f ′ est au-dessus de l’axe, la tangente à f monte. Repère les deux endroits où f ′ coupe l’axe : ce sont exactement le sommet et le creux de f.",
+   "attention: f ′(x₀) = 0 ne suffit pas pour un extremum. Il faut que f ′ **change de signe** en x₀. Pour f(x) = x³, f ′(0) = 0, mais f ′ reste positive des deux côtés : pas de sommet, juste un palier.",
+   "## Dresser le tableau de variations",
+   "1. Première ligne : les bornes du domaine et les points critiques, dans l’ordre croissant.\n2. Deuxième ligne : le signe de f ′ dans chaque case, et 0 sous les points critiques.\n3. Troisième ligne : une flèche par case, et la valeur de f au bout de chaque flèche (extremums, et bornes quand elles sont finies).",
+   "? Dresse le tableau de variations de f(x) = 2x³ − 6x + 1. || f ′(x) = 6x² − 6 = 6(x − 1)(x + 1). Signe : + puis − puis +. f croît jusqu’à f(−1) = 5, décroît jusqu’à f(1) = −3, puis croît.",
+   "## Optimiser : trouver le meilleur choix",
+   "prof: Voici à quoi sert vraiment tout ça : trouver le meilleur. Le bénéfice maximal, le coût minimal, la boîte la plus grande. La recette : exprimer la grandeur avec une seule variable, dériver, et lire le sommet dans le tableau.",
+   "ex: Enclos rectangulaire de périmètre 20 m, de côté x\naire A(x) = x(10 − x) = 10x − x²\nA′(x) = 10 − 2x, nul en x = 5, positive avant, négative après\naire maximale A(5) = 25 m² : le meilleur enclos est un carré",
+   "? Pour f(x) = x² − 6x + 10 sur [0 ; 5], quel est le minimum ? || f ′(x) = 2x − 6 s’annule en 3 en passant de − à + : minimum f(3) = 1.",
+   "prof: Bilan : dériver, factoriser, signe, flèches, valeurs. Si tu suis ces étapes dans l’ordre, tu ne peux pas te perdre. Les erreurs viennent presque toujours d’une dérivée fausse ou d’un signe mal étudié : vérifie-les deux fois."
+  ],
+  "expert": [
+   "prof: Au niveau Expert, on se demande pourquoi « f ′ ≥ 0 donne f croissante » est vrai, ce que veut dire exactement « extremum », et où les raccourcis cessent de marcher.",
+   "## Le théorème du sens de variation",
+   "Soit f dérivable sur un **intervalle** I. Alors f est croissante sur I si et seulement si f ′(x) ≥ 0 pour tout x de I. Si de plus f ′ > 0 sauf en un nombre fini de points, f est strictement croissante.",
+   "> f ′ ≥ 0 sur I ⟺ f croissante sur I        (I intervalle)",
+   "Le sens « ⇒ » vient du théorème des accroissements finis : pour a < b dans I, il existe c entre a et b tel que f(b) − f(a) = f ′(c)(b − a). Si f ′(c) ≥ 0, alors f(b) ≥ f(a). Le sens « ⇐ » vient du signe des taux d’accroissement d’une fonction croissante, qui passe à la limite.",
+   "histoire: Le théorème des accroissements finis est énoncé par Lagrange en 1797 ; sa version particulière, le théorème de Rolle (f(a) = f(b) entraîne f ′(c) = 0), remonte à Michel Rolle en 1691, pour les polynômes.",
+   "## Extremum local : condition nécessaire, condition suffisante",
+   "f admet un maximum local en x₀ s’il existe un intervalle ouvert autour de x₀ sur lequel f(x) ≤ f(x₀).",
+   "- Condition nécessaire : si f est dérivable en x₀, intérieur à I, et admet un extremum local en x₀, alors f ′(x₀) = 0.\n- Condition suffisante : si f ′ s’annule en x₀ en changeant de signe, f admet un extremum local en x₀ (maximum si f ′ passe de + à −, minimum si elle passe de − à +).",
+   "@courbe {\"f\":\"x^3+a*x\",\"curseurs\":{\"a\":[-3,3,0.5,0]},\"x\":[-2.5,2.5],\"y\":[-4,4],\"derivee\":true,\"tangente\":true} | Avec a = 0, f(x) = x³ : la tangente en 0 est horizontale mais la courbe continue de monter (point d’inflexion). Diminue a : un sommet et un creux apparaissent. Augmente a : plus aucun point où f ′ s’annule.",
+   "? Pourquoi x ↦ x³ n’a-t-elle pas d’extremum en 0 alors que sa dérivée s’y annule ? || f ′(x) = 3x² est positive des deux côtés de 0 : elle ne change pas de signe. f est strictement croissante sur ℝ, et 0 n’est qu’un palier.",
+   "prof: Je te pose la question que les élèves oublient toujours : le sommet que tu as trouvé est-il vraiment le point le plus haut de toute la courbe ? Pas forcément. C’est la différence entre local et global, et elle compte dès qu’on travaille sur un intervalle borné.",
+   "## Local ou global ?",
+   "Un maximum local n’est pas forcément le plus grand de toutes les valeurs. Sur un intervalle fermé [a ; b], f continue atteint un maximum et un minimum **globaux** : on les cherche parmi les points critiques **et** les bornes a et b.",
+   "ex: f(x) = x³ − 3x sur [−2 ; 3]\npoints critiques : f(−1) = 2, f(1) = −2\nbornes : f(−2) = −2, f(3) = 18\nmaximum global 18 (en 3), minimum global −2 (en −2 et en 1)",
+   "? Sur [−2 ; 3], le maximum local f(−1) = 2 est-il le maximum de f ? || Non : f(3) = 18 est plus grand. Le maximum global est atteint à la borne, où f ′ ne s’annule pas.",
+   "## Où ça casse",
+   "- Le théorème exige un **intervalle** : f(x) = −1/x a une dérivée 1/x² > 0 sur ℝ*, mais f(−1) = 1 > f(1) = −1. Elle est croissante sur chaque morceau, pas sur ℝ*.\n- Un extremum peut se trouver là où f n’est pas dérivable : |x| a un minimum en 0, sans tangente.\n- Aux bornes d’un intervalle fermé, l’extremum n’annule pas forcément f ′.\n- f ′(x₀) = 0 sans changement de signe : pas d’extremum (x³ en 0).",
+   "## Le signe de f ″ (pour aller plus loin)",
+   "Si f ′(x₀) = 0 et f ″(x₀) > 0, la courbe est en forme de bol autour de x₀ : minimum local. Si f ″(x₀) < 0 : forme de dôme, maximum local. Si f ″(x₀) = 0, on ne peut pas conclure (x³ et x⁴ en 0).",
+   "? On sait que f ′(1) = 0 et f ″(1) = −2. Que se passe-t-il en 1 ? || La courbe est en dôme autour de 1 (f ″ < 0) : f admet un maximum local en 1.",
+   "prof: Bilan expert : une hypothèse d’intervalle, une condition nécessaire (f ′ = 0) qui n’est pas suffisante, et des extremums qui peuvent se cacher aux bornes ou en des points anguleux. Avec ces trois réflexes, tu es à l’abri des pièges classiques."
+  ]
+ },
+ "exemples": [
+  {
+   "enonce": "Étudier les variations de f(x) = x³ − 3x.",
+   "etapes": [
+    [
+     "f ′(x) = 3x² − 3",
+     "dérivée terme à terme"
+    ],
+    [
+     "3x² − 3 = 3(x − 1)(x + 1), nul en −1 et 1",
+     "on factorise pour trouver les racines"
+    ],
+    [
+     "f ′ > 0 hors de [−1 ; 1], f ′ < 0 entre −1 et 1",
+     "trinôme de coefficient 3 > 0"
+    ],
+    [
+     "f croît, décroît, puis croît",
+     "on traduit le signe de f ′"
+    ],
+    [
+     "f(−1) = 2 (maximum local), f(1) = −2 (minimum local)",
+     "on calcule f aux points critiques"
+    ]
+   ]
+  },
+  {
+   "enonce": "Étudier f(x) = −x² + 6x.",
+   "etapes": [
+    [
+     "f ′(x) = −2x + 6, nul en x = 3",
+     "équation du premier degré"
+    ],
+    [
+     "f ′ > 0 pour x < 3 et f ′ < 0 pour x > 3",
+     "coefficient directeur −2 < 0"
+    ],
+    [
+     "f croît puis décroît ; maximum f(3) = −9 + 18 = 9",
+     "valeur de l’extremum"
+    ]
+   ]
+  },
+  {
+   "enonce": "Avec une plaque carrée de 12 cm de côté, on fabrique une boîte ouverte en découpant un carré de côté x à chaque coin. Quel x donne le volume maximal ?",
+   "etapes": [
+    [
+     "V(x) = x(12 − 2x)², pour 0 < x < 6",
+     "hauteur x, fond carré de côté 12 − 2x"
+    ],
+    [
+     "V′(x) = (12 − 2x)(12 − 6x)",
+     "dérivée d’un produit, puis factorisation"
+    ],
+    [
+     "V′ s’annule en x = 2 sur ]0 ; 6[, en passant de + à −",
+     "12 − 2x > 0 et 12 − 6x change de signe en 2"
+    ],
+    [
+     "V(2) = 2 × 8² = 128 cm³",
+     "volume maximal, atteint pour x = 2 cm"
+    ]
+   ]
+  }
+ ],
+ "pieges": [
+  {
+   "faux": "f ′(2) = 0 donc f a un extremum en 2",
+   "juste": "Vérifier que f ′ change de signe en 2",
+   "pourquoi": "x³ a une dérivée nulle en 0 sans extremum."
+  },
+  {
+   "faux": "f ′(x) = 2x − 4 est négative, donc f décroît partout",
+   "juste": "2x − 4 < 0 seulement pour x < 2",
+   "pourquoi": "Le signe de f ′ dépend de x : il faut l’étudier sur chaque intervalle."
+  },
+  {
+   "faux": "Le maximum est « x = 3 »",
+   "juste": "Le maximum vaut f(3) = 9, atteint en x = 3",
+   "pourquoi": "L’extremum est une valeur de f ; x = 3 dit seulement où il est atteint."
+  },
+  {
+   "faux": "f ′ = 1/x² > 0, donc −1/x est croissante sur ℝ*",
+   "juste": "−1/x est croissante sur ]−∞ ; 0[ et sur ]0 ; +∞[ séparément",
+   "pourquoi": "Le lien entre signe de f ′ et variations ne vaut que sur un intervalle."
+  }
+ ],
+ "retenir": [
+  "Méthode : f ′, racines de f ′, signe de f ′, variations de f, valeurs aux extremums.",
+  "f ′ > 0 sur un intervalle : f croît ; f ′ < 0 : f décroît.",
+  "Extremum local là où f ′ s’annule en changeant de signe ; f ′(x₀) = 0 seul ne suffit pas.",
+  "Trinôme : signe de a à l’extérieur des racines, signe contraire entre elles.",
+  "Sur [a ; b], les extremums globaux se cherchent aux points critiques et aux bornes."
+ ]
+}

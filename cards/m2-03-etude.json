@@ -1,0 +1,31 @@
+{
+  "m2-etude": [
+    {"id": "m2et-01", "q": "Qu’est-ce que le domaine de définition d’une fonction ?", "a": "L’ensemble des x pour lesquels la formule a un sens.", "tag": "definition", "niveau": 1},
+    {"id": "m2et-02", "q": "Quels sont les trois interdits classiques pour le domaine ?", "a": "Diviser par 0, racine d’un négatif, ln d’un nombre négatif ou nul.", "tag": "propriete", "niveau": 1},
+    {"id": "m2et-03", "q": "Domaine de 1/(x − 2) ?", "a": "ℝ \\ {2}", "tag": "valeur", "niveau": 1},
+    {"id": "m2et-04", "q": "Domaine de √(x − 3) ?", "a": "[3 ; +∞[ : la borne 3 est incluse.", "tag": "valeur", "niveau": 1},
+    {"id": "m2et-05", "q": "Domaine de ln(x − 3) ?", "a": "]3 ; +∞[ : la borne 3 est exclue.", "tag": "valeur", "niveau": 1},
+    {"id": "m2et-06", "q": "Qu’est-ce qu’une asymptote ?", "a": "Une droite dont la courbe se rapproche autant qu’on veut.", "tag": "definition", "niveau": 1},
+    {"id": "m2et-07", "q": "Quand la droite x = a est-elle asymptote verticale ?", "a": "Quand f(x) tend vers +∞ ou −∞ lorsque x tend vers a.", "tag": "definition", "niveau": 1},
+    {"id": "m2et-08", "q": "Quand la droite y = ℓ est-elle asymptote horizontale ?", "a": "Quand f(x) tend vers ℓ en +∞ ou en −∞.", "tag": "definition", "niveau": 1},
+    {"id": "m2et-09", "q": "Quelles sont les étapes d’une étude complète ?", "a": "Domaine, limites et asymptotes, dérivée et variations, points particuliers, tracé.", "tag": "methode", "niveau": 1},
+    {"id": "m2et-10", "q": "Asymptotes de (2x + 1)/(x − 1) ?", "a": "x = 1 (verticale) et y = 2 (horizontale).", "tag": "valeur", "niveau": 2},
+    {"id": "m2et-11", "q": "Asymptote horizontale d’une fraction de même degré en haut et en bas ?", "a": "Le quotient des coefficients des termes de plus haut degré.", "tag": "methode", "niveau": 2},
+    {"id": "m2et-12", "q": "Valeur interdite a où le numérateur ne s’annule pas : que conclure ?", "a": "Asymptote verticale x = a.", "tag": "methode", "niveau": 2},
+    {"id": "m2et-13", "q": "Valeur interdite a où le numérateur s’annule aussi : que faire ?", "a": "Factoriser par (x − a), simplifier, chercher la limite : peut-être un trou.", "tag": "methode", "niveau": 2},
+    {"id": "m2et-14", "q": "Qu’est-ce que prolonger f par continuité en a ?", "a": "Poser f(a) = ℓ, la limite finie de f en a.", "tag": "definition", "niveau": 2},
+    {"id": "m2et-15", "q": "Prolongement de (x² − 9)/(x − 3) en 3 ?", "a": "On pose f(3) = 6.", "pourquoi": "f(x) = x + 3 pour x ≠ 3.", "tag": "valeur", "niveau": 2},
+    {"id": "m2et-16", "q": "Limite de 3/(x − 1) quand x tend vers 1 par la droite ?", "a": "+∞ (3 divisé par un petit positif).", "tag": "valeur", "niveau": 2},
+    {"id": "m2et-17", "q": "Vrai ou faux : toute valeur interdite donne une asymptote verticale.", "a": "Faux : (x² − 4)/(x − 2) a un trou en 2.", "tag": "piege", "niveau": 2},
+    {"id": "m2et-18", "q": "f ′ < 0 sur ]−∞ ; 1[ et ]1 ; +∞[ : f décroît-elle sur ℝ \\ {1} ?", "a": "Non : seulement sur chaque intervalle séparément.", "tag": "piege", "niveau": 2},
+    {"id": "m2et-19", "q": "Quand y = mx + p est-elle asymptote oblique en +∞ ?", "a": "Quand f(x) − (mx + p) tend vers 0 en +∞.", "tag": "definition", "niveau": 3},
+    {"id": "m2et-20", "q": "Comment trouver l’asymptote oblique d’une fraction rationnelle ?", "a": "Diviser le numérateur par le dénominateur : f = mx + p + reste.", "tag": "methode", "niveau": 3},
+    {"id": "m2et-21", "q": "Asymptote oblique de x + 2 + 3/(x − 1) ?", "a": "y = x + 2", "tag": "valeur", "niveau": 3},
+    {"id": "m2et-22", "q": "Une fonction dérivable en a est-elle continue en a ?", "a": "Oui, toujours.", "tag": "propriete", "niveau": 3},
+    {"id": "m2et-23", "q": "Une fonction continue en a est-elle dérivable en a ?", "a": "Pas forcément : |x| en 0.", "tag": "piege", "niveau": 3},
+    {"id": "m2et-24", "q": "Pourquoi x/|x| ne se prolonge-t-elle pas en 0 ?", "a": "Limites différentes : −1 à gauche, 1 à droite.", "tag": "piege", "niveau": 3},
+    {"id": "m2et-25", "q": "Une courbe peut-elle croiser son asymptote horizontale ?", "a": "Oui : sin(x)/x croise y = 0 une infinité de fois.", "tag": "piege", "niveau": 3},
+    {"id": "m2et-26", "q": "Que signifie « asymptote » en grec ?", "a": "« Qui ne se rencontrent pas ».", "tag": "histoire", "niveau": 2},
+    {"id": "m2et-27", "q": "Qui a présenté en 1872 une fonction continue dérivable nulle part ?", "a": "Karl Weierstrass.", "tag": "histoire", "niveau": 3}
+  ]
+}

@@ -1,0 +1,38 @@
+/* Rappel de cours et graphe de notions */
+.rtop{flex:1;min-width:0;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rbody{display:grid;gap:14px;align-content:start}
+.rcard{border-radius:18px;padding:18px;background:var(--surface);border:1.5px solid var(--line);display:grid;gap:6px}
+.rkind{font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.rlabel{font-family:var(--f-display);font-size:1.7rem;line-height:1.15;text-wrap:balance}
+.rask{color:var(--muted);font-size:.92rem;line-height:1.45}
+.rform{display:flex;gap:8px}.rform .btn{width:auto;flex:none;min-height:46px;padding:0 16px}
+.rform input{flex:1;min-width:0;font:inherit;font-size:1rem;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.rform input:focus{outline:2px solid var(--t-sq);outline-offset:1px}
+.rchips{display:flex;flex-wrap:wrap;gap:6px}
+.rchip{display:inline-flex;align-items:center;gap:4px;padding:5px 6px 5px 12px;border-radius:999px;background:var(--soft);border:1.5px solid var(--line);font-size:.92rem;max-width:100%;overflow-wrap:anywhere}
+.rchip.plain{padding:3px 10px;font-size:.85rem}
+.rchip button{border:0;background:transparent;color:var(--muted);font-size:1.1rem;line-height:1;width:24px;height:24px;border-radius:50%}
+.rhint{font-size:.85rem;color:var(--muted)}
+.rscore{display:flex;gap:14px;align-items:center;border-radius:16px;padding:14px 16px;background:var(--surface);border:1.5px solid var(--line)}
+.rscore b{font-family:var(--f-display);font-size:2.2rem;font-variant-numeric:tabular-nums}.rscore span{color:var(--muted);font-weight:700}
+.rscore p{font-size:.9rem;color:var(--muted);line-height:1.4}
+.rego{border-radius:16px;background:var(--surface);border:1.5px solid var(--line);padding:6px}
+.rego svg{width:100%;height:auto;display:block}.rnode{cursor:pointer}
+.rdef{font-size:.92rem;line-height:1.45}
+.rsec{display:grid;gap:8px}.rsec h3{font-size:1rem}
+.rlist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.rlist li{border-radius:12px;padding:10px 12px;background:var(--surface);border:1.5px solid var(--line);display:grid;gap:3px;font-size:.92rem;line-height:1.4}
+.rlist li span{color:var(--muted)}.rlist li small{color:var(--muted);font-size:.8rem}
+.rlist li.ok{border-color:var(--good);background:var(--good-bg)}
+.rlist li.ko{padding:0;border-style:dashed}
+.rgo{display:grid;gap:3px;text-align:left;width:100%;padding:10px 12px;border:0;background:transparent;color:var(--ink);font:inherit;font-size:.92rem;line-height:1.4}
+.rgo span{color:var(--muted)}.rgo small{color:var(--t-sq);font-weight:700;font-size:.8rem}
+.gwrap{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;padding:0 16px 12px}
+.gbar{display:flex;gap:6px;align-items:center}
+.gbar select{flex:1;min-width:0;font:inherit;font-size:.9rem;padding:8px 10px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.gbar .iconbtn{font-size:1.2rem;font-weight:700}
+.gsvg{flex:1;min-height:0;border-radius:16px;background:var(--surface);border:1.5px solid var(--line);overflow:hidden;touch-action:none}
+.gsvg svg{width:100%;height:100%;display:block}.gnode{cursor:pointer}
+.gsheet{position:absolute;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1.5px solid var(--line);border-radius:18px 18px 0 0;
+  box-shadow:0 -10px 30px rgba(0,0,0,.14);padding:12px 16px calc(14px + env(safe-area-inset-bottom,0px));display:grid;gap:8px;animation:up .22s ease;max-height:55%;overflow-y:auto}
+.gsheet p{font-size:.92rem;line-height:1.45}

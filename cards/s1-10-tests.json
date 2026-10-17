@@ -1,0 +1,28 @@
+{
+  "s1-tests": [
+    {"id": "s1te-01", "q": "Que contient toujours l’hypothèse H₀ ?", "a": "L’égalité : μ = μ₀ ou p = p₀.", "tag": "definition", "niveau": 1},
+    {"id": "s1te-02", "q": "Que traduit l’hypothèse H₁ ?", "a": "Le soupçon : différent, plus grand ou plus petit.", "tag": "definition", "niveau": 1},
+    {"id": "s1te-03", "q": "Qu’est-ce que l’erreur de 1ʳᵉ espèce ?", "a": "Rejeter H₀ alors qu’elle est vraie ; probabilité α.", "tag": "definition", "niveau": 1},
+    {"id": "s1te-04", "q": "Qu’est-ce que l’erreur de 2ᵉ espèce ?", "a": "Ne pas rejeter H₀ alors qu’elle est fausse ; probabilité β.", "tag": "definition", "niveau": 1},
+    {"id": "s1te-05", "q": "Qu’est-ce que la puissance d’un test ?", "a": "1 − β : probabilité de rejeter H₀ quand elle est fausse.", "tag": "definition", "niveau": 2},
+    {"id": "s1te-06", "q": "À n fixé, diminuer α fait quoi à β ?", "a": "β augmente.", "tag": "propriete", "niveau": 2},
+    {"id": "s1te-07", "q": "Seuil critique d’un test bilatéral à 5 % ?", "a": "1,96 : rejet si |z| > 1,96.", "tag": "valeur", "niveau": 1},
+    {"id": "s1te-08", "q": "Seuil critique d’un test unilatéral à 5 % ?", "a": "1,645.", "tag": "valeur", "niveau": 1},
+    {"id": "s1te-09", "q": "Seuil critique d’un test bilatéral à 1 % ?", "a": "2,576.", "tag": "valeur", "niveau": 2},
+    {"id": "s1te-10", "q": "Statistique d’un test sur une moyenne (σ connu) ?", "a": "z = (x̄ − μ₀)/(σ/√n).", "tag": "formule", "niveau": 1},
+    {"id": "s1te-11", "q": "Statistique d’un test sur une proportion ?", "a": "z = (f − p₀)/√(p₀(1 − p₀)/n).", "tag": "formule", "niveau": 2},
+    {"id": "s1te-12", "q": "Dans le test sur une proportion, l’écart-type utilise f ou p₀ ?", "a": "p₀, la valeur supposée sous H₀.", "tag": "piege", "niveau": 2},
+    {"id": "s1te-13", "q": "Qu’est-ce que la p-valeur ?", "a": "Probabilité sous H₀ d’un écart au moins aussi extrême qu’observé.", "tag": "definition", "niveau": 2},
+    {"id": "s1te-14", "q": "Règle de décision avec la p-valeur ?", "a": "On rejette H₀ si p-valeur < α.", "tag": "methode", "niveau": 1},
+    {"id": "s1te-15", "q": "p-valeur d’un test bilatéral ?", "a": "2(1 − Φ(|z|)).", "tag": "formule", "niveau": 2},
+    {"id": "s1te-16", "q": "H₁ : μ < μ₀. Où est la région critique ?", "a": "À gauche : z < −1,645 à 5 %.", "tag": "methode", "niveau": 2},
+    {"id": "s1te-17", "q": "On ne rejette pas H₀ : que peut-on conclure ?", "a": "Les données sont compatibles avec H₀, sans la prouver.", "tag": "piege", "niveau": 1},
+    {"id": "s1te-18", "q": "Statistique pour comparer deux moyennes (grands échantillons) ?", "a": "(x̄₁ − x̄₂)/√(s₁²/n₁ + s₂²/n₂).", "tag": "formule", "niveau": 3},
+    {"id": "s1te-19", "q": "Que vaut p̂ pour comparer deux proportions ?", "a": "(k₁ + k₂)/(n₁ + n₂).", "tag": "formule", "niveau": 3},
+    {"id": "s1te-20", "q": "Lien entre test bilatéral et intervalle de confiance ?", "a": "On rejette μ = μ₀ si μ₀ est hors de l’IC au niveau 1 − α.", "tag": "propriete", "niveau": 3},
+    {"id": "s1te-21", "q": "Vrai ou faux : z = (x̄ − μ₀)/σ ?", "a": "Faux : on divise par σ/√n.", "tag": "piege", "niveau": 1},
+    {"id": "s1te-22", "q": "Pourquoi fixer α avant de voir les données ?", "a": "Sinon on ajuste la règle au résultat et le risque n’est plus contrôlé.", "tag": "propriete", "niveau": 3},
+    {"id": "s1te-23", "q": "« Significatif » veut-il dire « important » ?", "a": "Non : avec n très grand, un écart minuscule devient significatif.", "tag": "piege", "niveau": 3},
+    {"id": "s1te-24", "q": "Qui a introduit H₁ et les deux risques ?", "a": "Neyman et Pearson, en 1933.", "tag": "histoire", "niveau": 2}
+  ]
+}

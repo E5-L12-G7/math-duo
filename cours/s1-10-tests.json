@@ -1,0 +1,188 @@
+{
+  "id": "s1-tests",
+  "titre": "Tests d’hypothèses",
+  "resume": "Un test d’hypothèse décide, à partir d’un échantillon, si une affirmation sur la population (H₀) est contredite par les données, en contrôlant le risque de se tromper.",
+  "objectifs": [
+    "formuler les hypothèses H₀ et H₁ d’un test bilatéral ou unilatéral",
+    "expliquer les risques de 1ʳᵉ et 2ᵉ espèce et la puissance",
+    "calculer une statistique de test sur une moyenne ou une proportion",
+    "décider avec la région critique ou la p-valeur, et conclure correctement",
+    "comparer deux moyennes ou deux proportions sur de grands échantillons"
+  ],
+  "prerequis": [
+    "s1-estimation",
+    "s1-normale",
+    "s1-echantillonnage"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Après l’estimation, on passe à la décision. Un fabricant affirme quelque chose, tu as un échantillon : faut-il le croire ? Je vais te montrer que la statistique raisonne exactement comme un tribunal.",
+      "## Le procès de l’hypothèse",
+      "Au tribunal, l’accusé est présumé innocent ; on ne le condamne que si les preuves sont accablantes. En statistique, l’hypothèse **H₀** (« rien d’anormal », « la machine est bien réglée ») est présumée vraie ; on ne la rejette que si les données la rendent très invraisemblable.",
+      "analogie: H₀, c’est l’accusé présumé innocent. H₁, c’est l’accusation. L’échantillon, ce sont les preuves. Le seuil α, c’est le « doute raisonnable ».",
+      "## Deux façons de se tromper",
+      "- Condamner un innocent : rejeter H₀ alors qu’elle est vraie. C’est l’erreur de **1ʳᵉ espèce**, de probabilité α (souvent 5 %).\n- Acquitter un coupable : garder H₀ alors qu’elle est fausse. C’est l’erreur de **2ᵉ espèce**, de probabilité β.",
+      "? Un détecteur d’incendie sonne alors qu’il n’y a pas de feu (H₀ : « pas de feu »). Quelle erreur ? || Rejeter H₀ à tort : erreur de 1ʳᵉ espèce (fausse alerte).",
+      "prof: Tu vas me demander : pourquoi ne pas prendre α = 0 ? Parce qu’un juge qui ne condamne jamais ne se trompe jamais sur un innocent… mais laisse filer tous les coupables. Diminuer α augmente β.",
+      "## Quand l’écart est-il « trop grand » ?",
+      "Si une pièce est équilibrée, sur 100 lancers on attend environ 50 piles. 54 piles, c’est banal ; 75 piles, c’est très surprenant. Le test mesure l’écart entre ce qu’on observe et ce que prévoit H₀, en nombre d’écarts-types : c’est la **statistique de test** z.",
+      "@test {\"z\":1.2,\"alpha\":0.05,\"cote\":\"bilateral\"} | Fais glisser z vers la droite. Tant qu’il reste hors de la zone rouge, on ne rejette pas H₀. Note la valeur où la décision bascule : 1,96.",
+      "!! Rejeter H₀, c’est dire : « si H₀ était vraie, ce qu’on observe serait trop rare pour être un hasard ».",
+      "## Ne pas rejeter n’est pas prouver",
+      "Au tribunal, un acquittement ne prouve pas l’innocence : il dit seulement que les preuves manquent. De même, ne pas rejeter H₀ ne démontre pas qu’elle est vraie.",
+      "? Un test ne rejette pas H₀ : « la machine est bien réglée ». Peut-on l’affirmer ? || Non : on peut seulement dire que l’échantillon ne permet pas de conclure qu’elle est déréglée.",
+      "## La p-valeur, en une phrase",
+      "La **p-valeur** est la probabilité, si H₀ est vraie, d’observer un écart au moins aussi grand que celui obtenu. Petite p-valeur = observation surprenante = on rejette H₀.",
+      "@test {\"z\":2.3,\"alpha\":0.05,\"cote\":\"droite\"} | Tu pars de « Unilatéral à droite » : passe en « Bilatéral », la p-valeur double. Règle α et observe : on rejette dès que la p-valeur est sous α.",
+      "? p-valeur = 0,003 avec α = 5 %. Décision ? || 0,003 < 0,05 : on rejette H₀.",
+      "histoire: Ronald Fisher popularise vers 1925 la p-valeur et le seuil de 5 % ; Jerzy Neyman et Egon Pearson ajoutent en 1933 l’hypothèse alternative et les deux risques. Le test moderne mélange leurs deux visions.",
+      "prof: Bilan : on part de H₀, on mesure l’écart, on rejette seulement si c’est trop rare. Au niveau Pratique, on fait les calculs."
+    ],
+    "pratique": [
+      "prof: Voici la recette en cinq temps, toujours la même, que ce soit pour une moyenne ou une proportion. Apprends-la par cœur : c’est elle qui structure toutes les copies d’examen.",
+      "## La démarche d’un test",
+      "1. Poser H₀ (avec l’égalité) et H₁ (≠, > ou < selon l’énoncé).\n2. Choisir le risque α.\n3. Calculer la statistique de test sous H₀.\n4. Déterminer la région critique (ou la p-valeur).\n5. Décider et conclure dans le contexte.",
+      "## Bilatéral ou unilatéral ?",
+      "- « différent », « déréglé », « a changé » : H₁ : μ ≠ μ₀, rejet si |Z| > 1,96 (à 5 %).\n- « plus grand », « augmente », « dépasse » : H₁ : μ > μ₀, rejet si Z > 1,645.\n- « plus petit », « diminue » : H₁ : μ < μ₀, rejet si Z < −1,645.",
+      "@test {\"z\":1.8,\"alpha\":0.05,\"cote\":\"bilateral\"} | Avec z = 1,8 : en bilatéral on ne rejette pas, en unilatéral à droite on rejette. Vérifie-le en changeant le côté.",
+      "## Test sur une moyenne",
+      "> Z = (X̄ − μ₀)/(σ/√n)",
+      "Si σ est inconnu et n ≥ 30, on remplace σ par s.",
+      "@etapes {\"etapes\":[[\"H₀ : μ = 500 ; H₁ : μ ≠ 500\",\"Masse de paquets, déréglage dans un sens ou l’autre.\"],[\"σ = 8, n = 64, x̄ = 502,2\",\"Données.\"],[\"σ/√n = 8/8 = 1\",\"Écart-type de X̄.\"],[\"z = (502,2 − 500)/1 = 2,2\",\"Statistique observée.\"],[\"|z| = 2,2 > 1,96\",\"z est dans la région critique.\"],[\"On rejette H₀ au risque 5 %\",\"La machine semble déréglée.\"]]} | Lance l’animation, puis reprends-la avec x̄ = 501,5 : la conclusion change.",
+      "? H₀ : μ = 20, σ = 4, n = 100, x̄ = 20,6. Statistique ? || σ/√n = 0,4 ; z = 0,6/0,4 = 1,5.",
+      "## Test sur une proportion",
+      "> Z = (F − p₀)/√(p₀(1 − p₀)/n)",
+      "prof: Attention : sous H₀, on connaît p₀, donc l’écart-type se calcule avec p₀, pas avec f. C’est la différence avec l’intervalle de confiance.",
+      "@etapes {\"etapes\":[[\"H₀ : p = 0,1 ; H₁ : p > 0,1\",\"Le client soupçonne plus de défauts.\"],[\"n = 400, k = 52, f = 0,13\",\"Données.\"],[\"√(0,1 × 0,9/400) = 0,015\",\"Écart-type sous H₀.\"],[\"z = (0,13 − 0,1)/0,015 = 2\",\"Statistique observée.\"],[\"2 > 1,645\",\"Région critique unilatérale à droite.\"],[\"On rejette H₀ au risque 5 %\",\"Plus de 10 % de défauts, significativement.\"]]} | Suis le calcul. Avec un test bilatéral, 2 > 1,96 : on rejetterait aussi, mais de justesse.",
+      "## La p-valeur",
+      "- Bilatéral : p = 2(1 − Φ(|z|)).\n- À droite : p = 1 − Φ(z).\n- À gauche : p = Φ(z).\nOn rejette H₀ si p < α.",
+      "? z = 2,2 en bilatéral, Φ(2,2) = 0,9861. p-valeur ? || p = 2 × 0,0139 = 0,0278 < 0,05 : on rejette.",
+      "## Comparer deux échantillons (grands échantillons)",
+      "> Moyennes : Z = (X̄₁ − X̄₂)/√(S₁²/n₁ + S₂²/n₂)",
+      "> Proportions : Z = (F₁ − F₂)/√(p̂(1 − p̂)(1/n₁ + 1/n₂)), avec p̂ = (k₁ + k₂)/(n₁ + n₂)",
+      "@etapes {\"etapes\":[[\"n₁ = 100, x̄₁ = 12,4, s₁ = 3\",\"Groupe 1.\"],[\"n₂ = 80, x̄₂ = 11,2, s₂ = 4\",\"Groupe 2.\"],[\"9/100 + 16/80 = 0,09 + 0,2 = 0,29\",\"Somme des variances des moyennes.\"],[\"√0,29 ≈ 0,539\",\"Écart-type de la différence.\"],[\"z = 1,2/0,539 ≈ 2,23\",\"Statistique observée.\"],[\"|z| > 1,96\",\"Différence significative à 5 %.\"]]} | Remarque qu’on additionne les variances, pas les écarts-types.",
+      "? f₁ = 30/100, f₂ = 20/100. Que vaut p̂ ? || p̂ = 50/200 = 0,25.",
+      "prof: Bilan : H₀ avec l’égalité, statistique sous H₀, bon côté et bon seuil, et une conclusion prudente. Tu as tout."
+    ],
+    "expert": [
+      "prof: Niveau expert : on formalise la décision, on regarde la puissance et on voit pourquoi tests et intervalles de confiance sont les deux faces d’une même pièce.",
+      "## Cadre formel",
+      "Un test est une règle de décision : on rejette H₀ si la statistique T tombe dans la région critique W. Le niveau est α = P_H₀(T ∈ W) ; la puissance est 1 − β = P_H₁(T ∈ W), qui dépend de la vraie valeur du paramètre.",
+      "## Calcul de la puissance",
+      "Test unilatéral H₀ : μ = μ₀ contre μ > μ₀ : on rejette si X̄ > μ₀ + 1,645 σ/√n. Si en réalité μ = μ₁, la puissance vaut 1 − Φ(1,645 − (μ₁ − μ₀)/(σ/√n)).",
+      "@loi-continue {\"loi\":\"normale\",\"mu\":1.5,\"sigma\":1,\"a\":1.645,\"b\":6,\"x\":[-4,6]} | Ici la courbe est la loi de Z sous H₁ (centrée en 1,5). L’aire à droite de 1,645 est la puissance. Déplace μ : plus l’écart réel est grand, plus la puissance l’est.",
+      "? Avec (μ₁ − μ₀)/(σ/√n) = 1,645, que vaut la puissance ? || 1 − Φ(0) = 0,5 : une chance sur deux de détecter l’écart.",
+      "prof: Remarque ce que dit la formule : pour gagner en puissance sans toucher à α, il n’y a qu’un levier, augmenter n. C’est pour cela qu’on calcule la taille d’un échantillon avant une étude.",
+      "## Lien avec l’intervalle de confiance",
+      "Pour un test bilatéral au risque α : on rejette H₀ : μ = μ₀ exactement quand μ₀ n’appartient pas à l’intervalle de confiance au niveau 1 − α. Test et intervalle donnent la même information.",
+      "? IC à 95 % de μ : [101,2 ; 104,8]. Rejette-t-on μ = 100 au risque 5 % ? || Oui : 100 n’est pas dans l’intervalle.",
+      "## Lecture de la p-valeur",
+      "La p-valeur n’est pas la probabilité que H₀ soit vraie : c’est P_H₀(T au moins aussi extrême que t_obs). Sous H₀, elle suit une loi uniforme sur [0 ; 1] : avec α = 5 %, 5 % des tests rejettent à tort.",
+      "@test {\"z\":-2.1,\"alpha\":0.01,\"cote\":\"gauche\"} | À α = 1 %, z = −2,1 ne suffit pas. Monte α à 5 % : la décision change, mais pas la p-valeur. C’est pourquoi on fixe α avant de regarder les données.",
+      "## Où ça casse",
+      "- Petits échantillons, σ inconnu : la statistique suit Student à n − 1 ddl (population normale), pas N(0 ; 1).\n- Choisir le côté du test après avoir vu les données double en fait le risque.\n- Multiplier les tests : sur 20 tests de H₀ vraies au risque 5 %, on s’attend à un rejet à tort.\n- Significatif ne veut pas dire important : avec n énorme, un écart minuscule devient significatif.",
+      "? On fait 40 tests indépendants, tous de H₀ vraies, au risque 5 %. Combien de rejets à tort en moyenne ? || 40 × 0,05 = 2.",
+      "histoire: En 2016, l’Association américaine de statistique publie une déclaration mettant en garde contre l’usage mécanique du seuil p < 0,05 : une p-valeur ne mesure ni la taille d’un effet ni la probabilité qu’une hypothèse soit vraie.",
+      "prof: Tu sais désormais construire, justifier et critiquer un test. Le khi-deux, au chapitre suivant, applique la même logique à des tableaux d’effectifs."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "H₀ : μ = 250, H₁ : μ ≠ 250 ; σ = 5, n = 25, x̄ = 248,1, α = 5 %.",
+      "etapes": [
+        [
+          "σ/√n = 1",
+          "5/5"
+        ],
+        [
+          "z = (248,1 − 250)/1 = −1,9",
+          "statistique observée"
+        ],
+        [
+          "|z| = 1,9 < 1,96",
+          "hors de la région critique"
+        ],
+        [
+          "On ne rejette pas H₀",
+          "écart compatible avec le hasard"
+        ]
+      ]
+    },
+    {
+      "enonce": "Une pièce : 60 piles sur 100 lancers. Est-elle truquée (α = 5 %) ?",
+      "etapes": [
+        [
+          "H₀ : p = 0,5 ; H₁ : p ≠ 0,5",
+          "aucun sens privilégié"
+        ],
+        [
+          "√(0,5 × 0,5/100) = 0,05",
+          "écart-type sous H₀"
+        ],
+        [
+          "z = (0,6 − 0,5)/0,05 = 2",
+          "statistique"
+        ],
+        [
+          "|z| = 2 > 1,96 : on rejette H₀",
+          "pièce probablement truquée, risque 5 %"
+        ]
+      ]
+    },
+    {
+      "enonce": "Deux usines : 30 défauts sur 300 et 45 sur 300. Différence significative à 5 % ?",
+      "etapes": [
+        [
+          "f₁ = 0,1 ; f₂ = 0,15 ; p̂ = 75/600 = 0,125",
+          "proportion commune sous H₀"
+        ],
+        [
+          "√(0,125 × 0,875 × (2/300)) ≈ 0,027",
+          "écart-type de F₁ − F₂"
+        ],
+        [
+          "z ≈ −0,05/0,027 ≈ −1,85",
+          "statistique"
+        ],
+        [
+          "|z| < 1,96 : on ne rejette pas H₀",
+          "différence non significative"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "On ne rejette pas H₀, donc H₀ est vraie.",
+      "juste": "On ne rejette pas H₀ : les données sont compatibles avec elle.",
+      "pourquoi": "L’absence de preuve n’est pas la preuve de l’absence ; β peut être grand."
+    },
+    {
+      "faux": "z = (x̄ − μ₀)/σ",
+      "juste": "z = (x̄ − μ₀)/(σ/√n)",
+      "pourquoi": "On compare à l’écart-type de la moyenne, pas d’un individu."
+    },
+    {
+      "faux": "Test unilatéral à 5 % : seuil 1,96",
+      "juste": "Seuil 1,645",
+      "pourquoi": "En unilatéral, tout le risque α est d’un seul côté."
+    },
+    {
+      "faux": "H₁ : μ > μ₀ ; on rejette si z < −1,645",
+      "juste": "On rejette si z > 1,645",
+      "pourquoi": "La région critique est du côté de H₁."
+    },
+    {
+      "faux": "p-valeur = 0,03 : H₀ a 3 % de chances d’être vraie",
+      "juste": "Si H₀ est vraie, un écart au moins aussi grand arrive 3 fois sur 100",
+      "pourquoi": "La p-valeur se calcule en supposant H₀ vraie."
+    }
+  ],
+  "retenir": [
+    "H₀ contient l’égalité ; H₁ traduit le soupçon (≠, > ou <).",
+    "α = P(rejeter H₀ à tort) ; β = P(garder H₀ à tort) ; puissance = 1 − β.",
+    "Moyenne : z = (x̄ − μ₀)/(σ/√n) ; proportion : z = (f − p₀)/√(p₀(1 − p₀)/n).",
+    "À 5 % : |z| > 1,96 en bilatéral, z > 1,645 (ou z < −1,645) en unilatéral ; ou p-valeur < α.",
+    "Ne pas rejeter H₀ ne prouve pas H₀."
+  ]
+}

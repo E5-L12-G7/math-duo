@@ -1,0 +1,175 @@
+{
+  "id": "m1-triangle",
+  "titre": "Géométrie du triangle : Pythagore, Thalès, trigonométrie",
+  "resume": "Dans un triangle rectangle, les trois côtés sont liés par Pythagore, et un angle aigu est lié aux côtés par le cosinus, le sinus et la tangente. Deux triangles de même forme ont des côtés proportionnels : c’est Thalès.",
+  "objectifs": [
+    "repérer l’hypoténuse, le côté opposé et le côté adjacent à un angle",
+    "calculer une longueur avec le théorème de Pythagore et prouver qu’un triangle est rectangle avec sa réciproque",
+    "calculer une longueur ou un angle avec cos, sin et tan",
+    "calculer une longueur avec le théorème de Thalès et les triangles semblables"
+  ],
+  "prerequis": [
+    "m1-fractions",
+    "m1-trigo"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bienvenue ! Cette unité, c’est la géométrie la plus utile du quotidien : mesurer une hauteur sans y grimper, vérifier qu’un mur est d’équerre, agrandir un plan. Trois outils suffisent : Pythagore, la trigonométrie et Thalès. On commence par les voir, sans formules.",
+      "## Le triangle rectangle et son grand côté",
+      "Un triangle rectangle a un angle droit, comme le coin d’une feuille. Le côté qui fait face à cet angle droit est toujours le plus long : on l’appelle l’**hypoténuse**. Les deux autres côtés forment l’angle droit.",
+      "analogie: Une échelle de 5 m posée contre un mur, le pied à 3 m du mur : elle touche le mur à 4 m de haut. L’échelle est l’hypoténuse ; le sol et le mur forment l’angle droit.",
+      "## Pythagore : des carrés qui s’ajoutent",
+      "Construis un carré sur chaque côté du triangle rectangle. Surprise : l’aire du grand carré (sur l’hypoténuse) est exactement la somme des aires des deux petits. Pour l’échelle : 9 + 16 = 25.",
+      "@triangle {\"mode\":\"pythagore\"} | Change les deux côtés de l’angle droit avec les curseurs. Vérifie à chaque fois que les aires des deux petits carrés s’additionnent pour donner celle du grand. Essaie 3 et 4 : l’hypoténuse vaut exactement 5.",
+      "!! Dans un triangle rectangle : (hypoténuse)² = (côté 1)² + (côté 2)².",
+      "? Un triangle rectangle a des côtés de l’angle droit de 6 et 8. Combien mesure l’hypoténuse ? || 6² + 8² = 36 + 64 = 100, et le nombre dont le carré vaut 100 est 10.",
+      "## Un angle, un côté : la trigonométrie",
+      "Si tu connais un angle aigu et un côté d’un triangle rectangle, tu peux retrouver les autres côtés. Par rapport à cet angle, il y a le côté **opposé** (en face), le côté **adjacent** (qui le touche, sans être l’hypoténuse) et l’hypoténuse. Le cosinus, le sinus et la tangente sont simplement des rapports entre ces côtés.",
+      "@triangle {\"mode\":\"trigo\"} | Garde l’angle fixe et change la longueur du côté adjacent : le triangle grandit, mais les trois rapports restent identiques. Ils ne dépendent que de l’angle : c’est pour cela qu’on peut les tabuler.",
+      "prof: Retiens ce mot magique : CAH SOH TOA. Cosinus = Adjacent / Hypoténuse, Sinus = Opposé / Hypoténuse, Tangente = Opposé / Adjacent. Je te promets qu’il te sauvera plus d’une fois.",
+      "## Thalès : agrandir sans déformer",
+      "Une photo agrandie garde ses angles et multiplie toutes ses longueurs par le même nombre. Dans un triangle, si on trace une droite parallèle à un côté, on découpe un petit triangle qui est une réduction exacte du grand.",
+      "@triangle {\"mode\":\"thales\"} | Fais glisser la parallèle (MN). Le rapport affiché est le même pour les trois côtés : le petit triangle AMN est le grand ABC en modèle réduit.",
+      "? Sur une photo, un arbre de 12 m mesure 4 cm, et une maison 3 cm. Quelle est la hauteur de la maison ? || L’échelle est 12 m pour 4 cm, soit 3 m par centimètre : la maison mesure 3 × 3 = 9 m.",
+      "? Un mur et le sol forment-ils un angle droit si les côtés d’un triangle tracé dessus mesurent 60 cm, 80 cm et 1 m ? || Oui : 60² + 80² = 3 600 + 6 400 = 10 000 = 100². Les maçons utilisent cette astuce (la corde à 13 nœuds, tendue en triangle de côtés 3, 4 et 5).",
+      "prof: Tu as maintenant les trois idées : des carrés qui s’ajoutent, des rapports qui ne dépendent que de l’angle, des triangles qui s’agrandissent sans se déformer. Au niveau pratique, on en fait des méthodes de calcul.",
+      "histoire: Le résultat qui porte le nom de Pythagore (VIe siècle avant notre ère) était déjà connu des scribes babyloniens : la tablette Plimpton 322, vieille de près de 4 000 ans, contient des triplets comme 119, 120 et 169 (119² + 120² = 169²). On raconte que Thalès mesura la hauteur de la grande pyramide en comparant son ombre à celle d’un bâton."
+    ],
+    "pratique": [
+      "prof: On passe aux méthodes. Pour chaque outil, je te donne une recette, on l’applique ensemble, puis c’est à toi. Fais toujours un schéma à main levée et code l’angle droit : la moitié du travail est là.",
+      "## Pythagore : calculer un côté",
+      "> Triangle ABC rectangle en A :  BC² = AB² + AC²",
+      "1. Repère l’angle droit ; l’hypoténuse est le côté en face.\n2. Écris l’égalité de Pythagore, l’hypoténuse seule d’un côté.\n3. Remplace par les valeurs connues et isole le carré cherché (on additionne pour l’hypoténuse, on soustrait pour un autre côté).\n4. Prends la racine carrée.",
+      "@etapes {\"etapes\":[[\"ABC rectangle en A, BC = 13, AB = 5\",\"On cherche AC. L’hypoténuse est BC (en face de l’angle droit).\"],[\"BC² = AB² + AC²\",\"Égalité de Pythagore.\"],[\"13² = 5² + AC²\",\"On remplace par les valeurs.\"],[\"AC² = 169 − 25 = 144\",\"On isole AC² en soustrayant.\"],[\"AC = √144 = 12\",\"Une longueur est positive.\"]]} | Suis la méthode. Avant chaque étape, demande-toi ce qu’on va faire.",
+      "? Triangle rectangle en B, AB = 7 et BC = 24. Combien mesure AC ? || AC est l’hypoténuse : AC² = 49 + 576 = 625, donc AC = 25.",
+      "## La réciproque : prouver un angle droit",
+      "1. Repère le plus grand côté.\n2. Calcule son carré, puis la somme des carrés des deux autres.\n3. S’ils sont égaux, le triangle est rectangle, et l’angle droit est en face du plus grand côté. Sinon, il ne l’est pas.",
+      "ex: EF = 9, FG = 12, EG = 15\nEG² = 225 et EF² + FG² = 81 + 144 = 225\nÉgalité : EFG est rectangle en F",
+      "## Trigonométrie : calculer une longueur",
+      "> sin α = opposé / hypoténuse    cos α = adjacent / hypoténuse    tan α = opposé / adjacent",
+      "1. Par rapport à l’angle connu, nomme le côté connu et le côté cherché (opposé, adjacent, hypoténuse).\n2. Choisis le rapport qui contient ces deux côtés (CAH SOH TOA).\n3. Écris l’égalité et isole l’inconnue : si elle est en haut, on multiplie ; si elle est en bas, on divise.\n4. Calcule, calculatrice en mode degrés.",
+      "@etapes {\"etapes\":[[\"Rampe de 6 m, angle de 8° avec le sol\",\"On cherche la hauteur atteinte.\"],[\"hauteur = côté opposé, rampe = hypoténuse\",\"On nomme les côtés par rapport à l’angle de 8°.\"],[\"sin 8° = hauteur / 6\",\"Opposé et hypoténuse : SOH, le sinus.\"],[\"hauteur = 6 × sin 8°\",\"L’inconnue est au numérateur : on multiplie.\"],[\"hauteur ≈ 0,84 m\",\"Calculatrice en mode degrés.\"]]} | Regarde comment le choix du rapport découle du nom des côtés.",
+      "## Trigonométrie : calculer un angle",
+      "Si tu connais deux côtés, écris le rapport qui les relie, puis utilise la touche réciproque : cos⁻¹ (arccos), sin⁻¹ (arcsin) ou tan⁻¹ (arctan).",
+      "ex: côté opposé 5, côté adjacent 12\ntan α = 5/12\nα = tan⁻¹(5/12) ≈ 22,6°",
+      "? Un triangle rectangle a une hypoténuse de 10 et un angle de 30°. Que vaut le côté opposé à cet angle ? || sin 30° = opposé / 10, donc opposé = 10 × sin 30° = 10 × 0,5 = 5.",
+      "prof: L’erreur que je vois le plus : diviser au lieu de multiplier. Écris toujours l’égalité complète, par exemple cos α = AB / AC, avant d’isoler. Si l’inconnue est au dénominateur, fais un produit en croix : AC = AB ÷ cos α.",
+      "## Thalès : calculer une longueur",
+      "1. Vérifie les hypothèses : M sur [AB], N sur [AC] et (MN) parallèle à (BC).\n2. Écris les trois rapports égaux, petit triangle sur grand triangle.\n3. Garde les deux rapports qui contiennent une donnée connue et l’inconnue, puis fais un produit en croix.",
+      "> AM/AB = AN/AC = MN/BC",
+      "@etapes {\"etapes\":[[\"AB = 8, AC = 6, BC = 10, AM = 2, (MN) ∥ (BC)\",\"M est sur [AB], N sur [AC] : Thalès s’applique.\"],[\"AM/AB = AN/AC = MN/BC\",\"Petit triangle AMN sur grand triangle ABC.\"],[\"AM/AB = 2/8 = 1/4\",\"Le rapport de réduction.\"],[\"AN = 6 × 1/4 = 1,5\",\"Même rapport sur le côté [AC].\"],[\"MN = 10 × 1/4 = 2,5\",\"Même rapport sur le troisième côté.\"]]} | Remarque que tout repose sur un seul nombre, le rapport de réduction 1/4.",
+      "? AM = 2, AB = 6, BC = 9 et (MN) ∥ (BC). Combien vaut MN ? || Le rapport est 2/6 = 1/3, donc MN = 9 × 1/3 = 3.",
+      "attention: Dans Thalès, on compare AM à AB (le côté entier), jamais AM à MB. Si l’énoncé donne MB, calcule d’abord AB = AM + MB.",
+      "prof: Bilan pratique : Pythagore quand on a deux côtés d’un triangle rectangle, la trigonométrie quand un angle entre en jeu, Thalès quand il y a deux droites parallèles. Choisir le bon outil, c’est déjà résoudre la moitié du problème."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on précise les énoncés exacts, on voit pourquoi ils sont vrais, et surtout quand ils ne s’appliquent pas. C’est là que se cachent les pièges d’examen.",
+      "## Énoncés précis",
+      "Théorème de Pythagore et sa réciproque : un triangle ABC est rectangle en A si et seulement si BC² = AB² + AC². Le sens direct calcule une longueur ; la réciproque prouve un angle droit ; la contraposée prouve qu’un triangle n’est pas rectangle.",
+      "Deux triangles sont semblables s’ils ont les mêmes angles ; leurs côtés sont alors proportionnels, et réciproquement. Thalès est le cas particulier où les deux triangles partagent un sommet et ont des côtés parallèles.",
+      "## Pourquoi cos, sin et tan ne dépendent que de l’angle",
+      "Deux triangles rectangles qui ont un même angle aigu α ont leurs trois angles égaux (α, 90° et 90° − α) : ils sont semblables. Leurs côtés sont proportionnels, donc les rapports opposé/hypoténuse, adjacent/hypoténuse et opposé/adjacent sont les mêmes. Avec une hypoténuse de 1, on retrouve le cercle trigonométrique.",
+      "> cos²α + sin²α = 1    (Pythagore dans le triangle d’hypoténuse 1)",
+      "> tan α = sin α / cos α    sin(90° − α) = cos α",
+      "@etapes {\"etapes\":[[\"cos²α + sin²α\",\"On veut prouver que cette somme vaut 1.\"],[\"= (adj/hyp)² + (opp/hyp)²\",\"Définitions dans le triangle rectangle.\"],[\"= (adj² + opp²)/hyp²\",\"Même dénominateur.\"],[\"= hyp²/hyp² = 1\",\"Pythagore : adj² + opp² = hyp².\"]]} | Une démonstration en quatre lignes : la relation fondamentale de la trigonométrie, c’est Pythagore.",
+      "## Une preuve de Pythagore par les aires",
+      "Dans un carré de côté a + b, place quatre copies du triangle rectangle (côtés a, b, c) autour d’un carré central de côté c. L’aire totale vaut (a + b)² = 4 × ab/2 + c², d’où a² + 2ab + b² = 2ab + c², donc a² + b² = c².",
+      "@triangle {\"mode\":\"pythagore\"} | Prends a = b : le triangle est isocèle rectangle et l’hypoténuse vaut a√2. Vérifie avec a = b = 3 : c² = 18 et c ≈ 4,243.",
+      "prof: Attention au piège logique : le théorème de Pythagore sert à calculer, sa réciproque sert à prouver un angle droit, et sa contraposée sert à prouver qu’il n’y en a pas. Avant d’écrire, demande-toi toujours lequel des trois tu utilises.",
+      "## Où ça casse",
+      "- Pythagore ne vaut que dans un triangle rectangle, et le carré isolé est toujours celui de l’hypoténuse.\n- Les rapports opposé/adjacent… n’ont de sens que pour un angle aigu d’un triangle rectangle ; au-delà, on passe au cercle trigonométrique.\n- Thalès exige le parallélisme : sans lui, AM/AB et AN/AC n’ont aucune raison d’être égaux.\n- Une égalité approchée (avec des longueurs arrondies) ne prouve pas qu’un triangle est rectangle.\n- Calculatrice en radians au lieu de degrés : résultat faux, sans message d’erreur.",
+      "? Pourquoi un cosinus d’angle aigu est-il toujours strictement compris entre 0 et 1 ? || Le côté adjacent est strictement plus court que l’hypoténuse, qui est le plus grand côté.",
+      "? Les longueurs 5, 7 et 9 forment-elles un triangle rectangle ? || 9² = 81 mais 5² + 7² = 74 : pas d’égalité, donc d’après la contraposée de Pythagore, le triangle n’est pas rectangle.",
+      "? Si l’on agrandit un triangle d’un facteur 3, comment varie son aire ? || Elle est multipliée par 3² = 9 : les longueurs sont multipliées par 3, les aires par le carré du rapport.",
+      "prof: Ces résultats préparent la suite : la norme d’un vecteur, c’est Pythagore ; le produit scalaire, c’est la trigonométrie (u · v = ‖u‖ ‖v‖ cos θ) ; et la formule d’Al-Kashi généralise Pythagore à tous les triangles.",
+      "histoire: La première démonstration écrite connue du théorème de Pythagore se trouve dans les Éléments d’Euclide (vers 300 avant notre ère). On en connaît aujourd’hui plusieurs centaines, dont une due au président américain James Garfield en 1876."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Triangle rectangle en A : BC = 13 et AB = 5. Calculer AC.",
+      "etapes": [
+        [
+          "BC² = AB² + AC²",
+          "Pythagore, BC est l’hypoténuse"
+        ],
+        [
+          "AC² = 13² − 5² = 169 − 25 = 144",
+          "on isole le carré cherché"
+        ],
+        [
+          "AC = √144 = 12",
+          "une longueur est positive"
+        ]
+      ]
+    },
+    {
+      "enonce": "Une rampe de 6 m fait un angle de 8° avec le sol. À quelle hauteur monte-t-elle ?",
+      "etapes": [
+        [
+          "La rampe est l’hypoténuse, la hauteur le côté opposé",
+          "on nomme les côtés par rapport à l’angle de 8°"
+        ],
+        [
+          "sin 8° = hauteur / 6",
+          "sinus = opposé / hypoténuse"
+        ],
+        [
+          "hauteur = 6 × sin 8° ≈ 0,84 m",
+          "calculatrice en degrés"
+        ]
+      ]
+    },
+    {
+      "enonce": "Dans ABC, AB = 8, AC = 6, BC = 10 ; M sur [AB] avec AM = 2 et (MN) ∥ (BC). Calculer AN et MN.",
+      "etapes": [
+        [
+          "AM/AB = AN/AC = MN/BC",
+          "Thalès : M ∈ [AB], N ∈ [AC], (MN) ∥ (BC)"
+        ],
+        [
+          "AM/AB = 2/8 = 1/4",
+          "le rapport de réduction"
+        ],
+        [
+          "AN = 6 × 1/4 = 1,5 et MN = 10 × 1/4 = 2,5",
+          "même rapport sur chaque côté"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "AC² = AB² + BC² quand l’angle droit est en A",
+      "juste": "BC² = AB² + AC²",
+      "pourquoi": "Le carré isolé est toujours celui de l’hypoténuse, le côté opposé à l’angle droit."
+    },
+    {
+      "faux": "sin α = adjacent / hypoténuse",
+      "juste": "sin α = opposé / hypoténuse",
+      "pourquoi": "Le sinus utilise le côté opposé ; c’est le cosinus qui utilise l’adjacent (CAH SOH TOA)."
+    },
+    {
+      "faux": "AM/MB = MN/BC",
+      "juste": "AM/AB = MN/BC",
+      "pourquoi": "On compare le petit triangle AMN au grand triangle ABC : le côté entier AB, pas le morceau MB."
+    },
+    {
+      "faux": "AM/AB = AN/AC sans côtés parallèles",
+      "juste": "Thalès exige (MN) ∥ (BC)",
+      "pourquoi": "Sans parallélisme, les triangles ne sont pas semblables et les rapports diffèrent."
+    },
+    {
+      "faux": "cos α = 0,8 donc α = cos⁻¹(0,8) ≈ 0,64",
+      "juste": "α ≈ 36,9°",
+      "pourquoi": "0,64 est la mesure en radians : la calculatrice n’était pas en mode degrés."
+    }
+  ],
+  "retenir": [
+    "Pythagore : hypoténuse² = somme des carrés des deux autres côtés ; la réciproque prouve un angle droit.",
+    "CAH SOH TOA : cos = adjacent/hypoténuse, sin = opposé/hypoténuse, tan = opposé/adjacent.",
+    "Inconnue au numérateur : on multiplie ; au dénominateur : on divise.",
+    "Thalès : avec (MN) ∥ (BC), AM/AB = AN/AC = MN/BC.",
+    "Triangles semblables : mêmes angles, côtés proportionnels."
+  ]
+}

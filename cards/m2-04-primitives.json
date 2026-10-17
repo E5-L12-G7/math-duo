@@ -1,0 +1,32 @@
+{
+  "m2-primitives": [
+    {"id": "m2pr-01", "q": "Qu’est-ce qu’une primitive de f ?", "a": "Une fonction F telle que F′ = f.", "tag": "definition", "niveau": 1},
+    {"id": "m2pr-02", "q": "Comment vérifier qu’une fonction est une primitive de f ?", "a": "On la dérive : on doit retrouver f.", "tag": "methode", "niveau": 1},
+    {"id": "m2pr-03", "q": "Pourquoi une primitive n’est-elle définie qu’à une constante près ?", "a": "La dérivée d’une constante est nulle : F et F + C ont la même dérivée.", "tag": "propriete", "niveau": 1},
+    {"id": "m2pr-04", "q": "Une primitive de 2x ?", "a": "x² (ou x² + C).", "tag": "valeur", "niveau": 1},
+    {"id": "m2pr-05", "q": "Une primitive de xⁿ (n ≠ −1) ?", "a": "xⁿ⁺¹/(n + 1)", "tag": "formule", "niveau": 1},
+    {"id": "m2pr-06", "q": "Une primitive d’une constante k ?", "a": "kx", "tag": "formule", "niveau": 1},
+    {"id": "m2pr-07", "q": "Une primitive de x³ ?", "a": "x⁴/4", "tag": "valeur", "niveau": 1},
+    {"id": "m2pr-08", "q": "Une primitive de eˣ ?", "a": "eˣ", "tag": "formule", "niveau": 1},
+    {"id": "m2pr-09", "q": "Une primitive de cos x ?", "a": "sin x", "tag": "formule", "niveau": 1},
+    {"id": "m2pr-10", "q": "Une primitive de sin x ?", "a": "−cos x", "pourquoi": "(cos x)′ = −sin x.", "tag": "formule", "niveau": 1},
+    {"id": "m2pr-11", "q": "Une primitive de 1/x sur ]0 ; +∞[ ?", "a": "ln x", "tag": "formule", "niveau": 1},
+    {"id": "m2pr-12", "q": "Une primitive de eᵏˣ (k ≠ 0) ?", "a": "eᵏˣ/k", "tag": "formule", "niveau": 2},
+    {"id": "m2pr-13", "q": "Une primitive de cos(kx) ?", "a": "sin(kx)/k", "tag": "formule", "niveau": 2},
+    {"id": "m2pr-14", "q": "Une primitive de sin(kx) ?", "a": "−cos(kx)/k", "tag": "formule", "niveau": 2},
+    {"id": "m2pr-15", "q": "Pourquoi divise-t-on par k pour une primitive de eᵏˣ ?", "a": "Dériver eᵏˣ fait sortir un facteur k qu’il faut compenser.", "tag": "propriete", "niveau": 2},
+    {"id": "m2pr-16", "q": "Vrai ou faux : une primitive de e²ˣ est e²ˣ.", "a": "Faux : c’est e²ˣ/2.", "tag": "piege", "niveau": 2},
+    {"id": "m2pr-17", "q": "Comment trouver la primitive qui vérifie F(0) = 2 ?", "a": "Écrire G + C, calculer F(0), résoudre en C.", "tag": "methode", "niveau": 2},
+    {"id": "m2pr-18", "q": "Primitive de 6e²ˣ qui vaut 1 en 0 ?", "a": "3e²ˣ − 2", "pourquoi": "F(0) = 3 + C = 1.", "tag": "valeur", "niveau": 2},
+    {"id": "m2pr-19", "q": "f > 0 sur un intervalle : que font ses primitives ?", "a": "Elles sont croissantes, car F′ = f > 0.", "tag": "propriete", "niveau": 2},
+    {"id": "m2pr-20", "q": "Sur la courbe de F, comment lire f(x₀) ?", "a": "C’est la pente de la tangente à F en x₀.", "tag": "methode", "niveau": 2},
+    {"id": "m2pr-21", "q": "Sur un intervalle, que sont toutes les primitives de f ?", "a": "Les fonctions F + C, C réel, avec F une primitive.", "tag": "propriete", "niveau": 3},
+    {"id": "m2pr-22", "q": "Quelle primitive de f s’annule en a ?", "a": "F(x) = ∫ₐˣ f(t) dt", "tag": "formule", "niveau": 3},
+    {"id": "m2pr-23", "q": "Une primitive de u′eᵘ ?", "a": "eᵘ", "tag": "formule", "niveau": 3},
+    {"id": "m2pr-24", "q": "Une primitive de u′/u (u > 0) ?", "a": "ln u", "tag": "formule", "niveau": 3},
+    {"id": "m2pr-25", "q": "Une primitive de u′uⁿ (n ≠ −1) ?", "a": "uⁿ⁺¹/(n + 1)", "tag": "formule", "niveau": 3},
+    {"id": "m2pr-26", "q": "Une primitive de 2x e^(x²) ?", "a": "e^(x²)", "tag": "valeur", "niveau": 3},
+    {"id": "m2pr-27", "q": "La primitive de e^(−x²) s’écrit-elle avec les fonctions usuelles ?", "a": "Non (Liouville) : elle existe mais s’exprime avec la fonction erf.", "tag": "piege", "niveau": 3},
+    {"id": "m2pr-28", "q": "Qui a introduit le mot « fonction primitive » ?", "a": "Lagrange, en 1797.", "tag": "histoire", "niveau": 2}
+  ]
+}

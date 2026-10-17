@@ -1,0 +1,28 @@
+{
+  "s1-regression": [
+    {"id": "s1rg-01", "q": "Qu’est-ce qu’un nuage de points ?", "a": "L’ensemble des points (xᵢ ; yᵢ), un par individu.", "tag": "definition", "niveau": 1},
+    {"id": "s1rg-02", "q": "Coordonnées du point moyen G ?", "a": "(x̄ ; ȳ).", "tag": "formule", "niveau": 1},
+    {"id": "s1rg-03", "q": "Formule de la covariance ?", "a": "cov(x ; y) = (1/n) Σ xᵢyᵢ − x̄ȳ.", "tag": "formule", "niveau": 2},
+    {"id": "s1rg-04", "q": "Que signifie une covariance positive ?", "a": "x et y ont tendance à varier dans le même sens.", "tag": "propriete", "niveau": 1},
+    {"id": "s1rg-05", "q": "Formule du coefficient de corrélation r ?", "a": "r = cov(x ; y)/(σₓσᵧ).", "tag": "formule", "niveau": 2},
+    {"id": "s1rg-06", "q": "Entre quelles valeurs est r ?", "a": "Entre −1 et 1.", "tag": "propriete", "niveau": 1},
+    {"id": "s1rg-07", "q": "Que signifie r proche de −1 ?", "a": "Points presque alignés sur une droite descendante.", "tag": "propriete", "niveau": 1},
+    {"id": "s1rg-08", "q": "Que signifie r proche de 0 ?", "a": "Pas de lien linéaire (un autre lien reste possible).", "tag": "propriete", "niveau": 1},
+    {"id": "s1rg-09", "q": "Pente de la droite des moindres carrés de y en x ?", "a": "a = cov(x ; y)/V(x).", "tag": "formule", "niveau": 2},
+    {"id": "s1rg-10", "q": "Ordonnée à l’origine b ?", "a": "b = ȳ − a x̄.", "tag": "formule", "niveau": 2},
+    {"id": "s1rg-11", "q": "Par quel point passe toujours la droite des moindres carrés ?", "a": "Le point moyen G(x̄ ; ȳ).", "tag": "propriete", "niveau": 1},
+    {"id": "s1rg-12", "q": "Que minimise la droite des moindres carrés ?", "a": "La somme des carrés des écarts verticaux (résidus).", "tag": "definition", "niveau": 2},
+    {"id": "s1rg-13", "q": "Qu’est-ce qu’un résidu ?", "a": "eᵢ = yᵢ − ŷᵢ, observé moins prédit.", "tag": "definition", "niveau": 1},
+    {"id": "s1rg-14", "q": "Que vaut la somme des résidus ?", "a": "0.", "tag": "propriete", "niveau": 2},
+    {"id": "s1rg-15", "q": "Qu’indique r² ?", "a": "La part de la variance de y expliquée par la droite.", "tag": "definition", "niveau": 2},
+    {"id": "s1rg-16", "q": "Corrélation forte : peut-on conclure à une causalité ?", "a": "Non : un facteur caché peut expliquer les deux.", "tag": "piege", "niveau": 1},
+    {"id": "s1rg-17", "q": "Interpolation ou extrapolation : laquelle est risquée ?", "a": "L’extrapolation, hors du domaine observé.", "tag": "piege", "niveau": 1},
+    {"id": "s1rg-18", "q": "Vrai ou faux : a = cov/V(y) ?", "a": "Faux : a = cov/V(x).", "tag": "piege", "niveau": 2},
+    {"id": "s1rg-19", "q": "Nuage d’allure exponentielle : quel changement de variable ?", "a": "z = ln y, puis régression de z en x.", "tag": "methode", "niveau": 3},
+    {"id": "s1rg-20", "q": "Si ln y = αx + β, que vaut y ?", "a": "y = e^β × e^(αx).", "tag": "formule", "niveau": 3},
+    {"id": "s1rg-21", "q": "Produit des pentes des deux droites de régression ?", "a": "a × a′ = r².", "tag": "propriete", "niveau": 3},
+    {"id": "s1rg-22", "q": "Quel effet a un point aberrant ?", "a": "Il peut modifier fortement r et la droite.", "tag": "piege", "niveau": 2},
+    {"id": "s1rg-23", "q": "D’où vient le mot « régression » ?", "a": "De Galton : « régression vers la moyenne » des tailles (1886).", "tag": "histoire", "niveau": 2},
+    {"id": "s1rg-24", "q": "Qui a publié la méthode des moindres carrés en 1805 ?", "a": "Adrien-Marie Legendre.", "tag": "histoire", "niveau": 2}
+  ]
+}

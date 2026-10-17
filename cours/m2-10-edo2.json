@@ -1,0 +1,204 @@
+{
+  "id": "m2-edo2",
+  "titre": "Équations différentielles du second ordre",
+  "resume": "Une équation y″ + ay′ + by = c relie une grandeur, sa vitesse et son accélération. On la résout grâce à l’équation caractéristique r² + ar + b = 0 : racines réelles, des exponentielles ; racines complexes, des oscillations.",
+  "objectifs": [
+    "résoudre l’oscillateur y″ + ω²y = 0 et utiliser y(0) et y′(0)",
+    "écrire l’équation caractéristique et calculer son discriminant",
+    "choisir la forme des solutions selon le signe de Δ (trois cas)",
+    "traiter un second membre constant, puis fixer les deux constantes",
+    "reconnaître sur une courbe un régime oscillant, amorti ou apériodique"
+  ],
+  "prerequis": [
+    "m2-edo1",
+    "m2-complexes-trigo"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Re-bonjour ! Au chapitre précédent, l’équation parlait de vitesse. Aujourd’hui elle parle aussi d’**accélération** : c’est le langage des ressorts, des balançoires, des suspensions de voiture et des circuits électriques. Le plan : un ressort, puis des frottements, puis la question « de combien d’informations a-t-on besoin au départ ? ».",
+      "## La dérivée de la dérivée",
+      "La dérivée `y′` mesure la vitesse de variation. La dérivée de la dérivée, notée `y″` (« y seconde »), mesure comment cette vitesse change : c’est l’**accélération**. Une équation du second ordre est une règle qui relie y, `y′` et `y″`.",
+      "analogie: En voiture, la position est y, le compteur de vitesse est y′, et la sensation d’être plaqué contre le siège quand tu accélères ou freines, c’est y″.",
+      "## Le ressort",
+      "Accroche une masse à un ressort et tire-la vers le bas. Plus tu l’éloignes de sa position de repos, plus le ressort la rappelle fort. En équation : l’accélération est opposée à l’écart.",
+      "> y″ = −ω² y",
+      "Résultat : la masse remonte, dépasse sa position de repos, redescend… elle **oscille**. Les fonctions qui font ça sont le cosinus et le sinus : la dérivée seconde de `cos(ωx)` vaut `−ω² cos(ωx)`.",
+      "@courbe {\"f\":\"a*cos(w*x)+b*sin(w*x)\",\"curseurs\":{\"a\":[-3,3,0.5,2],\"b\":[-3,3,0.5,0],\"w\":[0.5,3,0.25,1]},\"x\":[0,12],\"y\":[-5,5],\"pas\":1} | Voici y = a cos(ωx) + b sin(ωx) (ω est le curseur w). a fixe la position de départ : la courbe coupe l’axe vertical en a. b règle la vitesse de départ : avec b positif, la courbe part vers le haut. Augmente w : les oscillations se resserrent, le ressort est plus raide.",
+      "!! Second ordre : il faut **deux** informations au départ, la position y(0) et la vitesse y′(0). La solution contient deux constantes.",
+      "? Si tu lâches la masse sans la lancer, que vaut y′(0) ? || 0 : sa vitesse de départ est nulle, seule la position de départ compte.",
+      "## Avec des frottements",
+      "Dans la vraie vie, l’air ou un amortisseur freinent la masse : ce frein est proportionnel à la vitesse, il ajoute un terme en `y′`. Selon la force du frottement, trois comportements apparaissent.",
+      "@oscillateur | Mets le frottement λ à 0 : l’oscillation ne s’arrête jamais. Augmente un peu λ : l’oscillation s’amortit dans une enveloppe qui se resserre (régime pseudo-périodique). Augmente beaucoup λ : la masse revient lentement à 0 sans jamais osciller (apériodique). Cherche la valeur où λ = ω : c’est le régime critique, le retour le plus rapide sans rebond.",
+      "prof: Tu viens de voir les trois régimes que les ingénieurs règlent tous les jours. Une suspension de voiture est réglée près du critique : on veut absorber la bosse vite, sans rebondir comme sur un trampoline.",
+      "? Une porte qui se referme doucement sans claquer ni rebondir : quel régime ? || Apériodique ou critique : elle revient à sa position sans osciller.",
+      "## Le grand secret : chercher des exponentielles",
+      "Pour résoudre, on essaie des solutions de la forme `e^{rx}`. En remplaçant, toutes les exponentielles se simplifient et il reste une simple **équation du second degré en r** : l’équation caractéristique. Ton vieux discriminant Δ revient décider du comportement.",
+      "- Δ > 0 : deux exponentielles réelles, pas d’oscillation.\n- Δ = 0 : cas limite, le régime critique.\n- Δ < 0 : racines complexes, la solution **oscille**. C’est là que les nombres complexes deviennent indispensables.",
+      "? Pourquoi trouve-t-on deux constantes et pas une seule ? || Parce que l’équation fait intervenir deux dérivées : il faut connaître la position et la vitesse de départ, donc deux nombres.",
+      "histoire: Robert Hooke énonce en 1678 que la force d’un ressort est proportionnelle à son allongement. Au XVIIIᵉ siècle, Euler et d’Alembert montrent comment résoudre ces équations à coefficients constants en cherchant des exponentielles, et Euler relie exponentielle complexe et trigonométrie : e^(iθ) = cos θ + i sin θ.",
+      "prof: Bilan : position, vitesse, accélération ; deux constantes, deux conditions ; et un discriminant qui dit si ça oscille. Au niveau Pratique, on transforme tout ça en recette."
+    ],
+    "pratique": [
+      "prof: On passe aux méthodes. Il y en a quatre, toutes construites sur le même squelette : l’équation caractéristique, puis la forme des solutions, puis les constantes. Je les détaille une par une avec un exemple animé.",
+      "## Méthode 1 : l’oscillateur y″ + ω²y = 0",
+      "1. Repère ω : c’est la racine carrée du coefficient de y (pour y″ + 9y = 0, ω = 3).\n2. Solution générale : `y = A cos(ωx) + B sin(ωx)`.\n3. Position de départ : `y(0) = A` (car cos 0 = 1 et sin 0 = 0).\n4. Vitesse de départ : `y′ = −Aω sin(ωx) + Bω cos(ωx)`, donc `y′(0) = Bω` et `B = y′(0)/ω`.",
+      "@etapes {\"etapes\":[[\"y″ + 9y = 0, y(0) = 2, y′(0) = −6\",\"Oscillateur : ω² = 9.\"],[\"ω = 3\",\"On prend la racine carrée.\"],[\"y = A cos 3x + B sin 3x\",\"Solution générale.\"],[\"y(0) = A = 2\",\"cos 0 = 1, sin 0 = 0.\"],[\"y′ = −3A sin 3x + 3B cos 3x, y′(0) = 3B = −6\",\"On dérive, puis on remplace x par 0.\"],[\"B = −2\",\"On divise par ω = 3.\"],[\"y = 2 cos 3x − 2 sin 3x\",\"La solution unique.\"]]} | Fais la lecture et arrête-toi avant l’étape B : sauras-tu la trouver seul ?",
+      "attention: B n’est pas égal à y′(0) : il faut diviser par ω. C’est l’erreur la plus fréquente de l’oscillateur.",
+      "? Résous y″ + 4y = 0 avec y(0) = 3 et y′(0) = 2. || ω = 2, A = 3, B = 2/2 = 1 : `y = 3 cos 2x + sin 2x`.",
+      "## Méthode 2 : l’équation caractéristique",
+      "Pour `y″ + ay′ + by = 0`, on remplace y par `e^{rx}` : `y′ = r e^{rx}` et `y″ = r² e^{rx}`. On divise par `e^{rx}` (jamais nul) :",
+      "> r² + ar + b = 0",
+      "1. Écris l’équation caractéristique : y″ devient r², y′ devient r, y devient 1.\n2. Calcule Δ = a² − 4b.\n3. Trouve les racines et choisis la forme selon le signe de Δ.",
+      "@courbe {\"f\":\"x^2+p*x+q\",\"curseurs\":{\"p\":[-4,4,0.5,2],\"q\":[-3,6,0.5,-3]},\"x\":[-5,4],\"y\":[-6,8],\"pas\":1} | Voici la parabole r² + pr + q (l’axe horizontal joue le rôle de r). Pour p = 2 et q = −3, elle coupe l’axe en −3 et 1 : deux racines réelles. Monte q : la parabole touche l’axe (Δ = 0) puis passe au-dessus (Δ < 0, racines complexes). C’est exactement là que la solution se met à osciller.",
+      "## Les trois cas",
+      "- **Δ > 0**, deux racines réelles r₁ et r₂ : `y = A e^{r₁x} + B e^{r₂x}`.\n- **Δ = 0**, une racine double r : `y = (A + Bx) e^{rx}`.\n- **Δ < 0**, racines complexes α ± iβ : `y = e^{αx}(A cos βx + B sin βx)`.",
+      "@etapes {\"etapes\":[[\"y″ − y′ − 6y = 0\",\"Coefficients a = −1, b = −6.\"],[\"r² − r − 6 = 0\",\"Équation caractéristique.\"],[\"Δ = 1 + 24 = 25\",\"Δ > 0 : deux racines réelles.\"],[\"r = (1 ± 5)/2 : r₁ = −2, r₂ = 3\",\"Formule des racines.\"],[\"y = A e^{−2x} + B e^{3x}\",\"Une exponentielle par racine.\"]]} | Cas Δ > 0. Vérifie de tête que (−2) × 3 = −6 et −2 + 3 = 1 : produit et somme des racines.",
+      "@etapes {\"etapes\":[[\"y″ + 2y′ + 5y = 0\",\"a = 2, b = 5.\"],[\"r² + 2r + 5 = 0\",\"Équation caractéristique.\"],[\"Δ = 4 − 20 = −16\",\"Δ < 0 : racines complexes.\"],[\"r = (−2 ± 4i)/2 = −1 ± 2i\",\"√(−16) = 4i, donc α = −1 et β = 2.\"],[\"y = e^{−x}(A cos 2x + B sin 2x)\",\"Oscillation (β = 2) amortie par e^{−x} (α = −1).\"]]} | Cas Δ < 0. Repère d’où viennent α (partie réelle, l’amortissement) et β (partie imaginaire, la pulsation).",
+      "@courbe {\"f\":[{\"f\":\"a*exp(k*x)*cos(w*x)\",\"nom\":\"solution\"},{\"f\":\"a*exp(k*x)\",\"nom\":\"enveloppe\"},{\"f\":\"-a*exp(k*x)\",\"nom\":\"enveloppe\"}],\"curseurs\":{\"a\":[0.5,3,0.5,2],\"k\":[-1,0.5,0.1,-0.3],\"w\":[0.5,4,0.25,2]},\"x\":[0,10],\"y\":[-4,4],\"pas\":1} | Voici e^(αx)·A cos(βx), avec α = k et β = w. Mets k à 0 : oscillation pure. k négatif : la courbe est coincée entre les deux enveloppes qui se referment. k positif : l’oscillation s’amplifie. w règle seulement le nombre d’oscillations.",
+      "? Quelle est la forme des solutions de y″ − 4y′ + 4y = 0 ? || r² − 4r + 4 = (r − 2)² : racine double 2, donc `y = (A + Bx) e^{2x}`.",
+      "prof: Je t’entends d’ici : « comment je retiens les trois formes ? » Pense au sens physique. Deux racines réelles, deux exponentielles qui montent ou s’éteignent. Racines complexes, ça tourne, donc cos et sin. Et la racine double est le cas frontière, où il faut un x en plus pour retrouver deux solutions.",
+      "## Méthode 3 : second membre constant",
+      "1. Pour `y″ + ay′ + by = c` (b ≠ 0), la constante `y_p = c/b` est solution (y′ et y″ sont nuls).\n2. Solution générale : solution de l’équation homogène + c/b.\n3. Les conditions initiales se traitent **à la toute fin**, sur la solution complète.",
+      "ex: y″ + 4y = 12\ny_p = 12/4 = 3\ny = A cos 2x + B sin 2x + 3",
+      "## Méthode 4 : deux conditions, un système",
+      "@etapes {\"etapes\":[[\"y = A e^{−x} + B e^{2x}, y(0) = 4, y′(0) = −1\",\"Deux constantes, deux conditions.\"],[\"A + B = 4\",\"En x = 0, les exponentielles valent 1.\"],[\"y′ = −A e^{−x} + 2B e^{2x}, donc −A + 2B = −1\",\"On dérive avant d’évaluer.\"],[\"3B = 3, donc B = 1\",\"On additionne les deux équations.\"],[\"A = 3\",\"On reporte dans A + B = 4.\"],[\"y = 3e^{−x} + e^{2x}\",\"La solution unique.\"]]} | Remarque : on dérive la solution générale AVANT de remplacer x par 0.",
+      "? Pour y″ + 9y = 18 avec y(0) = 5 et y′(0) = 0, que vaut A ? || y_p = 2, donc y = A cos 3x + B sin 3x + 2 et y(0) = A + 2 = 5 : A = 3.",
+      "prof: Bilan pratique : équation caractéristique, signe de Δ, forme des solutions, solution particulière, et les constantes en dernier. Tu as toute la boîte à outils de l’UE pour le second ordre."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on justifie les trois formes, on fait le lien avec les nombres complexes, et on regarde ce qui se passe quand le second membre « résonne » avec l’équation.",
+      "## Pourquoi deux solutions suffisent",
+      "Pour l’équation linéaire homogène `y″ + ay′ + by = 0`, une combinaison `λy₁ + μy₂` de solutions est encore solution : l’ensemble des solutions est un espace vectoriel. On démontre qu’il est de **dimension 2** : deux solutions non proportionnelles engendrent toutes les autres. D’où les deux constantes.",
+      "> solution générale = A y₁ + B y₂ + y_p",
+      "## Le cas de la racine double",
+      "Si r est racine double, `e^{rx}` est solution, mais il en faut une seconde, non proportionnelle. On vérifie que `x e^{rx}` convient : en posant `y = u e^{rx}`, l’équation devient `u″ = 0`, donc u = A + Bx.",
+      "attention: Écrire A e^{rx} + B e^{rx} ne donne qu’une constante utile, puisque c’est (A + B) e^{rx}. Il manque une solution.",
+      "## Racines complexes : le pont avec Euler",
+      "Si r = α ± iβ, les solutions complexes sont `e^{(α ± iβ)x} = e^{αx} e^{± iβx}`. Les formules d’Euler `cos θ = (e^{iθ} + e^{−iθ})/2` et `sin θ = (e^{iθ} − e^{−iθ})/(2i)` les recombinent en deux solutions réelles : `e^{αx} cos βx` et `e^{αx} sin βx`.",
+      "@euler {\"r\":1,\"t\":60} | Fais tourner θ : le point e^(iθ) parcourt le cercle, et ses coordonnées sont cos θ et sin θ. Une solution e^(iβx) est donc un point qui tourne : sa partie réelle oscille, c’est le cos βx de la solution réelle. Mets r < 1 pour imaginer l’amortissement e^(αx) avec α < 0.",
+      "? Les racines de r² + 6r + 13 = 0 sont −3 ± 2i. Quelle est la solution générale ? || `y = e^{−3x}(A cos 2x + B sin 2x)` : amortissement e^(−3x), pulsation 2.",
+      "? Quelle est la solution générale de y″ + 6y′ + 9y = 0 ? || r² + 6r + 9 = (r + 3)² : racine double −3, donc `y = (A + Bx) e^{−3x}`.",
+      "## Amplitude et phase",
+      "Toute combinaison `A cos ωx + B sin ωx` s’écrit `E cos(ωx − φ)` avec `E = √(A² + B²)` (l’amplitude) et φ tel que cos φ = A/E, sin φ = B/E. La période vaut `T = 2π/ω`.",
+      "ex: 3 cos 2x + 4 sin 2x\nE = √(9 + 16) = 5\npériode 2π/2 = π",
+      "## Second membre non constant et résonance",
+      "On cherche y_p de la même forme que le second membre : polynôme, `A e^{mx}`, ou `α cos ωx + β sin ωx`. Si m est racine de l’équation caractéristique, on multiplie par x (par x² si racine double). Pour l’oscillateur `y″ + ω²y = cos(ωx)`, la forcée a la même pulsation que le système : on trouve `y_p = (x/(2ω)) sin(ωx)`, dont l’amplitude grandit sans limite. C’est la **résonance**.",
+      "@courbe {\"f\":\"x/(2*w)*sin(w*x)\",\"curseurs\":{\"w\":[0.5,2,0.25,1]},\"x\":[0,30],\"y\":[-16,16],\"pas\":5,\"pasy\":4} | Voici y_p = x/(2ω)·sin(ωx), la réponse d’un oscillateur poussé exactement à son rythme propre. Observe l’amplitude qui grossit régulièrement : c’est pourquoi une troupe ne marche pas au pas sur un pont.",
+      "prof: Tu vois pourquoi les ingénieurs redoutent la résonance ? Le frottement (le terme en y′) est ce qui la limite : avec λ > 0, l’amplitude reste bornée, même si elle peut devenir grande.",
+      "## Problème de Cauchy",
+      "Pour toute donnée y(x₀) = y₀ et y′(x₀) = y₁, il existe une unique solution. Le système en A et B a toujours une solution unique, car les deux solutions de base sont indépendantes.",
+      "## Où ça casse",
+      "- Une seule condition initiale laisse une constante libre.\n- y_p = c/b suppose b ≠ 0 ; si b = 0 (et a ≠ 0), on cherche y_p de la forme kx.\n- Les formules supposent des coefficients **constants** ; pour x²y″ + axy′ + by = 0 (équation d’Euler), on pose x = e^t.\n- Une équation non linéaire comme le vrai pendule y″ = −sin y n’a pas de solution exprimable avec ces outils ; pour de petits angles, sin y ≈ y redonne l’oscillateur.",
+      "? Pour y″ − 3y′ + 2y = e^x, pourquoi chercher y_p = A x e^x et non A e^x ? || 1 est racine de r² − 3r + 2 = 0 : A e^x est solution de l’homogène, elle donnerait 0 = e^x. On multiplie par x.",
+      "histoire: L’effondrement du pont de Tacoma (États-Unis), en 1940, est souvent présenté comme un exemple de résonance ; les ingénieurs l’expliquent aujourd’hui plutôt par un phénomène aérodynamique d’auto-entretien, cousin de la résonance. En revanche, le pont du Millennium à Londres a dû être fermé deux jours après son ouverture en 2000 : les pas des piétons s’étaient synchronisés avec ses oscillations latérales.",
+      "prof: Avec ces deux unités, tu as tout le programme des équations différentielles de MVA912. Bravo pour le chemin parcouru !"
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Résoudre y″ + 9y = 0 avec y(0) = 2 et y′(0) = −6.",
+      "etapes": [
+        [
+          "ω² = 9, donc ω = 3",
+          "forme y″ + ω²y = 0"
+        ],
+        [
+          "y = A cos 3x + B sin 3x",
+          "solution générale de l’oscillateur"
+        ],
+        [
+          "y(0) = A = 2",
+          "cos 0 = 1 et sin 0 = 0"
+        ],
+        [
+          "y′(0) = 3B = −6, donc B = −2",
+          "on dérive puis on évalue en 0"
+        ],
+        [
+          "y = 2 cos 3x − 2 sin 3x",
+          "amplitude √8 = 2√2, période 2π/3"
+        ]
+      ]
+    },
+    {
+      "enonce": "Résoudre y″ + 2y′ − 3y = 0 avec y(0) = 0 et y′(0) = 4.",
+      "etapes": [
+        [
+          "r² + 2r − 3 = 0",
+          "équation caractéristique"
+        ],
+        [
+          "Δ = 16, racines 1 et −3",
+          "r = (−2 ± 4)/2"
+        ],
+        [
+          "y = A e^x + B e^{−3x}",
+          "Δ > 0 : deux exponentielles"
+        ],
+        [
+          "A + B = 0 et A − 3B = 4",
+          "conditions en 0 (on a dérivé)"
+        ],
+        [
+          "B = −1, A = 1 : y = e^x − e^{−3x}",
+          "on résout le système"
+        ]
+      ]
+    },
+    {
+      "enonce": "Résoudre y″ + 2y′ + 5y = 10.",
+      "etapes": [
+        [
+          "y_p = 10/5 = 2",
+          "solution constante : y′ = y″ = 0"
+        ],
+        [
+          "r² + 2r + 5 = 0, Δ = −16",
+          "équation caractéristique"
+        ],
+        [
+          "r = −1 ± 2i",
+          "α = −1, β = 2"
+        ],
+        [
+          "y = e^{−x}(A cos 2x + B sin 2x) + 2",
+          "oscillation amortie autour de l’équilibre 2"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "y″ + 4y = 0 donne y = A e^{2x} + B e^{−2x}",
+      "juste": "y = A cos 2x + B sin 2x",
+      "pourquoi": "r² + 4 = 0 a pour racines ±2i : racines complexes, donc oscillations."
+    },
+    {
+      "faux": "y′(0) = 6 pour y = A cos 3x + B sin 3x donne B = 6",
+      "juste": "3B = 6, donc B = 2",
+      "pourquoi": "En dérivant, sin 3x donne 3 cos 3x : il faut diviser par ω."
+    },
+    {
+      "faux": "Racine double r : y = A e^{rx} + B e^{rx}",
+      "juste": "y = (A + Bx) e^{rx}",
+      "pourquoi": "A e^{rx} + B e^{rx} = (A + B) e^{rx} ne contient qu’une constante utile."
+    },
+    {
+      "faux": "Équation caractéristique de y″ − 3y′ + 2y = 0 : r² + 3r + 2 = 0",
+      "juste": "r² − 3r + 2 = 0",
+      "pourquoi": "On garde les coefficients avec leurs signes : y″ → r², y′ → r, y → 1."
+    },
+    {
+      "faux": "Utiliser y(0) sur la solution homogène, puis ajouter c/b",
+      "juste": "Ajouter c/b d’abord, puis utiliser y(0)",
+      "pourquoi": "Les conditions initiales portent sur la solution complète."
+    }
+  ],
+  "retenir": [
+    "y″ + ω²y = 0 : y = A cos ωx + B sin ωx, avec A = y(0) et B = y′(0)/ω.",
+    "Équation caractéristique de y″ + ay′ + by = 0 : r² + ar + b = 0.",
+    "Δ > 0 : A e^(r₁x) + B e^(r₂x) ; Δ = 0 : (A + Bx) e^(rx) ; Δ < 0 : e^(αx)(A cos βx + B sin βx).",
+    "Second membre constant c : on ajoute y_p = c/b, puis on fixe A et B avec les deux conditions.",
+    "Second ordre : deux constantes, donc deux conditions initiales (position et vitesse)."
+  ]
+}

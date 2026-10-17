@@ -1,0 +1,1241 @@
+{
+ "fs-ref": [
+  {
+   "id": "fs-ref-01",
+   "q": "Qu’est-ce que l’image de 3 par f ?",
+   "a": "Le nombre `f(3)`.",
+   "tag": "definition",
+   "niveau": 1,
+   "pourquoi": "On remplace x par 3."
+  },
+  {
+   "id": "fs-ref-02",
+   "q": "Qu’est-ce qu’un antécédent de 7 par f ?",
+   "a": "Un nombre x tel que `f(x) = 7`.",
+   "tag": "definition",
+   "niveau": 1,
+   "pourquoi": "On le trouve en résolvant une équation."
+  },
+  {
+   "id": "fs-ref-03",
+   "q": "Sur quel ensemble la fonction carré est-elle définie ?",
+   "a": "Sur ℝ.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ref-04",
+   "q": "Quelles sont les variations de la fonction carré ?",
+   "a": "Décroissante sur `]−∞ ; 0]`, croissante sur `[0 ; +∞[`.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ref-05",
+   "q": "Quelle symétrie a la courbe de la fonction carré ?",
+   "a": "Symétrique par rapport à l’axe des ordonnées : fonction paire.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ref-06",
+   "q": "Sur quel ensemble la fonction racine carrée est-elle définie ?",
+   "a": "Sur `[0 ; +∞[`.",
+   "tag": "propriete",
+   "niveau": 1,
+   "pourquoi": "On ne prend pas la racine d’un négatif."
+  },
+  {
+   "id": "fs-ref-07",
+   "q": "Quel est le sens de variation de la fonction racine carrée ?",
+   "a": "Strictement croissante sur `[0 ; +∞[`.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ref-08",
+   "q": "Sur quel ensemble la fonction inverse est-elle définie ?",
+   "a": "Sur `ℝ ∖ {0}`.",
+   "tag": "propriete",
+   "niveau": 1,
+   "pourquoi": "On ne divise pas par 0."
+  },
+  {
+   "id": "fs-ref-09",
+   "q": "Quelles sont les variations de la fonction inverse ?",
+   "a": "Décroissante sur `]−∞ ; 0[` et sur `]0 ; +∞[`.",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "Pas décroissante sur ℝ ∖ {0} tout entier."
+  },
+  {
+   "id": "fs-ref-10",
+   "q": "Comment s’appelle la courbe de la fonction inverse ?",
+   "a": "Une hyperbole.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ref-11",
+   "q": "La fonction cube est-elle paire ou impaire ?",
+   "a": "Impaire : symétrique par rapport à l’origine.",
+   "tag": "propriete",
+   "niveau": 1,
+   "pourquoi": "`(−x)^3 = −x^3`"
+  },
+  {
+   "id": "fs-ref-12",
+   "q": "Pour a, b de même signe, que dire de 1/a et 1/b si a < b ?",
+   "a": "`1/a > 1/b`.",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "La fonction inverse renverse l’ordre."
+  },
+  {
+   "id": "fs-ref-13",
+   "q": "Si 0 < x < 1, comment se rangent x, x² et x³ ?",
+   "a": "`x^3 < x^2 < x`.",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "Multiplier par un nombre entre 0 et 1 fait diminuer."
+  },
+  {
+   "id": "fs-ref-14",
+   "q": "Si x > 1, comment se rangent x, x² et x³ ?",
+   "a": "`x < x^2 < x^3`.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-ref-15",
+   "q": "Que fait une fonction décroissante à l’ordre ?",
+   "a": "Elle le renverse.",
+   "tag": "propriete",
+   "niveau": 1,
+   "pourquoi": "a < b donne f(a) > f(b)."
+  },
+  {
+   "id": "fs-ref-16",
+   "q": "Quelles sont les solutions de `x^2 ≤ 9` ?",
+   "a": "`[−3 ; 3]`.",
+   "tag": "piege",
+   "niveau": 2,
+   "pourquoi": "La fonction carré n’est pas monotone sur ℝ."
+  },
+  {
+   "id": "fs-ref-17",
+   "q": "Quelle est la formule du coefficient directeur d’une fonction affine ?",
+   "a": "`a = (f(m) − f(n))/(m − n)`.",
+   "tag": "formule",
+   "niveau": 1,
+   "pourquoi": "Écart des images sur écart des abscisses."
+  },
+  {
+   "id": "fs-ref-18",
+   "q": "Comment s’appelle b dans f(x) = ax + b ?",
+   "a": "L’ordonnée à l’origine.",
+   "tag": "definition",
+   "niveau": 1,
+   "pourquoi": "C’est f(0)."
+  },
+  {
+   "id": "fs-ref-19",
+   "q": "Quand une fonction affine est-elle décroissante ?",
+   "a": "Quand son coefficient directeur a est négatif.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ref-20",
+   "q": "Que vaut a dans f(x) = 7 − 6x ?",
+   "a": "`a = −6`.",
+   "tag": "piege",
+   "niveau": 1,
+   "pourquoi": "a est le coefficient de x, pas le premier nombre écrit."
+  },
+  {
+   "id": "fs-ref-21",
+   "q": "Quelle situation traduit une fonction linéaire x ↦ ax ?",
+   "a": "Une situation de proportionnalité.",
+   "tag": "propriete",
+   "niveau": 1,
+   "pourquoi": "Sa droite passe par l’origine."
+  },
+  {
+   "id": "fs-ref-22",
+   "q": "Quelle valeur est interdite pour `(ax + b)/(cx + d)` ?",
+   "a": "`x = −d/c`.",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "Le dénominateur ne doit pas s’annuler."
+  },
+  {
+   "id": "fs-ref-23",
+   "q": "Que vaut `(−3)^2` ?",
+   "a": "9.",
+   "tag": "piege",
+   "niveau": 1,
+   "pourquoi": "Le carré d’un nombre négatif est positif."
+  },
+  {
+   "id": "fs-ref-24",
+   "q": "D’où viennent les mots parabole et hyperbole ?",
+   "a": "Des coniques étudiées par Apollonius de Perga.",
+   "tag": "histoire",
+   "niveau": 3,
+   "pourquoi": "Mathématicien grec du IIIᵉ siècle avant notre ère."
+  }
+ ],
+ "fs-d23": [
+  {
+   "id": "fs-d23-01",
+   "q": "Quelle est la forme d’une fonction polynôme du second degré ?",
+   "a": "`f(x) = ax^2 + bx + c` avec `a ≠ 0`.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "fs-d23-02",
+   "q": "Quelle est la forme canonique d’un trinôme ?",
+   "a": "`a(x − α)^2 + β`.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "fs-d23-03",
+   "q": "Que vaut α dans la forme canonique ?",
+   "a": "`α = −b/(2a)`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-d23-04",
+   "q": "Que vaut β dans la forme canonique ?",
+   "a": "`β = f(α)`.",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "Ou `−(b^2 − 4ac)/(4a)`."
+  },
+  {
+   "id": "fs-d23-05",
+   "q": "Quel est le sommet de la parabole de `a(x − α)^2 + β` ?",
+   "a": "Le point `(α ; β)`.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-d23-06",
+   "q": "Dans `2(x + 3)^2 − 1`, que vaut α ?",
+   "a": "`α = −3`.",
+   "tag": "piege",
+   "niveau": 1,
+   "pourquoi": "x + 3 = x − (−3)."
+  },
+  {
+   "id": "fs-d23-07",
+   "q": "Si a > 0, la parabole admet-elle un minimum ou un maximum ?",
+   "a": "Un minimum.",
+   "tag": "propriete",
+   "niveau": 1,
+   "pourquoi": "Elle est tournée vers le haut."
+  },
+  {
+   "id": "fs-d23-08",
+   "q": "Quel est l’axe de symétrie de la parabole ?",
+   "a": "La droite d’équation `x = α`.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-d23-09",
+   "q": "Quelle est la formule du discriminant ?",
+   "a": "`Δ = b^2 − 4ac`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-d23-10",
+   "q": "Combien de solutions si Δ < 0 ?",
+   "a": "Aucune solution réelle.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-d23-11",
+   "q": "Quelle est la solution si Δ = 0 ?",
+   "a": "`x_0 = −b/(2a)`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-d23-12",
+   "q": "Quelles sont les solutions si Δ > 0 ?",
+   "a": "`(−b − √Δ)/(2a)` et `(−b + √Δ)/(2a)`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-d23-13",
+   "q": "Que vaut la somme des racines d’un trinôme ?",
+   "a": "`S = −b/a`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-d23-14",
+   "q": "Que vaut le produit des racines d’un trinôme ?",
+   "a": "`P = c/a`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-d23-15",
+   "q": "Quelle est la forme factorisée si Δ > 0 ?",
+   "a": "`a(x − x_1)(x − x_2)`.",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "Sans oublier le coefficient a."
+  },
+  {
+   "id": "fs-d23-16",
+   "q": "Quelle est la forme factorisée si Δ = 0 ?",
+   "a": "`a(x − x_0)^2`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-d23-17",
+   "q": "Un trinôme avec Δ < 0 peut-il se factoriser ?",
+   "a": "Non, pas sur ℝ.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-d23-18",
+   "q": "Quel est le signe d’un trinôme à l’extérieur de ses racines ?",
+   "a": "Le signe de a.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-d23-19",
+   "q": "Quel est le signe d’un trinôme entre ses racines ?",
+   "a": "Le signe contraire de a.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-d23-20",
+   "q": "Quel est le signe d’un trinôme si Δ < 0 ?",
+   "a": "Toujours le signe de a.",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "La parabole ne coupe pas l’axe des abscisses."
+  },
+  {
+   "id": "fs-d23-21",
+   "q": "Quel est le premier réflexe pour résoudre `x^2 + 3x − 5 < −x + 2` ?",
+   "a": "Tout passer dans le membre de gauche.",
+   "tag": "methode",
+   "niveau": 2,
+   "pourquoi": "On étudie le signe d’un trinôme comparé à 0."
+  },
+  {
+   "id": "fs-d23-22",
+   "q": "Comment étudier la position de deux courbes C_f et C_g ?",
+   "a": "Étudier le signe de `f(x) − g(x)`.",
+   "tag": "methode",
+   "niveau": 2,
+   "pourquoi": "Positif : C_f au-dessus de C_g."
+  },
+  {
+   "id": "fs-d23-23",
+   "q": "Quel piège guette le calcul de −4ac ?",
+   "a": "Les signes de a et c : écris les parenthèses.",
+   "tag": "piege",
+   "niveau": 1,
+   "pourquoi": "`−4 × 2 × (−6) = +48`"
+  },
+  {
+   "id": "fs-d23-24",
+   "q": "Qui a donné son nom à l’algèbre en résolvant ces équations ?",
+   "a": "Al-Khwârizmî, savant de Bagdad au IXᵉ siècle.",
+   "tag": "histoire",
+   "niveau": 3
+  }
+ ],
+ "fs-der": [
+  {
+   "id": "fs-der-01",
+   "q": "Qu’est-ce que le taux d’accroissement de f entre a et a + h ?",
+   "a": "`(f(a + h) − f(a))/h`.",
+   "tag": "definition",
+   "niveau": 1,
+   "pourquoi": "Pente de la sécante."
+  },
+  {
+   "id": "fs-der-02",
+   "q": "Quelle est la définition du nombre dérivé f′(a) ?",
+   "a": "`lim_{h→0} (f(a + h) − f(a))/h`, si c’est un réel.",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "fs-der-03",
+   "q": "Que représente f′(a) sur la courbe ?",
+   "a": "La pente de la tangente au point d’abscisse a.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-der-04",
+   "q": "Quelle est l’équation de la tangente en a ?",
+   "a": "`y = f′(a)(x − a) + f(a)`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-der-05",
+   "q": "La valeur absolue est-elle dérivable en 0 ?",
+   "a": "Non.",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "Taux égal à 1 à droite et −1 à gauche."
+  },
+  {
+   "id": "fs-der-06",
+   "q": "Quelle est la dérivée d’une constante ?",
+   "a": "0.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-der-07",
+   "q": "Quelle est la dérivée de `x^n` ?",
+   "a": "`nx^{n−1}`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-der-08",
+   "q": "Quelle est la dérivée de `1/x` ?",
+   "a": "`−1/x^2`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-der-09",
+   "q": "Quelle est la dérivée de `1/x^n` ?",
+   "a": "`−n/x^{n+1}`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-der-10",
+   "q": "Quelle est la dérivée de `√x` ?",
+   "a": "`1/(2√x)`, pour x > 0.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-der-11",
+   "q": "Quelle fonction a pour dérivée 2x ?",
+   "a": "`x^2` (à une constante près).",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-der-12",
+   "q": "Quelle est la dérivée d’un produit uv ?",
+   "a": "`u′v + uv′`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-der-13",
+   "q": "Quelle est la dérivée d’un quotient u/v ?",
+   "a": "`(u′v − uv′)/v^2`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-der-14",
+   "q": "Quelle est la dérivée de 1/u ?",
+   "a": "`−u′/u^2`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-der-15",
+   "q": "Quelle est la dérivée de v(u(x)) ?",
+   "a": "`v′(u(x)) × u′(x)`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-der-16",
+   "q": "Quelle est la dérivée de `√u` ?",
+   "a": "`u′/(2√u)`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-der-17",
+   "q": "Quelle est la dérivée de `u^n` ?",
+   "a": "`nu′u^{n−1}`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-der-18",
+   "q": "Si f′ ≥ 0 sur un intervalle, que dire de f ?",
+   "a": "f est croissante sur cet intervalle.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-der-19",
+   "q": "Si f′ < 0 sur un intervalle, que dire de f ?",
+   "a": "f est strictement décroissante sur cet intervalle.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-der-20",
+   "q": "Quelle condition donne un extremum en c ?",
+   "a": "f′ s’annule et change de signe en c.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-der-21",
+   "q": "f′(c) = 0 suffit-il pour un extremum ?",
+   "a": "Non : x³ en 0 n’a pas d’extremum.",
+   "tag": "piege",
+   "niveau": 2,
+   "pourquoi": "f′ doit changer de signe."
+  },
+  {
+   "id": "fs-der-22",
+   "q": "Peut-on écrire (uv)′ = u′v′ ?",
+   "a": "Non : (uv)′ = u′v + uv′.",
+   "tag": "piege",
+   "niveau": 1
+  },
+  {
+   "id": "fs-der-23",
+   "q": "Quelle est la méthode pour étudier les variations de f ?",
+   "a": "Calculer f′, factoriser, étudier son signe.",
+   "tag": "methode",
+   "niveau": 1,
+   "pourquoi": "Puis dresser le tableau de variations."
+  },
+  {
+   "id": "fs-der-24",
+   "q": "Comment trouver un bénéfice maximal B(x) ?",
+   "a": "Annuler B′ et vérifier qu’elle passe de + à −.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "fs-der-25",
+   "q": "Qui a introduit le mot « dérivée » et la notation f′ ?",
+   "a": "Lagrange, à la fin du XVIIIᵉ siècle.",
+   "tag": "histoire",
+   "niveau": 3
+  }
+ ],
+ "fs-lim": [
+  {
+   "id": "fs-lim-01",
+   "q": "Que signifie lim f = +∞ en +∞ ?",
+   "a": "f(x) dépasse tout réel dès que x est assez grand.",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "fs-lim-02",
+   "q": "Quelle asymptote donne lim f = L en +∞ ?",
+   "a": "L’asymptote horizontale `y = L`.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-lim-03",
+   "q": "Quelle asymptote donne une limite infinie en A ?",
+   "a": "L’asymptote verticale `x = A`.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-lim-04",
+   "q": "Que vaut `lim_{x→+∞} 1/x` ?",
+   "a": "0.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-lim-05",
+   "q": "Que vaut `lim_{x→−∞} x^3` ?",
+   "a": "`−∞`.",
+   "tag": "valeur",
+   "niveau": 1,
+   "pourquoi": "Puissance impaire."
+  },
+  {
+   "id": "fs-lim-06",
+   "q": "Que vaut `lim_{x→−∞} x^4` ?",
+   "a": "`+∞`.",
+   "tag": "valeur",
+   "niveau": 1,
+   "pourquoi": "Puissance paire."
+  },
+  {
+   "id": "fs-lim-07",
+   "q": "Que vaut `lim_{x→0^+} 1/x` ?",
+   "a": "`+∞`.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-lim-08",
+   "q": "Que vaut `lim_{x→0^−} 1/x` ?",
+   "a": "`−∞`.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-lim-09",
+   "q": "Que vaut `lim_{x→+∞} √x` ?",
+   "a": "`+∞`.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-lim-10",
+   "q": "Quelles sont les quatre formes indéterminées ?",
+   "a": "`∞ − ∞`, `0 × ∞`, `∞/∞` et `0/0`.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-lim-11",
+   "q": "Que vaut ∞/∞ ?",
+   "a": "C’est une forme indéterminée.",
+   "tag": "piege",
+   "niveau": 1,
+   "pourquoi": "Il faut transformer l’expression."
+  },
+  {
+   "id": "fs-lim-12",
+   "q": "Que donne une limite de la forme `L/0^+` avec L < 0 ?",
+   "a": "`−∞`.",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "Règle des signes."
+  },
+  {
+   "id": "fs-lim-13",
+   "q": "Que donne une limite de la forme L/∞ ?",
+   "a": "0.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-lim-14",
+   "q": "Quelle est la limite d’un polynôme en ±∞ ?",
+   "a": "Celle de son terme de plus haut degré.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-lim-15",
+   "q": "Comment lever ∞/∞ pour une fraction rationnelle ?",
+   "a": "Factoriser par les termes de plus haut degré.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "fs-lim-16",
+   "q": "Comment lever ∞ − ∞ avec des racines carrées ?",
+   "a": "Multiplier et diviser par l’expression conjuguée.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "fs-lim-17",
+   "q": "Que vaut `√(x + 1)` comparé à `√x + 1` ?",
+   "a": "Ils sont différents : la racine d’une somme ne se sépare pas.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "fs-lim-18",
+   "q": "Que dit le théorème de comparaison si f ≤ g et f → +∞ ?",
+   "a": "Alors g → +∞.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-lim-19",
+   "q": "Que dit le théorème des gendarmes ?",
+   "a": "f ≤ g ≤ h et f, h → L donnent g → L.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-lim-20",
+   "q": "Que vaut `lim_{x→+∞} x + sin x` ?",
+   "a": "`+∞`.",
+   "tag": "valeur",
+   "niveau": 3,
+   "pourquoi": "x + sin x ≥ x − 1."
+  },
+  {
+   "id": "fs-lim-21",
+   "q": "Que vaut `lim_{x→+∞} sin(x)/x` ?",
+   "a": "0.",
+   "tag": "valeur",
+   "niveau": 3,
+   "pourquoi": "Gendarmes : −1/x et 1/x."
+  },
+  {
+   "id": "fs-lim-22",
+   "q": "Comment calculer la limite d’une composée √(u(x)) ?",
+   "a": "Chercher la limite de u, puis celle de √ en ce point.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "fs-lim-23",
+   "q": "Qui a donné les définitions rigoureuses de limite au XIXᵉ siècle ?",
+   "a": "Cauchy puis Weierstrass.",
+   "tag": "histoire",
+   "niveau": 3
+  }
+ ],
+ "fs-cvx": [
+  {
+   "id": "fs-cvx-01",
+   "q": "Que signifie intuitivement « f est continue » ?",
+   "a": "On trace la courbe sans lever le crayon.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "fs-cvx-02",
+   "q": "Quelle est la définition de « f continue en a » ?",
+   "a": "`lim_{x→a} f(x) = f(a)`.",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "fs-cvx-03",
+   "q": "Une fonction dérivable est-elle continue ?",
+   "a": "Oui.",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "La réciproque est fausse : |x| en 0."
+  },
+  {
+   "id": "fs-cvx-04",
+   "q": "Une fonction monotone est-elle forcément continue ?",
+   "a": "Non : elle peut faire des sauts.",
+   "tag": "piege",
+   "niveau": 2,
+   "pourquoi": "Exemple : une fonction en escalier."
+  },
+  {
+   "id": "fs-cvx-05",
+   "q": "Que dit le théorème des valeurs intermédiaires pour f continue sur [a ; b] ?",
+   "a": "Pour k entre f(a) et f(b), f(x) = k a au moins une solution.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-cvx-06",
+   "q": "Que faut-il ajouter au TVI pour avoir une solution unique ?",
+   "a": "La stricte monotonie de f.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-cvx-07",
+   "q": "Quels sont les trois arguments pour une solution unique de f(x) = 0 ?",
+   "a": "Continuité, changement de signe, stricte monotonie.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "fs-cvx-08",
+   "q": "Comment encadrer une solution à la calculatrice ?",
+   "a": "Par balayage : pas de 0,1 puis de 0,01.",
+   "tag": "methode",
+   "niveau": 2,
+   "pourquoi": "On cherche le changement de signe."
+  },
+  {
+   "id": "fs-cvx-09",
+   "q": "Que vérifie la limite L de u_{n+1} = f(u_n) si f est continue ?",
+   "a": "`f(L) = L`.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-cvx-10",
+   "q": "Qu’est-ce que la dérivée seconde f″ ?",
+   "a": "La dérivée de f′.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "fs-cvx-11",
+   "q": "Qu’est-ce qu’une corde d’une courbe ?",
+   "a": "Un segment reliant deux points de la courbe.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "fs-cvx-12",
+   "q": "Où est la courbe d’une fonction convexe par rapport à ses tangentes ?",
+   "a": "Au-dessus.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-cvx-13",
+   "q": "Où est la courbe d’une fonction convexe par rapport à ses cordes ?",
+   "a": "En dessous.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-cvx-14",
+   "q": "Quel signe de f″ caractérise une fonction convexe ?",
+   "a": "`f″ ≥ 0`.",
+   "tag": "propriete",
+   "niveau": 1,
+   "pourquoi": "f′ est alors croissante."
+  },
+  {
+   "id": "fs-cvx-15",
+   "q": "Quel signe de f″ caractérise une fonction concave ?",
+   "a": "`f″ ≤ 0`.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-cvx-16",
+   "q": "La fonction carré est-elle convexe ou concave ?",
+   "a": "Convexe sur ℝ.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-cvx-17",
+   "q": "La fonction racine carrée est-elle convexe ou concave ?",
+   "a": "Concave sur `[0 ; +∞[`.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-cvx-18",
+   "q": "Quelle est la convexité de x³ ?",
+   "a": "Concave sur `]−∞ ; 0]`, convexe sur `[0 ; +∞[`.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "fs-cvx-19",
+   "q": "Quelle est la convexité de 1/x sur ]0 ; +∞[ ?",
+   "a": "Convexe.",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "fs-cvx-20",
+   "q": "Qu’est-ce qu’un point d’inflexion ?",
+   "a": "Un point où la courbe traverse sa tangente.",
+   "tag": "definition",
+   "niveau": 2,
+   "pourquoi": "La convexité y change."
+  },
+  {
+   "id": "fs-cvx-21",
+   "q": "f″(c) = 0 donne-t-il toujours un point d’inflexion ?",
+   "a": "Non : il faut que f″ change de signe.",
+   "tag": "piege",
+   "niveau": 3
+  },
+  {
+   "id": "fs-cvx-22",
+   "q": "Comment démontrer f(x) ≤ tangente sur un intervalle ?",
+   "a": "Montrer que f y est concave.",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "fs-cvx-23",
+   "q": "Qui a démontré rigoureusement le TVI en 1817 ?",
+   "a": "Bolzano.",
+   "tag": "histoire",
+   "niveau": 3
+  }
+ ],
+ "fs-exp": [
+  {
+   "id": "fs-exp-01",
+   "q": "Comment est définie la fonction exponentielle ?",
+   "a": "Unique fonction dérivable sur ℝ avec `f′ = f` et `f(0) = 1`.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-02",
+   "q": "Que vaut `e^0` ?",
+   "a": "1.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-03",
+   "q": "Quelle est une valeur approchée de e ?",
+   "a": "2,718.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-04",
+   "q": "Quel est le signe de e^x ?",
+   "a": "Strictement positif pour tout réel x.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-05",
+   "q": "Que vaut `e^{a+b}` ?",
+   "a": "`e^a × e^b`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-06",
+   "q": "Que vaut `e^{a−b}` ?",
+   "a": "`e^a/e^b`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-07",
+   "q": "Que vaut `e^{−x}` ?",
+   "a": "`1/e^x`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-08",
+   "q": "Que vaut `(e^x)^n` ?",
+   "a": "`e^{nx}`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-09",
+   "q": "Peut-on écrire `e^a × e^b = e^{ab}` ?",
+   "a": "Non : `e^a × e^b = e^{a+b}`.",
+   "tag": "piege",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-10",
+   "q": "Quand a-t-on `e^a = e^b` ?",
+   "a": "Si et seulement si `a = b`.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-11",
+   "q": "Quand a-t-on `e^a < e^b` ?",
+   "a": "Si et seulement si `a < b`.",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "exp est strictement croissante."
+  },
+  {
+   "id": "fs-exp-12",
+   "q": "Quelle est la dérivée de e^x ?",
+   "a": "`e^x`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-13",
+   "q": "Quelle est la dérivée de `e^{kx}` ?",
+   "a": "`ke^{kx}`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-14",
+   "q": "Quelle est la dérivée de `e^{u}` ?",
+   "a": "`u′e^{u}`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-exp-15",
+   "q": "Quel est le sens de variation de t ↦ e^{kt} si k < 0 ?",
+   "a": "Strictement décroissante.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-exp-16",
+   "q": "Quelle fonction vérifie f′ = kf et f(0) = A ?",
+   "a": "`f(t) = Ae^{kt}`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-exp-17",
+   "q": "Que vaut `lim_{x→−∞} e^x` ?",
+   "a": "0.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-18",
+   "q": "Que vaut `lim_{x→+∞} e^x` ?",
+   "a": "`+∞`.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-exp-19",
+   "q": "Que vaut `lim_{x→+∞} e^x/x^n` ?",
+   "a": "`+∞`.",
+   "tag": "valeur",
+   "niveau": 2,
+   "pourquoi": "Croissances comparées."
+  },
+  {
+   "id": "fs-exp-20",
+   "q": "Que vaut `lim_{x→−∞} x e^x` ?",
+   "a": "0.",
+   "tag": "valeur",
+   "niveau": 2,
+   "pourquoi": "Croissances comparées."
+  },
+  {
+   "id": "fs-exp-21",
+   "q": "Qui l’emporte en +∞, e^x ou x² ?",
+   "a": "`e^x`.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "fs-exp-22",
+   "q": "Comment étudier le signe de (x + 1)e^x ?",
+   "a": "Comme e^x > 0, c’est le signe de x + 1.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "fs-exp-23",
+   "q": "Comment lever une indétermination avec e^x en +∞ ?",
+   "a": "Factoriser par e^x et utiliser les croissances comparées.",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "fs-exp-24",
+   "q": "Qui a nommé le nombre e et l’a étudié en 1748 ?",
+   "a": "Leonhard Euler.",
+   "tag": "histoire",
+   "niveau": 3
+  }
+ ],
+ "fs-ln": [
+  {
+   "id": "fs-ln-01",
+   "q": "Comment est défini ln a pour a > 0 ?",
+   "a": "L’unique solution de `e^x = a`.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-02",
+   "q": "Quel est l’ensemble de définition de ln ?",
+   "a": "`]0 ; +∞[`.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-03",
+   "q": "Que vaut ln 1 ?",
+   "a": "0.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-04",
+   "q": "Que vaut ln e ?",
+   "a": "1.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-05",
+   "q": "Que vaut `ln(1/e)` ?",
+   "a": "−1.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-06",
+   "q": "Que vaut `ln(e^x)` ?",
+   "a": "x.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-07",
+   "q": "Que vaut `e^{ln x}` pour x > 0 ?",
+   "a": "x.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-08",
+   "q": "Quelle symétrie relie les courbes de exp et ln ?",
+   "a": "Symétriques par rapport à la droite `y = x`.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "fs-ln-09",
+   "q": "Que vaut `ln(ab)` ?",
+   "a": "`ln a + ln b`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-10",
+   "q": "Que vaut `ln(a/b)` ?",
+   "a": "`ln a − ln b`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-11",
+   "q": "Que vaut `ln(a^n)` ?",
+   "a": "`n ln a`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-12",
+   "q": "Que vaut `ln √a` ?",
+   "a": "`(1/2) ln a`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-ln-13",
+   "q": "Peut-on écrire `ln(a + b) = ln a + ln b` ?",
+   "a": "Non : c’est ln(ab) qui vaut ln a + ln b.",
+   "tag": "piege",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-14",
+   "q": "Que donne `ln X = 0` ?",
+   "a": "`X = 1`.",
+   "tag": "piege",
+   "niveau": 1,
+   "pourquoi": "Et non X = 0."
+  },
+  {
+   "id": "fs-ln-15",
+   "q": "Que donne `ln x = k` ?",
+   "a": "`x = e^k`.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-16",
+   "q": "Quel est le premier réflexe face à une équation avec ln ?",
+   "a": "Déterminer l’ensemble de résolution.",
+   "tag": "methode",
+   "niveau": 1,
+   "pourquoi": "Chaque expression dans un ln doit être > 0."
+  },
+  {
+   "id": "fs-ln-17",
+   "q": "Quelle est la dérivée de ln x ?",
+   "a": "`1/x`.",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-18",
+   "q": "Quelle est la dérivée de `ln u` ?",
+   "a": "`u′/u`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-ln-19",
+   "q": "Quelle est la convexité de ln ?",
+   "a": "Concave sur `]0 ; +∞[`.",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "`(ln x)″ = −1/x^2 < 0`."
+  },
+  {
+   "id": "fs-ln-20",
+   "q": "Que vaut `lim_{x→0} ln x` ?",
+   "a": "`−∞`.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "fs-ln-21",
+   "q": "Que vaut `lim_{x→+∞} ln(x)/x` ?",
+   "a": "0.",
+   "tag": "valeur",
+   "niveau": 2,
+   "pourquoi": "Croissances comparées."
+  },
+  {
+   "id": "fs-ln-22",
+   "q": "Que vaut `lim_{x→0} x ln x` ?",
+   "a": "0.",
+   "tag": "valeur",
+   "niveau": 2,
+   "pourquoi": "Croissances comparées."
+  },
+  {
+   "id": "fs-ln-23",
+   "q": "Quelle est la tangente à ln au point d’abscisse 1 ?",
+   "a": "`y = x − 1`.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "fs-ln-24",
+   "q": "Comment est défini le logarithme décimal log ?",
+   "a": "`log x = ln x/ln 10`.",
+   "tag": "definition",
+   "niveau": 3
+  },
+  {
+   "id": "fs-ln-25",
+   "q": "Qui a publié les premiers logarithmes, en 1614 ?",
+   "a": "John Napier (Neper).",
+   "tag": "histoire",
+   "niveau": 3,
+   "pourquoi": "Pour remplacer les multiplications par des additions."
+  }
+ ]
+}

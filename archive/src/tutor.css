@@ -1,0 +1,23 @@
+/* Demander au prof (Ollama) */
+.tutor{position:absolute;left:0;right:0;bottom:0;z-index:7;background:var(--surface);border-top:1.5px solid var(--line);border-radius:18px 18px 0 0;
+  box-shadow:0 -10px 30px rgba(0,0,0,.14);padding:12px 16px calc(14px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px;animation:up .22s ease;max-height:86%;overflow:hidden}
+.tutor>*{flex:none}.tutor>.tutlog{flex:1 1 auto}
+.tuthead{display:flex;gap:4px}
+.tutset{display:grid;gap:8px;padding:10px;border-radius:12px;background:var(--soft)}
+.tutset label{display:grid;gap:4px;font-size:.82rem;font-weight:600;color:var(--muted)}
+.tutset input{font:inherit;font-size:.95rem;padding:8px 10px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);min-width:0}
+.tutrow{display:flex;gap:8px}
+.tutwarn{font-size:.85rem;color:var(--bad);line-height:1.4}
+.tutnote{font-size:.85rem;color:var(--muted);line-height:1.45}
+.tutnote code,.tm code{font-size:.82rem;background:var(--soft);padding:1px 4px;border-radius:4px}
+.tutlog{overflow-y:auto;display:flex;flex-direction:column;gap:8px;min-height:80px}
+.tm{max-width:88%;padding:8px 12px;border-radius:14px;line-height:1.45;font-size:.95rem;overflow-wrap:anywhere}
+.tm p{margin:0}.tm p+p{margin-top:6px}
+.tm.me{align-self:flex-end;background:var(--t-sq);color:var(--on-sq);border-bottom-right-radius:4px}
+.tm.bot{align-self:flex-start;background:var(--soft);color:var(--ink);border-bottom-left-radius:4px}
+.tutthink{color:var(--muted);font-style:italic}
+.tutchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.tchip2{flex:none;font:inherit;font-size:.82rem;padding:6px 10px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);white-space:nowrap}
+.tutform{display:flex;gap:8px;align-items:flex-end}
+.tutform textarea{flex:1;min-width:0;resize:none;font:inherit;font-size:.95rem;padding:8px 10px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.btn.sm{min-height:40px;padding:0 14px;font-size:.9rem;width:auto}

@@ -1,0 +1,29 @@
+{
+  "m1-vecteurs": [
+    {"id": "m1ve-01", "q": "Qu’est-ce qu’un vecteur, intuitivement ?", "a": "Un déplacement : une direction, un sens et une longueur.", "tag": "definition", "niveau": 1},
+    {"id": "m1ve-02", "q": "Comment calcule-t-on les coordonnées du vecteur AB ?", "a": "(x_B − x_A ; y_B − y_A) : arrivée moins départ.", "tag": "formule", "niveau": 1},
+    {"id": "m1ve-03", "q": "Coordonnées de AB pour A(1 ; 2) et B(4 ; 6) ?", "a": "(3 ; 4)", "tag": "valeur", "niveau": 1},
+    {"id": "m1ve-04", "q": "Quelle est la norme du vecteur (x ; y) ?", "a": "√(x² + y²)", "tag": "formule", "niveau": 1},
+    {"id": "m1ve-05", "q": "Norme du vecteur (6 ; 8) ?", "a": "10", "pourquoi": "√(36 + 64) = √100.", "tag": "valeur", "niveau": 1},
+    {"id": "m1ve-06", "q": "Comment additionne-t-on deux vecteurs en coordonnées ?", "a": "Abscisses entre elles, ordonnées entre elles.", "tag": "methode", "niveau": 1},
+    {"id": "m1ve-07", "q": "Que représente géométriquement u + v ?", "a": "Les deux flèches bout à bout : la diagonale du parallélogramme.", "tag": "propriete", "niveau": 1},
+    {"id": "m1ve-08", "q": "Que vaut k(x ; y) ?", "a": "(kx ; ky)", "tag": "formule", "niveau": 1},
+    {"id": "m1ve-09", "q": "Quelle est l’expression du produit scalaire en repère orthonormé ?", "a": "u · v = xx′ + yy′", "tag": "formule", "niveau": 1},
+    {"id": "m1ve-10", "q": "Que signifie u · v = 0 ?", "a": "u et v sont orthogonaux (perpendiculaires).", "tag": "propriete", "niveau": 1},
+    {"id": "m1ve-11", "q": "Le produit scalaire est-il un nombre ou un vecteur ?", "a": "Un nombre.", "tag": "piege", "niveau": 1},
+    {"id": "m1ve-12", "q": "Signe de u · v quand l’angle entre u et v est obtus ?", "a": "Négatif.", "tag": "propriete", "niveau": 2},
+    {"id": "m1ve-13", "q": "Quand ABCD est-il un parallélogramme, en vecteurs ?", "a": "Quand AB = DC.", "tag": "propriete", "niveau": 2},
+    {"id": "m1ve-14", "q": "Critère de colinéarité de u(x ; y) et v(x′ ; y′) ?", "a": "xy′ − x′y = 0.", "tag": "formule", "niveau": 2},
+    {"id": "m1ve-15", "q": "u(2 ; 5) et v(−5 ; 2) sont-ils orthogonaux ?", "a": "Oui : −10 + 10 = 0.", "tag": "valeur", "niveau": 2},
+    {"id": "m1ve-16", "q": "Comment obtient-on l’angle entre deux vecteurs ?", "a": "cos θ = u · v / (‖u‖ × ‖v‖), puis cos⁻¹.", "tag": "methode", "niveau": 2},
+    {"id": "m1ve-17", "q": "Comment prouver qu’un triangle ABC est rectangle en A ?", "a": "Montrer que AB · AC = 0.", "tag": "methode", "niveau": 2},
+    {"id": "m1ve-18", "q": "Vrai ou faux : ‖u + v‖ = ‖u‖ + ‖v‖.", "a": "Faux en général : ‖u + v‖ ≤ ‖u‖ + ‖v‖.", "tag": "piege", "niveau": 2},
+    {"id": "m1ve-19", "q": "Vrai ou faux : AB = (x_A − x_B ; y_A − y_B).", "a": "Faux : arrivée moins départ, (x_B − x_A ; y_B − y_A).", "tag": "piege", "niveau": 1},
+    {"id": "m1ve-20", "q": "Définition géométrique du produit scalaire ?", "a": "u · v = ‖u‖ × ‖v‖ × cos θ.", "tag": "formule", "niveau": 3},
+    {"id": "m1ve-21", "q": "Que vaut u · u ?", "a": "‖u‖²", "tag": "propriete", "niveau": 3},
+    {"id": "m1ve-22", "q": "Développer ‖u + v‖² ?", "a": "‖u‖² + 2 u · v + ‖v‖²", "tag": "formule", "niveau": 3},
+    {"id": "m1ve-23", "q": "Quelle hypothèse exige la formule u · v = xx′ + yy′ ?", "a": "Un repère orthonormé.", "tag": "piege", "niveau": 3},
+    {"id": "m1ve-24", "q": "Le vecteur nul est orthogonal à quels vecteurs ?", "a": "À tous les vecteurs.", "tag": "propriete", "niveau": 3},
+    {"id": "m1ve-25", "q": "Qui a introduit les mots « vecteur » et « scalaire » ?", "a": "William Rowan Hamilton, au XIXe siècle.", "tag": "histoire", "niveau": 2}
+  ]
+}

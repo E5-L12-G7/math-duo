@@ -1,0 +1,30 @@
+{
+  "m1-triangle": [
+    {"id": "m1tri-01", "q": "Qu’est-ce que l’hypoténuse d’un triangle rectangle ?", "a": "Le côté en face de l’angle droit, le plus long.", "tag": "definition", "niveau": 1},
+    {"id": "m1tri-02", "q": "Énonce le théorème de Pythagore.", "a": "Dans un triangle rectangle, hypoténuse² = somme des carrés des deux autres côtés.", "tag": "propriete", "niveau": 1},
+    {"id": "m1tri-03", "q": "ABC rectangle en A : quelle égalité de Pythagore ?", "a": "BC² = AB² + AC²", "tag": "formule", "niveau": 1},
+    {"id": "m1tri-04", "q": "Hypoténuse d’un triangle rectangle de côtés 6 et 8 ?", "a": "10", "pourquoi": "√(36 + 64) = √100.", "tag": "valeur", "niveau": 1},
+    {"id": "m1tri-05", "q": "Que signifie CAH SOH TOA ?", "a": "cos = adj/hyp, sin = opp/hyp, tan = opp/adj.", "tag": "formule", "niveau": 1},
+    {"id": "m1tri-06", "q": "Qu’est-ce que le côté adjacent à un angle aigu ?", "a": "Le côté qui touche l’angle sans être l’hypoténuse.", "tag": "definition", "niveau": 1},
+    {"id": "m1tri-07", "q": "Qu’est-ce que le côté opposé à un angle ?", "a": "Le côté qui fait face à l’angle.", "tag": "definition", "niveau": 1},
+    {"id": "m1tri-08", "q": "Que vaut le cosinus d’un angle aigu dans un triangle rectangle ?", "a": "Côté adjacent divisé par l’hypoténuse.", "tag": "formule", "niveau": 1},
+    {"id": "m1tri-09", "q": "Énonce le théorème de Thalès.", "a": "Si M ∈ [AB], N ∈ [AC] et (MN) ∥ (BC), alors AM/AB = AN/AC = MN/BC.", "tag": "propriete", "niveau": 1},
+    {"id": "m1tri-10", "q": "Que signifie « deux triangles semblables » ?", "a": "Mêmes angles ; côtés proportionnels.", "tag": "definition", "niveau": 1},
+    {"id": "m1tri-11", "q": "Pour un côté de l’angle droit, Pythagore : on additionne ou on soustrait ?", "a": "On soustrait : côté² = hyp² − autre côté².", "tag": "methode", "niveau": 2},
+    {"id": "m1tri-12", "q": "Comment prouver qu’un triangle est rectangle ?", "a": "Réciproque de Pythagore : plus grand côté² = somme des deux autres carrés.", "tag": "methode", "niveau": 2},
+    {"id": "m1tri-13", "q": "Où est l’angle droit si la réciproque de Pythagore s’applique ?", "a": "En face du plus grand côté.", "tag": "propriete", "niveau": 2},
+    {"id": "m1tri-14", "q": "cos α = AB/AC : comment isoler AC ?", "a": "AC = AB ÷ cos α.", "tag": "methode", "niveau": 2},
+    {"id": "m1tri-15", "q": "Comment trouver un angle connaissant opposé et adjacent ?", "a": "α = tan⁻¹(opposé/adjacent), calculatrice en degrés.", "tag": "methode", "niveau": 2},
+    {"id": "m1tri-16", "q": "Opposé à 30° si l’hypoténuse vaut 10 ?", "a": "5", "pourquoi": "10 × sin 30° = 10 × 0,5.", "tag": "valeur", "niveau": 2},
+    {"id": "m1tri-17", "q": "Vrai ou faux : Thalès s’applique dès que M est sur [AB] et N sur [AC].", "a": "Faux : il faut aussi (MN) ∥ (BC).", "tag": "piege", "niveau": 2},
+    {"id": "m1tri-18", "q": "Piège Thalès : AM/MB = MN/BC ?", "a": "Faux : c’est AM/AB = MN/BC.", "tag": "piege", "niveau": 2},
+    {"id": "m1tri-19", "q": "Vrai ou faux : sin α = adjacent / hypoténuse.", "a": "Faux : sin α = opposé / hypoténuse.", "tag": "piege", "niveau": 1},
+    {"id": "m1tri-20", "q": "Pourquoi cos et sin d’un angle aigu sont-ils entre 0 et 1 ?", "a": "L’hypoténuse est le plus grand côté.", "tag": "propriete", "niveau": 3},
+    {"id": "m1tri-21", "q": "Pourquoi sin, cos, tan ne dépendent-ils que de l’angle ?", "a": "Les triangles rectangles de même angle sont semblables.", "tag": "propriete", "niveau": 3},
+    {"id": "m1tri-22", "q": "Quel lien entre cos²α + sin²α = 1 et Pythagore ?", "a": "C’est Pythagore dans un triangle d’hypoténuse 1.", "tag": "propriete", "niveau": 3},
+    {"id": "m1tri-23", "q": "Agrandir un triangle d’un facteur k multiplie son aire par… ?", "a": "k²", "tag": "propriete", "niveau": 3},
+    {"id": "m1tri-24", "q": "5, 7, 9 : triangle rectangle ?", "a": "Non : 81 ≠ 25 + 49 = 74.", "tag": "valeur", "niveau": 2},
+    {"id": "m1tri-25", "q": "Quelle tablette babylonienne contient des triplets de Pythagore ?", "a": "Plimpton 322, vieille de près de 4 000 ans.", "tag": "histoire", "niveau": 2},
+    {"id": "m1tri-26", "q": "Que vaut sin(90° − α) ?", "a": "cos α", "tag": "formule", "niveau": 3}
+  ]
+}

@@ -1,0 +1,31 @@
+
+/* Brouillon (calque) */
+#draft{position:fixed;inset:0;z-index:60;pointer-events:none}
+#draft.off{display:none}
+#dcv{position:absolute;inset:0;touch-action:none;pointer-events:none}
+#draft.draw #dcv{pointer-events:auto;cursor:crosshair;background:color-mix(in oklab,var(--paper) 22%,transparent)}
+.dbar{position:absolute;left:0;right:0;margin-inline:auto;width:fit-content;top:calc(8px + env(safe-area-inset-top,0px));pointer-events:auto;display:flex;flex-wrap:wrap;align-items:center;gap:4px;
+  max-width:min(464px,calc(100% - 16px));padding:6px;border-radius:14px;background:var(--surface);border:1.5px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.dsp{flex:1}
+.dsw,.dtool{height:38px;min-width:38px;border-radius:10px;border:1.5px solid transparent;background:none;color:var(--ink);display:grid;place-items:center;padding:0 6px;font:inherit;font-size:.82rem;font-weight:700}
+.dsw i{width:20px;height:20px;border-radius:50%;background:var(--c);display:block}
+.dsw.on,.dtool.on{border-color:var(--t-sq);background:var(--soft)}
+.dtool svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dtool#dw{display:flex;gap:4px}.dtool#dw span{font-size:.72rem;color:var(--muted)}
+.dtool:disabled{opacity:.35}
+.dtxt{padding:0 10px;border-color:var(--line)}
+.dhint{position:absolute;left:0;right:0;margin-inline:auto;width:fit-content;bottom:calc(10px + env(safe-area-inset-bottom,0px));pointer-events:auto;display:flex;align-items:center;gap:8px;
+  padding:6px 6px 6px 12px;border-radius:12px;background:var(--surface);border:1.5px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.16);font-size:.82rem;color:var(--muted);max-width:calc(100% - 16px)}
+.dhint button{height:34px;border-radius:9px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-weight:700;padding:0 10px;display:grid;place-items:center}
+.dhint button svg{width:16px;height:16px}
+.dfab{position:fixed;z-index:59;right:0;top:clamp(84px,22%,220px);width:28px;height:44px;border-radius:12px 0 0 12px;
+  border:1.5px solid var(--line);border-right:0;background:var(--surface);color:var(--ink);box-shadow:0 4px 14px rgba(0,0,0,.16);display:grid;place-items:center;opacity:.8}
+.dfab svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dfab.has::after{content:"";position:absolute;top:4px;right:4px;width:9px;height:9px;border-radius:50%;background:var(--t-sq)}
+/* Calculatrice scientifique */
+.cbar{display:flex;gap:8px;align-items:center}.cbar .cpg{flex:1}
+.cmode{height:36px;padding:0 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-weight:700;font-size:.85rem}
+.key.sm{font-size:1rem}.key.xs{font-size:.8rem}
+.kbar{display:flex;gap:6px;align-items:center;margin:2px 0 6px}.kbar .cpg{flex:1;min-width:0}.kcur{display:flex;gap:6px}.kcur .key{width:42px;height:36px;font-size:1rem}.kbar .cmode[hidden]{display:none}
+.cnote{font-size:.8rem;color:var(--muted);min-height:0}.cnote:empty{display:none}
+.cexpr sup.tk{font-size:.7em}

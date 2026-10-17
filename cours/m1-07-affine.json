@@ -1,0 +1,179 @@
+{
+  "id": "m1-affine",
+  "titre": "Fonctions affines et équations de droites",
+  "resume": "Une fonction affine f(x) = ax + b ajoute toujours la même quantité a quand x augmente de 1 : sa courbe est une droite de pente a qui coupe l’axe vertical en b. Avec deux points, on retrouve l’équation de la droite ; avec deux équations, on trouve le point commun.",
+  "objectifs": [
+    "calculer une image et lire une courbe représentative",
+    "lire graphiquement la pente et l’ordonnée à l’origine d’une droite",
+    "déterminer l’équation de la droite passant par deux points",
+    "reconnaître des droites parallèles ou perpendiculaires",
+    "calculer les coordonnées du point d’intersection de deux droites",
+    "étudier le signe d’une fonction affine"
+  ],
+  "prerequis": [
+    "m1-equations"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Salut ! Dans ce chapitre on va dessiner des droites, et surtout comprendre ce que racontent deux petits nombres cachés dans leur équation. Tu verras : une fois qu’on sait les lire, une droite se trace en dix secondes.",
+      "## Une fonction, c’est une machine",
+      "Une fonction est une machine : tu lui donnes un nombre x, elle te rend **un seul** nombre, noté f(x) (on lit « f de x »). La formule dit ce que fait la machine ; la courbe en fait un dessin : chaque point a pour coordonnées (x ; f(x)).",
+      "analogie: Un taxi facture 4 € de prise en charge, puis 2 € par kilomètre. Pour x km, tu paies f(x) = 2x + 4 euros. C’est une machine : 10 km entrent, 24 € sortent.",
+      "## Pourquoi une droite ?",
+      "Chaque kilomètre en plus ajoute **toujours** 2 € : le prix monte au même rythme, régulièrement, comme un escalier dont toutes les marches ont la même hauteur. Quand on relie les points, on obtient une droite.",
+      "!! Une fonction affine f(x) = ax + b ajoute toujours la même quantité a quand x augmente de 1. Sa courbe est une droite.",
+      "## Les deux nombres d’une droite",
+      "- **a**, la pente (ou coefficient directeur) : de combien on monte quand on avance de 1 vers la droite. Si a est négatif, on descend.\n- **b**, l’ordonnée à l’origine : la valeur au départ, quand x = 0. C’est là que la droite coupe l’axe vertical.",
+      "@courbe {\"f\":\"a*x+b\",\"curseurs\":{\"a\":[-3,3,0.5,2],\"b\":[-4,4,0.5,1]},\"x\":[-5,5],\"y\":[-6,6]} | Bouge d’abord b seul : la droite glisse vers le haut ou le bas sans changer d’inclinaison. Bouge ensuite a seul : la droite pivote autour du point (0 ; b). Que se passe-t-il quand a = 0 ?",
+      "? Dans l’exemple du taxi, combien coûtent 10 km ? Que représente le 4 ? || f(10) = 2 × 10 + 4 = 24 €. Le 4 est le prix pour 0 km : la prise en charge, l’ordonnée à l’origine.",
+      "prof: Une question que tu te poses peut-être : « une droite, c’est toujours une fonction affine ? » Presque ! Les droites verticales sont l’exception : pour une seule valeur de x, elles ont une infinité de y, donc ce n’est pas une machine qui rend un seul nombre.",
+      "## La pente se voit avec un petit triangle",
+      "Prends deux points de la droite. Le déplacement horizontal entre eux s’appelle Δx (« delta x »), le déplacement vertical Δy. La pente, c’est Δy ÷ Δx : combien on monte pour chaque pas vers la droite.",
+      "@droite {\"A\":[-2,-1],\"B\":[2,3]} | Fais glisser A et B. Observe le triangle pointillé : la pente affichée est toujours Δy ÷ Δx. Mets A et B à la même hauteur : la pente vaut 0. Mets-les l’un au-dessus de l’autre : plus de pente du tout, la droite est verticale.",
+      "? Une droite monte de 6 quand on avance de 3. Quelle est sa pente ? || 6 ÷ 3 = 2 : elle monte de 2 pour chaque pas de 1.",
+      "? Deux droites ont la même pente mais pas le même b. Se croisent-elles ? || Non : elles ont la même inclinaison, elles sont parallèles, comme deux rails.",
+      "histoire: L’idée de décrire une courbe par une équation vient de René Descartes, qui publie La Géométrie en 1637 ; Pierre de Fermat a la même idée à la même époque. C’est en l’honneur de Descartes qu’on parle de repère « cartésien ».",
+      "prof: Bilan : a est l’inclinaison, b le point de départ sur l’axe vertical. Avec ces deux nombres, tu sais tout de la droite. Au niveau Pratique, on apprend à les retrouver à partir de deux points et à faire se croiser des droites."
+    ],
+    "pratique": [
+      "prof: Place aux méthodes. On en voit cinq : calculer une image, lire a et b sur un graphique, trouver l’équation par deux points, reconnaître parallèles et perpendiculaires, calculer une intersection. À chaque fois : la recette, un exemple animé, puis à toi.",
+      "## Calculer une image",
+      "Pour calculer f(3) avec f(x) = −2x + 5, on remplace x par 3 : f(3) = −2 × 3 + 5 = −1. Le point (3 ; −1) est sur la droite. Si la valeur est négative, mets-la entre parenthèses : f(−4) = −2 × (−4) + 5 = 13.",
+      "## Lire a et b sur un graphique",
+      "1. b se lit sur l’axe vertical : c’est l’ordonnée du point où la droite le coupe.\n2. Choisis deux points de la droite bien placés sur le quadrillage.\n3. Compte Δx (vers la droite) et Δy (vers le haut, négatif si l’on descend) : a = Δy ÷ Δx.",
+      "## Équation de la droite passant par A et B",
+      "1. Calcule la pente : a = (y_B − y_A) ÷ (x_B − x_A).\n2. Calcule b avec le point A : y_A = a × x_A + b, donc b = y_A − a × x_A.\n3. Écris y = ax + b et vérifie avec le point B.",
+      "@etapes {\"etapes\":[[\"A(−2 ; 7) et B(4 ; −5)\",\"On cherche y = ax + b.\"],[\"a = (−5 − 7) ÷ (4 − (−2))\",\"Différence des ordonnées sur différence des abscisses, dans le même ordre.\"],[\"a = −12 ÷ 6 = −2\",\"La droite descend : pente négative.\"],[\"7 = −2 × (−2) + b\",\"A est sur la droite : ses coordonnées vérifient l’équation.\"],[\"b = 7 − 4 = 3\",\"On isole b.\"],[\"y = −2x + 3\",\"Vérification avec B : −2 × 4 + 3 = −5.\"]]} | Lance l’animation. À l’étape 2, remarque que B passe en premier en haut ET en bas. Que se passerait-il si on inversait seulement le bas ?",
+      "attention: Même ordre en haut et en bas ! (y_B − y_A) ÷ (x_A − x_B) donne la pente avec le mauvais signe.",
+      "? Trouve l’équation de la droite passant par A(1 ; 5) et B(3 ; 9). || a = (9 − 5) ÷ (3 − 1) = 2, puis b = 5 − 2 × 1 = 3 : y = 2x + 3.",
+      "## Parallèles et perpendiculaires",
+      "- Deux droites sont **parallèles** quand elles ont la même pente.\n- Deux droites sont **perpendiculaires** quand le produit de leurs pentes vaut −1 : la pente de l’une est « l’inverse opposé » de l’autre (2 et −1/2).",
+      "@courbe {\"f\":[{\"f\":\"m*x+1\",\"nom\":\"d\"},{\"f\":\"m*x+p\",\"nom\":\"d′ (parallèle)\"},{\"f\":\"-x/m\",\"nom\":\"d″ (perpendiculaire)\"}],\"curseurs\":{\"m\":[0.5,3,0.5,2],\"p\":[-4,4,1,-2]},\"x\":[-5,5],\"y\":[-5,5]} | Change la pente m : d et d′ restent toujours parallèles, et d″ reste à angle droit avec d. Observe que quand d se redresse, d″ se couche.",
+      "prof: Pourquoi −1 ? Fais pivoter un escalier d’un quart de tour : « avancer de 1, monter de 2 » devient « monter de 1, reculer de 2 ». La pente passe de 2 à −1/2. Le produit 2 × (−1/2) vaut bien −1. On le démontre au niveau Expert.",
+      "> droite de pente a passant par A : y = a(x − x_A) + y_A",
+      "? Quelle est la pente d’une perpendiculaire à y = 3x − 1 ? || −1/3, car 3 × (−1/3) = −1.",
+      "## Intersection de deux droites",
+      "1. Au point commun, les deux y sont égaux : on égale les deux expressions.\n2. On résout l’équation du premier degré obtenue : on trouve x.\n3. On remplace x dans l’une des équations pour trouver y, et on contrôle avec l’autre.",
+      "@etapes {\"etapes\":[[\"y = 2x − 1 et y = −x + 5\",\"On cherche le point commun.\"],[\"2x − 1 = −x + 5\",\"Au point commun, les deux y sont égaux.\"],[\"3x = 6\",\"On ajoute x et 1 aux deux membres.\"],[\"x = 2\",\"On divise par 3.\"],[\"y = 2 × 2 − 1 = 3\",\"On remplace dans la première équation.\"],[\"I(2 ; 3)\",\"Contrôle avec la seconde : −2 + 5 = 3.\"]]} | Suis l’animation, puis refais le calcul sans regarder.",
+      "? Les droites y = 3x − 1 et y = 3x + 4 se coupent-elles ? || Non : même pente 3, elles sont parallèles et distinctes. L’équation 3x − 1 = 3x + 4 donne −1 = 4 : aucune solution.",
+      "## Signe et sens de variation",
+      "Si a > 0, la fonction est croissante : elle est négative avant sa racine −b/a, positive après. Si a < 0, c’est l’inverse. On résume dans un tableau de signes.",
+      "@inequation-graphique | Règle a et b, et observe la zone verte : c’est là que la droite bleue est au-dessus de l’autre. Le changement se fait toujours au point d’intersection.",
+      "prof: Bilan pratique : a = Δy ÷ Δx, b = y_A − a x_A, même pente = parallèles, produit −1 = perpendiculaires, intersection = égaler les y. Avec ça, tu as tout l’outillage de l’UE sur les droites."
+    ],
+    "expert": [
+      "prof: Au niveau Expert, on donne des définitions précises, on démontre les deux règles phares (taux constant, produit −1), et on regarde les cas où les formules ne marchent plus : droites verticales, repères non orthonormés, systèmes sans solution.",
+      "## Définitions",
+      "Une fonction f définie sur une partie D de ℝ associe à tout x de D un **unique** réel f(x). Sa courbe représentative est l’ensemble des points (x ; f(x)) pour x dans D. Une fonction affine est de la forme f(x) = ax + b sur ℝ ; elle est **linéaire** si b = 0 (situation de proportionnalité), **constante** si a = 0.",
+      "## Le taux d’accroissement caractérise les fonctions affines",
+      "> pour tous u ≠ v :  (f(v) − f(u)) / (v − u) = (av + b − au − b) / (v − u) = a",
+      "Réciproquement, si ce taux vaut toujours a, alors en prenant u = 0 : f(v) − f(0) = a × v, donc f(v) = av + f(0) : f est affine avec b = f(0). Les fonctions affines sont exactement celles qui ont un taux d’accroissement constant.",
+      "? f est affine, f(2) = 7 et f(5) = 13. Que vaut f(0) ? || Taux : (13 − 7) ÷ 3 = 2, donc f(x) = 2x + b avec 7 = 4 + b : b = 3 = f(0).",
+      "## Équation générale d’une droite",
+      "Toute droite du plan a une équation de la forme ux + vy + w = 0, avec (u ; v) ≠ (0 ; 0). Si v ≠ 0, on peut isoler y : c’est l’équation réduite y = ax + b. Si v = 0, c’est une droite verticale x = k : elle n’a pas de pente et n’est la courbe d’aucune fonction.",
+      "## Pourquoi le produit des pentes vaut −1",
+      "Les droites y = ax et y = a′x passent par l’origine O. Elles contiennent P(1 ; a) et Q(1 ; a′). Elles sont perpendiculaires exactement quand le triangle OPQ est rectangle en O, c’est-à-dire, par Pythagore, OP² + OQ² = PQ².",
+      "@etapes {\"etapes\":[[\"OP² + OQ² = PQ²\",\"Pythagore : angle droit en O.\"],[\"(1 + a²) + (1 + a′²) = (a − a′)²\",\"Distances calculées dans un repère orthonormé.\"],[\"2 + a² + a′² = a² − 2aa′ + a′²\",\"On développe le carré.\"],[\"2 = −2aa′\",\"On simplifie a² et a′² des deux côtés.\"],[\"a × a′ = −1\",\"On divise par −2.\"]]} | Suis la démonstration. Remarque l’étape 2 : elle utilise des distances, donc un repère orthonormé (mêmes unités sur les deux axes).",
+      "## Intersection et système d’équations",
+      "Chercher l’intersection de y = ax + b et y = a′x + b′, c’est résoudre (a − a′)x = b′ − b. Trois cas : a ≠ a′, un unique point ; a = a′ et b ≠ b′, droites parallèles distinctes, aucun point ; a = a′ et b = b′, droites confondues, une infinité de points.",
+      "@courbe {\"f\":[{\"f\":\"2*x-1\",\"nom\":\"d : y = 2x − 1\"},{\"f\":\"a*x+b\",\"nom\":\"d′ : y = ax + b\"}],\"curseurs\":{\"a\":[-3,3,0.5,-1],\"b\":[-4,4,0.5,2]},\"x\":[-5,5],\"y\":[-6,6]} | Règle a = 2 : les droites deviennent parallèles et le point commun disparaît. Règle en plus b = −1 : elles se superposent. Ce sont les trois cas du système.",
+      "? Combien de points communs ont y = −x + 2 et 2x + 2y = 4 ? || La seconde s’écrit y = −x + 2 : c’est la même droite, il y a une infinité de points communs.",
+      "prof: Je sais ce que tu penses : « c’est bien beau, mais à l’examen on me demande juste de calculer ». Justement : savoir d’où vient le −1 t’évite de le confondre avec « l’opposé », et savoir qu’une verticale n’a pas de pente t’évite une division par zéro. Voyons ces pièges.",
+      "## Où ça casse",
+      "- Une droite verticale x = k n’a pas de pente : la formule (y_B − y_A) ÷ (x_B − x_A) divise par 0.\n- La règle a × a′ = −1 suppose un repère orthonormé ; elle ne s’applique pas non plus si l’une des droites est verticale (sa perpendiculaire est horizontale, de pente 0).\n- Lire une pente sur un graphique dont les axes n’ont pas la même échelle : compte les unités, pas les carreaux.",
+      "? Quelle est la perpendiculaire à la droite x = 3 passant par A(1 ; 2) ? || La droite horizontale y = 2 : pente 0, c’est le cas où la règle du produit −1 ne s’applique pas.",
+      "histoire: Le mot « fonction » a été introduit par Leibniz à la fin du XVIIᵉ siècle ; la notation f(x) est due à Euler, en 1734. La définition moderne, « à chaque x un unique f(x) », est fixée au XIXᵉ siècle, notamment par Dirichlet.",
+      "prof: Pour conclure : affine signifie « taux constant », la pente se calcule avec deux points dans le même ordre, et la règle du produit −1 vient de Pythagore. Garde en tête les droites verticales : ce sont elles qui piègent les formules. Prochaine étape : les paraboles, où le taux n’est plus constant."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Équation de la droite passant par A(−2 ; 7) et B(4 ; −5).",
+      "etapes": [
+        [
+          "a = (−5 − 7) ÷ (4 − (−2)) = −12 ÷ 6 = −2",
+          "différence des ordonnées sur différence des abscisses"
+        ],
+        [
+          "7 = −2 × (−2) + b, donc b = 3",
+          "A est sur la droite"
+        ],
+        [
+          "y = −2x + 3",
+          "on remplace a et b"
+        ],
+        [
+          "−2 × 4 + 3 = −5",
+          "contrôle : B vérifie l’équation"
+        ]
+      ]
+    },
+    {
+      "enonce": "Intersection de y = 2x − 1 et y = −x + 5.",
+      "etapes": [
+        [
+          "2x − 1 = −x + 5",
+          "au point commun, les deux y sont égaux"
+        ],
+        [
+          "3x = 6, donc x = 2",
+          "équation du premier degré"
+        ],
+        [
+          "y = 2 × 2 − 1 = 3",
+          "on remplace dans la première équation"
+        ],
+        [
+          "I(2 ; 3)",
+          "contrôle avec la seconde : −2 + 5 = 3"
+        ]
+      ]
+    },
+    {
+      "enonce": "Équation de la perpendiculaire à y = 2x + 1 passant par A(4 ; 1).",
+      "etapes": [
+        [
+          "a′ = −1/2",
+          "2 × a′ = −1"
+        ],
+        [
+          "y = −1/2 (x − 4) + 1",
+          "droite de pente a′ passant par A"
+        ],
+        [
+          "y = −0,5x + 3",
+          "on développe et on réduit"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "a = (y_B − y_A) ÷ (x_A − x_B)",
+      "juste": "a = (y_B − y_A) ÷ (x_B − x_A)",
+      "pourquoi": "Il faut le même ordre en haut et en bas, sinon le signe de la pente s’inverse."
+    },
+    {
+      "faux": "Perpendiculaire à y = 2x + 1 : pente −2",
+      "juste": "Pente −1/2",
+      "pourquoi": "Les pentes de deux perpendiculaires ont un produit égal à −1."
+    },
+    {
+      "faux": "La droite x = 3 a pour équation y = 3x",
+      "juste": "x = 3 est une droite verticale",
+      "pourquoi": "Une droite verticale n’est pas la courbe d’une fonction : elle n’a pas de pente."
+    },
+    {
+      "faux": "b = y_A + a × x_A",
+      "juste": "b = y_A − a × x_A",
+      "pourquoi": "De y_A = a x_A + b, on isole b en retranchant a x_A."
+    }
+  ],
+  "retenir": [
+    "f(x) = ax + b : a est la pente, b la valeur en 0 (ordonnée à l’origine).",
+    "a = (y_B − y_A) ÷ (x_B − x_A), puis b = y_A − a × x_A.",
+    "Parallèles : même pente. Perpendiculaires : produit des pentes égal à −1.",
+    "Intersection : on égale les deux expressions de y, puis on calcule y.",
+    "Une droite verticale x = k n’a pas de pente."
+  ]
+}

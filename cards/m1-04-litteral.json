@@ -1,0 +1,30 @@
+{
+  "m1-litteral": [
+    {"id": "m1lt-01", "q": "Que signifie développer une expression ?", "a": "Transformer un produit en somme.", "tag": "definition", "niveau": 1},
+    {"id": "m1lt-02", "q": "Que signifie factoriser une expression ?", "a": "Transformer une somme en produit.", "tag": "definition", "niveau": 1},
+    {"id": "m1lt-03", "q": "Que vaut k(a + b) ?", "a": "ka + kb", "tag": "formule", "niveau": 1},
+    {"id": "m1lt-04", "q": "Que vaut −(x − 3) ?", "a": "−x + 3", "pourquoi": "Le moins change le signe de chaque terme.", "tag": "piege", "niveau": 1},
+    {"id": "m1lt-05", "q": "Combien de produits pour développer (a + b)(c + d) ?", "a": "Quatre : ac, ad, bc et bd.", "tag": "methode", "niveau": 1},
+    {"id": "m1lt-06", "q": "Que vaut (a + b)² ?", "a": "a² + 2ab + b²", "tag": "formule", "niveau": 1},
+    {"id": "m1lt-07", "q": "Que vaut (a − b)² ?", "a": "a² − 2ab + b²", "tag": "formule", "niveau": 1},
+    {"id": "m1lt-08", "q": "Que vaut (a + b)(a − b) ?", "a": "a² − b²", "tag": "formule", "niveau": 1},
+    {"id": "m1lt-09", "q": "Vrai ou faux : (x + 3)² = x² + 9 ?", "a": "Faux : (x + 3)² = x² + 6x + 9.", "tag": "piege", "niveau": 1},
+    {"id": "m1lt-10", "q": "Comment s’appelle le terme 2ab dans (a + b)² ?", "a": "Le double produit.", "tag": "definition", "niveau": 1},
+    {"id": "m1lt-11", "q": "Que vaut (3x)² ?", "a": "9x²", "tag": "valeur", "niveau": 1},
+    {"id": "m1lt-12", "q": "Développe (2x + 3)(x − 5).", "a": "2x² − 7x − 15", "tag": "valeur", "niveau": 2},
+    {"id": "m1lt-13", "q": "Par quoi commencer pour factoriser ?", "a": "Chercher un facteur commun à tous les termes.", "tag": "methode", "niveau": 2},
+    {"id": "m1lt-14", "q": "Factorise 6x² + 9x.", "a": "3x(2x + 3)", "tag": "valeur", "niveau": 2},
+    {"id": "m1lt-15", "q": "Factorise 4x² − 25.", "a": "(2x − 5)(2x + 5)", "tag": "valeur", "niveau": 2},
+    {"id": "m1lt-16", "q": "Factorise x² + 6x + 9.", "a": "(x + 3)²", "tag": "valeur", "niveau": 2},
+    {"id": "m1lt-17", "q": "Comment reconnaître a² − b² ?", "a": "Deux carrés séparés par un signe moins.", "tag": "methode", "niveau": 2},
+    {"id": "m1lt-18", "q": "Comment reconnaître (a ± b)² développé ?", "a": "Trois termes : deux carrés et leur double produit.", "tag": "methode", "niveau": 2},
+    {"id": "m1lt-19", "q": "Comment vérifier une factorisation ?", "a": "Redévelopper, ou tester avec une valeur de x.", "tag": "methode", "niveau": 2},
+    {"id": "m1lt-20", "q": "x² + 4 se factorise-t-il dans ℝ ?", "a": "Non : une somme de carrés ne se factorise pas dans ℝ.", "tag": "piege", "niveau": 2},
+    {"id": "m1lt-21", "q": "Quand un produit A × B est-il nul ?", "a": "Si et seulement si A = 0 ou B = 0.", "tag": "propriete", "niveau": 2},
+    {"id": "m1lt-22", "q": "Sur quelle propriété repose tout développement ?", "a": "La distributivité : a(b + c) = ab + ac.", "tag": "propriete", "niveau": 3},
+    {"id": "m1lt-23", "q": "Un test numérique réussi prouve-t-il une égalité littérale ?", "a": "Non ; un test raté suffit en revanche à la réfuter.", "tag": "propriete", "niveau": 3},
+    {"id": "m1lt-24", "q": "Pourquoi ne pas diviser x² = 3x par x ?", "a": "On perdrait la solution x = 0 ; on factorise : x(x − 3) = 0.", "tag": "piege", "niveau": 3},
+    {"id": "m1lt-25", "q": "Quand ax² + bx + c se factorise-t-il dans ℝ ?", "a": "Quand son discriminant b² − 4ac est positif ou nul.", "tag": "propriete", "niveau": 3},
+    {"id": "m1lt-26", "q": "Qui a généralisé les lettres pour les inconnues, vers 1591 ?", "a": "François Viète.", "tag": "histoire", "niveau": 2}
+  ]
+}

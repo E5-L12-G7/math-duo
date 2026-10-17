@@ -1,0 +1,172 @@
+[
+ {
+  "id": "fa-tg-tri",
+  "accroche": "Mesurer la hauteur d’un arbre sans y grimper, la largeur d’une rivière sans la traverser : avec un angle et une longueur, le triangle rectangle te donne tout le reste.",
+  "pourquoi": "<p>On sait facilement mesurer une distance au sol et un angle de visée, mais pas une hauteur ou une distance inaccessible. La trigonométrie du triangle rectangle fait le pont : elle relie les <b>angles</b> aux <b>rapports de longueurs</b>.</p><p>Sans elle, il faudrait dessiner chaque situation à l’échelle et mesurer à la règle. Avec elle, un calcul suffit : c’est ainsi que travaillent les géomètres, les architectes, les artilleurs et les navigateurs depuis des siècles.</p>",
+  "histoire": "<p>La trigonométrie est née dans le ciel. Pour prévoir la position des astres, les astronomes devaient relier des angles (ce qu’on mesure en visant une étoile) à des longueurs (ce qu’on sait calculer). Les Babyloniens tenaient déjà des tables astronomiques, et nous leur devons la division du cercle en 360 degrés, liée à leur numération en base 60.</p><p>Au II<sup>e</sup> siècle avant notre ère, le Grec <b>Hipparque</b> est traditionnellement crédité des premières tables trigonométriques : elles donnaient, pour chaque angle au centre, la longueur de la corde qu’il découpe dans un cercle. Le sinus, la « demi-corde », apparaît ensuite chez les astronomes indiens, puis passe par les savants de langue arabe avant d’arriver en Europe.</p><p>Les mots « cosinus » et « tangente » et le moyen mnémotechnique CAH SOH TOA sont bien plus récents : ils servent à l’enseignement du triangle rectangle, qui n’est que la porte d’entrée d’une théorie beaucoup plus vaste.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · Nommer les côtés",
+    "html": "<p><b>Où on va.</b> Avant tout calcul, il faut savoir de quel côté on parle. Dans un triangle rectangle, l’<b>hypoténuse</b> est le côté en face de l’angle droit : c’est toujours le plus long.</p><p>Pour un angle aigu choisi, le <b>côté opposé</b> lui fait face et le <b>côté adjacent</b> le touche sans être l’hypoténuse. Exemple : dans <span class=\"m\">ABC</span> rectangle en <span class=\"m\">B</span>, pour l’angle <span class=\"m\">Â</span>, l’hypoténuse est <span class=\"m\">[AC]</span>, l’adjacent <span class=\"m\">[AB]</span> et l’opposé <span class=\"m\">[BC]</span>. Pour l’angle <span class=\"m\">Ĉ</span>, adjacent et opposé s’échangent : <span class=\"m\">[CB]</span> devient adjacent.</p><p><b>Le point.</b> L’hypoténuse ne dépend que de l’angle droit ; opposé et adjacent dépendent de l’angle regardé.</p>"
+   },
+   {
+    "titre": "Marche 2 · Trois rapports qui ne dépendent que de l’angle",
+    "html": "<p><b>L’idée.</b> Deux triangles rectangles qui ont le même angle aigu ont la même forme : l’un est un agrandissement de l’autre. Leurs côtés sont proportionnels, donc les rapports entre côtés ne dépendent que de l’angle. On les nomme :</p><ul><li><span class=\"m\">cos(angle) = adjacent / hypoténuse</span> (CAH)</li><li><span class=\"m\">sin(angle) = opposé / hypoténuse</span> (SOH)</li><li><span class=\"m\">tan(angle) = opposé / adjacent</span> (TOA)</li></ul><p><b>Exemple.</b> Triangle rectangle en <span class=\"m\">A</span> avec <span class=\"m\">AB = 12</span>, <span class=\"m\">AC = 5</span>, <span class=\"m\">BC = 13</span> : pour l’angle <span class=\"m\">B̂</span>, <span class=\"m\">cos B̂ = 12/13 ≈ 0,92</span>, <span class=\"m\">sin B̂ = 5/13 ≈ 0,38</span>, <span class=\"m\">tan B̂ = 5/12 ≈ 0,42</span>.</p><p><b>Le point.</b> Ces rapports n’ont pas d’unité. Comme l’hypoténuse est le plus long côté, <span class=\"m\">0 &lt; cos &lt; 1</span> et <span class=\"m\">0 &lt; sin &lt; 1</span> pour un angle aigu ; la tangente peut dépasser 1.</p>"
+   },
+   {
+    "titre": "Marche 3 · Calculer une longueur",
+    "html": "<p><b>Méthode.</b> 1) Nomme le côté connu et le côté cherché par rapport à l’angle connu. 2) Choisis le rapport qui contient les deux. 3) Écris l’égalité. 4) Isole l’inconnue.</p><p><b>Inconnue en haut.</b> Hypoténuse <span class=\"m\">JI = 6</span> cm, angle <span class=\"m\">Ĵ = 53°</span>, on cherche l’adjacent <span class=\"m\">JK</span> : <span class=\"m\">cos 53° = JK / 6</span>, donc <span class=\"m\">JK = 6 × cos 53° ≈ 3,61</span> cm.</p><p><b>Inconnue en bas.</b> Angle 29°, opposé 3,4 cm, on cherche l’hypoténuse <span class=\"m\">AC</span> : <span class=\"m\">sin 29° = 3,4 / AC</span>, donc <span class=\"m\">AC = 3,4 / sin 29° ≈ 7,0</span> cm. Ici on <b>divise</b>.</p><p><b>Le point.</b> Calculatrice en mode degré ; une hypoténuse calculée plus courte qu’un autre côté signale une erreur.</p>"
+   },
+   {
+    "titre": "Marche 4 · Calculer un angle",
+    "html": "<p><b>Remonter du rapport à l’angle.</b> Les touches <span class=\"m\">arccos</span>, <span class=\"m\">arcsin</span>, <span class=\"m\">arctan</span> (souvent notées <span class=\"m\">cos<sup>−1</sup></span>…) font le chemin inverse : connaissant le rapport, elles donnent l’angle.</p><p><b>Exemples.</b> Adjacent 3, hypoténuse 7 : <span class=\"m\">cos B̂ = 3/7</span>, donc <span class=\"m\">B̂ = arccos(3/7) ≈ 64,6°</span>. Opposé 3, adjacent 7 : <span class=\"m\">tan Â = 3/7</span>, donc <span class=\"m\">Â ≈ 23°</span>.</p><p><b>Contrôle.</b> <span class=\"m\">cos D̂ = 1,3</span> est impossible : l’adjacent serait plus long que l’hypoténuse. Un angle aigu trouvé doit être entre 0° et 90°, et les deux angles aigus font 90° ensemble.</p>"
+   },
+   {
+    "titre": "Marche 5 · Enchaîner deux triangles (niveau expert)",
+    "html": "<p><b>Situation.</b> <span class=\"m\">ABC</span> est rectangle en <span class=\"m\">C</span>, <span class=\"m\">H</span> est le pied de la hauteur issue de <span class=\"m\">C</span>, <span class=\"m\">Â = 29°</span> et <span class=\"m\">HC = 3,4</span> cm. On veut <span class=\"m\">AC</span>, puis <span class=\"m\">AB</span>.</p><p><b>Choisir le bon triangle.</b> Dans <span class=\"m\">ABC</span> on ne connaît aucun côté ; dans <span class=\"m\">AHC</span>, rectangle en <span class=\"m\">H</span>, on connaît <span class=\"m\">Â</span> et <span class=\"m\">HC</span>. Par rapport à <span class=\"m\">Â</span>, <span class=\"m\">[HC]</span> est opposé et <span class=\"m\">[AC]</span> est l’hypoténuse : <span class=\"m\">AC = 3,4 / sin 29° ≈ 7,0</span> cm.</p><p><b>Réutiliser le résultat.</b> Dans <span class=\"m\">ABC</span>, <span class=\"m\">[AC]</span> est adjacent à <span class=\"m\">Â</span> et <span class=\"m\">[AB]</span> est l’hypoténuse : <span class=\"m\">AB = AC / cos 29° ≈ 8,0</span> cm. On garde la valeur exacte de <span class=\"m\">AC</span> dans la calculatrice pour ne pas cumuler les arrondis.</p><p><b>Le point.</b> Un expert commence toujours par choisir le triangle où il y a juste assez d’informations.</p>"
+   }
+  ],
+  "prof": "<p><b>1. Toujours le même rituel.</b> Angle droit → hypoténuse → opposé et adjacent par rapport à l’angle utilisé → choix du rapport. Écris-le, même quand ça te paraît évident : c’est là que se font 80 % des erreurs.</p><p><b>2. Écris l’égalité avant de calculer.</b> <span class=\"m\">sin 29° = 3,4 / AC</span> te montre tout de suite que l’inconnue est en bas et qu’il faudra diviser.</p><p><b>3. Vérifie ta calculatrice.</b> <span class=\"m\">cos 60</span> doit afficher 0,5 : sinon, passe en mode degré.</p><p><b>4. Bon sens final.</b> Hypoténuse la plus longue, cosinus et sinus entre 0 et 1, angle aigu entre 0° et 90°.</p>"
+ },
+ {
+  "id": "fa-tg-cer",
+  "accroche": "Une roue ne s’arrête pas à 90° : elle tourne, fait des tours, change de sens. Le cercle trigonométrique donne une adresse précise à chacune de ces positions.",
+  "pourquoi": "<p>Le triangle rectangle ne connaît que les angles aigus. Pour décrire une rotation quelconque (une aiguille, une roue, une planète), il faut des angles de toutes tailles, positifs ou négatifs, et pouvoir dire « deux tours et un quart ».</p><p>Le cercle trigonométrique et le radian règlent ce problème : chaque nombre réel devient un point du cercle, et la mesure d’un angle devient une simple longueur d’arc. C’est ce qui rendra possibles les fonctions cosinus et sinus.</p>",
+  "histoire": "<p>Les Babyloniens découpaient déjà le cercle en 360 degrés. Hipparque, puis <b>Claude Ptolémée</b> (II<sup>e</sup> siècle, dans l’<i>Almageste</i>), construisent des tables de cordes de plus en plus précises pour l’astronomie.</p><p>Au XV<sup>e</sup> siècle, <b>Regiomontanus</b> (Johann Müller) écrit un traité qui fait de la trigonométrie une branche à part entière des mathématiques. Au XVI<sup>e</sup> siècle, le Français <b>François Viète</b>, conseiller d’Henri IV, lui donne une forme proche de la nôtre.</p><p>Au XVIII<sup>e</sup> siècle, <b>Leonhard Euler</b> installe le point de vue moderne : le sinus et le cosinus deviennent des fonctions d’un nombre réel, lues sur un cercle de rayon 1. Le mot « radian » n’apparaît qu’au XIX<sup>e</sup> siècle.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · Le cercle trigonométrique",
+    "html": "<p>Dans un repère orthonormé, le <b>cercle trigonométrique</b> est le cercle de centre <span class=\"m\"><i>O</i></span> et de rayon 1. On le parcourt dans le <b>sens direct</b> (ou positif, ou trigonométrique) : le sens inverse des aiguilles d’une montre. On part du point <span class=\"m\">I(1 ; 0)</span>.</p><p><b>Le point.</b> Rayon 1 et sens direct : deux conventions qui simplifient tous les calculs qui suivent.</p>"
+   },
+   {
+    "titre": "Marche 2 · Enrouler une droite",
+    "html": "<p>Imagine une droite graduée, tangente au cercle en <span class=\"m\">I</span>, que tu enroules autour du cercle comme un mètre ruban. Chaque réel <span class=\"m\"><i>x</i></span> se pose sur un point <span class=\"m\"><i>M</i></span> du cercle, et la longueur de l’arc <span class=\"m\">IM</span> vaut <span class=\"m\"><i>x</i></span>. Les nombres négatifs s’enroulent dans le sens indirect.</p><p>Le périmètre du cercle vaut <span class=\"m\">2π × 1 = 2π</span>. Donc <span class=\"m\"><i>x</i></span> et <span class=\"m\"><i>x</i> + 2π</span> tombent sur le <b>même point</b> : on a fait un tour de plus. Plus généralement, <span class=\"m\"><i>x</i></span> et <span class=\"m\"><i>x</i> + 2<i>k</i>π</span> (<span class=\"m\"><i>k</i> ∈ ℤ</span>) donnent le même point.</p><p><b>Exemple.</b> <span class=\"m\">π/2</span>, <span class=\"m\">5π/2</span> et <span class=\"m\">−3π/2</span> désignent tous le point du haut du cercle.</p>"
+   },
+   {
+    "titre": "Marche 3 · Le radian et les conversions",
+    "html": "<p>On mesure un angle par la longueur de l’arc qu’il découpe sur le cercle de rayon 1 : c’est le <b>radian</b>. Un tour vaut <span class=\"m\">360° = 2π</span> rad, un demi-tour <span class=\"m\">180° = π</span> rad, et 1 rad ≈ 57,3°.</p><p><b>Conversions (proportionnalité).</b> Degrés → radians : <span class=\"m\">× π/180</span>. Radians → degrés : <span class=\"m\">× 180/π</span>. Exemples : <span class=\"m\">33° = 33π/180 = 11π/60</span> ; <span class=\"m\">3π/8 = 3 × 180/8 = 67,5°</span>.</p><p><b>À connaître :</b> 30° = <span class=\"m\">π/6</span>, 45° = <span class=\"m\">π/4</span>, 60° = <span class=\"m\">π/3</span>, 90° = <span class=\"m\">π/2</span>, 180° = <span class=\"m\">π</span>.</p>"
+   },
+   {
+    "titre": "Marche 4 · Placer et lire un point",
+    "html": "<p><b>Placer <span class=\"m\">9π/4</span>.</b> Un tour vaut <span class=\"m\">8π/4</span> : <span class=\"m\">9π/4 = 2π + π/4</span>. Le point est celui de <span class=\"m\">π/4</span>.</p><p><b>Placer <span class=\"m\">−9π/2</span>.</b> <span class=\"m\">−9π/2 = −4π − π/2</span> : deux tours dans le sens indirect, puis <span class=\"m\">−π/2</span>, le bas du cercle.</p><p><b>Lire un point.</b> Le point à mi-chemin entre la gauche et le bas se lit <span class=\"m\">5π/4</span> dans <span class=\"m\">[0 ; 2π]</span> (on compte 5 fois <span class=\"m\">π/4</span> dans le sens direct) et <span class=\"m\">−3π/4</span> dans <span class=\"m\">[−π ; π]</span> (3 fois <span class=\"m\">π/4</span> dans le sens indirect). Contrôle : <span class=\"m\">5π/4 − (−3π/4) = 2π</span>.</p>"
+   },
+   {
+    "titre": "Marche 5 · La mesure principale",
+    "html": "<p>Parmi toutes les mesures d’un même angle orienté, une seule est dans <span class=\"m\">]−π ; π]</span> : c’est la <b>mesure principale</b>.</p><p><b>Méthode pour <span class=\"m\">27π/4</span>.</b> Un tour vaut <span class=\"m\">8π/4</span>. <span class=\"m\">27 = 3 × 8 + 3</span>, donc <span class=\"m\">27π/4 = 6π + 3π/4</span> : on retire 3 tours, il reste <span class=\"m\">3π/4</span>, qui est dans <span class=\"m\">]−π ; π]</span>.</p><p><b>Si le reste dépasse π.</b> <span class=\"m\">7π/4</span> n’est pas dans <span class=\"m\">]−π ; π]</span> : on retire encore un tour, <span class=\"m\">7π/4 − 2π = −π/4</span>.</p><p><b>Le point.</b> Le crochet ouvert en <span class=\"m\">−π</span> évite d’avoir deux mesures principales pour le point <span class=\"m\">(−1 ; 0)</span> : sa mesure principale est <span class=\"m\">π</span>.</p>"
+   }
+  ],
+  "prof": "<p><b>1. Dessine toujours un petit cercle</b> avec les repères <span class=\"m\">π/6</span>, <span class=\"m\">π/4</span>, <span class=\"m\">π/3</span> et leurs symétriques : tu verras immédiatement où tombe un point.</p><p><b>2. Travaille avec le même dénominateur.</b> Pour <span class=\"m\"><i>k</i>π/q</span>, un tour vaut <span class=\"m\">2qπ/q</span> : il suffit d’ajouter ou de retirer <span class=\"m\">2q</span> au numérateur.</p><p><b>3. Vérifie l’ordre de grandeur</b> d’une conversion : <span class=\"m\">π ≈ 3,14</span> rad pour 180°, donc 90° ≈ 1,57 rad.</p><p><b>4. Ne confonds pas tour et demi-tour :</b> retirer <span class=\"m\">π</span> envoie au point diamétralement opposé.</p>"
+ },
+ {
+  "id": "fa-tg-val",
+  "accroche": "Le cosinus du collège ne connaissait que les angles aigus. Sur le cercle, il devient l’abscisse d’un point et existe pour n’importe quel nombre, même négatif ou très grand.",
+  "pourquoi": "<p>Pour décrire une rotation complète, il faut un cosinus et un sinus pour tous les angles : 120°, 300°, −45°… La définition sur le cercle trigonométrique les donne d’un coup, tout en restant d’accord avec le triangle rectangle.</p><p>Elle apporte aussi des outils puissants : l’encadrement entre −1 et 1, la relation <span class=\"m\">cos<sup>2</sup> <i>x</i> + sin<sup>2</sup> <i>x</i> = 1</span> et les valeurs exactes des angles remarquables, qui reviennent sans cesse en physique et en analyse.</p>",
+  "histoire": "<p>Vers l’an 500, l’Indien <b>Aryabhata</b> remplace la corde des Grecs par la demi-corde, beaucoup plus pratique : c’est exactement notre sinus (multiplié par le rayon). Le mot sanskrit passe en arabe, puis les traducteurs latins du XII<sup>e</sup> siècle le rendent par <i>sinus</i>.</p><p>Le « co-sinus » est le sinus de l’angle complémentaire : <span class=\"m\">cos <i>x</i> = sin(π/2 − <i>x</i>)</span>. Les savants de langue arabe, comme <b>al-Battani</b>, calculent couramment avec les sinus.</p><p>Au XVIII<sup>e</sup> siècle, Euler définit cosinus et sinus comme les coordonnées d’un point du cercle de rayon 1 : c’est la définition que tu apprends ici.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · Lire cos et sin sur le cercle",
+    "html": "<p>Soit <span class=\"m\"><i>M</i></span> le point du cercle trigonométrique associé au réel <span class=\"m\"><i>x</i></span>. Le <b>cosinus</b> de <span class=\"m\"><i>x</i></span> est l’abscisse de <span class=\"m\"><i>M</i></span>, le <b>sinus</b> son ordonnée : <span class=\"m\"><i>M</i>(cos <i>x</i> ; sin <i>x</i>)</span>. Le cosinus se lit sur l’axe horizontal, le sinus sur l’axe vertical.</p><p><b>Pourquoi c’est cohérent.</b> Pour <span class=\"m\">0 &lt; <i>x</i> &lt; π/2</span>, le triangle formé par <span class=\"m\"><i>O</i></span>, <span class=\"m\"><i>M</i></span> et sa projection sur l’axe horizontal a une hypoténuse <span class=\"m\">OM = 1</span> : adjacent / 1 = abscisse.</p>"
+   },
+   {
+    "titre": "Marche 2 · Encadrement et relation fondamentale",
+    "html": "<p><span class=\"m\"><i>M</i></span> est sur un cercle de rayon 1 : <span class=\"m\">−1 ≤ cos <i>x</i> ≤ 1</span> et <span class=\"m\">−1 ≤ sin <i>x</i> ≤ 1</span>. Par Pythagore : <span class=\"m\">cos<sup>2</sup> <i>x</i> + sin<sup>2</sup> <i>x</i> = 1</span> (où <span class=\"m\">cos<sup>2</sup> <i>x</i></span> signifie <span class=\"m\">(cos <i>x</i>)<sup>2</sup></span>).</p><p><b>Exemple.</b> Si <span class=\"m\">sin <i>x</i> = 3/5</span> et <span class=\"m\"><i>x</i> ∈ ]π/2 ; π[</span> : <span class=\"m\">cos<sup>2</sup> <i>x</i> = 1 − 9/25 = 16/25</span>, donc <span class=\"m\">cos <i>x</i> = ±4/5</span>. Dans ce quart de cercle, le cosinus est négatif : <span class=\"m\">cos <i>x</i> = −4/5</span>.</p>"
+   },
+   {
+    "titre": "Marche 3 · Les valeurs remarquables",
+    "html": "<table><tr><th>x</th><td>0</td><td>π/6</td><td>π/4</td><td>π/3</td><td>π/2</td><td>π</td></tr><tr><th>cos x</th><td>1</td><td>√3/2</td><td>√2/2</td><td>1/2</td><td>0</td><td>−1</td></tr><tr><th>sin x</th><td>0</td><td>1/2</td><td>√2/2</td><td>√3/2</td><td>1</td><td>0</td></tr></table><p><b>Astuce.</b> De 0 à <span class=\"m\">π/2</span>, le sinus vaut <span class=\"m\">√0/2</span>, <span class=\"m\">√1/2</span>, <span class=\"m\">√2/2</span>, <span class=\"m\">√3/2</span>, <span class=\"m\">√4/2</span> ; le cosinus lit la même liste à l’envers. On les retrouve aussi avec un triangle équilatéral coupé en deux (<span class=\"m\">π/6</span>, <span class=\"m\">π/3</span>) et un demi-carré (<span class=\"m\">π/4</span>).</p>"
+   },
+   {
+    "titre": "Marche 4 · Signes et angles de référence",
+    "html": "<p><b>Le signe</b> dépend du quart de cercle : cos est positif à droite de l’axe vertical, sin au-dessus de l’axe horizontal.</p><p><b>L’angle de référence</b> est l’angle entre 0 et <span class=\"m\">π/2</span> qui donne la même valeur au signe près : <span class=\"m\">5π/6 = π − π/6</span>, <span class=\"m\">5π/4 = π + π/4</span>, <span class=\"m\">11π/6 = 2π − π/6</span>.</p><p><b>Exemple.</b> <span class=\"m\">cos(5π/4)</span> : point en bas à gauche, cos négatif, référence <span class=\"m\">π/4</span>, donc <span class=\"m\">cos(5π/4) = −√2/2</span>.</p>"
+   },
+   {
+    "titre": "Marche 5 · Les angles associés (niveau expert)",
+    "html": "<p>Les symétries du cercle donnent des formules valables pour tout réel <span class=\"m\"><i>x</i></span> :</p><ul><li>symétrie par rapport à l’axe horizontal : <span class=\"m\">cos(−<i>x</i>) = cos <i>x</i></span>, <span class=\"m\">sin(−<i>x</i>) = −sin <i>x</i></span> ;</li><li>par rapport à l’axe vertical : <span class=\"m\">cos(π − <i>x</i>) = −cos <i>x</i></span>, <span class=\"m\">sin(π − <i>x</i>) = sin <i>x</i></span> ;</li><li>par rapport à <span class=\"m\"><i>O</i></span> : <span class=\"m\">cos(π + <i>x</i>) = −cos <i>x</i></span>, <span class=\"m\">sin(π + <i>x</i>) = −sin <i>x</i></span> ;</li><li>par rapport à la droite <span class=\"m\">y = <i>x</i></span> : <span class=\"m\">cos(π/2 − <i>x</i>) = sin <i>x</i></span>, <span class=\"m\">sin(π/2 − <i>x</i>) = cos <i>x</i></span>.</li></ul><p><b>Méthode experte</b> pour <span class=\"m\">cos(27π/4)</span> : mesure principale <span class=\"m\">3π/4</span>, quart en haut à gauche, référence <span class=\"m\">π/4</span> : <span class=\"m\">−√2/2</span>.</p>"
+   }
+  ],
+  "prof": "<p><b>1. Ne récite pas, retrouve.</b> Un petit cercle dans la marge te donne en dix secondes le signe et l’angle de référence.</p><p><b>2. Toujours dans l’ordre :</b> mesure principale → quart de cercle (signe) → angle de référence (valeur).</p><p><b>3. Contrôle avec la calculatrice</b> en mode radian : <span class=\"m\">cos(5π/4) ≈ −0,707</span> et <span class=\"m\">−√2/2 ≈ −0,707</span>.</p><p><b>4. Teste les formules d’angles associés</b> avec <span class=\"m\"><i>x</i> = π/6</span> avant de les utiliser.</p>"
+ },
+ {
+  "id": "fa-tg-eq",
+  "accroche": "Résoudre sin x = 1/2, c’est chercher où une droite horizontale coupe le cercle : deux points par tour, et une infinité de noms pour chacun.",
+  "pourquoi": "<p>En physique, on cherche souvent à quels instants une oscillation atteint une valeur donnée : quand un courant alternatif s’annule, quand un pendule passe par un point. Cela revient à résoudre <span class=\"m\">cos <i>x</i> = <i>a</i></span> ou <span class=\"m\">sin <i>x</i> = <i>a</i></span>.</p><p>La difficulté vient de la périodicité : il y a toujours plusieurs solutions, et il faut n’en oublier aucune. Le cercle trigonométrique permet de les voir toutes d’un coup.</p>",
+  "histoire": "<p>Les astronomes résolvaient déjà des « problèmes inverses » : connaissant une hauteur d’astre, retrouver l’angle. Les tables de sinus servaient dans les deux sens, comme nos touches arcsin et arccos.</p><p>L’écriture des solutions avec « <span class=\"m\">+ 2<i>k</i>π</span>, <span class=\"m\"><i>k</i> ∈ ℤ</span> » est moderne : elle suppose d’avoir défini le sinus et le cosinus pour tous les réels, ce qui date d’Euler (XVIII<sup>e</sup> siècle).</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · Une droite qui coupe un cercle",
+    "html": "<p><span class=\"m\">sin <i>x</i> = <i>c</i></span> : on cherche les points du cercle d’ordonnée <span class=\"m\"><i>c</i></span>, sur la droite horizontale <span class=\"m\">y = <i>c</i></span>. <span class=\"m\">cos <i>x</i> = <i>c</i></span> : points d’abscisse <span class=\"m\"><i>c</i></span>, sur la droite verticale <span class=\"m\"><i>x</i> = <i>c</i></span>.</p><p>Sur un tour : aucune solution si <span class=\"m\">|<i>c</i>| &gt; 1</span> (la droite ne touche pas le cercle), une seule si <span class=\"m\"><i>c</i> = ±1</span>, deux sinon.</p>"
+   },
+   {
+    "titre": "Marche 2 · Les deux règles",
+    "html": "<ul><li><span class=\"m\">cos <i>x</i> = cos <i>a</i> ⟺ <i>x</i> = <i>a</i> + 2<i>k</i>π</span> ou <span class=\"m\"><i>x</i> = −<i>a</i> + 2<i>k</i>π</span> (<span class=\"m\"><i>k</i> ∈ ℤ</span>) : symétrie par rapport à l’axe horizontal.</li><li><span class=\"m\">sin <i>x</i> = sin <i>a</i> ⟺ <i>x</i> = <i>a</i> + 2<i>k</i>π</span> ou <span class=\"m\"><i>x</i> = π − <i>a</i> + 2<i>k</i>π</span> : symétrie par rapport à l’axe vertical.</li></ul><p><b>Exemple.</b> <span class=\"m\">2 cos <i>x</i> + 1 = 0</span> sur <span class=\"m\">]−π ; π]</span> : <span class=\"m\">cos <i>x</i> = −1/2 = cos(2π/3)</span>, donc <span class=\"m\"><i>x</i> = 2π/3</span> ou <span class=\"m\"><i>x</i> = −2π/3</span>.</p>"
+   },
+   {
+    "titre": "Marche 3 · Équations qui s’y ramènent",
+    "html": "<p><b>Avec un carré.</b> <span class=\"m\">cos<sup>2</sup> <i>x</i> = 1/2 ⟺ cos <i>x</i> = √2/2</span> ou <span class=\"m\">cos <i>x</i> = −√2/2</span> (car <span class=\"m\">√(1/2) = √2/2</span>). Quatre points par tour : <span class=\"m\">π/4</span>, <span class=\"m\">−π/4</span>, <span class=\"m\">3π/4</span>, <span class=\"m\">−3π/4</span>, d’où <span class=\"m\">S = {π/4 + <i>k</i>π/2, <i>k</i> ∈ ℤ}</span>.</p><p><b>Avec 2x.</b> <span class=\"m\">cos(2<i>x</i>) = 1/2</span> : <span class=\"m\">2<i>x</i> = ±π/3 + 2<i>k</i>π</span>, donc <span class=\"m\"><i>x</i> = ±π/6 + <i>k</i>π</span>. On divise <b>tout</b> par 2, y compris <span class=\"m\">2<i>k</i>π</span>. Sur <span class=\"m\">[0 ; π]</span> : <span class=\"m\">π/6</span> et <span class=\"m\">5π/6</span>.</p>"
+   },
+   {
+    "titre": "Marche 4 · Les inéquations",
+    "html": "<p>On résout d’abord l’équation, puis on lit l’<b>arc</b> qui convient.</p><p><b>Exemple.</b> <span class=\"m\">sin <i>x</i> ≤ √3/2</span> sur <span class=\"m\">[−π ; π]</span> : l’équation donne <span class=\"m\">π/3</span> et <span class=\"m\">2π/3</span>. On garde la partie du cercle sous la droite <span class=\"m\">y = √3/2</span>, c’est-à-dire tout sauf l’arc du haut : <span class=\"m\">S = [−π ; π/3] ∪ [2π/3 ; π]</span>.</p><p><b>Autre exemple.</b> <span class=\"m\">cos <i>x</i> ≥ 1/2</span> sur <span class=\"m\">]−π ; π]</span> : partie à droite de la droite <span class=\"m\"><i>x</i> = 1/2</span>, soit <span class=\"m\">[−π/3 ; π/3]</span>.</p>"
+   },
+   {
+    "titre": "Marche 5 · Le regard de l’expert",
+    "html": "<p>Un expert vérifie toujours : il remplace une solution dans l’équation, compte les points sur le cercle, et pour une inéquation teste une valeur au milieu de l’intervalle trouvé et une valeur en dehors.</p><p>Il fait aussi attention aux crochets : inégalité large, bornes incluses ; et à l’intervalle imposé (<span class=\"m\">]−π ; π]</span> n’est pas <span class=\"m\">[0 ; 2π[</span>).</p>"
+   }
+  ],
+  "prof": "<p><b>1. Toujours deux familles</b> de solutions (sauf pour ±1) : la deuxième s’obtient par symétrie.</p><p><b>2. Cosinus : <span class=\"m\">−<i>a</i></span> ; sinus : <span class=\"m\">π − <i>a</i></span>.</b> Si tu hésites, dessine la droite verticale ou horizontale.</p><p><b>3. Divise aussi la période</b> quand tu divises par 2.</p><p><b>4. Vérifie</b> en remplaçant chaque solution dans l’équation de départ.</p>"
+ },
+ {
+  "id": "fa-tg-fct",
+  "accroche": "Une nacelle de grande roue, un ressort, une onde sonore : tout ce qui oscille se décrit avec les fonctions sinus et cosinus.",
+  "pourquoi": "<p>Les phénomènes périodiques sont partout : saisons, marées, courant alternatif, musique. Pour les étudier, il faut des fonctions qui se répètent : cosinus et sinus sont les plus simples d’entre elles.</p><p>Leur étude (période, parité, dérivée, variations) donne une méthode générale : réduire l’intervalle grâce aux symétries, étudier un petit morceau, puis reconstruire toute la courbe.</p>",
+  "histoire": "<p>Les courbes du sinus apparaissent au XVII<sup>e</sup> siècle dans l’étude des mouvements (Roberval trace une « compagne de la roulette »). Au XVIII<sup>e</sup> siècle, Euler traite sinus et cosinus comme des fonctions à part entière et calcule leurs dérivées.</p><p>Au début du XIX<sup>e</sup> siècle, <b>Joseph Fourier</b> montre, en étudiant la chaleur, que de très nombreuses fonctions périodiques peuvent s’écrire comme des sommes de sinus et de cosinus : c’est la base de l’analyse des sons et des signaux.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · Deux vagues",
+    "html": "<p>La fonction cosinus associe à tout réel <span class=\"m\"><i>x</i></span> le nombre <span class=\"m\">cos <i>x</i></span>, la fonction sinus le nombre <span class=\"m\">sin <i>x</i></span>. Définies sur ℝ, elles prennent leurs valeurs dans <span class=\"m\">[−1 ; 1]</span>. Leurs courbes sont des vagues : celle du sinus passe par <span class=\"m\"><i>O</i></span>, celle du cosinus par <span class=\"m\">(0 ; 1)</span>.</p>"
+   },
+   {
+    "titre": "Marche 2 · Périodicité",
+    "html": "<p><span class=\"m\">cos(<i>x</i> + 2<i>k</i>π) = cos <i>x</i></span> et <span class=\"m\">sin(<i>x</i> + 2<i>k</i>π) = sin <i>x</i></span> : les deux fonctions sont <b>périodiques de période 2π</b>. Le même morceau de courbe se répète sur chaque intervalle de longueur <span class=\"m\">2π</span>.</p><p><b>Plus généralement</b>, <span class=\"m\">cos(ax + <i>b</i>)</span> a pour période <span class=\"m\">2π/|<i>a</i>|</span> : <span class=\"m\"><i>f</i>(<i>x</i>) = cos(2<i>x</i>) − 1/2</span> vérifie <span class=\"m\"><i>f</i>(<i>x</i> + π) = cos(2<i>x</i> + 2π) − 1/2 = <i>f</i>(<i>x</i>)</span>, donc <span class=\"m\"><i>f</i></span> est périodique de période <span class=\"m\">π</span>.</p>"
+   },
+   {
+    "titre": "Marche 3 · Parité",
+    "html": "<p>Une fonction est <b>paire</b> si <span class=\"m\"><i>f</i>(−<i>x</i>) = <i>f</i>(<i>x</i>)</span> (courbe symétrique par rapport à l’axe des ordonnées), <b>impaire</b> si <span class=\"m\"><i>f</i>(−<i>x</i>) = −<i>f</i>(<i>x</i>)</span> (courbe symétrique par rapport à l’origine).</p><p><span class=\"m\">cos(−<i>x</i>) = cos <i>x</i></span> : cosinus est paire. <span class=\"m\">sin(−<i>x</i>) = −sin <i>x</i></span> : sinus est impaire.</p><p><b>Exemple.</b> <span class=\"m\"><i>f</i>(<i>x</i>) = sin <i>x</i> − sin(2<i>x</i>)</span> : <span class=\"m\"><i>f</i>(−<i>x</i>) = −sin <i>x</i> + sin(2<i>x</i>) = −<i>f</i>(<i>x</i>)</span>, donc <span class=\"m\"><i>f</i></span> est impaire.</p>"
+   },
+   {
+    "titre": "Marche 4 · Dérivées et variations",
+    "html": "<p>En radians : <span class=\"m\">cos′(<i>x</i>) = −sin <i>x</i></span>, <span class=\"m\">sin′(<i>x</i>) = cos <i>x</i></span>, et pour <span class=\"m\"><i>a</i></span>, <span class=\"m\"><i>b</i></span> réels, <span class=\"m\">(cos(ax + <i>b</i>))′ = −<i>a</i> sin(ax + <i>b</i>)</span>, <span class=\"m\">(sin(ax + <i>b</i>))′ = <i>a</i> cos(ax + <i>b</i>)</span>.</p><p><b>Sur [0 ; π].</b> <span class=\"m\">−sin <i>x</i> ≤ 0</span> : cosinus décroît de 1 à −1. <span class=\"m\">cos <i>x</i></span> est positif puis négatif : sinus croît de 0 à 1 sur <span class=\"m\">[0 ; π/2]</span>, puis décroît de 1 à 0.</p><p><b>Toute la courbe</b> s’obtient ensuite par symétrie (axe des ordonnées pour cos, origine pour sin) puis par translations de <span class=\"m\">2π</span>.</p>"
+   },
+   {
+    "titre": "Marche 5 · Étudier une fonction (niveau expert)",
+    "html": "<p><span class=\"m\"><i>f</i>(<i>x</i>) = cos(2<i>x</i>) − 1/2</span>. <b>Parité :</b> <span class=\"m\"><i>f</i>(−<i>x</i>) = <i>f</i>(<i>x</i>)</span>, <span class=\"m\"><i>f</i></span> est paire. <b>Période :</b> <span class=\"m\">π</span>. Il suffit donc d’étudier <span class=\"m\">[0 ; π/2]</span>.</p><p><b>Dérivée :</b> <span class=\"m\"><i>f</i>′(<i>x</i>) = −2 sin(2<i>x</i>)</span>. Si <span class=\"m\"><i>x</i> ∈ [0 ; π/2]</span>, alors <span class=\"m\">2<i>x</i> ∈ [0 ; π]</span> et <span class=\"m\">sin(2<i>x</i>) ≥ 0</span>, donc <span class=\"m\"><i>f</i>′(<i>x</i>) ≤ 0</span> : <span class=\"m\"><i>f</i></span> décroît de <span class=\"m\"><i>f</i>(0) = 1/2</span> à <span class=\"m\"><i>f</i>(π/2) = −3/2</span>.</p><p><b>Tracé :</b> on trace sur <span class=\"m\">[0 ; π/2]</span>, on complète par symétrie par rapport à l’axe des ordonnées, puis on translate de <span class=\"m\">π</span> la portion <span class=\"m\">[−π/2 ; π/2]</span>.</p>"
+   }
+  ],
+  "prof": "<p><b>1. Parité et période d’abord :</b> elles divisent le travail par quatre.</p><p><b>2. Dérivée d’une composée :</b> n’oublie jamais le facteur <span class=\"m\"><i>a</i></span> dans <span class=\"m\">cos(ax + <i>b</i>)</span>.</p><p><b>3. Pour le signe de <span class=\"m\">sin(ax)</span>,</b> regarde où se trouve <span class=\"m\">ax</span> sur le cercle, pas <span class=\"m\"><i>x</i></span>.</p><p><b>4. Contrôle :</b> les valeurs extrêmes doivent rester cohérentes avec <span class=\"m\">−1 ≤ cos ≤ 1</span>.</p>"
+ },
+ {
+  "id": "fa-tg-plus",
+  "accroche": "Hors programme de tes documents, mais incontournable ensuite : comment calculer cos(π/12) ou sin 2x sans calculatrice.",
+  "pourquoi": "<p><b>Attention : ce chapitre est un complément hors documents.</b> Les formules d’addition permettent de calculer des valeurs exactes nouvelles (<span class=\"m\">cos(π/12)</span>, <span class=\"m\">sin(5π/12)</span>), de transformer des produits en sommes (utile pour intégrer) et de comprendre les nombres complexes.</p><p>Elles évitent aussi l’erreur la plus fréquente de toute la trigonométrie : croire que <span class=\"m\">cos(<i>a</i> + <i>b</i>) = cos <i>a</i> + cos <i>b</i></span>.</p>",
+  "histoire": "<p>Ptolémée (II<sup>e</sup> siècle) utilisait, sous forme de relations entre cordes, l’équivalent de nos formules d’addition pour calculer ses tables de demi-degré en demi-degré.</p><p>Les savants indiens et arabes les ont réécrites avec des sinus. Au XVIII<sup>e</sup> siècle, Euler les retrouve d’un seul coup grâce à l’exponentielle complexe : <span class=\"m\">e<sup>i(<i>a</i>+<i>b</i>)</sup> = e<sup>ia</sup> e<sup>ib</sup></span>.</p>",
+  "niveaux": [
+   {
+    "titre": "Marche 1 · Le piège à éviter",
+    "html": "<p><span class=\"m\">cos(<i>a</i> + <i>b</i>) ≠ cos <i>a</i> + cos <i>b</i></span> : avec <span class=\"m\"><i>a</i> = <i>b</i> = π/2</span>, on aurait <span class=\"m\">cos π = 0</span>, alors que <span class=\"m\">cos π = −1</span>. Le cosinus n’est pas « additif ».</p>"
+   },
+   {
+    "titre": "Marche 2 · Les formules d’addition",
+    "html": "<ul><li><span class=\"m\">cos(<i>a</i> + <i>b</i>) = cos <i>a</i> cos <i>b</i> − sin <i>a</i> sin <i>b</i></span> et <span class=\"m\">cos(<i>a</i> − <i>b</i>) = cos <i>a</i> cos <i>b</i> + sin <i>a</i> sin <i>b</i></span></li><li><span class=\"m\">sin(<i>a</i> + <i>b</i>) = sin <i>a</i> cos <i>b</i> + cos <i>a</i> sin <i>b</i></span> et <span class=\"m\">sin(<i>a</i> − <i>b</i>) = sin <i>a</i> cos <i>b</i> − cos <i>a</i> sin <i>b</i></span></li></ul><p><b>Contrôle :</b> avec <span class=\"m\"><i>b</i> = 0</span>, on retrouve <span class=\"m\">cos <i>a</i></span> et <span class=\"m\">sin <i>a</i></span>.</p>"
+   },
+   {
+    "titre": "Marche 3 · Des valeurs exactes nouvelles",
+    "html": "<p><span class=\"m\">cos(π/12) = cos(π/3 − π/4) = (1/2)(√2/2) + (√3/2)(√2/2) = (√2 + √6)/4 ≈ 0,966</span>, et c’est bien <span class=\"m\">cos 15°</span>.</p>"
+   },
+   {
+    "titre": "Marche 4 · Duplication et linéarisation",
+    "html": "<p>Avec <span class=\"m\"><i>b</i> = <i>a</i></span> : <span class=\"m\">sin 2<i>a</i> = 2 sin <i>a</i> cos <i>a</i></span> et <span class=\"m\">cos 2<i>a</i> = cos<sup>2</sup> <i>a</i> − sin<sup>2</sup> <i>a</i> = 2cos<sup>2</sup> <i>a</i> − 1 = 1 − 2sin<sup>2</sup> <i>a</i></span>.</p><p>En renversant : <span class=\"m\">cos<sup>2</sup> <i>a</i> = (1 + cos 2<i>a</i>)/2</span> et <span class=\"m\">sin<sup>2</sup> <i>a</i> = (1 − cos 2<i>a</i>)/2</span>.</p><p><b>Exemple.</b> <span class=\"m\">sin <i>x</i> = 3/5</span>, <span class=\"m\"><i>x</i> ∈ ]0 ; π/2[</span> : <span class=\"m\">cos <i>x</i> = 4/5</span>, <span class=\"m\">sin 2<i>x</i> = 24/25</span>, <span class=\"m\">cos 2<i>x</i> = 7/25</span>.</p>"
+   }
+  ],
+  "prof": "<p><b>1. Une seule formule à vraiment retenir :</b> <span class=\"m\">cos(<i>a</i> − <i>b</i>) = cos <i>a</i> cos <i>b</i> + sin <i>a</i> sin <i>b</i></span> ; les autres s’en déduisent.</p><p><b>2. Teste toujours</b> une formule avec <span class=\"m\"><i>b</i> = 0</span> ou <span class=\"m\"><i>a</i> = <i>b</i> = π/4</span> avant de l’utiliser.</p><p><b>3. Rappelle-toi</b> que ce chapitre est un complément : maîtrise d’abord les cinq chapitres précédents.</p>"
+ }
+]

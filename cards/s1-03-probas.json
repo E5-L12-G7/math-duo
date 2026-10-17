@@ -1,0 +1,32 @@
+{
+  "s1-probas": [
+    {"id": "s1pb-01", "q": "Qu’est-ce que l’univers Ω d’une expérience aléatoire ?", "a": "L’ensemble de toutes les issues possibles.", "tag": "definition", "niveau": 1},
+    {"id": "s1pb-02", "q": "Qu’est-ce qu’un événement ?", "a": "Un ensemble d’issues, une partie de l’univers.", "tag": "definition", "niveau": 1},
+    {"id": "s1pb-03", "q": "Formule en situation d’équiprobabilité ?", "a": "P(A) = cas favorables ÷ cas possibles.", "tag": "formule", "niveau": 1},
+    {"id": "s1pb-04", "q": "Que signifie A ∩ B ?", "a": "A et B se réalisent tous les deux.", "tag": "definition", "niveau": 1},
+    {"id": "s1pb-05", "q": "Que signifie A ∪ B ?", "a": "Au moins l’un des deux, A ou B, se réalise.", "tag": "definition", "niveau": 1},
+    {"id": "s1pb-06", "q": "Probabilité de l’événement contraire ?", "a": "P(Ā) = 1 − P(A).", "tag": "formule", "niveau": 1},
+    {"id": "s1pb-07", "q": "Formule de P(A ∪ B) ?", "a": "P(A) + P(B) − P(A ∩ B).", "tag": "formule", "niveau": 1},
+    {"id": "s1pb-08", "q": "Que signifie « A et B incompatibles » ?", "a": "A ∩ B = ∅ : ils ne peuvent pas se produire ensemble.", "tag": "definition", "niveau": 1},
+    {"id": "s1pb-09", "q": "Probabilité d’une somme de 7 avec deux dés ?", "a": "6/36 = 1/6.", "tag": "valeur", "niveau": 1},
+    {"id": "s1pb-10", "q": "Combien de listes de k éléments parmi n, avec répétition ?", "a": "nᵏ.", "tag": "formule", "niveau": 2},
+    {"id": "s1pb-11", "q": "Formule de l’arrangement A(n ; k) ?", "a": "n!/(n − k)! = n(n − 1)…(n − k + 1).", "tag": "formule", "niveau": 2},
+    {"id": "s1pb-12", "q": "Formule de la combinaison C(n ; k) ?", "a": "n!/(k!(n − k)!).", "tag": "formule", "niveau": 2},
+    {"id": "s1pb-13", "q": "Arrangement ou combinaison pour un tirage simultané ?", "a": "Combinaison : l’ordre ne compte pas.", "tag": "methode", "niveau": 2},
+    {"id": "s1pb-14", "q": "Relation de Pascal ?", "a": "C(n ; k) = C(n − 1 ; k − 1) + C(n − 1 ; k).", "tag": "formule", "niveau": 2},
+    {"id": "s1pb-15", "q": "Que vaut C(5 ; 2) ?", "a": "10.", "tag": "valeur", "niveau": 1},
+    {"id": "s1pb-16", "q": "Définition de P_B(A) ?", "a": "P(A ∩ B) ÷ P(B), avec P(B) > 0.", "tag": "formule", "niveau": 2},
+    {"id": "s1pb-17", "q": "Dans un arbre, comment obtient-on la probabilité d’un chemin ?", "a": "On multiplie les probabilités des branches.", "tag": "methode", "niveau": 2},
+    {"id": "s1pb-18", "q": "Formule des probabilités totales (A, Ā) ?", "a": "P(B) = P(A)P_A(B) + P(Ā)P_Ā(B).", "tag": "formule", "niveau": 2},
+    {"id": "s1pb-19", "q": "Formule de Bayes ?", "a": "P_B(A) = P(A) P_A(B) ÷ P(B).", "tag": "formule", "niveau": 3},
+    {"id": "s1pb-20", "q": "Quand A et B sont-ils indépendants ?", "a": "Quand P(A ∩ B) = P(A) × P(B).", "tag": "definition", "niveau": 2},
+    {"id": "s1pb-21", "q": "Vrai ou faux : incompatibles implique indépendants ?", "a": "Faux : ils sont dépendants si leurs probabilités sont non nulles.", "tag": "piege", "niveau": 2},
+    {"id": "s1pb-22", "q": "Vrai ou faux : P_B(A) = P_A(B) ?", "a": "Faux en général : il faut la formule de Bayes.", "tag": "piege", "niveau": 2},
+    {"id": "s1pb-23", "q": "Somme des probabilités des branches issues d’un même nœud ?", "a": "1.", "tag": "propriete", "niveau": 1},
+    {"id": "s1pb-24", "q": "Qu’est-ce qu’un système complet d’événements ?", "a": "Des événements deux à deux incompatibles dont la réunion est Ω.", "tag": "definition", "niveau": 3},
+    {"id": "s1pb-25", "q": "Quels sont les trois axiomes d’une probabilité ?", "a": "P(A) ≥ 0, P(Ω) = 1, additivité pour des événements incompatibles.", "tag": "propriete", "niveau": 3},
+    {"id": "s1pb-26", "q": "Comment calculer P(« au moins un »)  ?", "a": "1 − P(« aucun »).", "tag": "methode", "niveau": 2},
+    {"id": "s1pb-27", "q": "Qui a fondé le calcul des probabilités en 1654 ?", "a": "Pascal et Fermat, dans leur correspondance.", "tag": "histoire", "niveau": 1},
+    {"id": "s1pb-28", "q": "Qui a axiomatisé les probabilités en 1933 ?", "a": "Andreï Kolmogorov.", "tag": "histoire", "niveau": 2}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "s1-estimation": [
+    {"id": "s1es-01", "q": "Qu’est-ce qu’un paramètre, en estimation ?", "a": "La vraie valeur inconnue dans la population (μ, σ², p).", "tag": "definition", "niveau": 1},
+    {"id": "s1es-02", "q": "Qu’est-ce qu’un estimateur ?", "a": "Une variable aléatoire calculée sur l’échantillon pour approcher le paramètre.", "tag": "definition", "niveau": 1},
+    {"id": "s1es-03", "q": "Qu’est-ce qu’une estimation ponctuelle ?", "a": "La valeur numérique prise par l’estimateur sur l’échantillon observé.", "tag": "definition", "niveau": 1},
+    {"id": "s1es-04", "q": "Quelle estimation ponctuelle pour une moyenne μ ?", "a": "La moyenne observée x̄.", "tag": "methode", "niveau": 1},
+    {"id": "s1es-05", "q": "Quelle estimation ponctuelle pour une proportion p ?", "a": "La fréquence observée f = k/n.", "tag": "methode", "niveau": 1},
+    {"id": "s1es-06", "q": "Par quoi divise-t-on pour estimer σ² sans biais ?", "a": "Par n − 1.", "pourquoi": "s² = Σ(xᵢ − x̄)²/(n − 1).", "tag": "formule", "niveau": 1},
+    {"id": "s1es-07", "q": "Que signifie un intervalle de confiance à 95 % ?", "a": "La méthode capture la vraie valeur dans 95 % des échantillons.", "tag": "definition", "niveau": 1},
+    {"id": "s1es-08", "q": "Quel quantile pour un intervalle à 95 % ?", "a": "u = 1,96.", "tag": "valeur", "niveau": 1},
+    {"id": "s1es-09", "q": "Quel quantile pour un intervalle à 99 % ?", "a": "u = 2,576.", "tag": "valeur", "niveau": 1},
+    {"id": "s1es-10", "q": "Quel quantile pour un intervalle à 90 % ?", "a": "u = 1,645.", "tag": "valeur", "niveau": 1},
+    {"id": "s1es-11", "q": "IC d’une moyenne quand σ est connu ?", "a": "[x̄ − u σ/√n ; x̄ + u σ/√n].", "tag": "formule", "niveau": 2},
+    {"id": "s1es-12", "q": "Quel est l’écart-type de la moyenne X̄ ?", "a": "σ/√n.", "tag": "formule", "niveau": 2},
+    {"id": "s1es-13", "q": "Quelle loi utiliser si σ est inconnu et n petit (population normale) ?", "a": "Student à n − 1 degrés de liberté.", "tag": "propriete", "niveau": 2},
+    {"id": "s1es-14", "q": "IC d’une moyenne quand σ est inconnu ?", "a": "[x̄ − t s/√n ; x̄ + t s/√n], t lu à n − 1 ddl.", "tag": "formule", "niveau": 2},
+    {"id": "s1es-15", "q": "IC d’une proportion au niveau 1 − α ?", "a": "f ± u √(f(1 − f)/n).", "tag": "formule", "niveau": 2},
+    {"id": "s1es-16", "q": "Conditions pour l’IC d’une proportion ?", "a": "n ≥ 30, nf ≥ 5 et n(1 − f) ≥ 5.", "tag": "propriete", "niveau": 2},
+    {"id": "s1es-17", "q": "Que devient la marge si n est multiplié par 4 ?", "a": "Elle est divisée par 2.", "pourquoi": "La marge varie comme 1/√n.", "tag": "propriete", "niveau": 2},
+    {"id": "s1es-18", "q": "Que devient l’intervalle si on passe de 95 % à 99 % ?", "a": "Il s’élargit.", "tag": "propriete", "niveau": 2},
+    {"id": "s1es-19", "q": "Taille d’échantillon pour une moyenne, marge E ?", "a": "n ≥ (u σ/E)², arrondi au-dessus.", "tag": "formule", "niveau": 2},
+    {"id": "s1es-20", "q": "Quelle valeur de p prendre sans information pour la taille ?", "a": "p = 0,5, le cas le plus défavorable.", "tag": "methode", "niveau": 2},
+    {"id": "s1es-21", "q": "n ≥ 384,16 : quelle taille retenir ?", "a": "385.", "tag": "piege", "niveau": 2},
+    {"id": "s1es-22", "q": "Vrai ou faux : la marge d’erreur vaut 1,96 σ ?", "a": "Faux : 1,96 σ/√n.", "tag": "piege", "niveau": 1},
+    {"id": "s1es-23", "q": "Quand un estimateur T de θ est-il sans biais ?", "a": "Quand E(T) = θ.", "tag": "definition", "niveau": 3},
+    {"id": "s1es-24", "q": "Quand un estimateur est-il convergent ?", "a": "P(|Tₙ − θ| > ε) tend vers 0 quand n grandit.", "tag": "definition", "niveau": 3},
+    {"id": "s1es-25", "q": "Que vaut E(Sₙ²) pour la variance non corrigée ?", "a": "(n − 1)/n × σ².", "tag": "formule", "niveau": 3},
+    {"id": "s1es-26", "q": "Pourquoi Student à n − 1 ddl et non n ?", "a": "Estimer μ par x̄ pour calculer s coûte un degré de liberté.", "tag": "propriete", "niveau": 3},
+    {"id": "s1es-27", "q": "Une fois calculé, l’IC [48 ; 52] contient-il μ avec probabilité 0,95 ?", "a": "Non : il le contient ou pas ; 95 % qualifie la méthode.", "tag": "piege", "niveau": 3},
+    {"id": "s1es-28", "q": "Qui a publié la loi de Student, et sous quel nom ?", "a": "William Gosset (Guinness), en 1908, sous le pseudonyme Student.", "tag": "histoire", "niveau": 2}
+  ]
+}

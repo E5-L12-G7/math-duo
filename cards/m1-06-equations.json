@@ -1,0 +1,33 @@
+{
+  "m1-equations": [
+    {"id": "m1eq-01", "q": "Quelle est la règle d’or pour résoudre une équation ?", "a": "Ce que l’on fait d’un côté, on le fait de l’autre.", "tag": "methode", "niveau": 1},
+    {"id": "m1eq-02", "q": "Que signifie « 5 est solution de l’équation » ?", "a": "En remplaçant x par 5, les deux membres sont égaux.", "tag": "definition", "niveau": 1},
+    {"id": "m1eq-03", "q": "Comment vérifier une solution ?", "a": "On la remplace dans l’équation de départ et on compare les deux membres.", "tag": "methode", "niveau": 1},
+    {"id": "m1eq-04", "q": "De 3x = 12, que tire-t-on ?", "a": "x = 12 ÷ 3 = 4.", "pourquoi": "3x signifie 3 × x : on divise.", "tag": "valeur", "niveau": 1},
+    {"id": "m1eq-05", "q": "Vrai ou faux : de 3x = 12, on tire x = 9 ?", "a": "Faux : on divise par 3, on ne soustrait pas 3.", "tag": "piege", "niveau": 1},
+    {"id": "m1eq-06", "q": "Quelles sont les étapes pour résoudre ax + b = cx + d ?", "a": "Regrouper les x, regrouper les nombres, diviser par le coefficient de x.", "tag": "methode", "niveau": 1},
+    {"id": "m1eq-07", "q": "Résous 4x − 3 = 2x + 7.", "a": "x = 5", "pourquoi": "2x = 10.", "tag": "valeur", "niveau": 1},
+    {"id": "m1eq-08", "q": "Quand le sens d’une inégalité change-t-il ?", "a": "Quand on multiplie ou divise les deux membres par un nombre négatif.", "tag": "propriete", "niveau": 1},
+    {"id": "m1eq-09", "q": "Si −x > 2, que vaut x ?", "a": "x < −2", "tag": "valeur", "niveau": 1},
+    {"id": "m1eq-10", "q": "Ajouter un même nombre aux deux membres d’une inégalité change-t-il son sens ?", "a": "Non, jamais.", "tag": "propriete", "niveau": 1},
+    {"id": "m1eq-11", "q": "Comment s’écrit « x < −3 » en intervalle ?", "a": "]−∞ ; −3[", "tag": "valeur", "niveau": 1},
+    {"id": "m1eq-12", "q": "Comment s’écrit « x ≥ 2 » en intervalle ?", "a": "[2 ; +∞[", "tag": "valeur", "niveau": 1},
+    {"id": "m1eq-13", "q": "Sur une droite graduée, que signifie un point creux en 3 ?", "a": "3 n’est pas solution : inégalité stricte, crochet ouvert.", "tag": "definition", "niveau": 1},
+    {"id": "m1eq-14", "q": "Pourquoi le crochet est-il toujours ouvert du côté de l’infini ?", "a": "L’infini n’est pas un nombre : on ne l’atteint jamais.", "tag": "propriete", "niveau": 2},
+    {"id": "m1eq-15", "q": "Comment se débarrasser des fractions dans x/3 + 1 = x/2 ?", "a": "Multiplier tous les termes par 6, le dénominateur commun.", "tag": "methode", "niveau": 2},
+    {"id": "m1eq-16", "q": "Vrai ou faux : x/3 + 1 = x/2 devient 2x + 1 = 3x ?", "a": "Faux : le 1 aussi est multiplié par 6, d’où 2x + 6 = 3x.", "tag": "piege", "niveau": 2},
+    {"id": "m1eq-17", "q": "Résous −4x + 3 ≥ 11.", "a": "x ≤ −2, soit S = ]−∞ ; −2].", "tag": "valeur", "niveau": 2},
+    {"id": "m1eq-18", "q": "Comment résoudre graphiquement ax + b > cx + d ?", "a": "Chercher où la droite y = ax + b est au-dessus de y = cx + d.", "tag": "methode", "niveau": 2},
+    {"id": "m1eq-19", "q": "Quelles sont les étapes d’une mise en équation ?", "a": "Choisir l’inconnue, traduire l’énoncé, résoudre, revenir à la question.", "tag": "methode", "niveau": 2},
+    {"id": "m1eq-20", "q": "On trouve x > 10 séances. Quelle est la réponse ?", "a": "À partir de 11 séances.", "pourquoi": "x est entier et 10 est exclu.", "tag": "piege", "niveau": 2},
+    {"id": "m1eq-21", "q": "Quelle est la solution de ax + b = 0 si a ≠ 0 ?", "a": "x = −b/a, unique.", "tag": "formule", "niveau": 2},
+    {"id": "m1eq-22", "q": "Que donne ax + b = 0 si a = 0 ?", "a": "Aucune solution si b ≠ 0 ; tous les réels si b = 0.", "tag": "propriete", "niveau": 3},
+    {"id": "m1eq-23", "q": "Résous 2(x + 3) = 2x + 5.", "a": "S = ∅", "pourquoi": "On obtient 6 = 5, toujours faux.", "tag": "valeur", "niveau": 3},
+    {"id": "m1eq-24", "q": "Qu’appelle-t-on deux équations équivalentes ?", "a": "Deux équations qui ont exactement les mêmes solutions.", "tag": "definition", "niveau": 3},
+    {"id": "m1eq-25", "q": "Pourquoi multiplier par un nombre non nul donne une équation équivalente ?", "a": "L’opération est réversible : on revient en arrière en divisant.", "tag": "propriete", "niveau": 3},
+    {"id": "m1eq-26", "q": "Pourquoi ne faut-il pas diviser x² = 3x par x ?", "a": "On perdrait la solution x = 0 : on factorise plutôt.", "tag": "piege", "niveau": 3},
+    {"id": "m1eq-27", "q": "Pourquoi multiplier par k < 0 inverse-t-il l’ordre ?", "a": "La fonction x ↦ kx est décroissante quand k < 0.", "tag": "propriete", "niveau": 3},
+    {"id": "m1eq-28", "q": "D’où vient le mot « algèbre » ?", "a": "De l’arabe al-jabr, dans un livre d’al-Khwârizmî (IXᵉ siècle).", "tag": "histoire", "niveau": 2},
+    {"id": "m1eq-29", "q": "Qui a inventé le signe « = », et quand ?", "a": "Robert Recorde, en 1557.", "tag": "histoire", "niveau": 2}
+  ]
+}

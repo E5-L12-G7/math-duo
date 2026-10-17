@@ -1,0 +1,187 @@
+{
+  "id": "m1-equations",
+  "titre": "Équations et inéquations du premier degré",
+  "resume": "Résoudre une équation, c’est trouver la valeur de x qui équilibre une balance : on fait toujours la même opération des deux côtés. Pour une inéquation, la balance penche, et elle change de côté si l’on multiplie par un nombre négatif.",
+  "objectifs": [
+    "vérifier si un nombre est solution d’une équation",
+    "résoudre une équation du type ax + b = cx + d, avec parenthèses ou fractions",
+    "résoudre une inéquation du premier degré et écrire l’ensemble des solutions sous forme d’intervalle",
+    "savoir quand le sens d’une inégalité change",
+    "mettre un problème concret en équation ou en inéquation"
+  ],
+  "prerequis": [
+    "m1-fractions"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bienvenue ! Aujourd’hui on apprend à « résoudre une équation ». Le mot fait peur, mais tu le fais déjà sans le savoir : quand tu te demandes combien de cafés tu peux payer avec 10 €, tu résous une équation. On va tout construire avec une image très simple : une balance.",
+      "## Une équation, c’est une balance en équilibre",
+      "Le signe « = » dit que les deux côtés pèsent exactement la même chose. La lettre x désigne un nombre qu’on ne connaît pas encore : une boîte fermée dont on cherche le poids.",
+      "analogie: Sur le plateau de gauche : 3 boîtes identiques et 2 billes. Sur le plateau de droite : 14 billes. La balance est à l’horizontale. Combien de billes dans chaque boîte ? C’est l’équation 3x + 2 = 14.",
+      "Pour trouver x, on enlève petit à petit tout ce qui entoure les boîtes, **sans jamais déséquilibrer la balance** : si j’enlève 2 billes à gauche, j’enlève 2 billes à droite. Il reste 3 boîtes = 12 billes, donc une boîte = 4 billes.",
+      "!! La règle d’or : ce que l’on fait d’un côté, on le fait de l’autre.",
+      "@balance | Avance étape par étape. À chaque étape, regarde ce qui est fait à gauche ET à droite : la balance reste toujours à l’horizontale, jusqu’à ce que x soit tout seul.",
+      "? Dans 3x + 2 = 14, pourquoi ne peut-on pas enlever 2 billes seulement à gauche ? || Parce que la balance pencherait : les deux côtés ne seraient plus égaux, et l’égalité deviendrait fausse.",
+      "prof: Une remarque qui va te sauver souvent : quand tu trouves une réponse, tu peux toujours la **vérifier**. Remets 4 à la place de x : 3 × 4 + 2 = 14. La balance est équilibrée, c’est gagné. Aucun prof ne pourra te dire que tu as faux !",
+      "## Une inéquation, c’est une balance qui penche",
+      "Avec les signes < (plus petit que) ou > (plus grand que), la balance n’est plus à l’horizontale : un côté est plus lourd. On ne cherche plus un seul nombre mais **tous** les nombres qui font pencher la balance du bon côté.",
+      "analogie: « Je veux dépenser moins de 20 € » : il n’y a pas une seule bonne dépense, toutes celles en dessous de 20 € conviennent. Les solutions forment une zone, qu’on colorie sur une droite graduée.",
+      "Ajouter ou enlever le même poids des deux côtés ne change pas le côté qui penche. Doubler tout ne le change pas non plus. Mais il y a **un piège** : multiplier par un nombre négatif retourne la situation, comme un miroir.",
+      "@inequation | Pars de 2 < 5 et fais glisser le curseur. Tant que tu multiplies par un nombre positif, le point bleu reste à gauche du point vert. Dès que tu passes en négatif, ils échangent leurs places : le sens s’inverse.",
+      "? Si −x > 2, que peut-on dire de x ? || On multiplie par −1, un nombre négatif : le sens s’inverse, donc x < −2. Par exemple x = −5 : −(−5) = 5, qui est bien plus grand que 2.",
+      "## Où vont les solutions d’une inéquation ?",
+      "On représente les solutions sur une droite graduée : un trait coloré pour la zone, un point plein si la borne est solution (≤ ou ≥), un point creux si elle ne l’est pas (< ou >).",
+      "@intervalle | Change les bornes et les crochets : observe le lien entre le crochet tourné vers l’intérieur (borne incluse) et le point plein sur la droite.",
+      "? Les nombres x tels que x ≥ 3 : le point en 3 est-il plein ou creux ? || Plein : 3 vérifie 3 ≥ 3, donc 3 fait partie des solutions.",
+      "histoire: Le mot « algèbre » vient de l’arabe al-jabr, dans le titre d’un livre du savant al-Khwârizmî écrit à Bagdad au IXᵉ siècle. Al-jabr signifie « remettre en place » : faire passer un terme d’un côté à l’autre de l’égalité. Le signe « = » est bien plus jeune : il a été inventé en 1557 par le Gallois Robert Recorde, « parce que rien ne peut être plus égal que deux traits parallèles ».",
+      "prof: Bilan : une équation est une balance équilibrée, une inéquation une balance qui penche. On fait la même chose des deux côtés, on vérifie, et on se méfie des nombres négatifs dans les inéquations. Au niveau Pratique, on transforme ça en méthode infaillible."
+    ],
+    "pratique": [
+      "prof: On passe aux méthodes. Bonne nouvelle : il n’y en a qu’une, toujours la même, avec quelques variantes. Je te la donne en étapes, on l’applique ensemble, puis tu t’entraînes. Prends un brouillon.",
+      "## Méthode : résoudre ax + b = cx + d",
+      "1. Si besoin, développe les parenthèses et réduis chaque côté.\n2. Rassemble les termes en x d’un côté : enlève cx aux deux membres.\n3. Rassemble les nombres de l’autre côté : enlève b aux deux membres.\n4. Divise les deux membres par le coefficient de x.\n5. Vérifie en remplaçant x dans l’équation de départ.",
+      "@etapes {\"etapes\":[[\"5x − 7 = 2x + 8\",\"On veut tous les x à gauche et tous les nombres à droite.\"],[\"5x − 2x − 7 = 8\",\"On enlève 2x aux deux membres.\"],[\"3x − 7 = 8\",\"On réduit : 5x − 2x = 3x.\"],[\"3x = 8 + 7 = 15\",\"On ajoute 7 aux deux membres.\"],[\"x = 15 ÷ 3 = 5\",\"On divise les deux membres par 3, le coefficient de x.\"],[\"5 × 5 − 7 = 18 et 2 × 5 + 8 = 18\",\"Vérification : les deux membres valent 18, la balance est équilibrée.\"]]} | Lance la lecture, ou avance étape par étape. Avant chaque clic, dis à voix haute l’opération que tu ferais.",
+      "attention: 3x signifie 3 × x. Pour se débarrasser du 3, on **divise** par 3 ; on ne soustrait pas 3. De 3x = 12, on tire x = 4, pas x = 9.",
+      "prof: Pourquoi on dit souvent « on fait passer de l’autre côté en changeant le signe » ? C’est un raccourci de la règle de la balance : enlever 2x des deux côtés fait disparaître 2x à droite et le fait apparaître avec un moins à gauche. Le raccourci est pratique, mais si tu doutes, reviens à la balance.",
+      "? Résous 4x − 3 = 2x + 7. || 4x − 2x = 7 + 3, donc 2x = 10 et x = 5. Vérification : 4 × 5 − 3 = 17 et 2 × 5 + 7 = 17.",
+      "## Avec des parenthèses ou des fractions",
+      "Avec des parenthèses, on développe d’abord : 3(x − 2) + 4 = x + 6 devient 3x − 6 + 4 = x + 6. Avec des fractions, on multiplie **tous les termes** par un dénominateur commun pour s’en débarrasser.",
+      "@etapes {\"etapes\":[[\"x/3 + 1 = x/2\",\"Dénominateurs 3 et 2 : leur plus petit multiple commun est 6.\"],[\"6 × x/3 + 6 × 1 = 6 × x/2\",\"On multiplie chaque terme des deux membres par 6.\"],[\"2x + 6 = 3x\",\"Les fractions ont disparu.\"],[\"6 = 3x − 2x\",\"On enlève 2x aux deux membres.\"],[\"x = 6\",\"Vérification : 6/3 + 1 = 3 et 6/2 = 3.\"]]} | Suis la méthode du dénominateur commun. Remarque à l’étape 2 que le 1 aussi est multiplié par 6.",
+      "? Résous 2(x + 3) = 5x − 9. || 2x + 6 = 5x − 9, donc 6 + 9 = 5x − 2x, 15 = 3x et x = 5.",
+      "## Méthode : résoudre une inéquation",
+      "1. Mêmes étapes que pour une équation : regroupe les x d’un côté, les nombres de l’autre.\n2. Au moment de diviser par le coefficient de x, regarde son signe : **négatif, on change le sens** de l’inégalité ; positif, on le garde.\n3. Écris l’ensemble des solutions sous forme d’intervalle et représente-le sur une droite graduée.",
+      "@etapes {\"etapes\":[[\"−4x + 3 ≥ 11\",\"On isole le terme en x.\"],[\"−4x ≥ 8\",\"On enlève 3 aux deux membres : le sens ne change pas.\"],[\"x ≤ 8 ÷ (−4)\",\"On divise par −4, un nombre NÉGATIF : ≥ devient ≤.\"],[\"x ≤ −2\",\"8 ÷ (−4) = −2.\"],[\"S = ]−∞ ; −2]\",\"Crochet fermé en −2 : l’inégalité est large, −2 est solution.\"]]} | Arrête-toi à l’étape 3 : c’est LE moment où l’on se trompe. Vérifie ensuite avec x = −3 : −4 × (−3) + 3 = 15, qui est bien ≥ 11.",
+      "## Écrire l’ensemble des solutions",
+      "- x < −3 s’écrit ]−∞ ; −3[ : crochet ouvert, −3 n’est pas solution.\n- x ≥ 2 s’écrit [2 ; +∞[ : crochet fermé, 2 est solution.\n- Du côté de l’infini, le crochet est toujours ouvert : l’infini n’est pas un nombre qu’on atteint.",
+      "? Résous −2x + 1 > 7 et écris S. || −2x > 6, on divise par −2 (négatif) donc x < −3 : S = ]−∞ ; −3[.",
+      "## Voir une inéquation sur un graphique",
+      "Résoudre ax + b > cx + d, c’est chercher les x pour lesquels la droite y = ax + b est **au-dessus** de la droite y = cx + d. Le point de croisement donne la borne.",
+      "@inequation-graphique | Fais varier la pente a : la zone verte (les solutions) change de côté au moment où la pente devient plus petite que −0,5. C’est exactement le moment où l’on divise par un nombre négatif.",
+      "## Mettre un problème en équation",
+      "1. Choisis l’inconnue et écris ce qu’elle représente (« x = nombre de séances »).\n2. Traduis chaque phrase de l’énoncé en expression avec x.\n3. Écris l’égalité ou l’inégalité demandée, puis résous.\n4. Reviens à la question : unité, arrondi, nombre entier si on compte des objets.",
+      "ex: Abonnement A : 30 € puis 4 € la séance. Sans abonnement : 7 € la séance.\nA est moins chère quand 30 + 4x < 7x\n30 < 3x, donc x > 10\nL’abonnement devient intéressant à partir de 11 séances.",
+      "prof: Le piège de la dernière étape : on trouve x > 10, mais on compte des séances, donc des nombres entiers. Avec exactement 10 séances, les deux formules coûtent 70 € : ce n’est pas « moins cher ». La réponse est donc 11. Relis toujours la question à la fin.",
+      "? Un taxi coûte 4 € plus 2 € par km. Combien de km au maximum avec 30 € ? || 4 + 2x ≤ 30, donc 2x ≤ 26 et x ≤ 13 : au plus 13 km."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on se demande pourquoi la méthode est juste. Ça a l’air évident, mais il y a des subtilités : certaines opérations, innocentes en apparence, ajoutent ou font perdre des solutions. Savoir lesquelles, c’est ce qui fait la différence.",
+      "## Équations équivalentes",
+      "Deux équations sont **équivalentes** si elles ont exactement le même ensemble de solutions. Résoudre, c’est remplacer l’équation par une chaîne d’équations équivalentes, jusqu’à une équation dont les solutions se lisent directement (x = 5).",
+      "!! Ajouter un même nombre aux deux membres, ou les multiplier par un même nombre NON NUL, donne une équation équivalente, car ces opérations sont réversibles : on peut revenir en arrière en retranchant, ou en divisant.",
+      "Multiplier par 0, au contraire, n’est pas réversible : de 0 × A = 0 × B on ne peut rien tirer. C’est pour cela qu’on ne divise jamais par une quantité qui peut s’annuler.",
+      "## Le cas général : ax + b = 0",
+      "> a ≠ 0 :  ax + b = 0  ⟺  x = −b/a   (une seule solution)",
+      "> a = 0 et b ≠ 0 : aucune solution (S = ∅)      a = 0 et b = 0 : S = ℝ",
+      "Graphiquement, résoudre ax + b = 0, c’est chercher où la droite y = ax + b coupe l’axe des abscisses. Une droite qui n’est pas horizontale le coupe exactement une fois ; une droite horizontale ne le coupe jamais, sauf si elle est confondue avec lui.",
+      "@courbe {\"f\":\"a*x+b\",\"curseurs\":{\"a\":[-3,3,0.5,1.5],\"b\":[-4,4,0.5,-3]},\"x\":[-6,6],\"y\":[-6,6]} | Fais glisser a jusqu’à 0 : la droite devient horizontale. Avec b ≠ 0, elle ne coupe plus l’axe (aucune solution) ; si de plus b = 0, elle est confondue avec l’axe (tous les réels sont solutions).",
+      "? Résous 2(x + 3) = 2x + 5. || 2x + 6 = 2x + 5 donne 6 = 5, ce qui est faux pour tout x : S = ∅.",
+      "## Pourquoi le sens change",
+      "La fonction x ↦ kx est croissante si k > 0 et décroissante si k < 0. Une fonction croissante conserve l’ordre (si u < v alors ku < kv), une fonction décroissante l’inverse (si u < v alors ku > kv). Diviser par k, c’est multiplier par 1/k, qui a le même signe que k.",
+      "ex: u < v et k < 0\nv − u > 0, donc k(v − u) < 0 (produit d’un positif et d’un négatif)\nkv − ku < 0, donc ku > kv",
+      "prof: Tu vas me demander : « à quoi bon une preuve, puisque la règle marche ? » Parce qu’elle te dit quand elle marche. Dès que tu multiplies par une expression qui contient x, tu ne connais plus son signe, et la règle seule ne suffit plus. Regardons ces cas-pièges.",
+      "## Où ça casse",
+      "- Multiplier par une expression qui contient x (comme x − 1) peut créer une fausse solution qui l’annule : il faut vérifier à la fin.\n- Diviser par x fait perdre la solution x = 0 : dans x² = 3x, on factorise x(x − 3) = 0, d’où x = 0 ou x = 3.\n- Dans une inéquation, multiplier par une expression dont on ne connaît pas le signe est interdit : on ne saurait pas s’il faut changer le sens.",
+      "@etapes {\"etapes\":[[\"x² = 3x\",\"Tentation : diviser par x…\"],[\"x = 3\",\"… mais on a perdu une solution !\"],[\"x² − 3x = 0\",\"Méthode sûre : tout ramener d’un côté.\"],[\"x(x − 3) = 0\",\"On factorise par x.\"],[\"x = 0 ou x = 3\",\"Un produit est nul si et seulement si l’un des facteurs est nul.\"]]} | Compare les deux chemins : diviser par x semble plus rapide, mais il oublie x = 0. Vérifie : 0² = 3 × 0.",
+      "? Quel est l’ensemble des solutions de 3x − 2 ≤ 3x + 1 ? || L’inégalité devient −2 ≤ 1, vraie pour tout x : S = ℝ.",
+      "? Peut-on résoudre (x − 2)x > x − 2 en divisant par x − 2 ? || Pas directement : le signe de x − 2 dépend de x. Il faut séparer les cas x > 2 (sens gardé, x > 1, donc x > 2) et x < 2 (sens inversé, x < 1), d’où S = ]−∞ ; 1[ ∪ ]2 ; +∞[.",
+      "histoire: Les tablettes babyloniennes, vers 1800 avant notre ère, contiennent déjà des problèmes qui reviennent à des équations du premier degré, résolus par des recettes en mots. Il faudra attendre François Viète, vers 1591, pour utiliser des lettres à la place des nombres, et René Descartes, en 1637, pour prendre l’habitude de noter l’inconnue x.",
+      "prof: Pour conclure : une résolution est une chaîne d’équivalences. Chaque fois que tu fais une opération, demande-toi si elle est réversible. Si elle ne l’est pas (multiplier par une expression qui peut s’annuler, diviser par x), vérifie tes solutions à la fin. C’est la même vigilance qui t’attend au second degré."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Résoudre 5x − 7 = 2x + 8.",
+      "etapes": [
+        [
+          "5x − 2x − 7 = 8",
+          "on enlève 2x aux deux membres"
+        ],
+        [
+          "3x = 15",
+          "on ajoute 7 aux deux membres"
+        ],
+        [
+          "x = 5",
+          "on divise par 3"
+        ],
+        [
+          "5 × 5 − 7 = 18 et 2 × 5 + 8 = 18",
+          "vérification : les deux membres sont égaux"
+        ]
+      ]
+    },
+    {
+      "enonce": "Résoudre −4x + 3 ≥ 11.",
+      "etapes": [
+        [
+          "−4x ≥ 8",
+          "on enlève 3 aux deux membres"
+        ],
+        [
+          "x ≤ −2",
+          "on divise par −4, négatif : le sens s’inverse"
+        ],
+        [
+          "S = ]−∞ ; −2]",
+          "−2 est inclus car l’inégalité est large (≥)"
+        ]
+      ]
+    },
+    {
+      "enonce": "Abonnement : 30 € puis 4 € par séance ; sans abonnement : 7 € par séance. À partir de combien de séances l’abonnement est-il moins cher ?",
+      "etapes": [
+        [
+          "30 + 4x < 7x",
+          "x est le nombre de séances ; on traduit « moins cher »"
+        ],
+        [
+          "30 < 3x",
+          "on enlève 4x aux deux membres"
+        ],
+        [
+          "x > 10",
+          "on divise par 3, positif : le sens est conservé"
+        ],
+        [
+          "11 séances",
+          "x est entier et doit être strictement plus grand que 10"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "−2x > 6 donc x > −3",
+      "juste": "−2x > 6 donc x < −3",
+      "pourquoi": "Diviser par un nombre négatif inverse le sens de l’inégalité."
+    },
+    {
+      "faux": "3x = 12 donc x = 12 − 3 = 9",
+      "juste": "3x = 12 donc x = 12 ÷ 3 = 4",
+      "pourquoi": "3x signifie 3 × x : on divise par 3, on ne soustrait pas."
+    },
+    {
+      "faux": "x/3 + 1 = x/2 devient 2x + 1 = 3x",
+      "juste": "2x + 6 = 3x",
+      "pourquoi": "On multiplie TOUS les termes par 6, y compris le nombre 1."
+    },
+    {
+      "faux": "x² = 3x donc x = 3",
+      "juste": "x(x − 3) = 0 donc x = 0 ou x = 3",
+      "pourquoi": "Diviser par x fait perdre la solution x = 0."
+    },
+    {
+      "faux": "x < 4 s’écrit ]−∞ ; 4]",
+      "juste": "x < 4 s’écrit ]−∞ ; 4[",
+      "pourquoi": "Inégalité stricte : la borne n’est pas solution, le crochet est ouvert."
+    }
+  ],
+  "retenir": [
+    "Ce que l’on fait d’un côté, on le fait de l’autre.",
+    "Regrouper les x d’un côté, les nombres de l’autre, puis diviser par le coefficient de x.",
+    "Multiplier ou diviser par un nombre négatif inverse le sens d’une inégalité.",
+    "Crochet fermé : la borne est solution ; crochet ouvert : elle ne l’est pas ; toujours ouvert en ±∞.",
+    "ax + b = 0 a une seule solution −b/a si a ≠ 0 ; sinon aucune ou une infinité.",
+    "Toujours vérifier en remplaçant x dans l’équation de départ."
+  ]
+}

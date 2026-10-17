@@ -1,0 +1,176 @@
+{
+  "id": "m1-trigo",
+  "titre": "Trigonométrie : cercle, radians, cosinus et sinus",
+  "resume": "Le cosinus et le sinus d’un angle sont les coordonnées d’un point qui tourne sur un cercle de rayon 1. On apprend à les lire, à les calculer exactement et à résoudre cos x = a ou sin x = a.",
+  "objectifs": [
+    "placer sur le cercle trigonométrique le point associé à un angle, en degrés ou en radians",
+    "convertir des degrés en radians et inversement",
+    "donner les valeurs exactes de cos et sin des angles remarquables, sur tout le cercle",
+    "utiliser cos²x + sin²x = 1 et les angles associés",
+    "résoudre cos x = a et sin x = a sur [0 ; π], puis dans ℝ"
+  ],
+  "prerequis": [
+    "m1-fractions"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Aujourd’hui on attaque la trigonométrie. Je sais, le mot fait peur… mais tu vas voir que tout tient dans une seule image : un point qui tourne sur un cercle. On va d’abord le faire tourner, puis on donnera un nom à sa position horizontale (le cosinus) et à sa hauteur (le sinus). Le reste, ce sont des conséquences.",
+      "## Un point qui tourne",
+      "Imagine un cercle de rayon 1, centré au milieu d’un repère. Un point part tout à droite, à la position « 3 heures » d’une horloge, et tourne dans le sens **inverse** des aiguilles d’une montre. L’angle dit de combien il a tourné.",
+      "analogie: Tu es dans une nacelle de grande roue. Le cosinus dit à quelle distance tu es à droite (positif) ou à gauche (négatif) du centre ; le sinus dit à quelle hauteur tu es au-dessus (positif) ou au-dessous (négatif) du centre.",
+      "!! Le cosinus est la position horizontale du point ; le sinus est sa position verticale. Comme le cercle a un rayon de 1, les deux restent toujours entre −1 et 1.",
+      "@cercle | Fais avancer le curseur de l’angle petit à petit. Regarde la barre horizontale (le cosinus) rétrécir puis passer à gauche, pendant que la barre verticale (le sinus) monte, puis redescend. À droite, la courbe du sinus se dessine au fur et à mesure.",
+      "## Quelques positions faciles",
+      "- Au départ (0°) : le point est tout à droite, cos = 1 et sin = 0.\n- Après un quart de tour (90°) : il est tout en haut, cos = 0 et sin = 1.\n- Après un demi-tour (180°) : il est tout à gauche, cos = −1 et sin = 0.\n- Après un tour complet (360°) : il est revenu au départ.",
+      "? Que valent cos et sin après trois quarts de tour (270°) ? || Le point est tout en bas : il n’est ni à gauche ni à droite (cos = 0) et il est une unité sous le centre (sin = −1).",
+      "## Pourquoi un cercle de rayon 1 ?",
+      "Quand le point a tourné d’un angle entre 0° et 90°, il forme avec l’axe horizontal un triangle rectangle dont l’hypoténuse est le rayon, donc 1. Le côté horizontal de ce triangle vaut cos, le côté vertical vaut sin. C’est le même cosinus que celui du triangle rectangle du collège, mais il marche désormais pour tous les angles.",
+      "@triangle {\"mode\":\"trigo\"} | Change d’abord la longueur du côté adjacent : les trois rapports affichés ne bougent pas. Change ensuite l’angle : là, ils changent. Le cosinus et le sinus ne dépendent que de l’angle, pas de la taille du triangle.",
+      "prof: C’est pour ça qu’on prend un rayon de 1 : on n’a plus à diviser par l’hypoténuse, les longueurs se lisent directement. Le cercle est une sorte de « triangle rectangle universel ».",
+      "## Une autre unité d’angle : le radian",
+      "Au lieu de compter les degrés, on peut mesurer la **longueur du chemin** parcouru par le point sur le cercle. Comme le rayon vaut 1, un tour complet fait 2π ≈ 6,28 et un demi-tour fait π ≈ 3,14. Cette mesure s’appelle le radian.",
+      "analogie: Enroule une ficelle autour d’une roue de rayon 1 mètre. Après un demi-tour, tu as déroulé environ 3,14 mètres de ficelle : c’est π radians.",
+      "? Combien vaut un quart de tour en radians ? || Un quart de 2π, donc π/2 ≈ 1,57.",
+      "## Le signe dépend du coin où se trouve le point",
+      "Les deux axes coupent le cercle en quatre quarts. À droite de l’axe vertical, le cosinus est positif ; à gauche, il est négatif. Au-dessus de l’axe horizontal, le sinus est positif ; en dessous, il est négatif.",
+      "? Après 120° (un tiers de tour), quel est le signe du cosinus ? Et du sinus ? || Le point est en haut à gauche : cosinus négatif, sinus positif.",
+      "prof: Bravo, tu as l’essentiel ! Si tu retiens seulement « cos = horizontal, sin = vertical, sur un cercle de rayon 1 », tu pourras retrouver presque tout le reste en faisant un petit dessin. C’est exactement ce que je fais moi-même.",
+      "histoire: La trigonométrie est née dans le ciel : les astronomes devaient relier des angles à des longueurs. Hipparque (IIe siècle avant notre ère) dressa des tables de cordes ; vers l’an 500, l’Indien Aryabhata utilisa la demi-corde, qui est notre sinus. Le mot passa en arabe, puis en latin sous la forme « sinus »."
+    ],
+    "pratique": [
+      "prof: Passons aux méthodes. Au programme : convertir les angles, connaître le tableau des valeurs remarquables, calculer cos et sin de n’importe quel angle remarquable, et résoudre des équations simples. Garde toujours un petit cercle griffonné sur ton brouillon : il évite la plupart des erreurs.",
+      "## Convertir degrés et radians",
+      "> 180° = π rad",
+      "1. Degrés vers radians : multiplie par π/180.\n2. Simplifie la fraction obtenue.\n3. Radians vers degrés : remplace π par 180 et calcule.",
+      "@etapes {\"etapes\":[[\"135°\",\"On veut l’angle en radians.\"],[\"135 × π/180\",\"On multiplie par π/180, car 180° correspondent à π rad.\"],[\"135π/180 = 3π/4\",\"On simplifie par 45.\"],[\"5π/6 rad\",\"Dans l’autre sens : on part de radians.\"],[\"5 × 180/6 = 150°\",\"On remplace π par 180 et on calcule.\"]]} | Lance la lecture ou avance étape par étape. Avant chaque étape, essaie de deviner la suivante.",
+      "? Convertis 210° en radians. || 210 × π/180 = 210π/180 = 7π/6.",
+      "## Le tableau à connaître",
+      "> angle :  0  |  π/6  |  π/4  |  π/3  |  π/2",
+      "> cos :  1  |  √3/2  |  √2/2  |  1/2  |  0",
+      "> sin :  0  |  1/2  |  √2/2  |  √3/2  |  1",
+      "Astuce de mémoire : la ligne du sinus s’écrit √0/2, √1/2, √2/2, √3/2, √4/2, et la ligne du cosinus est la même lue à l’envers.",
+      "prof: L’erreur classique, c’est d’échanger π/6 et π/3. Pour ne plus te tromper, imagine le point : à π/6 (30°), il est encore bas et très à droite, donc le sinus est le petit (1/2) et le cosinus le grand (√3/2). À π/3 (60°), c’est l’inverse.",
+      "## Cos et sin d’un angle quelconque : l’angle de référence",
+      "1. Place le point sur le cercle (dans quel quart de tour est-il ?).\n2. Trouve l’angle de référence entre 0 et π/2 : la distance angulaire jusqu’à l’axe horizontal le plus proche.\n3. Lis la valeur dans le tableau.\n4. Donne le signe selon la position du point.",
+      "> cos(π − x) = −cos x    sin(π − x) = sin x",
+      "> cos(π + x) = −cos x    sin(π + x) = −sin x    cos(−x) = cos x    sin(−x) = −sin x",
+      "@etapes {\"etapes\":[[\"cos(2π/3)\",\"2π/3 = 120° : le point est en haut à gauche.\"],[\"2π/3 = π − π/3\",\"L’angle de référence est π/3.\"],[\"cos(π/3) = 1/2\",\"Valeur du tableau.\"],[\"cos(2π/3) = −1/2\",\"À gauche de l’axe vertical, le cosinus est négatif.\"],[\"sin(5π/4)\",\"Deuxième exemple : 5π/4 = 225°, en bas à gauche.\"],[\"5π/4 = π + π/4\",\"Angle de référence π/4.\"],[\"sin(5π/4) = −√2/2\",\"Sous l’axe horizontal, le sinus est négatif.\"]]} | Suis la méthode sur deux exemples. Après chaque étape, demande-toi où est le point.",
+      "? Que vaut cos(5π/6) ? || 5π/6 = π − π/6, le point est en haut à gauche : cos(5π/6) = −cos(π/6) = −√3/2.",
+      "## Passer de sin x à cos x",
+      "Comme le point est sur un cercle de rayon 1, Pythagore donne toujours cos²x + sin²x = 1. Si tu connais l’un, tu trouves l’autre au signe près ; la position du point donne le signe.",
+      "ex: sin x = 3/5 et x entre π/2 et π\ncos²x = 1 − 9/25 = 16/25\ncos x = 4/5 ou −4/5\nLe point est en haut à gauche : cos x = −4/5",
+      "## Résoudre cos x = a ou sin x = a sur [0 ; π]",
+      "1. Dessine le cercle et la droite : verticale x = a pour le cosinus, horizontale y = a pour le sinus.\n2. Compte les points d’intersection sur le demi-cercle du haut (c’est [0 ; π]).\n3. Trouve un angle grâce au tableau.\n4. Pour le sinus, la deuxième solution est π − x ; pour le cosinus, il n’y en a qu’une.",
+      "@courbe {\"f\":[{\"f\":\"sin(x)\",\"nom\":\"sin x\"},{\"f\":\"k\",\"nom\":\"y = k\"}],\"curseurs\":{\"k\":[-1.2,1.2,0.05,0.5]},\"x\":[-0.3,3.4],\"y\":[-1.3,1.3],\"pas\":0.5} | Voici sin x pour x entre 0 et π (≈ 3,14). Fais glisser k : entre 0 et 1, la droite coupe la courbe en deux points, symétriques autour de π/2 ; pour k = 1, un seul ; pour k négatif ou plus grand que 1, aucun entre 0 et π.",
+      "@etapes {\"etapes\":[[\"sin x = √3/2, x ∈ [0 ; π]\",\"La droite y = √3/2 coupe le demi-cercle du haut deux fois.\"],[\"sin(π/3) = √3/2\",\"Première solution grâce au tableau : x = π/3.\"],[\"x = π − π/3 = 2π/3\",\"Deuxième solution : sin(π − x) = sin x.\"],[\"S = {π/3 ; 2π/3}\",\"On range les solutions dans l’ordre croissant.\"]]} | Regarde comment la symétrie par rapport à l’axe vertical donne la deuxième solution.",
+      "? Résous cos x = −1/2 sur [0 ; π]. || Une seule solution : cos(π/3) = 1/2, et le point doit être à gauche, donc x = π − π/3 = 2π/3.",
+      "attention: Ta calculatrice a un mode degrés et un mode radians. Un angle en radians tapé en mode degrés donne un résultat faux, sans aucun message d’erreur.",
+      "prof: Bilan : convertir, lire le tableau, se ramener au premier quart de tour, et résoudre en dessinant la droite. Si tu sais faire ces quatre gestes, tu as tout le niveau pratique de l’UE."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on définit les choses proprement : cos et sin deviennent des fonctions de n’importe quel nombre réel. On verra pourquoi les équations ont une infinité de solutions, et où les raisonnements rapides cassent.",
+      "## Définition par enroulement",
+      "On enroule la droite réelle autour du cercle unité, en partant du point I(1 ; 0) dans le sens direct. À tout réel x correspond un point M(x) du cercle, obtenu après un arc de longueur |x| (dans le sens direct si x > 0, indirect si x < 0). Par définition, M(x) a pour coordonnées (cos x ; sin x).",
+      "> cos²x + sin²x = 1    −1 ≤ cos x ≤ 1    −1 ≤ sin x ≤ 1",
+      "Deux réels qui diffèrent de 2π donnent le même point : cos et sin sont 2π-périodiques. Le point de −x est le symétrique de celui de x par rapport à l’axe horizontal : cos est paire et sin est impaire.",
+      "@courbe {\"f\":[{\"f\":\"cos(x)\",\"nom\":\"cos x\"},{\"f\":\"sin(x+a)\",\"nom\":\"sin(x + a)\"}],\"curseurs\":{\"a\":[0,6.3,0.01,0]},\"x\":[-7,7],\"y\":[-1.5,1.5],\"pas\":1} | Fais glisser a. Pour a ≈ 1,57 (π/2), les deux courbes se superposent : sin(x + π/2) = cos x. Pour a ≈ 6,28 (2π), sin(x + a) redevient sin x : c’est la périodicité.",
+      "## Toutes les solutions dans ℝ",
+      "> cos x = cos α  ⟺  x = α + 2kπ  ou  x = −α + 2kπ   (k ∈ ℤ)",
+      "> sin x = sin α  ⟺  x = α + 2kπ  ou  x = π − α + 2kπ   (k ∈ ℤ)",
+      "Justification : deux points du cercle ont la même abscisse exactement quand ils sont symétriques par rapport à l’axe horizontal (x et −x), et la même ordonnée quand ils sont symétriques par rapport à l’axe vertical (x et π − x) ; puis on ajoute les tours complets.",
+      "@etapes {\"etapes\":[[\"cos x = √2/2\",\"On cherche toutes les solutions réelles.\"],[\"cos(π/4) = √2/2\",\"Un angle connu : α = π/4.\"],[\"x = π/4 + 2kπ ou x = −π/4 + 2kπ\",\"Les deux familles, k entier.\"],[\"Dans [0 ; 2π[ : π/4 et 7π/4\",\"Pour la seconde famille, k = 1 donne −π/4 + 2π = 7π/4.\"]]} | Observe comment on passe des familles de solutions à un intervalle donné : on choisit les valeurs de k.",
+      "Sur un intervalle borné, on sélectionne les valeurs de k qui y tombent : c’est pourquoi le nombre de solutions dépend de l’intervalle (2 solutions de sin x = 1/2 sur [0 ; 2π[, 4 sur [0 ; 4π[).",
+      "? Combien de solutions a sin x = 1/2 sur [0 ; 4π[ ? || Quatre : π/6, 5π/6, π/6 + 2π = 13π/6 et 5π/6 + 2π = 17π/6.",
+      "prof: Une question que l’on me pose souvent : pourquoi deux familles de solutions, et pas une seule ? Parce que, sur un tour, une droite horizontale ou verticale coupe en général le cercle en deux points symétriques. Le + 2kπ ajoute simplement les tours complets.",
+      "## Où ça casse",
+      "- cos x = a n’a aucune solution si |a| > 1.\n- sin x = 1 n’a qu’une solution sur [0 ; π] : les deux familles se confondent car π/2 = π − π/2.\n- Sur [0 ; π], cos est strictement décroissant, donc cos x = a a au plus une solution ; ce n’est plus vrai sur [0 ; 2π].\n- Les formules cos(π − x) = −cos x… sont des identités : elles valent pour tout réel x, pas seulement pour les angles aigus.",
+      "? L’équation cos x = 1,2 a-t-elle des solutions ? || Non : un cosinus est toujours compris entre −1 et 1.",
+      "? Pourquoi sin x = 1 n’a-t-il qu’une solution sur [0 ; π] ? || Les deux solutions α et π − α sont égales quand α = π/2 : la droite y = 1 touche le cercle en un seul point.",
+      "prof: Ces définitions te serviront tout de suite après : en analyse, la dérivée de sin est cos et celle de cos est −sin ; en MVA912, les nombres complexes s’écriront r(cos θ + i sin θ). Tu vois, le petit cercle n’a pas fini de te servir !",
+      "histoire: Au XVIIIe siècle, Leonhard Euler installe le point de vue moderne : sinus et cosinus deviennent des fonctions d’un nombre réel, lues sur un cercle de rayon 1. Le mot « radian » n’apparaît qu’au XIXe siècle."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Calculer cos(2π/3).",
+      "etapes": [
+        [
+          "2π/3 = π − π/3",
+          "on écrit l’angle à partir de son angle de référence π/3"
+        ],
+        [
+          "cos(π − x) = −cos x",
+          "symétrie par rapport à l’axe vertical : le point est à gauche"
+        ],
+        [
+          "cos(2π/3) = −cos(π/3) = −1/2",
+          "cos(π/3) = 1/2"
+        ]
+      ]
+    },
+    {
+      "enonce": "Résoudre sin x = √2/2 sur [0 ; π].",
+      "etapes": [
+        [
+          "sin(π/4) = √2/2",
+          "valeur du tableau : première solution π/4"
+        ],
+        [
+          "x = π − π/4 = 3π/4",
+          "sin(π − x) = sin x donne la seconde solution"
+        ],
+        [
+          "S = {π/4 ; 3π/4}",
+          "deux solutions symétriques par rapport à π/2"
+        ]
+      ]
+    },
+    {
+      "enonce": "Sachant que sin x = 5/13 et x ∈ ]π/2 ; π[, calculer cos x.",
+      "etapes": [
+        [
+          "cos²x = 1 − sin²x = 1 − 25/169 = 144/169",
+          "relation cos²x + sin²x = 1"
+        ],
+        [
+          "cos x = 12/13 ou cos x = −12/13",
+          "deux racines carrées possibles"
+        ],
+        [
+          "cos x = −12/13",
+          "le point est en haut à gauche : cosinus négatif"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "cos(π/3) = √3/2",
+      "juste": "cos(π/3) = 1/2 et sin(π/3) = √3/2",
+      "pourquoi": "À π/3, le point est haut et proche de l’axe vertical : son abscisse (le cosinus) est la plus petite des deux."
+    },
+    {
+      "faux": "sin x = 1/2 sur [0 ; π] : seule solution π/6",
+      "juste": "π/6 et 5π/6",
+      "pourquoi": "Sur [0 ; π], la droite horizontale coupe le demi-cercle deux fois : x et π − x."
+    },
+    {
+      "faux": "60° = 60π",
+      "juste": "60° = 60π/180 = π/3",
+      "pourquoi": "180° correspondent à π radians : on multiplie par π/180."
+    },
+    {
+      "faux": "cos(5π/6) = √3/2",
+      "juste": "cos(5π/6) = −√3/2",
+      "pourquoi": "L’angle de référence donne la valeur, mais le signe vient de la position : le point est à gauche."
+    }
+  ],
+  "retenir": [
+    "cos = abscisse, sin = ordonnée du point sur le cercle de rayon 1.",
+    "180° = π rad : degrés × π/180 = radians.",
+    "Valeurs de 0, π/6, π/4, π/3, π/2 : cos 1, √3/2, √2/2, 1/2, 0 ; sin dans l’ordre inverse.",
+    "Angle quelconque : angle de référence pour la valeur, position du point pour le signe.",
+    "cos²x + sin²x = 1.",
+    "Sur [0 ; π] : cos x = a a une solution ; sin x = a (0 < a < 1) en a deux, x et π − x."
+  ]
+}

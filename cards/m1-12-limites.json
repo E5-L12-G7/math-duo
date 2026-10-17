@@ -1,0 +1,31 @@
+{
+  "m1-limites": [
+    {"id": "m1li-01", "q": "Que décrit la limite de f en +∞ ?", "a": "La valeur dont f(x) s’approche quand x devient très grand.", "tag": "definition", "niveau": 1},
+    {"id": "m1li-02", "q": "Que vaut la limite de 1/x quand x → +∞ ?", "a": "0", "tag": "valeur", "niveau": 1},
+    {"id": "m1li-03", "q": "Que vaut la limite de x² quand x → −∞ ?", "a": "+∞", "pourquoi": "Une puissance paire est positive.", "tag": "valeur", "niveau": 1},
+    {"id": "m1li-04", "q": "Que vaut la limite de x³ quand x → −∞ ?", "a": "−∞", "pourquoi": "Une puissance impaire garde le signe de x.", "tag": "valeur", "niveau": 1},
+    {"id": "m1li-05", "q": "Que vaut la limite de 1/x quand x → 0⁺ ?", "a": "+∞", "tag": "valeur", "niveau": 1},
+    {"id": "m1li-06", "q": "Que vaut la limite de 1/x quand x → 0⁻ ?", "a": "−∞", "tag": "valeur", "niveau": 1},
+    {"id": "m1li-07", "q": "Qu’est-ce qu’une asymptote ?", "a": "Une droite dont la courbe se rapproche indéfiniment.", "tag": "definition", "niveau": 1},
+    {"id": "m1li-08", "q": "Qu’est-ce qu’une fonction continue, intuitivement ?", "a": "Une fonction dont la courbe se trace sans lever le crayon.", "tag": "definition", "niveau": 1},
+    {"id": "m1li-09", "q": "Où les polynômes sont-ils continus ?", "a": "Sur ℝ tout entier.", "tag": "propriete", "niveau": 1},
+    {"id": "m1li-10", "q": "Comment trouver la limite d’un polynôme en ±∞ ?", "a": "On garde seulement son terme de plus haut degré.", "tag": "methode", "niveau": 2},
+    {"id": "m1li-11", "q": "Comment trouver la limite d’une fraction rationnelle en ±∞ ?", "a": "Limite du quotient des termes de plus haut degré.", "tag": "methode", "niveau": 2},
+    {"id": "m1li-12", "q": "Quelles sont les quatre formes indéterminées ?", "a": "∞ − ∞, 0 × ∞, ∞/∞ et 0/0.", "tag": "definition", "niveau": 2},
+    {"id": "m1li-13", "q": "Vrai ou faux : ∞/∞ = 1 ?", "a": "Faux : c’est une forme indéterminée.", "pourquoi": "2x/x → 2 alors que x²/x → +∞.", "tag": "piege", "niveau": 2},
+    {"id": "m1li-14", "q": "Vrai ou faux : ∞ − ∞ = 0 ?", "a": "Faux : c’est une forme indéterminée.", "tag": "piege", "niveau": 2},
+    {"id": "m1li-15", "q": "Limite finie L en +∞ : quelle asymptote ?", "a": "Horizontale, d’équation y = L.", "tag": "propriete", "niveau": 2},
+    {"id": "m1li-16", "q": "Limite infinie quand x → a : quelle asymptote ?", "a": "Verticale, d’équation x = a.", "tag": "propriete", "niveau": 2},
+    {"id": "m1li-17", "q": "Que vaut lim (2x + 1)/(5x − 3) en +∞ ?", "a": "2/5", "pourquoi": "Quotient des termes dominants 2x/5x.", "tag": "valeur", "niveau": 2},
+    {"id": "m1li-18", "q": "Que donne « nombre négatif ÷ 0⁺ » ?", "a": "−∞", "tag": "propriete", "niveau": 2},
+    {"id": "m1li-19", "q": "Si f est continue en a, que vaut lim f(x) quand x → a ?", "a": "f(a)", "tag": "propriete", "niveau": 2},
+    {"id": "m1li-20", "q": "Sur quel ensemble √x est-elle continue ?", "a": "Sur [0 ; +∞[.", "tag": "propriete", "niveau": 2},
+    {"id": "m1li-21", "q": "Comment lever une forme 0/0 en a pour une fraction de polynômes ?", "a": "Factoriser par (x − a) en haut et en bas, puis simplifier.", "tag": "methode", "niveau": 3},
+    {"id": "m1li-22", "q": "Que dit le théorème des valeurs intermédiaires ?", "a": "f continue sur [a ; b] prend toutes les valeurs entre f(a) et f(b).", "tag": "propriete", "niveau": 3},
+    {"id": "m1li-23", "q": "Que faut-il ajouter au TVI pour une solution unique ?", "a": "La stricte monotonie de f sur [a ; b].", "tag": "propriete", "niveau": 3},
+    {"id": "m1li-24", "q": "Que dit le théorème des gendarmes ?", "a": "g ≤ f ≤ h et g, h → L entraînent f → L.", "tag": "propriete", "niveau": 3},
+    {"id": "m1li-25", "q": "Vers quoi tend sin(x)/x quand x → +∞ ?", "a": "0, par encadrement entre −1/x et 1/x.", "tag": "valeur", "niveau": 3},
+    {"id": "m1li-26", "q": "Quelle définition précise de f continue en a ?", "a": "f est définie en a et lim f(x) = f(a) quand x → a.", "tag": "definition", "niveau": 3},
+    {"id": "m1li-27", "q": "Qui a donné la définition des limites avec ε et δ ?", "a": "Weierstrass, vers 1860.", "tag": "histoire", "niveau": 2}
+  ]
+}

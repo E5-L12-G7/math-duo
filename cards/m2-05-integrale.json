@@ -1,0 +1,31 @@
+{
+  "m2-integrale": [
+    {"id": "m2in-01", "q": "Que représente l’intégrale d’une fonction positive entre a et b ?", "a": "L’aire entre la courbe, l’axe des abscisses et les droites x = a et x = b.", "tag": "definition", "niveau": 1},
+    {"id": "m2in-02", "q": "Que signifie le symbole ∫ ?", "a": "Un S allongé : une somme d’une infinité de rectangles fins.", "tag": "definition", "niveau": 1},
+    {"id": "m2in-03", "q": "Comment calcule-t-on ∫ₐᵇ f(x) dx avec une primitive F ?", "a": "F(b) − F(a).", "tag": "formule", "niveau": 1},
+    {"id": "m2in-04", "q": "Intégrale de la constante 3 entre 0 et 2 ?", "a": "6 (rectangle 3 × 2).", "tag": "valeur", "niveau": 1},
+    {"id": "m2in-05", "q": "Une intégrale peut-elle être négative ?", "a": "Oui, quand la courbe est sous l’axe : aire algébrique.", "tag": "propriete", "niveau": 1},
+    {"id": "m2in-06", "q": "Faut-il ajouter + C au résultat d’une intégrale ?", "a": "Non : c’est un nombre, la constante s’annule.", "tag": "piege", "niveau": 1},
+    {"id": "m2in-07", "q": "∫₀³ x² dx ?", "a": "9", "pourquoi": "[x³/3]₀³ = 27/3.", "tag": "valeur", "niveau": 1},
+    {"id": "m2in-08", "q": "Quelles sont les trois étapes du calcul d’une intégrale ?", "a": "Trouver F, calculer F(b) et F(a), faire F(b) − F(a).", "tag": "methode", "niveau": 1},
+    {"id": "m2in-09", "q": "Que dit la relation de Chasles ?", "a": "∫ₐᶜ f = ∫ₐᵇ f + ∫ᵇᶜ f.", "tag": "formule", "niveau": 2},
+    {"id": "m2in-10", "q": "Que fait l’échange des bornes ?", "a": "Il change le signe : ∫ᵇₐ f = −∫ₐᵇ f.", "tag": "propriete", "niveau": 2},
+    {"id": "m2in-11", "q": "Que dit la linéarité de l’intégrale ?", "a": "∫ (f + g) = ∫ f + ∫ g et ∫ kf = k ∫ f.", "tag": "propriete", "niveau": 2},
+    {"id": "m2in-12", "q": "Pourquoi mettre F(a) entre parenthèses ?", "a": "Si F(a) est négatif, la soustraction devient une addition.", "tag": "piege", "niveau": 2},
+    {"id": "m2in-13", "q": "[x³]₋₁² ?", "a": "9", "pourquoi": "8 − (−1).", "tag": "valeur", "niveau": 2},
+    {"id": "m2in-14", "q": "Comment calculer une aire quand f change de signe ?", "a": "Couper aux zéros de f, additionner les morceaux en valeur absolue.", "tag": "methode", "niveau": 2},
+    {"id": "m2in-15", "q": "Aire entre deux courbes, g au-dessus de f sur [a ; b] ?", "a": "∫ₐᵇ (g − f) dx", "tag": "formule", "niveau": 2},
+    {"id": "m2in-16", "q": "Aire entre y = 2x et y = x² sur [0 ; 2] ?", "a": "4/3", "tag": "valeur", "niveau": 2},
+    {"id": "m2in-17", "q": "Formule de la valeur moyenne de f sur [a ; b] ?", "a": "μ = (1/(b − a)) ∫ₐᵇ f(x) dx", "tag": "formule", "niveau": 2},
+    {"id": "m2in-18", "q": "Valeur moyenne de 2x sur [0 ; 4] ?", "a": "4", "pourquoi": "16 ÷ 4.", "tag": "valeur", "niveau": 2},
+    {"id": "m2in-19", "q": "Comment définit-on rigoureusement l’intégrale (Riemann) ?", "a": "Limite des sommes d’aires de rectangles quand leur largeur tend vers 0.", "tag": "definition", "niveau": 3},
+    {"id": "m2in-20", "q": "Que dit le théorème fondamental de l’analyse ?", "a": "x ↦ ∫ₐˣ f(t) dt est dérivable, de dérivée f (f continue).", "tag": "propriete", "niveau": 3},
+    {"id": "m2in-21", "q": "∫₁ᵉ (1/x) dx ?", "a": "1", "pourquoi": "ln e − ln 1.", "tag": "valeur", "niveau": 3},
+    {"id": "m2in-22", "q": "Si f ≤ g sur [a ; b] avec a ≤ b, que dire des intégrales ?", "a": "∫ₐᵇ f ≤ ∫ₐᵇ g.", "tag": "propriete", "niveau": 3},
+    {"id": "m2in-23", "q": "Une intégrale nulle implique-t-elle f nulle ?", "a": "Non : ∫₋₂² x³ dx = 0.", "tag": "piege", "niveau": 3},
+    {"id": "m2in-24", "q": "Pourquoi ∫₋₁¹ 1/x² dx ne vaut-il pas −2 ?", "a": "1/x² n’est pas continue en 0 : la formule ne s’applique pas.", "tag": "piege", "niveau": 3},
+    {"id": "m2in-25", "q": "Qui a calculé l’aire sous un arc de parabole vers 250 av. J.-C. ?", "a": "Archimède.", "tag": "histoire", "niveau": 2},
+    {"id": "m2in-26", "q": "Qui a inventé le signe ∫, et quand ?", "a": "Leibniz, en 1675.", "tag": "histoire", "niveau": 2},
+    {"id": "m2in-27", "q": "Qui a donné en 1854 la définition rigoureuse de l’intégrale ?", "a": "Bernhard Riemann.", "tag": "histoire", "niveau": 3}
+  ]
+}

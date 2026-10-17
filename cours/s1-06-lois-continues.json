@@ -1,0 +1,200 @@
+{
+  "id": "s1-lois-continues",
+  "titre": "Variables continues : densité",
+  "resume": "Quand une variable se mesure (durée, taille, masse), elle prend une infinité de valeurs : la probabilité devient une aire sous une courbe, la densité. Deux lois à connaître : la loi uniforme et la loi exponentielle.",
+  "objectifs": [
+    "comprendre pourquoi P(X = a) = 0 pour une variable continue et lire une probabilité comme une aire",
+    "vérifier qu’une fonction est une densité et trouver une constante de normalisation",
+    "utiliser la fonction de répartition F(x) = P(X ≤ x) pour calculer P(a ≤ X ≤ b)",
+    "calculer une espérance et une variance par intégrale",
+    "utiliser la loi uniforme et la loi exponentielle (durée de vie, absence de mémoire)"
+  ],
+  "prerequis": [
+    "s1-va-discretes",
+    "s1-binomiale-poisson"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Jusqu’ici on comptait : des succès, des appels, des pannes. Aujourd’hui on mesure : un temps d’attente, une durée de vie, une taille. Et mesurer change tout, parce qu’entre 2 et 3 minutes il y a une infinité de durées possibles. Je vais te montrer comment les probabilités deviennent des aires.",
+      "## Compter ou mesurer ?",
+      "Le nombre d’enfants d’une famille vaut 0, 1, 2, 3… : on peut lister les valeurs, la variable est **discrète**. Le temps que tu attends le bus peut valoir 2 min, 2,5 min, 2,513 min… : toutes les valeurs d’un intervalle sont possibles, la variable est **continue**.",
+      "## Une probabilité nulle… mais pas impossible",
+      "Quelle est la probabilité d’attendre **exactement** 3 minutes, à la milliseconde, à la microseconde près ? Pratiquement aucune chance : pour une variable continue, P(X = 3) = 0. En revanche, attendre **entre** 2 et 4 minutes a une vraie probabilité.",
+      "analogie: Lance une fléchette très fine sur une règle de 1 mètre. La probabilité de toucher pile le point 50 cm est nulle (un point n’a pas de largeur), mais celle de toucher entre 40 et 60 cm vaut 20 %. Ce sont les **intervalles** qui comptent.",
+      "## De l’histogramme à la courbe",
+      "@histogramme {\"donnees\":[1.2,1.8,2.1,2.4,2.6,2.9,3.1,3.3,3.4,3.6,3.8,3.9,4.1,4.2,4.4,4.6,4.8,5.1,5.3,5.6,5.9,6.2,6.8,7.5,8.4],\"amplitude\":3,\"amin\":1,\"amax\":4} | Diminue l’amplitude des classes : les barres deviennent plus fines et le contour de l’histogramme ressemble de plus en plus à une courbe lisse. Cette courbe idéale, c’est la densité.",
+      "Avec énormément de mesures et des classes très fines, l’histogramme se lisse en une courbe : la **densité** f. L’aire totale sous cette courbe vaut 1 (100 % des valeurs), et l’aire au-dessus d’un intervalle donne la probabilité de tomber dedans.",
+      "!! Pour une variable continue, P(a ≤ X ≤ b) est l’aire sous la courbe de la densité entre a et b.",
+      "## La loi uniforme : aucun moment n’est privilégié",
+      "Un bus passe toutes les 10 minutes et tu arrives au hasard. Ton attente est « n’importe quoi entre 0 et 10 », sans préférence : sa densité est plate, un rectangle de largeur 10 et de hauteur 1/10 (pour que l’aire fasse 1).",
+      "@loi-continue {\"loi\":\"uniforme\",\"ua\":0,\"ub\":10,\"a\":0,\"b\":3} | Déplace a et b : l’aire bleue est un rectangle, donc la probabilité est simplement (b − a)/10. Vérifie qu’attendre moins de 3 minutes a une probabilité 0,3.",
+      "? Le bus passe toutes les 10 minutes. Probabilité d’attendre entre 4 et 9 minutes ? || (9 − 4)/10 = 0,5 : c’est la longueur de l’intervalle divisée par 10.",
+      "## La loi exponentielle : la durée de vie d’un objet qui ne s’use pas",
+      "Certains objets tombent en panne « par accident », sans s’user : un composant électronique, un atome radioactif qui se désintègre. Leur durée de vie suit souvent une **loi exponentielle** : les pannes précoces sont les plus fréquentes, et la courbe décroît vers 0.",
+      "@loi-continue {\"loi\":\"exponentielle\",\"lambda\":0.5,\"a\":0,\"b\":2} | Règle λ, le taux de panne. Plus λ est grand, plus la courbe tombe vite : les pannes arrivent tôt. La durée de vie moyenne, affichée sous le graphique, vaut 1/λ.",
+      "prof: La propriété étonnante de cette loi : elle n’a **pas de mémoire**. Un composant qui a déjà fonctionné 1 000 heures a exactement la même chance de tenir 100 heures de plus qu’un composant neuf. Il ne vieillit pas. C’est très différent d’un pneu ou d’un être humain !",
+      "? Une ampoule a une durée de vie moyenne de 2 000 heures (loi exponentielle). Quel est son taux de panne λ ? || λ = 1/2 000 = 0,0005 par heure, car la moyenne vaut 1/λ.",
+      "? Pour une variable continue, P(X ≤ 5) et P(X < 5) sont-elles différentes ? || Non : la différence est P(X = 5), qui vaut 0.",
+      "histoire: En 1902-1903, Ernest Rutherford et Frederick Soddy montrent que la quantité d’un élément radioactif décroît de façon exponentielle : chaque atome a, à chaque instant, la même probabilité de se désintégrer, quel que soit son « âge ». C’est exactement l’absence de mémoire de la loi exponentielle.",
+      "prof: Bilan : pour une variable continue, on ne parle plus de P(X = a) mais d’aires. Loi uniforme : un rectangle, les probabilités sont des rapports de longueurs. Loi exponentielle : une courbe qui décroît, pour des durées de vie sans usure. Passons aux calculs !"
+    ],
+    "pratique": [
+      "prof: Dans cette partie, les aires se calculent avec des intégrales. Si tu as un doute sur les primitives, garde en tête : une primitive de x^n est x^(n + 1)/(n + 1), et une primitive de λe^(−λx) est −e^(−λx). On va tout faire pas à pas.",
+      "## Reconnaître une densité",
+      "1. Vérifie que f(x) ≥ 0 pour tout x.\n2. Vérifie que l’aire totale vaut 1 : l’intégrale de f sur tout son intervalle de définition est égale à 1.\n3. Si f contient une constante inconnue k, écris « intégrale = 1 » et résous en k.",
+      "@etapes {\"etapes\":[[\"f(x) = kx sur [0 ; 2], 0 ailleurs\",\"On cherche k pour que f soit une densité.\"],[\"∫ de 0 à 2 de kx dx = k × [x²/2] de 0 à 2\",\"Primitive de x : x²/2.\"],[\"= k × (4/2 − 0) = 2k\",\"On évalue entre 0 et 2.\"],[\"2k = 1, donc k = 1/2\",\"L’aire totale doit valoir 1.\"],[\"f(x) = x/2 ≥ 0 sur [0 ; 2]\",\"La positivité est vérifiée : f est une densité.\"]]} | Avance pas à pas : à chaque étape, demande-toi pourquoi l’aire totale doit valoir 1.",
+      "? f(x) = c sur [2 ; 6] et 0 ailleurs. Quelle valeur de c en fait une densité ? || L’aire du rectangle vaut 4c = 1, donc c = 1/4.",
+      "## Calculer P(a ≤ X ≤ b)",
+      "> P(a ≤ X ≤ b) = ∫ de a à b de f(x) dx",
+      "@courbe {\"f\":\"x/2\",\"x\":[0,2],\"y\":[0,1.2],\"pas\":0.25,\"pasy\":0.25,\"etiq\":0.5,\"etiqy\":0.5,\"aire\":[0.5,1.5]} | Déplace les bornes de l’aire : la valeur affichée est P(a ≤ X ≤ b) pour la densité f(x) = x/2. Vérifie que l’aire de 0 à 2 vaut 1, et celle de 0,5 à 1,5 vaut 0,5.",
+      "attention: Pour une variable continue, les inégalités strictes ou larges donnent le même résultat : P(a < X < b) = P(a ≤ X ≤ b).",
+      "## La fonction de répartition",
+      "F(x) = P(X ≤ x) est l’aire sous la densité **à gauche** de x. Elle part de 0, croît, et monte jusqu’à 1. Elle simplifie tous les calculs :",
+      "> P(a ≤ X ≤ b) = F(b) − F(a)    P(X > a) = 1 − F(a)",
+      "@etapes {\"etapes\":[[\"f(x) = x/2 sur [0 ; 2]\",\"On cherche F(x) pour x entre 0 et 2.\"],[\"F(x) = ∫ de 0 à x de t/2 dt\",\"Aire à gauche de x.\"],[\"F(x) = x²/4\",\"Primitive de t/2 : t²/4.\"],[\"P(0,5 ≤ X ≤ 1,5) = F(1,5) − F(0,5) = 0,5625 − 0,0625\",\"Différence de deux valeurs de F.\"],[\"= 0,5\",\"On retrouve l’aire de la manipulation.\"]]} | Remarque qu’une fois F connue, plus besoin d’intégrer : on fait une soustraction.",
+      "## Espérance et variance",
+      "> E(X) = ∫ x f(x) dx    V(X) = ∫ x² f(x) dx − E(X)²",
+      "@etapes {\"etapes\":[[\"f(x) = x/2 sur [0 ; 2]\",\"Même densité.\"],[\"E(X) = ∫ de 0 à 2 de x × x/2 dx = [x³/6] de 0 à 2 = 8/6 = 4/3\",\"On intègre x × f(x).\"],[\"E(X²) = ∫ de 0 à 2 de x² × x/2 dx = [x⁴/8] de 0 à 2 = 2\",\"On intègre x² × f(x).\"],[\"V(X) = 2 − (4/3)² = 2 − 16/9 = 2/9\",\"Formule de König-Huygens.\"]]} | L’espérance 4/3 est à droite du milieu 1 : la densité « pèse » plus à droite. C’est logique !",
+      "? Pour la densité f(x) = 2x sur [0 ; 1], calcule E(X). || ∫ de 0 à 1 de 2x² dx = 2/3.",
+      "prof: Tu vois le fil conducteur ? Densité, puis F, puis E et V : ce sont toujours des intégrales. Pour la loi uniforme et la loi exponentielle, on les a calculées une fois pour toutes ; il te suffit de retenir les formules qui suivent.",
+      "## La loi uniforme U([a ; b])",
+      "> f(x) = 1/(b − a) sur [a ; b]    P(c ≤ X ≤ d) = (d − c)/(b − a)",
+      "> E(X) = (a + b)/2    V(X) = (b − a)²/12",
+      "@loi-continue {\"loi\":\"uniforme\",\"ua\":2,\"ub\":8,\"a\":3,\"b\":5} | Uniforme sur [2 ; 8] : déplace a et b et vérifie que la probabilité vaut toujours (b − a)/6. L’espérance 5 est au milieu.",
+      "## La loi exponentielle E(λ)",
+      "> f(x) = λ e^(−λx) pour x ≥ 0    P(X ≤ t) = 1 − e^(−λt)    P(X > t) = e^(−λt)",
+      "> E(X) = 1/λ    V(X) = 1/λ²",
+      "@etapes {\"etapes\":[[\"Durée de vie moyenne 5 ans : λ = 1/5 = 0,2\",\"E(X) = 1/λ, donc λ = 1/E(X).\"],[\"P(X > 3) = e^(−0,2 × 3) = e^(−0,6)\",\"Formule de la queue.\"],[\"P(X > 3) ≈ 0,5488\",\"Calculatrice.\"],[\"P(X ≤ 5) = 1 − e^(−1) ≈ 0,6321\",\"Plus de 63 % des appareils lâchent avant la durée moyenne.\"]]} | Le dernier résultat surprend : la majorité des appareils tombent en panne avant la moyenne. Les rares très longues durées tirent la moyenne vers le haut.",
+      "@loi-continue {\"loi\":\"exponentielle\",\"lambda\":0.2,\"a\":0,\"b\":5} | Avec λ = 0,2, place a = 0 et b = 5 (la moyenne) : l’aire vaut environ 0,632. Déplace b pour trouver la médiane, où l’aire vaut 0,5.",
+      "## L’absence de mémoire",
+      "> P(X > s + t sachant X > s) = P(X > t)",
+      "@etapes {\"etapes\":[[\"λ = 0,001 par heure ; le composant a déjà tenu 500 h\",\"On cherche la probabilité qu’il tienne encore 1 000 h.\"],[\"P(X > 1 500 sachant X > 500)\",\"Traduction de l’énoncé.\"],[\"= P(X > 1 000)\",\"Absence de mémoire : seules comptent les heures en plus.\"],[\"= e^(−0,001 × 1 000) = e^(−1) ≈ 0,3679\",\"Formule de la queue.\"]]} | Observe que les 500 heures déjà écoulées n’apparaissent plus dans le calcul.",
+      "prof: Attention au piège classique : écrire P(X > 1 500) au lieu de P(X > 1 000). L’énoncé dit « encore 1 000 heures » : ce sont les heures supplémentaires qui comptent, pas l’âge total.",
+      "? X suit E(0,5). Calcule P(X > 2). || e^(−0,5 × 2) = e^(−1) ≈ 0,368."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on pose les définitions proprement, on démontre les formules de la loi exponentielle et on fait le lien avec la loi de Poisson du chapitre précédent. Prends ton temps sur les intégrales.",
+      "## Définition",
+      "Une variable X est **à densité** s’il existe une fonction f, positive, intégrable, d’intégrale totale 1, telle que pour tous a ≤ b :",
+      "> P(a ≤ X ≤ b) = ∫ de a à b de f(x) dx",
+      "Sa fonction de répartition F(x) = ∫ de −∞ à x de f(t) dt est continue, croissante, de limite 0 en −∞ et 1 en +∞, et F′ = f là où f est continue. Conséquence immédiate : F étant continue, P(X = a) = F(a) − lim F(x) quand x → a⁻ = 0.",
+      "## Une densité n’est pas une probabilité",
+      "f(x) peut dépasser 1 : la loi uniforme sur [0 ; 0,5] a pour densité 2. Seules les **aires** sont des probabilités. f(x) dx s’interprète comme P(x ≤ X ≤ x + dx) pour un dx très petit.",
+      "@courbe {\"f\":\"k*exp(-k*x)\",\"curseurs\":{\"k\":[0.2,3,0.1,2]},\"x\":[0,4],\"y\":[0,3.2],\"pas\":0.5,\"pasy\":0.5,\"etiq\":1,\"etiqy\":1,\"aire\":[0,1]} | Ici k joue le rôle de λ. Monte k à 3 : la densité vaut 3 en 0, bien plus que 1, et pourtant l’aire de 0 à 1 reste inférieure à 1. Vérifie qu’elle vaut 1 − e^(−k).",
+      "## Démonstrations pour la loi exponentielle",
+      "> E(X) = ∫ de 0 à +∞ de λx e^(−λx) dx = 1/λ    (intégration par parties)",
+      "> E(X²) = 2/λ²    donc    V(X) = 2/λ² − 1/λ² = 1/λ²",
+      "Absence de mémoire : P(X > s + t sachant X > s) = P(X > s + t)/P(X > s) = e^(−λ(s + t))/e^(−λs) = e^(−λt) = P(X > t). Réciproquement, on démontre que c’est la **seule** loi continue sans mémoire : si G(t) = P(X > t) vérifie G(s + t) = G(s)G(t), alors G est une exponentielle.",
+      "? Calcule la médiane m de E(λ), c’est-à-dire F(m) = 1/2. || 1 − e^(−λm) = 1/2 donc m = ln 2 / λ ≈ 0,693/λ, plus petite que la moyenne 1/λ. En physique, c’est la demi-vie.",
+      "## Le lien avec la loi de Poisson",
+      "Si des événements arrivent au hasard au rythme moyen de λ par unité de temps (le nombre sur une durée t suit P(λt)), le temps T d’attente du premier événement vérifie P(T > t) = P(aucun événement sur [0 ; t]) = e^(−λt) : T suit E(λ). Poisson compte, l’exponentielle attend.",
+      "? Un standard reçoit en moyenne 3 appels par minute (Poisson). Probabilité d’attendre plus de 20 secondes le premier appel ? || T ~ E(3) en minutes : P(T > 1/3) = e^(−1) ≈ 0,368.",
+      "## Uniforme : variance par le calcul",
+      "Pour U([a ; b]) : E(X²) = (a² + ab + b²)/3, donc V(X) = (a² + ab + b²)/3 − (a + b)²/4 = (b − a)²/12. L’écart-type (b − a)/√12 ≈ 0,29 × (b − a).",
+      "? X suit la loi uniforme sur [0 ; 12]. Écart-type ? || V = 144/12 = 12, donc σ = √12 ≈ 3,46.",
+      "prof: Tu te demandes peut-être à quoi sert cette démonstration en pratique ? Elle te dit quand ne PAS utiliser la loi exponentielle : dès qu’un objet s’use, l’absence de mémoire est fausse, et toutes les probabilités calculées avec elle aussi.",
+      "## Où ça casse",
+      "- **Pas d’espérance** : la densité de Cauchy f(x) = 1/(π(1 + x²)) a une aire totale 1, mais ∫ x f(x) dx diverge. Les moyennes d’un tel échantillon ne se stabilisent jamais.\n- **Objets qui vieillissent** : pneus, êtres humains, pièces mécaniques ont un risque de panne croissant ; la loi exponentielle (risque constant) est alors fausse, on utilise par exemple la loi de Weibull.\n- **Uniforme sur ℝ** : impossible, une densité constante sur un intervalle infini aurait une aire infinie.\n- Confondre **f(x) et P(X = x)** : f(x) n’est pas une probabilité, et P(X = x) = 0.",
+      "prof: Retiens le schéma général : densité → aire → probabilité ; F pour éviter d’intégrer à chaque fois ; E et V par intégrales. Le chapitre suivant applique tout cela à la reine des lois continues : la loi normale."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "f(x) = kx² sur [0 ; 3], 0 ailleurs. Trouver k, puis P(X ≤ 1).",
+      "etapes": [
+        [
+          "∫ de 0 à 3 de kx² dx = k × 27/3 = 9k",
+          "primitive de x² : x³/3"
+        ],
+        [
+          "9k = 1 donc k = 1/9",
+          "l’aire totale vaut 1"
+        ],
+        [
+          "P(X ≤ 1) = ∫ de 0 à 1 de x²/9 dx = 1/27",
+          "aire à gauche de 1"
+        ],
+        [
+          "P(X ≤ 1) ≈ 0,037",
+          "valeur approchée"
+        ]
+      ]
+    },
+    {
+      "enonce": "Un technicien arrive au hasard entre 14 h et 15 h. Probabilité d’attendre entre 15 et 40 minutes à partir de 14 h ? Heure moyenne d’arrivée ?",
+      "etapes": [
+        [
+          "X ~ U([0 ; 60]) en minutes après 14 h",
+          "aucun instant privilégié"
+        ],
+        [
+          "P(15 ≤ X ≤ 40) = 25/60 = 5/12 ≈ 0,417",
+          "longueur ÷ longueur totale"
+        ],
+        [
+          "E(X) = (0 + 60)/2 = 30",
+          "le milieu de l’intervalle"
+        ],
+        [
+          "arrivée moyenne à 14 h 30",
+          "conclusion"
+        ]
+      ]
+    },
+    {
+      "enonce": "La durée de vie d’un appareil suit une loi exponentielle de moyenne 8 ans. Il a déjà 3 ans. Probabilité qu’il fonctionne encore au moins 4 ans ?",
+      "etapes": [
+        [
+          "λ = 1/8 = 0,125",
+          "E(X) = 1/λ"
+        ],
+        [
+          "P(X > 7 sachant X > 3) = P(X > 4)",
+          "absence de mémoire"
+        ],
+        [
+          "= e^(−0,125 × 4) = e^(−0,5)",
+          "formule de la queue"
+        ],
+        [
+          "≈ 0,6065",
+          "calculatrice"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "P(X = 3) = f(3)",
+      "juste": "P(X = 3) = 0",
+      "pourquoi": "Pour une variable continue, une valeur isolée a une probabilité nulle ; f(3) est une densité, pas une probabilité."
+    },
+    {
+      "faux": "Une densité est toujours inférieure à 1",
+      "juste": "Seule l’aire totale vaut 1 ; f peut dépasser 1",
+      "pourquoi": "Par exemple, la loi uniforme sur [0 ; 0,5] a une densité égale à 2."
+    },
+    {
+      "faux": "Durée de vie moyenne 500 h, donc λ = 500",
+      "juste": "λ = 1/500 = 0,002",
+      "pourquoi": "Pour la loi exponentielle, E(X) = 1/λ : λ est un taux, l’inverse d’une durée."
+    },
+    {
+      "faux": "P(X > 1 500 sachant X > 500) = P(X > 1 500)",
+      "juste": "= P(X > 1 000)",
+      "pourquoi": "Absence de mémoire : on ne garde que la durée supplémentaire, 1 500 − 500."
+    },
+    {
+      "faux": "V(X) = (b − a)²/2 pour la loi uniforme",
+      "juste": "V(X) = (b − a)²/12",
+      "pourquoi": "Le 12 vient du calcul E(X²) − E(X)² ; c’est l’espérance qui fait intervenir un 2, (a + b)/2."
+    }
+  ],
+  "retenir": [
+    "Variable continue : P(X = a) = 0 et P(a ≤ X ≤ b) = aire sous la densité = ∫ de a à b de f.",
+    "Densité : f ≥ 0 et aire totale 1. F(x) = P(X ≤ x), et P(a ≤ X ≤ b) = F(b) − F(a).",
+    "E(X) = ∫ x f(x) dx ; V(X) = ∫ x² f(x) dx − E(X)².",
+    "Uniforme sur [a ; b] : P = longueur/(b − a), E = (a + b)/2, V = (b − a)²/12.",
+    "Exponentielle E(λ) : P(X > t) = e^(−λt), E = 1/λ, V = 1/λ², sans mémoire."
+  ]
+}

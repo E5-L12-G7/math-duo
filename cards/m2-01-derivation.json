@@ -1,0 +1,32 @@
+{
+  "m2-derivation": [
+    {"id": "m2de-01", "q": "Que donne la fonction dérivée f′ en chaque x ?", "a": "La pente de la tangente à la courbe de f en x.", "tag": "definition", "niveau": 1},
+    {"id": "m2de-02", "q": "Si f(t) est une position, que représente f′(t) ?", "a": "La vitesse à l’instant t.", "tag": "definition", "niveau": 1},
+    {"id": "m2de-03", "q": "Que vaut (xⁿ)′ ?", "a": "n xⁿ⁻¹", "tag": "formule", "niveau": 1},
+    {"id": "m2de-04", "q": "Que vaut la dérivée d’une constante ?", "a": "0", "pourquoi": "Sa courbe est horizontale : pente nulle.", "tag": "formule", "niveau": 1},
+    {"id": "m2de-05", "q": "Que vaut (x)′ ?", "a": "1", "tag": "formule", "niveau": 1},
+    {"id": "m2de-06", "q": "Que vaut la dérivée de x⁴ ?", "a": "4x³", "tag": "valeur", "niveau": 1},
+    {"id": "m2de-07", "q": "Comment dérive-t-on un polynôme ?", "a": "Terme à terme ; la constante disparaît.", "tag": "methode", "niveau": 1},
+    {"id": "m2de-08", "q": "Vrai ou faux : (5x³)′ = 15x³ ?", "a": "Faux : 15x², l’exposant diminue de 1.", "tag": "piege", "niveau": 1},
+    {"id": "m2de-09", "q": "Que vaut (1/x)′ ?", "a": "−1/x²", "tag": "formule", "niveau": 1},
+    {"id": "m2de-10", "q": "Que vaut (√x)′ ?", "a": "1/(2√x), pour x > 0.", "tag": "formule", "niveau": 1},
+    {"id": "m2de-11", "q": "Que vaut (eˣ)′ ?", "a": "eˣ", "tag": "formule", "niveau": 1},
+    {"id": "m2de-12", "q": "Que vaut (ln x)′ ?", "a": "1/x, pour x > 0.", "tag": "formule", "niveau": 1},
+    {"id": "m2de-13", "q": "Quelle est la dérivée de sin x ?", "a": "cos x", "tag": "formule", "niveau": 1},
+    {"id": "m2de-14", "q": "Quelle est la dérivée de cos x ?", "a": "−sin x", "tag": "formule", "niveau": 1},
+    {"id": "m2de-15", "q": "Quelle est la dérivée d’un produit uv ?", "a": "u′v + uv′", "tag": "formule", "niveau": 2},
+    {"id": "m2de-16", "q": "Vrai ou faux : (uv)′ = u′v′ ?", "a": "Faux : (x · x)′ = 2x, pas 1.", "tag": "piege", "niveau": 2},
+    {"id": "m2de-17", "q": "Quelle est la dérivée d’un quotient u/v ?", "a": "(u′v − uv′)/v²", "tag": "formule", "niveau": 2},
+    {"id": "m2de-18", "q": "Que vaut (1/v)′ ?", "a": "−v′/v²", "tag": "formule", "niveau": 2},
+    {"id": "m2de-19", "q": "Comment dérive-t-on uⁿ ?", "a": "n u′ uⁿ⁻¹ : ne pas oublier u′.", "tag": "formule", "niveau": 2},
+    {"id": "m2de-20", "q": "Que vaut ((3x + 1)⁴)′ ?", "a": "12(3x + 1)³", "pourquoi": "4 × 3 × (3x + 1)³.", "tag": "valeur", "niveau": 2},
+    {"id": "m2de-21", "q": "Que valent (eᵘ)′ et (ln u)′ ?", "a": "u′eᵘ et u′/u.", "tag": "formule", "niveau": 2},
+    {"id": "m2de-22", "q": "Que vaut (√u)′ ?", "a": "u′/(2√u), pour u > 0.", "tag": "formule", "niveau": 2},
+    {"id": "m2de-23", "q": "Que vaut (x eˣ)′ ?", "a": "(x + 1)eˣ", "tag": "valeur", "niveau": 2},
+    {"id": "m2de-24", "q": "Comment calculer f′(a) avec les règles ?", "a": "Dériver f, puis remplacer x par a.", "tag": "methode", "niveau": 2},
+    {"id": "m2de-25", "q": "Énonce la règle de la chaîne.", "a": "(g ∘ u)′ = (g′ ∘ u) × u′", "tag": "formule", "niveau": 3},
+    {"id": "m2de-26", "q": "√x est-elle dérivable en 0 ?", "a": "Non : tangente verticale en 0.", "tag": "propriete", "niveau": 3},
+    {"id": "m2de-27", "q": "Que vaut (2ˣ)′ ?", "a": "ln 2 × 2ˣ", "pourquoi": "2ˣ = e^(x ln 2).", "tag": "valeur", "niveau": 3},
+    {"id": "m2de-28", "q": "Qui a introduit la notation f′ et le mot « dérivée » ?", "a": "Lagrange, en 1797.", "tag": "histoire", "niveau": 2}
+  ]
+}

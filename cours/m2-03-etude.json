@@ -1,0 +1,186 @@
+{
+ "id": "m2-etude",
+ "titre": "Étude complète d’une fonction : domaine, asymptotes, prolongement",
+ "resume": "Étudier une fonction, c’est faire le tour du propriétaire : où elle existe, ce qu’elle fait aux bords et à l’infini, où elle monte et descend. On peut alors tracer sa courbe sans surprise.",
+ "objectifs": [
+  "déterminer le domaine de définition d’une fonction",
+  "trouver les asymptotes verticales, horizontales et obliques",
+  "prolonger une fonction par continuité en un point où elle n’est pas définie",
+  "enchaîner les étapes d’une étude complète jusqu’au tracé"
+ ],
+ "prerequis": [
+  "m2-variations"
+ ],
+ "niveaux": {
+  "vulgarisation": [
+   "prof: Bonjour ! Dans ce chapitre, on rassemble tout ce que tu sais pour étudier une fonction de A à Z. Le plan : d’abord les zones interdites, puis ce qui se passe aux bords, puis les trous qu’on peut boucher. À la fin, tu sauras dessiner une courbe compliquée en sachant exactement pourquoi elle a cette forme.",
+   "## Faire le tour du propriétaire",
+   "analogie: Avant une randonnée, tu regardes la carte : les zones interdites (le domaine), les falaises où le chemin plonge à pic (asymptotes verticales), l’horizon dont tu t’approches sans jamais l’atteindre (asymptote horizontale), et les montées et descentes (variations).",
+   "## Les zones interdites : le domaine",
+   "Une formule ne se calcule pas toujours. Trois interdits reviennent sans cesse : on ne divise pas par 0 ; on ne prend pas la racine carrée d’un nombre négatif ; on ne prend pas le logarithme d’un nombre négatif ou nul. Le **domaine de définition**, c’est l’ensemble des x pour lesquels la formule a un sens.",
+   "? Où la fonction f(x) = 1/(x − 2) n’est-elle pas définie ? || En x = 2, car le dénominateur vaudrait 0.",
+   "## La falaise : l’asymptote verticale",
+   "Près d’une valeur interdite, il arrive que la fonction s’emballe : diviser 3 par 0,001 donne 3 000, par 0,000 001 donne 3 millions. La courbe file vers le haut ou vers le bas, collée à une droite verticale qu’elle ne traverse jamais.",
+   "@courbe {\"f\":\"(2x+1)/(x-1)\",\"x\":[-5,7],\"y\":[-6,10],\"asymptotes\":{\"v\":[1],\"h\":[2]}} | Les pointillés rouges sont les asymptotes. Regarde près de x = 1 : la courbe plonge vers −∞ à gauche et file vers +∞ à droite. Loin à gauche ou à droite, elle s’aplatit contre la droite y = 2.",
+   "!! Une asymptote est une droite dont la courbe se rapproche autant qu’on veut, sans forcément la toucher.",
+   "## L’horizon : l’asymptote horizontale",
+   "Quand x devient énorme, certaines fonctions se stabilisent. Pour f(x) = (2x + 1)/(x − 1), avec x = 1 000 on obtient 2 001/999 ≈ 2,003 : le « +1 » et le « −1 » ne pèsent plus rien, il reste 2x/x = 2. La courbe s’approche de la droite horizontale y = 2.",
+   "? Vers quelle valeur s’approche (6x − 1)/(3x + 2) quand x devient très grand ? || Vers 6x/3x = 2 : asymptote horizontale y = 2.",
+   "## Les trous qu’on peut boucher",
+   "prof: Attention, voici le piège du chapitre : une valeur interdite ne donne pas toujours une falaise ! Parfois la fonction s’approche très calmement d’une valeur précise, comme un pont auquel il manque une seule planche. On peut alors « boucher le trou ».",
+   "@limite | Choisis (x² − 1)/(x − 1) et fais diminuer l’écart h : les deux points s’approchent de 2 sans jamais être en x = 1. Compare avec 1/x : là, les valeurs s’envolent, ce trou-là ne se bouche pas.",
+   "Pour (x² − 1)/(x − 1), en dehors de x = 1, la fraction se simplifie en x + 1. La courbe est la droite y = x + 1… privée d’un seul point, (1 ; 2). En posant f(1) = 2, on bouche le trou : c’est le **prolongement par continuité**.",
+   "? La fonction (x² − 9)/(x − 3) a-t-elle une falaise en 3 ? || Non : elle vaut x + 3 hors de 3, donc elle s’approche de 6. C’est un trou, qu’on bouche en posant f(3) = 6.",
+   "histoire: Le mot « asymptote » vient du grec et signifie « qui ne se rencontrent pas ». Apollonius de Perge l’employait déjà vers 200 avant notre ère pour les droites dont l’hyperbole s’approche sans jamais les couper.",
+   "prof: Bilan : domaine (les interdits), bords (falaises et horizons), trous (à boucher ou non), puis variations. Au niveau Pratique, on transforme chaque étape en calcul."
+  ],
+  "pratique": [
+   "prof: On passe à la méthode. Je te donne le plan d’étude complet, puis une technique pour chaque étape. Garde en tête la courbe de (2x + 1)/(x − 1) : on va la reconstruire entièrement par le calcul.",
+   "## Le plan d’étude",
+   "1. Domaine : exclure les valeurs qui annulent un dénominateur, rendent négatif l’intérieur d’une racine, ou négatif ou nul l’intérieur d’un logarithme.\n2. Limites aux bornes du domaine ; en déduire les asymptotes.\n3. Dérivée, signe de la dérivée, tableau de variations.\n4. Points particuliers (intersections avec les axes), puis tracé.",
+   "## Étape 1 : le domaine",
+   "ex: f(x) = 1/(x² − 4) : x² − 4 ≠ 0, donc D = ℝ \\ {−2 ; 2}\ng(x) = √(x − 3) : x − 3 ≥ 0, donc D = [3 ; +∞[\nh(x) = ln(5 − x) : 5 − x > 0, donc D = ]−∞ ; 5[",
+   "attention: La racine carrée de 0 existe : pour √(x − 3), la borne 3 est **incluse**. Pour ln, l’intérieur doit être strictement positif : la borne est **exclue**.",
+   "## Étape 2 : les asymptotes d’une fonction rationnelle",
+   "- Verticale x = a : le dénominateur s’annule en a, mais pas le numérateur ; f tend vers ±∞.\n- Horizontale y = ℓ : si les degrés en haut et en bas sont égaux, ℓ est le quotient des coefficients des termes de plus haut degré.\n- Si le degré du haut dépasse de 1 celui du bas, on cherche une asymptote oblique y = mx + p (niveau Expert).",
+   "Pour savoir de quel côté part la falaise, on étudie le signe : en x = 1⁺ (un peu plus que 1), x − 1 est un petit positif, et 2x + 1 ≈ 3 : f(x) ≈ 3/(petit positif) → +∞. En 1⁻, le dénominateur est un petit négatif : f → −∞.",
+   "? Asymptotes de f(x) = (3x − 2)/(x + 4) ? || Verticale x = −4 (le numérateur y vaut −14 ≠ 0) ; horizontale y = 3/1 = 3.",
+   "## Étape 3 : dérivée et variations",
+   "@etapes {\"etapes\":[[\"f(x) = (2x + 1)/(x − 1), D = ℝ \\\\ {1}\",\"Domaine : x − 1 ≠ 0.\"],[\"lim f = 2 en ±∞\",\"Quotient des termes dominants 2x/x : asymptote y = 2.\"],[\"en 1⁺ : 3/0⁺ → +∞ ; en 1⁻ : 3/0⁻ → −∞\",\"Asymptote verticale x = 1.\"],[\"f ′(x) = (2(x − 1) − (2x + 1))/(x − 1)²\",\"Formule (u/v)′ = (u′v − uv′)/v².\"],[\"f ′(x) = −3/(x − 1)² < 0\",\"Un carré est positif, le numérateur est négatif.\"],[\"f décroît sur ]−∞ ; 1[ et sur ]1 ; +∞[\",\"Sur chaque intervalle séparément.\"],[\"f(0) = −1 ; f(x) = 0 pour x = −1/2\",\"Points sur les axes, pour le tracé.\"]]} | Suis l’étude complète, puis vérifie chaque conclusion sur la courbe tracée plus haut, au niveau Vulgarisation.",
+   "## Le prolongement par continuité",
+   "1. Vérifie que f n’est pas définie en a, mais que le numérateur s’annule aussi en a.\n2. Factorise le numérateur par (x − a) et simplifie.\n3. Calcule la limite de la forme simplifiée en a : c’est ℓ.\n4. Pose f(a) = ℓ : la nouvelle fonction est continue en a.",
+   "@etapes {\"etapes\":[[\"g(x) = (x² + x − 6)/(x − 2)\",\"g n’est pas définie en 2.\"],[\"2² + 2 − 6 = 0\",\"Le numérateur s’annule aussi en 2 : on peut factoriser.\"],[\"x² + x − 6 = (x − 2)(x + 3)\",\"Factorisation par (x − 2).\"],[\"g(x) = x + 3 pour x ≠ 2\",\"On simplifie le facteur commun.\"],[\"lim g = 5 quand x → 2\",\"On remplace x par 2 dans la forme simplifiée.\"],[\"on pose g(2) = 5\",\"Le trou est bouché : g prolongée est continue en 2.\"]]} | Avance étape par étape et observe sur la courbe suivante que le « trou » est bien en (2 ; 5).",
+   "@courbe {\"f\":\"(x^2+x-6)/(x-2)\",\"x\":[-5,5],\"y\":[-2,8],\"points\":[[2,5,\"trou (2 ; 5)\"]]} | La courbe ressemble à une simple droite : c’est y = x + 3, privée du seul point d’abscisse 2. Le point marqué est la valeur qu’on ajoute pour boucher le trou.",
+   "? Prolonge f(x) = (x² − 16)/(x − 4) en 4. || x² − 16 = (x − 4)(x + 4), donc f(x) = x + 4 hors de 4 ; la limite est 8, on pose f(4) = 8.",
+   "prof: Le réflexe à avoir devant une valeur interdite a : calcule le numérateur en a. S’il n’est pas nul, c’est une falaise (asymptote). S’il est nul, factorise : c’est peut-être un trou à boucher.",
+   "? En x = 3, la fonction (x + 1)/(x − 3) a-t-elle un trou ou une asymptote ? || Le numérateur vaut 4 ≠ 0 : asymptote verticale x = 3.",
+   "prof: Bilan pratique : domaine, limites et asymptotes, dérivée et variations, points sur les axes. Avec ces quatre étapes, tu peux étudier n’importe quelle fonction rationnelle de l’UE."
+  ],
+  "expert": [
+   "prof: Au niveau Expert, on donne les définitions exactes, on traite les asymptotes obliques, et on éclaircit la différence entre continuité et dérivabilité, une source classique de confusions.",
+   "## Définitions",
+   "- x = a est asymptote verticale si f(x) tend vers +∞ ou −∞ quand x tend vers a (d’un côté au moins).\n- y = ℓ est asymptote horizontale en +∞ si f(x) → ℓ quand x → +∞ (de même en −∞).\n- y = mx + p est asymptote oblique en +∞ si f(x) − (mx + p) → 0 quand x → +∞.",
+   "## Trouver une asymptote oblique",
+   "Pour une fraction dont le numérateur a un degré de plus que le dénominateur, on fait la division : f(x) = mx + p + r(x), avec r(x) → 0. Alors m = lim f(x)/x et p = lim (f(x) − mx).",
+   "ex: f(x) = (x² + x + 1)/(x − 1)\nx² + x + 1 = (x − 1)(x + 2) + 3\nf(x) = x + 2 + 3/(x − 1)\n3/(x − 1) → 0 : asymptote oblique y = x + 2",
+   "@courbe {\"f\":\"x+2+3/(x-1)\",\"x\":[-6,8],\"y\":[-6,12],\"pas\":2,\"asymptotes\":{\"v\":[1],\"o\":[[1,2]]}} | La courbe a deux asymptotes : la verticale x = 1 et l’oblique y = x + 2. Observe que l’écart entre la courbe et la droite oblique, 3/(x − 1), devient minuscule loin de 1 : positif à droite (la courbe est au-dessus), négatif à gauche.",
+   "? Asymptote oblique de f(x) = 2x − 1 + 5/(x + 3) ? || y = 2x − 1, car 5/(x + 3) → 0 en ±∞.",
+   "prof: Tu te demandes sans doute à quoi sert une asymptote oblique. Elle te dit que, vue de loin, ta courbe ressemble à une simple droite : c’est la meilleure description possible de son comportement à l’infini, et elle t’aide énormément pour le tracé.",
+   "## Prolongement par continuité",
+   "Si f est définie au voisinage de a, sauf en a, et admet en a une limite **finie** ℓ, la fonction égale à f hors de a et à ℓ en a est continue en a. Ce prolongement est unique. Il exige la même limite finie à gauche et à droite : x/|x| (−1 à gauche, 1 à droite) ne se prolonge pas en 0.",
+   "## Continuité et dérivabilité",
+   "Une fonction dérivable en a y est continue. La réciproque est fausse : |x| est continue en 0, mais ses taux d’accroissement valent −1 à gauche et 1 à droite : deux demi-tangentes, pas de tangente.",
+   "> f dérivable en a ⇒ f continue en a        (réciproque fausse)",
+   "@courbe {\"f\":\"abs(x-1)+1\",\"x\":[-3,5],\"y\":[-1,5],\"tangente\":0.5} | Fais glisser x₀ à travers 1 : la pente saute brutalement de −1 à 1. En x₀ = 1 exactement, aucune droite ne colle à la courbe : elle est continue (pas de trou) mais pas dérivable (un coin).",
+   "? √x est-elle dérivable en 0 ? || Non : son taux d’accroissement √h/h = 1/√h tend vers +∞. La courbe a en 0 une tangente verticale. Elle est pourtant continue en 0.",
+   "histoire: Pendant longtemps, on a cru qu’une fonction continue était forcément dérivable presque partout. En 1872, Karl Weierstrass présente une fonction continue partout et dérivable nulle part : une courbe faite uniquement de « coins ».",
+   "## Où ça casse",
+   "- Une valeur interdite n’est pas toujours une asymptote : si le numérateur s’annule aussi, il peut y avoir un trou prolongeable.\n- f ′ < 0 sur ]−∞ ; 1[ et sur ]1 ; +∞[ ne veut pas dire f décroissante sur ℝ \\ {1} : pour (2x + 1)/(x − 1), f(0) = −1 < f(2) = 5.\n- Une courbe peut croiser son asymptote horizontale (par exemple sin(x)/x croise y = 0 une infinité de fois).\n- Le prolongement exige une limite finie, et la même des deux côtés.",
+   "? Pourquoi (2x + 1)/(x − 1) n’est-elle pas décroissante sur tout son domaine ? || Son domaine n’est pas un intervalle : f(0) = −1 et f(2) = 5, donc f(0) < f(2) alors que 0 < 2.",
+   "prof: Bilan expert : des définitions par limites, une méthode de division pour les obliques, et trois garde-fous (trou ou falaise, intervalle pour les variations, continuité n’implique pas dérivabilité)."
+  ]
+ },
+ "exemples": [
+  {
+   "enonce": "Étudier f(x) = (2x + 1)/(x − 1).",
+   "etapes": [
+    [
+     "D = ℝ \\ {1}",
+     "le dénominateur s’annule en 1"
+    ],
+    [
+     "lim f = 2 en ±∞ : asymptote y = 2",
+     "quotient des termes de plus haut degré 2x/x"
+    ],
+    [
+     "en 1, le numérateur vaut 3 ≠ 0 : asymptote x = 1",
+     "3/0⁺ → +∞ à droite, 3/0⁻ → −∞ à gauche"
+    ],
+    [
+     "f ′(x) = −3/(x − 1)²",
+     "formule (u/v)′ = (u′v − uv′)/v²"
+    ],
+    [
+     "f décroît sur ]−∞ ; 1[ et sur ]1 ; +∞[",
+     "un carré est toujours positif"
+    ]
+   ]
+  },
+  {
+   "enonce": "Prolonger g(x) = (x² + x − 6)/(x − 2) par continuité en 2.",
+   "etapes": [
+    [
+     "x² + x − 6 = (x − 2)(x + 3)",
+     "2 est racine du numérateur, on factorise"
+    ],
+    [
+     "g(x) = x + 3 pour x ≠ 2",
+     "on simplifie le facteur commun"
+    ],
+    [
+     "lim g = 5 quand x → 2",
+     "on remplace x par 2 dans la forme simplifiée"
+    ],
+    [
+     "on pose g(2) = 5",
+     "la fonction prolongée est continue en 2"
+    ]
+   ]
+  },
+  {
+   "enonce": "Trouver l’asymptote oblique de f(x) = (x² + x + 1)/(x − 1).",
+   "etapes": [
+    [
+     "x² + x + 1 = (x − 1)(x + 2) + 3",
+     "division du numérateur par x − 1"
+    ],
+    [
+     "f(x) = x + 2 + 3/(x − 1)",
+     "on sépare la partie affine"
+    ],
+    [
+     "3/(x − 1) → 0 en ±∞",
+     "le reste disparaît"
+    ],
+    [
+     "asymptote oblique y = x + 2",
+     "f(x) − (x + 2) → 0"
+    ]
+   ]
+  }
+ ],
+ "pieges": [
+  {
+   "faux": "Toute valeur interdite donne une asymptote verticale",
+   "juste": "(x² − 4)/(x − 2) se prolonge en 2 par la valeur 4",
+   "pourquoi": "Si le numérateur s’annule aussi, la limite peut être finie : c’est un trou, pas une asymptote."
+  },
+  {
+   "faux": "f ′ < 0 sur chaque intervalle, donc f décroît sur tout son domaine",
+   "juste": "f décroît sur chacun des intervalles séparément",
+   "pourquoi": "1/x vérifie f(−1) < f(1) : la décroissance ne traverse pas la valeur interdite."
+  },
+  {
+   "faux": "Domaine de √(x − 3) : x > 3",
+   "juste": "x ≥ 3",
+   "pourquoi": "La racine carrée de 0 existe : la borne est incluse."
+  },
+  {
+   "faux": "Asymptote horizontale de (6x − 1)/(3x + 2) : y = −1/2",
+   "juste": "y = 6/3 = 2",
+   "pourquoi": "À l’infini, ce sont les termes de plus haut degré qui comptent, pas les constantes."
+  },
+  {
+   "faux": "|x| est continue en 0, donc dérivable en 0",
+   "juste": "|x| est continue mais pas dérivable en 0",
+   "pourquoi": "Dérivable implique continue, pas l’inverse : la courbe a un coin."
+  }
+ ],
+ "retenir": [
+  "Plan : domaine, limites et asymptotes, dérivée et variations, points particuliers, tracé.",
+  "Asymptote verticale : valeur interdite où f tend vers ±∞ (numérateur non nul).",
+  "Asymptote horizontale : limite finie de f en ±∞ ; pour une fraction de même degré, quotient des coefficients dominants.",
+  "Prolongement par continuité : limite finie ℓ en un point exclu a, on pose f(a) = ℓ.",
+  "Dérivable implique continue ; la réciproque est fausse (|x| en 0)."
+ ]
+}

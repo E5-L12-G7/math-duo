@@ -1,0 +1,30 @@
+{
+  "s1-lois-continues": [
+    {"id": "s1lc-01", "q": "Qu’est-ce qu’une variable aléatoire continue ?", "a": "Une variable qui peut prendre toutes les valeurs d’un intervalle.", "tag": "definition", "niveau": 1},
+    {"id": "s1lc-02", "q": "Que vaut P(X = a) pour une variable continue ?", "a": "0", "tag": "propriete", "niveau": 1},
+    {"id": "s1lc-03", "q": "Comment lit-on P(a ≤ X ≤ b) sur la densité ?", "a": "C’est l’aire sous la courbe de f entre a et b.", "tag": "definition", "niveau": 1},
+    {"id": "s1lc-04", "q": "Quelles conditions pour qu’une fonction f soit une densité ?", "a": "f ≥ 0 et aire totale sous la courbe égale à 1.", "tag": "propriete", "niveau": 1},
+    {"id": "s1lc-05", "q": "Une densité peut-elle dépasser 1 ?", "a": "Oui : seule l’aire totale vaut 1.", "tag": "piege", "niveau": 2},
+    {"id": "s1lc-06", "q": "Définition de la fonction de répartition F ?", "a": "F(x) = P(X ≤ x)", "tag": "definition", "niveau": 1},
+    {"id": "s1lc-07", "q": "Comment calculer P(a ≤ X ≤ b) avec F ?", "a": "F(b) − F(a)", "tag": "methode", "niveau": 1},
+    {"id": "s1lc-08", "q": "Formule de E(X) pour une densité f ?", "a": "E(X) = ∫ x f(x) dx", "tag": "formule", "niveau": 2},
+    {"id": "s1lc-09", "q": "Formule de V(X) pour une densité f ?", "a": "∫ x² f(x) dx − E(X)²", "tag": "formule", "niveau": 2},
+    {"id": "s1lc-10", "q": "Densité de la loi uniforme sur [a ; b] ?", "a": "f(x) = 1/(b − a) sur [a ; b], 0 ailleurs.", "tag": "formule", "niveau": 1},
+    {"id": "s1lc-11", "q": "P(c ≤ X ≤ d) pour X uniforme sur [a ; b] ?", "a": "(d − c)/(b − a)", "tag": "formule", "niveau": 1},
+    {"id": "s1lc-12", "q": "Espérance de la loi uniforme sur [a ; b] ?", "a": "(a + b)/2", "tag": "formule", "niveau": 1},
+    {"id": "s1lc-13", "q": "Variance de la loi uniforme sur [a ; b] ?", "a": "(b − a)²/12", "tag": "formule", "niveau": 2},
+    {"id": "s1lc-14", "q": "Densité de la loi exponentielle de paramètre λ ?", "a": "f(x) = λ e^(−λx) pour x ≥ 0.", "tag": "formule", "niveau": 1},
+    {"id": "s1lc-15", "q": "P(X > t) pour X ~ E(λ) ?", "a": "e^(−λt)", "tag": "formule", "niveau": 1},
+    {"id": "s1lc-16", "q": "P(X ≤ t) pour X ~ E(λ) ?", "a": "1 − e^(−λt)", "tag": "formule", "niveau": 1},
+    {"id": "s1lc-17", "q": "Espérance et variance de X ~ E(λ) ?", "a": "E = 1/λ et V = 1/λ².", "tag": "formule", "niveau": 1},
+    {"id": "s1lc-18", "q": "Durée de vie moyenne 500 h : que vaut λ ?", "a": "λ = 1/500 = 0,002", "tag": "piege", "niveau": 2},
+    {"id": "s1lc-19", "q": "Qu’exprime l’absence de mémoire ?", "a": "P(X > s + t sachant X > s) = P(X > t).", "tag": "propriete", "niveau": 2},
+    {"id": "s1lc-20", "q": "Quel type d’objet modélise bien la loi exponentielle ?", "a": "Un objet qui ne s’use pas : pannes accidentelles, radioactivité.", "tag": "propriete", "niveau": 2},
+    {"id": "s1lc-21", "q": "Médiane de la loi exponentielle E(λ) ?", "a": "ln 2 / λ (la demi-vie).", "tag": "formule", "niveau": 3},
+    {"id": "s1lc-22", "q": "Que vaut P(X > E(X)) pour une loi exponentielle ?", "a": "e^(−1) ≈ 0,368, quel que soit λ.", "tag": "valeur", "niveau": 3},
+    {"id": "s1lc-23", "q": "Lien entre loi de Poisson et loi exponentielle ?", "a": "Événements au rythme λ (Poisson) : l’attente du premier suit E(λ).", "tag": "propriete", "niveau": 3},
+    {"id": "s1lc-24", "q": "Quelle est la seule loi continue sans mémoire ?", "a": "La loi exponentielle.", "tag": "propriete", "niveau": 3},
+    {"id": "s1lc-25", "q": "P(X ≤ 5) et P(X < 5) diffèrent-elles pour X continue ?", "a": "Non : elles diffèrent de P(X = 5) = 0.", "tag": "piege", "niveau": 1},
+    {"id": "s1lc-26", "q": "Qui a montré la décroissance exponentielle de la radioactivité (1902-1903) ?", "a": "Rutherford et Soddy.", "tag": "histoire", "niveau": 2}
+  ]
+}

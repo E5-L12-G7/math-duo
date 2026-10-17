@@ -1,0 +1,186 @@
+{
+  "id": "s1-estimation",
+  "titre": "Estimation ponctuelle et par intervalle de confiance",
+  "resume": "On ne connaît jamais toute la population : à partir d’un échantillon, on propose une valeur (estimation ponctuelle) et une fourchette assortie d’un niveau de confiance (intervalle de confiance).",
+  "objectifs": [
+    "distinguer paramètre, estimateur et estimation",
+    "reconnaître un estimateur sans biais et un estimateur convergent",
+    "estimer ponctuellement une moyenne, une variance, une proportion",
+    "construire un intervalle de confiance d’une moyenne (σ connu ou inconnu) et d’une proportion",
+    "calculer une marge d’erreur et la taille d’échantillon nécessaire"
+  ],
+  "prerequis": [
+    "s1-echantillonnage",
+    "s1-normale"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Aujourd’hui, on fait ce que font les instituts de sondage, les laboratoires et les contrôleurs qualité : deviner une grandeur inconnue à partir de quelques observations. Tu vas voir qu’on ne devine pas au hasard : on donne une valeur, et surtout une fourchette avec un degré de confiance.",
+      "## Goûter la soupe",
+      "Pour savoir si une soupe est assez salée, tu n’as pas besoin de boire toute la marmite : une cuillère, bien mélangée, suffit. En statistique, la marmite est la **population**, la cuillère est l’**échantillon**.",
+      "analogie: La moyenne de la population, c’est le goût de toute la marmite ; la moyenne de l’échantillon, c’est le goût de la cuillère. Elles sont proches si la soupe est bien mélangée, c’est-à-dire si l’échantillon est tiré au hasard.",
+      "## Trois mots à ne pas confondre",
+      "- Le **paramètre** : la vraie valeur, inconnue, dans toute la population (par exemple la taille moyenne μ des adultes).\n- L’**estimateur** : la recette de calcul appliquée à un échantillon au hasard (par exemple « faire la moyenne des tailles mesurées »).\n- L’**estimation** : le nombre obtenu avec ton échantillon précis (par exemple 171,3 cm).",
+      "? Un sondage sur 1 000 personnes donne 52 % d’opinions favorables. Lequel est l’estimation ? || 52 % : c’est le nombre obtenu sur cet échantillon. La vraie proportion dans tout le pays est le paramètre, inconnu.",
+      "## Une valeur seule ne suffit pas",
+      "prof: Si je te dis « la taille moyenne est 171,3 cm », tu as le droit de demander : à combien près ? Un autre échantillon aurait donné 170,8 ou 171,9. D’où l’idée de donner une fourchette.",
+      "Un **intervalle de confiance** à 95 %, c’est une fourchette construite par une méthode qui, sur un grand nombre d’échantillons, attrape la vraie valeur 95 fois sur 100.",
+      "@intervalle-confiance {} | Tire plusieurs séries de 20 échantillons. Compte les intervalles qui ratent la vraie valeur p = 0,4 (en rouge) : environ 1 sur 20, soit 5 sur 100. Augmente n puis relance : les intervalles raccourcissent.",
+      "analogie: C’est comme un pêcheur au filet : la vraie valeur est le poisson, invisible. Un grand filet (niveau 99 %) l’attrape presque toujours mais te renseigne peu ; un petit filet (niveau 90 %) est plus précis mais rate plus souvent.",
+      "!! Plus on veut être sûr, plus l’intervalle est large. Plus l’échantillon est grand, plus l’intervalle est étroit.",
+      "? Pourquoi un intervalle de confiance à 100 % ne sert à rien ? || Pour être sûr à 100 %, il faudrait prendre toutes les valeurs possibles : l’intervalle serait immense et ne dirait rien.",
+      "## Pourquoi la précision s’améliore lentement",
+      "La moyenne d’un échantillon fluctue d’autant moins que l’échantillon est grand, mais en racine carrée : pour être deux fois plus précis, il faut quatre fois plus de monde.",
+      "@tlc {} | Augmente la taille des échantillons et regarde l’histogramme des moyennes se resserrer autour de la vraie valeur, en prenant une forme de cloche.",
+      "? Un sondage de 1 000 personnes a une marge de 3 points. Combien faut-il interroger de personnes pour une marge de 1,5 point ? || Deux fois plus précis, donc quatre fois plus de personnes : 4 000.",
+      "histoire: En 1936, le magazine Literary Digest interroge plus de deux millions d’Américains et prédit la défaite de Roosevelt ; George Gallup, avec un échantillon bien plus petit mais mieux choisi, prédit sa victoire, qui a lieu. Leçon : la qualité du tirage compte plus que la taille.",
+      "prof: Bilan : un paramètre inconnu, une estimation ponctuelle, et une fourchette avec un niveau de confiance. Au niveau Pratique, on apprend à calculer tout ça."
+    ],
+    "pratique": [
+      "prof: On passe aux calculs. Trois situations à savoir traiter : la moyenne quand σ est connu, la moyenne quand σ est inconnu, et la proportion. À chaque fois la même structure : estimation ± marge d’erreur.",
+      "## Estimations ponctuelles",
+      "- Moyenne μ : on prend la moyenne observée x̄.\n- Variance σ² : on prend s² = Σ (xᵢ − x̄)² / (n − 1), avec n − 1 au dénominateur.\n- Proportion p : on prend la fréquence observée f = k/n.",
+      "@etapes {\"etapes\":[[\"Valeurs : 12 ; 15 ; 11 ; 14 ; 13\",\"Échantillon de n = 5 mesures.\"],[\"x̄ = 65/5 = 13\",\"Estimation ponctuelle de μ.\"],[\"Écarts : −1 ; 2 ; −2 ; 1 ; 0\",\"On retranche x̄ à chaque valeur.\"],[\"Σ(xᵢ − x̄)² = 1 + 4 + 4 + 1 + 0 = 10\",\"Somme des carrés des écarts.\"],[\"s² = 10/4 = 2,5\",\"On divise par n − 1 = 4 : estimation sans biais de σ².\"],[\"s = √2,5 ≈ 1,58\",\"Estimation de l’écart-type.\"]]} | Lance l’animation et refais le calcul à la main en parallèle.",
+      "? Valeurs 4 ; 6 ; 8. Estime μ et σ². || x̄ = 6 ; Σ(xᵢ − x̄)² = 4 + 0 + 4 = 8 ; s² = 8/2 = 4.",
+      "## Intervalle de confiance d’une moyenne, σ connu",
+      "1. Calcule l’écart-type de la moyenne : σ/√n.\n2. Choisis le quantile u selon le niveau : 1,645 (90 %), 1,96 (95 %), 2,576 (99 %).\n3. Marge d’erreur : E = u × σ/√n.\n4. Intervalle : [x̄ − E ; x̄ + E].",
+      "> IC = [ x̄ − u σ/√n ; x̄ + u σ/√n ]",
+      "@etapes {\"etapes\":[[\"σ = 6, n = 36, x̄ = 50,2, niveau 95 %\",\"Les données.\"],[\"σ/√n = 6/6 = 1\",\"Écart-type de la moyenne.\"],[\"u = 1,96\",\"2,5 % de chaque côté.\"],[\"E = 1,96 × 1 = 1,96\",\"Marge d’erreur.\"],[\"IC = [48,24 ; 52,16]\",\"x̄ ± E.\"]]} | Avance pas à pas en anticipant chaque étape.",
+      "@loi-continue {\"loi\":\"normale\",\"mu\":0,\"sigma\":1,\"a\":-1.96,\"b\":1.96,\"curseurs\":false,\"x\":[-4,4]} | Vérifie que l’aire entre −1,96 et 1,96 vaut 0,95. Rapproche a et b de 0 pour retrouver 1,645 (aire 0,90).",
+      "attention: L’erreur la plus courante : utiliser σ au lieu de σ/√n. La moyenne de 36 mesures fluctue 6 fois moins qu’une mesure seule.",
+      "## Moyenne avec σ inconnu : la loi de Student",
+      "prof: En pratique, on connaît rarement σ. On le remplace par s, ce qui ajoute de l’incertitude. Pour la prendre en compte, on remplace le quantile normal par un quantile de Student, un peu plus grand, lu à n − 1 degrés de liberté.",
+      "1. Calcule x̄ et s (avec n − 1).\n2. Lis t dans la table de Student à ν = n − 1 degrés de liberté, à l’ordre 0,975 pour 95 %.\n3. E = t × s/√n.\n4. IC = [x̄ − E ; x̄ + E].",
+      "@etapes {\"etapes\":[[\"n = 10, x̄ = 20,4, s = 2,1\",\"Population normale, σ inconnu.\"],[\"ν = 10 − 1 = 9\",\"Degrés de liberté.\"],[\"t₀,₉₇₅(9) = 2,262\",\"Lu dans la table (au lieu de 1,96).\"],[\"E = 2,262 × 2,1/√10 ≈ 1,50\",\"Marge d’erreur.\"],[\"IC ≈ [18,90 ; 21,90]\",\"x̄ ± E.\"]]} | Compare 2,262 et 1,96 : Student élargit l’intervalle pour payer l’incertitude sur σ.",
+      "? n = 25, x̄ = 100, s = 10, t₀,₉₇₅(24) = 2,064. IC à 95 % ? || E = 2,064 × 10/5 = 4,128 ; IC ≈ [95,87 ; 104,13].",
+      "## Intervalle de confiance d’une proportion",
+      "1. f = k/n ; vérifie n ≥ 30, nf ≥ 5, n(1 − f) ≥ 5.\n2. E = u √(f(1 − f)/n).\n3. IC = [f − E ; f + E].",
+      "@etapes {\"etapes\":[[\"n = 400, k = 120\",\"Sondage.\"],[\"f = 0,3\",\"Fréquence observée.\"],[\"√(0,3 × 0,7/400) ≈ 0,0229\",\"Écart-type estimé de F.\"],[\"E = 1,96 × 0,0229 ≈ 0,045\",\"Marge à 95 %.\"],[\"IC ≈ [0,255 ; 0,345]\",\"Entre 25,5 % et 34,5 %.\"]]} | Suis le calcul, puis refais-le avec u = 2,576 : l’intervalle s’élargit.",
+      "## Taille d’échantillon",
+      "On impose la marge E et on isole n : pour une moyenne n ≥ (u σ/E)², pour une proportion n ≥ u² p(1 − p)/E² (p = 0,5 sans information). On arrondit toujours à l’entier supérieur.",
+      "? Combien de personnes pour une marge de 0,03 à 95 %, sans information sur p ? || n ≥ 1,96² × 0,25 / 0,03² ≈ 1 067,1 : il faut 1 068 personnes.",
+      "prof: Bilan : estimation ± quantile × écart-type de l’estimateur. Retiens surtout le √n et le choix du bon quantile."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on précise ce qu’est un bon estimateur, d’où viennent les intervalles et quand ils cessent d’être valables.",
+      "## Qualités d’un estimateur",
+      "Un estimateur Tₙ de θ est une variable aléatoire fonction de l’échantillon. Son biais est b(Tₙ) = E(Tₙ) − θ ; il est sans biais si E(Tₙ) = θ. Il est convergent si P(|Tₙ − θ| > ε) → 0 pour tout ε > 0 ; une condition suffisante est E(Tₙ) → θ et V(Tₙ) → 0.",
+      "> E(X̄) = μ    V(X̄) = σ²/n    E(Sₙ²) = (n − 1)/n × σ²",
+      "Sₙ² = (1/n) Σ (Xᵢ − X̄)² est donc biaisé (biais −σ²/n), mais asymptotiquement sans biais ; S² = n/(n − 1) × Sₙ² est sans biais. Entre deux estimateurs sans biais, on préfère celui de plus petite variance (le plus efficace).",
+      "? T = (X₁ + 2X₂ + X₃)/4 est-il sans biais pour μ ? Quelle est sa variance ? || E(T) = 4μ/4 = μ : sans biais. V(T) = (1 + 4 + 1)σ²/16 = 3σ²/8, plus grande que V(X̄) = σ²/3.",
+      "## Construction : la fonction pivot",
+      "Si X suit N(μ ; σ²), Z = (X̄ − μ)/(σ/√n) suit N(0 ; 1), loi qui ne dépend pas de μ. De P(−u ≤ Z ≤ u) = 1 − α on tire P(X̄ − uσ/√n ≤ μ ≤ X̄ + uσ/√n) = 1 − α : l’intervalle est aléatoire, μ est fixe.",
+      "@test {\"z\":1.96,\"alpha\":0.05,\"cote\":\"bilateral\"} | Le seuil ± 1,96 qui borne la zone rouge est exactement le quantile de l’intervalle à 95 %. Change α et observe le quantile bouger.",
+      "Si σ est inconnu, T = (X̄ − μ)/(S/√n) suit la loi de Student à n − 1 degrés de liberté (population normale). Si n est grand (n ≥ 30), le TCL justifie la loi normale même sans normalité de la population.",
+      "@courbe {\"f\":[{\"f\":\"exp(-x^2/2)/sqrt(2pi)\",\"nom\":\"N(0 ; 1)\"},{\"f\":\"0.3676/(1+x^2/3)^2\",\"nom\":\"Student 3 ddl\"}],\"x\":[-5,5],\"y\":[-0.05,0.45],\"pas\":1,\"pasy\":0.1} | Compare les queues : Student à 3 ddl est plus épaisse, d’où des quantiles plus grands (3,182 au lieu de 1,96).",
+      "prof: Je sais, cette nuance paraît pinailleuse. Mais c’est exactement la question piège des examens : retiens que le hasard est dans l’échantillon, donc dans l’intervalle, jamais dans μ.",
+      "## Interprétation rigoureuse",
+      "Une fois les données observées, l’intervalle [48,24 ; 52,16] contient μ ou ne le contient pas : il n’y a plus de hasard. Le 95 % qualifie la procédure, pas cet intervalle précis.",
+      "? Pourquoi est-il faux de dire « 95 % des individus ont une valeur dans l’IC de la moyenne » ? || L’IC porte sur μ ; il a une largeur d’ordre σ/√n, bien plus étroite que la dispersion σ des individus.",
+      "## Où ça casse",
+      "- Échantillon non aléatoire (biais de sélection) : aucune formule ne corrige.\n- Petit n, population très asymétrique, σ inconnu : ni Student ni la normale ne sont justifiés.\n- Proportion proche de 0 ou 1 avec n petit (nf < 5) : l’approximation normale est mauvaise.\n- Tirage sans remise dans une petite population : il faut un facteur de correction √((N − n)/(N − 1)).",
+      "? Avec n = 50 et k = 2, peut-on utiliser f ± 1,96 √(f(1 − f)/n) ? || Non : nf = 2 < 5, l’approximation normale n’est pas valable.",
+      "histoire: William Gosset, chimiste à la brasserie Guinness, publie en 1908 sous le pseudonyme « Student » la loi qui porte ce nom, pour traiter de petits échantillons d’orge. Jerzy Neyman formalise les intervalles de confiance en 1937.",
+      "prof: Tu sais maintenant justifier un intervalle, choisir sa loi et en connaître les limites. Le chapitre suivant retourne la question : au lieu d’estimer, on décide."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "σ = 8, n = 64, x̄ = 120. IC de μ à 99 %.",
+      "etapes": [
+        [
+          "σ/√n = 8/8 = 1",
+          "écart-type de X̄"
+        ],
+        [
+          "u = 2,576",
+          "0,5 % de chaque côté"
+        ],
+        [
+          "E = 2,576",
+          "u × σ/√n"
+        ],
+        [
+          "IC = [117,424 ; 122,576]",
+          "x̄ ± E"
+        ]
+      ]
+    },
+    {
+      "enonce": "n = 16, x̄ = 12,5, s = 2 (population normale). IC à 95 %.",
+      "etapes": [
+        [
+          "ν = 15",
+          "σ inconnu : Student à n − 1 ddl"
+        ],
+        [
+          "t₀,₉₇₅(15) = 2,131",
+          "table de Student"
+        ],
+        [
+          "E = 2,131 × 2/4 ≈ 1,066",
+          "t × s/√n"
+        ],
+        [
+          "IC ≈ [11,43 ; 13,57]",
+          "x̄ ± E"
+        ]
+      ]
+    },
+    {
+      "enonce": "Sur 500 clients, 160 sont satisfaits. IC à 95 % de la proportion.",
+      "etapes": [
+        [
+          "f = 0,32",
+          "160/500"
+        ],
+        [
+          "√(0,32 × 0,68/500) ≈ 0,0209",
+          "écart-type estimé"
+        ],
+        [
+          "E ≈ 1,96 × 0,0209 ≈ 0,041",
+          "marge"
+        ],
+        [
+          "IC ≈ [0,279 ; 0,361]",
+          "f ± E"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "E = 1,96 × σ",
+      "juste": "E = 1,96 × σ/√n",
+      "pourquoi": "La moyenne de n mesures fluctue √n fois moins qu’une mesure."
+    },
+    {
+      "faux": "s² = Σ(xᵢ − x̄)²/n pour estimer σ²",
+      "juste": "s² = Σ(xᵢ − x̄)²/(n − 1)",
+      "pourquoi": "Diviser par n sous-estime σ² en moyenne : c’est biaisé."
+    },
+    {
+      "faux": "σ inconnu, n = 10 : u = 1,96",
+      "juste": "t₀,₉₇₅(9) = 2,262",
+      "pourquoi": "Remplacer σ par s ajoute de l’incertitude : loi de Student à n − 1 ddl."
+    },
+    {
+      "faux": "Niveau 95 % : u = 1,645",
+      "juste": "u = 1,96",
+      "pourquoi": "1,645 laisse 5 % d’un seul côté ; l’intervalle bilatéral laisse 2,5 % de chaque côté."
+    },
+    {
+      "faux": "n ≥ 384,16 donc n = 384",
+      "juste": "n = 385",
+      "pourquoi": "La taille doit dépasser la borne : on arrondit à l’entier supérieur."
+    }
+  ],
+  "retenir": [
+    "Estimations ponctuelles : x̄ pour μ, s² (division par n − 1) pour σ², f pour p.",
+    "IC d’une moyenne, σ connu : x̄ ± u σ/√n, avec u = 1,96 à 95 %.",
+    "σ inconnu, population normale : x̄ ± t s/√n, t lu à n − 1 degrés de liberté.",
+    "IC d’une proportion : f ± u √(f(1 − f)/n), si n ≥ 30, nf ≥ 5, n(1 − f) ≥ 5.",
+    "Marge en 1/√n : 4 fois plus de données pour 2 fois plus de précision ; taille arrondie au-dessus."
+  ]
+}

@@ -1,0 +1,181 @@
+{
+ "id": "m2-integrale",
+ "titre": "Intégrale et aire",
+ "resume": "L’intégrale de f entre a et b mesure l’aire algébrique entre la courbe et l’axe horizontal ; on la calcule d’un coup avec une primitive : F(b) − F(a).",
+ "objectifs": [
+  "interpréter une intégrale comme une aire, comptée négativement sous l’axe",
+  "calculer une intégrale avec une primitive, F(b) − F(a)",
+  "utiliser la linéarité, la relation de Chasles et l’échange des bornes",
+  "calculer une aire géométrique, une aire entre deux courbes et une valeur moyenne"
+ ],
+ "prerequis": [
+  "m2-primitives"
+ ],
+ "niveaux": {
+  "vulgarisation": [
+   "prof: Bonjour ! Aujourd’hui, on répond à une question très ancienne : comment mesurer la surface d’une forme aux bords courbes ? Le plan : d’abord découper en bandes, puis le raccourci magique qui évite tout ce découpage, enfin les aires « négatives ». Prépare-toi à une vraie surprise : ce problème d’aire se résout avec les primitives du chapitre précédent.",
+   "## Mesurer une aire courbe",
+   "Pour un rectangle, l’aire, c’est largeur × hauteur. Pour un triangle, la moitié. Mais pour la zone sous une courbe, aucune formule de géométrie ne marche directement.",
+   "analogie: Pour mesurer un champ au bord arrondi, on le découpe en bandes très fines, presque rectangulaires, et on additionne leurs aires. Plus les bandes sont fines, plus le résultat est exact.",
+   "@riemann | Choisis x² sur [0 ; 2] et augmente le nombre de rectangles : la somme se rapproche de 8/3 ≈ 2,667. Change la position (gauche, milieu, droite) : avec beaucoup de rectangles, les trois sommes finissent par se rejoindre.",
+   "L’**intégrale** de f entre a et b, qu’on écrit ∫ₐᵇ f(x) dx, c’est le résultat de ce découpage infiniment fin : l’aire entre la courbe, l’axe horizontal et les deux verticales x = a et x = b.",
+   "!! Le signe ∫ est un S allongé, pour « somme » : la somme d’une infinité de rectangles de hauteur f(x) et de largeur dx minuscule.",
+   "? Que vaut l’intégrale de la fonction constante 3 entre 0 et 2 ? || C’est un rectangle de hauteur 3 et de largeur 2 : 6.",
+   "## Le raccourci magique",
+   "prof: Additionner des millions de rectangles, c’est épuisant. Voici le miracle découvert au XVIIᵉ siècle : il suffit de connaître une primitive F de f, et de faire une simple soustraction.",
+   "> ∫ₐᵇ f(x) dx = F(b) − F(a)",
+   "@courbe {\"f\":\"x^2\",\"x\":[-0.5,3.5],\"y\":[-1,10],\"aire\":[0,2]} | Garde la borne a à 0 et fais glisser la borne b. L’aire affichée vaut toujours b³/3 : c’est F(b) − F(0), avec F(x) = x³/3 une primitive de x². Pour b = 3, tu dois lire 9.",
+   "? Avec F(x) = x³/3, que vaut l’aire sous x² entre 0 et 3 ? || F(3) − F(0) = 27/3 − 0 = 9.",
+   "## Quand la courbe passe sous l’axe",
+   "Si la courbe est sous l’axe horizontal, f(x) est négatif : chaque petit rectangle a une « hauteur » négative, donc l’aire compte **négativement**. On parle d’aire algébrique.",
+   "@courbe {\"f\":\"sin(x)\",\"x\":[-0.5,7],\"y\":[-1.5,1.5],\"aire\":[0,3.14]} | Fais glisser la borne b au-delà de π ≈ 3,14 : l’intégrale diminue, car la partie sous l’axe se retranche. Pour b ≈ 6,28 (un tour complet), elle vaut presque 0 : les deux bosses se compensent.",
+   "? Une intégrale peut-elle être négative ? || Oui : quand la courbe est sous l’axe, l’aire compte négativement. Ce n’est pas une erreur de calcul.",
+   "histoire: Vers 250 avant notre ère, Archimède calcule l’aire sous un arc de parabole en l’encadrant par des triangles de plus en plus nombreux : c’est déjà l’idée du découpage. Il faut attendre Newton et Leibniz, vers 1670-1680, pour découvrir que ce calcul d’aire se fait avec une primitive. Leibniz invente le signe ∫ en 1675.",
+   "prof: Bilan : une intégrale est une aire découpée en bandes infiniment fines, elle se calcule par F(b) − F(a), et la partie sous l’axe compte en négatif. Au niveau Pratique, on apprend à faire ces calculs sans hésiter."
+  ],
+  "pratique": [
+   "prof: Place aux calculs. On va voir la méthode en trois temps, les propriétés qui simplifient la vie, puis trois applications : aire géométrique, aire entre deux courbes, valeur moyenne.",
+   "## Calculer une intégrale",
+   "1. Trouve une primitive F de f (inutile d’ajouter + C : elle s’annulerait).\n2. Calcule F(b), puis F(a).\n3. Fais la différence F(b) − F(a), dans cet ordre : borne du haut moins borne du bas.",
+   "> ∫ₐᵇ f(x) dx = [F(x)]ₐᵇ = F(b) − F(a)",
+   "@etapes {\"etapes\":[[\"∫₁³ (2x + 1) dx\",\"On cherche une primitive de 2x + 1.\"],[\"F(x) = x² + x\",\"Primitive terme à terme.\"],[\"[x² + x]₁³\",\"Notation crochets : on évaluera entre 1 et 3.\"],[\"F(3) = 9 + 3 = 12\",\"Borne du haut.\"],[\"F(1) = 1 + 1 = 2\",\"Borne du bas.\"],[\"∫₁³ (2x + 1) dx = 12 − 2 = 10\",\"Haut moins bas.\"]]} | Lance la lecture. Avant chaque étape, essaie d’écrire la ligne suivante sur ton brouillon.",
+   "? Calcule ∫₀² 3x² dx. || Une primitive est x³ : 2³ − 0³ = 8.",
+   "attention: Mets des parenthèses autour de F(a) : si F(a) est négatif, F(b) − F(a) devient une addition. Par exemple [x³]₋₁² = 2³ − (−1)³ = 8 − (−1) = 9, et non 8 − 1 = 7.",
+   "## Les propriétés qui simplifient",
+   "- Linéarité : ∫ (f + g) = ∫ f + ∫ g, et ∫ kf = k ∫ f.\n- Chasles : ∫ₐᶜ f = ∫ₐᵇ f + ∫ᵇᶜ f, on peut couper l’intervalle en morceaux.\n- Échanger les bornes change le signe : ∫ᵇₐ f = −∫ₐᵇ f.\n- Si f ≥ 0 sur [a ; b] (avec a ≤ b), l’intégrale est positive : c’est une aire.",
+   "? Si ∫₀² f = 5 et ∫₂⁵ f = −1, que vaut ∫₀⁵ f ? || 5 + (−1) = 4, par la relation de Chasles.",
+   "## Aire géométrique quand f change de signe",
+   "prof: Attention à la différence entre « intégrale » et « aire ». L’intégrale compte en négatif ce qui est sous l’axe ; une aire, elle, est toujours positive. Pour une aire, on découpe aux points où f s’annule et on additionne les morceaux en valeur absolue.",
+   "@etapes {\"etapes\":[[\"aire entre y = x − 1 et l’axe, sur [0 ; 3]\",\"La droite coupe l’axe en x = 1.\"],[\"∫₀¹ (x − 1) dx = −1/2\",\"Sous l’axe : triangle d’aire 1/2 compté en négatif.\"],[\"∫₁³ (x − 1) dx = 2\",\"Au-dessus : triangle de base 2 et de hauteur 2.\"],[\"intégrale sur [0 ; 3] : −1/2 + 2 = 3/2\",\"L’intégrale fait la différence.\"],[\"aire : 1/2 + 2 = 5/2\",\"L’aire additionne les deux triangles.\"]]} | Compare les deux dernières lignes : même figure, deux nombres différents. Le premier est une intégrale, le second une aire.",
+   "@courbe {\"f\":\"x-1\",\"x\":[-0.5,3.5],\"y\":[-1.5,3],\"aire\":[0,3]} | Vérifie le calcul : avec les bornes 0 et 3, l’intégrale affichée vaut 1,5. Mets la borne b à 1 : tu lis −0,5, l’aire du petit triangle comptée en négatif.",
+   "## Aire entre deux courbes",
+   "1. Trouve quelle courbe est au-dessus de l’autre sur [a ; b] (étudie le signe de g − f).\n2. L’aire vaut ∫ₐᵇ (g(x) − f(x)) dx, avec g au-dessus.\n3. Simplifie g − f avant d’intégrer.",
+   "ex: aire entre y = 2x et y = x² sur [0 ; 2]\n2x ≥ x² sur [0 ; 2]\n∫₀² (2x − x²) dx = [x² − x³/3]₀² = 4 − 8/3 = 4/3",
+   "## Valeur moyenne",
+   "La valeur moyenne de f sur [a ; b] est la hauteur du rectangle de même base et de même aire que le domaine sous la courbe :",
+   "> μ = (1/(b − a)) ∫ₐᵇ f(x) dx",
+   "? Valeur moyenne de f(x) = 2x sur [0 ; 4] ? || ∫₀⁴ 2x dx = 16, divisé par 4 − 0 = 4 : μ = 4.",
+   "prof: Bilan pratique : primitive, haut moins bas, parenthèses ; Chasles et linéarité pour découper ; et pour une aire, on coupe aux zéros de f. Tu as tous les outils de l’UE."
+  ],
+  "expert": [
+   "prof: Au niveau Expert, on précise ce qu’est vraiment une intégrale, pourquoi le raccourci F(b) − F(a) est juste, et dans quels cas les belles propriétés tombent en défaut.",
+   "## Définition par les sommes de Riemann",
+   "Pour f continue sur [a ; b], on découpe [a ; b] en n morceaux de largeur (b − a)/n et on forme la somme des aires des rectangles. Quand n tend vers l’infini, ces sommes ont une limite, qui ne dépend pas de la façon de choisir la hauteur : c’est l’intégrale.",
+   "> ∫ₐᵇ f(x) dx = lim (b − a)/n × [f(x₁) + f(x₂) + … + f(xₙ)]",
+   "## Le théorème fondamental de l’analyse",
+   "Si f est continue sur un intervalle I contenant a, la fonction F(x) = ∫ₐˣ f(t) dt est dérivable sur I et F′ = f.",
+   "Idée de preuve : F(x + h) − F(x) est l’aire d’une bande fine de largeur h, presque un rectangle de hauteur f(x). Donc (F(x + h) − F(x))/h tend vers f(x) quand h tend vers 0. Conséquence : pour toute primitive G de f, G = F + C, donc G(b) − G(a) = F(b) − F(a) = ∫ₐᵇ f.",
+   "@courbe {\"f\":\"1/x\",\"x\":[0,6],\"y\":[-0.5,3],\"aire\":[1,2.72]} | La primitive de 1/x qui s’annule en 1 est ln x. Garde a = 1 et fais glisser b : l’aire affichée vaut ln b. Cherche la borne b pour laquelle l’aire vaut exactement 1 : tu trouves b ≈ 2,72, le nombre e.",
+   "? Que vaut ∫₁ᵉ (1/x) dx ? || ln e − ln 1 = 1 − 0 = 1. C’est même une façon de définir le nombre e.",
+   "prof: Prends le temps de mesurer ce résultat : deux problèmes qui n’avaient rien à voir, la pente d’une courbe et l’aire sous une courbe, sont en fait l’envers et l’endroit de la même idée. C’est le cœur de toute l’analyse.",
+   "## Positivité et inégalités",
+   "> a ≤ b et f ≤ g sur [a ; b]  ⇒  ∫ₐᵇ f ≤ ∫ₐᵇ g        |∫ₐᵇ f| ≤ ∫ₐᵇ |f|",
+   "En particulier, si m ≤ f(x) ≤ M sur [a ; b], alors m(b − a) ≤ ∫ₐᵇ f ≤ M(b − a) : on encadre une intégrale qu’on ne sait pas calculer.",
+   "? Encadre ∫₀¹ e^(−x²) dx. || Sur [0 ; 1], e^(−1) ≤ e^(−x²) ≤ 1, donc 1/e ≈ 0,37 ≤ I ≤ 1.",
+   "## Où ça casse",
+   "- Ces inégalités exigent a ≤ b : si les bornes sont dans le mauvais ordre, les signes s’inversent.\n- Une intégrale nulle ne veut pas dire fonction nulle : ∫₋₂² x³ dx = 0 par symétrie.\n- Pour une aire géométrique quand f change de signe, il faut intégrer |f| en découpant aux zéros de f.\n- Une fonction non continue, même bornée, peut ne pas être intégrable au sens de Riemann : la fonction qui vaut 1 sur les rationnels et 0 ailleurs en est l’exemple classique.\n- F(b) − F(a) exige une primitive sur tout [a ; b] : pour ∫₋₁¹ 1/x² dx, la formule donnerait −2, absurde pour une fonction positive, car 1/x² n’est pas définie en 0.",
+   "? Pourquoi ∫₋₁¹ 1/x² dx ≠ [−1/x]₋₁¹ = −2 ? || 1/x² n’est pas continue sur [−1 ; 1] (non définie en 0) : le théorème fondamental ne s’applique pas. L’aire est en fait infinie.",
+   "histoire: Riemann donne en 1854 la définition rigoureuse de l’intégrale par les sommes qui portent son nom. En 1902, Henri Lebesgue en propose une autre, plus puissante, qui permet d’intégrer des fonctions beaucoup plus irrégulières.",
+   "prof: Bilan expert : l’intégrale est une limite de sommes, le théorème fondamental relie aire et primitive, et les hypothèses (continuité, bornes dans l’ordre) ne sont jamais décoratives. Tu as maintenant le cadre précis pour aborder les équations différentielles."
+  ]
+ },
+ "exemples": [
+  {
+   "enonce": "Calculer l’intégrale de (2x + 1) entre 1 et 3.",
+   "etapes": [
+    [
+     "F(x) = x² + x",
+     "primitive de 2x + 1"
+    ],
+    [
+     "F(3) = 9 + 3 = 12",
+     "on remplace x par la borne du haut"
+    ],
+    [
+     "F(1) = 1 + 1 = 2",
+     "on remplace x par la borne du bas"
+    ],
+    [
+     "∫₁³ (2x + 1) dx = 12 − 2 = 10",
+     "F(b) − F(a)"
+    ]
+   ]
+  },
+  {
+   "enonce": "Aire du domaine entre la droite y = 2x et la parabole y = x², pour 0 ≤ x ≤ 2.",
+   "etapes": [
+    [
+     "2x − x² = x(2 − x) ≥ 0 sur [0 ; 2]",
+     "la droite est au-dessus"
+    ],
+    [
+     "A = ∫₀² (2x − x²) dx",
+     "haut moins bas"
+    ],
+    [
+     "[x² − x³/3]₀² = 4 − 8/3",
+     "primitive, puis F(2) − F(0)"
+    ],
+    [
+     "A = 4/3 unité d’aire",
+     "résultat positif, comme toute aire"
+    ]
+   ]
+  },
+  {
+   "enonce": "Calculer ∫₂⁵ (3 − x) dx avec des aires.",
+   "etapes": [
+    [
+     "la droite coupe l’axe en x = 3",
+     "positive sur [2 ; 3], négative sur [3 ; 5]"
+    ],
+    [
+     "triangle au-dessus : 1 × 1/2 = 0,5",
+     "aire d’un triangle"
+    ],
+    [
+     "triangle en dessous : 2 × 2/2 = 2",
+     "compté négativement"
+    ],
+    [
+     "∫₂⁵ (3 − x) dx = 0,5 − 2 = −1,5",
+     "relation de Chasles"
+    ]
+   ]
+  }
+ ],
+ "pieges": [
+  {
+   "faux": "∫₁³ f = F(1) − F(3)",
+   "juste": "∫₁³ f = F(3) − F(1)",
+   "pourquoi": "On calcule toujours F(borne du haut) − F(borne du bas)."
+  },
+  {
+   "faux": "Ajouter + C au résultat d’une intégrale",
+   "juste": "Une intégrale entre deux bornes est un nombre",
+   "pourquoi": "La constante apparaît dans F(b) et dans F(a), et s’annule."
+  },
+  {
+   "faux": "Intégrale négative, donc erreur de calcul",
+   "juste": "Une intégrale peut être négative",
+   "pourquoi": "Quand la courbe est sous l’axe, l’aire algébrique est négative."
+  },
+  {
+   "faux": "[x³]₋₁² = 8 − 1 = 7",
+   "juste": "[x³]₋₁² = 8 − (−1) = 9",
+   "pourquoi": "(−1)³ = −1 : mets toujours F(a) entre parenthèses."
+  },
+  {
+   "faux": "Aire entre y = x − 1 et l’axe sur [0 ; 3] : 3/2",
+   "juste": "Aire : 1/2 + 2 = 5/2",
+   "pourquoi": "3/2 est l’intégrale ; pour une aire, on additionne les morceaux en valeur absolue."
+  }
+ ],
+ "retenir": [
+  "∫ₐᵇ f(x) dx = F(b) − F(a), avec F une primitive de f.",
+  "Si f ≥ 0 sur [a ; b], l’intégrale est l’aire sous la courbe ; sous l’axe, elle compte négativement.",
+  "Chasles : on découpe l’intervalle et on additionne ; échanger les bornes change le signe.",
+  "Aire entre deux courbes : ∫ (haut − bas) ; aire géométrique : on coupe aux zéros de f.",
+  "Valeur moyenne : μ = (1/(b − a)) ∫ₐᵇ f(x) dx."
+ ]
+}

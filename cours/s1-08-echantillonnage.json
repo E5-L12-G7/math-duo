@@ -1,0 +1,202 @@
+{
+  "id": "s1-echantillonnage",
+  "titre": "Fluctuations d’échantillonnage",
+  "resume": "Une moyenne ou une proportion calculée sur un échantillon varie d’un échantillon à l’autre. Cette fluctuation obéit à des lois précises : la moyenne empirique se concentre autour de μ (loi des grands nombres) et suit presque une loi normale (théorème central limite).",
+  "objectifs": [
+    "distinguer population, échantillon, paramètre et statistique",
+    "connaître la loi de la moyenne empirique : E(X̄) = μ, V(X̄) = σ²/n",
+    "énoncer et interpréter la loi des grands nombres et le théorème central limite",
+    "calculer une probabilité portant sur une moyenne ou une somme d’échantillon",
+    "construire un intervalle de fluctuation d’une proportion et prendre une décision",
+    "calculer une variance empirique et l’estimateur sans biais (division par n − 1)"
+  ],
+  "prerequis": [
+    "s1-normale",
+    "s1-resumes"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bonjour ! Ce chapitre est le pont entre les probabilités et la statistique. Jusqu’ici, on connaissait la loi et on calculait des probabilités. Dans la vraie vie, c’est l’inverse : on observe un échantillon et on veut en tirer des conclusions sur toute une population. Avant de le faire, il faut comprendre une chose : un échantillon, ça fluctue.",
+      "## Population et échantillon",
+      "La **population**, c’est l’ensemble de tous les individus qui nous intéressent (tous les électeurs, toutes les bouteilles produites). Un **échantillon**, ce sont les n individus qu’on observe vraiment. Un nombre qui décrit la population (la vraie moyenne μ, la vraie proportion p) est un **paramètre** ; le même calcul fait sur l’échantillon (x̄, f) est une **statistique**.",
+      "analogie: Pour savoir si la soupe est assez salée, tu ne bois pas toute la marmite : tu goûtes une cuillère. La marmite est la population, la cuillère l’échantillon. Si la soupe est bien mélangée (échantillon au hasard), une cuillère suffit à se faire une bonne idée.",
+      "## Chaque échantillon donne un résultat différent",
+      "Tire 100 personnes au hasard et calcule la proportion de fumeurs : tu trouves peut-être 27 %. Recommence avec 100 autres personnes : 31 %. Puis 24 %. Ces écarts ne sont pas des erreurs de calcul : c’est la **fluctuation d’échantillonnage**. La statistique est elle-même une variable aléatoire.",
+      "## Plus l’échantillon est grand, plus c’est stable",
+      "@grands-nombres | Lance un dé encore et encore (boutons +10, +100, +1000 lancers). La fréquence du 6 zigzague beaucoup au début, puis se stabilise autour de 1/6 ≈ 0,167 (pointillés). C’est la loi des grands nombres.",
+      "!! Loi des grands nombres : quand la taille n de l’échantillon augmente, la moyenne (ou la fréquence) observée se rapproche de la vraie moyenne (ou de la vraie probabilité).",
+      "attention: La loi des grands nombres ne dit pas que le hasard « compense ». Après 5 « pile » de suite, la pièce n’a pas plus de chances de tomber sur « face ». Les écarts ne sont pas rattrapés : ils sont noyés dans la masse des lancers suivants.",
+      "? Un casino gagne-t-il à coup sûr sur une seule partie ? Et sur un million de parties ? || Sur une partie, non : tout peut arriver. Sur un million, la loi des grands nombres rend son gain moyen très proche de l’espérance, qui lui est favorable.",
+      "## La forme des fluctuations : une cloche",
+      "@tlc | La population de départ est un dé équilibré : avec 1 dé, l’histogramme est plat, rien à voir avec une cloche. Augmente le nombre de dés par moyenne : l’histogramme des 600 moyennes prend la forme d’une cloche, de plus en plus étroite autour de 3,5.",
+      "prof: C’est le résultat le plus surprenant de la statistique : quelle que soit la forme de la population, la moyenne d’un grand échantillon suit presque une loi normale. C’est le **théorème central limite**. Voilà pourquoi la loi normale est partout dans la suite du cours.",
+      "## De combien ça fluctue ?",
+      "La moyenne d’un échantillon de taille n fluctue autour de μ avec un écart-type σ/√n. Pour diviser la fluctuation par 2, il faut 4 fois plus de monde ; pour la diviser par 10, 100 fois plus.",
+      "? Avec 100 personnes, la moyenne fluctue avec un écart-type de 3. Et avec 400 personnes ? || 400 = 4 × 100, donc l’écart-type est divisé par √4 = 2 : il vaut 1,5.",
+      "## Une proportion est-elle normale ou suspecte ?",
+      "Si une pièce est équilibrée, sur 100 lancers on obtient « en général » entre 40 et 60 piles environ. Obtenir 75 piles serait très surprenant : on soupçonnerait la pièce. L’**intervalle de fluctuation** formalise ce « en général » : il contient la fréquence observée dans 95 % des échantillons.",
+      "? Sur 100 naissances, on observe 45 % de filles alors que la proportion habituelle est 49 %. Faut-il s’inquiéter ? || Non : un écart de 4 points sur 100 naissances est une fluctuation tout à fait ordinaire (l’intervalle à 95 % va d’environ 39 % à 59 %).",
+      "histoire: Jacques Bernoulli démontre la première loi des grands nombres dans son Ars Conjectandi, publié en 1713, après sa mort. Pierre-Simon Laplace énonce le théorème central limite en 1810, généralisant le résultat obtenu par Abraham de Moivre pour pile ou face.",
+      "prof: Bilan : un échantillon fluctue ; plus il est grand, moins il fluctue (en 1/√n) ; et ses fluctuations ont la forme d’une cloche. Ce sont exactement les trois idées dont tu auras besoin pour l’estimation et les tests."
+    ],
+    "pratique": [
+      "prof: On passe aux formules. On considère un échantillon X₁, …, Xₙ : n variables indépendantes de même loi, de moyenne μ et d’écart-type σ. Toutes les méthodes du chapitre partent de là.",
+      "## La moyenne empirique",
+      "> X̄ = (X₁ + X₂ + … + Xₙ)/n",
+      "> E(X̄) = μ    V(X̄) = σ²/n    σ(X̄) = σ/√n",
+      "Pour la somme S = X₁ + … + Xₙ : E(S) = nμ, V(S) = nσ², σ(S) = σ√n.",
+      "@loi-continue {\"loi\":\"normale\",\"mu\":0,\"sigma\":1,\"a\":-1,\"b\":1} | Imagine que la courbe est celle d’une valeur isolée (σ = 1). Pour la moyenne de 4 valeurs, mets σ à 0,5 ; pour 9 valeurs, σ = 1/3 (le curseur le plus proche est 0,3). La cloche se resserre autour de μ : l’aire entre −1 et 1 passe de 0,68 à 0,95 puis plus de 0,99.",
+      "## Le théorème central limite en pratique",
+      "1. Vérifie que n est assez grand (en pratique n ≥ 30), ou que la population est normale (alors c’est exact pour tout n).\n2. Écris X̄ ≈ N(μ ; σ²/n), donc σ(X̄) = σ/√n.\n3. Centre et réduis : z = (x̄ − μ)/(σ/√n).\n4. Lis Φ.",
+      "@etapes {\"etapes\":[[\"Bouteilles : μ = 500 mL, σ = 20 mL ; échantillon de 25\",\"On cherche P(X̄ < 492).\"],[\"σ(X̄) = 20/√25 = 4\",\"L’écart-type de la moyenne.\"],[\"z = (492 − 500)/4 = −2\",\"On centre et on réduit avec σ/√n, pas σ.\"],[\"P(X̄ < 492) = Φ(−2) = 1 − 0,9772\",\"Symétrie.\"],[\"≈ 0,0228\",\"Une moyenne aussi basse serait rare : à surveiller !\"]]} | Compare : pour UNE bouteille, P(X < 492) = Φ(−0,4) ≈ 0,34. La moyenne fluctue beaucoup moins qu’une valeur isolée.",
+      "prof: L’erreur classique, c’est de réduire avec σ au lieu de σ/√n. Pose-toi toujours la question : « ma variable, c’est une valeur isolée, une moyenne ou une somme ? » La réponse fixe l’écart-type à utiliser.",
+      "? μ = 70, σ = 12, n = 36. Que vaut σ(X̄) ? Et P(X̄ > 74) ? || σ(X̄) = 12/6 = 2 ; z = (74 − 70)/2 = 2 ; P ≈ 1 − 0,9772 = 0,0228.",
+      "## La fréquence d’un échantillon",
+      "Si une proportion p de la population a un caractère, la fréquence F observée sur n individus vérifie :",
+      "> E(F) = p    σ(F) = √(p(1 − p)/n)",
+      "Pour n ≥ 30, np ≥ 5 et n(1 − p) ≥ 5, F suit approximativement N(p ; p(1 − p)/n).",
+      "## L’intervalle de fluctuation au seuil de 95 %",
+      "> I = [ p − 1,96 √(p(1 − p)/n) ; p + 1,96 √(p(1 − p)/n) ]",
+      "1. Vérifie les conditions n ≥ 30, np ≥ 5, n(1 − p) ≥ 5.\n2. Calcule les deux bornes avec la proportion **supposée** p.\n3. Compare la fréquence observée f : si f ∉ I, on rejette l’hypothèse sur p (au risque de 5 %) ; si f ∈ I, on ne la rejette pas.",
+      "@etapes {\"etapes\":[[\"p supposée = 0,3 ; n = 50 ; f observée = 0,42\",\"Une urne censée contenir 30 % de boules blanches.\"],[\"np = 15 ≥ 5 et n(1 − p) = 35 ≥ 5\",\"Conditions vérifiées.\"],[\"√(0,3 × 0,7/50) ≈ 0,0648\",\"Écart-type de F.\"],[\"1,96 × 0,0648 ≈ 0,127\",\"Demi-largeur de l’intervalle.\"],[\"I ≈ [0,173 ; 0,427]\",\"Intervalle de fluctuation à 95 %.\"],[\"f = 0,42 ∈ I\",\"On ne rejette pas l’hypothèse p = 0,3.\"]]} | Change mentalement f en 0,45 : elle sortirait de l’intervalle et on rejetterait l’hypothèse.",
+      "@normale-simple | Règle les bornes à −2 et 2 : l’aire vaut environ 0,954, un peu plus de 95 %. La borne exacte qui donne 95 % est 1,96 : c’est l’origine du 1,96 de l’intervalle de fluctuation.",
+      "? p = 0,5 et n = 100 : donne l’intervalle de fluctuation à 95 %. || √(0,25/100) = 0,05 ; 1,96 × 0,05 = 0,098 : I ≈ [0,402 ; 0,598].",
+      "## Variance empirique et estimateur sans biais",
+      "Sur un échantillon x₁, …, xₙ de moyenne x̄ :",
+      "> s² = (1/n) Σ (xᵢ − x̄)²    (variance empirique)",
+      "> s*² = (1/(n − 1)) Σ (xᵢ − x̄)² = (n/(n − 1)) s²    (estimateur sans biais de σ²)",
+      "@etapes {\"etapes\":[[\"Échantillon : 4 ; 6 ; 8 ; 10 ; 12\",\"n = 5.\"],[\"x̄ = 40/5 = 8\",\"Moyenne.\"],[\"Σ (xᵢ − 8)² = 16 + 4 + 0 + 4 + 16 = 40\",\"Somme des carrés des écarts.\"],[\"s² = 40/5 = 8\",\"Variance empirique.\"],[\"s*² = 40/4 = 10\",\"Estimation sans biais de σ² : on divise par n − 1.\"]]} | Remarque que s*² est toujours un peu plus grand que s² : l’échantillon « sous-estime » naturellement la dispersion.",
+      "? Pour l’échantillon 2 ; 4 ; 6, calcule s² et s*². || x̄ = 4, Σ (xᵢ − 4)² = 8 ; s² = 8/3 ≈ 2,67 et s*² = 8/2 = 4.",
+      "prof: Tu as maintenant tout ce qu’il faut : loi de X̄, TCL, intervalle de fluctuation, variance corrigée. Dans le chapitre suivant (estimation), on renversera le raisonnement : on connaîtra x̄ ou f et on cherchera μ ou p."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on démontre les formules de la moyenne empirique, on énonce proprement les deux grands théorèmes et on explique enfin pourquoi on divise par n − 1.",
+      "## Calcul de E(X̄) et V(X̄)",
+      "Par linéarité, E(X̄) = (1/n)(E(X₁) + … + E(Xₙ)) = (1/n) × nμ = μ : X̄ est un estimateur **sans biais** de μ. Par indépendance, les variances s’additionnent :",
+      "> V(X̄) = (1/n²)(V(X₁) + … + V(Xₙ)) = (1/n²) × nσ² = σ²/n",
+      "## Loi (faible) des grands nombres",
+      "L’inégalité de Bienaymé-Tchebychev donne, pour tout ε > 0 :",
+      "> P(|X̄ − μ| ≥ ε) ≤ σ²/(nε²)  →  0 quand n → +∞",
+      "X̄ converge en probabilité vers μ. Cette borne est grossière mais universelle ; le TCL donne une estimation bien plus précise de cette probabilité.",
+      "? Avec σ = 10 et n = 400, majore P(|X̄ − μ| ≥ 2) par Bienaymé-Tchebychev. || σ²/(nε²) = 100/(400 × 4) = 0,0625. (Le TCL donne en réalité environ 2 × (1 − Φ(4)) ≈ 0,00006.)",
+      "## Théorème central limite",
+      "Si les Xᵢ sont indépendantes, de même loi, d’espérance μ et de variance σ² finie, alors :",
+      "> (X̄ − μ)/(σ/√n)  converge en loi vers  N(0 ; 1)",
+      "Le seuil n ≥ 30 est une règle pratique : il suffit pour des lois peu dissymétriques, il est insuffisant pour des lois très asymétriques (ou des proportions p proches de 0 ou 1), et inutile si la population est déjà normale (X̄ est alors exactement normale).",
+      "@tlc | Ici la loi de départ (un dé) est symétrique : observe pour quel nombre de dés la cloche devient convaincante, dès 5 ou 10. Pour une loi de départ très dissymétrique, il faudrait un n bien plus grand.",
+      "prof: Le point qui fâche tout le monde : pourquoi n − 1 et pas n ? Tu vas voir que ce n’est pas une convention arbitraire, mais le résultat d’un calcul d’espérance. Accroche-toi, il tient en deux lignes.",
+      "## Pourquoi n − 1 ?",
+      "Les écarts sont mesurés par rapport à x̄, qui est lui-même calculé sur l’échantillon et « colle » aux données : Σ (Xᵢ − X̄)² est toujours inférieur ou égal à Σ (Xᵢ − μ)². Le calcul donne :",
+      "> E(Σ (Xᵢ − X̄)²) = (n − 1)σ²    donc    E(S²) = ((n − 1)/n) σ²  et  E(S*²) = σ²",
+      "On dit aussi qu’on a « perdu un degré de liberté » : les n écarts Xᵢ − X̄ ont une somme nulle, donc seuls n − 1 d’entre eux sont libres.",
+      "? Pour n = 2, que vaut E(S²) en fonction de σ² ? || E(S²) = σ²/2 : la variance empirique sous-estime de moitié. S*² = 2S² corrige ce biais.",
+      "## Où ça casse",
+      "- **Observations dépendantes** (séries temporelles, grappes) : V(X̄) n’est plus σ²/n ; l’incertitude est souvent bien plus grande.\n- **Variance infinie** (loi de Cauchy) : X̄ ne se stabilise pas, le TCL ne s’applique pas.\n- **Échantillon non aléatoire** (volontaires, sondage en ligne) : aucune formule ne corrige un biais de sélection.\n- **Tirage sans remise** dans une population de taille N : V(X̄) = (σ²/n) × (N − n)/(N − 1) ; le facteur correctif est négligeable si n/N < 10 %.",
+      "? Un sondage en ligne recueille 50 000 réponses. La loi des grands nombres garantit-elle un résultat fiable ? || Non : les répondants se sont sélectionnés eux-mêmes. Un échantillon énorme mais biaisé converge… vers une mauvaise valeur.",
+      "prof: Retiens : E(X̄) = μ (sans biais), σ(X̄) = σ/√n (précision en 1/√n), forme normale pour n grand (TCL), et n − 1 pour estimer σ² sans biais. Ce sont les fondations de l’estimation et des tests."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "La durée d’un appel suit une loi de moyenne 4 min et d’écart-type 3 min. On observe 100 appels. Probabilité que la durée moyenne dépasse 4,5 min ?",
+      "etapes": [
+        [
+          "n = 100 ≥ 30 : X̄ ≈ N(4 ; 3²/100)",
+          "théorème central limite"
+        ],
+        [
+          "σ(X̄) = 3/10 = 0,3",
+          "σ/√n"
+        ],
+        [
+          "z = (4,5 − 4)/0,3 ≈ 1,67",
+          "centrer-réduire"
+        ],
+        [
+          "P(X̄ > 4,5) ≈ 1 − Φ(1,67) ≈ 1 − 0,9525 = 0,0475",
+          "aire à droite"
+        ]
+      ]
+    },
+    {
+      "enonce": "Un fabricant affirme que 10 % de ses pièces sont défectueuses. Sur 200 pièces, on en trouve 32. L’affirmation est-elle crédible au seuil de 95 % ?",
+      "etapes": [
+        [
+          "p = 0,1 ; n = 200 ; np = 20 ≥ 5 ; n(1 − p) = 180 ≥ 5",
+          "conditions"
+        ],
+        [
+          "√(0,1 × 0,9/200) ≈ 0,0212",
+          "écart-type de F"
+        ],
+        [
+          "I ≈ [0,1 − 0,0416 ; 0,1 + 0,0416] = [0,058 ; 0,142]",
+          "1,96 × 0,0212 ≈ 0,0416"
+        ],
+        [
+          "f = 32/200 = 0,16 ∉ I",
+          "comparaison"
+        ],
+        [
+          "On rejette l’affirmation au risque de 5 %",
+          "conclusion"
+        ]
+      ]
+    },
+    {
+      "enonce": "Échantillon : 12 ; 15 ; 9 ; 14. Calculer la variance empirique et l’estimation sans biais de σ².",
+      "etapes": [
+        [
+          "x̄ = 50/4 = 12,5",
+          "moyenne"
+        ],
+        [
+          "Σ (xᵢ − 12,5)² = 0,25 + 6,25 + 12,25 + 2,25 = 21",
+          "carrés des écarts"
+        ],
+        [
+          "s² = 21/4 = 5,25",
+          "division par n"
+        ],
+        [
+          "s*² = 21/3 = 7",
+          "division par n − 1"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "z = (x̄ − μ)/σ pour une moyenne",
+      "juste": "z = (x̄ − μ)/(σ/√n)",
+      "pourquoi": "Une moyenne de n valeurs fluctue moins qu’une valeur isolée : son écart-type est σ/√n."
+    },
+    {
+      "faux": "Doubler n divise par 2 la fluctuation",
+      "juste": "Il faut multiplier n par 4 pour diviser σ(X̄) par 2",
+      "pourquoi": "σ(X̄) = σ/√n décroît comme 1/√n."
+    },
+    {
+      "faux": "Après 5 « pile », « face » devient plus probable",
+      "juste": "Chaque lancer reste à 1/2",
+      "pourquoi": "La loi des grands nombres ne compense pas les écarts passés : elle les dilue."
+    },
+    {
+      "faux": "Intervalle de fluctuation avec √(p(1 − p) × n)",
+      "juste": "Avec √(p(1 − p)/n)",
+      "pourquoi": "L’écart-type d’une fréquence diminue quand n augmente : n est au dénominateur."
+    },
+    {
+      "faux": "Estimer σ² par s² = (1/n) Σ (xᵢ − x̄)²",
+      "juste": "Utiliser s*² = (1/(n − 1)) Σ (xᵢ − x̄)²",
+      "pourquoi": "s² sous-estime σ² en moyenne ; diviser par n − 1 supprime ce biais."
+    }
+  ],
+  "retenir": [
+    "Paramètre (μ, p, σ) : population ; statistique (x̄, f, s) : échantillon, elle fluctue.",
+    "E(X̄) = μ, V(X̄) = σ²/n, σ(X̄) = σ/√n ; pour la somme : nμ et σ√n.",
+    "Loi des grands nombres : X̄ se rapproche de μ quand n grandit. TCL : X̄ ≈ N(μ ; σ²/n) pour n ≥ 30.",
+    "Intervalle de fluctuation à 95 % : p ± 1,96 √(p(1 − p)/n), si n ≥ 30, np ≥ 5, n(1 − p) ≥ 5.",
+    "Estimateur sans biais de σ² : s*² = Σ (xᵢ − x̄)²/(n − 1) = (n/(n − 1)) s²."
+  ]
+}

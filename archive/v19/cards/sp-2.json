@@ -1,0 +1,856 @@
+{
+ "sp-combi": [
+  {
+   "id": "sp-combi-01",
+   "q": "Que signifie dénombrer un ensemble fini ?",
+   "a": "Compter ses éléments, c’est-à-dire trouver son cardinal.",
+   "tag": "definition",
+   "niveau": 1,
+   "pourquoi": "Card(E) ou |E| désigne ce nombre."
+  },
+  {
+   "id": "sp-combi-02",
+   "q": "Quand dit-on que deux ensembles sont disjoints ?",
+   "a": "Quand ils n’ont aucun élément commun.",
+   "tag": "definition",
+   "niveau": 1,
+   "pourquoi": "A ∩ B = ∅."
+  },
+  {
+   "id": "sp-combi-03",
+   "q": "Que dit le principe additif ?",
+   "a": "Ensembles deux à deux disjoints : cardinal de la réunion = somme des cardinaux.",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "sp-combi-04",
+   "q": "Que vaut Card(A ∪ B) si A et B se chevauchent ?",
+   "a": "Card(A) + Card(B) − Card(A ∩ B)",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "Sinon l’intersection est comptée deux fois."
+  },
+  {
+   "id": "sp-combi-05",
+   "q": "Que dit le principe multiplicatif ?",
+   "a": "Pour des choix successifs, on multiplie les nombres de possibilités.",
+   "tag": "propriete",
+   "niveau": 1,
+   "pourquoi": "Card(E₁ × E₂) = Card(E₁) × Card(E₂)."
+  },
+  {
+   "id": "sp-combi-06",
+   "q": "Combien de menus avec 3 entrées, 4 plats, 2 desserts ?",
+   "a": "24",
+   "tag": "valeur",
+   "niveau": 1,
+   "pourquoi": "3 × 4 × 2, principe multiplicatif."
+  },
+  {
+   "id": "sp-combi-07",
+   "q": "Qu’est-ce qu’un k-uplet d’un ensemble E ?",
+   "a": "Une liste ordonnée de k éléments de E, répétitions permises.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-combi-08",
+   "q": "Combien de k-uplets dans un ensemble à n éléments ?",
+   "a": "`n^k`",
+   "tag": "formule",
+   "niveau": 1,
+   "pourquoi": "n choix pour chacune des k positions."
+  },
+  {
+   "id": "sp-combi-09",
+   "q": "Combien de codes à 4 chiffres, répétitions permises ?",
+   "a": "`10^4` = 10 000",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "sp-combi-10",
+   "q": "Quelle est la définition de n! ?",
+   "a": "Le produit 1 × 2 × … × n.",
+   "tag": "definition",
+   "niveau": 1,
+   "pourquoi": "On lit « factorielle n »."
+  },
+  {
+   "id": "sp-combi-11",
+   "q": "Que vaut 0! ?",
+   "a": "1, par convention.",
+   "tag": "valeur",
+   "niveau": 1,
+   "pourquoi": "La formule de C(n ; k) reste ainsi valable pour k = 0."
+  },
+  {
+   "id": "sp-combi-12",
+   "q": "Que vaut 5! ?",
+   "a": "120",
+   "tag": "valeur",
+   "niveau": 1,
+   "pourquoi": "1 × 2 × 3 × 4 × 5."
+  },
+  {
+   "id": "sp-combi-13",
+   "q": "Qu’est-ce qu’un arrangement de k éléments parmi n ?",
+   "a": "Une liste ordonnée de k éléments tous distincts.",
+   "tag": "definition",
+   "niveau": 2,
+   "pourquoi": "On dit aussi k-uplet d’éléments distincts."
+  },
+  {
+   "id": "sp-combi-14",
+   "q": "Combien d’arrangements de k éléments parmi n ?",
+   "a": "`n!/(n − k)!` = n(n − 1)…(n − k + 1)",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "k facteurs décroissants à partir de n."
+  },
+  {
+   "id": "sp-combi-15",
+   "q": "Qu’est-ce qu’une permutation d’un ensemble à n éléments ?",
+   "a": "Un rangement de tous ses éléments : un arrangement avec k = n.",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "sp-combi-16",
+   "q": "Combien de permutations d’un ensemble à n éléments ?",
+   "a": "`n!`",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-combi-17",
+   "q": "Qu’est-ce qu’une combinaison de k éléments de E ?",
+   "a": "Un sous-ensemble de E à k éléments, sans ordre.",
+   "tag": "definition",
+   "niveau": 2,
+   "pourquoi": "{1 ; 2} et {2 ; 1} sont la même combinaison."
+  },
+  {
+   "id": "sp-combi-18",
+   "q": "Quelle est la formule de C(n ; k) ?",
+   "a": "`n!/(k!(n − k)!)`",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "C(n ; k) = A(n ; k) ÷ k!."
+  },
+  {
+   "id": "sp-combi-19",
+   "q": "Que valent C(n ; 0), C(n ; 1) et C(n ; n) ?",
+   "a": "1, n et 1.",
+   "tag": "valeur",
+   "niveau": 1
+  },
+  {
+   "id": "sp-combi-20",
+   "q": "Quelle propriété de symétrie vérifie C(n ; k) ?",
+   "a": "C(n ; n − k) = C(n ; k)",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "Choisir ceux qu’on garde revient à choisir ceux qu’on laisse."
+  },
+  {
+   "id": "sp-combi-21",
+   "q": "Quelle est la relation du triangle de Pascal ?",
+   "a": "C(n ; k) + C(n ; k + 1) = C(n + 1 ; k + 1)",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "sp-combi-22",
+   "q": "Combien de parties a un ensemble à n éléments ?",
+   "a": "`2^n`, partie vide comprise.",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "Chaque élément est pris ou laissé."
+  },
+  {
+   "id": "sp-combi-23",
+   "q": "Que vaut la somme C(n ; 0) + C(n ; 1) + … + C(n ; n) ?",
+   "a": "`2^n`",
+   "tag": "formule",
+   "niveau": 3,
+   "pourquoi": "Elle compte toutes les parties, rangées par taille."
+  },
+  {
+   "id": "sp-combi-24",
+   "q": "Ordre compté et répétitions permises : quel modèle ?",
+   "a": "Les k-uplets, nᵏ possibilités.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "sp-combi-25",
+   "q": "Ordre compté, sans répétition : quel modèle ?",
+   "a": "Les arrangements, ou les permutations si on range tout.",
+   "tag": "methode",
+   "niveau": 2
+  },
+  {
+   "id": "sp-combi-26",
+   "q": "Ni ordre ni répétition : quel modèle ?",
+   "a": "Les combinaisons C(n ; k).",
+   "tag": "methode",
+   "niveau": 2,
+   "pourquoi": "Équipe, main de cartes, tirage simultané."
+  },
+  {
+   "id": "sp-combi-27",
+   "q": "Quel est le réflexe face à une contrainte « pas ensemble » ?",
+   "a": "Compter le total, puis retirer les cas interdits.",
+   "tag": "methode",
+   "niveau": 3,
+   "pourquoi": "On compte par le complémentaire."
+  },
+  {
+   "id": "sp-combi-28",
+   "q": "Combien de façons d’asseoir n personnes si g restent côte à côte ?",
+   "a": "(n − g + 1) × g! × (n − g)!",
+   "tag": "methode",
+   "niveau": 3,
+   "pourquoi": "Positions du bloc × ordre interne × ordre des autres."
+  },
+  {
+   "id": "sp-combi-29",
+   "q": "Quel piège guette quand on choisit une équipe ?",
+   "a": "Utiliser A(n ; k) : l’ordre ne compte pas, c’est C(n ; k).",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "sp-combi-30",
+   "q": "Quel piège guette avec deux options qui se chevauchent ?",
+   "a": "Additionner les effectifs sans retirer ceux qui ont les deux.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "sp-combi-31",
+   "q": "Qui a donné son nom au triangle des coefficients binomiaux ?",
+   "a": "Blaise Pascal, dans un traité écrit en 1654.",
+   "tag": "histoire",
+   "niveau": 2,
+   "pourquoi": "Le triangle était déjà connu en Inde, en Perse et en Chine."
+  },
+  {
+   "id": "sp-combi-32",
+   "q": "Qui a proposé la notation n! ?",
+   "a": "Christian Kramp, en 1808.",
+   "tag": "histoire",
+   "niveau": 3
+  }
+ ],
+ "sp-proba": [
+  {
+   "id": "sp-proba-01",
+   "q": "Qu’est-ce qu’une expérience aléatoire ?",
+   "a": "Une expérience dont on ne peut pas prévoir le résultat.",
+   "tag": "definition",
+   "niveau": 1,
+   "pourquoi": "Ses résultats possibles sont les issues."
+  },
+  {
+   "id": "sp-proba-02",
+   "q": "Qu’est-ce qu’un événement ?",
+   "a": "Un ensemble d’issues de l’expérience.",
+   "tag": "definition",
+   "niveau": 1,
+   "pourquoi": "« Obtenir 5 ou plus » = {5 ; 6}."
+  },
+  {
+   "id": "sp-proba-03",
+   "q": "Entre quelles valeurs est comprise une probabilité ?",
+   "a": "Entre 0 et 1.",
+   "tag": "propriete",
+   "niveau": 1,
+   "pourquoi": "0 : impossible ; 1 : certain."
+  },
+  {
+   "id": "sp-proba-04",
+   "q": "Que signifie équiprobabilité ?",
+   "a": "Toutes les issues ont la même probabilité.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-proba-05",
+   "q": "Que vaut P(A) en situation d’équiprobabilité ?",
+   "a": "Nombre d’issues favorables ÷ nombre total d’issues.",
+   "tag": "formule",
+   "niveau": 1,
+   "pourquoi": "Valable seulement si les issues sont équiprobables."
+  },
+  {
+   "id": "sp-proba-06",
+   "q": "Que vaut la somme des probabilités de toutes les issues ?",
+   "a": "1",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "sp-proba-07",
+   "q": "Que vaut P(Ā) ?",
+   "a": "1 − P(A)",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-proba-08",
+   "q": "Quel est le réflexe pour « au moins un » ?",
+   "a": "Passer par le contraire « aucun ».",
+   "tag": "methode",
+   "niveau": 2,
+   "pourquoi": "P(au moins un) = 1 − P(aucun)."
+  },
+  {
+   "id": "sp-proba-09",
+   "q": "Que signifie l’événement A ∩ B ?",
+   "a": "A et B sont réalisés tous les deux.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-proba-10",
+   "q": "Que signifie l’événement A ∪ B ?",
+   "a": "Au moins l’un des deux événements est réalisé.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-proba-11",
+   "q": "Que vaut P(A ∪ B) ?",
+   "a": "P(A) + P(B) − P(A ∩ B)",
+   "tag": "formule",
+   "niveau": 1,
+   "pourquoi": "L’intersection est comptée deux fois."
+  },
+  {
+   "id": "sp-proba-12",
+   "q": "Quand A et B sont-ils incompatibles ?",
+   "a": "Quand A ∩ B = ∅.",
+   "tag": "definition",
+   "niveau": 2,
+   "pourquoi": "Alors P(A ∪ B) = P(A) + P(B)."
+  },
+  {
+   "id": "sp-proba-13",
+   "q": "Que désigne P_A(B) ?",
+   "a": "La probabilité de B sachant que A est réalisé.",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "sp-proba-14",
+   "q": "Quelle est la formule de P_A(B) ?",
+   "a": "`P(A ∩ B)/P(A)`, avec P(A) ≠ 0.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-proba-15",
+   "q": "Dans un tableau croisé, comment lire P_A(B) ?",
+   "a": "Case commune ÷ total de la ligne ou colonne de A.",
+   "tag": "methode",
+   "niveau": 2,
+   "pourquoi": "On se restreint à A."
+  },
+  {
+   "id": "sp-proba-16",
+   "q": "Que vaut P_A(B̄) ?",
+   "a": "1 − P_A(B)",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-proba-17",
+   "q": "Comment calculer P(A ∩ B) avec l’arbre ?",
+   "a": "P(A) × P_A(B)",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "On multiplie le long du chemin."
+  },
+  {
+   "id": "sp-proba-18",
+   "q": "Que portent les branches du second niveau d’un arbre ?",
+   "a": "Des probabilités conditionnelles.",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "Par exemple P_A(B)."
+  },
+  {
+   "id": "sp-proba-19",
+   "q": "Quelle est la formule des probabilités totales ?",
+   "a": "P(B) = P(A ∩ B) + P(Ā ∩ B)",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "On additionne les chemins qui mènent à B."
+  },
+  {
+   "id": "sp-proba-20",
+   "q": "Comment obtenir P_B(A) à partir de l’arbre ?",
+   "a": "P(A ∩ B) ÷ P(B), avec P(B) par probabilités totales.",
+   "tag": "methode",
+   "niveau": 3,
+   "pourquoi": "C’est l’idée de la formule de Bayes."
+  },
+  {
+   "id": "sp-proba-21",
+   "q": "Quelle est la définition de A et B indépendants ?",
+   "a": "P(A ∩ B) = P(A) × P(B)",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "sp-proba-22",
+   "q": "Si P(A) ≠ 0, que vaut P_A(B) pour A et B indépendants ?",
+   "a": "P(B)",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "Savoir A ne change pas la probabilité de B."
+  },
+  {
+   "id": "sp-proba-23",
+   "q": "Si A et B sont indépendants, Ā et B le sont-ils ?",
+   "a": "Oui.",
+   "tag": "propriete",
+   "niveau": 3,
+   "pourquoi": "Donc P(Ā ∩ B) = P(Ā) × P(B)."
+  },
+  {
+   "id": "sp-proba-24",
+   "q": "Indépendants et incompatibles, est-ce la même chose ?",
+   "a": "Non : incompatibles signifie P(A ∩ B) = 0.",
+   "tag": "piege",
+   "niveau": 2,
+   "pourquoi": "Deux événements de probabilités non nulles incompatibles sont dépendants."
+  },
+  {
+   "id": "sp-proba-25",
+   "q": "Pourquoi P_T(M) peut-il être faible avec un bon test ?",
+   "a": "Si la maladie est rare, les faux positifs dominent.",
+   "tag": "piege",
+   "niveau": 3,
+   "pourquoi": "Exemple du cours : environ 26 %."
+  },
+  {
+   "id": "sp-proba-26",
+   "q": "Faut-il confondre P_M(T) et P_T(M) ?",
+   "a": "Non : l’indice est ce que l’on sait déjà.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "sp-proba-27",
+   "q": "Roi et trèfle, jeu de 32 cartes : sont-ils indépendants ?",
+   "a": "Oui : 1/32 = 1/8 × 1/4.",
+   "tag": "valeur",
+   "niveau": 3,
+   "pourquoi": "Avec deux jokers en plus, ils ne le sont plus."
+  },
+  {
+   "id": "sp-proba-28",
+   "q": "Qui a correspondu sur les jeux de hasard en 1654 ?",
+   "a": "Blaise Pascal et Pierre de Fermat.",
+   "tag": "histoire",
+   "niveau": 2,
+   "pourquoi": "Problèmes posés par le chevalier de Méré."
+  }
+ ],
+ "sp-va": [
+  {
+   "id": "sp-va-01",
+   "q": "Qu’est-ce qu’une variable aléatoire ?",
+   "a": "Une règle qui associe un nombre réel à chaque issue.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-va-02",
+   "q": "Qu’est-ce que la loi de probabilité de X ?",
+   "a": "L’ensemble des probabilités P(X = xᵢ) pour toutes les valeurs.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-va-03",
+   "q": "Que vaut la somme des P(X = xᵢ) ?",
+   "a": "1",
+   "tag": "propriete",
+   "niveau": 1
+  },
+  {
+   "id": "sp-va-04",
+   "q": "Quelle est la formule de l’espérance E(X) ?",
+   "a": "p₁x₁ + p₂x₂ + … + pₙxₙ",
+   "tag": "formule",
+   "niveau": 1,
+   "pourquoi": "Moyenne des valeurs pondérée par leurs probabilités."
+  },
+  {
+   "id": "sp-va-05",
+   "q": "Comment interpréter E(X) pour un jeu ?",
+   "a": "Le gain moyen sur un grand nombre de parties.",
+   "tag": "methode",
+   "niveau": 1,
+   "pourquoi": "Jeu favorable au joueur si E(X) > 0."
+  },
+  {
+   "id": "sp-va-06",
+   "q": "Quelle est la définition de V(X) ?",
+   "a": "Σ pᵢ(xᵢ − E(X))²",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "Moyenne pondérée des carrés des écarts."
+  },
+  {
+   "id": "sp-va-07",
+   "q": "Quelle formule rapide donne V(X) ?",
+   "a": "E(X²) − E(X)²",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va-08",
+   "q": "Que vaut σ(X) ?",
+   "a": "√V(X)",
+   "tag": "formule",
+   "niveau": 1,
+   "pourquoi": "Il s’exprime dans l’unité de X."
+  },
+  {
+   "id": "sp-va-09",
+   "q": "Que vaut E(aX + b) ?",
+   "a": "aE(X) + b",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va-10",
+   "q": "Que vaut V(aX + b) ?",
+   "a": "a²V(X)",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "La constante b ne change pas la dispersion."
+  },
+  {
+   "id": "sp-va-11",
+   "q": "Que vaut σ(aX + b) ?",
+   "a": "|a| σ(X)",
+   "tag": "formule",
+   "niveau": 3
+  },
+  {
+   "id": "sp-va-12",
+   "q": "Pourquoi poser Y = 1000X − 1300 pour des diamètres ?",
+   "a": "Pour calculer sur des entiers, puis revenir à X.",
+   "tag": "methode",
+   "niveau": 3,
+   "pourquoi": "Variable de transition."
+  },
+  {
+   "id": "sp-va-13",
+   "q": "Qu’est-ce qu’une épreuve de Bernoulli ?",
+   "a": "Une expérience aléatoire à deux issues, succès ou échec.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-va-14",
+   "q": "Que valent E(X) et V(X) pour une loi de Bernoulli de paramètre p ?",
+   "a": "E(X) = p et V(X) = p(1 − p).",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-va-15",
+   "q": "Qu’est-ce qu’un schéma de Bernoulli ?",
+   "a": "n épreuves de Bernoulli identiques et indépendantes.",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va-16",
+   "q": "Que compte une variable de loi binomiale B(n ; p) ?",
+   "a": "Le nombre de succès d’un schéma de Bernoulli.",
+   "tag": "definition",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va-17",
+   "q": "Que vaut P(X = k) pour X ~ B(n ; p) ?",
+   "a": "`C(n ; k)p^k(1 − p)^{n − k}`",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va-18",
+   "q": "Que compte C(n ; k) dans l’arbre d’un schéma de Bernoulli ?",
+   "a": "Le nombre de chemins à k succès.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va-19",
+   "q": "Que vaut E(X) pour X ~ B(n ; p) ?",
+   "a": "np",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-va-20",
+   "q": "Que vaut V(X) pour X ~ B(n ; p) ?",
+   "a": "np(1 − p)",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va-21",
+   "q": "Que vaut P(X ≥ 1) pour X ~ B(n ; p) ?",
+   "a": "1 − (1 − p)ⁿ",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "Contraire de « aucun succès »."
+  },
+  {
+   "id": "sp-va-22",
+   "q": "Quelles sont les quatre conditions d’une loi binomiale ?",
+   "a": "Deux issues, même p, n répétitions, indépendance.",
+   "tag": "methode",
+   "niveau": 2,
+   "pourquoi": "X compte les succès."
+  },
+  {
+   "id": "sp-va-23",
+   "q": "Un tirage sans remise donne-t-il une loi binomiale ?",
+   "a": "Non : les tirages ne sont pas indépendants.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va-24",
+   "q": "Quel piège dans la loi d’un jeu « cœur » et « roi » ?",
+   "a": "Oublier le roi de cœur, qui cumule les deux gains.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va-25",
+   "q": "L’espérance est-elle le gain de chaque partie ?",
+   "a": "Non : c’est une moyenne sur un grand nombre de parties.",
+   "tag": "piege",
+   "niveau": 1
+  },
+  {
+   "id": "sp-va-26",
+   "q": "Que vaut E(X) pour X ~ B(5 ; 1/3) ?",
+   "a": "5/3 ≈ 1,7",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va-27",
+   "q": "Qui a publié le premier traité imprimé sur le calcul des chances ?",
+   "a": "Christiaan Huygens, en 1657.",
+   "tag": "histoire",
+   "niveau": 3,
+   "pourquoi": "Il y définit l’espérance."
+  }
+ ],
+ "sp-va2": [
+  {
+   "id": "sp-va2-01",
+   "q": "Comment calculer P(X + Y = k) ?",
+   "a": "Additionner les P((X = i) ∩ (Y = j)) pour i + j = k.",
+   "tag": "methode",
+   "niveau": 1
+  },
+  {
+   "id": "sp-va2-02",
+   "q": "Si X et Y sont indépendantes, que vaut P((X = i) ∩ (Y = j)) ?",
+   "a": "P(X = i) × P(Y = j)",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-va2-03",
+   "q": "Que vaut E(X + Y) ?",
+   "a": "E(X) + E(Y), toujours.",
+   "tag": "formule",
+   "niveau": 1,
+   "pourquoi": "Aucune hypothèse d’indépendance."
+  },
+  {
+   "id": "sp-va2-04",
+   "q": "Quand a-t-on V(X + Y) = V(X) + V(Y) ?",
+   "a": "Quand X et Y sont indépendantes.",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va2-05",
+   "q": "Que vaut V(X − Y) pour X, Y indépendantes ?",
+   "a": "V(X) + V(Y)",
+   "tag": "formule",
+   "niveau": 2,
+   "pourquoi": "V(−Y) = (−1)²V(Y)."
+  },
+  {
+   "id": "sp-va2-06",
+   "q": "Que vaut V(2X) ?",
+   "a": "4V(X)",
+   "tag": "piege",
+   "niveau": 2,
+   "pourquoi": "Ne pas confondre avec V(X₁ + X₂) = 2V(X)."
+  },
+  {
+   "id": "sp-va2-07",
+   "q": "Qu’est-ce qu’un échantillon de taille n d’une loi ?",
+   "a": "Une liste de n variables indépendantes suivant cette loi.",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-va2-08",
+   "q": "Que valent E(S) et V(S) pour la somme d’un échantillon ?",
+   "a": "E(S) = nE(X) et V(S) = nV(X).",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va2-09",
+   "q": "Quelle loi suit une somme de n Bernoulli indépendantes de paramètre p ?",
+   "a": "La loi binomiale B(n ; p).",
+   "tag": "propriete",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va2-10",
+   "q": "Comment définit-on la moyenne Mₙ d’un échantillon ?",
+   "a": "Mₙ = (X₁ + X₂ + … + Xₙ)/n",
+   "tag": "definition",
+   "niveau": 1
+  },
+  {
+   "id": "sp-va2-11",
+   "q": "Que vaut E(Mₙ) ?",
+   "a": "E(X)",
+   "tag": "formule",
+   "niveau": 1
+  },
+  {
+   "id": "sp-va2-12",
+   "q": "Que vaut V(Mₙ) ?",
+   "a": "V(X)/n",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va2-13",
+   "q": "Que vaut σ(Mₙ) ?",
+   "a": "σ(X)/√n",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va2-14",
+   "q": "Combien de fois plus de données pour diviser σ(Mₙ) par 2 ?",
+   "a": "4 fois plus.",
+   "tag": "valeur",
+   "niveau": 2,
+   "pourquoi": "σ(Mₙ) varie comme 1/√n."
+  },
+  {
+   "id": "sp-va2-15",
+   "q": "Que dit l’inégalité de Bienaymé-Tchebychev ?",
+   "a": "`P(|X − E(X)| ≥ δ) ≤ V(X)/δ^2` pour tout δ > 0.",
+   "tag": "formule",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va2-16",
+   "q": "Quel majorant donne Bienaymé-Tchebychev pour δ = 2σ ?",
+   "a": "1/4",
+   "tag": "valeur",
+   "niveau": 2,
+   "pourquoi": "V(X)/(2σ)² = 1/4."
+  },
+  {
+   "id": "sp-va2-17",
+   "q": "Que dit l’inégalité de concentration ?",
+   "a": "`P(|M_n − E(X)| ≥ δ) ≤ V(X)/(nδ^2)` pour tout δ > 0.",
+   "tag": "formule",
+   "niveau": 3
+  },
+  {
+   "id": "sp-va2-18",
+   "q": "Comment trouver n avec l’inégalité de concentration ?",
+   "a": "Résoudre V(X)/(nδ²) ≤ α, puis arrondir à l’entier supérieur.",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "sp-va2-19",
+   "q": "Que dit la loi des grands nombres ?",
+   "a": "P(|Mₙ − E(X)| ≥ δ) tend vers 0 quand n → +∞.",
+   "tag": "propriete",
+   "niveau": 2,
+   "pourquoi": "Pour tout δ > 0."
+  },
+  {
+   "id": "sp-va2-20",
+   "q": "La loi des grands nombres dit-elle que Mₙ = E(X) pour n grand ?",
+   "a": "Non : un écart devient seulement de plus en plus improbable.",
+   "tag": "piege",
+   "niveau": 3
+  },
+  {
+   "id": "sp-va2-21",
+   "q": "Bienaymé-Tchebychev donne-t-elle une probabilité exacte ?",
+   "a": "Non, seulement un majorant, souvent large.",
+   "tag": "piege",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va2-22",
+   "q": "Comment écrire « a < Mₙ < b » avec a, b symétriques autour de E(X) ?",
+   "a": "|Mₙ − E(X)| < δ, avec δ = (b − a)/2.",
+   "tag": "methode",
+   "niveau": 3
+  },
+  {
+   "id": "sp-va2-23",
+   "q": "Fourmi : +1 avec probabilité 2/3, −1 sinon. Que vaut E(Xₖ) ?",
+   "a": "1/3",
+   "tag": "valeur",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va2-24",
+   "q": "Quelle est l’espérance d’un pas valant 1 avec probabilité p, sinon −1 ?",
+   "a": "2p − 1",
+   "tag": "formule",
+   "niveau": 3,
+   "pourquoi": "Les valeurs sont 1 et −1, pas 1 et 0."
+  },
+  {
+   "id": "sp-va2-25",
+   "q": "Qui a démontré la première loi des grands nombres ?",
+   "a": "Jacques Bernoulli, dans l’Ars Conjectandi (1713).",
+   "tag": "histoire",
+   "niveau": 2
+  },
+  {
+   "id": "sp-va2-26",
+   "q": "Qui a énoncé l’inégalité de Bienaymé-Tchebychev en premier ?",
+   "a": "Irénée-Jules Bienaymé, en 1853.",
+   "tag": "histoire",
+   "niveau": 3,
+   "pourquoi": "Tchebychev l’a retrouvée et publiée en 1867."
+  }
+ ]
+}

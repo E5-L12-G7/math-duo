@@ -1,0 +1,29 @@
+{
+  "s1-echantillonnage": [
+    {"id": "s1ec-01", "q": "Différence entre paramètre et statistique ?", "a": "Paramètre : population (μ, p) ; statistique : calculée sur l’échantillon (x̄, f).", "tag": "definition", "niveau": 1},
+    {"id": "s1ec-02", "q": "Qu’est-ce que la fluctuation d’échantillonnage ?", "a": "La variation d’une statistique d’un échantillon à l’autre.", "tag": "definition", "niveau": 1},
+    {"id": "s1ec-03", "q": "Que dit la loi des grands nombres ?", "a": "Quand n grandit, la moyenne observée se rapproche de μ.", "tag": "propriete", "niveau": 1},
+    {"id": "s1ec-04", "q": "Après 5 « pile », « face » est-il plus probable ?", "a": "Non : chaque lancer reste à 1/2.", "tag": "piege", "niveau": 1},
+    {"id": "s1ec-05", "q": "Espérance de la moyenne empirique X̄ ?", "a": "E(X̄) = μ", "tag": "formule", "niveau": 1},
+    {"id": "s1ec-06", "q": "Variance de la moyenne empirique X̄ ?", "a": "V(X̄) = σ²/n", "tag": "formule", "niveau": 1},
+    {"id": "s1ec-07", "q": "Écart-type de X̄ ?", "a": "σ/√n", "tag": "formule", "niveau": 1},
+    {"id": "s1ec-08", "q": "Espérance et écart-type d’une somme S de n valeurs ?", "a": "E(S) = nμ et σ(S) = σ√n.", "tag": "formule", "niveau": 2},
+    {"id": "s1ec-09", "q": "Comment diviser par 2 la fluctuation d’une moyenne ?", "a": "Multiplier la taille n par 4.", "tag": "methode", "niveau": 1},
+    {"id": "s1ec-10", "q": "Que dit le théorème central limite ?", "a": "Pour n grand, X̄ suit approximativement N(μ ; σ²/n).", "tag": "propriete", "niveau": 1},
+    {"id": "s1ec-11", "q": "Seuil pratique pour appliquer le TCL ?", "a": "n ≥ 30 (inutile si la population est normale).", "tag": "propriete", "niveau": 2},
+    {"id": "s1ec-12", "q": "Comment centrer-réduire une moyenne x̄ ?", "a": "z = (x̄ − μ)/(σ/√n)", "tag": "formule", "niveau": 2},
+    {"id": "s1ec-13", "q": "Espérance et écart-type de la fréquence F ?", "a": "E(F) = p et σ(F) = √(p(1 − p)/n).", "tag": "formule", "niveau": 1},
+    {"id": "s1ec-14", "q": "Intervalle de fluctuation à 95 % d’une fréquence ?", "a": "p ± 1,96 √(p(1 − p)/n)", "tag": "formule", "niveau": 1},
+    {"id": "s1ec-15", "q": "Conditions de l’intervalle de fluctuation ?", "a": "n ≥ 30, np ≥ 5 et n(1 − p) ≥ 5.", "tag": "propriete", "niveau": 2},
+    {"id": "s1ec-16", "q": "f est hors de l’intervalle de fluctuation : que conclure ?", "a": "On rejette l’hypothèse sur p, au risque de 5 %.", "tag": "methode", "niveau": 1},
+    {"id": "s1ec-17", "q": "f est dans l’intervalle de fluctuation : l’hypothèse est-elle prouvée ?", "a": "Non : on ne la rejette pas, sans la prouver.", "tag": "piege", "niveau": 2},
+    {"id": "s1ec-18", "q": "Formule de la variance empirique s² ?", "a": "s² = (1/n) Σ (xᵢ − x̄)²", "tag": "formule", "niveau": 2},
+    {"id": "s1ec-19", "q": "Estimateur sans biais de σ² ?", "a": "s*² = Σ (xᵢ − x̄)²/(n − 1) = (n/(n − 1)) s²", "tag": "formule", "niveau": 2},
+    {"id": "s1ec-20", "q": "Pourquoi divise-t-on par n − 1 ?", "a": "s² sous-estime σ² en moyenne : E(S²) = (n − 1)σ²/n.", "tag": "propriete", "niveau": 3},
+    {"id": "s1ec-21", "q": "Qu’est-ce qu’un estimateur sans biais ?", "a": "Un estimateur dont l’espérance égale le paramètre visé.", "tag": "definition", "niveau": 3},
+    {"id": "s1ec-22", "q": "Que donne Bienaymé-Tchebychev pour X̄ ?", "a": "P(|X̄ − μ| ≥ ε) ≤ σ²/(nε²)", "tag": "formule", "niveau": 3},
+    {"id": "s1ec-23", "q": "Un énorme échantillon de volontaires est-il fiable ?", "a": "Non : la taille ne corrige pas un biais de sélection.", "tag": "piege", "niveau": 2},
+    {"id": "s1ec-24", "q": "Pourquoi V(X̄) = σ²/n exige-t-il l’indépendance ?", "a": "Les variances ne s’additionnent que pour des variables indépendantes.", "tag": "propriete", "niveau": 3},
+    {"id": "s1ec-25", "q": "Qui publie la première loi des grands nombres (1713) ?", "a": "Jacques Bernoulli, dans l’Ars Conjectandi.", "tag": "histoire", "niveau": 2}
+  ]
+}

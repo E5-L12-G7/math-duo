@@ -1,0 +1,33 @@
+{
+  "m1-second-degre": [
+    {"id": "m1sd-01", "q": "Quelle est la forme d’un trinôme du second degré ?", "a": "ax² + bx + c, avec a ≠ 0.", "tag": "definition", "niveau": 1},
+    {"id": "m1sd-02", "q": "Quelle est la courbe d’un trinôme du second degré ?", "a": "Une parabole.", "tag": "definition", "niveau": 1},
+    {"id": "m1sd-03", "q": "Si a > 0, quelle forme a la parabole ?", "a": "Une cuvette, tournée vers le haut.", "tag": "propriete", "niveau": 1},
+    {"id": "m1sd-04", "q": "Si a < 0, quelle forme a la parabole ?", "a": "Un dôme, tourné vers le bas.", "tag": "propriete", "niveau": 1},
+    {"id": "m1sd-05", "q": "Graphiquement, que sont les solutions de ax² + bx + c = 0 ?", "a": "Les abscisses des points où la parabole coupe l’axe horizontal.", "tag": "definition", "niveau": 1},
+    {"id": "m1sd-06", "q": "Quelle est la formule du discriminant ?", "a": "Δ = b² − 4ac.", "tag": "formule", "niveau": 1},
+    {"id": "m1sd-07", "q": "Combien de solutions si Δ > 0 ? Δ = 0 ? Δ < 0 ?", "a": "Deux ; une (double) ; aucune réelle.", "tag": "propriete", "niveau": 1},
+    {"id": "m1sd-08", "q": "Quelles sont les racines quand Δ > 0 ?", "a": "x = (−b − √Δ)/(2a) et x = (−b + √Δ)/(2a).", "tag": "formule", "niveau": 1},
+    {"id": "m1sd-09", "q": "Quelle est la racine double quand Δ = 0 ?", "a": "x₀ = −b/(2a).", "tag": "formule", "niveau": 1},
+    {"id": "m1sd-10", "q": "Avec b = −5, que vaut b² ?", "a": "25 : on écrit (−5)², un carré est positif.", "tag": "piege", "niveau": 1},
+    {"id": "m1sd-11", "q": "Résous x² − 5x + 6 = 0.", "a": "x = 2 ou x = 3.", "pourquoi": "Δ = 1.", "tag": "valeur", "niveau": 1},
+    {"id": "m1sd-12", "q": "Résous x² = 9.", "a": "x = −3 ou x = 3.", "tag": "valeur", "niveau": 1},
+    {"id": "m1sd-13", "q": "Comment résoudre x² − 4x = 0 sans Δ ?", "a": "Factoriser : x(x − 4) = 0, donc x = 0 ou x = 4.", "tag": "methode", "niveau": 2},
+    {"id": "m1sd-14", "q": "Quelle est l’abscisse du sommet de la parabole ?", "a": "−b/(2a), au milieu des racines.", "tag": "formule", "niveau": 2},
+    {"id": "m1sd-15", "q": "Quel est le sommet de y = x² − 4x + 1 ?", "a": "S(2 ; −3).", "tag": "valeur", "niveau": 2},
+    {"id": "m1sd-16", "q": "Signe de ax² + bx + c à l’extérieur des racines ?", "a": "Le signe de a.", "tag": "propriete", "niveau": 2},
+    {"id": "m1sd-17", "q": "Signe de ax² + bx + c entre les racines ?", "a": "Le signe contraire de a.", "tag": "propriete", "niveau": 2},
+    {"id": "m1sd-18", "q": "Vrai ou faux : si Δ < 0, le trinôme est négatif ?", "a": "Faux : il a le signe de a sur tout ℝ.", "tag": "piege", "niveau": 2},
+    {"id": "m1sd-19", "q": "Résous x² − 4 > 0.", "a": "S = ]−∞ ; −2[ ∪ ]2 ; +∞[.", "tag": "valeur", "niveau": 2},
+    {"id": "m1sd-20", "q": "Résous −x² + x + 2 ≥ 0.", "a": "S = [−1 ; 2].", "tag": "valeur", "niveau": 2},
+    {"id": "m1sd-21", "q": "Forme factorisée quand Δ > 0 ?", "a": "a(x − x₁)(x − x₂).", "tag": "formule", "niveau": 2},
+    {"id": "m1sd-22", "q": "Que valent la somme et le produit des racines ?", "a": "x₁ + x₂ = −b/a et x₁ × x₂ = c/a.", "tag": "formule", "niveau": 2},
+    {"id": "m1sd-23", "q": "Quel réflexe avant d’écrire l’ensemble des solutions d’une inéquation ?", "a": "Faire un croquis : cuvette ou dôme, avec ses racines.", "tag": "methode", "niveau": 2},
+    {"id": "m1sd-24", "q": "Quelle est la forme canonique de ax² + bx + c ?", "a": "a[(x + b/(2a))² − Δ/(4a²)].", "tag": "formule", "niveau": 3},
+    {"id": "m1sd-25", "q": "Quelles sont les coordonnées du sommet ?", "a": "S(−b/(2a) ; −Δ/(4a)).", "tag": "formule", "niveau": 3},
+    {"id": "m1sd-26", "q": "Pourquoi n’y a-t-il pas de racine quand Δ < 0 ?", "a": "Il faudrait un carré égal à Δ/(4a²) < 0 : impossible.", "tag": "propriete", "niveau": 3},
+    {"id": "m1sd-27", "q": "Pour quels m x² + 2x + m = 0 a-t-elle deux solutions ?", "a": "m < 1.", "pourquoi": "Δ = 4 − 4m > 0.", "tag": "valeur", "niveau": 3},
+    {"id": "m1sd-28", "q": "Que deviennent les racines dans ℂ si Δ < 0 ?", "a": "Deux racines complexes conjuguées (−b ± i√(−Δ))/(2a).", "tag": "propriete", "niveau": 3},
+    {"id": "m1sd-29", "q": "Qui résolvait déjà des problèmes du second degré il y a 4 000 ans ?", "a": "Les scribes babyloniens.", "tag": "histoire", "niveau": 2}
+  ]
+}

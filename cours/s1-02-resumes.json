@@ -1,0 +1,181 @@
+{
+  "id": "s1-resumes",
+  "titre": "Résumés numériques : position et dispersion d’une série",
+  "resume": "On résume une série par quelques nombres : où se trouve son centre (mode, médiane, moyenne) et à quel point les valeurs s’en écartent (étendue, écart interquartile, variance, écart-type).",
+  "objectifs": [
+    "déterminer le mode, la médiane, les quartiles et les déciles d’une série",
+    "calculer une moyenne simple, pondérée ou par classes",
+    "calculer variance et écart-type avec la formule de König-Huygens",
+    "construire et lire une boîte à moustaches, repérer les valeurs aberrantes",
+    "prévoir l’effet d’une transformation affine sur les indicateurs"
+  ],
+  "prerequis": [
+    "s1-descriptive"
+  ],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Content de te retrouver ! Au chapitre précédent, on a rangé et dessiné les données. Maintenant, on veut les résumer en deux ou trois nombres, comme on résume un film en une phrase. Deux questions guident tout le chapitre : « où est le centre ? » et « à quel point ça s’étale ? ».",
+      "## Le centre : trois façons de le dire",
+      "- Le **mode** : la valeur la plus fréquente, celle qu’on rencontre le plus souvent.\n- La **médiane** : la valeur du milieu quand on aligne tout le monde du plus petit au plus grand ; la moitié est en dessous, la moitié au-dessus.\n- La **moyenne** : ce que chacun aurait si on mettait tout en commun et qu’on partageait équitablement.",
+      "analogie: Aligne 9 personnes par taille : la médiane, c’est la taille de la 5ᵉ. La moyenne, c’est la taille qu’elles auraient toutes si on pouvait « égaliser » les tailles sans rien perdre.",
+      "@position | Déplace la valeur extrême vers la droite (un très gros salaire, par exemple). Observe : la moyenne court après elle, la médiane ne bouge presque pas.",
+      "!! La médiane résiste aux valeurs extrêmes, la moyenne non. C’est pour cela qu’on parle souvent de « salaire médian » plutôt que de salaire moyen.",
+      "? Dans un village de 99 habitants qui gagnent 2 000 € par mois, un milliardaire s’installe. Qu’arrive-t-il à la moyenne et à la médiane des revenus ? || La moyenne explose, la médiane reste à 2 000 € : le 50ᵉ habitant gagne toujours 2 000 €.",
+      "## L’étalement : la dispersion",
+      "prof: Tu vas peut-être me demander : « alors, laquelle choisir ? ». Si les données sont à peu près symétriques, moyenne et médiane se valent. Si elles sont très étirées d’un côté (salaires, prix des logements), préfère la médiane pour décrire la valeur typique.",
+      "Deux classes ont 12 de moyenne. Dans la première, toutes les notes sont entre 11 et 13 ; dans la seconde, elles vont de 2 à 20. Même centre, mais des histoires très différentes. Il faut un nombre qui mesure l’étalement.",
+      "- L’**étendue** : la plus grande valeur moins la plus petite.\n- L’**écart interquartile** : la largeur de la moitié centrale des valeurs.\n- L’**écart-type** : l’écart « typique » entre une valeur et la moyenne.",
+      "@dispersion | Fais varier l’étalement des points autour de la moyenne : l’écart-type grandit quand les points s’éloignent. Puis joue sur le décalage : tout se déplace, mais l’écart-type ne bouge pas.",
+      "? Une série a un écart-type nul. Que peux-tu dire de ses valeurs ? || Elles sont toutes égales (à la moyenne) : il n’y a aucun écart.",
+      "## La boîte à moustaches",
+      "C’est un dessin qui résume tout d’un coup d’œil : une boîte qui contient la moitié centrale des valeurs (entre les quartiles Q1 et Q3), un trait pour la médiane, et deux « moustaches » qui vont jusqu’aux valeurs extrêmes.",
+      "@boite | Appuie plusieurs fois sur « Nouvelle série » et observe la boîte : elle s’allonge quand la moitié centrale s’étale, et la médiane n’est pas forcément au milieu de la boîte.",
+      "? Dans une boîte à moustaches, quelle part des valeurs se trouve dans la boîte ? || Environ la moitié : entre Q1 et Q3 se trouvent au moins 50 % des valeurs.",
+      "prof: Retiens le couple gagnant : on donne la médiane avec les quartiles, et la moyenne avec l’écart-type. Dans la partie Pratique, on apprend à calculer chacun proprement.",
+      "histoire: L’écart-type (standard deviation) a été nommé par Karl Pearson en 1893. La boîte à moustaches est bien plus récente : elle a été popularisée par le statisticien américain John Tukey dans son livre de 1977 sur l’analyse exploratoire des données."
+    ],
+    "pratique": [
+      "prof: Place aux méthodes. Elles sont toutes simples, à une condition : être organisé. Je te conseille de toujours commencer par un tableau propre avec les valeurs, les effectifs, puis les colonnes de calcul.",
+      "## La moyenne",
+      "1. Calcule l’effectif total N = Σ nᵢ (on additionne les effectifs, pas les valeurs).\n2. Multiplie chaque valeur par son effectif et additionne : Σ nᵢxᵢ.\n3. Divise : x̄ = Σ nᵢxᵢ ÷ N.\n4. Contrôle : x̄ est entre la plus petite et la plus grande valeur.",
+      "> x̄ = (n₁x₁ + n₂x₂ + … + nₚxₚ) / N",
+      "Pour une série en classes, on remplace chaque classe [a ; b[ par son **centre** (a + b)/2 : on obtient une estimation de la moyenne.",
+      "## La médiane et les quartiles",
+      "1. Range la série dans l’ordre croissant.\n2. Médiane : si N est impair, la valeur de rang (N + 1)/2 ; si N est pair, la moyenne des valeurs de rangs N/2 et N/2 + 1.\n3. Q1 : la valeur de rang N/4, arrondi à l’entier supérieur.\n4. Q3 : la valeur de rang 3N/4, arrondi à l’entier supérieur.\n5. Déciles : D1 au rang N/10, D9 au rang 9N/10 (arrondis à l’entier supérieur).",
+      "@etapes {\"etapes\":[[\"15 ; 9 ; 14 ; 13 ; 10 ; 12 ; 12 ; 11 ; 10\",\"Notes de 9 étudiants.\"],[\"9 ; 10 ; 10 ; 11 ; 12 ; 12 ; 13 ; 14 ; 15\",\"On range d’abord.\"],[\"Me : rang (9 + 1)/2 = 5, Me = 12\",\"N impair : la valeur du milieu.\"],[\"Q1 : 9/4 = 2,25 → rang 3, Q1 = 10\",\"On arrondit le rang à l’entier supérieur.\"],[\"Q3 : 27/4 = 6,75 → rang 7, Q3 = 13\",\"Même règle.\"],[\"EIQ = 13 − 10 = 3\",\"Écart interquartile.\"]]} | Avance pas à pas. Avant chaque étape, essaie de trouver le rang toi-même.",
+      "? Médiane et Q1 de 4 ; 6 ; 18 ; 8 ; 17 ; 11 ; 12 ; 18 ? || Rangée : 4 ; 6 ; 8 ; 11 ; 12 ; 17 ; 18 ; 18. Me = (11 + 12)/2 = 11,5. Q1 : rang 8/4 = 2, Q1 = 6.",
+      "Pour une série en classes, on lit la médiane sur le polygone des fréquences cumulées : c’est l’abscisse où il atteint 50 % (25 % pour Q1, 75 % pour Q3), par interpolation linéaire dans la classe.",
+      "## Variance et écart-type",
+      "La variance est la moyenne des carrés des écarts à la moyenne. En pratique, on utilise la **formule de König-Huygens**, bien plus rapide :",
+      "> V = (Σ nᵢxᵢ²) / N − x̄²        σ = √V",
+      "@etapes {\"etapes\":[[\"xᵢ : 1 ; 2 ; 3 ; 4 et nᵢ : 5 ; 9 ; 3 ; 1\",\"N = 18.\"],[\"x̄ = (5 + 18 + 9 + 4)/18 = 2\",\"Moyenne pondérée.\"],[\"Σ nᵢxᵢ² = 5 + 36 + 27 + 16 = 84\",\"Chaque carré multiplié par son effectif.\"],[\"84/18 ≈ 4,667\",\"Moyenne des carrés.\"],[\"V = 4,667 − 2² ≈ 0,667\",\"König-Huygens : moyenne des carrés moins carré de la moyenne.\"],[\"σ = √0,667 ≈ 0,82\",\"L’écart-type, dans l’unité des données.\"]]} | Suis le calcul de la variance avec la formule de König-Huygens.",
+      "prof: Attention, c’est ici que se cachent la moitié des erreurs d’examen : on oublie de ranger la série, ou on arrondit le rang au plus proche. Le rang de Q1 s’arrondit toujours à l’entier supérieur.",
+      "? Série 2 ; 4 ; 6 (effectifs 1). Variance ? || x̄ = 4, moyenne des carrés (4 + 16 + 36)/3 = 56/3 ≈ 18,67 ; V = 18,67 − 16 ≈ 2,67.",
+      "Le **coefficient de variation** CV = σ / x̄ (souvent en %) compare la dispersion de séries de moyennes ou d’unités différentes.",
+      "## Boîte à moustaches et valeurs aberrantes",
+      "1. Calcule Q1, la médiane et Q3, puis l’écart interquartile EIQ = Q3 − Q1.\n2. Calcule les bornes Q1 − 1,5 × EIQ et Q3 + 1,5 × EIQ.\n3. Les valeurs en dehors de ces bornes sont dites **aberrantes** (ou atypiques) : on les dessine par des points.\n4. Les moustaches vont jusqu’aux valeurs extrêmes non aberrantes.",
+      "@boite | Tire de nouvelles séries jusqu’à en obtenir une avec une valeur aberrante (point rouge, au-delà de Q3 + 1,5 × EIQ) : la boîte bouge à peine, la valeur est isolée hors des moustaches. Les quartiles, comme la médiane, sont robustes.",
+      "## Transformation affine",
+      "Si on remplace chaque valeur x par y = ax + b (changement d’unité, augmentation…), alors :",
+      "> ȳ = a x̄ + b        V(y) = a² V(x)        σ_y = |a| σ_x",
+      "attention: Ajouter une constante b décale toutes les valeurs : la moyenne bouge, mais la dispersion ne change pas. Ne mets jamais b dans l’écart-type.",
+      "? Des températures ont pour moyenne 20 °C et écart-type 3 °C. En °F (y = 1,8x + 32) ? || ȳ = 1,8 × 20 + 32 = 68 °F et σ = 1,8 × 3 = 5,4 °F.",
+      "prof: Tu as maintenant toute la boîte à outils de la statistique descriptive. Un dernier conseil : avant de rendre un résultat, vérifie qu’il est plausible (une moyenne entre min et max, un écart-type positif et plus petit que l’étendue)."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on regarde pourquoi ces indicateurs sont les bons, et quand ils trompent. Tu verras aussi d’où vient la formule de König-Huygens, en trois lignes.",
+      "## Moyenne et médiane, deux optimisations",
+      "La moyenne est le réel t qui rend minimale la somme des carrés Σ nᵢ(xᵢ − t)², et cette valeur minimale vaut N × V. La médiane rend minimale la somme des écarts absolus Σ nᵢ|xᵢ − t|. Les carrés pèsent lourd sur les grands écarts : c’est pour cela que la moyenne est sensible aux valeurs extrêmes.",
+      "## Démonstration de König-Huygens",
+      "@etapes {\"etapes\":[[\"V = (1/N) Σ nᵢ(xᵢ − x̄)²\",\"Définition de la variance.\"],[\"= (1/N) Σ nᵢ(xᵢ² − 2x̄xᵢ + x̄²)\",\"On développe le carré.\"],[\"= (1/N) Σ nᵢxᵢ² − 2x̄ (1/N) Σ nᵢxᵢ + x̄²\",\"On sépare les trois sommes, car Σ nᵢ = N.\"],[\"= (1/N) Σ nᵢxᵢ² − 2x̄² + x̄²\",\"Car (1/N) Σ nᵢxᵢ = x̄.\"],[\"V = (1/N) Σ nᵢxᵢ² − x̄²\",\"Moyenne des carrés moins carré de la moyenne.\"]]} | Suis la démonstration ligne par ligne. Chaque ligne n’utilise qu’une propriété simple.",
+      "Conséquence : la moyenne des carrés est toujours supérieure ou égale au carré de la moyenne, avec égalité seulement si toutes les valeurs sont égales.",
+      "## Effet d’une transformation affine (preuve)",
+      "Si yᵢ = axᵢ + b, alors ȳ = a x̄ + b par linéarité de la somme, donc yᵢ − ȳ = a(xᵢ − x̄) : les écarts sont multipliés par a et la constante b disparaît. En élevant au carré, V(y) = a² V(x), donc σ_y = |a| σ_x. La médiane et les quartiles suivent aussi la transformation quand a > 0 (et s’échangent quand a < 0).",
+      "@histogramme {\"donnees\":[1200,1350,1400,1450,1500,1500,1550,1600,1650,1700,1750,1800,1900,2000,2100,2300,2600,3200,4500,7800],\"amplitude\":500,\"amin\":250,\"amax\":1500} | Salaires (en euros) de 20 personnes, avec quelques très hauts salaires. Change l’amplitude des classes et observe la moyenne tirée vers la droite, loin de la médiane : la distribution est asymétrique.",
+      "prof: Pourquoi s’embêter avec des carrés plutôt qu’avec des valeurs absolues ? Parce que les carrés se développent et se calculent facilement, comme tu viens de le voir : toute la théorie (variance d’une somme, régression, loi normale) en découle.",
+      "## Où ça casse",
+      "- Plusieurs conventions existent pour les quartiles (rang ⌈N/4⌉, interpolation, médiane de chaque moitié) : elles donnent des résultats proches mais pas identiques. Précise toujours celle que tu utilises.\n- Pour une série en classes, la moyenne et la médiane ne sont que des **estimations**.\n- Le coefficient de variation n’a de sens que pour une variable positive, de moyenne non nulle.\n- La règle des 1,5 × EIQ est une convention de repérage : une valeur « aberrante » n’est pas forcément une erreur, il faut l’examiner.\n- Sur un échantillon, on utilisera plus tard la variance corrigée s² = N V / (N − 1) pour estimer la variance de la population.",
+      "? Si on multiplie toutes les valeurs par −2, que deviennent la moyenne, la variance et l’écart-type ? || La moyenne est multipliée par −2, la variance par 4, l’écart-type par 2 (|−2|).",
+      "? Une série a pour moyenne 10 et pour moyenne des carrés 109. Écart-type ? || V = 109 − 100 = 9, donc σ = 3.",
+      "? Pourquoi la variance ne peut-elle pas être négative ? || C’est une moyenne de carrés, tous positifs ou nuls.",
+      "prof: Ces indicateurs vont réapparaître sous un autre nom : la moyenne deviendra l’espérance, la variance restera la variance, mais pour une variable aléatoire. La formule de König-Huygens, E(X²) − E(X)², te servira tout le semestre.",
+      "histoire: Christiaan Huygens, au XVIIᵉ siècle, et Johann Samuel König, au XVIIIᵉ, ont établi en mécanique la formule du moment d’inertie par rapport à un axe décalé. La formule de la variance en est la traduction statistique : la variance joue le rôle d’un moment d’inertie autour du « centre de gravité » x̄."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Livres lus cet été : valeurs 0 ; 1 ; 2 ; 3 ; 4, effectifs 0 ; 12 ; 8 ; 3 ; 2. Moyenne ?",
+      "etapes": [
+        [
+          "N = 0 + 12 + 8 + 3 + 2 = 25",
+          "on additionne les effectifs"
+        ],
+        [
+          "Σ nᵢxᵢ = 0 + 12 + 16 + 9 + 8 = 45",
+          "chaque valeur compte autant de fois que son effectif"
+        ],
+        [
+          "x̄ = 45 ÷ 25 = 1,8 livre",
+          "moyenne pondérée"
+        ]
+      ]
+    },
+    {
+      "enonce": "Variance et écart-type de la série xᵢ = 1 ; 2 ; 3 ; 4 d’effectifs 5 ; 9 ; 3 ; 1.",
+      "etapes": [
+        [
+          "N = 18 et x̄ = 36 ÷ 18 = 2",
+          "moyenne pondérée"
+        ],
+        [
+          "Σ nᵢxᵢ² = 5 + 36 + 27 + 16 = 84",
+          "somme pondérée des carrés"
+        ],
+        [
+          "V = 84 ÷ 18 − 2² ≈ 0,667",
+          "formule de König-Huygens"
+        ],
+        [
+          "σ = √0,667 ≈ 0,82",
+          "racine carrée de la variance"
+        ]
+      ]
+    },
+    {
+      "enonce": "Durées (en jours) : 3 ; 15 ; 16 ; 18 ; 18 ; 20 ; 21 ; 22 ; 25 ; 48. Valeurs aberrantes ?",
+      "etapes": [
+        [
+          "N = 10 : Q1 au rang 3, Q3 au rang 8",
+          "⌈10/4⌉ = 3 et ⌈30/4⌉ = 8"
+        ],
+        [
+          "Q1 = 16, Q3 = 22, EIQ = 6",
+          "lecture dans la série rangée"
+        ],
+        [
+          "bornes : 16 − 9 = 7 et 22 + 9 = 31",
+          "Q1 − 1,5 EIQ et Q3 + 1,5 EIQ"
+        ],
+        [
+          "3 et 48 sont aberrantes",
+          "elles sortent de [7 ; 31]"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "Chercher la médiane sans ranger la série.",
+      "juste": "Toujours ranger la série avant de chercher la médiane ou les quartiles.",
+      "pourquoi": "La médiane est la valeur du milieu de la série ordonnée."
+    },
+    {
+      "faux": "Moyenne pondérée : diviser par le nombre de valeurs distinctes.",
+      "juste": "Diviser par l’effectif total N = Σ nᵢ.",
+      "pourquoi": "Chaque individu compte une fois : le total des poids est N."
+    },
+    {
+      "faux": "V = moyenne des carrés − moyenne.",
+      "juste": "V = moyenne des carrés − (moyenne)².",
+      "pourquoi": "König-Huygens retranche le carré de la moyenne ; on oublie aussi souvent la racine pour σ."
+    },
+    {
+      "faux": "Si y = 2x + 5, alors σ_y = 2σ_x + 5.",
+      "juste": "σ_y = 2σ_x.",
+      "pourquoi": "Ajouter une constante décale les valeurs sans changer leur dispersion."
+    },
+    {
+      "faux": "Le mode est l’effectif le plus grand.",
+      "juste": "Le mode est la valeur qui a le plus grand effectif.",
+      "pourquoi": "On lit la valeur sous le plus haut bâton, pas la hauteur du bâton."
+    }
+  ],
+  "retenir": [
+    "Mode = valeur la plus fréquente ; médiane = valeur du milieu de la série rangée ; x̄ = Σ nᵢxᵢ ÷ N.",
+    "Q1 et Q3 : valeurs de rangs ⌈N/4⌉ et ⌈3N/4⌉ ; EIQ = Q3 − Q1.",
+    "König-Huygens : V = (Σ nᵢxᵢ²)/N − x̄² ; σ = √V ; CV = σ / x̄.",
+    "Valeurs aberrantes : en dehors de [Q1 − 1,5 EIQ ; Q3 + 1,5 EIQ].",
+    "Si y = ax + b : ȳ = a x̄ + b, σ_y = |a| σ_x.",
+    "La médiane résiste aux valeurs extrêmes, la moyenne non."
+  ]
+}

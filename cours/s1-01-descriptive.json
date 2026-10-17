@@ -1,0 +1,171 @@
+{
+  "id": "s1-descriptive",
+  "titre": "Séries statistiques : variables, effectifs, fréquences et représentations",
+  "resume": "Une série statistique, c’est la liste des observations faites sur une population. On la range dans un tableau (effectifs, fréquences), puis on la dessine avec le graphique adapté à la nature de la variable.",
+  "objectifs": [
+    "reconnaître population, individu, variable et la nature de la variable",
+    "calculer effectifs, fréquences et fréquences cumulées",
+    "choisir et construire le bon graphique : bâtons, secteurs, histogramme",
+    "tracer un histogramme à classes d’amplitudes inégales avec les densités",
+    "lire et interpoler le polygone des fréquences cumulées"
+  ],
+  "prerequis": [],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bienvenue dans STA001 ! On commence par la base de toute la statistique : regarder des données et les mettre en ordre. Pas de formule compliquée ici, promis. Le plan : d’abord le vocabulaire (qui observe-t-on, qu’observe-t-on), ensuite les tableaux, enfin les dessins.",
+      "## Observer une population",
+      "Imagine que tu veuilles savoir comment les salariés de ton entreprise viennent au travail. L’ensemble des salariés, c’est la **population**. Chaque salarié est un **individu** (on dit aussi unité statistique). Ce que tu notes sur chacun, le moyen de transport, c’est la **variable**. La liste de toutes les réponses forme une **série statistique**.",
+      "analogie: La population, c’est la classe entière ; l’individu, c’est un élève ; la variable, c’est la question que tu poses à chaque élève.",
+      "## Trois natures de variables",
+      "- **Qualitative** : la réponse est une catégorie (couleur, groupe sanguin, mode de transport).\n- **Quantitative discrète** : un nombre qu’on **compte** (nombre d’enfants, nombre de pièces).\n- **Quantitative continue** : un nombre qu’on **mesure** et qui peut prendre toutes les valeurs d’un intervalle (taille, durée, salaire).",
+      "prof: Un piège classique : un numéro de département ou un code postal, ce sont des nombres… mais faire leur moyenne n’a aucun sens. Ce sont des étiquettes : la variable est qualitative. Pose-toi toujours la question « est-ce que calculer une moyenne aurait un sens ? ».",
+      "? Le nombre de voitures d’un foyer est-il une variable continue ? || Non : on compte des voitures (0, 1, 2…), les valeurs sont isolées. C’est une variable quantitative discrète.",
+      "## Compter : effectifs et fréquences",
+      "L’**effectif** d’une valeur, c’est le nombre d’individus qui ont cette valeur. La **fréquence**, c’est la part qu’ils représentent dans le total : effectif ÷ effectif total. Les fréquences permettent de comparer des groupes de tailles différentes.",
+      "ex: 12 salariés sur 40 viennent à vélo\nfréquence = 12 ÷ 40 = 0,3\nsoit 30 % des salariés",
+      "? 9 étudiants sur 36 ont un enfant. Quelle fréquence ? || 9 ÷ 36 = 0,25, soit 25 %.",
+      "## Dessiner les données",
+      "Chaque nature de variable a son dessin : des **secteurs** (un « camembert ») pour des catégories, des **bâtons** pour des valeurs que l’on compte, un **histogramme** (des rectangles collés) pour des mesures regroupées en intervalles, qu’on appelle des **classes**.",
+      "@histogramme {\"donnees\":[152,155,158,160,161,162,163,164,165,165,166,167,168,168,169,170,171,172,172,173,174,175,176,178,180,182,185,190],\"amplitude\":5,\"amin\":2,\"amax\":15} | Voici les tailles (en cm) de 28 adultes. Fais glisser l’amplitude des classes : avec des classes trop fines, le dessin devient un peigne illisible ; trop larges, on ne voit plus rien. Cherche la largeur qui montre le mieux la « bosse ».",
+      "!! Le graphique dépend de la nature de la variable : secteurs pour du qualitatif, bâtons pour du discret, histogramme pour du continu.",
+      "? Quel graphique pour la durée des appels reçus par un service client ? || Une durée est une mesure : variable continue, regroupée en classes, donc un histogramme.",
+      "prof: Bravo, tu as le vocabulaire de base. Dans la partie Pratique, on va construire ces tableaux et ces graphiques pas à pas, et tu verras le seul vrai piège de l’histogramme : les classes de largeurs différentes.",
+      "histoire: Le mot « statistique » vient de l’allemand Statistik, forgé au XVIIIᵉ siècle pour désigner la description chiffrée des États. Au XIXᵉ siècle, Florence Nightingale invente une variante du diagramme circulaire (le diagramme « en crête de coq ») pour montrer que les soldats de la guerre de Crimée meurent surtout de maladies évitables, et obtient ainsi une réforme des hôpitaux militaires."
+    ],
+    "pratique": [
+      "prof: On passe aux méthodes. Pour chacune, je te donne la recette en étapes, puis on l’applique ensemble. Garde un brouillon : la statistique descriptive, c’est surtout bien organiser un tableau.",
+      "## Le tableau des effectifs et des fréquences",
+      "1. Range les valeurs (ou les modalités) dans l’ordre.\n2. Compte l’effectif nᵢ de chaque valeur xᵢ.\n3. Calcule l’effectif total N = n₁ + n₂ + … + nₚ.\n4. Calcule chaque fréquence fᵢ = nᵢ ÷ N (contrôle : leur somme vaut 1, soit 100 %).",
+      "> fᵢ = nᵢ / N        f₁ + f₂ + … + fₚ = 1",
+      "## Fréquences cumulées croissantes",
+      "La fréquence cumulée croissante en xᵢ, c’est la part des individus dont la valeur est **inférieure ou égale** à xᵢ : on additionne les fréquences de proche en proche.",
+      "@etapes {\"etapes\":[[\"Valeurs : 0 ; 1 ; 2 ; 3 ; 4 enfants\",\"Série : nombre d’enfants de 40 foyers.\"],[\"Effectifs : 6 ; 10 ; 14 ; 8 ; 2\",\"On compte les foyers pour chaque valeur.\"],[\"N = 6 + 10 + 14 + 8 + 2 = 40\",\"Effectif total.\"],[\"Fréquences : 15 % ; 25 % ; 35 % ; 20 % ; 5 %\",\"Chaque effectif divisé par 40.\"],[\"Cumulées : 15 % ; 40 % ; 75 % ; 95 % ; 100 %\",\"On ajoute à chaque fois la fréquence suivante.\"],[\"75 % des foyers ont au plus 2 enfants\",\"Lecture de la fréquence cumulée en 2.\"]]} | Lance l’animation. À chaque étape, essaie de deviner la ligne suivante avant qu’elle n’apparaisse.",
+      "? Avec ce tableau, quelle part des foyers a au moins 3 enfants ? || 20 % + 5 % = 25 %, ou bien 100 % − 75 % = 25 %.",
+      "## Le diagramme circulaire",
+      "1. L’effectif total correspond au disque entier : 360°.\n2. L’angle d’un secteur est proportionnel à son effectif : angle = 360° × nᵢ ÷ N.\n3. Contrôle : la somme des angles fait 360°.",
+      "ex: 40 salariés, dont 12 à vélo\nangle = 360 × 12 ÷ 40 = 108°",
+      "## Le diagramme en bâtons",
+      "Pour une variable discrète : en abscisse les valeurs, et au-dessus de chacune un bâton de hauteur égale à l’effectif (ou à la fréquence). Les bâtons ne se touchent pas : entre deux valeurs, il n’y a rien.",
+      "## Regrouper en classes et tracer l’histogramme",
+      "Pour une variable continue, on découpe l’intervalle des valeurs en classes [a ; b[ (a inclus, b exclu). L’amplitude de la classe est b − a. Chaque classe devient un rectangle posé sur l’axe.",
+      "attention: Si toutes les classes ont la même amplitude, la hauteur peut être l’effectif. Si les amplitudes sont **inégales**, la hauteur doit être la **densité** = effectif ÷ amplitude. Sinon, une classe très large paraît énorme alors qu’elle est peu peuplée.",
+      "@histogramme {\"classes\":[[0,10,12],[10,20,18],[20,30,15],[30,60,24],[60,90,6]]} | Temps de trajet (en minutes) de 75 salariés. En mode « effectif », la classe [30 ; 60[ écrase tout. Passe en mode « densité » : elle redevient raisonnable, car ses 24 personnes sont étalées sur 30 minutes.",
+      "@etapes {\"etapes\":[[\"Classe [30 ; 60[ : effectif 24\",\"La classe est trois fois plus large que les autres.\"],[\"Amplitude = 60 − 30 = 30\",\"Largeur du rectangle.\"],[\"Densité = 24 ÷ 30 = 0,8\",\"Hauteur du rectangle : 0,8 personne par minute.\"],[\"Aire = 0,8 × 30 = 24\",\"L’aire du rectangle redonne l’effectif.\"],[\"Classe [10 ; 20[ : 18 ÷ 10 = 1,8\",\"Elle est plus haute : les valeurs y sont plus serrées.\"]]} | Suis le calcul des hauteurs. Remarque que c’est l’aire, pas la hauteur, qui compte les personnes.",
+      "? Une classe [40 ; 100[ contient 30 personnes. Quelle hauteur dans l’histogramme ? || Amplitude 60, densité 30 ÷ 60 = 0,5.",
+      "prof: Pourquoi parler d’aire ? Parce qu’un histogramme se lit comme un tas de sable : chaque individu est un grain. Une classe plus large étale le même nombre de grains sur plus de place, donc le tas est moins haut.",
+      "## Le polygone des fréquences cumulées",
+      "1. Calcule les fréquences cumulées croissantes à la fin de chaque classe.\n2. Place le point (borne supérieure de la classe ; fréquence cumulée), en commençant par (première borne ; 0).\n3. Relie les points par des segments.\n4. Pour estimer la part des valeurs inférieures à x, lis l’ordonnée du polygone en x.",
+      "? Les fréquences cumulées valent 30 % en 20 et 70 % en 40. Estime la part des valeurs inférieures à 30. || 30 est au milieu de [20 ; 40], donc on prend le milieu de 30 % et 70 % : 50 %.",
+      "prof: Bilan : un tableau propre (effectifs, fréquences, cumulées) et le bon graphique, c’est déjà la moitié du travail d’un statisticien. Au prochain chapitre, on résumera la série par quelques nombres."
+    ],
+    "expert": [
+      "prof: Au niveau expert, on formalise. Tu vas voir que la série statistique se résume entièrement par une fonction, la fonction de répartition empirique, qui annonce directement la fonction de répartition des variables aléatoires du chapitre 4.",
+      "## Cadre formel",
+      "Une variable statistique est une application X de la population Ω (finie, de cardinal N) dans un ensemble de modalités. Si X prend les valeurs distinctes x₁ < x₂ < … < xₚ, l’effectif est nᵢ = card{ω : X(ω) = xᵢ} et la fréquence fᵢ = nᵢ / N. La famille (xᵢ ; fᵢ) s’appelle la distribution de la série.",
+      "## Fonction de répartition empirique",
+      "> F(x) = (nombre d’individus tels que X ≤ x) / N",
+      "F est définie pour tout réel x. Elle est croissante, vaut 0 avant la plus petite valeur, 1 après la plus grande, et elle est **en escalier** : elle saute de fᵢ en chaque valeur xᵢ et reste constante entre deux valeurs.",
+      "prof: Tu te demandes peut-être pourquoi on s’embête avec une fonction définie pour tous les réels, alors que la série ne prend que quelques valeurs ? Parce qu’elle permet de comparer n’importe quelle série, discrète ou continue, et n’importe quel modèle théorique, avec un seul objet.",
+      "@courbe {\"f\":\"0.25*(1+(x-2)/abs(x-2))/2+0.5*(1+(x-3)/abs(x-3))/2+0.25*(1+(x-5)/abs(x-5))/2\",\"x\":[0,7],\"y\":[-0.2,1.2],\"pas\":1,\"pasy\":0.25,\"lecture\":4} | Série 2 ; 3 ; 3 ; 5. Déplace le point mobile : F reste à 0,75 entre 3 et 5, puis saute de 0,25 en 5. La hauteur de chaque marche est la fréquence de la valeur.",
+      "? Pour la série 2 ; 3 ; 3 ; 5, que vaut F(3) ? Et F(2,9) ? || F(3) = 3/4 = 0,75 (trois valeurs ≤ 3) ; F(2,9) = 1/4 = 0,25. La fonction est continue à droite : la marche est comptée au point même.",
+      "## Données groupées : densité et polygone",
+      "Pour des classes [aⱼ ; aⱼ₊₁[, on note hⱼ = nⱼ / (aⱼ₊₁ − aⱼ) la densité (ou fⱼ / amplitude pour une densité de fréquence). L’histogramme représente la fonction en escalier égale à hⱼ sur chaque classe : son aire totale vaut N (ou 1 en fréquences). C’est exactement l’idée de densité de probabilité des lois continues.",
+      "On fait l’hypothèse que les valeurs sont **réparties uniformément** à l’intérieur de chaque classe. Sous cette hypothèse, la fonction de répartition est affine sur chaque classe : c’est le polygone des fréquences cumulées.",
+      "> F(x) ≈ F(aⱼ) + (x − aⱼ) / (aⱼ₊₁ − aⱼ) × fⱼ    pour x dans [aⱼ ; aⱼ₊₁[",
+      "@histogramme {\"classes\":[[0,1000,8],[1000,1500,22],[1500,2000,30],[2000,3000,28],[3000,5000,12]],\"densite\":true} | Salaires mensuels nets (en euros) de 100 personnes, avec des classes inégales. Bascule entre effectif et densité : seule la densité respecte la règle « aire = effectif ». Observe aussi où tombent la moyenne et la médiane.",
+      "## Où ça casse",
+      "- L’histogramme dépend du choix des classes : deux découpages différents peuvent donner des impressions très différentes ; en pratique on vise 5 à 15 classes.\n- Les classes ouvertes (« 3 000 € et plus ») n’ont pas d’amplitude : il faut leur fixer une borne raisonnable avant de tracer.\n- L’interpolation linéaire n’est qu’une **estimation** : elle suppose les valeurs uniformément réparties dans la classe.\n- Un code numérique (département, code postal) n’est pas une variable quantitative : ni moyenne, ni histogramme.",
+      "? Pourquoi l’aire totale d’un histogramme en densité de fréquence vaut-elle 1 ? || Chaque rectangle a pour aire fⱼ (densité × amplitude), et la somme des fréquences vaut 1.",
+      "? Une classe [20 ; 40[ a pour fréquence 30 % et F(20) = 25 %. Estime F(25). || F(25) ≈ 25 % + (5/20) × 30 % = 25 % + 7,5 % = 32,5 %.",
+      "prof: Retiens le lien : fréquences ↔ probabilités, histogramme en densité ↔ densité de probabilité, fonction de répartition empirique ↔ fonction de répartition d’une variable aléatoire. Tout STA001 repose sur ce passage des données observées au modèle.",
+      "histoire: Le terme « histogramme » a été introduit par le statisticien anglais Karl Pearson dans ses cours de 1891 à 1895. Il a aussi développé une grande partie des outils de la statistique moderne, comme le test du khi-deux que tu rencontreras plus loin."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Nombre d’enfants de 40 foyers : valeurs 0 ; 1 ; 2 ; 3 ; 4, effectifs 6 ; 10 ; 14 ; 8 ; 2. Quelle part des foyers a au plus 2 enfants ?",
+      "etapes": [
+        [
+          "N = 6 + 10 + 14 + 8 + 2 = 40",
+          "effectif total"
+        ],
+        [
+          "fréquences : 0,15 ; 0,25 ; 0,35 ; 0,20 ; 0,05",
+          "chaque effectif divisé par 40"
+        ],
+        [
+          "F(2) = 0,15 + 0,25 + 0,35 = 0,75",
+          "fréquence cumulée croissante en 2"
+        ],
+        [
+          "75 % des foyers ont au plus 2 enfants",
+          "conclusion"
+        ]
+      ]
+    },
+    {
+      "enonce": "Temps de trajet de 75 salariés : [0 ; 10[ : 12, [10 ; 20[ : 18, [20 ; 30[ : 15, [30 ; 60[ : 24, [60 ; 90[ : 6. Hauteurs de l’histogramme ?",
+      "etapes": [
+        [
+          "amplitudes : 10 ; 10 ; 10 ; 30 ; 30",
+          "les classes sont inégales"
+        ],
+        [
+          "densités : 1,2 ; 1,8 ; 1,5 ; 0,8 ; 0,2",
+          "effectif ÷ amplitude"
+        ],
+        [
+          "aire de [30 ; 60[ : 0,8 × 30 = 24",
+          "l’aire redonne bien l’effectif"
+        ]
+      ]
+    },
+    {
+      "enonce": "Notes de 20 candidats : F(40) = 35 % et F(60) = 75 %. Estimer la part des candidats ayant moins de 45.",
+      "etapes": [
+        [
+          "45 est dans la classe [40 ; 60[",
+          "on repère la classe"
+        ],
+        [
+          "(45 − 40) ÷ (60 − 40) = 0,25",
+          "on a parcouru un quart de la classe"
+        ],
+        [
+          "F(45) ≈ 35 + 0,25 × (75 − 35) = 45 %",
+          "interpolation linéaire sur le polygone"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "Le numéro de département est une variable quantitative.",
+      "juste": "C’est une variable qualitative codée par des nombres.",
+      "pourquoi": "Une moyenne de numéros de départements n’a aucun sens : ce sont des étiquettes."
+    },
+    {
+      "faux": "Dans un histogramme à classes inégales, la hauteur est l’effectif.",
+      "juste": "La hauteur est la densité : effectif ÷ amplitude.",
+      "pourquoi": "C’est l’aire du rectangle qui doit représenter l’effectif."
+    },
+    {
+      "faux": "Fréquence = effectif ÷ nombre de valeurs différentes.",
+      "juste": "Fréquence = effectif ÷ effectif total N.",
+      "pourquoi": "On compare à l’ensemble de la population, pas au nombre de modalités."
+    },
+    {
+      "faux": "La fréquence cumulée en x compte les valeurs supérieures à x.",
+      "juste": "La fréquence cumulée croissante compte les valeurs inférieures ou égales à x.",
+      "pourquoi": "On cumule de la plus petite valeur vers x ; les cumulées décroissantes comptent celles au-dessus."
+    }
+  ],
+  "retenir": [
+    "Population = ensemble étudié ; individu = un élément ; variable = ce que l’on observe sur chacun.",
+    "Qualitative (catégories), quantitative discrète (on compte), quantitative continue (on mesure).",
+    "Fréquence = effectif ÷ effectif total ; les fréquences ont pour somme 1.",
+    "Secteurs : angle = 360° × nᵢ ÷ N. Bâtons pour le discret, histogramme pour le continu.",
+    "Histogramme à classes inégales : hauteur = densité = effectif ÷ amplitude ; l’aire représente l’effectif.",
+    "Le polygone des fréquences cumulées relie les points (borne supérieure ; fréquence cumulée) et s’interpole linéairement."
+  ]
+}

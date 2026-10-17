@@ -1,0 +1,178 @@
+{
+  "id": "m1-proportions",
+  "titre": "Proportions, pourcentages et approximations",
+  "resume": "Deux grandeurs proportionnelles varient du même facteur. Un pourcentage est une proportion sur 100, et une évolution se traduit par une multiplication : le coefficient multiplicateur.",
+  "objectifs": [
+    "reconnaître une situation de proportionnalité et utiliser la règle de trois",
+    "calculer un pourcentage d’une quantité",
+    "appliquer une hausse ou une baisse avec un coefficient multiplicateur",
+    "enchaîner des évolutions, calculer un taux global et un taux réciproque",
+    "retrouver une valeur initiale",
+    "arrondir correctement et estimer un ordre de grandeur"
+  ],
+  "prerequis": [],
+  "niveaux": {
+    "vulgarisation": [
+      "prof: Bienvenue ! On démarre le parcours par un sujet que tu pratiques déjà sans le savoir : les recettes, les soldes, les augmentations de loyer. Mon plan : d’abord l’idée de proportion, ensuite les pourcentages, enfin le grand piège des évolutions successives. Tu vas voir, tout tient en une seule opération : la multiplication.",
+      "## Proportionnel, ça veut dire « même facteur »",
+      "Deux grandeurs sont proportionnelles quand on passe de l’une à l’autre en multipliant **toujours par le même nombre**. À la pompe, le prix est proportionnel au nombre de litres : deux fois plus de litres, deux fois plus cher ; dix fois plus de litres, dix fois plus cher.",
+      "analogie: Une recette pour 4 personnes demande 200 g de farine. Pour 6 personnes, on passe d’abord par une seule personne (200 ÷ 4 = 50 g), puis on multiplie par 6 : 300 g. C’est la « règle de trois ».",
+      "@courbe {\"f\":[{\"f\":\"k*x\",\"nom\":\"proportionnel : prix = k × litres\"},{\"f\":\"k*x+4\",\"nom\":\"pas proportionnel : 4 € fixes en plus\"}],\"curseurs\":{\"k\":[0.5,2,0.1,1.5]},\"x\":[0,10],\"y\":[0,24],\"pas\":1,\"pasy\":2,\"etiq\":2,\"etiqy\":4} | Fais glisser le curseur k (le prix d’un litre). Observe que la droite bleue passe toujours par l’origine : 0 litre, 0 €. La droite jaune, avec 4 € fixes, ne passe pas par 0 : doubler les litres ne double plus le prix.",
+      "!! Une situation est proportionnelle quand sa représentation est une droite qui passe par l’origine.",
+      "? Un taxi facture 3 € de prise en charge puis 1,50 € par kilomètre. Le prix est-il proportionnel à la distance ? || Non : pour 0 km on paie déjà 3 €. 10 km coûtent 18 € mais 20 km coûtent 33 €, pas 36 €.",
+      "## Un pourcentage, c’est « sur 100 »",
+      "« 20 % » se lit « 20 pour cent » : 20 sur 100, soit 20/100 = 0,2. Prendre 20 % d’une quantité, c’est la multiplier par 0,2. Les 20 % de 50 € font 50 × 0,2 = 10 €.",
+      "## Augmenter, baisser : une seule multiplication",
+      "Si un prix de 100 € augmente de 20 %, on ajoute 20 € : il devient 120 €. On a multiplié par 1,2. S’il baisse de 20 %, il devient 80 € : on a multiplié par 0,8.",
+      "!! Augmenter de 20 %, c’est multiplier par 1,2. Baisser de 20 %, c’est multiplier par 0,8. Ce nombre s’appelle le **coefficient multiplicateur**.",
+      "? Un pull à 50 € est soldé à −30 %. Quel est son nouveau prix ? || Baisser de 30 %, c’est multiplier par 0,7 : 50 × 0,7 = 35 €.",
+      "## Le grand piège : les évolutions successives",
+      "prof: Je te pose une devinette. Un prix monte de 20 %, puis baisse de 20 %. Revient-il à son point de départ ? Presque tout le monde répond oui… et c’est faux. Vérifie-le toi-même juste en dessous.",
+      "@pourcentages {\"v\":100,\"t\":20,\"t2\":-20} | Laisse +20 % puis −20 % : la troisième barre est plus basse que la première ! Change ensuite les deux pourcentages, par exemple +50 % puis −50 %, et observe que l’écart devient énorme.",
+      "La baisse de 20 % s’applique à 120 €, pas à 100 €. Elle retire donc 24 € et non 20 € : on finit à 96 €. Les pourcentages ne s’additionnent pas, ils se **multiplient** sous forme de coefficients : 1,2 × 0,8 = 0,96.",
+      "? Une quantité augmente de 50 %, puis baisse de 50 %. Que devient-elle ? || 1,5 × 0,5 = 0,75 : elle a perdu 25 %.",
+      "## Des valeurs « à peu près »",
+      "Dans la vie, on n’a pas besoin de tous les chiffres : on arrondit (12,47 € devient 12,50 €) et on estime (« environ 5 000 personnes »). Un bon ordre de grandeur permet de repérer tout de suite une erreur de calculatrice.",
+      "histoire: Le signe % vient de l’abréviation italienne « per cento », écrite dans les livres de comptes des marchands à partir du XVᵉ siècle ; à force d’être griffonnée, elle s’est réduite à un petit rond, une barre et un second rond.",
+      "prof: Bilan : proportion = même facteur, pourcentage = sur 100, évolution = multiplication par un coefficient. Si tu retiens que les pourcentages successifs se multiplient, tu éviteras l’erreur la plus fréquente de tout ce chapitre."
+    ],
+    "pratique": [
+      "prof: Au niveau Pratique, je te donne quatre méthodes : la règle de trois, l’évolution avec coefficient, les évolutions successives et le retour à la valeur initiale. Pour chacune : la recette, un exemple animé, puis un exercice pour toi.",
+      "## Méthode 1 : la règle de trois",
+      "1. Vérifie que la situation est proportionnelle (même facteur partout, pas de partie fixe).\n2. Ramène-toi à l’unité : divise.\n3. Multiplie par la quantité demandée.",
+      "@etapes {\"etapes\":[[\"3 kg coûtent 7,50 €\",\"La masse et le prix sont proportionnels : le prix au kilo est fixe.\"],[\"1 kg coûte 7,50 ÷ 3 = 2,50 €\",\"On se ramène à l’unité : on divise par 3.\"],[\"5 kg coûtent 2,50 × 5 = 12,50 €\",\"On multiplie par la quantité demandée.\"],[\"Contrôle : 5 kg, c’est un peu moins que le double de 3 kg\",\"12,50 € est un peu moins que 2 × 7,50 = 15 € : cohérent.\"]]} | Avance étape par étape. Avant chaque clic, dis à voix haute ce qu’on va faire.",
+      "? 4 places de cinéma coûtent 38 €. Combien en coûtent 7 ? || Une place : 38 ÷ 4 = 9,50 € ; 7 places : 9,50 × 7 = 66,50 €.",
+      "## Méthode 2 : appliquer une évolution",
+      "1. Traduis l’évolution en coefficient : 1 + t/100 pour une hausse de t %, 1 − t/100 pour une baisse de t %.\n2. Multiplie la valeur de départ par ce coefficient.",
+      "> hausse de t % : × (1 + t/100)      baisse de t % : × (1 − t/100)",
+      "ex: hausse de 15 % : coefficient 1,15\nbaisse de 8 % : coefficient 0,92\n240 € après une baisse de 8 % : 240 × 0,92 = 220,80 €",
+      "attention: Le coefficient d’une baisse est toujours plus petit que 1, celui d’une hausse plus grand que 1. Une baisse de 8 % donne 0,92, pas 0,08 (0,08, c’est ce qu’on enlève).",
+      "## Méthode 3 : évolutions successives",
+      "1. Écris le coefficient de chaque évolution.\n2. Multiplie tous les coefficients : c’est le coefficient global.\n3. Traduis-le en pourcentage : (coefficient − 1) × 100. Positif : hausse ; négatif : baisse.",
+      "@etapes {\"etapes\":[[\"80 € : +15 % puis −10 %\",\"Deux évolutions successives.\"],[\"coefficients 1,15 et 0,9\",\"1 + 15/100 et 1 − 10/100.\"],[\"coefficient global : 1,15 × 0,9 = 1,035\",\"Les évolutions se multiplient.\"],[\"prix final : 80 × 1,035 = 82,80 €\",\"On applique le coefficient global.\"],[\"(1,035 − 1) × 100 = +3,5 %\",\"Hausse globale de 3,5 %, et non 15 − 10 = 5 %.\"]]} | Lance la lecture. Remarque l’étape 3 : c’est elle qui remplace l’addition fautive des pourcentages.",
+      "@pourcentages {\"v\":200,\"t\":10,\"t2\":10} | Avec +10 % puis +10 %, lis le pourcentage global : 21 %, pas 20 %. Essaie +30 % puis −30 % et prédis le résultat avant de regarder.",
+      "? Un loyer augmente de 2 % puis de 3 %. Évolution globale ? || 1,02 × 1,03 = 1,0506 : une hausse de 5,06 %.",
+      "## Méthode 4 : retrouver la valeur initiale",
+      "prof: Ici, l’erreur classique est de retirer le pourcentage à la valeur finale. Or le pourcentage portait sur la valeur de départ, que tu ne connais pas encore ! La bonne idée : on a multiplié par le coefficient, donc on **divise** par le coefficient pour revenir en arrière.",
+      "1. Écris : valeur finale = valeur initiale × coefficient.\n2. Divise la valeur finale par le coefficient.\n3. Contrôle en refaisant l’évolution.",
+      "@etapes {\"etapes\":[[\"après +25 %, le loyer vaut 750 €\",\"On cherche le loyer d’avant.\"],[\"750 = loyer initial × 1,25\",\"Une hausse de 25 % multiplie par 1,25.\"],[\"loyer initial = 750 ÷ 1,25 = 600 €\",\"On divise par le coefficient.\"],[\"contrôle : 600 × 1,25 = 750\",\"Le calcul est juste. Retirer 25 % de 750 aurait donné 562,50 €, faux.\"]]} | Suis la méthode, puis refais-la de tête avec un prix de 500 € après +25 %.",
+      "? Un article soldé à −20 % coûte 64 €. Quel était son prix ? || 64 ÷ 0,8 = 80 €.",
+      "## Arrondir et estimer",
+      "Arrondir au centième, c’est garder deux chiffres après la virgule en regardant le troisième : s’il vaut 5 ou plus, on augmente le deuxième. 12,346 ≈ 12,35 ; 12,344 ≈ 12,34. Pour un ordre de grandeur, on remplace chaque nombre par une valeur ronde.",
+      "ex: 4 870 × 0,019 ≈ 5 000 × 0,02 = 100\nvaleur exacte : 92,53, du même ordre de grandeur",
+      "prof: Bilan pratique : coefficient d’abord, multiplication ensuite, division pour revenir en arrière. Et un dernier coup d’œil à l’ordre de grandeur avant de rendre ta réponse."
+    ],
+    "expert": [
+      "prof: Au niveau Expert, on met des mots précis sur tout ça : fonction linéaire, taux, coefficient global, taux moyen, taux réciproque, précision d’un arrondi. Et on regarde ce qui se passe quand une même évolution se répète : c’est la porte d’entrée des exponentielles.",
+      "## Proportionnalité et fonction linéaire",
+      "y est proportionnelle à x s’il existe un réel k tel que y = kx pour tous les couples (x ; y). C’est une fonction linéaire, représentée par une droite passant par l’origine. Dans un tableau de proportionnalité, les produits en croix sont égaux : si y₁ = kx₁ et y₂ = kx₂, alors x₁y₂ = x₂y₁.",
+      "> y = kx    ⟺    y/x = k  (x ≠ 0)",
+      "## Taux et coefficient",
+      "Une évolution de taux t (écrit en décimal, t > −1) fait passer de V₀ à V₁ = V₀(1 + t). Le taux se retrouve par t = (V₁ − V₀)/V₀. Des évolutions de taux t₁, …, tₙ donnent le coefficient global (1 + t₁)(1 + t₂)…(1 + tₙ).",
+      "> taux réciproque de t : t′ = 1/(1 + t) − 1 = −t/(1 + t)",
+      "? Quel est le taux réciproque d’une hausse de 25 % ? || 1/1,25 − 1 = 0,8 − 1 = −0,2 : une baisse de 20 %.",
+      "## La même évolution répétée : une croissance exponentielle",
+      "Si une quantité augmente de t % à chaque période, après n périodes elle vaut V₀ × (1 + t/100)ⁿ. Ce n’est plus une droite : la courbe s’incurve vers le haut, car chaque hausse s’applique à une quantité déjà augmentée.",
+      "@courbe {\"f\":[{\"f\":\"100*(1+t/100)^x\",\"nom\":\"+t % par période (multiplication)\"},{\"f\":\"100+t*x\",\"nom\":\"+t € par période (addition)\"}],\"curseurs\":{\"t\":[-20,30,1,10]},\"x\":[0,20],\"y\":[0,600],\"pas\":2,\"pasy\":50,\"etiq\":4,\"etiqy\":100} | Fais varier t. Pour une hausse, la courbe « multiplication » finit toujours par dépasser la droite « addition ». Mets t négatif : la quantité décroît mais ne devient jamais nulle.",
+      "Le **taux moyen** τ de n évolutions est celui qui, répété n fois, donne le même coefficient global : (1 + τ)ⁿ = (1 + t₁)…(1 + tₙ), donc 1 + τ = ((1 + t₁)…(1 + tₙ))^(1/n). Ce n’est pas la moyenne des taux.",
+      "@etapes {\"etapes\":[[\"+10 % puis +30 %\",\"On cherche le taux moyen sur deux périodes.\"],[\"coefficient global : 1,1 × 1,3 = 1,43\",\"Produit des coefficients.\"],[\"(1 + τ)^2 = 1,43\",\"Deux périodes au même taux τ.\"],[\"1 + τ = √1,43 ≈ 1,1958\",\"Racine carrée (racine n-ième en général).\"],[\"τ ≈ 19,58 %\",\"Un peu moins que la moyenne 20 % des deux taux.\"]]} | Suis le calcul, puis vérifie : 1,1958² ≈ 1,43.",
+      "? Un prix augmente de 21 % en deux ans. Quel est le taux annuel moyen ? || (1 + τ)² = 1,21, donc 1 + τ = 1,1 : 10 % par an.",
+      "## Approximations",
+      "Une valeur approchée à 10⁻ⁿ près diffère de la valeur exacte d’au plus 10⁻ⁿ ; l’arrondi à 10⁻ⁿ en diffère d’au plus la moitié, 0,5 × 10⁻ⁿ. Les erreurs d’arrondi se propagent et s’amplifient dans les produits et les puissances : on arrondit à la fin du calcul, jamais à chaque étape.",
+      "prof: Exemple qui fait mal : 1,0349 arrondi à 1,03, puis élevé à la puissance 20, donne 1,806 au lieu de 1,986. Un arrondi « innocent » au centième produit une erreur de près de 10 % !",
+      "## Où ça casse",
+      "prof: Avant la liste des pièges, une question pour toi : si un prix baisse de 50 %, de combien doit-il remonter pour revenir au départ ? Réfléchis avec le taux réciproque… Il faut +100 % ! Garde cet exemple en tête, il résume tout le chapitre.",
+      "- Les pourcentages ne s’additionnent pas : +10 % puis +10 % font +21 %.\n- Le taux réciproque n’est pas l’opposé : après +25 %, il faut −20 % pour revenir.\n- Une baisse de plus de 100 % n’a pas de sens pour une quantité positive (coefficient négatif).\n- Un pourcentage de pourcentage se compare en **points** : passer de 10 % à 12 %, c’est +2 points, mais +20 %.\n- Arrondir trop tôt peut fausser le résultat final de plusieurs unités.",
+      "? Un taux de chômage passe de 8 % à 10 %. A-t-il augmenté de 2 % ? || Il a augmenté de 2 points de pourcentage, ce qui représente une hausse de 25 % (10/8 = 1,25).",
+      "histoire: Les intérêts composés, où les intérêts produisent eux-mêmes des intérêts, apparaissent déjà dans des tablettes babyloniennes. En 1683, Jacques Bernoulli étudie des intérêts composés de plus en plus souvent et tombe sur un nombre limite, environ 2,718 : le futur nombre e."
+    ]
+  },
+  "exemples": [
+    {
+      "enonce": "Un article à 80 € augmente de 15 %, puis baisse de 10 %. Prix final et évolution globale ?",
+      "etapes": [
+        [
+          "coefficients : 1,15 et 0,9",
+          "hausse de 15 % : × 1,15 ; baisse de 10 % : × 0,9"
+        ],
+        [
+          "1,15 × 0,9 = 1,035",
+          "les évolutions successives se multiplient"
+        ],
+        [
+          "80 × 1,035 = 82,80 €",
+          "on applique le coefficient global"
+        ],
+        [
+          "(1,035 − 1) × 100 = +3,5 %",
+          "et non 15 − 10 = 5 %"
+        ]
+      ]
+    },
+    {
+      "enonce": "Après une hausse de 25 %, un loyer vaut 750 €. Quel était le loyer initial ?",
+      "etapes": [
+        [
+          "750 = L × 1,25",
+          "valeur finale = valeur initiale × coefficient"
+        ],
+        [
+          "L = 750 ÷ 1,25",
+          "on divise par le coefficient"
+        ],
+        [
+          "L = 600 €",
+          "contrôle : 600 × 1,25 = 750"
+        ]
+      ]
+    },
+    {
+      "enonce": "3 kg de pommes coûtent 7,50 €. Combien coûtent 5 kg ?",
+      "etapes": [
+        [
+          "1 kg : 7,50 ÷ 3 = 2,50 €",
+          "on se ramène à l’unité"
+        ],
+        [
+          "5 kg : 2,50 × 5 = 12,50 €",
+          "on multiplie par la quantité demandée"
+        ]
+      ]
+    }
+  ],
+  "pieges": [
+    {
+      "faux": "+20 % puis −20 % : on revient au prix initial",
+      "juste": "1,2 × 0,8 = 0,96 : baisse de 4 %",
+      "pourquoi": "La baisse s’applique à un prix déjà augmenté : les pourcentages ne se compensent pas."
+    },
+    {
+      "faux": "+10 % puis +10 % = +20 %",
+      "juste": "1,1 × 1,1 = 1,21 : +21 %",
+      "pourquoi": "Les coefficients se multiplient, les pourcentages ne s’additionnent pas."
+    },
+    {
+      "faux": "Après +25 %, on baisse de 25 % pour revenir",
+      "juste": "On baisse de 20 %, car 1/1,25 = 0,8",
+      "pourquoi": "Le taux réciproque se calcule avec l’inverse du coefficient."
+    },
+    {
+      "faux": "Prix avant +25 % : 750 − 25 % de 750",
+      "juste": "750 ÷ 1,25 = 600",
+      "pourquoi": "Le pourcentage portait sur le prix initial, pas sur le prix final."
+    },
+    {
+      "faux": "Baisse de 8 % : coefficient 0,08",
+      "juste": "Baisse de 8 % : coefficient 0,92",
+      "pourquoi": "0,08 est la part enlevée ; il reste 92 % de la valeur."
+    }
+  ],
+  "retenir": [
+    "Proportionnalité : on passe par l’unité, puis on multiplie.",
+    "Hausse de t % : × (1 + t/100) ; baisse de t % : × (1 − t/100).",
+    "Évolutions successives : on multiplie les coefficients, on n’additionne pas les pourcentages.",
+    "Retrouver une valeur initiale : on divise par le coefficient.",
+    "Taux réciproque : 1/coefficient − 1.",
+    "On arrondit à la fin du calcul, et on contrôle avec un ordre de grandeur."
+  ]
+}
